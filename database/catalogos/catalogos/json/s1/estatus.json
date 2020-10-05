@@ -1,0 +1,14 @@
+[
+  {
+    "clave": "CUR",
+    "valor": "CURSANDO"
+  },
+  {
+    "clave": "FIN",
+    "valor": "FINALIZADO"
+  },
+  {
+    "clave": "TRU",
+    "valor": "TRUNCO"
+  }
+]

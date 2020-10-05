@@ -1,0 +1,14 @@
+[
+  {
+    "clave": "CR",
+    "valor": "CRÉDITO"
+  },
+  {
+    "clave": "CO",
+    "valor": "CONTADO"
+  },
+  {
+    "clave": "NA",
+    "valor": "NO APLICA"
+  }
+]

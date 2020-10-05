@@ -1,0 +1,18 @@
+[
+  {
+    "clave": "AG",
+    "valor": "AGREGAR"
+  },
+  {
+    "clave": "MO",
+    "valor": "MODIFICAR"
+  },
+  {
+    "clave": "SC",
+    "valor": "SIN_CAMBIOS"
+  },
+  {
+    "clave": "BA",
+    "valor": "BAJA"
+  }
+]

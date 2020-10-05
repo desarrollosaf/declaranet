@@ -1,0 +1,4388 @@
+[
+  {
+    "orden": "001",
+    "jerarquia": "Operativos",
+    "nivel": "03",
+    "funcional": "Auxiliar de Intendencia"
+  },
+  {
+    "orden": "002",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Archivista"
+  },
+  {
+    "orden": "003",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Auxiliar Administrativa,o"
+  },
+  {
+    "orden": "004",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Auxiliar de Almacén"
+  },
+  {
+    "orden": "005",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Auxiliar de Enfermería"
+  },
+  {
+    "orden": "006",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Auxiliar de Mesa de Control"
+  },
+  {
+    "orden": "007",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Auxiliar de Trámites de Gobernación"
+  },
+  {
+    "orden": "008",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Auxiliar General de Preescolar 'A'"
+  },
+  {
+    "orden": "009",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Auxiliar General de Preescolar 'B'"
+  },
+  {
+    "orden": "010",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Auxiliar General de Servicios de Plantel Educativo"
+  },
+  {
+    "orden": "011",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Ayudante de Topógrafa,o"
+  },
+  {
+    "orden": "012",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Ayudante General de Servicios"
+  },
+  {
+    "orden": "013",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Capturista 'B'"
+  },
+  {
+    "orden": "014",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Cocinera,o"
+  },
+  {
+    "orden": "015",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Encargada,o de Estacionamiento"
+  },
+  {
+    "orden": "016",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Fonotecaria,o"
+  },
+  {
+    "orden": "017",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Guardia de Museo"
+  },
+  {
+    "orden": "018",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Guía de Centro Turístico"
+  },
+  {
+    "orden": "019",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Intendente"
+  },
+  {
+    "orden": "020",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Jardinera,o 'B' "
+  },
+  {
+    "orden": "021",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Jefa,e de Intendencia"
+  },
+  {
+    "orden": "022",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Música,o R-1 "
+  },
+  {
+    "orden": "023",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Oficinista"
+  },
+  {
+    "orden": "024",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Peluquera,o"
+  },
+  {
+    "orden": "025",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Piscicultora,or 'B'"
+  },
+  {
+    "orden": "026",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Policía 'C'"
+  },
+  {
+    "orden": "027",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Recepcionista"
+  },
+  {
+    "orden": "028",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Recepcionista de Módulo de Información"
+  },
+  {
+    "orden": "029",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Telefonista"
+  },
+  {
+    "orden": "030",
+    "jerarquia": "Operativos",
+    "nivel": "05",
+    "funcional": "Veladora,or 'A'"
+  },
+  {
+    "orden": "031",
+    "jerarquia": "Operativos",
+    "nivel": "06",
+    "funcional": "Almacenista"
+  },
+  {
+    "orden": "032",
+    "jerarquia": "Operativos",
+    "nivel": "06",
+    "funcional": "Choferesa,Chofer"
+  },
+  {
+    "orden": "033",
+    "jerarquia": "Operativos",
+    "nivel": "06",
+    "funcional": "Encuestadora,or"
+  },
+  {
+    "orden": "034",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Asistenta,e Administrativa,o"
+  },
+  {
+    "orden": "035",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Capturista 'A'"
+  },
+  {
+    "orden": "036",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Cocinera,o de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "037",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Coordinadora,or de Encuestadoras,es"
+  },
+  {
+    "orden": "038",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Intendente de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "039",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Jardinera,o 'A'"
+  },
+  {
+    "orden": "040",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Microfilmadora,or"
+  },
+  {
+    "orden": "041",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Música,o R-2 "
+  },
+  {
+    "orden": "042",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Piscicultora,or 'A'"
+  },
+  {
+    "orden": "043",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Recepcionista de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "044",
+    "jerarquia": "Operativos",
+    "nivel": "07",
+    "funcional": "Secretaria,o 'E' "
+  },
+  {
+    "orden": "045",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Analista de Trámites y Servicios Fiscales 'C'"
+  },
+  {
+    "orden": "046",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Auxiliar de Contadora,or"
+  },
+  {
+    "orden": "047",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Auxiliar de Mantenimiento General"
+  },
+  {
+    "orden": "048",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Bibliotecaria,o  "
+  },
+  {
+    "orden": "049",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Bibliotecaria,o Especializada,o"
+  },
+  {
+    "orden": "050",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Capturista de Centro de Cómputo"
+  },
+  {
+    "orden": "051",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Coordinadora,or de Eventos y Talleres"
+  },
+  {
+    "orden": "052",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Ecónoma,o "
+  },
+  {
+    "orden": "053",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Guía de Museo"
+  },
+  {
+    "orden": "054",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Impresora,or"
+  },
+  {
+    "orden": "055",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Inspectora,o de Movilidad"
+  },
+  {
+    "orden": "056",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Inspectora,or de Transporte"
+  },
+  {
+    "orden": "057",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Jefa,e de Archivo"
+  },
+  {
+    "orden": "058",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Jefa,e de Biblioteca "
+  },
+  {
+    "orden": "059",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Mecánica,o Automotriz  "
+  },
+  {
+    "orden": "060",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Niñera,o 'B'"
+  },
+  {
+    "orden": "061",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Operadora,or de Computador"
+  },
+  {
+    "orden": "062",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Preparadora,or de Trabajos "
+  },
+  {
+    "orden": "063",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Supervisora,or de Captura"
+  },
+  {
+    "orden": "064",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Supervisora,or de Captura de Contaduría"
+  },
+  {
+    "orden": "065",
+    "jerarquia": "Operativos",
+    "nivel": "08",
+    "funcional": "Verificadora,or de Documentos de Servicios al Público"
+  },
+  {
+    "orden": "066",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Auxiliar de Planeación Ecológica"
+  },
+  {
+    "orden": "067",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Música,o R-3"
+  },
+  {
+    "orden": "068",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Notificadora,or "
+  },
+  {
+    "orden": "069",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Notificadora,or de Uso del Suelo"
+  },
+  {
+    "orden": "070",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Notificadora,or del TJAEM"
+  },
+  {
+    "orden": "071",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Notificadora,or Fiscal"
+  },
+  {
+    "orden": "072",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Notificadora,or Laboral"
+  },
+  {
+    "orden": "073",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Operadora,or de Computador de Centro de Cómputo"
+  },
+  {
+    "orden": "074",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Promotora,or Turística,o  "
+  },
+  {
+    "orden": "075",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Radio Operadora,or y Paramédica,o"
+  },
+  {
+    "orden": "076",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Secretaria,o 'D'"
+  },
+  {
+    "orden": "077",
+    "jerarquia": "Operativos",
+    "nivel": "09",
+    "funcional": "Vigilante de Museo"
+  },
+  {
+    "orden": "078",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Administradora,or de Campamento"
+  },
+  {
+    "orden": "079",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Auxiliar de Investigadora,or Social"
+  },
+  {
+    "orden": "080",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Auxiliar de Trámites de Movilidad"
+  },
+  {
+    "orden": "081",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Auxiliar Jurídica,o"
+  },
+  {
+    "orden": "082",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Cartógrafa,o"
+  },
+  {
+    "orden": "083",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Choferesa,Chofer de Comisión Ejecutiva"
+  },
+  {
+    "orden": "084",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Custodia,o 'C'"
+  },
+  {
+    "orden": "085",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Dibujante"
+  },
+  {
+    "orden": "086",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Estadígrafa,o"
+  },
+  {
+    "orden": "087",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Fotógrafa,o  "
+  },
+  {
+    "orden": "088",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Inspectora,or de Construcción"
+  },
+  {
+    "orden": "089",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Jefa,e de Almacén  "
+  },
+  {
+    "orden": "090",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Niñera,o 'A'"
+  },
+  {
+    "orden": "091",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Niñera,o 'B' de CAM"
+  },
+  {
+    "orden": "092",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Notificadora,or Ejecutora,or Fiscal"
+  },
+  {
+    "orden": "093",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Promotora,or del Registro Civil"
+  },
+  {
+    "orden": "094",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Recepcionista de Servidora,or Pública,o Superiora,or"
+  },
+  {
+    "orden": "095",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Supervisora,or de Captura de Centro de Cómputo"
+  },
+  {
+    "orden": "096",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Técnica,o en Mantenimiento"
+  },
+  {
+    "orden": "097",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Técnica,o en Mantenimiento Aeronáutico"
+  },
+  {
+    "orden": "098",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Verificadora,or de Procesos Editoriales"
+  },
+  {
+    "orden": "099",
+    "jerarquia": "Operativos",
+    "nivel": "10",
+    "funcional": "Vigilante de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "100",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Analista Auxiliar"
+  },
+  {
+    "orden": "101",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Analista Auxiliar de Contaduría"
+  },
+  {
+    "orden": "102",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Analista de Trámites y Servicios Fiscales 'B'"
+  },
+  {
+    "orden": "103",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Auxiliar de Auditora,or"
+  },
+  {
+    "orden": "104",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Auxiliar Museográfica,o  "
+  },
+  {
+    "orden": "105",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Ayudante General de Eventos Especiales 'B'"
+  },
+  {
+    "orden": "106",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Choferesa,Chofer Asistente"
+  },
+  {
+    "orden": "107",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Contadora,or de Rentas 'C'"
+  },
+  {
+    "orden": "108",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Cotizadora,or"
+  },
+  {
+    "orden": "109",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Decreto 86-E"
+  },
+  {
+    "orden": "110",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Educadora,or Ambiental"
+  },
+  {
+    "orden": "111",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Instructora,or de Oficios en Centro de Readaptación Social"
+  },
+  {
+    "orden": "112",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Instructora,or Vial"
+  },
+  {
+    "orden": "113",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Policía"
+  },
+  {
+    "orden": "114",
+    "jerarquia": "Operativos",
+    "nivel": "11",
+    "funcional": "Promotora,or del Hogar Rural"
+  },
+  {
+    "orden": "115",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Administradora,or de Centro Turístico "
+  },
+  {
+    "orden": "116",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Asistenta,e de Producción "
+  },
+  {
+    "orden": "117",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Auxiliar de Planeación Urbana"
+  },
+  {
+    "orden": "118",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Correctora,or de Estilo"
+  },
+  {
+    "orden": "119",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Custodia,o 'B'"
+  },
+  {
+    "orden": "120",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Enfermera,o"
+  },
+  {
+    "orden": "121",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Intendente de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "122",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Jefa,e de Oficina R-1  "
+  },
+  {
+    "orden": "123",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Niñera,o 'A' de CAM"
+  },
+  {
+    "orden": "124",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Paramédica,o"
+  },
+  {
+    "orden": "125",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Prefecta,o  "
+  },
+  {
+    "orden": "126",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Promotora,or de Centro de Readaptación Social"
+  },
+  {
+    "orden": "127",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Recepcionista de Oficina de Secretaria,o"
+  },
+  {
+    "orden": "128",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Rotuladora,or para Eventos Especiales"
+  },
+  {
+    "orden": "129",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Supervisora,or de Bibliotecas"
+  },
+  {
+    "orden": "130",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Supervisora,or de Proyectos de Construcción "
+  },
+  {
+    "orden": "131",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Técnica,o en Comunicaciones "
+  },
+  {
+    "orden": "132",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Técnica,o en Comunicaciones del SEI"
+  },
+  {
+    "orden": "133",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Trabajadora,or Social"
+  },
+  {
+    "orden": "134",
+    "jerarquia": "Operativos",
+    "nivel": "12",
+    "funcional": "Trabajadora,or Social de FGJ  "
+  },
+  {
+    "orden": "135",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Agente de Información de Ciudadana"
+  },
+  {
+    "orden": "136",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Ayudante General de Eventos Especiales 'A'"
+  },
+  {
+    "orden": "137",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Camarógrafa,o"
+  },
+  {
+    "orden": "138",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Custodia,o 'A'"
+  },
+  {
+    "orden": "139",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Decreto 86-F"
+  },
+  {
+    "orden": "140",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Dibujante Especializada,o"
+  },
+  {
+    "orden": "141",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Diseñadora,or Gráfica,o "
+  },
+  {
+    "orden": "142",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Inspectora,or de Obra"
+  },
+  {
+    "orden": "143",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Instructora,or de Capacitación"
+  },
+  {
+    "orden": "144",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Investigadora,or Histórica,o"
+  },
+  {
+    "orden": "145",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Jefa,e de Mantenimiento de Sistemas Telefónicos"
+  },
+  {
+    "orden": "146",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Jefa,e de Mantenimiento en General"
+  },
+  {
+    "orden": "147",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Jefa,e de Mecánicas,os Automotrices"
+  },
+  {
+    "orden": "148",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Policía Tercera,o"
+  },
+  {
+    "orden": "149",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Promotora,or de Empleo"
+  },
+  {
+    "orden": "150",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Promotora,or de Financiamiento y del Seguro"
+  },
+  {
+    "orden": "151",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Promotora,or de Insumos Agropecuarios"
+  },
+  {
+    "orden": "152",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Promotora,or de Organización de Productoras,es"
+  },
+  {
+    "orden": "153",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Promotora,or de Organización y Capacitación Agroindustrial"
+  },
+  {
+    "orden": "154",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Promotora,or Deportiva,o "
+  },
+  {
+    "orden": "155",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Proyectista"
+  },
+  {
+    "orden": "156",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Secretaria,o 'C' "
+  },
+  {
+    "orden": "157",
+    "jerarquia": "Operativos",
+    "nivel": "13",
+    "funcional": "Topógrafa,o "
+  },
+  {
+    "orden": "158",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Analista 'D'"
+  },
+  {
+    "orden": "159",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Analista de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "160",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Analista de Trámites y Servicios Fiscales 'A'"
+  },
+  {
+    "orden": "161",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Contadora,or de Rentas 'B'"
+  },
+  {
+    "orden": "162",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Coordinadora,or de Bibliotecas"
+  },
+  {
+    "orden": "163",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Coordinadora,or de Extensión y Difusión Cultural"
+  },
+  {
+    "orden": "164",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Coordinadora,or Regional de Archivos Históricos"
+  },
+  {
+    "orden": "165",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Decreto 86-H"
+  },
+  {
+    "orden": "166",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Directora,or 'E' de Museo"
+  },
+  {
+    "orden": "167",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Jefa,e de Brigada de Eventos Especiales"
+  },
+  {
+    "orden": "168",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Jefa,e de Oficina R-2"
+  },
+  {
+    "orden": "169",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Jefa,e de Turno de Unidad de Rescate"
+  },
+  {
+    "orden": "170",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Museógrafa,o"
+  },
+  {
+    "orden": "171",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Perita,o en Trabajo Social Forense"
+  },
+  {
+    "orden": "172",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Policía Segunda,o"
+  },
+  {
+    "orden": "173",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Redactora,or"
+  },
+  {
+    "orden": "174",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Supervisora,or Especializada,o de Producción"
+  },
+  {
+    "orden": "175",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Técnica,o en Necropsias"
+  },
+  {
+    "orden": "176",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Técnica,o Laboral "
+  },
+  {
+    "orden": "177",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Trabajadora,or Social de Comisión Ejecutiva"
+  },
+  {
+    "orden": "178",
+    "jerarquia": "Operativos",
+    "nivel": "14",
+    "funcional": "Trabajadora,or Social de CPRS"
+  },
+  {
+    "orden": "179",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Actuaria,o del TJAEM"
+  },
+  {
+    "orden": "180",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Actuaria,o del Tribunal Estatal de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "181",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Analista 'C'"
+  },
+  {
+    "orden": "182",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Analista 'C' de Contaduría"
+  },
+  {
+    "orden": "183",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Auditora,or"
+  },
+  {
+    "orden": "184",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Auditora,or Fiscal"
+  },
+  {
+    "orden": "185",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Consejera,o de Empleo "
+  },
+  {
+    "orden": "186",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Coordinadora,or de Capacitación"
+  },
+  {
+    "orden": "187",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Coordinadora,or de Turismo Social"
+  },
+  {
+    "orden": "188",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Dactiloscopista"
+  },
+  {
+    "orden": "189",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Investigadora,or Social 'B'"
+  },
+  {
+    "orden": "190",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Jefa,e de Enfermera,o"
+  },
+  {
+    "orden": "191",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Jefa,e de Sección "
+  },
+  {
+    "orden": "192",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Jefa,e de Sección Musical"
+  },
+  {
+    "orden": "193",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Jefa,e de Topógrafas,os "
+  },
+  {
+    "orden": "194",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Operadora,or de Sonido de Eventos Especiales"
+  },
+  {
+    "orden": "195",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Perita,o Auxiliar "
+  },
+  {
+    "orden": "196",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Preparadora,or Física,o  "
+  },
+  {
+    "orden": "197",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Programadora,or de Sistemas"
+  },
+  {
+    "orden": "198",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Promotora,or Piscícola 'B'"
+  },
+  {
+    "orden": "199",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Promotora,or Social de Preceptoría Juvenil"
+  },
+  {
+    "orden": "200",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Subjefa,e de Traslados"
+  },
+  {
+    "orden": "201",
+    "jerarquia": "Operativos",
+    "nivel": "15",
+    "funcional": "Técnica,o Restauradora,or"
+  },
+  {
+    "orden": "202",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Contadora,or de Rentas 'A'"
+  },
+  {
+    "orden": "203",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Controlista Pagadora,or de Caja General"
+  },
+  {
+    "orden": "204",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Directora,or de Centro Regional de Cultura"
+  },
+  {
+    "orden": "205",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Jefa,e de Oficina R-3  "
+  },
+  {
+    "orden": "206",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Música,o Subdirectora,or "
+  },
+  {
+    "orden": "207",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Nutrióloga,o"
+  },
+  {
+    "orden": "208",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Policía Primera,o "
+  },
+  {
+    "orden": "209",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Psicóloga,o"
+  },
+  {
+    "orden": "210",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Subjefa,e de Vigilancia"
+  },
+  {
+    "orden": "211",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Suboficial"
+  },
+  {
+    "orden": "212",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Supervisora,or 'B' de Pagos al Personal"
+  },
+  {
+    "orden": "213",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Supervisora,or de Servicios"
+  },
+  {
+    "orden": "214",
+    "jerarquia": "Operativos",
+    "nivel": "16",
+    "funcional": "Técnica,o Especializada,o en Planeación Urbana"
+  },
+  {
+    "orden": "215",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Actuaria,o de la Junta Local de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "216",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Analista 'B'"
+  },
+  {
+    "orden": "217",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Analista de Resultados Finales"
+  },
+  {
+    "orden": "218",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Conciliadora,or Laboral"
+  },
+  {
+    "orden": "219",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Coordinadora,or de Promoción Deportiva"
+  },
+  {
+    "orden": "220",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Coordinadora,or Interna,o de Capacitación y Desarrollo"
+  },
+  {
+    "orden": "221",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Curadora,or"
+  },
+  {
+    "orden": "222",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Inspectora,or Verificadora,or de Movilidad"
+  },
+  {
+    "orden": "223",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Instructora,or de Sistemas de Cómputo"
+  },
+  {
+    "orden": "224",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Investigadora,or Social 'A'"
+  },
+  {
+    "orden": "225",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Jefa,e de Brigada de Eventos Especiales"
+  },
+  {
+    "orden": "226",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Jefa,e de Traslados"
+  },
+  {
+    "orden": "227",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Mediadora,or Conciliadora,or del TJAEM"
+  },
+  {
+    "orden": "228",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Perita,o 'A' de Secretaría del Trabajo"
+  },
+  {
+    "orden": "229",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Perita,o 'C'"
+  },
+  {
+    "orden": "230",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Secretaria,o 'B' "
+  },
+  {
+    "orden": "231",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Secretaria,o de Oficina de Certificación de Confianza"
+  },
+  {
+    "orden": "232",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Secretaria,o de Presidenta,e de Junta Especial de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "233",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Supervisora,or de Avance de Obra"
+  },
+  {
+    "orden": "234",
+    "jerarquia": "Operativos",
+    "nivel": "17",
+    "funcional": "Supervisora,or de Oficialías del Registro Civil"
+  },
+  {
+    "orden": "235",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Abogada,o Dictaminadora,or  "
+  },
+  {
+    "orden": "236",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Abogada,o Dictaminadora,or de Responsabilidades"
+  },
+  {
+    "orden": "237",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Administradora,or de Centro de Readaptación Social"
+  },
+  {
+    "orden": "238",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Agente Investigadora,or R-3"
+  },
+  {
+    "orden": "239",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Analista 'A'"
+  },
+  {
+    "orden": "240",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Analista 'A' de Contaduría"
+  },
+  {
+    "orden": "241",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Auxiliar Administrativa,o de Oficina de Servidora,or Pública,o Superiora,or"
+  },
+  {
+    "orden": "242",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Auxiliar de Mantenimiento de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "243",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Certificadora,or del TJAEM"
+  },
+  {
+    "orden": "244",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Choferesa,Chofer Especializada,o"
+  },
+  {
+    "orden": "245",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Coordinadora,or de Acervo Musical"
+  },
+  {
+    "orden": "246",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Decreto 86-G"
+  },
+  {
+    "orden": "247",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Evaluadora,or Socioeconómica,o"
+  },
+  {
+    "orden": "248",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Ginecóloga,o de Centro de Readaptación Social "
+  },
+  {
+    "orden": "249",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Ingeniera,o Agrónoma,o "
+  },
+  {
+    "orden": "250",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Ingeniera,o en Sistemas"
+  },
+  {
+    "orden": "251",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Investigadora,or"
+  },
+  {
+    "orden": "252",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Jefa,e de Vigilancia R-3 "
+  },
+  {
+    "orden": "253",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Médica,o de Centro de Readaptación Social"
+  },
+  {
+    "orden": "254",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Médica,o Evaluadora,or"
+  },
+  {
+    "orden": "255",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Médica,o General  "
+  },
+  {
+    "orden": "256",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Médica,o General de Unidad de Rescate"
+  },
+  {
+    "orden": "257",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Médica,o Veterinaria,o  "
+  },
+  {
+    "orden": "258",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Pediatra de Centro de Readaptación Social"
+  },
+  {
+    "orden": "259",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Perita,o 'B'"
+  },
+  {
+    "orden": "260",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Promotora,or Piscícola 'A'"
+  },
+  {
+    "orden": "261",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Psicóloga,o de CPRS"
+  },
+  {
+    "orden": "262",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Psicóloga,o Evaluadora,or"
+  },
+  {
+    "orden": "263",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Radio Operadora,or de Servicios Aéreos"
+  },
+  {
+    "orden": "264",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Secretaria,o de Acuerdos del Tribunal Estatal de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "265",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Secretaria,o Proyectista del TJAEM"
+  },
+  {
+    "orden": "266",
+    "jerarquia": "Operativos",
+    "nivel": "18",
+    "funcional": "Supervisora,or de Auditoría Fiscal"
+  },
+  {
+    "orden": "267",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Coordinadora,or de Trabajo Social en Centros de Readaptación Social"
+  },
+  {
+    "orden": "268",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Defensora,or"
+  },
+  {
+    "orden": "269",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Defensora,or Especializada,o de Comisión Ejecutiva"
+  },
+  {
+    "orden": "270",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Directora,or 'D' de Museo"
+  },
+  {
+    "orden": "271",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Enfermera,o de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "272",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Inspectora,or de Ecología"
+  },
+  {
+    "orden": "273",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Inspectora,or de Seguridad e Higiene"
+  },
+  {
+    "orden": "274",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Inspectora,or de Trabajo"
+  },
+  {
+    "orden": "275",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Jefa,e de Analistas"
+  },
+  {
+    "orden": "276",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Jefa,e de Analistas de Contaduría"
+  },
+  {
+    "orden": "277",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Jefa,e de Centro Piscícola "
+  },
+  {
+    "orden": "278",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Jefa,e de Supervisoras,es de Avance de Obra"
+  },
+  {
+    "orden": "279",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Jefa,e de Vigilancia R-2  "
+  },
+  {
+    "orden": "280",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Jefa,e de Zona de Registro Civil"
+  },
+  {
+    "orden": "281",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Jefa,e Regional del Registro Civil"
+  },
+  {
+    "orden": "282",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Médica,o Legista 'C'"
+  },
+  {
+    "orden": "283",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Música,o Directora,or"
+  },
+  {
+    "orden": "284",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Oficial de Operaciones Aeronáuticas"
+  },
+  {
+    "orden": "285",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Perita,o 'A' "
+  },
+  {
+    "orden": "286",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Poligrafista de Certificación de Confianza"
+  },
+  {
+    "orden": "287",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Secretaria,o 'A'  "
+  },
+  {
+    "orden": "288",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Supervisora,or Especializada,o de Servicio Técnico"
+  },
+  {
+    "orden": "289",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Trabajadora,or Social de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "290",
+    "jerarquia": "Operativos",
+    "nivel": "19",
+    "funcional": "Verificadora,or de Protección Civil"
+  },
+  {
+    "orden": "291",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Abogada,o Dictaminadora,or de Responsabilidades de la Contraloría"
+  },
+  {
+    "orden": "292",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Administradora,or de Centro de Servicios Fiscales 'C' "
+  },
+  {
+    "orden": "293",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Agente Investigadora,or R-2"
+  },
+  {
+    "orden": "294",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Analista Multidisciplinaria,o en Género "
+  },
+  {
+    "orden": "295",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Asesora,or Comisionada,o del TJAEM"
+  },
+  {
+    "orden": "296",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Asesora,or Júridica,o de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "297",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Asistenta,e de Concertino"
+  },
+  {
+    "orden": "298",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Asistenta,e de Principal 'A'  "
+  },
+  {
+    "orden": "299",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Asistenta,e de Principal 'B' "
+  },
+  {
+    "orden": "300",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Asistenta,e de Principal 'C'  "
+  },
+  {
+    "orden": "301",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Asistenta,e de Principal 'D'  "
+  },
+  {
+    "orden": "302",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Asistenta,e de Principal 'E'  "
+  },
+  {
+    "orden": "303",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Auditora,or de Etica"
+  },
+  {
+    "orden": "304",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Auditora,or de la Contraloría"
+  },
+  {
+    "orden": "305",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Auditora,or de Obra de la Contraloría"
+  },
+  {
+    "orden": "306",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Auditora,or Financiera,o"
+  },
+  {
+    "orden": "307",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Auxiliar Administrativa,o 'G' de Servidora,or Pública,o Superiora,or"
+  },
+  {
+    "orden": "308",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Ayudante de Servicios de Oficina de Servidora,or Pública,o Superiora,or"
+  },
+  {
+    "orden": "309",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Concertino"
+  },
+  {
+    "orden": "310",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Coordinadora,or de Auditoría Fiscal"
+  },
+  {
+    "orden": "311",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Coordinadora,or de Eventos Especiales"
+  },
+  {
+    "orden": "312",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Coordinadora,or de Zona"
+  },
+  {
+    "orden": "313",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Criminóloga,o de Centro de Readaptación Social"
+  },
+  {
+    "orden": "314",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Evaluadora,or de Riesgo Procesal"
+  },
+  {
+    "orden": "315",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Inspectora,or"
+  },
+  {
+    "orden": "316",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Investigadora,or de Comisión Ejecutiva"
+  },
+  {
+    "orden": "317",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Jefa,e 'B' de  Proyecto"
+  },
+  {
+    "orden": "318",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Jefa,e 'B' de  Proyecto de Contaduría"
+  },
+  {
+    "orden": "319",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Jefa,e de Analistas de Contaduría General Gubernamental"
+  },
+  {
+    "orden": "320",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Jefa,e de Centro Regional de Operaciones"
+  },
+  {
+    "orden": "321",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Jefa,e de Taller Mecánico"
+  },
+  {
+    "orden": "322",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Médica,o General de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "323",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Médica,o Veterinaria,o de Zoológico"
+  },
+  {
+    "orden": "324",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Odontóloga,o"
+  },
+  {
+    "orden": "325",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Oficial"
+  },
+  {
+    "orden": "326",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Principal 'A'"
+  },
+  {
+    "orden": "327",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Principal 'B'"
+  },
+  {
+    "orden": "328",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Principal 'C'"
+  },
+  {
+    "orden": "329",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Principal 'D'"
+  },
+  {
+    "orden": "330",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Principal 'E'"
+  },
+  {
+    "orden": "331",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Procuradora,or Auxiliar del Trabajo"
+  },
+  {
+    "orden": "332",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Psicóloga,o de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "333",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Psicóloga,o de Comisión Ejecutiva"
+  },
+  {
+    "orden": "334",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Psicóloga,o de FGJ "
+  },
+  {
+    "orden": "335",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Secretaria,o de Centro de Readaptación Social"
+  },
+  {
+    "orden": "336",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Subinspectora,or"
+  },
+  {
+    "orden": "337",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Supervisora,or de Auditoría"
+  },
+  {
+    "orden": "338",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Supervisora,or de Medidas Cautelares"
+  },
+  {
+    "orden": "339",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Supervisora,or de Obra Terminada"
+  },
+  {
+    "orden": "340",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'A'"
+  },
+  {
+    "orden": "341",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'B'"
+  },
+  {
+    "orden": "342",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'C'"
+  },
+  {
+    "orden": "343",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'D'"
+  },
+  {
+    "orden": "344",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'E'"
+  },
+  {
+    "orden": "345",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'F'"
+  },
+  {
+    "orden": "346",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'G'"
+  },
+  {
+    "orden": "347",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'H'"
+  },
+  {
+    "orden": "348",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'I'"
+  },
+  {
+    "orden": "349",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'J'"
+  },
+  {
+    "orden": "350",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'K'"
+  },
+  {
+    "orden": "351",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'L'"
+  },
+  {
+    "orden": "352",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'M'"
+  },
+  {
+    "orden": "353",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'N'"
+  },
+  {
+    "orden": "354",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'O'"
+  },
+  {
+    "orden": "355",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'P'"
+  },
+  {
+    "orden": "356",
+    "jerarquia": "Operativos",
+    "nivel": "20",
+    "funcional": "Tuti 'Q'"
+  },
+  {
+    "orden": "357",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Analista de Proyectos de Centro de Prevención del Delito"
+  },
+  {
+    "orden": "358",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Analista de Proyectos de FGJ"
+  },
+  {
+    "orden": "359",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Analista de Sistemas Computacionales del SEI"
+  },
+  {
+    "orden": "360",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Analista de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "361",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Jefa,e de Servicios Médicos de Centro de Readaptación Social"
+  },
+  {
+    "orden": "362",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Médica,o Legista 'B' "
+  },
+  {
+    "orden": "363",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Perita,o de Defensoría Pública"
+  },
+  {
+    "orden": "364",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Policía de Fuerza Especial"
+  },
+  {
+    "orden": "365",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Productora,or de Video"
+  },
+  {
+    "orden": "366",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Programadora,or de Sistemas del SEI"
+  },
+  {
+    "orden": "367",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Residente Local de Obras"
+  },
+  {
+    "orden": "368",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Secretaria,o de Acuerdos  "
+  },
+  {
+    "orden": "369",
+    "jerarquia": "Operativos",
+    "nivel": "21",
+    "funcional": "Secretaria,o de Acuerdos de la Junta Local de Conciliación y Arbitraje 'B'"
+  },
+  {
+    "orden": "370",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Agente Investigadora,or R-1"
+  },
+  {
+    "orden": "371",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Asesora,or Jurídica,o Especializada,o"
+  },
+  {
+    "orden": "372",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Choferesa,Chofer de Servidora,or Pública,o Superiora,or"
+  },
+  {
+    "orden": "373",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Coordinadora,or de Servicios Municipales de Empleo"
+  },
+  {
+    "orden": "374",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Directora,or 'C' de Museo"
+  },
+  {
+    "orden": "375",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Enlace Administrativa,o"
+  },
+  {
+    "orden": "376",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Jefa,e de Proyecto de Informática"
+  },
+  {
+    "orden": "377",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Jefa,e de Vigilancia R-1"
+  },
+  {
+    "orden": "378",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Líderesa,Líder 'B' de  Proyecto"
+  },
+  {
+    "orden": "379",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Poligrafista"
+  },
+  {
+    "orden": "380",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Secretaria,o de la Sala Regional del TJAEM"
+  },
+  {
+    "orden": "381",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Secretaria,o de Oficina de Servidora,or Pública,o Superiora,or"
+  },
+  {
+    "orden": "382",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Secretaria,o del Ministerio Público R-2"
+  },
+  {
+    "orden": "383",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Secretaria,o Instructora,or del TJAEM"
+  },
+  {
+    "orden": "384",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Secretaria,o Substanciadora,or del TJAEM"
+  },
+  {
+    "orden": "385",
+    "jerarquia": "Operativos",
+    "nivel": "22",
+    "funcional": "Supervisora,or de Notarías"
+  },
+  {
+    "orden": "386",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Abogada,o Dictaminadora,or de Procuraduría Fiscal"
+  },
+  {
+    "orden": "387",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Abogada,o Dictaminadora,or Jurídica,o y Consultiva,o"
+  },
+  {
+    "orden": "388",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Administradora,or de Centro de Servicios Fiscales 'B' "
+  },
+  {
+    "orden": "389",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Agente Especial de Criminalística R-1"
+  },
+  {
+    "orden": "390",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Choferesa,Chofer 'G' de Servidora,or Pública,o Superiora,or"
+  },
+  {
+    "orden": "391",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Choferesa,Chofer de Directora,or General"
+  },
+  {
+    "orden": "392",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Coordinadora,or de Albergue de la Comisión Ejecutiva de Atención a Víctimas"
+  },
+  {
+    "orden": "393",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Defensora,or Pública,o "
+  },
+  {
+    "orden": "394",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Ingeniera,o en Sistemas del SEI "
+  },
+  {
+    "orden": "395",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Inspectora,or Jefa,e"
+  },
+  {
+    "orden": "396",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Jefa,e de Área  "
+  },
+  {
+    "orden": "397",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Jefa,e de Área de Contaduría"
+  },
+  {
+    "orden": "398",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Jefa,e de Grupo de Agentes Investigadoras,es"
+  },
+  {
+    "orden": "399",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Médica,o Especialista"
+  },
+  {
+    "orden": "400",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Médica,o Legista 'A' "
+  },
+  {
+    "orden": "401",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Presidenta,e de Preceptoría Juvenil"
+  },
+  {
+    "orden": "402",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Psiquiatra de Centro de Readaptación Social"
+  },
+  {
+    "orden": "403",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Secretaria,o de Acuerdos de la Junta Local de Conciliación y Arbitraje 'A'"
+  },
+  {
+    "orden": "404",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Secretaria,o de Oficina de Consejera,o Jurídica,o"
+  },
+  {
+    "orden": "405",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Secretaria,o de Oficina de Coordinadora,or General"
+  },
+  {
+    "orden": "406",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Secretaria,o de Oficina de Fiscal Central"
+  },
+  {
+    "orden": "407",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Secretaria,o de Oficina de Subsecretaria,o"
+  },
+  {
+    "orden": "408",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Secretaria,o de Subcoordinadora,or de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "409",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Secretaria,o del Ministerio Público R-1"
+  },
+  {
+    "orden": "410",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Subcomandante de Agentes Investigadoras,es"
+  },
+  {
+    "orden": "411",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Subdirectora,or de Centro de Readaptación Social"
+  },
+  {
+    "orden": "412",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Supervisora,or de Procuradoras,es Auxiliares de Trabajo"
+  },
+  {
+    "orden": "413",
+    "jerarquia": "Operativos",
+    "nivel": "23",
+    "funcional": "Supervisora,or Médica,o en Área Normativa"
+  },
+  {
+    "orden": "414",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Agente del Ministerio Público R-2"
+  },
+  {
+    "orden": "415",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Auditora,or 'B' de Contraloría"
+  },
+  {
+    "orden": "416",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Auxiliar de la Junta Local de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "417",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer 'B' de Coordinadora,or General "
+  },
+  {
+    "orden": "418",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Ayudantías"
+  },
+  {
+    "orden": "419",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Coordinadora,or de FGJ"
+  },
+  {
+    "orden": "420",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Coordinadora,or Regional de Fiscalía"
+  },
+  {
+    "orden": "421",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Fiscal Central"
+  },
+  {
+    "orden": "422",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Fiscal General de FGJ"
+  },
+  {
+    "orden": "423",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Fiscal Regional de FGJ"
+  },
+  {
+    "orden": "424",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Jefa,e de Unidad de Fiscalía"
+  },
+  {
+    "orden": "425",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Pull de Gubernatura"
+  },
+  {
+    "orden": "426",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Pull de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "427",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Secretaria,o Técnica,o de Gabinete"
+  },
+  {
+    "orden": "428",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Choferesa,Chofer de Subsecretaria,o"
+  },
+  {
+    "orden": "429",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Cocinera,o de Casa Estado de México"
+  },
+  {
+    "orden": "430",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Conciliadora,or de Conflictos Laborales"
+  },
+  {
+    "orden": "431",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Decreto 86-I"
+  },
+  {
+    "orden": "432",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Despachadora,or de Aeronave 'A'"
+  },
+  {
+    "orden": "433",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Despachadora,or de Aeronave 'B'"
+  },
+  {
+    "orden": "434",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Despachadora,or de Aeronaves"
+  },
+  {
+    "orden": "435",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Jefa,e 'A' de Proyecto "
+  },
+  {
+    "orden": "436",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Mecánica,o 'B' de Aeronave"
+  },
+  {
+    "orden": "437",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Mesera,o de Casa Estado de México"
+  },
+  {
+    "orden": "438",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Motociclista de Ayudantías"
+  },
+  {
+    "orden": "439",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Oficial Aéreo"
+  },
+  {
+    "orden": "440",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Paramédica,o Rescatista"
+  },
+  {
+    "orden": "441",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Radio Operadora,or Especializada,o de Servicios Aéreos"
+  },
+  {
+    "orden": "442",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de  Subsecretaria,o General"
+  },
+  {
+    "orden": "443",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Consejera,o Jurídica,o"
+  },
+  {
+    "orden": "444",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Coordinadora,or de FGJ"
+  },
+  {
+    "orden": "445",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Coordinadora,or de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "446",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Coordinadora,or General"
+  },
+  {
+    "orden": "447",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Coordinadora,or Regional de FGJ"
+  },
+  {
+    "orden": "448",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Directora,or General"
+  },
+  {
+    "orden": "449",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Fiscal Central"
+  },
+  {
+    "orden": "450",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Fiscal Especial de FGJ"
+  },
+  {
+    "orden": "451",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Fiscal General de FGJ"
+  },
+  {
+    "orden": "452",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Fiscal Regional de FGJ"
+  },
+  {
+    "orden": "453",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Jefa,e de Unidad de Fiscalía"
+  },
+  {
+    "orden": "454",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Oficina de Fiscal General"
+  },
+  {
+    "orden": "455",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Oficina de Secretaría Técnica del Gabinete"
+  },
+  {
+    "orden": "456",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Oficina de Secretaria,o"
+  },
+  {
+    "orden": "457",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Oficina del Secretaria,o Particular de C. Gobernadora,or"
+  },
+  {
+    "orden": "458",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Secretaria,o Técnica,o de Consejo Estatal de Población"
+  },
+  {
+    "orden": "459",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Subsecretaria,o"
+  },
+  {
+    "orden": "460",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Secretaria,o de Visitadora,or General"
+  },
+  {
+    "orden": "461",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "24",
+    "funcional": "Subdirectora,or de Colegio de Policía"
+  },
+  {
+    "orden": "462",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Administradora,or de Centro de Servicios Administrativos 'C'"
+  },
+  {
+    "orden": "463",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Administradora,or de Unidad Deportiva"
+  },
+  {
+    "orden": "464",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Agente Auxiliar de Fiscalía"
+  },
+  {
+    "orden": "465",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Agente del Ministerio Público Auxiliar de la Fiscalía"
+  },
+  {
+    "orden": "466",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Agente del Ministerio Público R-1"
+  },
+  {
+    "orden": "467",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Agente del Ministerio Público Visitadora,or"
+  },
+  {
+    "orden": "468",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Analista Especializada,o 'C' de Gobierno"
+  },
+  {
+    "orden": "469",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Asesora,or 'B' de Subsecretaria,o"
+  },
+  {
+    "orden": "470",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Asesora,or 'D' de Secretaria,o "
+  },
+  {
+    "orden": "471",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Auditora,or 'A' de Contraloría"
+  },
+  {
+    "orden": "472",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Auxiliar de Asesora,or de Fiscal General"
+  },
+  {
+    "orden": "473",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Auxiliar de Asesora,or de Secretaria,o"
+  },
+  {
+    "orden": "474",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Ayudante 'A' de Seguridad"
+  },
+  {
+    "orden": "475",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Choferesa,Chofer de Jefa,e de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "476",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Choferesa,Chofer de Secretaria,o"
+  },
+  {
+    "orden": "477",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Choferesa,Chofer de Subsecretaria,o General"
+  },
+  {
+    "orden": "478",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Comandante"
+  },
+  {
+    "orden": "479",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Coordinadora,or de Instalaciones Deportivas"
+  },
+  {
+    "orden": "480",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Decreto 86-C"
+  },
+  {
+    "orden": "481",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Escolta 'A' "
+  },
+  {
+    "orden": "482",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Escolta 'B' "
+  },
+  {
+    "orden": "483",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Inspectora,or General"
+  },
+  {
+    "orden": "484",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Jefa,e 'A' de Proyecto de Gubernatura"
+  },
+  {
+    "orden": "485",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Jefa,e de Proyecto de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "486",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Lideresa,Líder 'A' de Proyecto"
+  },
+  {
+    "orden": "487",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Mecánica,o 'A' de Aeronave "
+  },
+  {
+    "orden": "488",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Oficial Conciliadora,or"
+  },
+  {
+    "orden": "489",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Secretaria,o de Secretaria,o"
+  },
+  {
+    "orden": "490",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Secretaria,o del Secretaria,o Técnica,o del Gabinete"
+  },
+  {
+    "orden": "491",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Supervisora,or Especializada,o de Avance de Obra"
+  },
+  {
+    "orden": "492",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "25",
+    "funcional": "Supervisora,or Técnica,o de Aeronaves"
+  },
+  {
+    "orden": "493",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Analista Especializada,o 'B' de Gobierno"
+  },
+  {
+    "orden": "494",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Analista Especializada,o 'C' "
+  },
+  {
+    "orden": "495",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Analista Especializada,o de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "496",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Analista Especializada,o de Unidad de Calidad"
+  },
+  {
+    "orden": "497",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Asesora,or 'A' de Subsecretaria,o"
+  },
+  {
+    "orden": "498",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Asesora,or 'C' de Coordinadora,or General"
+  },
+  {
+    "orden": "499",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Asesora,or 'C' de Secretaria,o "
+  },
+  {
+    "orden": "500",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Comisaria,o"
+  },
+  {
+    "orden": "501",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Copiloto de Aeronave"
+  },
+  {
+    "orden": "502",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Decreto 86-A"
+  },
+  {
+    "orden": "503",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Directora,or 'B' de Museo"
+  },
+  {
+    "orden": "504",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Escolta"
+  },
+  {
+    "orden": "505",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Jefa,e de Grupo Táctico "
+  },
+  {
+    "orden": "506",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Jefa,e de Operaciones Aeronáuticas"
+  },
+  {
+    "orden": "507",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Supervisora,or de Informática"
+  },
+  {
+    "orden": "508",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "26",
+    "funcional": "Supervisora,or Especializada,o de Auditoría"
+  },
+  {
+    "orden": "509",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Analista Especializada,o 'B' "
+  },
+  {
+    "orden": "510",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Asesora,or 'B' de Coordinadora,or General"
+  },
+  {
+    "orden": "511",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Asesora,or 'B' de Secretaria,o"
+  },
+  {
+    "orden": "512",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Choferesa,Chofer de C. Gobernadora,or"
+  },
+  {
+    "orden": "513",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Coordinadora,or Auxiliar de Unidad de Secretaría Técnica del Gabinete"
+  },
+  {
+    "orden": "514",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Decreto 86-B"
+  },
+  {
+    "orden": "515",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Directora,or 'A' de Museo"
+  },
+  {
+    "orden": "516",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Jefa,e de Ayudantes 'B'"
+  },
+  {
+    "orden": "517",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Jefa,e de Grupo 'B'  "
+  },
+  {
+    "orden": "518",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Jefa,e de Grupo Multidisciplinario"
+  },
+  {
+    "orden": "519",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Lideresa,Líder 'A' de Proyecto de Gubernatura"
+  },
+  {
+    "orden": "520",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "27",
+    "funcional": "Lideresa,Líder de Proyecto de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "521",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Administradora,or de Seguridad Aérea"
+  },
+  {
+    "orden": "522",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Analista Especializada,o 'A' "
+  },
+  {
+    "orden": "523",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Analista Especializada,o 'A' de Gobierno"
+  },
+  {
+    "orden": "524",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Analista Especializada,o 'A' de Servicios Aéreos"
+  },
+  {
+    "orden": "525",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Asesora,or 'A' de Coordinadora,or General"
+  },
+  {
+    "orden": "526",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Asesora,or 'A' de Secretaria,o"
+  },
+  {
+    "orden": "527",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Asesora,or de Subsecretaria,o General"
+  },
+  {
+    "orden": "528",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Coordinadora,or de Asesoras,es de Subsecretaría"
+  },
+  {
+    "orden": "529",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Coordinadora,or de Seguimiento de Asuntos de Subsecretaría de Administración "
+  },
+  {
+    "orden": "530",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Decreto 86-D"
+  },
+  {
+    "orden": "531",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Escolta de Ayudantías"
+  },
+  {
+    "orden": "532",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Jefa,e de Adiestramiento Aeronáutico"
+  },
+  {
+    "orden": "533",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Jefa,e de Ayudantes 'A' "
+  },
+  {
+    "orden": "534",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Jefa,e de Grupo 'A'"
+  },
+  {
+    "orden": "535",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Jefa,e de Mantenimiento Aeronáutico"
+  },
+  {
+    "orden": "536",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Jefa,e de Pilotos de Aeronave"
+  },
+  {
+    "orden": "537",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Jefa,e de Unidad de Rescate"
+  },
+  {
+    "orden": "538",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Piloto de Aeronave Bimotor 'A'"
+  },
+  {
+    "orden": "539",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Piloto de Aeronave Bimotor 'B'"
+  },
+  {
+    "orden": "540",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Piloto de Aeronave Monomotor"
+  },
+  {
+    "orden": "541",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Piloto de Unidad de Rescate 'A'"
+  },
+  {
+    "orden": "542",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Piloto de Unidad de Rescate 'B'"
+  },
+  {
+    "orden": "543",
+    "jerarquia": "Enlace y Apoyo Técnico",
+    "nivel": "28",
+    "funcional": "Supervisora,or General de Hangar"
+  },
+  {
+    "orden": "544",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Administradora,or de Centro de Servicios Administrativos 'B'"
+  },
+  {
+    "orden": "545",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Administradora,or de Centro de Servicios Fiscales 'A'"
+  },
+  {
+    "orden": "546",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Coordinadora,or Regional de Defensoría para Víctimas y Ofendidos"
+  },
+  {
+    "orden": "547",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Coordinadora,or Regional de Defensoría Pública"
+  },
+  {
+    "orden": "548",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Delegada,o Administrativa,o 'B' de Dirección General"
+  },
+  {
+    "orden": "549",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Delegada,o Regional 'B' de Contraloría  "
+  },
+  {
+    "orden": "550",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Directora,or de Colegio de Policía"
+  },
+  {
+    "orden": "551",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Jefa,e de Departamento "
+  },
+  {
+    "orden": "552",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Jefa,e de Unidad de Apoyo Administrativo de Instituto Mexiquense de Seguridad y Justicia"
+  },
+  {
+    "orden": "553",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Jefa,e de Unidad de Comisión Ejecutiva"
+  },
+  {
+    "orden": "554",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Jefa,e de Unidad de Consejo Estatal de Población"
+  },
+  {
+    "orden": "555",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Jefa,e de Unidad del TJAEM"
+  },
+  {
+    "orden": "556",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Residente Local de Desarrollo Urbano"
+  },
+  {
+    "orden": "557",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Secretaria,o Auxiliar del Tribunal Estatal de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "558",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Secretaria,o Particular de Directora,or General"
+  },
+  {
+    "orden": "559",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Secretaria,o Particular de Fiscal Especial de FGJ"
+  },
+  {
+    "orden": "560",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Secretaria,o Particular de Fiscal Regional de FGJ"
+  },
+  {
+    "orden": "561",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Secretaria,o Particular de Jefa,e de Unidad de Fiscalía"
+  },
+  {
+    "orden": "562",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Secretaria,o Particular de Secretaria,o Técnica,o de Consejo Estatal de Población"
+  },
+  {
+    "orden": "563",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Secretaria,o Particular de Visitadora,or General"
+  },
+  {
+    "orden": "564",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Subdelegada,o Regional de Desarrollo Agropecuario "
+  },
+  {
+    "orden": "565",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Subdelegada,o Regional de Movilidad"
+  },
+  {
+    "orden": "566",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Titular del Órgano Interno de Control del Instituto Mexiquense de Seguridad y Justicia"
+  },
+  {
+    "orden": "567",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "26",
+    "funcional": "Visitadora,or Jurisdiccional del TJAEM"
+  },
+  {
+    "orden": "568",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Administradora,or de Centro de Servicios Administrativos 'A'"
+  },
+  {
+    "orden": "569",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Coordinadora,or General de Agentes del Ministerio Público Auxiliares del Fiscal"
+  },
+  {
+    "orden": "570",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Coordinadora,or Musical"
+  },
+  {
+    "orden": "571",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Delegada,o Administrativa,o 'A' de Dirección General"
+  },
+  {
+    "orden": "572",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Delegada,o Administrativa,o de Consejo Estatal de Población"
+  },
+  {
+    "orden": "573",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Delegada,o Administrativa,o de Secretariado Ejecutivo del SESP"
+  },
+  {
+    "orden": "574",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Delegada,o Administrativa,o de Subsecretaría"
+  },
+  {
+    "orden": "575",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Delegada,o de Fiscalización"
+  },
+  {
+    "orden": "576",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Delegada,o Fiscal 'B'  "
+  },
+  {
+    "orden": "577",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Delegada,o Regional de Contraloría  "
+  },
+  {
+    "orden": "578",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Delegada,o Regional de Movilidad 'B' "
+  },
+  {
+    "orden": "579",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Directora,or de Coro OSEM"
+  },
+  {
+    "orden": "580",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Directora,or de Escuela Normal"
+  },
+  {
+    "orden": "581",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Directora,or de Orquesta Mexiquense"
+  },
+  {
+    "orden": "582",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Jefa,e de Unidad 'A' de TJAEM"
+  },
+  {
+    "orden": "583",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Jefa,e de Unidad de Apoyo Administrativo"
+  },
+  {
+    "orden": "584",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Jefa,e de Unidad de Dirección General"
+  },
+  {
+    "orden": "585",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Jefa,e de Unidad de Secretaría de Seguridad"
+  },
+  {
+    "orden": "586",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Jefa,e de Unidad de Secretariado Ejecutivo del SESP"
+  },
+  {
+    "orden": "587",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Jefa,e de Unidad de Subsecretaría"
+  },
+  {
+    "orden": "588",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Jefa,e de Unidad Jurídica de Turismo y Desarrollo Artesanal"
+  },
+  {
+    "orden": "589",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Magistrada,o Jurisdiccional Consultiva,o del TJAEM"
+  },
+  {
+    "orden": "590",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Presidenta,e de la Junta Especial de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "591",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Residente Regional de Desarrollo Urbano"
+  },
+  {
+    "orden": "592",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Residente Regional de Obras Públicas"
+  },
+  {
+    "orden": "593",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o General de Acuerdos del TJAEM"
+  },
+  {
+    "orden": "594",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o General del Pleno del TJAEM"
+  },
+  {
+    "orden": "595",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o General del Tribunal Estatal de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "596",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular Adjunta,o de Fiscal General"
+  },
+  {
+    "orden": "597",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular Adjunta,o de Secretaria,o"
+  },
+  {
+    "orden": "598",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular Adjunta.o de Coordinadora,or General"
+  },
+  {
+    "orden": "599",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular de Comisaria,o General de la Policía Ministerial"
+  },
+  {
+    "orden": "600",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular de Coordinadora,or de FGJ"
+  },
+  {
+    "orden": "601",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular de Coordinadora,or de Fomento Económico y Competitividad"
+  },
+  {
+    "orden": "602",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular de Directora,or General de Personal"
+  },
+  {
+    "orden": "603",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular de Fiscal Central"
+  },
+  {
+    "orden": "604",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular de Presidenta,e de Consejo Consultivo"
+  },
+  {
+    "orden": "605",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular de Presidenta,e del TJAEM"
+  },
+  {
+    "orden": "606",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular de Secretaria,o Ejecutiva,o del SESP"
+  },
+  {
+    "orden": "607",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Secretaria,o Particular de Subsecretaria,o"
+  },
+  {
+    "orden": "608",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Subcontralora,or Interna,o"
+  },
+  {
+    "orden": "609",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Subdirectora,or "
+  },
+  {
+    "orden": "610",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Subprocuradora,or de la Defensa del Trabajo"
+  },
+  {
+    "orden": "611",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "27",
+    "funcional": "Titular del Órgano Interno de Control de la JLCA"
+  },
+  {
+    "orden": "612",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Administradora,or de Casa Estado de México"
+  },
+  {
+    "orden": "613",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Coordinadora,or 'B' de Estudios y Proyectos Especiales"
+  },
+  {
+    "orden": "614",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Coordinadora,or Administrativa,o"
+  },
+  {
+    "orden": "615",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Coordinadora,or de Acervo Cultural"
+  },
+  {
+    "orden": "616",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Coordinadora,or de Actividades Culturales"
+  },
+  {
+    "orden": "617",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Coordinadora,or de Apoyo Técnico"
+  },
+  {
+    "orden": "618",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Coordinadora,or de Control de Gestión"
+  },
+  {
+    "orden": "619",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Coordinadora,or Estatal de Lactancia Materna y Bancos de Leche"
+  },
+  {
+    "orden": "620",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Delegada,o Fiscal 'A'  "
+  },
+  {
+    "orden": "621",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Delegada,o Regional de Desarrollo Agropecuario"
+  },
+  {
+    "orden": "622",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Delegada,o Regional de Movilidad 'A'"
+  },
+  {
+    "orden": "623",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Directora,or de Área"
+  },
+  {
+    "orden": "624",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Directora,or de Centro Preventivo y de Readaptación Social"
+  },
+  {
+    "orden": "625",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Directora,or de Operaciones de Servicios Aéreos"
+  },
+  {
+    "orden": "626",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Jefa,e de Unidad 'A' de Fiscalía"
+  },
+  {
+    "orden": "627",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Jefa,e de Unidad 'B' de Coordinación General"
+  },
+  {
+    "orden": "628",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Jefa,e de Unidad de Consejería Jurídica"
+  },
+  {
+    "orden": "629",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Jefa,e de Unidad de Oficina de Secretaria,o"
+  },
+  {
+    "orden": "630",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Jefa,e de Unidad de Subsecretaría de Agua y Obra Pública"
+  },
+  {
+    "orden": "631",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Jefa,e de Unidad de Subsecretaría de Comunicaciones"
+  },
+  {
+    "orden": "632",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Presidenta,e de Sala Auxiliar del Tribunal Estatal de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "633",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o General de la Junta Local de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "634",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Particular de Consejera,o Jurídica,o"
+  },
+  {
+    "orden": "635",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Particular de Coordinadora,or General"
+  },
+  {
+    "orden": "636",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Particular de Jefatura de la Oficina de la Gubernatura"
+  },
+  {
+    "orden": "637",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Particular de Secretaria,o"
+  },
+  {
+    "orden": "638",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Particular de Subsecretaría de Agua y Obra Pública"
+  },
+  {
+    "orden": "639",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Particular de Subsecretaría de Comunicaciones"
+  },
+  {
+    "orden": "640",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Particular de Subsecretaría,o de Administración"
+  },
+  {
+    "orden": "641",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Particular de Subsecretaria,o General"
+  },
+  {
+    "orden": "642",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Privada,o de C. Gobernadora,or "
+  },
+  {
+    "orden": "643",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Técnica,o de Comisión Ejecutiva"
+  },
+  {
+    "orden": "644",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Secretaria,o Técnica,o de Consejo Consultivo"
+  },
+  {
+    "orden": "645",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Subcoordinadora,or de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "646",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "28",
+    "funcional": "Titular del Órgano Interno de Control "
+  },
+  {
+    "orden": "647",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Cajera,o General"
+  },
+  {
+    "orden": "648",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Contadora,or General de Gobierno"
+  },
+  {
+    "orden": "649",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or Administrativa,o 'E' "
+  },
+  {
+    "orden": "650",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or Administrativa,o de Secretaría Técnica del Gabinete"
+  },
+  {
+    "orden": "651",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Ayudantías "
+  },
+  {
+    "orden": "652",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de CCMB"
+  },
+  {
+    "orden": "653",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Control de Gestión 'E'"
+  },
+  {
+    "orden": "654",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Delegaciones Regionales de Desarrollo Agropecuario"
+  },
+  {
+    "orden": "655",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Estudios y Proyectos Especiales"
+  },
+  {
+    "orden": "656",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Grupos Tácticos"
+  },
+  {
+    "orden": "657",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Políticas Transversales de Gobernabilidad"
+  },
+  {
+    "orden": "658",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Seguimiento y Evaluación"
+  },
+  {
+    "orden": "659",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Servicios Aéreos"
+  },
+  {
+    "orden": "660",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Unidad 'E' de Oficina de Secretaria,o"
+  },
+  {
+    "orden": "661",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "662",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or del Programa de Apoyo a la Comunidad"
+  },
+  {
+    "orden": "663",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or General de Conservación Ecológica"
+  },
+  {
+    "orden": "664",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or General de Servicios Periciales"
+  },
+  {
+    "orden": "665",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or Regional de Desarrollo Social"
+  },
+  {
+    "orden": "666",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or Regional de Gobierno"
+  },
+  {
+    "orden": "667",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Coordinadora,or Técnica,o y de Gestión"
+  },
+  {
+    "orden": "668",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Directora,or General"
+  },
+  {
+    "orden": "669",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Fiscal Especial de FGJ"
+  },
+  {
+    "orden": "670",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Jefa,e de la Oficina de Enlace de la UAAG"
+  },
+  {
+    "orden": "671",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Jefa,e de Unidad 'E' de Consejería Jurídica"
+  },
+  {
+    "orden": "672",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Jefa,e de Unidad 'E' de Oficina de Secretaria,o"
+  },
+  {
+    "orden": "673",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Jefa,e de Unidad de Apoyo Técnico Financiero"
+  },
+  {
+    "orden": "674",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Jefa,e de Unidad de Coordinación General"
+  },
+  {
+    "orden": "675",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Jefa,e de Unidad de Fiscalía"
+  },
+  {
+    "orden": "676",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Jefa,e de Unidad de Secretaría de Finanzas"
+  },
+  {
+    "orden": "677",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Magistrada,o de Sala Regional del TJAEM"
+  },
+  {
+    "orden": "678",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Presidenta,e del Tribunal Estatal de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "679",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Procuradora,or de la Defensa del Trabajo"
+  },
+  {
+    "orden": "680",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Procuradora,or Fiscal"
+  },
+  {
+    "orden": "681",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Secretaria,o Ejecutiva,o del Consejo Coordinador de Seguridad Pública"
+  },
+  {
+    "orden": "682",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Secretaria,o Ejecutiva,o del SEPINNA"
+  },
+  {
+    "orden": "683",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Secretaria,o Particular 'E' de Secretaria,o"
+  },
+  {
+    "orden": "684",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Secretaria,o Particular de Fiscal General"
+  },
+  {
+    "orden": "685",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Secretaria,o Particular de Secretaria,o Técnica,o del Gabinete"
+  },
+  {
+    "orden": "686",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Secretaria,o Particular de Subsecretaria,o General de Gobierno"
+  },
+  {
+    "orden": "687",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Secretaria,o Técnica,o de Secretaría de Obra Pública"
+  },
+  {
+    "orden": "688",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Secretaria,o Técnica,o del Consejo Estatal de Población"
+  },
+  {
+    "orden": "689",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "Titular del Órgano Interno de Control 'E'"
+  },
+  {
+    "orden": "690",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29 T",
+    "funcional": "Magistrada,o de Sala Regional del Tribunal de lo Contencioso Administrativo"
+  },
+  {
+    "orden": "691",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Comisionada,o Ejecutiva,o"
+  },
+  {
+    "orden": "692",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Coordinadora,or Administrativa,o de la Secretaría General de Gobierno"
+  },
+  {
+    "orden": "693",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Coordinadora,or de Fomento Económico y Competitividad"
+  },
+  {
+    "orden": "694",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Coordinadora,or de General FGJ"
+  },
+  {
+    "orden": "695",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Coordinadora,or de Hospitales de Alta Especialidad"
+  },
+  {
+    "orden": "696",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Coordinadora,or Estatal del Servicio Profesional Docente"
+  },
+  {
+    "orden": "697",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Coordinadora,or General"
+  },
+  {
+    "orden": "698",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Coordinadora,or General de la Policía de Investigación"
+  },
+  {
+    "orden": "699",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Coordinadora,or General de Protección Civil"
+  },
+  {
+    "orden": "700",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Coordinadora,or Operativa,o de Comunicación Social"
+  },
+  {
+    "orden": "701",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Fiscal Central"
+  },
+  {
+    "orden": "702",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Fiscal Especial en Combate a la Corrupción"
+  },
+  {
+    "orden": "703",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Fiscal Regional de FGJ"
+  },
+  {
+    "orden": "704",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Jefa,e de Oficina Ejecutiva de Secretaría de Salud"
+  },
+  {
+    "orden": "705",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Jefa,e de Unidad 'E' de Secretaría de Finanzas"
+  },
+  {
+    "orden": "706",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Jefa,e de Unidad de Apoyo a la Administración General"
+  },
+  {
+    "orden": "707",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Magistrada,o de Sala Superior del TJAEM"
+  },
+  {
+    "orden": "708",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Magistrada,o de Sala Superior del TJAEM"
+  },
+  {
+    "orden": "709",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Oficial Mayor"
+  },
+  {
+    "orden": "710",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Presidenta,e de la Junta Local de Conciliación y Arbitraje"
+  },
+  {
+    "orden": "711",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Procuradora,or de Protección al Ambiente"
+  },
+  {
+    "orden": "712",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Secretaria,o Auxiliar de C. Gobernadora,or"
+  },
+  {
+    "orden": "713",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Secretaria,o Ejecutiva,o del Sistema Estatal de Seguridad Pública"
+  },
+  {
+    "orden": "714",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Secretaria,o Particular Adjunta,o de C. Gobernadora,or"
+  },
+  {
+    "orden": "715",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Subsecretaria,o"
+  },
+  {
+    "orden": "716",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30",
+    "funcional": "Vicepresidenta,e del TJAEM"
+  },
+  {
+    "orden": "717",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30 T",
+    "funcional": "Magistrada,o de Sala Superior del Tribunal de lo Contencioso Administrativo"
+  },
+  {
+    "orden": "718",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30 BIS",
+    "funcional": "Presidenta,e del Consejo Mexiquense de Infraestructura y Desarrollo Social"
+  },
+  {
+    "orden": "719",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30 BIS",
+    "funcional": "Subsecretaria,o General de Educación"
+  },
+  {
+    "orden": "720",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30 BIS",
+    "funcional": "Subsecretaria,o General de Gobierno"
+  },
+  {
+    "orden": "721",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "30 BIS",
+    "funcional": "Visefiscal General"
+  },
+  {
+    "orden": "722",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31",
+    "funcional": "Consejera,o Jurídica,o"
+  },
+  {
+    "orden": "723",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31",
+    "funcional": "Coordinadora,or General de Comunicación Social"
+  },
+  {
+    "orden": "724",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31",
+    "funcional": "Fiscal General de Justicia"
+  },
+  {
+    "orden": "725",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31",
+    "funcional": "Jefa,e de Oficina de Gubernatura"
+  },
+  {
+    "orden": "726",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31",
+    "funcional": "Presidenta,e del TJAEM"
+  },
+  {
+    "orden": "727",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31",
+    "funcional": "Secretaria,o "
+  },
+  {
+    "orden": "728",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31",
+    "funcional": "Secretaria,o Particular de C. Gobernadora,or"
+  },
+  {
+    "orden": "729",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31",
+    "funcional": "Secretaria,o Técnica,o del Gabinete"
+  },
+  {
+    "orden": "730",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31 BIS",
+    "funcional": "Secretaria,o General de Gobierno"
+  },
+  {
+    "orden": "731",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "32",
+    "funcional": "Gobernadora,or"
+  }
+]

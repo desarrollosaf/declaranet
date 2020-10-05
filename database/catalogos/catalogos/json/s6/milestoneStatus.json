@@ -1,0 +1,18 @@
+[
+    {
+        "clave": "scheduled",
+        "valor": "Programada"
+    },
+    {
+        "clave": "met",
+        "valor": "Cumplido"
+    },
+    {
+        "clave": "notMet",
+        "valor": "No ha sido alcanzado"
+    },
+    {
+        "clave": "partiallyMet",
+        "valor": "Ha sido parcialmente alcanzado"
+    }
+]

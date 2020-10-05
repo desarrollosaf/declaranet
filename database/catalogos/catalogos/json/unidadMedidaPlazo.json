@@ -1,0 +1,18 @@
+[
+    {
+	    "clave" : "ANIO",
+	    "valor" : "Años"
+    },
+    {
+	    "clave" : "MESS",
+	    "valor" : "Meses"
+    },
+    {
+	    "clave" : "SEMS",
+	    "valor" : "Semanas"
+    },
+    {
+	    "clave" : "DIAS",
+	    "valor" : "Días"
+    }
+]

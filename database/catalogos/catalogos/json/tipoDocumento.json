@@ -1,0 +1,18 @@
+[
+  {
+    "clave": "RE",
+    "valor": "RESOLUCION"
+  },
+  {
+    "clave": "CS",
+    "valor": "CONSTANCIA_SANCION"
+  },
+  {
+    "clave": "CI",
+    "valor": "CONSTANCIA_INHABILITACION"
+  },
+  {
+    "clave": "CA",
+    "valor": "CONSTANCIA_ABSTENCION"
+  }
+]

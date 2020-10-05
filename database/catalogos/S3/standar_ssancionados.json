@@ -1,0 +1,493 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "version" : "1.1.0",
+    "title" : "API de Registro de Servidores Públicos sancionados del Estado de México",
+    "description" : "Actualización 2020-08-11",
+    "contact" : {
+      "name" : "Jessica Irai Diaz Valverde",
+      "email" : "soporte.pde@sesaemm.gob.mx"
+    }
+  },
+  "externalDocs" : {
+    "description" : "Estándar de datos y catálogos",
+    "url" : "https://gitlab.com/plataformadigitalestataledomex/api_docs_pde"
+  },
+  "paths" : {
+    "/ssancionados" : {
+      "post" : {
+        "tags" : [ "ssancionados" ],
+        "summary" : "Muestra los Servidores públicos sancionados.",
+        "requestBody" : {
+          "description" : "Form para peticiones de filtros",
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "fechaCaptura" : {
+                    "type" : "string",
+                    "description" : "Fecha mayor o igual en la que se agrega o se modifica el registro. Contribución de la SECOGEM",
+                    "format": "date",
+                    "example" : "2019-08-20"
+                  },
+                  "limite_registros" : {
+                    "type" : "integer",
+                    "description" : "Indica el número de registros a mostrar por página",
+                    "minimum": 1,
+                    "example" : 11,
+                    "default": 10
+                  },
+                  "pagina" : {
+                    "type" : "integer",
+                    "minimum" : 1,
+                    "description" : "Indica la página que se requiere",
+                    "example" : 2,
+                    "default": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Respuesta exitosa",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ssancionados"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Error inesperado",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/resError"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "ssancionados_auth" : [ "read:ssancionados" ]
+        } ]
+      }
+    }
+  },
+  "components" : {
+    "securitySchemes" : {
+      "ssancionados_auth" : {
+        "type" : "oauth2",
+        "flows" : {
+          "password" : {
+            "tokenUrl" : "/oauth",
+            "scopes" : {
+              "read:ssancionados" : "Obtiene lista de servidores publicos sancionados"
+            }
+          }
+        }
+      }
+    },
+    "schemas" : {
+      "ssancionados" : {
+        "type" : "object",
+        "required" : [ "pagination", "results" ],
+        "properties" : {
+          "pagination" : {
+            "type" : "object",
+            "required" : [ "pageSize", "page", "totalRows", "hasNextPage" ],
+            "properties" : {
+              "pageSize" : {
+                "type" : "integer",
+                "minimum" : 1,
+                "description" : "Número de registros mostrados, por defecto muestra diez.",
+                "example" : 100
+              },
+              "page" : {
+                "type" : "integer",
+                "minimum" : 1,
+                "description" : "Número de página actual",
+                "example" : 20
+              },
+              "totalRows" : {
+                "type" : "integer",
+                "minimum" : 1,
+                "description" : "Total de registros",
+                "example" : 30
+              },
+              "hasNextPage" : {
+                "type" : "boolean",
+                "description" : "Indica si existe otra página",
+                "example" : true
+              }
+            }
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "required" : [ "metadata", "id", "fechaCaptura", "expediente", "institucionDependencia", "servidorPublicoSancionado", "autoridadSancionadora", "tipoFalta", "tipoSancion", "causaMotivoHechos", "resolucion", "multa", "inhabilitacion", "observaciones", "documentos" ],
+              "properties" : {
+                "metadata" : {
+                  "type" : "object",
+                  "required" : [ "actualizacion", "institucion", "contacto", "personaContacto" ],
+                  "properties" : {
+                    "actualizacion" : {
+                      "type" : "string",
+                      "format" : "date-time",
+                      "description" : "Fecha y hora en la que se realiza o actualiza el registro, en formato ISO 8601",
+                      "example" : "2017-07-21T17:32:28Z"
+                    },
+                    "institucion" : {
+                      "type" : "string",
+                      "description" : "Institución responsable del sistema de captura",
+                      "example" : "Secretaría de Educación Pública"
+                    },
+                    "contacto" : {
+                      "type" : "string",
+                      "format" : "email",
+                      "description" : "Correo de contacto de la persona resposanble del sistema de captura",
+                      "example" : "usuario@dominio.org"
+                    },
+                    "personaContacto" : {
+                      "type" : "string",
+                      "description" : "Nombre de la persona resposanble del sistema de captura",
+                      "example" : "José John"
+                    }
+                  }
+                },
+                "id" : {
+                  "type" : "string",
+                  "description" : "Dato que permita identificar de manera  unívoca al registro",
+                  "example" : "1"
+                },
+                "fechaCaptura" : {
+                  "type" : "string",
+                  "format" : "date-time",
+                  "description" : "La fecha y hora en la que se agrega o modifica el registro. Fecha en formato ISO 8601 (yyyy-MM-dd).",
+                  "example" : "2017-07-21T17:32:28Z"
+                },
+                "expediente" : {
+                  "type" : "string",
+                  "nullable" : true,
+                  "description" : "Número de Expediente del Procedimiento Administrativo de Responsabilidades",
+                  "example" : "ABC123"
+                },
+                "institucionDependencia" : {
+                  "type" : "object",
+                  "required" : [ "nombre", "siglas", "clave" ],
+                  "properties" : {
+                    "nombre" : {
+                      "type" : "string",
+                      "description" : "Nombre de la Institución o Dependencia a la que pertenece el Servidor Público Sancionado. Se obtiene del catálogo [entePublico.csv].",
+                      "example" : "Secretaría de Hacienda y Crédito Público"
+                    },
+                    "siglas" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "description" : "Siglas de la Institución o Dependencia a la que pertenece el Servidor Público Sancionado. Se obtiene del catálogo [entePublico.csv].",
+                      "example" : "SHCP"
+                    },
+                    "clave" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "description" : "Clave de la Institución o Dependencia a la que pertenece el Servidor Público Sancionado. Se obtiene del catálogo [entePublico.csv].",
+                      "example" : "TRE345"
+                    }
+                  }
+                },
+                "servidorPublicoSancionado" : {
+                  "type" : "object",
+                  "required" : [ "rfc", "curp", "nombres", "primerApellido", "segundoApellido", "genero", "puesto", "nivel" ],
+                  "properties" : {
+                    "rfc" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "description" : "RFC del Servidor Público con homoclave",
+                      "example" : "PAT21343213"
+                    },
+                    "curp" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "description" : "CURP del Servidor Público",
+                      "example" : "ABCD780814MDFAXL"
+                    },
+                    "nombres" : {
+                      "type" : "string",
+                      "description" : "Nombre(s) del Servidor Público Sancionado",
+                      "example" : "Carlos"
+                    },
+                    "primerApellido" : {
+                      "type" : "string",
+                      "description" : "Primer apellido del Servidor Público Sancionado",
+                      "example" : "Pérez"
+                    },
+                    "segundoApellido" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "description" : "Segundo apellido del Servidor Público Sancionado",
+                      "example" : "López"
+                    },
+                    "genero" : {
+                      "type" : "object",
+                      "required" : [ "clave", "valor" ],
+                      "properties" : {
+                        "clave" : {
+                          "type" : "string",
+                          "nullable" : true,
+                          "enum" : [ "F", "M", "O" ],
+                          "description" : "Genero del Servidor Público.\n  * `F` - FEMENINO \n  * `M` - MASCULINO\n  * `O` - OTRO\n Se obtiene del catálogo [genero.csv].",
+                          "example" : "M"
+                        },
+                        "valor" : {
+                          "type" : "string",
+                          "nullable" : true,
+                          "description" : "Valor del genero. Se obtiene del catálogo [genero.csv].",
+                          "example" : "MASCULINO"
+                        }
+                      }
+                    },
+                    "puesto" : {
+                      "type" : "string",
+                      "description" : "Puesto del Servidor Público Sancionado.Se obtiene del catálogo [puesto.csv].",
+                      "example" : "Director de área"
+                    },
+                    "nivel" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "description" : "Clave del nivel del puesto del Servidor Público Sancionado. Se obtiene del catálogo [puesto.csv].",
+                      "example" : "ABCD1234"
+                    }
+                  }
+                },
+                "autoridadSancionadora" : {
+                  "type" : "string",
+                  "nullable" : true,
+                  "description" : "Autoridad encarcada del proceso de sanción ",
+                  "example" : "Organo Interno de Control"
+                },
+                "tipoFalta" : {
+                  "description" : "Falta cometida por el servidor público",
+                  "type" : "object",
+                  "required" : [ "clave", "valor", "descripcion" ],
+                  "properties" : {
+                    "clave" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "enum" : [ "NAD", "VPC", "VLNP", "AUT", "CEX", "IDSP", "DCSP", "EIFM", "VDH", "AG", "ANG", "AC", "HSEX", "ASEX", "PEC", "DRP", "UII", "AFN", "ABCI", "CIND", "EOCI", "TINF", "ENCB", "DSCT", "OJUST", "OTRO" ],
+                      "description" : "Clave del tipo de falta cometida. Valores permitidos\n* `NAD` - NEGLIGENCIA ADMINISTRATIVA\n* `VPC` - VIOLACION PROCEDIMIENTOS DE CONTRATACION\n* `VLNP` - VIOLACION LEYES Y NORMATIVIDAD PRESUPUESTAL\n* `AUT` - ABUSO DE AUTORIDAD\n* `CEX` - COHECHO O EXTORSION\n* `IDSP` - INCUMPLIMIENTO EN DECLARACION DE SITUACION PATRIMONIAL\n* `DCSP` - DELITO COMETIDO POR SERVIDORES PUBLICOS\n* `EIFM` - EJERCICIO INDEBIDO DE SUS FUNCIONES EN MATERIA MIGRATORIA\n* `VDH` - VIOLACIÓN A LOS DERECHOS HUMANOS\n* `AG` - ADMINISTRATIVA GRAVE\n* `ANG` - ADMINISTRATIVA NO GRAVE\n* `AC` - ACTO DE CORRUPCIÓN\n* `HSEX` - COMETER O TOLERAR CONDUCTAS DE HOSTIGAMIENTO SEXUAL\n* `ASEX` - COMETER O TOLERAR CONDUCTAS DE ACOSO SEXUAL\n* `PEC` - PECULADO\n* `DRP` - DESVÍO DE RECURSOS PÚBLICOS\n* `UII` - UTILIZACIÓN INDEBIDA DE INFORMACIÓN\n* `AFN` - ABUSO DE FUNCIONES\n* `ABCI` - ACTUACIÓN BAJO CONFLICTO DE INTERÉS\n* `CIND` - CONTRATACIÓN INDEBIDA\n* `EOCI` - ENRIQUECIMIENTO OCULTO U OCULTAMIENTO DE CONFLICTO DE INTERÉS\n* `TINF` - TRÁFICO DE INFLUENCIAS\n* `ENCB` - ENCUBRIMIENTO\n* `DSCT` - DESACATO\n* `OJUST` -\tOBSTRUCCIÓN DE LA JUSTICIA\n* `OTRO` - OTRO  \nexample: AG\n Se obtiene del catálogo [tipoFalta.csv].",
+                      "example" : "AG"
+                    },
+                    "valor" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "description" : "Valor del tipo de falta. Se obtiene del catálogo [tipoFalta.csv].",
+                      "example" : "ADMINISTRATIVA GRAVE"
+                    },
+                    "descripcion" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "description" : "Descripción o nota aclaratoria.",
+                      "example" : "Administrativa grave"
+                    }
+                  }
+                },
+                "tipoSancion" : {
+                  "type" : "array",
+                  "description" : "La sanción impuesta al servidor público, puede ser más de una. Ej. Inhabilitado y Multado. En caso de ser OTRO, en el atributo valor se deberá enviar la cadena correspondiente.",
+                  "items" : {
+                    "type" : "object",
+                    "required" : [ "clave", "valor", "descripcion" ],
+                    "properties" : {
+                      "clave" : {
+                        "type" : "string",
+                        "nullable" : true,
+                        "enum" : [ "I", "M", "S", "D", "IRSC", "SE", "O" ],
+                        "description" : "Tipo de sanción aplicada. \n  * `I` - INHABILITADO \n  * `M` - MULTADO\n  * `S` - SUSPENSIÓN DEL EMPLEO, CARGO O COMISIÓN\n  * `D` - DESTITUCIÓN DEL EMPLO, CARGO O COMISIÓN\n  * `IRSC` - INDEMNIZACIÓN RESARCITORIA\n  * `SE` - SANCIÓN ECONÓMICA\n  * `O` - OTRO\n Se obtiene del catálogo [tipoSancion.csv].",
+                        "example" : "M"
+                      },
+                      "valor" : {
+                        "type" : "string",
+                        "nullable" : true,
+                        "description" : "Valor del tipo de sanción. Se obtiene del catálogo [tipoSancion.csv].",
+                        "example" : "MULTADO"
+                      },
+                      "descripcion" : {
+                        "type" : "string",
+                        "nullable": true,
+                        "description" : "Descripción o nota aclaratoria"
+                      }
+                    }
+                  },
+                  "example" : [ {
+                    "clave" : "O",
+                    "valor" : "AMONESTACIÓN"
+                  }, {
+                    "clave" : "M",
+                    "valor" : "MULTADO"
+                  } ]
+                },
+                "causaMotivoHechos" : {
+                  "type" : "string",
+                  "description" : "Causa o motivo de la sanción, ejemplo: Abuso de autoridad",
+                  "example" : "Abuso de autoridad"
+                },
+                "resolucion" : {
+                  "type" : "object",
+                  "required" : [ "url", "fechaResolucion" ],
+                  "properties" : {
+                    "url" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "description" : "URL que apunta al documento en formato digital de la resolución emitida por el correspondiente Organo Interno de Control",
+                      "example" : "https://ejemplo.mx/archivo/documento.pdf"
+                    },
+                    "fechaResolucion" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "format" : "date",
+                      "description" : "Fecha en la que se emite la resolución sancionatoria. Fecha en formato ISO 8601 (yyyy-MM-dd).",
+                      "example" : "2018-05-21"
+                    }
+                  }
+                },
+                "multa" : {
+                  "type" : "object",
+                  "required" : [ "monto", "moneda" ],
+                  "properties" : {
+                    "monto" : {
+                      "type" : "number",
+                      "format" : "float",
+                      "nullable" : true,
+                      "description" : "Monto de la multa expresado en la moneda origen",
+                      "example" : 30000.19
+                    },
+                    "moneda" : {
+                      "description" : "Tipo de moneda. Señalar tipo de moneda. Se obtiene del catálogo [moneda.csv].",
+                      "type" : "object",
+                      "required" : [ "clave", "valor" ],
+                      "properties" : {
+                        "clave" : {
+                          "type" : "string",
+                          "nullable" : true,
+                          "description" : "ISO 4217. Se obtiene del catálogo [moneda.csv].",
+                          "example" : "MXN"
+                        },
+                        "valor" : {
+                          "type" : "string",
+                          "nullable" : true,
+                          "description" : "Se obtiene del catálogo [moneda.csv].",
+                          "example" : "Peso Mexicano"
+                        }
+                      }
+                    }
+                  }
+                },
+                "inhabilitacion" : {
+                  "type" : "object",
+                  "required" : [ "plazo", "fechaInicial", "fechaFinal" ],
+                  "properties" : {
+                    "plazo" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "description" : "Plazo de la inhabilitación. Ej. 2 años",
+                      "example" : "3 meses"
+                    },
+                    "fechaInicial" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "format" : "date",
+                      "description" : "Fecha inicial de la inhabilitación. Fecha en formato ISO 8601 (yyyy-MM-dd).",
+                      "example" : "2018-08-17"
+                    },
+                    "fechaFinal" : {
+                      "type" : "string",
+                      "nullable" : true,
+                      "format" : "date",
+                      "description" : "Fecha final de la inhabilitación. Fecha en formato ISO 8601 (yyyy-MM-dd).",
+                      "example" : "2018-11-17"
+                    }
+                  }
+                },
+                "observaciones" : {
+                  "type" : "string",
+                  "nullable" : true,
+                  "description" : "Cualquier observación pertinente ",
+                  "example" : "ABC"
+                },
+                "documentos" : {
+                  "description" : "Es una sección que permite adjuntar referencias a cualquier documento que se considere de valor para transparentar el proceso de sanción.",
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "required" : [ "id", "tipo", "titulo", "descripcion", "url", "fecha" ],
+                    "properties" : {
+                      "id" : {
+                        "type" : "string",
+                        "nullable" : true,
+                        "description" : "Puede ser el folio del documento o al menos un consecutivo para identificar a los documentos en el registro.",
+                        "example" : "doc-1"
+                      },
+                      "tipo" : {
+                        "type" : "string",
+                        "nullable" : true,
+                        "description" : "Tipo de documento, Valores permitidos [\"RESOLUCION\", \"CONSTANCIA_SANCION\", \"CONSTANCIA_INHABILITACION\", \"CONSTANCIA_ABSTENCION\"]. Se obtiene del catálogo [tipoDocumento.csv].",
+                        "enum" : [ "RESOLUCION", "CONSTANCIA_SANCION", "CONSTANCIA_INHABILITACION", "CONSTANCIA_ABSTENCION" ],
+                        "example" : "CONSTANCIA_SANCION"
+                      },
+                      "titulo" : {
+                        "type" : "string",
+                        "nullable" : true,
+                        "description" : "Título del documento",
+                        "example" : "Constancia de sanción..."
+                      },
+                      "descripcion" : {
+                        "type" : "string",
+                        "nullable" : true,
+                        "description" : "Descripción del documento",
+                        "example" : "Descripción del documento"
+                      },
+                      "url" : {
+                        "type" : "string",
+                        "nullable" : true,
+                        "description" : "Hipervínculo al documento",
+                        "example" : "https://ejemplo.mx/archivo/documento.pdf"
+                      },
+                      "fecha" : {
+                        "type" : "string",
+                        "nullable" : true,
+                        "format" : "date",
+                        "description" : "Fecha del documento. Fecha en formato ISO 8601 (yyyy-MM-dd).",
+                        "example" : "2019-11-20"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "resError" : {
+        "description" : "Estos valores son definidos por el sistema del API.",
+        "required" : [ "code", "message" ],
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "description" : "Código alfa numérico del error de la consulta.",
+            "example" : "abc123"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "Texto descriptivo para el usuario final del error en la consulta",
+            "example" : "Error al formar la consulta, revise el formato de los campos."
+          }
+        }
+      }
+    }
+  }
+}

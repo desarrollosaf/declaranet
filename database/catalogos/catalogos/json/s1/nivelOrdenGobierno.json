@@ -1,0 +1,14 @@
+[
+  {
+    "clave": "FED",
+    "valor": "FEDERAL"
+  },
+  {
+    "clave": "EST",
+    "valor": "ESTATAL"
+  },
+  {
+    "clave": "MUN",
+    "valor": "MUNICIPAL/ALCALDÍA"
+  }
+]

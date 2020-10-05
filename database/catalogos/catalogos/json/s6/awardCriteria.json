@@ -1,0 +1,18 @@
+[
+    {
+        "clave": "priceOnly",
+        "valor": "Sólo precio"
+    },
+    {
+        "clave": "costOnly",
+        "valor": "Únicamente costo"
+    },
+    {
+        "clave": "qualityOnly",
+        "valor": "Únicamente calidad"
+    },
+    {
+        "clave": "ratedCriteria",
+        "valor": "Criterios calificados"
+    }
+]

@@ -1,0 +1,812 @@
+[
+  {
+    "orden": "001",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "NYIXH",
+    "funcional": "Analista"
+  },
+  {
+    "orden": "002",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "64RIZ",
+    "funcional": "Analista 'D'"
+  },
+  {
+    "orden": "003",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "0MAG0",
+    "funcional": "Analista Auxiliar"
+  },
+  {
+    "orden": "004",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "YQJEI",
+    "funcional": "Analista de Ofertas"
+  },
+  {
+    "orden": "005",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "ODOHN",
+    "funcional": "Analista Especializado"
+  },
+  {
+    "orden": "006",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "VGWTZ",
+    "funcional": "Analista Financiero"
+  },
+  {
+    "orden": "007",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "9K4S9",
+    "funcional": "Apoyo a las Adquisiciones"
+  },
+  {
+    "orden": "008",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "EKGI2",
+    "funcional": "Apoyo Administrativo"
+  },
+  {
+    "orden": "009",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "HNDJ4",
+    "funcional": "Apoyo Administrativo en Salud"
+  },
+  {
+    "orden": "010",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "RAXJ3",
+    "funcional": "Asesor"
+  },
+  {
+    "orden": "011",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "PFVKP",
+    "funcional": "Asesor Academico"
+  },
+  {
+    "orden": "012",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "TVZ94",
+    "funcional": "Asesor de la Unidad de Administración y Finanzas"
+  },
+  {
+    "orden": "013",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "0L3AS",
+    "funcional": "Asesor Tecnico"
+  },
+  {
+    "orden": "014",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "2BT1Q",
+    "funcional": "Auxiliar Academico"
+  },
+  {
+    "orden": "015",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "07G26",
+    "funcional": "Auxiliar Administrativa,o"
+  },
+  {
+    "orden": "016",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "ADM2A",
+    "funcional": "Auxiliar en Arrendamiento de Inmuebles"
+  },
+  {
+    "orden": "017",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "EPX3V",
+    "funcional": "Auxiliar Tecnico Administrativo"
+  },
+  {
+    "orden": "018",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "P3JUK",
+    "funcional": "Auxiliar Tecnico Juridico"
+  },
+  {
+    "orden": "019",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "AYV16",
+    "funcional": "Contrataciones Publicas"
+  },
+  {
+    "orden": "020",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "JX9IZ",
+    "funcional": "Coordinador"
+  },
+  {
+    "orden": "021",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "UGCC5",
+    "funcional": "Coordinador Administrativo del Área de Adquisiciones"
+  },
+  {
+    "orden": "022",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "RFXF7",
+    "funcional": "Coordinador de Administración y Finanzas"
+  },
+  {
+    "orden": "023",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "PUYKJ",
+    "funcional": "Coordinador de Estudios y Proyectos Especiales"
+  },
+  {
+    "orden": "024",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "WSY2Y",
+    "funcional": "Coordinador de Política Regional"
+  },
+  {
+    "orden": "025",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "IAQLX",
+    "funcional": "Coordinador de Recursos Humanos y Materiales"
+  },
+  {
+    "orden": "026",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "569XM",
+    "funcional": "Coordinador de Salud"
+  },
+  {
+    "orden": "027",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "QEC4Y",
+    "funcional": "Coordinador Planeación Programación"
+  },
+  {
+    "orden": "028",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "G1ES0",
+    "funcional": "Coordinadora de Programa"
+  },
+  {
+    "orden": "029",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "6M3H8",
+    "funcional": "Coordinadora Juridica y de Legislacion"
+  },
+  {
+    "orden": "030",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "143LB",
+    "funcional": "Delegada Administrativa"
+  },
+  {
+    "orden": "031",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "GYGIA",
+    "funcional": "Delegado Administrativo"
+  },
+  {
+    "orden": "032",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "4K08I",
+    "funcional": "Director"
+  },
+  {
+    "orden": "033",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "8OL1B",
+    "funcional": "Director de Área"
+  },
+  {
+    "orden": "034",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "50OOO",
+    "funcional": "Director de Finanzas"
+  },
+  {
+    "orden": "035",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "9BKIZ",
+    "funcional": "Director de Informacion y Planeacion"
+  },
+  {
+    "orden": "036",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "WS006",
+    "funcional": "Director de Supervision y Control"
+  },
+  {
+    "orden": "037",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "UNOWL",
+    "funcional": "Director Escolar"
+  },
+  {
+    "orden": "038",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "SHWZM",
+    "funcional": "Director Escolar Pre Primaria"
+  },
+  {
+    "orden": "039",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "54JF3",
+    "funcional": "Director General"
+  },
+  {
+    "orden": "040",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "RG2EY",
+    "funcional": "Director General de Administración"
+  },
+  {
+    "orden": "041",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "CXA1N",
+    "funcional": "Directora de Área"
+  },
+  {
+    "orden": "042",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "TNDCQ",
+    "funcional": "Directora General"
+  },
+  {
+    "orden": "043",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "C5J8I",
+    "funcional": "Elaboración de Contrato-Pedido"
+  },
+  {
+    "orden": "044",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "RP4NM",
+    "funcional": "Elaboración y Trámite de Contratos"
+  },
+  {
+    "orden": "045",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "XMLUS",
+    "funcional": "Elaboración y Trámite de Fallos de Adjudicación y Contratos"
+  },
+  {
+    "orden": "046",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "JD0BS",
+    "funcional": "En Suplencia de la Subdirrecion de Eduación Especial"
+  },
+  {
+    "orden": "047",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "YAXZR",
+    "funcional": "Encargada de la Subdireccion"
+  },
+  {
+    "orden": "048",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "CMN2H",
+    "funcional": "Encargada del Área Administrativa"
+  },
+  {
+    "orden": "049",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "AP8GS",
+    "funcional": "Encargada del Área de Comunicacion Social"
+  },
+  {
+    "orden": "050",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "753VP",
+    "funcional": "Encargada del Área de Vinculacion"
+  },
+  {
+    "orden": "051",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "FOH5C",
+    "funcional": "Encargado Área de Carpinteria"
+  },
+  {
+    "orden": "052",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "ACLDF",
+    "funcional": "Encargado Área de Eventos y Reparación de Equipos de Oficina"
+  },
+  {
+    "orden": "053",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "YOLGG",
+    "funcional": "Encargado Área de Impresión"
+  },
+  {
+    "orden": "054",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "35493",
+    "funcional": "Encargado de Compras Solidarias"
+  },
+  {
+    "orden": "055",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "M7V3I",
+    "funcional": "Encargado del Área de Adecuaciones"
+  },
+  {
+    "orden": "056",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "DMIF6",
+    "funcional": "Encargado del Área de Gestión y Seguimiento"
+  },
+  {
+    "orden": "057",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "V1HY2",
+    "funcional": "Encargado del Área de Giras"
+  },
+  {
+    "orden": "058",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "ZIFR0",
+    "funcional": "Encargado del Área de Mantenimiento Vehicular"
+  },
+  {
+    "orden": "059",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "N8UT0",
+    "funcional": "Encargado del Despacho del Área de Mobiliario escolar"
+  },
+  {
+    "orden": "060",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "WAUJQ",
+    "funcional": "Estudio de Mercado y Cotizador"
+  },
+  {
+    "orden": "061",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "KGG71",
+    "funcional": "Hora clase 'B'"
+  },
+  {
+    "orden": "062",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "QILKK",
+    "funcional": "Horas clase 'A'"
+  },
+  {
+    "orden": "063",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "4T7I9",
+    "funcional": "Ingeniero Biomédico"
+  },
+  {
+    "orden": "064",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "2D9P7",
+    "funcional": "Investigador Educativo"
+  },
+  {
+    "orden": "065",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "0J8R8",
+    "funcional": "Jefa,e de Unidad de Apoyo Administrativo"
+  },
+  {
+    "orden": "066",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "5L55N",
+    "funcional": "Jefatura de Departamento"
+  },
+  {
+    "orden": "067",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "PHCSR",
+    "funcional": "Jefe de Área"
+  },
+  {
+    "orden": "068",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "S4FW2",
+    "funcional": "Jefe de Área (Bienes Patrimoniales)"
+  },
+  {
+    "orden": "069",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "JCYN9",
+    "funcional": "Jefe de Departamento"
+  },
+  {
+    "orden": "070",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "HXUXU",
+    "funcional": "Jefe de Departamento de Programas Compensatorios"
+  },
+  {
+    "orden": "071",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "23TEN",
+    "funcional": "Jefe De La Unidad de Apoyo Administratio"
+  },
+  {
+    "orden": "072",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "K2IXB",
+    "funcional": "Jefe de la Unidad de Desarrollo Administrativo e Informatica"
+  },
+  {
+    "orden": "073",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "LUZ6U",
+    "funcional": "Jefe de la unidad Jurídico Consultiva y Vocal del Comité de Adquisiciones y Servicios"
+  },
+  {
+    "orden": "074",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "8ID28",
+    "funcional": "Jefe de Unidad"
+  },
+  {
+    "orden": "075",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "QJWKR",
+    "funcional": "Jefe del Departamento"
+  },
+  {
+    "orden": "076",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "BPFS7",
+    "funcional": "Jefe del Departamento de Adquisiciones"
+  },
+  {
+    "orden": "077",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "Q02S7",
+    "funcional": "Jefe del Departamento de Apoyo a Comites"
+  },
+  {
+    "orden": "078",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "A7EUB",
+    "funcional": "Jefe del Departamento de Concursos, Contratos y Estimaciones"
+  },
+  {
+    "orden": "079",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "D0V6C",
+    "funcional": "Jefe del Departamento de Contratos y Seguimiento de Pedidos"
+  },
+  {
+    "orden": "080",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "8S6UB",
+    "funcional": "Lider 'A' de Proyecto"
+  },
+  {
+    "orden": "081",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "PQZFR",
+    "funcional": "Miembro Ex Oficio"
+  },
+  {
+    "orden": "082",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "G2O7I",
+    "funcional": "Orientador Técnico (responsable de siniestro de vehiculos"
+  },
+  {
+    "orden": "083",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "4UR43",
+    "funcional": "Pedagogo 'A'"
+  },
+  {
+    "orden": "084",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "IJWUT",
+    "funcional": "Profesor Estudiante"
+  },
+  {
+    "orden": "085",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "E66XU",
+    "funcional": "Profesor Pasante"
+  },
+  {
+    "orden": "086",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "KCYOL",
+    "funcional": "Profesor Telesecundaria Pasante"
+  },
+  {
+    "orden": "087",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "GB2G5",
+    "funcional": "Profesor Telesecundaria Titulado"
+  },
+  {
+    "orden": "088",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "S6LXN",
+    "funcional": "Profesor Titulado"
+  },
+  {
+    "orden": "089",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "V1I2V",
+    "funcional": "Profesor Titulado (responsable de siniestros de vehículos)"
+  },
+  {
+    "orden": "090",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "4KU1O",
+    "funcional": "Promotor de Educacion Ambiental y Salud"
+  },
+  {
+    "orden": "091",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "RS3VW",
+    "funcional": "Residente de Obra"
+  },
+  {
+    "orden": "092",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "OS9OH",
+    "funcional": "Residente Regional"
+  },
+  {
+    "orden": "093",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "W09EL",
+    "funcional": "Responsable Administrativo"
+  },
+  {
+    "orden": "094",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "B9M6V",
+    "funcional": "Responsable de Área de Dictaminacion"
+  },
+  {
+    "orden": "095",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "348ZE",
+    "funcional": "Responsable de Automatizacion de Procesos y Gobierno Electronico"
+  },
+  {
+    "orden": "096",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "IY6QW",
+    "funcional": "Responsable de Bienes Inmuebles"
+  },
+  {
+    "orden": "097",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "L3TGP",
+    "funcional": "Responsable del Área"
+  },
+  {
+    "orden": "098",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "WGM6W",
+    "funcional": "Responsable del Área de Energia Electrica"
+  },
+  {
+    "orden": "099",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "2WP48",
+    "funcional": "Responsable del Área de Eventos"
+  },
+  {
+    "orden": "100",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "YGIC6",
+    "funcional": "Responsable del Área de Fotocopiado, Limpieza y Vigilancia"
+  },
+  {
+    "orden": "101",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "9EYEO",
+    "funcional": "Responsable del Área de Mantenimiento y Adecuaciones de Inmuebles"
+  },
+  {
+    "orden": "102",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "F3PIQ",
+    "funcional": "Responsable del Área de Personal"
+  },
+  {
+    "orden": "103",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "J5YKO",
+    "funcional": "Responsable del Área de Reparacion y Mantenimiento Vehicular"
+  },
+  {
+    "orden": "104",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "6M6VH",
+    "funcional": "Responsable del Área de Telefonia, Fumigaciones Estacionamiento y Correspondencia"
+  },
+  {
+    "orden": "105",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "I0NVO",
+    "funcional": "Responsable del Área Secretarial"
+  },
+  {
+    "orden": "106",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "S1AXD",
+    "funcional": "Secretaria 'E'"
+  },
+  {
+    "orden": "107",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "PKWQS",
+    "funcional": "Secretaria 'E' Administrativo"
+  },
+  {
+    "orden": "108",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "4S5DF",
+    "funcional": "Secretaria Particular"
+  },
+  {
+    "orden": "109",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "4X8G3",
+    "funcional": "Secretario Ejecutivo"
+  },
+  {
+    "orden": "110",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "AZC09",
+    "funcional": "Secretario Particular"
+  },
+  {
+    "orden": "111",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "681ZF",
+    "funcional": "Soporte Administrativo"
+  },
+  {
+    "orden": "112",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "A048Q",
+    "funcional": "Soporte Administrativo 'A'"
+  },
+  {
+    "orden": "113",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "OTVFV",
+    "funcional": "Soporte Administrativo 'C'"
+  },
+  {
+    "orden": "114",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "NEWF1",
+    "funcional": "Soporte Administrativo 'D'"
+  },
+  {
+    "orden": "115",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "KE8LA",
+    "funcional": "Soporte dministrativo 'B'  "
+  },
+  {
+    "orden": "116",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "B7KH5",
+    "funcional": "Subdirección de Infraestructura en Salud"
+  },
+  {
+    "orden": "117",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "G575X",
+    "funcional": "Subdirector"
+  },
+  {
+    "orden": "118",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "BM03X",
+    "funcional": "Subdirector Academico"
+  },
+  {
+    "orden": "119",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "KAQN9",
+    "funcional": "Subdirector Administrativo"
+  },
+  {
+    "orden": "120",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "O6GQZ",
+    "funcional": "Subdirector de Área"
+  },
+  {
+    "orden": "121",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "YGP85",
+    "funcional": "Subdirector de Construccion"
+  },
+  {
+    "orden": "122",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "I14OY",
+    "funcional": "Subdirector de Control de la Infraestructura"
+  },
+  {
+    "orden": "123",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "UY8BU",
+    "funcional": "Subdirector de Educacion Especial"
+  },
+  {
+    "orden": "124",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "9KLML",
+    "funcional": "Subdirector de la Subdirección de Recursos Materiales"
+  },
+  {
+    "orden": "125",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "US8U2",
+    "funcional": "Subdirector de Producción Editorial"
+  },
+  {
+    "orden": "126",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "D6A4L",
+    "funcional": "Subdirector de Recursos Materiales"
+  },
+  {
+    "orden": "127",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "M50H5",
+    "funcional": "Subdirector de Servicios Generales y Control Patrimonial"
+  },
+  {
+    "orden": "128",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "RTNG8",
+    "funcional": "Subdirector Juridico"
+  },
+  {
+    "orden": "129",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "PT8KM",
+    "funcional": "Subdirectora"
+  },
+  {
+    "orden": "130",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "DJWRY",
+    "funcional": "Subdirectora de Difusion y Distribucion"
+  },
+  {
+    "orden": "131",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "HD1MR",
+    "funcional": "Subdirectora de Escuelas Incorporadas"
+  },
+  {
+    "orden": "132",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "Y0L76",
+    "funcional": "Supervisor de Obra"
+  },
+  {
+    "orden": "133",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "4PJF6",
+    "funcional": "Supervisor Escolar"
+  },
+  {
+    "orden": "134",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "7W63Q",
+    "funcional": "Suplente de la Subdireccion de Telesecundarias"
+  },
+  {
+    "orden": "135",
+    "jerarquia": "SERVIDOR PUBLICO",
+    "nivel": "O4D4P",
+    "funcional": "Vocal Suplente de la Unidad Jurídico Consultiva"
+  }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "clave": "CPV",
+        "valor": "EC Common Procurement Vocabulary"
+    },
+    {
+        "clave": "CPVS",
+        "valor": "EC Common Procurement Vocabulary - Listas de Códigos Suplementarias"
+    },
+    {
+        "clave": "GSIN",
+        "valor": "Goods and Services Identification Number"
+    },
+    {
+        "clave": "UNSPSC",
+        "valor": "United Nations Standard Products and Services Code"
+    },
+    {
+        "clave": "CPC",
+        "valor": "Central Product Classification"
+    },
+    {
+        "clave": "OKDP",
+        "valor": "Russian National Classification of Products by Economic Activity (1994)"
+    },
+    {
+        "clave": "OKPD",
+        "valor": "Russian National Classification of Products by Economic Activity (2014)"
+    },
+    {
+        "clave": "CUCOP",
+        "valor": "Clasificador Único Mexicano de Contrataciones Públicas"
+    }
+]

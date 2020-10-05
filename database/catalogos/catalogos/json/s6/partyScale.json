@@ -1,0 +1,14 @@
+[
+    {
+        "clave": "micro",
+        "valor": "Micro empresa"
+    },
+    {
+        "clave": "sme",
+        "valor": "Pequeña o mediana empresa"
+    },
+    {
+        "clave": "large",
+        "valor": "Gran empresa"
+    }
+]

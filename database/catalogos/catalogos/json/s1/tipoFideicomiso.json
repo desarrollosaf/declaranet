@@ -1,0 +1,14 @@
+[
+  {
+    "clave": "PUB",
+    "valor": "PÚBLICO"
+  },
+  {
+    "clave": "PRI",
+    "valor": "PRIVADO"
+  },
+  {
+    "clave": "MIX",
+    "valor": "MIXTO"
+  }
+]

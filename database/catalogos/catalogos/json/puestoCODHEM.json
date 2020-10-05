@@ -1,0 +1,236 @@
+[
+  {
+    "orden": "001",
+    "jerarquia": "ENLACE Y APOYO TÉCNICO",
+    "nivel": "28",
+    "funcional": "ANALISTA ESPECIALIZADO A"
+  },
+  {
+    "orden": "002",
+    "jerarquia": "ENLACE Y APOYO TÉCNICO",
+    "nivel": "27",
+    "funcional": "ANALISTA ESPECIALIZADO B"
+  },
+  {
+    "orden": "003",
+    "jerarquia": "ENLACE Y APOYO TÉCNICO",
+    "nivel": "26",
+    "funcional": "ASESOR"
+  },
+  {
+    "orden": "004",
+    "jerarquia": "ENLACE Y APOYO TÉCNICO",
+    "nivel": "26",
+    "funcional": "ANALISTA ESPECIALIZADO C"
+  },
+  {
+    "orden": "005",
+    "jerarquia": "ENLACE Y APOYO TÉCNICO",
+    "nivel": "25",
+    "funcional": "LÍDER A DE PROYECTO"
+  },
+  {
+    "orden": "006",
+    "jerarquia": "ENLACE Y APOYO TÉCNICO",
+    "nivel": "24",
+    "funcional": "INSPECTOR PROYECTISTA"
+  },
+  {
+    "orden": "007",
+    "jerarquia": "ENLACE Y APOYO TÉCNICO",
+    "nivel": "24",
+    "funcional": "SECRETARIA DEL PRESIDENTE"
+  },
+  {
+    "orden": "008",
+    "jerarquia": "ENLACE Y APOYO TÉCNICO",
+    "nivel": "24",
+    "funcional": "JEFE A DE PROYECTO"
+  },
+  {
+    "orden": "009",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "31",
+    "funcional": "PRESIDENTE DE LA CODHEM"
+  },
+  {
+    "orden": "010",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "PRIMER VISITADOR GENERAL DE LA CODHEM"
+  },
+  {
+    "orden": "011",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "SECRETARIO GENERAL DE LA CODHEM"
+  },
+  {
+    "orden": "012",
+    "jerarquia": "Mandos Superiores",
+    "nivel": "29",
+    "funcional": "DIRECTOR GENERAL"
+  },
+  {
+    "orden": "013",
+    "jerarquia": "Mandos Medios",
+    "nivel": "28",
+    "funcional": "VISITADOR GENERAL DE LA CODHEM"
+  },
+  {
+    "orden": "014",
+    "jerarquia": "Mandos Medios",
+    "nivel": "28",
+    "funcional": "DIRECTOR DE ÁREA"
+  },
+  {
+    "orden": "015",
+    "jerarquia": "Mandos Medios",
+    "nivel": "28",
+    "funcional": "SECRETARIO PARTICULAR DEL PRESIDENTE DE LA CODHEM"
+  },
+  {
+    "orden": "016",
+    "jerarquia": "Mandos Medios",
+    "nivel": "27",
+    "funcional": "VISITADOR ADJUNTO DE LA CODHEM"
+  },
+  {
+    "orden": "017",
+    "jerarquia": "Mandos Medios",
+    "nivel": "27",
+    "funcional": "SUBDIRECTOR"
+  },
+  {
+    "orden": "018",
+    "jerarquia": "Mandos Medios",
+    "nivel": "26",
+    "funcional": "JEFE DE DEPARTAMENTO"
+  },
+  {
+    "orden": "019",
+    "jerarquia": "Administrativa",
+    "nivel": "23",
+    "funcional": "AUXILIAR ADMINISTRATIVO DE S.P.S."
+  },
+  {
+    "orden": "020",
+    "jerarquia": "Administrativa",
+    "nivel": "23",
+    "funcional": "JEFE DE ÁREA"
+  },
+  {
+    "orden": "021",
+    "jerarquia": "Administrativa",
+    "nivel": "22",
+    "funcional": "LÍDER B DE PROYECTO"
+  },
+  {
+    "orden": "022",
+    "jerarquia": "Administrativa",
+    "nivel": "21",
+    "funcional": "LÍDER C DE PROYECTO"
+  },
+  {
+    "orden": "023",
+    "jerarquia": "Administrativa",
+    "nivel": "20",
+    "funcional": "JEFE B DE PROYECTO"
+  },
+  {
+    "orden": "024",
+    "jerarquia": "Administrativa",
+    "nivel": "18",
+    "funcional": "ANALISTA A"
+  },
+  {
+    "orden": "025",
+    "jerarquia": "Administrativa",
+    "nivel": "17",
+    "funcional": "ANALISTA B"
+  },
+  {
+    "orden": "026",
+    "jerarquia": "Administrativa",
+    "nivel": "15",
+    "funcional": "ANALISTA C"
+  },
+  {
+    "orden": "027",
+    "jerarquia": "Administrativa",
+    "nivel": "11",
+    "funcional": "COTIZADOR"
+  },
+  {
+    "orden": "028",
+    "jerarquia": "Administrativa",
+    "nivel": "11",
+    "funcional": "ANALISTA AUXILIAR"
+  },
+  {
+    "orden": "029",
+    "jerarquia": "Administrativa",
+    "nivel": "8",
+    "funcional": "AUX MANTENIMIENTO GENERAL"
+  },
+  {
+    "orden": "030",
+    "jerarquia": "Administrativa",
+    "nivel": "8",
+    "funcional": "AUX ADMINISTRATIVO"
+  },
+  {
+    "orden": "031",
+    "jerarquia": "Administrativa",
+    "nivel": "5",
+    "funcional": "CAPTURISTA"
+  },
+  {
+    "orden": "032",
+    "jerarquia": "Secretarial",
+    "nivel": "22",
+    "funcional": "SECRETARIA DE OFICINA DE S.P.S."
+  },
+  {
+    "orden": "033",
+    "jerarquia": "Secretarial",
+    "nivel": "19",
+    "funcional": "SECRETARIA A"
+  },
+  {
+    "orden": "034",
+    "jerarquia": "Secretarial",
+    "nivel": "17",
+    "funcional": "SECRETARIA B"
+  },
+  {
+    "orden": "035",
+    "jerarquia": "Secretarial",
+    "nivel": "13",
+    "funcional": "SECRETARIA C"
+  },
+  {
+    "orden": "036",
+    "jerarquia": "Secretarial",
+    "nivel": "9",
+    "funcional": "SECRETARIA D"
+  },
+  {
+    "orden": "037",
+    "jerarquia": "Apoyo Administrativo",
+    "nivel": "18",
+    "funcional": "NOTIFICADOR DE LA CODHEM"
+  },
+  {
+    "orden": "038",
+    "jerarquia": "Transporte",
+    "nivel": "22",
+    "funcional": "CHOFER DE S.P.S."
+  },
+  {
+    "orden": "039",
+    "jerarquia": "Transporte",
+    "nivel": "11",
+    "funcional": "CHOFER ASISTENTE"
+  }
+]

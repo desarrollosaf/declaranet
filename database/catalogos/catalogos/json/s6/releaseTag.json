@@ -1,0 +1,66 @@
+[
+    {
+        "clave": "planning",
+        "valor": "Planeación"
+    },
+    {
+        "clave": "planningUpdate",
+        "valor": "Actualización de planeación"
+    },
+    {
+        "clave": "tender",
+        "valor": "Licitación"
+    },
+    {
+        "clave": "tenderAmendment",
+        "valor": "Enmiendas a ofertas"
+    },
+    {
+        "clave": "tenderUpdate",
+        "valor": "Actualización de oferta"
+    },
+    {
+        "clave": "tenderCancellation",
+        "valor": "Cancelación de oferta"
+    },
+    {
+        "clave": "award",
+        "valor": "Adjudicación"
+    },
+    {
+        "clave": "awardUpdate",
+        "valor": "Actualización de adjudicación"
+    },
+    {
+        "clave": "awardCancellation",
+        "valor": "Cancelación de adjudicación"
+    },
+    {
+        "clave": "contract",
+        "valor": "Contrato"
+    },
+    {
+        "clave": "contractUpdate",
+        "valor": "Actualización de contrato"
+    },
+    {
+        "clave": "contractAmendment",
+        "valor": "Enmiendas al contrato"
+    },
+    {
+        "clave": "implementation",
+        "valor": "Implementación"
+    },
+    {
+        "clave": "implementationUpdate",
+        "valor": "Actualización de implementación"
+    },
+    {
+        "clave": "contractTermination",
+        "valor": "Terminación de contrato"
+    },
+    {
+        "clave": "compiled",
+        "valor": "Registro Compilado"
+    }
+]

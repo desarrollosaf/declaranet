@@ -1,0 +1,18 @@
+[
+    {
+        "clave": "open",
+        "valor": "Abierta"
+    },
+    {
+        "clave": "selective",
+        "valor": "Selectiva"
+    },
+    {
+        "clave": "limited",
+        "valor": "Limitada"
+    },
+    {
+        "clave": "direct",
+        "valor": "Directa"
+    }
+]

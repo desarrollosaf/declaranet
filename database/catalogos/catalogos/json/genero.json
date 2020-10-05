@@ -1,0 +1,14 @@
+[
+  {
+    "clave": "F",
+    "valor": "FEMENINO"
+  },
+  {
+    "clave": "M",
+    "valor": "MASCULINO"
+  },
+  {
+    "clave": "O",
+    "valor": "OTRO"
+  }
+]

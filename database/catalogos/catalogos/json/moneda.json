@@ -1,0 +1,706 @@
+[
+  {
+    "clave": "AED",
+    "valor": "Dirham de los Emiratos Árabes Unidos"
+  },
+  {
+    "clave": "AFN",
+    "valor": "Afgani afgano"
+  },
+  {
+    "clave": "ALL",
+    "valor": "Lek albanés"
+  },
+  {
+    "clave": "AMD",
+    "valor": "Dram armenio"
+  },
+  {
+    "clave": "ANG",
+    "valor": "Florín antillano neerlandés"
+  },
+  {
+    "clave": "AOA",
+    "valor": "Kwanza angoleño"
+  },
+  {
+    "clave": "ARS",
+    "valor": "Peso argentino"
+  },
+  {
+    "clave": "AUD",
+    "valor": "Dólar australiano"
+  },
+  {
+    "clave": "AWG",
+    "valor": "Florín arubeño"
+  },
+  {
+    "clave": "AZN",
+    "valor": "Manat azerbaiyano"
+  },
+  {
+    "clave": "BAM",
+    "valor": "Marco convertible de Bosnia-Herzegovina"
+  },
+  {
+    "clave": "BBD",
+    "valor": "Dólar de Barbados"
+  },
+  {
+    "clave": "BDT",
+    "valor": "Taka de Bangladés"
+  },
+  {
+    "clave": "BGN",
+    "valor": "Lev búlgaro"
+  },
+  {
+    "clave": "BHD",
+    "valor": "Dinar bahreiní"
+  },
+  {
+    "clave": "BIF",
+    "valor": "Franco burundés"
+  },
+  {
+    "clave": "BMD",
+    "valor": "Dólar de Bermuda"
+  },
+  {
+    "clave": "BND",
+    "valor": "Dólar de Brunéi"
+  },
+  {
+    "clave": "BOB",
+    "valor": "Boliviano"
+  },
+  {
+    "clave": "BOV",
+    "valor": "Mvdol boliviano (código de fondos)"
+  },
+  {
+    "clave": "BRL",
+    "valor": "Real brasileño"
+  },
+  {
+    "clave": "BSD",
+    "valor": "Dólar bahameño"
+  },
+  {
+    "clave": "BTN",
+    "valor": "Ngultrum de Bután"
+  },
+  {
+    "clave": "BWP",
+    "valor": "Pula de Botsuana"
+  },
+  {
+    "clave": "BYR",
+    "valor": "Rublo bielorruso"
+  },
+  {
+    "clave": "BZD",
+    "valor": "Dólar de Belice"
+  },
+  {
+    "clave": "CAD",
+    "valor": "Dólar canadiense"
+  },
+  {
+    "clave": "CDF",
+    "valor": "Franco congoleño, o congolés"
+  },
+  {
+    "clave": "CHF",
+    "valor": "Franco suizo"
+  },
+  {
+    "clave": "CLF",
+    "valor": "Unidades de fomento chilenas (código de fondos)"
+  },
+  {
+    "clave": "CLP",
+    "valor": "Peso chileno"
+  },
+  {
+    "clave": "CNY",
+    "valor": "Yuan chino"
+  },
+  {
+    "clave": "COP",
+    "valor": "Peso colombiano"
+  },
+  {
+    "clave": "COU",
+    "valor": "Unidad de valor real colombiana (añadida al COP)"
+  },
+  {
+    "clave": "CRC",
+    "valor": "Colón costarricense"
+  },
+  {
+    "clave": "CSD",
+    "valor": "Dinar serbio (Reemplazado por RSD el 25 de octubre de 2006)"
+  },
+  {
+    "clave": "CUP",
+    "valor": "Peso cubano"
+  },
+  {
+    "clave": "CUC",
+    "valor": "Peso cubano convertible"
+  },
+  {
+    "clave": "CVE",
+    "valor": "Escudo caboverdiano"
+  },
+  {
+    "clave": "CZK",
+    "valor": "Koruna checa"
+  },
+  {
+    "clave": "DJF",
+    "valor": "Franco yibutiano"
+  },
+  {
+    "clave": "DKK",
+    "valor": "Corona danesa"
+  },
+  {
+    "clave": "DOP",
+    "valor": "Peso dominicano"
+  },
+  {
+    "clave": "DZD",
+    "valor": "Dinar argelino"
+  },
+  {
+    "clave": "EGP",
+    "valor": "Libra egipcia"
+  },
+  {
+    "clave": "ERN",
+    "valor": "Nakfa eritreo"
+  },
+  {
+    "clave": "ETB",
+    "valor": "Birr etíope"
+  },
+  {
+    "clave": "EUR",
+    "valor": "Euro"
+  },
+  {
+    "clave": "FJD",
+    "valor": "Dólar fiyiano"
+  },
+  {
+    "clave": "FKP",
+    "valor": "Libra malvinense"
+  },
+  {
+    "clave": "GBP",
+    "valor": "Libra esterlina (libra de Gran Bretaña)"
+  },
+  {
+    "clave": "GEL",
+    "valor": "Lari georgiano"
+  },
+  {
+    "clave": "GHS",
+    "valor": "Cedi ghanés"
+  },
+  {
+    "clave": "GIP",
+    "valor": "Libra de Gibraltar"
+  },
+  {
+    "clave": "GMD",
+    "valor": "Dalasi gambiano"
+  },
+  {
+    "clave": "GNF",
+    "valor": "Franco guineano"
+  },
+  {
+    "clave": "GTQ",
+    "valor": "Quetzal guatemalteco"
+  },
+  {
+    "clave": "GYD",
+    "valor": "Dólar guyanés"
+  },
+  {
+    "clave": "HKD",
+    "valor": "Dólar de Hong Kong"
+  },
+  {
+    "clave": "HNL",
+    "valor": "Lempira hondureño"
+  },
+  {
+    "clave": "HRK",
+    "valor": "Kuna croata"
+  },
+  {
+    "clave": "HTG",
+    "valor": "Gourde haitiano"
+  },
+  {
+    "clave": "HUF",
+    "valor": "Forint húngaro"
+  },
+  {
+    "clave": "IDR",
+    "valor": "Rupiah indonesia"
+  },
+  {
+    "clave": "ILS",
+    "valor": "Nuevo shéquel israelí"
+  },
+  {
+    "clave": "INR",
+    "valor": "Rupia india"
+  },
+  {
+    "clave": "IQD",
+    "valor": "Dinar iraquí"
+  },
+  {
+    "clave": "IRR",
+    "valor": "Rial iraní"
+  },
+  {
+    "clave": "ISK",
+    "valor": "Króna islandesa"
+  },
+  {
+    "clave": "JMD",
+    "valor": "Dólar jamaicano"
+  },
+  {
+    "clave": "JOD",
+    "valor": "Dinar jordano"
+  },
+  {
+    "clave": "JPY",
+    "valor": "Yen japonés"
+  },
+  {
+    "clave": "KES",
+    "valor": "Chelín keniata"
+  },
+  {
+    "clave": "KGS",
+    "valor": "Som kirguís (de Kirguistán)"
+  },
+  {
+    "clave": "KHR",
+    "valor": "Riel camboyano"
+  },
+  {
+    "clave": "KMF",
+    "valor": "Franco comoriano (de Comoras)"
+  },
+  {
+    "clave": "KPW",
+    "valor": "Won norcoreano"
+  },
+  {
+    "clave": "KRW",
+    "valor": "Won surcoreano"
+  },
+  {
+    "clave": "KWD",
+    "valor": "Dinar kuwaití"
+  },
+  {
+    "clave": "KYD",
+    "valor": "Dólar caimano (de Islas Caimán)"
+  },
+  {
+    "clave": "KZT",
+    "valor": "Tenge kazajo"
+  },
+  {
+    "clave": "LAK",
+    "valor": "Kip lao"
+  },
+  {
+    "clave": "LBP",
+    "valor": "Libra libanesa"
+  },
+  {
+    "clave": "LKR",
+    "valor": "Rupia de Sri Lanka"
+  },
+  {
+    "clave": "LRD",
+    "valor": "Dólar liberiano"
+  },
+  {
+    "clave": "LSL",
+    "valor": "Loti lesotense"
+  },
+  {
+    "clave": "LTL",
+    "valor": "Litas lituano"
+  },
+  {
+    "clave": "LVL",
+    "valor": "Lat letón"
+  },
+  {
+    "clave": "LYD",
+    "valor": "Dinar libio"
+  },
+  {
+    "clave": "MAD",
+    "valor": "Dirham marroquí"
+  },
+  {
+    "clave": "MDL",
+    "valor": "Leu moldavo"
+  },
+  {
+    "clave": "MGA",
+    "valor": "Ariary malgache"
+  },
+  {
+    "clave": "MKD",
+    "valor": "Denar macedonio"
+  },
+  {
+    "clave": "MMK",
+    "valor": "Kyat birmano"
+  },
+  {
+    "clave": "MNT",
+    "valor": "Tughrik mongol"
+  },
+  {
+    "clave": "MOP",
+    "valor": "Pataca de Macao"
+  },
+  {
+    "clave": "MRO",
+    "valor": "Ouguiya mauritana"
+  },
+  {
+    "clave": "MUR",
+    "valor": "Rupia mauricia"
+  },
+  {
+    "clave": "MVR",
+    "valor": "Rufiyaa maldiva"
+  },
+  {
+    "clave": "MWK",
+    "valor": "Kwacha malauí"
+  },
+  {
+    "clave": "MXN",
+    "valor": "Peso mexicano"
+  },
+  {
+    "clave": "MXV",
+    "valor": "Unidad de Inversión (UDI) mexicana (código de fondos)"
+  },
+  {
+    "clave": "MYR",
+    "valor": "Ringgit malayo"
+  },
+  {
+    "clave": "MZN",
+    "valor": "Metical mozambiqueño"
+  },
+  {
+    "clave": "NAD",
+    "valor": "Dólar namibio"
+  },
+  {
+    "clave": "NGN",
+    "valor": "Naira nigeriana"
+  },
+  {
+    "clave": "NIO",
+    "valor": "Córdoba nicaragüense"
+  },
+  {
+    "clave": "NOK",
+    "valor": "Corona noruega"
+  },
+  {
+    "clave": "NPR",
+    "valor": "Rupia nepalesa"
+  },
+  {
+    "clave": "NZD",
+    "valor": "Dólar neozelandés"
+  },
+  {
+    "clave": "OMR",
+    "valor": "Rial omaní"
+  },
+  {
+    "clave": "PAB",
+    "valor": "Balboa panameña"
+  },
+  {
+    "clave": "PEN",
+    "valor": "Nuevo sol peruano"
+  },
+  {
+    "clave": "PGK",
+    "valor": "Kina de Papúa Nueva Guinea"
+  },
+  {
+    "clave": "PHP",
+    "valor": "Peso filipino"
+  },
+  {
+    "clave": "PKR",
+    "valor": "Rupia pakistaní"
+  },
+  {
+    "clave": "PLN",
+    "valor": "zloty polaco"
+  },
+  {
+    "clave": "PYG",
+    "valor": "Guaraní paraguayo"
+  },
+  {
+    "clave": "QAR",
+    "valor": "Rial qatarí"
+  },
+  {
+    "clave": "RON",
+    "valor": "Leu rumano"
+  },
+  {
+    "clave": "RUB",
+    "valor": "Rublo ruso"
+  },
+  {
+    "clave": "RWF",
+    "valor": "Franco ruandés"
+  },
+  {
+    "clave": "SAR",
+    "valor": "Riyal saudí"
+  },
+  {
+    "clave": "SBD",
+    "valor": "Dólar de las Islas Salomón"
+  },
+  {
+    "clave": "SCR",
+    "valor": "Rupia de Seychelles"
+  },
+  {
+    "clave": "SDG",
+    "valor": "Dinar sudanés"
+  },
+  {
+    "clave": "SEK",
+    "valor": "Corona sueca"
+  },
+  {
+    "clave": "SGD",
+    "valor": "Dólar de Singapur"
+  },
+  {
+    "clave": "SHP",
+    "valor": "Libra de Santa Helena"
+  },
+  {
+    "clave": "SLL",
+    "valor": "Leone de Sierra Leona"
+  },
+  {
+    "clave": "SOS",
+    "valor": "Chelín somalí"
+  },
+  {
+    "clave": "SRD",
+    "valor": "Dólar surinamés"
+  },
+  {
+    "clave": "STD",
+    "valor": "Dobra de Santo Tomé y Príncipe"
+  },
+  {
+    "clave": "SYP",
+    "valor": "Libra siria"
+  },
+  {
+    "clave": "SZL",
+    "valor": "Lilangeni suazi"
+  },
+  {
+    "clave": "THB",
+    "valor": "Baht tailandés"
+  },
+  {
+    "clave": "TJS",
+    "valor": "Somoni tayik (de Tayikistán)"
+  },
+  {
+    "clave": "TMT",
+    "valor": "Manat turcomano"
+  },
+  {
+    "clave": "TND",
+    "valor": "Dinar tunecino"
+  },
+  {
+    "clave": "TOP",
+    "valor": "Pa'anga tongano"
+  },
+  {
+    "clave": "TRY",
+    "valor": "Lira turca"
+  },
+  {
+    "clave": "TTD",
+    "valor": "Dólar de Trinidad y Tobago"
+  },
+  {
+    "clave": "TWD",
+    "valor": "Dólar taiwanés"
+  },
+  {
+    "clave": "TZS",
+    "valor": "Chelín tanzano"
+  },
+  {
+    "clave": "UAH",
+    "valor": "Grivna ucraniana"
+  },
+  {
+    "clave": "UGX",
+    "valor": "Chelín ugandés"
+  },
+  {
+    "clave": "USD",
+    "valor": "Dólar estadounidense"
+  },
+  {
+    "clave": "USN",
+    "valor": "Dólar estadounidense (Siguiente día) (código de fondos)"
+  },
+  {
+    "clave": "USS",
+    "valor": "Dólar estadounidense (Mismo día) (código de fondos)"
+  },
+  {
+    "clave": "UYU",
+    "valor": "Peso uruguayo"
+  },
+  {
+    "clave": "UZS",
+    "valor": "Som uzbeko"
+  },
+  {
+    "clave": "VEF",
+    "valor": "Bolívar fuerte venezolano"
+  },
+  {
+    "clave": "VND",
+    "valor": "Dong vietnamita"
+  },
+  {
+    "clave": "VUV",
+    "valor": "Vatu vanuatense"
+  },
+  {
+    "clave": "WST",
+    "valor": "Tala samoana"
+  },
+  {
+    "clave": "XAF",
+    "valor": "Franco CFA de África Central"
+  },
+  {
+    "clave": "XAG",
+    "valor": "Onza de plata"
+  },
+  {
+    "clave": "XAU",
+    "valor": "Onza de oro"
+  },
+  {
+    "clave": "XBA",
+    "valor": "European Composite Unit (EURCO) (unidad del mercado de bonos)"
+  },
+  {
+    "clave": "XBB",
+    "valor": "European Monetary Unit (E.M.U.-6) (unidad del mercado de bonos)"
+  },
+  {
+    "clave": "XBC",
+    "valor": "European Unit of Account 9 (E.U.A.-9) (unidad del mercado de bonos)"
+  },
+  {
+    "clave": "XBD",
+    "valor": "European Unit of Account 17 (E.U.A.-17) (unidad del mercado de bonos)"
+  },
+  {
+    "clave": "XCD",
+    "valor": "Dólar del Caribe Oriental"
+  },
+  {
+    "clave": "XDR",
+    "valor": "Derechos Especiales de Giro (FMI)"
+  },
+  {
+    "clave": "XFO",
+    "valor": "Franco de oro (Special settlement currency)"
+  },
+  {
+    "clave": "XFU",
+    "valor": "Franco UIC (Special settlement currency)"
+  },
+  {
+    "clave": "XOF",
+    "valor": "Franco CFA de África Occidental"
+  },
+  {
+    "clave": "XPD",
+    "valor": "Onza de paladio"
+  },
+  {
+    "clave": "XPF",
+    "valor": "Franco CFP"
+  },
+  {
+    "clave": "XPT",
+    "valor": "Onza de platino"
+  },
+  {
+    "clave": "XTS",
+    "valor": "Reservado para pruebas"
+  },
+  {
+    "clave": "XXX",
+    "valor": "Sin divisa"
+  },
+  {
+    "clave": "YER",
+    "valor": "Rial yemení (de Yemen)"
+  },
+  {
+    "clave": "ZAR",
+    "valor": "Rand sudafricano"
+  },
+  {
+    "clave": "ZMW",
+    "valor": "Kwacha zambiano"
+  },
+  {
+    "clave": "ZWL",
+    "valor": "Dólar zimbabuense"
+  }
+]

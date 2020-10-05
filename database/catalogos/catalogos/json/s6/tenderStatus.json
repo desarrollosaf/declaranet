@@ -1,0 +1,30 @@
+[
+    {
+        "clave": "planning",
+        "valor": "Planeación"
+    },
+    {
+        "clave": "planned",
+        "valor": "Planeado"
+    },
+    {
+        "clave": "active",
+        "valor": "Activo"
+    },
+    {
+        "clave": "cancelled",
+        "valor": "Cancelado"
+    },
+    {
+        "clave": "unsuccessful",
+        "valor": "Sin Éxito"
+    },
+    {
+        "clave": "complete",
+        "valor": "Completo"
+    },
+    {
+        "clave": "withdrawn",
+        "valor": "Retirado"
+    }
+]

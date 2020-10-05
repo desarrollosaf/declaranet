@@ -1,0 +1,34 @@
+[
+  {
+    "clave": "EJE",
+    "valor": "EJECUTIVO"
+  },
+  {
+    "clave": "LEG",
+    "valor": "LEGISLATIVO"
+  },
+  {
+    "clave": "JUD",
+    "valor": "JUDICIAL"
+  },
+  {
+    "clave": "MUN",
+    "valor": "MUNICIPIO"
+  },
+  {
+    "clave": "OAU",
+    "valor": "ÓRGANO AUTÓNOMO"
+  },
+  {
+    "clave": "PAP",
+    "valor": "PARTIDO POLÍTICO"
+  },
+  {
+    "clave": "SIN",
+    "valor": "SINDICATO"
+  },
+  {
+    "clave": "FID",
+    "valor": "FIDEICOMISO"
+  }
+]

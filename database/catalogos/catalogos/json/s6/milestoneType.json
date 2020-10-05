@@ -1,0 +1,30 @@
+[
+    {
+        "clave": "preProcurement",
+        "valor": "Hitos previos a la contratación"
+    },
+    {
+        "clave": "approval",
+        "valor": "Hitos de aprobación"
+    },
+    {
+        "clave": "engagement",
+        "valor": "Hitos de participación"
+    },
+    {
+        "clave": "assessment",
+        "valor": "Hitos de la evaluación"
+    },
+    {
+        "clave": "delivery",
+        "valor": "Hitos de entrega"
+    },
+    {
+        "clave": "reporting",
+        "valor": "Hitos de reporte"
+    },
+    {
+        "clave": "financing",
+        "valor": "Hitos de financiamiento"
+    }
+]
