@@ -1,0 +1,14 @@
+[
+  {
+    "clave": "CON",
+    "valor": "CÓNYUGE"
+  },
+  {
+    "clave": "CCU",
+    "valor": "CONCUBINA/CONCUBINARIO/UNIÓN LIBRE"
+  },
+  {
+    "clave": "SDC",
+    "valor": "SOCIEDAD DE CONVIVENCIA"
+  }
+]

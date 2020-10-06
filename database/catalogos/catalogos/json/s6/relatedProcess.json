@@ -1,0 +1,34 @@
+[
+    {
+        "clave": "framework",
+        "valor": "Primera etapa de un acuerdo marco"
+    },
+    {
+        "clave": "planning",
+        "valor": "Proceso de planeación"
+    },
+    {
+        "clave": "parent",
+        "valor": "Contrato principal (para sub contratos)"
+    },
+    {
+        "clave": "prior",
+        "valor": "Proceso previo"
+    },
+    {
+        "clave": "unsuccessfulProcess",
+        "valor": "Proceso sin éxito"
+    },
+    {
+        "clave": "subContract",
+        "valor": "Sub contrato"
+    },
+    {
+        "clave": "replacementProcess",
+        "valor": "Proceso de reemplazo"
+    },
+    {
+        "clave": "renewalProcess",
+        "valor": "Proceso de renovación"
+    }
+]

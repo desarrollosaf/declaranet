@@ -1,0 +1,83 @@
+{
+  "pagination": {
+    "pageSize": 100,
+    "page": 20,
+    "totalRows": 30,
+    "hasNextPage": true
+  },
+  "results": [
+    {
+      "metadata": {
+        "actualizacion": "2017-07-21T17:32:28Z",
+        "institucion": "Secretaría de Educación Pública",
+        "contacto": "usuario@dominio.org",
+        "personaContacto": "José John"
+      },
+      "id": "1",
+      "fechaCaptura": "2017-07-21T17:32:28Z",
+      "expediente": "ABC123",
+      "institucionDependencia": {
+        "nombre": "Secretaría de Hacienda y Crédito Público",
+        "siglas": "SHCP",
+        "clave": "TRE345"
+      },
+      "servidorPublicoSancionado": {
+        "rfc": "PAT21343213",
+        "curp": "ABCD780814MDFAXL",
+        "nombres": "Carlos",
+        "primerApellido": "Pérez",
+        "segundoApellido": "López",
+        "genero": {
+          "clave": "M",
+          "valor": "MASCULINO"
+        },
+        "puesto": "Director de área",
+        "nivel": "ABCD1234"
+      },
+      "autoridadSancionadora": "Organo Interno de Control",
+      "tipoFalta": {
+        "clave": "AG",
+        "valor": "ADMINISTRATIVA GRAVE",
+        "descripcion": "Administrativa grave"
+      },
+      "tipoSancion": [
+        {
+          "clave": "O",
+          "valor": "AMONESTACIÓN"
+        },
+        {
+          "clave": "M",
+          "valor": "MULTADO"
+        }
+      ],
+      "causaMotivoHechos": "Abuso de autoridad",
+      "resolucion": {
+        "url": "https://ejemplo.mx/archivo/documento.pdf",
+        "fechaResolucion": "2018-05-21"
+      },
+      "multa": {
+        "monto": 30000.19,
+        "moneda": {
+          "clave": "MXN",
+          "valor": "Peso Mexicano"
+        }
+      },
+      "inhabilitacion": {
+        "plazo": "3 meses",
+        "fechaInicial": "2018-08-17",
+        "fechaFinal": "2018-11-17"
+      },
+      "observaciones": "ABC",
+      "documentos": [
+        {
+          "id": "doc-1",
+          "tipo": "CONSTANCIA_SANCION",
+          "titulo": "Constancia de sanción...",
+          "descripcion": "Descripción del documento",
+          "url": "https://ejemplo.mx/archivo/documento.pdf",
+          "fecha": "2019-11-20"
+        }
+      ]
+    }
+  ]
+}

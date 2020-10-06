@@ -1,0 +1,44 @@
+[
+  {
+    "orden": "001",
+    "jerarquia": "Operativos",
+    "nivel": "SS001",
+    "funcional": "Asistenta,e Administrativa,o"
+  },
+  {
+    "orden": "002",
+    "jerarquia": "Operativos",
+    "nivel": "SS002",
+    "funcional": "Auxiliar Administrativa,o"
+  },
+  {
+    "orden": "003",
+    "jerarquia": "Operativos",
+    "nivel": "SS003",
+    "funcional": "Prefecta,o"
+  },
+  {
+    "orden": "004",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "SS004",
+    "funcional": "Directora,or de área"
+  },
+  {
+    "orden": "005",
+    "jerarquia": "Operativos",
+    "nivel": "SS005",
+    "funcional": "Paramédica,o"
+  },
+  {
+    "orden": "006",
+    "jerarquia": "Operativos",
+    "nivel": "SS006",
+    "funcional": "Auxiliar de Enfermería"
+  },
+  {
+    "orden": "007",
+    "jerarquia": "Mandos Medios de Estructura",
+    "nivel": "SS007",
+    "funcional": "Delegada,o Administrativa,o 'A' de Dirección General"
+  }
+]

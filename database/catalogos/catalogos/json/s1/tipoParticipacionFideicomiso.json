@@ -1,0 +1,18 @@
+[
+  {
+    "clave": "FID",
+    "valor": "FIDEICOMITENTE"
+  },
+  {
+    "clave": "FDU",
+    "valor": "FIDUCIARIO"
+  },
+  {
+    "clave": "FDE",
+    "valor": "FIDEICOMISARIO"
+  },
+  {
+    "clave": "COT",
+    "valor": "COMITE_TECNICO"
+  }
+]

@@ -1,0 +1,1244 @@
+[
+    {
+        "orden": "001",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "1",
+        "funcional": "RECTOR"
+    },
+    {
+        "orden": "002",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "2",
+        "funcional": "SECRETARIAADMINISTRACIÓN CENTRAL"
+    },
+    {
+        "orden": "003",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "2",
+        "funcional": "SECRETARIO ADMINISTRACION CENTRAL"
+    },
+    {
+        "orden": "004",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "2A",
+        "funcional": "SECRETARIO DE ADMINISTRACIÓN CENTRAL 'A'"
+    },
+    {
+        "orden": "005",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "2B",
+        "funcional": "SECRETARIO DE ADMINISTRACIÓN CENTRAL 'B'"
+    },
+    {
+        "orden": "006",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "2C",
+        "funcional": "SECRETARIO DE ADMINISTRACIÓN CENTRAL 'C'"
+    },
+    {
+        "orden": "007",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "2D",
+        "funcional": "SECRETARIO DE ADMINISTRACIÓN CENTRAL 'D'"
+    },
+    {
+        "orden": "008",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "5A",
+        "funcional": "SECRETARIO PARTICULAR ADJUNTO DEL RECTOR"
+    },
+    {
+        "orden": "009",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "5B",
+        "funcional": "SECRETARIO PARTICULAR DEL RECTOR"
+    },
+    {
+        "orden": "010",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "3",
+        "funcional": "DIRECCIÓN DE PROGRAMACIÓN Y CONTROL PRESUPUESTAL"
+    },
+    {
+        "orden": "011",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "3",
+        "funcional": "DIRECCIÓN DE RECURSOS FINANCIEROS"
+    },
+    {
+        "orden": "012",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "3",
+        "funcional": "DIRECCIÓN DE RECURSOS HUMANOS"
+    },
+    {
+        "orden": "013",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "3",
+        "funcional": "DIRECCIÓN DE RECURSOS MATERIALES"
+    },
+    {
+        "orden": "014",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "4",
+        "funcional": "DIRECTOR DE EDUCACIÓN SUPERIOR 'A'"
+    },
+    {
+        "orden": "015",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "4",
+        "funcional": "DIRECTOR DE EDUCACIÓN SUPERIOR 'B'"
+    },
+    {
+        "orden": "016",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "4",
+        "funcional": "DIRECTOR DE EDUCACIÓN SUPERIOR 'C'"
+    },
+    {
+        "orden": "017",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "4",
+        "funcional": "DIRECTOR DE EDUCACIÓN SUPERIOR 'D'"
+    },
+    {
+        "orden": "018",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "6",
+        "funcional": "DIRECTOR'A'ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "019",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "6",
+        "funcional": "DIRECTOR DE EDUCACIÓN MEDIA SUPERIOR 'A'"
+    },
+    {
+        "orden": "020",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "6",
+        "funcional": "DIRECTOR DE EDUCACIÓN MEDIA SUPERIOR 'B'"
+    },
+    {
+        "orden": "021",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "6",
+        "funcional": "DIRECTOR DE EDUCACIÓN MEDIA SUPERIOR 'C'"
+    },
+    {
+        "orden": "022",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "7",
+        "funcional": "DIRECTOR COORDINACION'A'ADMINISTRATIVO"
+    },
+    {
+        "orden": "023",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "7",
+        "funcional": "DIRECTOR COORDINACION'B'ADMINISTRATIVO"
+    },
+    {
+        "orden": "024",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "7",
+        "funcional": "DIRECTOR COORDINACION'C'ADMINISTRATIVO"
+    },
+    {
+        "orden": "025",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "7",
+        "funcional": "DIRECTOR COORDINACION'D'ADMINISTRATIVO"
+    },
+    {
+        "orden": "026",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "7",
+        "funcional": "DIRECTOR COORDINACION'E'ADMINISTRATIVO"
+    },
+    {
+        "orden": "027",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "7",
+        "funcional": "DIRECTOR COORDINACION'F'ADMINISTRATIVO"
+    },
+    {
+        "orden": "028",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "8",
+        "funcional": "SECRETARIO 'A' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "029",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "8",
+        "funcional": "SECRETARIO 'B' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "030",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "8",
+        "funcional": "SECRETARIO 'C' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "031",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "8",
+        "funcional": "SECRETARIO 'D' ESCUALA O FACULTAD"
+    },
+    {
+        "orden": "032",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "8",
+        "funcional": "SECRETARIO 'E' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "033",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "8",
+        "funcional": "SECRETARIO 'F' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "034",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "9",
+        "funcional": "SUBDIRECTOR ADMINISTRATIVO 'A' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "035",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "9",
+        "funcional": "SUBDIRECTOR ADMINISTRATIVO 'B' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "036",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "9",
+        "funcional": "SUBDIRECTOR ADMINISTRATIVO 'C' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "037",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "9",
+        "funcional": "SUBDIRECTOR ADMINISTRATIVO 'D' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "038",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "9",
+        "funcional": "SUBDIRECTOR ADMINISTRATIVO 'E' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "039",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "9",
+        "funcional": "SUBDIRECTOR ADMINISTRATIVO 'F' ESCUELA O FACULTAD"
+    },
+    {
+        "orden": "040",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "10",
+        "funcional": "SECRETARIO PARTICULAR DE SECRETARÍA DE ADMINISTRACIÓN CENTRAL  'A'"
+    },
+    {
+        "orden": "041",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "10",
+        "funcional": "SECRETARIO PARTICULAR DE SECRETARÍA DE ADMINISTRACIÓN CENTRAL 'B'"
+    },
+    {
+        "orden": "042",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "10",
+        "funcional": "SECRETARIO PARTICULAR DE SECRETARÍA DE ADMINISTRACIÓN CENTRAL 'C'"
+    },
+    {
+        "orden": "043",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "10",
+        "funcional": "SECRETARIO PARTICULAR DE SECRETARÍA DE ADMINISTRACIÓN CENTRAL 'D'"
+    },
+    {
+        "orden": "044",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "11",
+        "funcional": "JEFE DEPARTAMENTO 'A' ADMINISTRATIVO"
+    },
+    {
+        "orden": "045",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "11",
+        "funcional": "JEFE DEPARTAMENTO 'B' ADMINSITRATIVO"
+    },
+    {
+        "orden": "046",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "11",
+        "funcional": "JEFE DEPARTAMENTO 'C' ADMINISTRATIVO"
+    },
+    {
+        "orden": "047",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "11",
+        "funcional": "JEFE DEPARTAMENTO 'D' ADMINISTRATIVO"
+    },
+    {
+        "orden": "048",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "11",
+        "funcional": "JEFE DEPARTAMENTO 'E' ADMINISTRATIVO"
+    },
+    {
+        "orden": "049",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "11",
+        "funcional": "JEFE DEPARTAMENTO 'F' ADMINISTRATIVO"
+    },
+    {
+        "orden": "050",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "12",
+        "funcional": "JEFE DEPARTAMENTO EXTENSION"
+    },
+    {
+        "orden": "051",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "12",
+        "funcional": "JEFE DEPARTAMENTO ORIENTACION VOCACIONAL"
+    },
+    {
+        "orden": "052",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "12",
+        "funcional": "JEFE DEPARTAMENTO SERVICIO SOCIAL"
+    },
+    {
+        "orden": "053",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "12",
+        "funcional": "JEFE DEPARTAMENTO PLANEACION"
+    },
+    {
+        "orden": "054",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "12",
+        "funcional": "JEFE DE PLANEACIÓN Y APOYO ADMINISTRATIVO DE SECRETARÍA"
+    },
+    {
+        "orden": "055",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "13",
+        "funcional": "ASISTENTE DE LA OFICINA DEL RECTOR"
+    },
+    {
+        "orden": "056",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "14",
+        "funcional": "OPERADOR DE TRANSPORTE DE LA OFICINA DEL RECTOR"
+    },
+    {
+        "orden": "057",
+        "jerarquia": "DIRECTIVOS",
+        "nivel": "15",
+        "funcional": "ASESOR ADMINISTRATIVO CENTRAL"
+    },
+    {
+        "orden": "058",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "16",
+        "funcional": "ASISTENTE DE SECRETARIA 'A'"
+    },
+    {
+        "orden": "059",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "17",
+        "funcional": "OPERADOR DE TRANSPORTE DE SECRETARÍA"
+    },
+    {
+        "orden": "060",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "18",
+        "funcional": "SECRETARIA DE LA OFICINA DEL RECTOR"
+    },
+    {
+        "orden": "061",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "20",
+        "funcional": "COORDINADOR ACADEMICO 'A'"
+    },
+    {
+        "orden": "062",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "20",
+        "funcional": "COORDINADOR ACADEMICO 'B'"
+    },
+    {
+        "orden": "063",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "20",
+        "funcional": "COORDINADOR ACADEMICO 'C'"
+    },
+    {
+        "orden": "064",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "20",
+        "funcional": "COORDINADOR ACADEMICO 'D'"
+    },
+    {
+        "orden": "065",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "20",
+        "funcional": "COORDINADOR ACADEMICO 'E'"
+    },
+    {
+        "orden": "066",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "20",
+        "funcional": "COORDINADOR ACADEMICO 'F'"
+    },
+    {
+        "orden": "067",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "21",
+        "funcional": "JEFE DIVISION 'A'"
+    },
+    {
+        "orden": "068",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "21",
+        "funcional": "JEFE DIVISION 'B'"
+    },
+    {
+        "orden": "069",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "21",
+        "funcional": "JEFE DIVISION 'C'"
+    },
+    {
+        "orden": "070",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "21",
+        "funcional": "JEFE DIVISION 'D'"
+    },
+    {
+        "orden": "071",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "21",
+        "funcional": "JEFE DIVISION 'E'"
+    },
+    {
+        "orden": "072",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "21",
+        "funcional": "JEFE DIVISION 'F'"
+    },
+    {
+        "orden": "073",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "22",
+        "funcional": "ASISTENTE 'A'"
+    },
+    {
+        "orden": "074",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "22",
+        "funcional": "ASISTENTE 'B'"
+    },
+    {
+        "orden": "075",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "22",
+        "funcional": "ASISTENTE 'C'"
+    },
+    {
+        "orden": "076",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "22",
+        "funcional": "ASISTENTE 'D'"
+    },
+    {
+        "orden": "077",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "22",
+        "funcional": "ASISTENTE 'E'"
+    },
+    {
+        "orden": "078",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "22",
+        "funcional": "ASISTENTE 'F'"
+    },
+    {
+        "orden": "079",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "24",
+        "funcional": "AUXILIAR JURIDICO"
+    },
+    {
+        "orden": "080",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "24",
+        "funcional": "CONTADOR"
+    },
+    {
+        "orden": "081",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "24",
+        "funcional": "AUDITOR"
+    },
+    {
+        "orden": "082",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "25",
+        "funcional": "PEDIATRA"
+    },
+    {
+        "orden": "083",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "26",
+        "funcional": "SUPERVISOR"
+    },
+    {
+        "orden": "084",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "27",
+        "funcional": "PSICOLOGO"
+    },
+    {
+        "orden": "085",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "27",
+        "funcional": "ODONTOLOGO"
+    },
+    {
+        "orden": "086",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "28",
+        "funcional": "ASESOR USUARIO DE COMPUTADORA"
+    },
+    {
+        "orden": "087",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "29",
+        "funcional": "AUXILIAR ORIENTACION VOCACIONAL"
+    },
+    {
+        "orden": "088",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "30",
+        "funcional": "AUXILIAR DE COORDINACION"
+    },
+    {
+        "orden": "089",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "31",
+        "funcional": "PROYECTISTA"
+    },
+    {
+        "orden": "090",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "32",
+        "funcional": "MEDICO"
+    },
+    {
+        "orden": "091",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "33",
+        "funcional": "REPORTERO"
+    },
+    {
+        "orden": "092",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "34",
+        "funcional": "GUIONISTA"
+    },
+    {
+        "orden": "093",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "35",
+        "funcional": "PROFESIONISTA"
+    },
+    {
+        "orden": "094",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "36",
+        "funcional": "OPERADOR DE COMPUTADORA"
+    },
+    {
+        "orden": "095",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "37",
+        "funcional": "GUIONISTA  DE REDACCION"
+    },
+    {
+        "orden": "096",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "38",
+        "funcional": "COORDINADOR EQUIPOS"
+    },
+    {
+        "orden": "097",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "39",
+        "funcional": "ANALISTA SISTEMAS"
+    },
+    {
+        "orden": "098",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "40",
+        "funcional": "JEFE SECCION"
+    },
+    {
+        "orden": "099",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "41",
+        "funcional": "CLASIFICADOR CATALOGO"
+    },
+    {
+        "orden": "100",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "42",
+        "funcional": "DISEÑADOR"
+    },
+    {
+        "orden": "101",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "43",
+        "funcional": "DIBUJANTE"
+    },
+    {
+        "orden": "102",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "43",
+        "funcional": "DIBUJANTE MEDIO TIEMPO"
+    },
+    {
+        "orden": "103",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "44",
+        "funcional": "ANALISTA"
+    },
+    {
+        "orden": "104",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "45",
+        "funcional": "LABORATORISTA"
+    },
+    {
+        "orden": "105",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "46",
+        "funcional": "PROGRAMADOR"
+    },
+    {
+        "orden": "106",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "47",
+        "funcional": "TECNICO"
+    },
+    {
+        "orden": "107",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "48",
+        "funcional": "AUXILIAR DE CONTADOR"
+    },
+    {
+        "orden": "108",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "49",
+        "funcional": "AUXILIAR PROCESOS TECNICOS"
+    },
+    {
+        "orden": "109",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "50",
+        "funcional": "COTIZADOR"
+    },
+    {
+        "orden": "110",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "51",
+        "funcional": "TELEFONISTA"
+    },
+    {
+        "orden": "111",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "52",
+        "funcional": "PRENSISTA"
+    },
+    {
+        "orden": "112",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "53",
+        "funcional": "BIBLIOTECARIO"
+    },
+    {
+        "orden": "113",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "54",
+        "funcional": "CAPTURISTA"
+    },
+    {
+        "orden": "114",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "54",
+        "funcional": "TECNICO AUDIOVISUAL"
+    },
+    {
+        "orden": "115",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "55",
+        "funcional": "OPERADOR OFFSET"
+    },
+    {
+        "orden": "116",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "57",
+        "funcional": "OPERADOR TRACTOR"
+    },
+    {
+        "orden": "117",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "57",
+        "funcional": "OPERADOR TRANSPORTE"
+    },
+    {
+        "orden": "118",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "58",
+        "funcional": "ARCHIVISTA 'A'"
+    },
+    {
+        "orden": "119",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "58",
+        "funcional": "ARCHIVISTA 'B'"
+    },
+    {
+        "orden": "120",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "58",
+        "funcional": "AUXILIAR 'A'"
+    },
+    {
+        "orden": "121",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "58",
+        "funcional": "AUXILIAR 'B'"
+    },
+    {
+        "orden": "122",
+        "jerarquia": "OPERATIVO",
+        "nivel": "59",
+        "funcional": "AUXILIAR ACADEMICO"
+    },
+    {
+        "orden": "123",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "59",
+        "funcional": "AUXILIAR ADMINISTRATIVO"
+    },
+    {
+        "orden": "124",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "59",
+        "funcional": "SECRETARIA"
+    },
+    {
+        "orden": "125",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "60",
+        "funcional": "TRABAJADOR SOCIAL"
+    },
+    {
+        "orden": "126",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "61",
+        "funcional": "ENFERMERA(O)"
+    },
+    {
+        "orden": "127",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "62",
+        "funcional": "OFICIAL ADMINISTRATIVO"
+    },
+    {
+        "orden": "128",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "63",
+        "funcional": "CAJERO"
+    },
+    {
+        "orden": "129",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "64",
+        "funcional": "MENSAJERO"
+    },
+    {
+        "orden": "130",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "65",
+        "funcional": "JARDINERO"
+    },
+    {
+        "orden": "131",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "65",
+        "funcional": "TRABAJADOR CAMPO"
+    },
+    {
+        "orden": "132",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "65",
+        "funcional": "VELADOR"
+    },
+    {
+        "orden": "133",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "65",
+        "funcional": "OFICIAL INTENDENCIA"
+    },
+    {
+        "orden": "134",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "65",
+        "funcional": "ENCARGADO MANTENIMIENTO"
+    },
+    {
+        "orden": "135",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "65",
+        "funcional": "ENCARGADO MANTENIMIENTO MEDIO TIEMPO"
+    },
+    {
+        "orden": "136",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "66",
+        "funcional": "AYUDANTE TECNICO"
+    },
+    {
+        "orden": "137",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "67",
+        "funcional": "MIMEOGRAFISTA"
+    },
+    {
+        "orden": "138",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "68",
+        "funcional": "AFANADOR(A)"
+    },
+    {
+        "orden": "139",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "56 A",
+        "funcional": "ALMACENISTA'A'"
+    },
+    {
+        "orden": "140",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "56 A",
+        "funcional": "ALMACENISTA'B'"
+    },
+    {
+        "orden": "141",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "56 B",
+        "funcional": "MECANICO"
+    },
+    {
+        "orden": "142",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "58",
+        "funcional": "AUXILIAR MEDIO TIEMPO"
+    },
+    {
+        "orden": "143",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "59",
+        "funcional": "SECRETARIA MEDIO TIEMPO"
+    },
+    {
+        "orden": "144",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "65",
+        "funcional": "ELECTRICISTA"
+    },
+    {
+        "orden": "145",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "60",
+        "funcional": "EDUCADORA"
+    },
+    {
+        "orden": "146",
+        "jerarquia": "OPERATIVO SINDICALIZADO",
+        "nivel": "53",
+        "funcional": "MAPOTECARIO"
+    },
+    {
+        "orden": "147",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "12",
+        "funcional": "JEFE CONTROL ESCOLAR"
+    },
+    {
+        "orden": "148",
+        "jerarquia": "OPERATIVO DE CONFIANZA",
+        "nivel": "20",
+        "funcional": "COORDINADOR ACADEMICO POR HORAS"
+    },
+    {
+        "orden": "149",
+        "jerarquia": "MANDOS MEDIOS",
+        "nivel": "22",
+        "funcional": "SUBJEFE DEPARTAMENTO ADMINISTRATIVO C"
+    },
+    {
+        "orden": "150",
+        "jerarquia": "OPERATIVO",
+        "nivel": "24",
+        "funcional": "AUXILIAR DE INVESTIGADOR 'A'"
+    },
+    {
+        "orden": "151",
+        "jerarquia": "OPERATIVO",
+        "nivel": "24",
+        "funcional": "AUXILIAR DE INVESTIGADOR 'B'"
+    },
+    {
+        "orden": "152",
+        "jerarquia": "PROF ASIGNATURA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL HORAS ASIGNATURA"
+    },
+    {
+        "orden": "153",
+        "jerarquia": "PROF ASIGNATURA",
+        "nivel": "NA",
+        "funcional": "H-S-M LICENCIATURA 'A'"
+    },
+    {
+        "orden": "154",
+        "jerarquia": "PROF ASIGNATURA",
+        "nivel": "NA",
+        "funcional": "H-S-M LICENCIATURA 'B'"
+    },
+    {
+        "orden": "155",
+        "jerarquia": "PROF ASIGNATURA",
+        "nivel": "NA",
+        "funcional": "H-S-M PREPARATORIA 'A'"
+    },
+    {
+        "orden": "156",
+        "jerarquia": "PROF ASIGNATURA",
+        "nivel": "NA",
+        "funcional": "H-S-M PREPARATORIA 'B'"
+    },
+    {
+        "orden": "157",
+        "jerarquia": "PROF ASIGNATURA",
+        "nivel": "NA",
+        "funcional": "PROFESOR DE ASIGNATURA DE POSGRADO HORAS EFECTIVAS"
+    },
+    {
+        "orden": "158",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL MEDIO TIEMPO 'A'"
+    },
+    {
+        "orden": "159",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL MEDIO TIEMPO 'B'"
+    },
+    {
+        "orden": "160",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL MEDIO TIEMPO 'C'"
+    },
+    {
+        "orden": "161",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL MEDIO TIEMPO 'D'"
+    },
+    {
+        "orden": "162",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL MEDIO TIEMPO 'E'"
+    },
+    {
+        "orden": "163",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL MEDIO TIEMPO 'F'"
+    },
+    {
+        "orden": "164",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL TIEMPO COMPLETO 'A'"
+    },
+    {
+        "orden": "165",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL TIEMPO COMPLETO 'B'"
+    },
+    {
+        "orden": "166",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL TIEMPO COMPLETO 'C'"
+    },
+    {
+        "orden": "167",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL TIEMPO COMPLETO 'D'"
+    },
+    {
+        "orden": "168",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL TIEMPO COMPLETO 'E'"
+    },
+    {
+        "orden": "169",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "DIFUSION CULTURAL TIEMPO COMPLETO 'F'"
+    },
+    {
+        "orden": "170",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR MEDIO TIEMPO 'A'"
+    },
+    {
+        "orden": "171",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR MEDIO TIEMPO 'B'"
+    },
+    {
+        "orden": "172",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR MEDIO TIEMPO 'C'"
+    },
+    {
+        "orden": "173",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR MEDIO TIEMPO 'D'"
+    },
+    {
+        "orden": "174",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR MEDIO TIEMPO 'E'"
+    },
+    {
+        "orden": "175",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR MEDIO TIEMPO 'F'"
+    },
+    {
+        "orden": "176",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR TIEMPO COMPLETO 'A'"
+    },
+    {
+        "orden": "177",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR TIEMPO COMPLETO 'B'"
+    },
+    {
+        "orden": "178",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR TIEMPO COMPLETO 'C'"
+    },
+    {
+        "orden": "179",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR TIEMPO COMPLETO 'D'"
+    },
+    {
+        "orden": "180",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR TIEMPO COMPLETO 'E'"
+    },
+    {
+        "orden": "181",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "INVESTIGADOR TIEMPO COMPLETO 'F'"
+    },
+    {
+        "orden": "182",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR MEDIO TIEMPO 'A'"
+    },
+    {
+        "orden": "183",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR MEDIO TIEMPO 'B'"
+    },
+    {
+        "orden": "184",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR MEDIO TIEMPO 'C'"
+    },
+    {
+        "orden": "185",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR MEDIO TIEMPO 'D'"
+    },
+    {
+        "orden": "186",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR MEDIO TIEMPO 'E'"
+    },
+    {
+        "orden": "187",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR MEDIO TIEMPO 'F'"
+    },
+    {
+        "orden": "188",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR TIEMPO COMPLETO 'A'"
+    },
+    {
+        "orden": "189",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR TIEMPO COMPLETO 'B'"
+    },
+    {
+        "orden": "190",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR TIEMPO COMPLETO 'C'"
+    },
+    {
+        "orden": "191",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR TIEMPO COMPLETO 'D'"
+    },
+    {
+        "orden": "192",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR TIEMPO COMPLETO 'E'"
+    },
+    {
+        "orden": "193",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "PROFESOR TIEMPO COMPLETO 'F'"
+    },
+    {
+        "orden": "194",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO MEDIO TIEMPO 'A'"
+    },
+    {
+        "orden": "195",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO MEDIO TIEMPO 'B'"
+    },
+    {
+        "orden": "196",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO MEDIO TIEMPO 'C'"
+    },
+    {
+        "orden": "197",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO MEDIO TIEMPO 'D'"
+    },
+    {
+        "orden": "198",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO MEDIO TIEMPO 'E'"
+    },
+    {
+        "orden": "199",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO MEDIO TIEMPO 'F'"
+    },
+    {
+        "orden": "200",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO TIEMPO COMPLETO 'A'"
+    },
+    {
+        "orden": "201",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO TIEMPO COMPLETO 'B'"
+    },
+    {
+        "orden": "202",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO TIEMPO COMPLETO 'C'"
+    },
+    {
+        "orden": "203",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO TIEMPO COMPLETO 'D'"
+    },
+    {
+        "orden": "204",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO TIEMPO COMPLETO 'E'"
+    },
+    {
+        "orden": "205",
+        "jerarquia": "DOCENTES DE CARRERA",
+        "nivel": "NA",
+        "funcional": "TECNICO ACADEMICO TIEMPO COMPLETO 'F'"
+    },
+    {
+        "orden": "206",
+        "jerarquia": "OPERATIVO",
+        "nivel": "NA",
+        "funcional": "SUELDOS COMPLEMENTARIOS"
+    },
+    {
+        "orden": "207",
+        "jerarquia": "OPERATIVO",
+        "nivel": "NA",
+        "funcional": "SUELDOS COMPLEMENTARIOS HORAS"
+    }
+]

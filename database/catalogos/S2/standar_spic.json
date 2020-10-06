@@ -1,0 +1,437 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "version" : "1.1",
+    "title" : "API del Registro de Servidores públicos del Estado de México que intervienen en procedimientos de contrataciones públicas.",
+    "description" : "Actualización 2020-05-18",
+    "contact" : {
+      "name" : "Jessica Irai Diaz Valverde",
+      "email" : "soporte.pde@sesaemm.gob.mx"
+    }
+  },
+  "externalDocs" : {
+    "description" : "Estándar de datos y catálogos",
+    "url" : "https://gitlab.com/plataformadigitalestataledomex/api_docs_pde"
+  },
+  "paths" : {
+    "/spic" : {
+      "post" : {
+        "tags" : [ "spic" ],
+        "summary" : "Muestra los servidores públicos que intervienen en procedimientos de contrataciones públicas.",
+        "requestBody" : {
+          "description" : "Form para peticiones de filtros",
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "fechaCaptura" : {
+                    "type" : "string",
+                    "description" : "Fecha mayor o igual en la que se agrega o se modifica el registro. Contribución de la SECOGEM",
+                    "format": "date",
+                    "example" : "2019-08-20"
+                  },
+                  "limite_registros" : {
+                    "type" : "integer",
+                    "description" : "Indica el número de registros a mostrar por página",
+                    "minimum": 1,
+                    "example" : 11,
+                    "default": 10
+                  },
+                  "pagina" : {
+                    "type" : "integer",
+                    "minimum" : 1,
+                    "description" : "Indica la página que se requiere",
+                    "example" : 2,
+                    "default": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Respuesta exitosa",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/spic"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Error inesperado",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/resError"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "spic_auth" : [ "read:spic" ]
+        } ]
+      }
+    }
+  },
+  "components" : {
+    "securitySchemes" : {
+      "spic_auth" : {
+        "type" : "oauth2",
+        "flows" : {
+          "password" : {
+            "tokenUrl" : "/oauth",
+            "scopes" : {
+              "read:spic" : "Obtiene lista de servidores que intervienen en contrataciones"
+            }
+          }
+        }
+      }
+    },
+    "schemas" : {
+      "spic" : {
+        "type" : "object",
+        "required" : [ "pagination", "results" ],
+        "properties" : {
+          "pagination" : {
+            "type" : "object",
+            "required" : [ "pageSize", "page", "totalRows", "hasNextPage" ],
+            "properties" : {
+              "pageSize" : {
+                "type" : "integer",
+                "minimum" : 1,
+                "description" : "Número de registros mostrados, por defecto muestra diez.",
+                "example" : 100
+              },
+              "page" : {
+                "type" : "integer",
+                "minimum" : 1,
+                "description" : "Número de página actual",
+                "example" : 20
+              },
+              "totalRows" : {
+                "type" : "integer",
+                "minimum" : 1,
+                "description" : "Total de registros",
+                "example" : 30
+              },
+              "hasNextPage" : {
+                "type" : "boolean",
+                "description" : "Indica si existe otra página",
+                "example" : true
+              }
+            }
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "required" : [ "metadata", "id", "fechaCaptura", "ejercicioFiscal", "ramo", "rfc", "curp", "nombres", "primerApellido", "segundoApellido", "genero", "institucionDependencia", "puesto", "tipoArea", "nivelResponsabilidad", "tipoProcedimiento", "superiorInmediato" ],
+              "properties" : {
+                "metadata" : {
+                  "type" : "object",
+                  "required" : [ "actualizacion", "institucion", "contacto", "personaContacto" ],
+                  "properties" : {
+                    "actualizacion" : {
+                      "type" : "string",
+                      "format" : "date-time",
+                      "description" : "Fecha y hora en la que se realiza o actualiza el registro, en formato ISO 8601 yyyy-MM-dd'T'HH:mm:ssZ",
+                      "example" : "2017-07-21T17:32:28Z"
+                    },
+                    "institucion" : {
+                      "type" : "string",
+                      "description" : "Institución responsable del sistema de captura",
+                      "example" : "Secretaría de Educación Pública"
+                    },
+                    "contacto" : {
+                      "type" : "string",
+                      "format" : "email",
+                      "description" : "Correo de contacto de la persona resposanble del sistema de captura",
+                      "example" : "usuario@dominio.org"
+                    },
+                    "personaContacto" : {
+                      "type" : "string",
+                      "description" : "Nombre de la persona resposanble del sistema de captura",
+                      "example" : "José John"
+                    }
+                  }
+                },
+                "id" : {
+                  "type" : "string",
+                  "description" : "Dato que permita identificar de manera  unívoca al registro",
+                  "example" : "RFT129"
+                },
+                "fechaCaptura" : {
+                  "type" : "string",
+                  "format" : "date-time",
+                  "description" : "Fecha y hora en la que se agrega o modifca el registro. Fecha en formato ISO 8601 yyyy-MM-dd'T'HH:mm:ssZ",
+                  "example" : "2019-01-21T17:32:28Z"
+                },
+                "ejercicioFiscal" : {
+                  "type" : "string",
+                  "nullable": true,
+                  "description" : "Ejercicio fiscal",
+                  "example" : "2018"
+                },
+                "ramo" : {
+                  "type" : "object",
+                  "required" : [ "clave", "valor" ],
+                  "properties" : {
+                    "clave" : {
+                      "type" : "integer",
+                      "nullable": true,
+                      "minimum" : 1,
+                      "description" : "Identificador del ramo. Se obtiene del catálogo [ramo.csv] que se basa en las Subfunciones de la Clasificación Funcional del Presupuesto de Egresos del Estado. Se puede consultar en http://transparenciafiscal.edomex.gob.mx/sites/transparenciafiscal.edomex.gob.mx/files/files/pdf/marco-programatico-presupuestal/ppto-egresos-2020/ppto-clasif-funcional-2020-completa.pdf",
+                      "example" : 23
+                    },
+                    "valor" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "description" : "Identifica y clasifica los recursos en el presupuesto de egresos a las Dependencias y en su caso Entidades, a la Presidencia de la República, a la Procuraduría General de la República y a los Tribunales Administrativos. Se obtiene del catálogo [ramo.csv] que se basa en las Subfunciones de la Clasificación Funcional del Presupuesto de Egresos del Estado. Se puede consultar en http://transparenciafiscal.edomex.gob.mx/sites/transparenciafiscal.edomex.gob.mx/files/files/pdf/marco-programatico-presupuestal/ppto-egresos-2020/ppto-clasif-funcional-2020-completa.pdf",
+                      "example" : "Provisiones salariales y económicas"
+                    }
+                  }
+                },
+                "rfc" : {
+                  "type" : "string",
+                  "nullable": true,
+                  "description" : "RFC del Servidor Público con homoclave",
+                  "example" : "JPM851111C44"
+                },
+                "curp" : {
+                  "type" : "string",
+                  "nullable": true,
+                  "description" : "CURP del Servidor Público",
+                  "example" : "BEML920313HMCLNS09"
+                },
+                "nombres" : {
+                  "type" : "string",
+                  "description" : "Nombre(s) del Servidor Público",
+                  "example" : "John Juan"
+                },
+                "primerApellido" : {
+                  "type" : "string",
+                  "description" : "Primer apellido del servidor público",
+                  "example" : "Pérez"
+                },
+                "segundoApellido" : {
+                  "type" : "string",
+                  "nullable": true,
+                  "description" : "Segundo apellido del servidor público",
+                  "example" : "Mendez"
+                },
+                "genero" : {
+                  "type" : "object",
+                  "required" : [ "clave", "valor" ],
+                  "properties" : {
+                    "clave" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "enum" : [ "F", "M", "O" ],
+                      "description" : "Genero del Servidor Público.\n  * `F` - FEMENINO \n  * `M` - MASCULINO\n  * `O` - OTRO\n Se obtiene del catálogo [genero.csv].",
+                      "example" : "M"
+                    },
+                    "valor" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "enum" : [ "FEMENINO", "MASCULINO", "OTRO" ],
+                      "description" : "Valor del género. Se obtiene del catálogo [genero.csv].",
+                      "example" : "MASCULINO"
+                    }
+                  }
+                },
+                "institucionDependencia" : {
+                  "description" : "Indicar el nombre de la institución donde se encuentren registradas las inversiones, cuentas o valores",
+                  "type" : "object",
+                  "required" : [ "nombre", "siglas", "clave" ],
+                  "properties" : {
+                    "nombre" : {
+                      "type" : "string",
+                      "description" : "Nombre de la institución o dependencia donde labora el Servidor Público. Se obtiene del catálogo [entePublico.csv].",
+                      "example" : "Secretaría de Hacienda y Crédito Público"
+                    },
+                    "siglas" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "description" : "Siglas de la institución o dependencia donde labora el Servidor Público. Se obtiene del catálogo [entePublico.csv].",
+                      "example" : "SHCP"
+                    },
+                    "clave" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "description" : "Clave de la institución o dependencia donde labora el Servidor Público. Se obtiene del catálogo [entePublico.csv].",
+                      "example" : "XYZ987"
+                    }
+                  }
+                },
+                "puesto" : {
+                  "type" : "object",
+                  "required" : [ "clave", "valor" ],
+                  "properties" : {
+                    "nombre" : {
+                      "type" : "string",
+                      "description" : "Nombre del puesto del Servidor Público. Se obtiene del catálogo [puesto.csv].",
+                      "example" : "Director de área"
+                    },
+                    "nivel" : {
+                      "type" : "string",
+                      "maxLength" : 12,
+                      "description" : "Nivel o identificador del puesto del Servidor Público. Se obtiene del catálogo [puesto.csv].",
+                      "example" : "1234567890"
+                    }
+                  }
+                },
+                "tipoArea" : {
+                  "type" : "array",
+                  "description" : "Tipo de área.",
+                  "uniqueItems" : true,
+                  "items" : {
+                    "type" : "object",
+                    "required" : [ "clave", "valor" ],
+                    "properties" : {
+                      "clave" : {
+                        "type" : "string",
+                        "nullable": true,
+                        "enum" : [ "T", "RE", "RC", "O", "C", "R" ],
+                        "description" : "Significado de Claves:\n  * `T` - TÉCNICA\n  * `RE` - RESPONSABLE DE LA EJECUCIÓN DE LOS TRABAJOS\n  * `RC` - RESPONSABLE DE LA CONTRATACIÓN\n  * `O` - OTRA\n  * `C` - CONTRATANTE\n  * `R` - REQUIRENTE\n Se obtiene del catálogo [tipoArea.csv].",
+                        "example" : "T"
+                      },
+                      "valor" : {
+                        "type" : "string",
+                        "nullable": true,
+                        "enum" : [ "TÉCNICA", "RESPONSABLE DE LA EJECUCIÓN DE LOS TRABAJOS", "RESPONSABLE DE LA CONTRATACIÓN", "OTRA", "CONTRATANTE", "REQUIRENTE" ],
+                        "description" : "Valor del tipo de área. Se obtiene del catálogo [tipoArea.csv].",
+                        "example" : "TÉCNICA"
+                      }
+                    }
+                  },
+                  "example" : [ {
+                    "clave" : "T",
+                    "valor" : "TÉCNICA"
+                  }, {
+                    "clave" : "RE",
+                    "valor" : "RESPONSABLE DE LA EJECUCIÓN"
+                  } ]
+                },
+                "nivelResponsabilidad" : {
+                  "type" : "array",
+                  "uniqueItems" : true,
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "clave" : {
+                        "type" : "string",
+                        "enum" : [ "A", "T", "R" ],
+                        "example" : "A"
+                      },
+                      "valor" : {
+                        "type" : "string",
+                        "enum" : [ "ATENCIÓN", "TRAMITACIÓN", "RESOLUCIÓN" ],
+                        "example" : "ATENCIÓN"
+                      }
+                    }
+                  },
+                  "description" : "Nivel de responsabilidad.\nSignificado de Claves:\n  * `A` - ATENCIÓN\n  * `T` - TRAMITACIÓN\n  * `R` - RESOLUCIÓN\n Se obtiene del catálogo [nivelResponsabilidad.csv]."
+                },
+                "tipoProcedimiento" : {
+                  "type" : "array",
+                  "uniqueItems" : true,
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "clave" : {
+                        "type" : "integer",
+                        "minimum" : 1,
+                        "example" : 1,
+                        "enum" : [ 1, 2, 3, 4, 5 ]
+                      },
+                      "valor" : {
+                        "type" : "string",
+                        "enum" : [ "CONTRATACIONES PÚBLICAS", "CONCESIONES, LICENCIAS, PERMISOS, AUTORIZACIONES Y PRÓRROGAS", "ENAJENACIÓN DE BIENES MUEBLES", "ASIGNACIÓN Y EMISIÓN DE DICTÁMENES DE AVALÚOS NACIONALES", "OTRO" ]
+                      }
+                    }
+                  },
+                    "description" : "Tipos de procedimiento en los que puede participar el Servidor Público.\n* `1` - CONTRATACIONES PÚBLICAS \n* `2` - CONCESIONES, LICENCIAS, PERMISOS, AUTORIZACIONES Y PRÓRROGAS \n* `3` - ENAJENACIÓN DE BIENES MUEBLES \n* `4` - ASIGNACIÓN Y EMISIÓN DE DICTÁMENES DE AVALÚOS NACIONALES\n* `5` - OTRO\n Se obtiene del catálogo [tipoProcedimiento.csv]."
+                },
+                "superiorInmediato" : {
+                  "type" : "object",
+                  "required" : [ "nombres", "primerApellido", "segundoApellido", "curp", "rfc", "puesto" ],
+                  "properties" : {
+                    "nombres" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "description" : "Nombre(s) del superior inmediato del Servidor Público",
+                      "example" : "Juan"
+                    },
+                    "primerApellido" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "description" : "Primer apellido del superior inmediato del Servidor Público",
+                      "example" : "Lopez"
+                    },
+                    "segundoApellido" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "description" : "Segundo apellido del superior inmediato del Servidor Público",
+                      "example" : "Perez"
+                    },
+                    "curp" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "description" : "CURP del superior inmediato del Servidor Público",
+                      "example" : "BADD110313HCMLNS09"
+                    },
+                    "rfc" : {
+                      "type" : "string",
+                      "nullable": true,
+                      "description" : "RFC con homoclave del superior inmediato del Servidor Público",
+                      "example" : "CUPU800825569"
+                    },
+                    "puesto" : {
+                      "type" : "object",
+                      "required" : [ "nombre", "nivel" ],
+                      "properties" : {
+                        "nombre" : {
+                          "type" : "string",
+                          "nullable": true,
+                          "description" : "Nombre del puesto del superior inmediato del Servidor Público. Se obtiene del catálogo [puesto.csv].",
+                          "example" : "Director de área"
+                        },
+                        "nivel" : {
+                          "type" : "string",
+                          "nullable": true,
+                          "description" : "Nivel o identificador del puesto del superior inmediato del Servidor Público. Se obtiene del catálogo [puesto.csv].",
+                          "example" : "1234567890"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "resError" : {
+        "description" : "Estos valores son definidos por el sistema del API.",
+        "required" : [ "code", "message" ],
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "description" : "Código alfa numérico del error de la consulta.",
+            "example" : "abc123"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "Texto descriptivo para el usuario final del error en la consulta",
+            "example" : "Error al formar la consulta, revise el formato de los campos."
+          }
+        }
+      }
+    }
+  }
+}

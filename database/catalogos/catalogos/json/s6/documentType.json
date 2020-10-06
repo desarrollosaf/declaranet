@@ -1,0 +1,248 @@
+[
+    {
+        "categoria": "",
+        "seccion": "planning",
+        "clave": "plannedProcurementNotice",
+        "valor": "Aviso de compra planeada"
+    },
+    {
+        "categoria": "basic",
+        "seccion": "tender",
+        "clave": "tenderNotice",
+        "valor": "Aviso de licitación"
+    },
+    {
+        "categoria": "basic",
+        "seccion": "award",
+        "clave": "awardNotice",
+        "valor": "Aviso de adjudicación"
+    },
+    {
+        "categoria": "basic",
+        "seccion": "contract",
+        "clave": "contractNotice",
+        "valor": "Aviso de contrato"
+    },
+    {
+        "categoria": "basic",
+        "seccion": "implementation",
+        "clave": "completionCertificate",
+        "valor": "Certificado de terminación"
+    },
+    {
+        "categoria": "basic",
+        "seccion": "planning",
+        "clave": "procurementPlan",
+        "valor": "Plan de adquisiciones"
+    },
+    {
+        "categoria": "basic",
+        "seccion": "tender",
+        "clave": "biddingDocuments",
+        "valor": "Documentos de ofertas"
+    },
+    {
+        "categoria": "basic",
+        "seccion": "tender",
+        "clave": "technicalSpecifications",
+        "valor": "Especificaciones técnicas"
+    },
+    {
+        "categoria": "basic",
+        "seccion": "tender",
+        "clave": "evaluationCriteria",
+        "valor": "Criterios de evaluación"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "tender",
+        "clave": "evaluationReports",
+        "valor": "Reporte de evaluación"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "tender, award",
+        "clave": "contractDraft",
+        "valor": "Borrador de contrato"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "contract",
+        "clave": "contractSigned",
+        "valor": "Contrato firmado"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "tender, award, contract",
+        "clave": "contractArrangements",
+        "valor": "Arreglos para finalizar un contrato"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "tender, award, contract",
+        "clave": "contractSchedule",
+        "valor": "Calendario del contrato"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "implementation",
+        "clave": "physicalProgressReport",
+        "valor": "Reportes de progreso físico"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "implementation",
+        "clave": "financialProgressReport",
+        "valor": "Reportes de progreso financiero"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "implementation",
+        "clave": "finalAudit",
+        "valor": "Auditoría final"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "tender",
+        "clave": "hearingNotice",
+        "valor": "Aviso de audiencia pública"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "planning",
+        "clave": "marketStudies",
+        "valor": "Estudios de mercado"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "tender",
+        "clave": "eligibilityCriteria",
+        "valor": "Criterios de elegibilidad"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "tender",
+        "clave": "clarifications",
+        "valor": "Aclaraciones a las preguntas de los licitantes"
+    },
+    {
+        "categoria": "intermediate",
+        "seccion": "tender",
+        "clave": "shortlistedFirms",
+        "valor": "Empresas preseleccionadas"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "planning, implementation",
+        "clave": "environmentalImpact",
+        "valor": "Impacto medioambiental"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "planning",
+        "clave": "assetAndLiabilityAssessment",
+        "valor": "Evaluación de los activos y responsabilidades del gobierno"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "planning",
+        "clave": "riskProvisions",
+        "valor": "Cláusulas para el manejo de riesgos y responsabilidades"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "award",
+        "clave": "winningBid",
+        "valor": "Oferta ganadora"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "tender, award",
+        "clave": "complaints",
+        "valor": "Quejas y decisiones"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "contract",
+        "clave": "contractAnnexe",
+        "valor": "Anexos al contrato"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "tender, contract",
+        "clave": "contractGuarantees",
+        "valor": "Garantías"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "contract",
+        "clave": "subContract",
+        "valor": "Subcontratos"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "planning",
+        "clave": "needsAssessment",
+        "valor": "Evaluación de necesidades"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "planning",
+        "clave": "feasibilityStudy",
+        "valor": "Estudio de factibilidad"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "planning",
+        "clave": "projectPlan",
+        "valor": "Plan de proyecto"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "tender",
+        "clave": "billOfQuantity",
+        "valor": "Factura de cantidad"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "tender, bidder",
+        "clave": "bidders",
+        "valor": "Información de Licitante"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "tender, award, contract, implementation",
+        "clave": "conflictOfInterest",
+        "valor": "Conflicto de interés"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "implementation",
+        "clave": "debarments",
+        "valor": "Inhabilitaciones"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "tender, bid, contract, implementation",
+        "clave": "illustration",
+        "valor": "Ilustraciones"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "bid, award, contract",
+        "clave": "submissionDocuments",
+        "valor": "Documentos de presentación de oferta"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "contract",
+        "clave": "contractSummary",
+        "valor": "Resúmen del contrato"
+    },
+    {
+        "categoria": "advanced",
+        "seccion": "tender, award, contract, implementation",
+        "clave": "cancellationDetails",
+        "valor": "Detalles de cancelación"
+    }
+]

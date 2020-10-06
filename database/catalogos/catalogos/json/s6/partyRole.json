@@ -1,0 +1,42 @@
+[
+    {
+        "clave": "buyer",
+        "valor": "Comprador"
+    },
+    {
+        "clave": "procuringEntity",
+        "valor": "Entidad contratante"
+    },
+    {
+        "clave": "supplier",
+        "valor": "Proveedor"
+    },
+    {
+        "clave": "tenderer",
+        "valor": "Licitante"
+    },
+    {
+        "clave": "funder",
+        "valor": "Financiador"
+    },
+    {
+        "clave": "enquirer",
+        "valor": "Persona que solicita información"
+    },
+    {
+        "clave": "payer",
+        "valor": "Pagador"
+    },
+    {
+        "clave": "payee",
+        "valor": "Beneficiario"
+    },
+    {
+        "clave": "reviewBody",
+        "valor": "Órgano de revisión"
+    },
+    {
+        "clave": "interestedParty",
+        "valor": "Parte interesada"
+    }
+]

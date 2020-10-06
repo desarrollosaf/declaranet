@@ -1,0 +1,67 @@
+[{
+  "clave": "01",
+  "valor": "AMPLIACIÓN"
+}, {
+  "clave": "02",
+  "valor": "ANDADOR"
+}, {
+  "clave": "03",
+  "valor": "AVENIDA"
+}, {
+  "clave": "04",
+  "valor": "BOULEVARD"
+}, {
+  "clave": "05",
+  "valor": "CALLE"
+}, {
+  "clave": "06",
+  "valor": "CALLEJÓN"
+}, {
+  "clave": "07",
+  "valor": "CALZADA"
+}, {
+  "clave": "08",
+  "valor": "CERRADA"
+}, {
+  "clave": "09",
+  "valor": "CIRCUITO"
+}, {
+  "clave": "10",
+  "valor": "CIRCUNVALACIÓN"
+}, {
+  "clave": "11",
+  "valor": "CONTINUACIÓN"
+}, {
+  "clave": "12",
+  "valor": "CORREDOR"
+}, {
+  "clave": "13",
+  "valor": "DIAGONAL"
+}, {
+  "clave": "14",
+  "valor": "EJE VIAL"
+}, {
+  "clave": "15",
+  "valor": "PASAJE"
+}, {
+  "clave": "16",
+  "valor": "PEATONAL"
+}, {
+  "clave": "17",
+  "valor": "PERIFÉRICO"
+}, {
+  "clave": "18",
+  "valor": "PRIVADA"
+}, {
+  "clave": "19",
+  "valor": "PROLONGACIÓN"
+}, {
+  "clave": "20",
+  "valor": "RETORNO"
+}, {
+  "clave": "21",
+  "valor": "VIADUCTO"
+}, {
+  "clave": "22",
+  "valor": "NINGUNO"
+}]

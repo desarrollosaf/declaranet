@@ -1,0 +1,974 @@
+[
+  {
+    "clave": "AF",
+    "valor": "Afganistán"
+  },
+  {
+    "clave": "AL",
+    "valor": "Albania"
+  },
+  {
+    "clave": "DE",
+    "valor": "Alemania"
+  },
+  {
+    "clave": "AD",
+    "valor": "Andorra"
+  },
+  {
+    "clave": "AO",
+    "valor": "Angola"
+  },
+  {
+    "clave": "AI",
+    "valor": "Anguilla"
+  },
+  {
+    "clave": "AQ",
+    "valor": "Antártida"
+  },
+  {
+    "clave": "AG",
+    "valor": "Antigua y Barbuda"
+  },
+  {
+    "clave": "AN",
+    "valor": "Antillas Holandesas"
+  },
+  {
+    "clave": "SA",
+    "valor": "Arabia Saudí"
+  },
+  {
+    "clave": "DZ",
+    "valor": "Argelia"
+  },
+  {
+    "clave": "AR",
+    "valor": "Argentina"
+  },
+  {
+    "clave": "AM",
+    "valor": "Armenia"
+  },
+  {
+    "clave": "AW",
+    "valor": "Aruba"
+  },
+  {
+    "clave": "MK",
+    "valor": "ARY Macedonia"
+  },
+  {
+    "clave": "AU",
+    "valor": "Australia"
+  },
+  {
+    "clave": "AT",
+    "valor": "Austria"
+  },
+  {
+    "clave": "AZ",
+    "valor": "Azerbaiyán"
+  },
+  {
+    "clave": "BS",
+    "valor": "Bahamas"
+  },
+  {
+    "clave": "BH",
+    "valor": "Bahréin"
+  },
+  {
+    "clave": "BD",
+    "valor": "Bangladesh"
+  },
+  {
+    "clave": "BB",
+    "valor": "Barbados"
+  },
+  {
+    "clave": "BE",
+    "valor": "Bélgica"
+  },
+  {
+    "clave": "BZ",
+    "valor": "Belice"
+  },
+  {
+    "clave": "BJ",
+    "valor": "Benin"
+  },
+  {
+    "clave": "BM",
+    "valor": "Bermudas"
+  },
+  {
+    "clave": "BT",
+    "valor": "Bhután"
+  },
+  {
+    "clave": "BY",
+    "valor": "Bielorrusia"
+  },
+  {
+    "clave": "BO",
+    "valor": "Bolivia"
+  },
+  {
+    "clave": "BA",
+    "valor": "Bosnia y Herzegovina"
+  },
+  {
+    "clave": "BW",
+    "valor": "Botsuana"
+  },
+  {
+    "clave": "BR",
+    "valor": "Brasil"
+  },
+  {
+    "clave": "BN",
+    "valor": "Brunéi"
+  },
+  {
+    "clave": "BG",
+    "valor": "Bulgaria"
+  },
+  {
+    "clave": "BF",
+    "valor": "Burkina Faso"
+  },
+  {
+    "clave": "BI",
+    "valor": "Burundi"
+  },
+  {
+    "clave": "CV",
+    "valor": "Cabo Verde"
+  },
+  {
+    "clave": "KH",
+    "valor": "Camboya"
+  },
+  {
+    "clave": "CM",
+    "valor": "Camerún"
+  },
+  {
+    "clave": "CA",
+    "valor": "Canadá"
+  },
+  {
+    "clave": "TD",
+    "valor": "Chad"
+  },
+  {
+    "clave": "CL",
+    "valor": "Chile"
+  },
+  {
+    "clave": "CN",
+    "valor": "China"
+  },
+  {
+    "clave": "CY",
+    "valor": "Chipre"
+  },
+  {
+    "clave": "VA",
+    "valor": "Ciudad del Vaticano"
+  },
+  {
+    "clave": "CO",
+    "valor": "Colombia"
+  },
+  {
+    "clave": "KM",
+    "valor": "Comoras"
+  },
+  {
+    "clave": "CG",
+    "valor": "Congo"
+  },
+  {
+    "clave": "KP",
+    "valor": "Corea del Norte"
+  },
+  {
+    "clave": "KR",
+    "valor": "Corea del Sur"
+  },
+  {
+    "clave": "CI",
+    "valor": "Costa de Marfil"
+  },
+  {
+    "clave": "CR",
+    "valor": "Costa Rica"
+  },
+  {
+    "clave": "HR",
+    "valor": "Croacia"
+  },
+  {
+    "clave": "CU",
+    "valor": "Cuba"
+  },
+  {
+    "clave": "DK",
+    "valor": "Dinamarca"
+  },
+  {
+    "clave": "DM",
+    "valor": "Dominica"
+  },
+  {
+    "clave": "EC",
+    "valor": "Ecuador"
+  },
+  {
+    "clave": "EG",
+    "valor": "Egipto"
+  },
+  {
+    "clave": "SV",
+    "valor": "El Salvador"
+  },
+  {
+    "clave": "AE",
+    "valor": "Emiratos Árabes Unidos"
+  },
+  {
+    "clave": "ER",
+    "valor": "Eritrea"
+  },
+  {
+    "clave": "SK",
+    "valor": "Eslovaquia"
+  },
+  {
+    "clave": "SI",
+    "valor": "Eslovenia"
+  },
+  {
+    "clave": "ES",
+    "valor": "España"
+  },
+  {
+    "clave": "US",
+    "valor": "Estados Unidos"
+  },
+  {
+    "clave": "EE",
+    "valor": "Estonia"
+  },
+  {
+    "clave": "ET",
+    "valor": "Etiopía"
+  },
+  {
+    "clave": "PH",
+    "valor": "Filipinas"
+  },
+  {
+    "clave": "FI",
+    "valor": "Finlandia"
+  },
+  {
+    "clave": "FJ",
+    "valor": "Fiyi"
+  },
+  {
+    "clave": "FR",
+    "valor": "Francia"
+  },
+  {
+    "clave": "GA",
+    "valor": "Gabón"
+  },
+  {
+    "clave": "GM",
+    "valor": "Gambia"
+  },
+  {
+    "clave": "GE",
+    "valor": "Georgia"
+  },
+  {
+    "clave": "GH",
+    "valor": "Ghana"
+  },
+  {
+    "clave": "GI",
+    "valor": "Gibraltar"
+  },
+  {
+    "clave": "GD",
+    "valor": "Granada"
+  },
+  {
+    "clave": "GR",
+    "valor": "Grecia"
+  },
+  {
+    "clave": "GL",
+    "valor": "Groenlandia"
+  },
+  {
+    "clave": "GP",
+    "valor": "Guadalupe"
+  },
+  {
+    "clave": "GU",
+    "valor": "Guam"
+  },
+  {
+    "clave": "GT",
+    "valor": "Guatemala"
+  },
+  {
+    "clave": "GF",
+    "valor": "Guayana Francesa"
+  },
+  {
+    "clave": "GG",
+    "valor": "Guernesey"
+  },
+  {
+    "clave": "GN",
+    "valor": "Guinea"
+  },
+  {
+    "clave": "GQ",
+    "valor": "Guinea Ecuatorial"
+  },
+  {
+    "clave": "GW",
+    "valor": "Guinea-Bissau"
+  },
+  {
+    "clave": "GY",
+    "valor": "Guyana"
+  },
+  {
+    "clave": "HT",
+    "valor": "Haití"
+  },
+  {
+    "clave": "NL",
+    "valor": "Holanda o Países Bajos"
+  },
+  {
+    "clave": "HN",
+    "valor": "Honduras"
+  },
+  {
+    "clave": "HK",
+    "valor": "Hong Kong"
+  },
+  {
+    "clave": "HU",
+    "valor": "Hungría"
+  },
+  {
+    "clave": "IN",
+    "valor": "India"
+  },
+  {
+    "clave": "ID",
+    "valor": "Indonesia"
+  },
+  {
+    "clave": "IR",
+    "valor": "Irán"
+  },
+  {
+    "clave": "IQ",
+    "valor": "Iraq"
+  },
+  {
+    "clave": "IE",
+    "valor": "Irlanda"
+  },
+  {
+    "clave": "BV",
+    "valor": "Isla Bouvet"
+  },
+  {
+    "clave": "IM",
+    "valor": "Isla de Man"
+  },
+  {
+    "clave": "CX",
+    "valor": "Isla de Navidad"
+  },
+  {
+    "clave": "NF",
+    "valor": "Isla Norfolk"
+  },
+  {
+    "clave": "IS",
+    "valor": "Islandia"
+  },
+  {
+    "clave": "AX",
+    "valor": "Islas Aland"
+  },
+  {
+    "clave": "KY",
+    "valor": "Islas Caimán"
+  },
+  {
+    "clave": "CC",
+    "valor": "Islas Cocos"
+  },
+  {
+    "clave": "CK",
+    "valor": "Islas Cook"
+  },
+  {
+    "clave": "FO",
+    "valor": "Islas Feroe"
+  },
+  {
+    "clave": "GS",
+    "valor": "Islas Georgias del Sur y Sandwich del Sur"
+  },
+  {
+    "clave": "HM",
+    "valor": "Islas Heard y McDonald"
+  },
+  {
+    "clave": "FK",
+    "valor": "Islas Malvinas"
+  },
+  {
+    "clave": "MP",
+    "valor": "Islas Marianas del Norte"
+  },
+  {
+    "clave": "MH",
+    "valor": "Islas Marshall"
+  },
+  {
+    "clave": "PN",
+    "valor": "Islas Pitcairn"
+  },
+  {
+    "clave": "SB",
+    "valor": "Islas Salomón"
+  },
+  {
+    "clave": "TC",
+    "valor": "Islas Turcas y Caicos"
+  },
+  {
+    "clave": "UM",
+    "valor": "Islas ultramarinas de Estados Unidos"
+  },
+  {
+    "clave": "VG",
+    "valor": "Islas Vírgenes Británicas"
+  },
+  {
+    "clave": "VI",
+    "valor": "Islas Vírgenes de los Estados Unidos"
+  },
+  {
+    "clave": "IL",
+    "valor": "Israel"
+  },
+  {
+    "clave": "IT",
+    "valor": "Italia"
+  },
+  {
+    "clave": "JM",
+    "valor": "Jamaica"
+  },
+  {
+    "clave": "JP",
+    "valor": "Japón"
+  },
+  {
+    "clave": "JE",
+    "valor": "Jersey"
+  },
+  {
+    "clave": "JO",
+    "valor": "Jordania"
+  },
+  {
+    "clave": "KZ",
+    "valor": "Kazajstán"
+  },
+  {
+    "clave": "KE",
+    "valor": "Kenia"
+  },
+  {
+    "clave": "KG",
+    "valor": "Kirguistán"
+  },
+  {
+    "clave": "KI",
+    "valor": "Kiribati"
+  },
+  {
+    "clave": "KW",
+    "valor": "Kuwait"
+  },
+  {
+    "clave": "LA",
+    "valor": "Laos"
+  },
+  {
+    "clave": "LS",
+    "valor": "Lesotho"
+  },
+  {
+    "clave": "LV",
+    "valor": "Letonia"
+  },
+  {
+    "clave": "LB",
+    "valor": "Líbano"
+  },
+  {
+    "clave": "LR",
+    "valor": "Liberia"
+  },
+  {
+    "clave": "LY",
+    "valor": "Libia"
+  },
+  {
+    "clave": "LI",
+    "valor": "Liechtenstein"
+  },
+  {
+    "clave": "LT",
+    "valor": "Lituania"
+  },
+  {
+    "clave": "LU",
+    "valor": "Luxemburgo"
+  },
+  {
+    "clave": "MO",
+    "valor": "Macao"
+  },
+  {
+    "clave": "MG",
+    "valor": "Madagascar"
+  },
+  {
+    "clave": "MY",
+    "valor": "Malasia"
+  },
+  {
+    "clave": "MW",
+    "valor": "Malawi"
+  },
+  {
+    "clave": "MV",
+    "valor": "Maldivas"
+  },
+  {
+    "clave": "ML",
+    "valor": "Malí"
+  },
+  {
+    "clave": "MT",
+    "valor": "Malta"
+  },
+  {
+    "clave": "MA",
+    "valor": "Marruecos"
+  },
+  {
+    "clave": "MQ",
+    "valor": "Martinica"
+  },
+  {
+    "clave": "MU",
+    "valor": "Mauricio"
+  },
+  {
+    "clave": "MR",
+    "valor": "Mauritania"
+  },
+  {
+    "clave": "YT",
+    "valor": "Mayotte"
+  },
+  {
+    "clave": "MX",
+    "valor": "México"
+  },
+  {
+    "clave": "FM",
+    "valor": "Micronesia"
+  },
+  {
+    "clave": "MD",
+    "valor": "Moldavia"
+  },
+  {
+    "clave": "MC",
+    "valor": "Mónaco"
+  },
+  {
+    "clave": "MN",
+    "valor": "Mongolia"
+  },
+  {
+    "clave": "MS",
+    "valor": "Montserrat"
+  },
+  {
+    "clave": "MZ",
+    "valor": "Mozambique"
+  },
+  {
+    "clave": "MM",
+    "valor": "Myanmar"
+  },
+  {
+    "clave": "NA",
+    "valor": "Namibia"
+  },
+  {
+    "clave": "NR",
+    "valor": "Nauru"
+  },
+  {
+    "clave": "NP",
+    "valor": "Nepal"
+  },
+  {
+    "clave": "NI",
+    "valor": "Nicaragua"
+  },
+  {
+    "clave": "NE",
+    "valor": "Níger"
+  },
+  {
+    "clave": "NG",
+    "valor": "Nigeria"
+  },
+  {
+    "clave": "NU",
+    "valor": "Niue"
+  },
+  {
+    "clave": "NO",
+    "valor": "Noruega"
+  },
+  {
+    "clave": "NC",
+    "valor": "Nueva Caledonia"
+  },
+  {
+    "clave": "NZ",
+    "valor": "Nueva Zelanda"
+  },
+  {
+    "clave": "OM",
+    "valor": "Omán"
+  },
+  {
+    "clave": "PK",
+    "valor": "Pakistán"
+  },
+  {
+    "clave": "PW",
+    "valor": "Palau"
+  },
+  {
+    "clave": "PS",
+    "valor": "Palestina"
+  },
+  {
+    "clave": "PA",
+    "valor": "Panamá"
+  },
+  {
+    "clave": "PG",
+    "valor": "Papúa Nueva Guinea"
+  },
+  {
+    "clave": "PY",
+    "valor": "Paraguay"
+  },
+  {
+    "clave": "PE",
+    "valor": "Perú"
+  },
+  {
+    "clave": "PF",
+    "valor": "Polinesia Francesa"
+  },
+  {
+    "clave": "PL",
+    "valor": "Polonia"
+  },
+  {
+    "clave": "PT",
+    "valor": "Portugal"
+  },
+  {
+    "clave": "PR",
+    "valor": "Puerto Rico"
+  },
+  {
+    "clave": "QA",
+    "valor": "Qatar"
+  },
+  {
+    "clave": "GB",
+    "valor": "Reino Unido"
+  },
+  {
+    "clave": "CF",
+    "valor": "República Centroafricana"
+  },
+  {
+    "clave": "CZ",
+    "valor": "República Checa"
+  },
+  {
+    "clave": "CD",
+    "valor": "República Democrática del Congo"
+  },
+  {
+    "clave": "DO",
+    "valor": "República Dominicana"
+  },
+  {
+    "clave": "RE",
+    "valor": "Reunión"
+  },
+  {
+    "clave": "RW",
+    "valor": "Ruanda"
+  },
+  {
+    "clave": "RO",
+    "valor": "Rumania"
+  },
+  {
+    "clave": "RU",
+    "valor": "Rusia"
+  },
+  {
+    "clave": "EH",
+    "valor": "Sahara Occidental"
+  },
+  {
+    "clave": "WS",
+    "valor": "Samoa"
+  },
+  {
+    "clave": "AS",
+    "valor": "Samoa Americana"
+  },
+  {
+    "clave": "KN",
+    "valor": "San Cristóbal y Nevis"
+  },
+  {
+    "clave": "SM",
+    "valor": "San Marino"
+  },
+  {
+    "clave": "PM",
+    "valor": "San Pedro y Miquelón"
+  },
+  {
+    "clave": "VC",
+    "valor": "San Vicente y las Granadinas"
+  },
+  {
+    "clave": "SH",
+    "valor": "Santa Helena"
+  },
+  {
+    "clave": "LC",
+    "valor": "Santa Lucía"
+  },
+  {
+    "clave": "ST",
+    "valor": "Santo Tomé y Príncipe"
+  },
+  {
+    "clave": "SN",
+    "valor": "Senegal"
+  },
+  {
+    "clave": "CS",
+    "valor": "Serbia y Montenegro"
+  },
+  {
+    "clave": "SC",
+    "valor": "Seychelles"
+  },
+  {
+    "clave": "SL",
+    "valor": "Sierra Leona"
+  },
+  {
+    "clave": "SG",
+    "valor": "Singapur"
+  },
+  {
+    "clave": "SY",
+    "valor": "Siria"
+  },
+  {
+    "clave": "SO",
+    "valor": "Somalia"
+  },
+  {
+    "clave": "LK",
+    "valor": "Sri Lanka"
+  },
+  {
+    "clave": "SZ",
+    "valor": "Suazilandia"
+  },
+  {
+    "clave": "ZA",
+    "valor": "Sudáfrica"
+  },
+  {
+    "clave": "SD",
+    "valor": "Sudán"
+  },
+  {
+    "clave": "SE",
+    "valor": "Suecia"
+  },
+  {
+    "clave": "CH",
+    "valor": "Suiza"
+  },
+  {
+    "clave": "SR",
+    "valor": "Surinam"
+  },
+  {
+    "clave": "SJ",
+    "valor": "Svalbard y Jan Mayen"
+  },
+  {
+    "clave": "TH",
+    "valor": "Tailandia"
+  },
+  {
+    "clave": "TW",
+    "valor": "Taiwán"
+  },
+  {
+    "clave": "TZ",
+    "valor": "Tanzania"
+  },
+  {
+    "clave": "TJ",
+    "valor": "Tayikistán"
+  },
+  {
+    "clave": "IO",
+    "valor": "Territorio Británico del Océano Índico"
+  },
+  {
+    "clave": "TF",
+    "valor": "Territorios Australes Franceses"
+  },
+  {
+    "clave": "TL",
+    "valor": "Timor Oriental"
+  },
+  {
+    "clave": "TG",
+    "valor": "Togo"
+  },
+  {
+    "clave": "TK",
+    "valor": "Tokelau"
+  },
+  {
+    "clave": "TO",
+    "valor": "Tonga"
+  },
+  {
+    "clave": "TT",
+    "valor": "Trinidad y Tobago"
+  },
+  {
+    "clave": "TN",
+    "valor": "Túnez"
+  },
+  {
+    "clave": "TM",
+    "valor": "Turkmenistán"
+  },
+  {
+    "clave": "TR",
+    "valor": "Turquía"
+  },
+  {
+    "clave": "TV",
+    "valor": "Tuvalu"
+  },
+  {
+    "clave": "UA",
+    "valor": "Ucrania"
+  },
+  {
+    "clave": "UG",
+    "valor": "Uganda"
+  },
+  {
+    "clave": "UY",
+    "valor": "Uruguay"
+  },
+  {
+    "clave": "UZ",
+    "valor": "Uzbekistán"
+  },
+  {
+    "clave": "VU",
+    "valor": "Vanuatu"
+  },
+  {
+    "clave": "VE",
+    "valor": "Venezuela"
+  },
+  {
+    "clave": "VN",
+    "valor": "Vietnam"
+  },
+  {
+    "clave": "WF",
+    "valor": "Wallis y Futuna"
+  },
+  {
+    "clave": "YE",
+    "valor": "Yemen"
+  },
+  {
+    "clave": "DJ",
+    "valor": "Yibuti"
+  },
+  {
+    "clave": "ZM",
+    "valor": "Zambia"
+  },
+  {
+    "clave": "ZW",
+    "valor": "Zimbawe"
+  }
+]

@@ -1,0 +1,130 @@
+{
+  "pagination": {
+    "pageSize": 100,
+    "page": 20,
+    "totalRows": 30,
+    "hasNextPage": true
+  },
+  "results": [
+    {
+      "metadata": {
+        "actualizacion": "2017-07-21T17:32:28Z",
+        "institucion": "Secretaría de Educación Pública",
+        "contacto": "usuario@dominio.org",
+        "personaContacto": "José John"
+      },
+      "id": "1",
+      "fechaCaptura": "2017-07-21T17:32:28Z",
+      "expediente": "ABC123",
+      "institucionDependencia": {
+        "nombre": "Secretaría de Hacienda y Crédito Público",
+        "siglas": "SHCP",
+        "clave": "XYZ987"
+      },
+      "particularSancionado": {
+        "nombreRazonSocial": "PATITO TELECOM S.A. de C.V.",
+        "objetoSocial": "Objeto social de la empresa",
+        "rfc": "PAT21343213",
+        "tipoPersona": "F",
+        "telefono": "552123244",
+        "domicilioMexico": {
+          "pais": {
+            "clave": "MX",
+            "valor": "México"
+          },
+          "entidadFederativa": {
+            "valor": "México",
+            "clave": "15"
+          },
+          "municipio": {
+            "valor": "Ecatepec de Morelos",
+            "clave": "033"
+          },
+          "codigoPostal": "55018",
+          "localidad": {
+            "valor": "Ecatepec de Morelos",
+            "clave": "0001"
+          },
+          "vialidad": {
+            "clave": "CALLE",
+            "valor": "El Rosal"
+          },
+          "numeroExterior": "24",
+          "numeroInterior": "48"
+        },
+        "domicilioExtranjero": {
+          "calle": "Evergreen Terrace",
+          "numeroExterior": "742",
+          "numeroInterior": "",
+          "ciudadLocalidad": "Springfield",
+          "estadoProvincia": "North Takoma",
+          "pais": {
+            "clave": "MX",
+            "valor": "México"
+          },
+          "codigoPostal": "55018"
+        },
+        "directorGeneral": {
+          "nombres": "Carlos",
+          "primerApellido": "Pérez",
+          "segundoApellido": "López",
+          "curp": "BADD110313HCMLNS09"
+        },
+        "apoderadoLegal": {
+          "nombres": "Carlos",
+          "primerApellido": "Pérez",
+          "segundoApellido": "López",
+          "curp": "BADD110313HCMLNS09"
+        }
+      },
+      "objetoContrato": "Servicio de telefonía fija",
+      "autoridadSancionadora": "OIC",
+      "tipoFalta": "contratación indebida",
+      "tipoSancion": [
+        {
+          "clave": "I",
+          "valor": "Inhabilitado"
+        },
+        {
+          "clave": "M",
+          "valor": "Multado"
+        }
+      ],
+      "causaMotivoHechos": "Causa o motivo de la sanción",
+      "acto": "Contrataciones",
+      "responsableSancion": {
+        "nombres": "Carlos",
+        "primerApellido": "Pérez",
+        "segundoApellido": "López"
+      },
+      "resolucion": {
+        "sentido": "Sansionatoria con multa",
+        "url": "https://ejemplo.mx/archivo/documento.pdf",
+        "fechaNotificacion": "2019-11-20"
+      },
+      "multa": {
+        "monto": 5000000,
+        "moneda": {
+          "clave": "MXN",
+          "valor": "Peso Mexicano"
+        }
+      },
+      "inhabilitacion": {
+        "plazo": "2 años",
+        "fechaInicial": "2019-01-01",
+        "fechaFinal": "2020-12-31"
+      },
+      "observaciones": "Se multo e inhabilitó al proveedor PATITO TELECOM S.A de C.V. por ...",
+      "documentos": [
+        {
+          "id": "doc-1",
+          "tipo": "CONSTANCIA_INHABILITACION",
+          "titulo": "Constancia de inhabilitación...",
+          "descripcion": "Descripción del documento",
+          "url": "https://ejemplo.mx/archivo/documento.pdf",
+          "fecha": "2019-11-20"
+        }
+      ]
+    }
+  ]
+}

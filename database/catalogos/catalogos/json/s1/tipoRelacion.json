@@ -1,0 +1,14 @@
+[
+  {
+    "clave": "DEC",
+    "valor": "DECLARANTE"
+  },
+  {
+    "clave": "PAR",
+    "valor": "PAREJA"
+  },
+  {
+    "clave": "DEE",
+    "valor": "DEPENDIENTE_ECONOMICO"
+  }
+]

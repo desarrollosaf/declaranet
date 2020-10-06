@@ -1,0 +1,110 @@
+[
+  {
+    "clave": 11,
+    "valor": "Legislación"
+  },
+  {
+    "clave": 12,
+    "valor": "Justicia"
+  },
+  {
+    "clave": 13,
+    "valor": "Coordinación de la Política de Gobierno"
+  },
+  {
+    "clave": 14,
+    "valor": "Relaciones Exteriores"
+  },
+  {
+    "clave": 15,
+    "valor": "Asuntos Financieros y Hacendarios"
+  },
+  {
+    "clave": 17,
+    "valor": "Asuntos de Orden Público y de Seguridad Interior"
+  },
+  {
+    "clave": 18,
+    "valor": "Otros Servicios Generales"
+  },
+  {
+    "clave": 21,
+    "valor": "Protección Ambiental"
+  },
+  {
+    "clave": 22,
+    "valor": "Vivienda y Servicios a la Comunidad"
+  },
+  {
+    "clave": 23,
+    "valor": "Salud"
+  },
+  {
+    "clave": 24,
+    "valor": "Recreación, Cultura y Otras Manifestaciones Sociales"
+  },
+  {
+    "clave": 25,
+    "valor": "Educación"
+  },
+  {
+    "clave": 26,
+    "valor": "Protección Social"
+  },
+  {
+    "clave": 31,
+    "valor": "Asuntos Económicos, Comerciales y laborales en General"
+  },
+  {
+    "clave": 32,
+    "valor": "Agropecuaria, Silvicultura, Pesca y Caza"
+  },
+  {
+    "clave": 33,
+    "valor": "Combustibles y Energía"
+  },
+  {
+    "clave": 34,
+    "valor": "Minería, Manufacturas y Construcción"
+  },
+  {
+    "clave": 35,
+    "valor": "Transporte"
+  },
+  {
+    "clave": 36,
+    "valor": "Comunicaciones"
+  },
+  {
+    "clave": 37,
+    "valor": "Turismo"
+  },
+  {
+    "clave": 38,
+    "valor": "Ciencia, Tecnología e Innovación"
+  },
+  {
+    "clave": 39,
+    "valor": "Otras Industrias y Otros Asuntos Económicos"
+  },
+  {
+    "clave": 41,
+    "valor": "Transacciones de la deuda Pública / Costo Financiero de la deuda"
+  },
+  {
+    "clave": 42,
+    "valor": "Transferencias, Participaciones y Aportaciones entre diferentes niveles y órdenes de Gobierno"
+  },
+  {
+    "clave": 44,
+    "valor": "Adeudos de Ejercicios Fiscales anteriores"
+  },
+  {
+    "clave": 51,
+    "valor": "Fondo general de previsiones salariales y económicas"
+  },
+  {
+    "clave": 52,
+    "valor": "Fondo general para el pago del impuesto sobre erogaciones por remuneraciones al trabajo personal"
+  }
+]

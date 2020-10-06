@@ -1,0 +1,18 @@
+[
+    {
+        "clave": "electronicSubmission",
+        "valor": "Presentación electrónica"
+    },
+    {
+        "clave": "electronicAuction",
+        "valor": "Subasta electrónica"
+    },
+    {
+        "clave": "written",
+        "valor": "Escrita"
+    },
+    {
+        "clave": "inPerson",
+        "valor": "En persona"
+    }
+]

@@ -1,0 +1,2228 @@
+[
+  {
+    "poder": "eje",
+    "clave": "eje-001",
+    "siglas": "gubernatura",
+    "valor": "Gubernatura"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-002",
+    "siglas": "cgcs",
+    "valor": "Coordinación General de Comunicación Social"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-003",
+    "siglas": "tvmex",
+    "valor": "Sistema de Radio y Televisión Mexiquense"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-004",
+    "siglas": "difem",
+    "valor": "Sistema para el Desarrollo Integral de la Familia del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-005",
+    "siglas": "seteg",
+    "valor": "Secretaría Técnica del Gabinete"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-006",
+    "siglas": "sgg",
+    "valor": "Secretaría General de Gobierno"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-007",
+    "siglas": "cccem",
+    "valor": "Centro de Control de Confianza del Estado de México."
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-008",
+    "siglas": "imepi",
+    "valor": "Instituto Mexiquense de la Pirotecnia"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-009",
+    "siglas": "imsj",
+    "valor": "Instituto Mexiquense de Seguridad y Justicia"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-010",
+    "siglas": "procoem",
+    "valor": "Procuraduría del Colono del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-011",
+    "siglas": "sesesp",
+    "valor": "Secretariado Ejecutivo del Sistema Estatal de Seguridad Pública"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-012",
+    "siglas": "ssem",
+    "valor": "Secretaría de Seguridad del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-013",
+    "siglas": "finanzas",
+    "valor": "Secretaría de Finanzas"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-014",
+    "siglas": "copladem",
+    "valor": "Comité de Planeación para el Desarrollo del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-015",
+    "siglas": "comecyt",
+    "valor": "Consejo Mexiquense de Ciencia y Tecnología"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-016",
+    "siglas": "ihaem",
+    "valor": "Instituto Hacendario del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-017",
+    "siglas": "igecem",
+    "valor": "Instituto de Información e Investigación Geografica, Estadística y Catastral del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-018",
+    "siglas": "issemym",
+    "valor": "Instituto de Seguridad Social del Estado de México y Municipios"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-019",
+    "siglas": "iapem",
+    "valor": "Instituto de Administración Pública del Estado de México A.C."
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-020",
+    "siglas": "secomem",
+    "valor": "Secretaría de Comunicaciones (apartir de 2017)"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-021",
+    "siglas": "sopem",
+    "valor": "Secretaría de Obra Pública"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-022",
+    "siglas": "trabajo",
+    "valor": "Secretaría del Trabajo"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-023",
+    "siglas": "icati",
+    "valor": "Instituto de Capacitación y Adiestramiento para el Trabajo Industrial"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-024",
+    "siglas": "juntatexcoco",
+    "valor": "Junta Local de Conciliación y Arbitraje Valle Cuautitlán-Texcoco"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-025",
+    "siglas": "juntatoluca",
+    "valor": "Junta Local de Conciliación y Arbitraje Valle de Toluca"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-026",
+    "siglas": "teca",
+    "valor": "Tribunal Estatal de Conciliación y Arbitraje"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-027",
+    "siglas": "educacion",
+    "valor": "Secretaría de Educación"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-028",
+    "siglas": "crfdie",
+    "valor": "Centro Regional de Formación Docente e Investigación Educativa"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-029",
+    "siglas": "cobaem",
+    "valor": "Colegio de Bachilleres del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-030",
+    "siglas": "ceptem",
+    "valor": "Colegio de Educación Profesional Técnica del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-031",
+    "siglas": "cecytem",
+    "valor": "Colegio de Estudios Científicos y Tecnológicos del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-032",
+    "siglas": "ieeem",
+    "valor": "Instituto de Evaluación Educativa del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-033",
+    "siglas": "imc",
+    "valor": "Instituto Mexiquense de Cultura"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-034",
+    "siglas": "imcufide",
+    "valor": "Instituto Mexiquense de Cultura Física y Deporte"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-035",
+    "siglas": "imife",
+    "valor": "Instituto Mexiquense de la Infraestructura Física Educativa"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-036",
+    "siglas": "seiem",
+    "valor": "Servicios Educativos Integrados al Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-037",
+    "siglas": "tescha",
+    "valor": "Tecnológico de Estudios Superiores de Chalco"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-038",
+    "siglas": "teschicol",
+    "valor": "Tecnológico de Estudios Superiores de Chicoloapan"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-039",
+    "siglas": "teschi",
+    "valor": "Tecnológico de Estudios Superiores de Chimalhuacán"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-040",
+    "siglas": "tesco",
+    "valor": "Tecnológico de Estudios Superiores de Coacalco"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-041",
+    "siglas": "tesci",
+    "valor": "Tecnológico de Estudios Superiores de Cuautitlán Izcalli"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-042",
+    "siglas": "tese",
+    "valor": "Tecnológico de Estudios Superiores de Ecatepec"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-043",
+    "siglas": "tesh",
+    "valor": "Tecnológico de Estudios Superiores de Huixquilucan"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-044",
+    "siglas": "tesi",
+    "valor": "Tecnológico de Estudios Superiores de Ixtapaluca"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-045",
+    "siglas": "tesji",
+    "valor": "Tecnológico de Estudios Superiores de Jilotepec"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-046",
+    "siglas": "tesjo",
+    "valor": "Tecnológico de Estudios Superiores de Jocotitlán"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-047",
+    "siglas": "tessfp",
+    "valor": "Tecnológico de Estudios Superiores de San Felipe del Progreso"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-048",
+    "siglas": "test",
+    "valor": "Tecnológico de Estudios Superiores de Tianguistenco"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-049",
+    "siglas": "tesvb",
+    "valor": "Tecnológico de Estudios Superiores de Valle de Bravo"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-050",
+    "siglas": "tesvg",
+    "valor": "Tecnológico de Estudios Superiores de Villa Guerrero"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-051",
+    "siglas": "tesoem",
+    "valor": "Tecnológico de Estudios Superiores del Oriente del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-052",
+    "siglas": "udem",
+    "valor": "Universidad Digital del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-053",
+    "siglas": "uneve",
+    "valor": "Universidad Estatal del Valle de Ecatepec"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-054",
+    "siglas": "unevt",
+    "valor": "Universidad Estatal del Valle de Toluca"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-055",
+    "siglas": "uiem",
+    "valor": "Universidad Intercultural del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-056",
+    "siglas": "umb",
+    "valor": "Universidad Mexiquense del Bicentenario"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-057",
+    "siglas": "upat",
+    "valor": "Universidad Politécnica de Atlacomulco"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-058",
+    "siglas": "upa",
+    "valor": "Universidad Politécnica de Atlautla"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-059",
+    "siglas": "upchimal",
+    "valor": "Universidad Politécnica de Chimalhuacán"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-060",
+    "siglas": "upci",
+    "valor": "Universidad Politécnica de Cuautitlán Izcalli"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-061",
+    "siglas": "upo",
+    "valor": "Universidad Politécnica de Otzolotepec"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-062",
+    "siglas": "upt",
+    "valor": "Universidad Politécnica de Tecámac"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-063",
+    "siglas": "uptex",
+    "valor": "Universidad Politécnica de Texcoco"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-064",
+    "siglas": "upvm",
+    "valor": "Universidad Politécnica del Valle de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-065",
+    "siglas": "upvt",
+    "valor": "Universidad Politécnica del Valle de Toluca"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-066",
+    "siglas": "utn",
+    "valor": "Universidad Tecnológica de Nezahualcóyotl"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-067",
+    "siglas": "uttec",
+    "valor": "Universidad Tecnológica de Tecámac"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-068",
+    "siglas": "utz",
+    "valor": "Universidad Tecnológica de Zinacantepec"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-069",
+    "siglas": "utsem",
+    "valor": "Universidad Tecnológica del Sur del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-070",
+    "siglas": "utvtol",
+    "valor": "Universidad Tecnológica del Valle de Toluca"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-071",
+    "siglas": "utfv",
+    "valor": "Universidad Tecnológica Fidel Velázquez"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-072",
+    "siglas": "saop",
+    "valor": "Secretaría del Agua y Obra Pública"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-073",
+    "siglas": "sedagro",
+    "valor": "Secretaría de Desarrollo Agropecuario"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-074",
+    "siglas": "iicaafem",
+    "valor": "Instituto de Investigación y Capacitación Agropecuaria, Acuícola y Forestal del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-075",
+    "siglas": "sedeco",
+    "valor": "Secretaría de Desarrollo Económico"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-076",
+    "siglas": "ifomegem",
+    "valor": "Instituto de Fomento Minero y Estudios Geológicos del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-077",
+    "siglas": "ime",
+    "valor": "Instituto Mexiquense del Emprendedor"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-078",
+    "siglas": "secogem",
+    "valor": "Secretaría de la Contraloría"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-079",
+    "siglas": "igispem",
+    "valor": "Inspección General de las Instituciones de Seguridad Pública del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-080",
+    "siglas": "secom",
+    "valor": "Secretaría de Comunicaciones (hasta el 7 de octubre de 2015)"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-081",
+    "siglas": "sma",
+    "valor": "Secretaría del Medio Ambiente"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-082",
+    "siglas": "cepanaf",
+    "valor": "Comisión Estatal de Parques Naturales y de la Fauna"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-083",
+    "siglas": "ieecc",
+    "valor": "Instituto Estatal de Energía y Cambio Climático"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-084",
+    "siglas": "probosque",
+    "valor": "Protectora de Bosques del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-085",
+    "siglas": "propaem",
+    "valor": "Procuraduría de Protección al Ambiente del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-086",
+    "siglas": "reciclagua",
+    "valor": "Reciclagua Ambiental S.A. de C.V."
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-087",
+    "siglas": "sedesem",
+    "valor": "Secretaría de Desarrollo Social"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-088",
+    "siglas": "cedipiem",
+    "valor": "Consejo Estatal para el Desarrollo Integral de los Pueblos Indígenas del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-089",
+    "siglas": "cieps",
+    "valor": "Consejo de Investigación y Evaluación de la Política Social"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-090",
+    "siglas": "cemybs",
+    "valor": "Consejo Estatal de la Mujer y Bienestar Social"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-091",
+    "siglas": "imej",
+    "valor": "Instituto Mexiquense de la Juventud"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-092",
+    "siglas": "japem",
+    "valor": "Junta de Asistencia Privada del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-093",
+    "siglas": "sedeme",
+    "valor": "Secretaría de Desarrollo Metropolitano"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-094",
+    "siglas": "salud",
+    "valor": "Secretaría de Salud"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-095",
+    "siglas": "btem",
+    "valor": "Banco de Tejidos del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-096",
+    "siglas": "ccamem",
+    "valor": "Comisión de Conciliación y Arbitraje Médico del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-097",
+    "siglas": "hrzum",
+    "valor": "Hospital Regional de Alta Especialidad de Zumpango"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-098",
+    "siglas": "imiem",
+    "valor": "Instituto Materno Infantil del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-099",
+    "siglas": "isem",
+    "valor": "Instituto de Salud del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-100",
+    "siglas": "repss",
+    "valor": "Régimen Estatal de Protección Social en Salud"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-101",
+    "siglas": "transporte",
+    "valor": "Secretaría de Movilidad"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-102",
+    "siglas": "sedum",
+    "valor": "Secretaría de Desarrollo Urbano y Metropolitano"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-103",
+    "siglas": "imevis",
+    "valor": "Instituto Mexiquense de la Vivienda Social"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-104",
+    "siglas": "turismo",
+    "valor": "Secretaría de Turismo"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-105",
+    "siglas": "covate",
+    "valor": "Comisión para el Desarrollo Turístico del Valle de Teotihuacán"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-106",
+    "siglas": "iifaem",
+    "valor": "Instituto de Investigación y Fomento de las Artesanías del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-107",
+    "siglas": "pgj",
+    "valor": "Procuraduría General de Justicia"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-108",
+    "siglas": "cjee",
+    "valor": "Consejería Jurídica del Ejecutivo Estatal"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-109",
+    "siglas": "sjdh",
+    "valor": "Secretaría de Justicia y Derechos Humanos"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-110",
+    "siglas": "ifrem",
+    "valor": "Instituto de la Función Registral del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-111",
+    "siglas": "scem",
+    "valor": "Secretaría de Cultura"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-112",
+    "siglas": "seinfra",
+    "valor": "Secretaría de Infraestructura"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-113",
+    "siglas": "caem",
+    "valor": "Comisión del Agua del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-114",
+    "siglas": "ctaem",
+    "valor": "Comisión Técnica del Agua del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-115",
+    "siglas": "jcem",
+    "valor": "Junta de Caminos del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-116",
+    "siglas": "saascaem",
+    "valor": "Sistema de Autopistas, Aeropuertos, Servicios Conexos y Auxiliares del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-117",
+    "siglas": "stmem",
+    "valor": "Sistema de Transporte Masivo y Teleférico del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-118",
+    "siglas": "sesea",
+    "valor": "Secretaría Ejecutiva del Sistema Estatal Anticorrupción"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-119",
+    "siglas": "cet",
+    "valor": "Centro Estatal de Trasplantes"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-120",
+    "siglas": "cevece",
+    "valor": "Centro Estatal de Vigilancia Epidemiológica y Control de Enfermedades"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-121",
+    "siglas": "cbpem",
+    "valor": "Comisión de Búsqueda de Personas del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-122",
+    "siglas": "cfem",
+    "valor": "Comisión de Factibilidad del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-123",
+    "siglas": "ccrl",
+    "valor": "Comisión de la Cuenca del Río Lerma"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-124",
+    "siglas": "ceavem",
+    "valor": "Comisión Ejecutiva de Atención a Víctimas del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-125",
+    "siglas": "cemr",
+    "valor": "Comisión Estatal de Mejora Regulatoria"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-126",
+    "siglas": "cpcrsem",
+    "valor": "Comisión para la Protección contra Riesgos Sanitarios del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-127",
+    "siglas": "cep",
+    "valor": "Consejo Estatal de Población"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-128",
+    "siglas": "cce",
+    "valor": "Consejo para la Convivencia Escolar"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-129",
+    "siglas": "cespd",
+    "valor": "Coordinación Estatal del Servicio Profesional Docente"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-130",
+    "siglas": "cgce",
+    "valor": "Coordinación General de Conservación Ecológica"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-131",
+    "siglas": "cmac",
+    "valor": "El Colegio Mexiquense, A.C."
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-132",
+    "siglas": "iabvppedem",
+    "valor": "Instituto de Administración de Bienes Vinculados al Procedimiento Penal y a la Extinción de Dominio del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-133",
+    "siglas": "ifcpimem",
+    "valor": "Instituto de Formación Continua, Profesionalización e Investigación del Magisterio del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-134",
+    "siglas": "iiigecem",
+    "valor": "Instituto de Información e Investigación Geográfica, Estadística y Catastral del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-135",
+    "siglas": "idpem",
+    "valor": "Instituto de la Defensoría Pública del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-136",
+    "siglas": "ipsppeem",
+    "valor": "Instituto de Profesionalización de los Servidores Públicos del Poder Ejecutivo del Gobierno del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-137",
+    "siglas": "ivaem",
+    "valor": "Instituto de Verificación Administrativa del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-138",
+    "siglas": "item",
+    "valor": "Instituto del Transporte del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-139",
+    "siglas": "imca",
+    "valor": "Instituto Mexiquense contra las Adicciones"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-140",
+    "siglas": "impedpd",
+    "valor": "Instituto Mexiquense para la Protección e Integración al Desarrollo de las Personas con Discapacidad"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-141",
+    "siglas": "isceem",
+    "valor": "Instituto Superior de Ciencias de la Educación del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-142",
+    "siglas": "sespinnaem",
+    "valor": "Secretaría Ejecutiva del Sistema de Protección Integral de Niñas, Niños y Adolescentes del Estado de México"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-143",
+    "siglas": "uai",
+    "valor": "Unidad de Asuntos Internos"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-144",
+    "siglas": "uecc",
+    "valor": "Unidad Estatal de Certificación de Confianza"
+  },
+  {
+    "poder": "eje",
+    "clave": "eje-145",
+    "siglas": "ums",
+    "valor": "Universidad Mexiquense de Seguridad"
+  },
+  {
+    "poder": "leg",
+    "clave": "leg-001",
+    "siglas": "cddiputados",
+    "valor": "Poder Legislativo"
+  },
+  {
+    "poder": "jud",
+    "clave": "jud-001",
+    "siglas": "pjedomex",
+    "valor": "Poder Judicial"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-001",
+    "siglas": "acambay",
+    "valor": "Acambay de Ruíz Castañeda"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-002",
+    "siglas": "acolman",
+    "valor": "Acolman"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-003",
+    "siglas": "aculco",
+    "valor": "Aculco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-004",
+    "siglas": "almoloyadealquisiras",
+    "valor": "Almoloya de Alquisiras"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-005",
+    "siglas": "almoloyadejuarez",
+    "valor": "Almoloya de Juárez"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-006",
+    "siglas": "almoloyadelrio",
+    "valor": "Almoloya del Río"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-007",
+    "siglas": "amanalco",
+    "valor": "Amanalco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-008",
+    "siglas": "amatepec",
+    "valor": "Amatepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-009",
+    "siglas": "amecameca",
+    "valor": "Amecameca"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-010",
+    "siglas": "apaxco",
+    "valor": "Apaxco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-011",
+    "siglas": "atenco",
+    "valor": "Atenco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-012",
+    "siglas": "atizapan",
+    "valor": "Atizapán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-013",
+    "siglas": "atizapandezaragoza",
+    "valor": "Atizapán de Zaragoza"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-014",
+    "siglas": "atlacomulco",
+    "valor": "Atlacomulco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-015",
+    "siglas": "atlautla",
+    "valor": "Atlautla"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-016",
+    "siglas": "axapusco",
+    "valor": "Axapusco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-017",
+    "siglas": "ayapango",
+    "valor": "Ayapango"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-018",
+    "siglas": "calimaya",
+    "valor": "Calimaya"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-019",
+    "siglas": "capulhuac",
+    "valor": "Capulhuac"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-020",
+    "siglas": "chalco",
+    "valor": "Chalco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-021",
+    "siglas": "chapademota",
+    "valor": "Chapa de Mota"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-022",
+    "siglas": "chapultepec",
+    "valor": "Chapultepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-023",
+    "siglas": "chiautla",
+    "valor": "Chiautla"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-024",
+    "siglas": "chicoloapan",
+    "valor": "Chicoloapan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-025",
+    "siglas": "chiconcuac",
+    "valor": "Chiconcuac"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-026",
+    "siglas": "chimalhuacan",
+    "valor": "Chimalhuacán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-027",
+    "siglas": "coacalco",
+    "valor": "Coacalco de Berriozabal"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-028",
+    "siglas": "coatepec",
+    "valor": "Coatepec Harinas"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-029",
+    "siglas": "cocotitlan",
+    "valor": "Cocotitlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-030",
+    "siglas": "coyotepec",
+    "valor": "Coyotepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-031",
+    "siglas": "cuautitlan",
+    "valor": "Cuautitlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-032",
+    "siglas": "cuautitlanizcalli",
+    "valor": "Cuautitlán Izcalli"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-033",
+    "siglas": "donatoguerra",
+    "valor": "Donato Guerra"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-034",
+    "siglas": "ecatepec",
+    "valor": "Ecatepec de Morelos"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-035",
+    "siglas": "ecatzingo",
+    "valor": "Ecatzingo"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-036",
+    "siglas": "eloro",
+    "valor": "El Oro"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-037",
+    "siglas": "huehuetoca",
+    "valor": "Huehuetoca"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-038",
+    "siglas": "hueypoxtla",
+    "valor": "Hueypoxtla"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-039",
+    "siglas": "huixquilucan",
+    "valor": "Huixquilucan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-040",
+    "siglas": "isidrofabela",
+    "valor": "Isidro Fabela"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-041",
+    "siglas": "ixtapaluca",
+    "valor": "Ixtapaluca"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-042",
+    "siglas": "ixtapandelasal",
+    "valor": "Ixtapan De La Sal"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-043",
+    "siglas": "ixtapandeloro",
+    "valor": "Ixtapan Del Oro"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-044",
+    "siglas": "ixtlahuaca",
+    "valor": "Ixtlahuaca"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-045",
+    "siglas": "jaltenco",
+    "valor": "Jaltenco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-046",
+    "siglas": "jilotepec",
+    "valor": "Jilotepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-047",
+    "siglas": "jilotzingo",
+    "valor": "Jilotzingo"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-048",
+    "siglas": "jiquipilco",
+    "valor": "Jiquipilco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-049",
+    "siglas": "jocotitlan",
+    "valor": "Jocotitlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-050",
+    "siglas": "joquicingo",
+    "valor": "Joquicingo"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-051",
+    "siglas": "juchitepec",
+    "valor": "Juchitepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-052",
+    "siglas": "lapaz",
+    "valor": "La Paz"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-053",
+    "siglas": "lerma",
+    "valor": "Lerma"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-054",
+    "siglas": "luvianos",
+    "valor": "Luvianos"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-055",
+    "siglas": "malinalco",
+    "valor": "Malinalco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-056",
+    "siglas": "melchorocampo",
+    "valor": "Melchor Ocampo"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-057",
+    "siglas": "metepec",
+    "valor": "Metepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-058",
+    "siglas": "mexicaltzingo",
+    "valor": "Mexicaltzingo"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-059",
+    "siglas": "morelos",
+    "valor": "Morelos"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-060",
+    "siglas": "naucalpan",
+    "valor": "Naucalpan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-061",
+    "siglas": "nextlalpan",
+    "valor": "Nextlalpan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-062",
+    "siglas": "nezahualcoyotl",
+    "valor": "Nezahualcóyotl"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-063",
+    "siglas": "nicolasromero",
+    "valor": "Nicolás Romero"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-064",
+    "siglas": "nopaltepec",
+    "valor": "Nopaltepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-065",
+    "siglas": "ocoyoac",
+    "valor": "Ocoyoacac"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-066",
+    "siglas": "ocuilan",
+    "valor": "Ocuilan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-067",
+    "siglas": "otumba",
+    "valor": "Otumba"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-068",
+    "siglas": "otzoloapan",
+    "valor": "Otzoloapan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-069",
+    "siglas": "otzolotepec",
+    "valor": "Otzolotepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-070",
+    "siglas": "ozumba",
+    "valor": "Ozumba"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-071",
+    "siglas": "papalotla",
+    "valor": "Papalotla"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-072",
+    "siglas": "polotitlan",
+    "valor": "Polotitlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-073",
+    "siglas": "rayon",
+    "valor": "Rayón"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-074",
+    "siglas": "sanantonio",
+    "valor": "San Antonio la Isla"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-075",
+    "siglas": "sanfelipedelprogreso",
+    "valor": "San Felipe del Progreso"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-076",
+    "siglas": "sanjosedelrincon",
+    "valor": "San José del Rincón"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-077",
+    "siglas": "sanmartindelaspiramides",
+    "valor": "San Martín de las Pirámides"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-078",
+    "siglas": "sanmateoatenco",
+    "valor": "San Mateo Atenco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-079",
+    "siglas": "sansimondeguerrero",
+    "valor": "San Simón de Guerrero"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-080",
+    "siglas": "santotomas",
+    "valor": "Santo Tomás"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-081",
+    "siglas": "soyaniquilpan",
+    "valor": "Soyaniquilpan de Juárez"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-082",
+    "siglas": "sultepec",
+    "valor": "Sultepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-083",
+    "siglas": "tecamac",
+    "valor": "Tecámac"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-084",
+    "siglas": "tejupilco",
+    "valor": "Tejupilco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-085",
+    "siglas": "temamatla",
+    "valor": "Temamatla"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-086",
+    "siglas": "temascalapa",
+    "valor": "Temascalapa"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-087",
+    "siglas": "temascalcingo",
+    "valor": "Temascalcingo"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-088",
+    "siglas": "temascaltepec",
+    "valor": "Temascaltepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-089",
+    "siglas": "temoaya",
+    "valor": "Temoaya"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-090",
+    "siglas": "tenancingo",
+    "valor": "Tenancingo"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-091",
+    "siglas": "tenangodelaire",
+    "valor": "Tenango Del Aire"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-092",
+    "siglas": "tenangodelvalle",
+    "valor": "Tenango Del Valle"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-093",
+    "siglas": "teoloyucan",
+    "valor": "Teoloyucan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-094",
+    "siglas": "teotihuacan",
+    "valor": "Teotihuacán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-095",
+    "siglas": "tepetlaoxtoc",
+    "valor": "Tepetlaoxtoc"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-096",
+    "siglas": "tepetlixpa",
+    "valor": "Tepetlixpa"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-097",
+    "siglas": "tepotzotlan",
+    "valor": "Tepotzotlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-098",
+    "siglas": "tequixquiac",
+    "valor": "Tequixquiac"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-099",
+    "siglas": "texcaltitlan",
+    "valor": "Texcaltitlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-100",
+    "siglas": "texcalyacac",
+    "valor": "Texcalyacac"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-101",
+    "siglas": "texcoco",
+    "valor": "Texcoco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-102",
+    "siglas": "tezoyuca",
+    "valor": "Tezoyuca"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-103",
+    "siglas": "tianguistenco",
+    "valor": "Tianguistenco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-104",
+    "siglas": "timilpan",
+    "valor": "Timilpan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-105",
+    "siglas": "tlalmanalco",
+    "valor": "Tlalmanalco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-106",
+    "siglas": "tlalnepantla",
+    "valor": "Tlalnepantla de Baz"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-107",
+    "siglas": "tlatlaya",
+    "valor": "Tlatlaya"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-108",
+    "siglas": "toluca",
+    "valor": "Toluca"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-109",
+    "siglas": "tonanitla",
+    "valor": "Tonanitla"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-110",
+    "siglas": "tonatico",
+    "valor": "Tonatico"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-111",
+    "siglas": "tultepec",
+    "valor": "Tultepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-112",
+    "siglas": "tultitlan",
+    "valor": "Tultitlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-113",
+    "siglas": "valledebravo",
+    "valor": "Valle de Bravo"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-114",
+    "siglas": "valledechalco",
+    "valor": "Valle de Chalco Solidaridad"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-115",
+    "siglas": "villadeallende",
+    "valor": "Villa de Allende"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-116",
+    "siglas": "villadelcarbon",
+    "valor": "Villa del Carbón"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-117",
+    "siglas": "villaguerrero",
+    "valor": "Villa Guerrero"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-118",
+    "siglas": "villavictoria",
+    "valor": "Villa Victoria"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-119",
+    "siglas": "xalatlaco",
+    "valor": "Xalatlaco"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-120",
+    "siglas": "xonacatlan",
+    "valor": "Xonacatlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-121",
+    "siglas": "zacazonapan",
+    "valor": "Zacazonapan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-122",
+    "siglas": "zacualpan",
+    "valor": "Zacualpan"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-123",
+    "siglas": "zinacantepec",
+    "valor": "Zinacantepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-124",
+    "siglas": "zumpahuacan",
+    "valor": "Zumpahuacán"
+  },
+  {
+    "poder": "mun",
+    "clave": "mun-125",
+    "siglas": "zumpango",
+    "valor": "Zumpango"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-001",
+    "siglas": "difacolman",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Acolman"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-002",
+    "siglas": "difalmoloyadejuarez",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Almoloya de Juárez"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-003",
+    "siglas": "difatizapandezaragoza",
+    "valor": "Sistema para el Desarrollo Integral de la Familia del Municipio de Atizapán de Zaragoza"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-004",
+    "siglas": "difatlacomulco",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Atlacomulco"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-005",
+    "siglas": "difchalco",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Chalco"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-006",
+    "siglas": "difchicoloapan",
+    "valor": "El Sistema Municipal para el Desarrollo Integral de la Familia de Chicoloapan"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-007",
+    "siglas": "difchimalhuacan",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Chimalhuacán"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-008",
+    "siglas": "difcoacalco",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Coacalco de Berriozábal"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-009",
+    "siglas": "difcuautitlan",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Cuautitlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-010",
+    "siglas": "difcuautitlanizcalli",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Cuautitlán Izcalli"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-011",
+    "siglas": "difecatepec",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Ecatepec de Morelos"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-012",
+    "siglas": "difhuehuetoca",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Huehuetoca "
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-013",
+    "siglas": "difhuixquilucan",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Huixquilucan "
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-014",
+    "siglas": "difixtapaluca",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Ixtapaluca"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-015",
+    "siglas": "difixtlahuaca",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Ixtlahuaca"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-016",
+    "siglas": "difjilotepec",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Jilotepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-017",
+    "siglas": "difjiquipilco",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Jiquipilco"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-018",
+    "siglas": "diflapaz",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de La Paz"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-019",
+    "siglas": "diflerma",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Lerma"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-020",
+    "siglas": "difmetepec",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Metepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-021",
+    "siglas": "difnaucalpan",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Naucalpan de Juárez"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-022",
+    "siglas": "difnezahualcoyotl",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Nezahualcóyotl"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-023",
+    "siglas": "difnicolasromero",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Nicolás Romero"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-024",
+    "siglas": "difotzolotepec",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Otzolotepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-025",
+    "siglas": "difsanfelipedelprogreso",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de San Felipe del Progreso"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-026",
+    "siglas": "difsanjosedelrincon",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de San José del Rincón"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-027",
+    "siglas": "difsanmateo",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de San Mateo Atenco"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-028",
+    "siglas": "diftecamac",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Tecámac"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-029",
+    "siglas": "diftejupilco",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Tejupilco"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-030",
+    "siglas": "diftemoaya",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Temoaya"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-031",
+    "siglas": "diftenancingo",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Tenancingo"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-032",
+    "siglas": "diftenangodelvalle",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Tenango del Valle"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-033",
+    "siglas": "diftepotzotlan",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Tepotzotlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-034",
+    "siglas": "diftexcoco",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Texcoco"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-035",
+    "siglas": "diftianguistenco",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Tianguistenco"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-036",
+    "siglas": "diftlalnepantla",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Tlalnepantla de Baz"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-037",
+    "siglas": "diftoluca",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Toluca"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-038",
+    "siglas": "diftultepec",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Tultepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-039",
+    "siglas": "diftultitlan",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Tultitlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-040",
+    "siglas": "difvalledechalco",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Valle de Chalco Solidaridad"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-041",
+    "siglas": "difvillavictoria",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Villa Victoria"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-042",
+    "siglas": "difzinacantepec",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Zinacantepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "dif-043",
+    "siglas": "difzumpango",
+    "valor": "Sistema Municipal para el Desarrollo Integral de la Familia de Zumpango"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-001",
+    "siglas": "oasacolman",
+    "valor": "Organismo Público Descentralizado Municipal para la Prestación de los Servicios de Agua Potable, Drenaje y Tratamiento de Aguas Residuales del Municipio de Acolman"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-002",
+    "siglas": "oasalmoloyadejuarez",
+    "valor": "Organismo Público Descentralizado Municipal para la Prestación de los Servicios de Agua Potable, Drenaje y Tratamiento de Aguas Residuales de Almoloya de Juárez"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-003",
+    "siglas": "oasatizapandezaragoza",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento de Atizapán de Zaragoza, por sus siglas S.A.P.A.S.A."
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-004",
+    "siglas": "oasatlacomulco",
+    "valor": "Organismo Público Descentralizado de Carácter Municipal para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento de Atlacomulco "
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-005",
+    "siglas": "oaschalco",
+    "valor": "Organismo Descentralizado de Agua Potable, Alcantarillado y Saneamiento del Municipio de Chalco"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-006",
+    "siglas": "oaschicoloapan",
+    "valor": "Organismo Descentralizado de Agua y Saneamiento de Chicoloapan"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-007",
+    "siglas": "oaschimalhuacan",
+    "valor": "Organismo Público Descentralizado de Agua Potable, Alcantarillado y Saneamiento de Chimalhuacán"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-008",
+    "siglas": "oascoacalco",
+    "valor": "Organismo Público Descentralizado para la Prestación de Servicios de Agua Potable, Alcantarillado y Saneamiento de Coacalco de Berriozábal"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-009",
+    "siglas": "oascuatlanizcalli",
+    "valor": "Organismo Público Descentralizado Municipal para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento de Cuautitlán Izcalli denominado OPERAGUA, O.P.D.M."
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-010",
+    "siglas": "oasecatepec",
+    "valor": "Sistema de Agua Potable, Alcantarillado y Saneamiento de Ecatepec de Morelos"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-011",
+    "siglas": "oashuixquilucan",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Drenaje y Tratamiento de Aguas Residuales del Municipio de Huixquilucan, México, denominado 'Sistema Aguas de Huixquilucan'"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-012",
+    "siglas": "oasixtapaluca",
+    "valor": "El Organismo Descentralizado de Agua Potable, Alcantarillado y Saneamiento del Municipio de Ixtapaluca, denominado por sus siglas, 'O.D.A.P.A.S.'."
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-013",
+    "siglas": "oasjilotepec",
+    "valor": "Organismo Público Descentralizado para la prestación de los servicios de Agua Potable, Alcantarillado y Saneamiento del Municipio de Jilotepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-014",
+    "siglas": "oaslapaz",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento del Municipio de La Paz, México, 'OPDAPAS'"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-015",
+    "siglas": "oaslerma",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento del Municipio de Lerma"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-016",
+    "siglas": "oasmetepec",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento del Municipio de Metepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-017",
+    "siglas": "oasnaucalpan",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento del Municipio de Naucalpan de Juárez"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-018",
+    "siglas": "oasnezahualcoyotl",
+    "valor": "Organismo Descentralizado de Agua Potable, Alcantarillado y Saneamiento de Nezahualcóyotl. (ODAPAS)"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-019",
+    "siglas": "oasnicolasromero",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento de Nicolás Romero"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-020",
+    "siglas": "oassanmateoat",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento del Municipio de San Mateo Atenco"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-021",
+    "siglas": "oastecamac",
+    "valor": "Organismo Descentralizado para la Prestación de los Servicios del Agua Potable, Alcantarillado y Saneamiento de Tecámac"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-022",
+    "siglas": "oastenancingo",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento de Tenancingo."
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-023",
+    "siglas": "oastenangodelvalle",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento de Tenango del Valle, Estado de México"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-024",
+    "siglas": "oastlalnepantla",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento del Municipio de Tlalnepantla de Baz"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-025",
+    "siglas": "oastol",
+    "valor": "Organismo Agua y Saneamiento de Toluca"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-026",
+    "siglas": "oastultitlan",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable , Alcantarillado y Saneamiento del Municipio de Tultitlán"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-027",
+    "siglas": "oasvallechalco",
+    "valor": "Organismo Descentralizado de Agua Potable Alcantarillado y Saneamiento de Valle de Chalco Solidaridad "
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-028",
+    "siglas": "oaszinacantepec",
+    "valor": "Organismo Público Descentralizado para la Prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento de Zinacantepec"
+  },
+  {
+    "poder": "mun",
+    "clave": "oas-029",
+    "siglas": "oaszumpango",
+    "valor": "Organismo Público Descentralizado para la prestación de los Servicios de Agua Potable, Alcantarillado y Saneamiento del Municipio de Zumpango"
+  },
+  {
+    "poder": "oau",
+    "clave": "oau-001",
+    "siglas": "codhem",
+    "valor": "Comisión de Derechos Humanos del Estado de México"
+  },
+  {
+    "poder": "oau",
+    "clave": "oau-002",
+    "siglas": "fgjem",
+    "valor": "Fiscalía General de Justicia del Estado de México"
+  },
+  {
+    "poder": "oau",
+    "clave": "oau-003",
+    "siglas": "infoem",
+    "valor": "Instituto de Transparencia, Acceso a la Información Pública y Protección de Datos Personales del Estado de México y Municipios"
+  },
+  {
+    "poder": "oau",
+    "clave": "oau-004",
+    "siglas": "ieem",
+    "valor": "Instituto Electoral del Estado de México"
+  },
+  {
+    "poder": "oau",
+    "clave": "oau-005",
+    "siglas": "trijaem",
+    "valor": "Tribunal de Justicia Administrativa del Estado de México"
+  },
+  {
+    "poder": "oau",
+    "clave": "oau-006",
+    "siglas": "teemmx",
+    "valor": "Tribunal Electoral del Estado de México"
+  },
+  {
+    "poder": "oau",
+    "clave": "oau-007",
+    "siglas": "uaem",
+    "valor": "Universidad Autónoma del Estado de México"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-001",
+    "siglas": "pan",
+    "valor": "Partido Acción Nacional"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-002",
+    "siglas": "prd",
+    "valor": "Partido de la Revolucion Democratica"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-003",
+    "siglas": "pt",
+    "valor": "Partido del Trabajo"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-004",
+    "siglas": "pes",
+    "valor": "Partido Encuentro Social"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-005",
+    "siglas": "pm",
+    "valor": "Partido Morena"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-006",
+    "siglas": "pmc",
+    "valor": "Partido Movimiento Ciudadano"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-007",
+    "siglas": "pna",
+    "valor": "Partido Nueva Alianza Estado de México"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-008",
+    "siglas": "pri",
+    "valor": "Partido Revolucionario Institucional"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-009",
+    "siglas": "pve",
+    "valor": "Partido Verde Ecologista de Mexico"
+  },
+  {
+    "poder": "pap",
+    "clave": "pap-010",
+    "siglas": "pvr",
+    "valor": "Partido Vía Radical"
+  },
+  {
+    "poder": "sin",
+    "clave": "sin-001",
+    "siglas": "atascecytem",
+    "valor": "Agrupación de Trabajadores Académicos al Servicio del Colegio de Estudios Científicos y Tecnológicos del Estado de México"
+  },
+  {
+    "poder": "sin",
+    "clave": "sin-002",
+    "siglas": "apacecytem",
+    "valor": "Asociación de Personal Administrativo del CECyTEM"
+  },
+  {
+    "poder": "sin",
+    "clave": "sin-003",
+    "siglas": "faapauaem",
+    "valor": "Federación de Asociaciones Autónomas de Personal Académico de la Universidad Autónoma del Estado de México"
+  },
+  {
+    "poder": "sin",
+    "clave": "sin-004",
+    "siglas": "smsem",
+    "valor": "Sindicato de Maestros al Servicio del Estado de México"
+  },
+  {
+    "poder": "sin",
+    "clave": "sin-005",
+    "siglas": "sumaem",
+    "valor": "Sindicato Unificado de Maestros y Académicos del Estado de México"
+  },
+  {
+    "poder": "sin",
+    "clave": "sin-006",
+    "siglas": "sutpmidem",
+    "valor": "Sindicato Único de Trabajadores de los Poderes, Municipios e Instituciones Descentralizadas del Estado de México"
+  },
+  {
+    "poder": "sin",
+    "clave": "sin-007",
+    "siglas": "sutesuaem",
+    "valor": "Sindicato Único de Trabajadores y Empleados al Servicio de la Universidad Autónoma del Estado de México"
+  },
+  {
+    "poder": "fid",
+    "clave": "fid-001",
+    "siglas": "fdpziem",
+    "valor": "Fideicomiso para el Desarrollo de Parques y Zonas Industriales en el Estado de México"
+  },
+  {
+    "poder": "fid",
+    "clave": "fid-002",
+    "siglas": "fpccprsem",
+    "valor": "Fideicomiso Público para la Construcción de Centros Preventivos y de Readaptación Social en el Estado de México"
+  },
+  {
+    "poder": "fid",
+    "clave": "fid-003",
+    "siglas": "fpptem",
+    "valor": "Fideicomiso Público para la Promoción Turística del Estado de México"
+  }
+]

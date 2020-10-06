@@ -1,0 +1,18 @@
+[
+    {
+        "clave": "pending",
+        "valor": "Pendiente"
+    },
+    {
+        "clave": "active",
+        "valor": "Activo"
+    },
+    {
+        "clave": "cancelled",
+        "valor": "Cancelado"
+    },
+    {
+        "clave": "terminated",
+        "valor": "Terminado"
+    }
+]

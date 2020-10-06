@@ -1,0 +1,18 @@
+[
+  {
+    "clave": "BOL",
+    "valor": "BOLETA"
+  },
+  {
+    "clave": "CERT",
+    "valor": "CERTIFICADO"
+  },
+  {
+    "clave": "CONST",
+    "valor": "CONSTANCIA"
+  },
+  {
+    "clave": "TIT",
+    "valor": "TÍTULO"
+  }
+]

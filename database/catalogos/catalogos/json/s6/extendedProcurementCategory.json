@@ -1,0 +1,18 @@
+[
+    {
+        "clave": "goods",
+        "valor": "Bienes y provisiones"
+    },
+    {
+        "clave": "works",
+        "valor": "Obras"
+    },
+    {
+        "clave": "services",
+        "valor": "Servicios"
+    },
+    {
+        "clave": "consultingServices",
+        "valor": "Servicios de consultoría"
+    }
+]

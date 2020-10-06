@@ -1,0 +1,1720 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "API de Registro de Contrataciones",
+    "description" : "Actualización 2020-08-11",
+    "contact" : {
+      "name" : "Jessica Irai Diaz Valverde",
+      "email" : "soporte.pde@sesaemm.gob.mx"
+    }
+  },
+  "externalDocs" : {
+    "description" : "Estándar de datos y catálogos",
+    "url" : "https://gitlab.com/plataformadigitalestataledomex/api_docs_pde"
+  },
+  "paths" : {
+    "/contrataciones" : {
+      "post" : {
+        "tags" : [ "contrataciones" ],
+        "summary" : "Muestra las contrataciones",
+        "requestBody" : {
+          "description" : "Form para peticiones de filtros",
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "fechaCaptura" : {
+                    "type" : "string",
+                    "description" : "Fecha mayor o igual en la que se agrega o se modifica el registro. Contribución de la SECOGEM",
+                    "format": "date",
+                    "example" : "2019-08-20"
+                  },
+                  "limite_registros" : {
+                    "type" : "integer",
+                    "description" : "Indica el número de registros a mostrar por página",
+                    "minimum": 1,
+                    "example" : 11,
+                    "default": 10
+                  },
+                  "pagina" : {
+                    "type" : "integer",
+                    "minimum" : 1,
+                    "description" : "Indica la página que se requiere",
+                    "example" : 2,
+                    "default": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Operación exitosa",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/contrataciones"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/resError"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "contrataciones_auth" : [ "read:contrataciones" ]
+        } ]
+      }
+    }
+  },
+  "components" : {
+    "securitySchemes" : {
+      "contrataciones_auth" : {
+        "type" : "oauth2",
+        "flows" : {
+          "password" : {
+            "tokenUrl" : "/oauth",
+            "scopes" : {
+              "read:contrataciones" : "Obtiene lista de contrataciones"
+            }
+          }
+        }
+      }
+    },
+    "schemas" : {
+      "contrataciones" : {
+        "type" : "object",
+        "required" : [ "pagination", "results" ],
+        "properties" : {
+          "pagination" : {
+            "type" : "object",
+            "required" : [ "pageSize", "page", "totalRows", "hasNextPage" ],
+            "properties" : {
+              "pageSize" : {
+                "type" : "integer",
+                "minimum" : 1,
+                "description" : "Número de registros mostrados, por defecto muestra diez.",
+                "example" : 100
+              },
+              "page" : {
+                "type" : "integer",
+                "minimum" : 1,
+                "description" : "Número de página actual",
+                "example" : 20
+              },
+              "totalRows" : {
+                "type" : "integer",
+                "minimum" : 1,
+                "description" : "Total de registros",
+                "example" : 30
+              },
+              "hasNextPage" : {
+                "type" : "boolean",
+                "description" : "Indica si existe otra página",
+                "example" : true
+              }
+            }
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "metadata" : {
+                  "type" : "object",
+                  "required" : [ "actualizacion", "institucion", "contacto", "personaContacto" ],
+                  "properties" : {
+                    "actualizacion" : {
+                      "type" : "string",
+                      "description" : "Fecha y hora en la que se presentó la declaración",
+                      "example" : "2017-07-21T17:32:28Z"
+                    },
+                    "institucion" : {
+                      "type" : "string",
+                      "description" : "Institucion resposanble del sistema de captura",
+                      "example" : "Secretaría de Educación Pública"
+                    },
+                    "contacto" : {
+                      "type" : "string",
+                      "format" : "email",
+                      "description" : "Correo de contacto de la persona resposanble del sistema de captura",
+                      "example" : "usuario@dominio.org"
+                    },
+                    "personaContacto" : {
+                      "type" : "string",
+                      "description" : "Nombre de la persona resposanble del sistema de captura",
+                      "example" : "José John"
+                    }
+                  }
+                },
+                "publisher" : {
+                  "title" : "Publicador",
+                  "description" : "Información que identifica de manera única al publicador de este paquete.",
+                  "type" : "object",
+                  "properties" : {
+                    "name" : {
+                      "title" : "Nombre",
+                      "description" : "El nombre de la organización o departamento responsable de publicar estos datos.",
+                      "type" : "string",
+                      "example" : "Nombre"
+                    },
+                    "scheme" : {
+                      "title" : "Esquema",
+                      "description" : "El esquema que tiene los identificadores únicos utilizados para identificar el artículo que se identifica.",
+                      "type" : "string",
+                      "nullable" : true,
+                      "example" : "Esquema"
+                    },
+                    "uid" : {
+                      "title" : "uid",
+                      "description" : "El ID único para esta entidad en el esquema de identificadores dado.",
+                      "type" : "string",
+                      "nullable" : true,
+                      "example" : "uid"
+                    },
+                    "uri" : {
+                      "title" : "URI",
+                      "description" : "Una URI para identificar al publicador.",
+                      "type" : "string",
+                      "nullable" : true,
+                      "example" : "https://",
+                      "format" : "uri"
+                    }
+                  },
+                  "required" : [ "name" ]
+                },
+                "cycle" : {
+                  "title" : "Ciclo",
+                  "description" : "Año y/o Ejercicio fiscal",
+                  "type" : "integer",
+                  "example" : 2017
+                },
+                "ocid" : {
+                  "title" : "Open Contracting ID",
+                  "description" : "Un identificador único global para este proceso de Contrataciones Abiertas. Se compone de un prefijo ocid y un identificador para el proceso de contrataciones. Para más información, vea la [Guía de Identificadores de Contrataciones Abiertas]",
+                  "type" : "string",
+                  "example" : "Open Contracting ID",
+                  "minLength" : 1
+                },
+                "id" : {
+                  "title" : "ID de Entrega",
+                  "description" : "Un identificador para esta entrega de información particular. Un identificador de entrega debe ser único en el ámbito del proceso de contrataciones relacionado (definido por un ocid común). Un identificador de entrega no debe contener el caracter #.",
+                  "type" : "string",
+                  "example" : "ID de Entrega",
+                  "minLength" : 1
+                },
+                "date" : {
+                  "title" : "Fecha de entrega",
+                  "description" : "Fecha en la cual esta información se publicó por primera vez.",
+                  "type" : "string",
+                  "example" : "2017-07-21T17:32:28Z",
+                  "format" : "date-time"
+                },
+                "tag" : {
+                  "title" : "Etiqueta de entrega",
+                  "description" : "Uno o más valores de la lista de código cerrada  [releaseTag.csv]. Las etiquetas se pueden usar para filtrar entregas y para entender el tipo de información que las entregas contienen. ",
+                  "type" : "array",
+                  "items" : {
+                    "type" : "string",
+                    "enum" : [ "planning", "planningUpdate", "tender", "tenderAmendment", "tenderUpdate", "tenderCancellation", "award", "awardUpdate", "awardCancellation", "contract", "contractUpdate", "contractAmendment", "implementation", "implementationUpdate", "contractTermination", "compiled" ]
+                  },
+                  "minItems" : 1
+                },
+                "initiationType" : {
+                  "title" : "Tipo de inicio",
+                  "description" : "El tipo de proceso de iniciación utilizado para este contrato, de la lista de código cerrada  [initiationType.csv].",
+                  "type" : "string",
+                  "example" : "tender",
+                  "enum" : [ "tender" ]
+                },
+                "parties" : {
+                  "title" : "Partes involucradas",
+                  "description" : "La información de las partes involucradas (organizaciones, operadores económicos y otros participantes) que están involucrados en el proceso de contrataciones y sus roles, por ejemplo: comprador, entidad contratante, proveedor, etc. Se utiliza referencias de organización en otras partes del esquema para hacer referencia a las entradas en esta lista.",
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Organization"
+                  },
+                  "uniqueItems" : true
+                },
+                "buyer" : {
+                  "title" : "Comprador",
+                  "description" : "Un comprador es una entidad cuyo presupuesto se utilizará para pagar bienes, obras o servicios relacionados con un contrato. Este puede ser diferente de la entidad contratante que puede especificarse en los datos de licitación.",
+                  "$ref" : "#/components/schemas/OrganizationReference"
+                },
+                "planning" : {
+                  "title" : "Planeación",
+                  "description" : "Información sobre la fase de planeación del proceso de contratación. Esto incluye información relacionada con el proceso de decidir qué contratar, cuándo y cómo.",
+                  "$ref" : "#/components/schemas/Planning"
+                },
+                "tender" : {
+                  "title" : "Licitación",
+                  "description" : "Las actividades llevadas a cabo para celebrar un contrato.",
+                  "$ref" : "#/components/schemas/Tender"
+                },
+                "language" : {
+                  "title" : "Idioma de la entrega",
+                  "description" : "El idioma predeterminado de los datos con dos letras [ISO639-1].",
+                  "type" : "string",
+                  "nullable" : true,
+                  "default" : "es",
+                  "example" : "es"
+                },
+                "awards" : {
+                  "title" : "Adjudicaciones",
+                  "description" : "Información de la fase adjudicación del proceso de contrataciones. Puede haber más de una adjudicación por proceso de contrataciones; por ejemplo, porque el contrato se divide entre diferentes proveedores, o porque es una oferta permanente.",
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Award"
+                  },
+                  "uniqueItems" : true
+                },
+                "contracts" : {
+                  "title" : "Contratos",
+                  "description" : "Información de la fase de creación del contrato en el proceso de contratación.",
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Contract"
+                  },
+                  "uniqueItems" : true
+                }
+              }
+            }
+          }
+        }
+      },
+      "Planning" : {
+        "title" : "Planeación",
+        "description" : "Information from the planning phase of the contracting process. Note that many other fields can be filled in a planning release, in the appropriate fields in other schema sections; these would likely be estimates at this stage, e.g. value in tender.",
+        "type" : "object",
+        "properties" : {
+          "rationale" : {
+            "title" : "Justificación",
+            "description" : "La justificación para la adquisición provista en texto libre. Se puede proveer más detalle en un documento adjunto.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(rationale_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Justificación"
+          },
+          "budget" : {
+            "title" : "Presupuesto",
+            "description" : "Detalles del presupuesto que financia este proceso de contratación.",
+            "$ref" : "#/components/schemas/Budget"
+          },
+          "documents" : {
+            "title" : "Documentos",
+            "description" : "Una lista de documentos relacionados con el proceso de planeación.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Document"
+            }
+          },
+          "milestones" : {
+            "title" : "Hitos de planeación",
+            "description" : "Una lista de hitos asociados con la etapa de planeación.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Milestone"
+            }
+          }
+        }
+      },
+      "Tender" : {
+        "title" : "Licitación",
+        "description" : "Datos sobre el proceso de licitación - invitación pública de posibles contratistas que enviarán propuestas para evaluación y seleccionar a un ganador o ganadores.",
+        "type" : "object",
+        "required" : [ "id" ],
+        "properties" : {
+          "id" : {
+            "title" : "ID de licitación",
+            "description" : "Un identificador para el proceso de licitación. Esto puede ser igual al ocid, o un identificador interno para esta licitación. ",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "example" : "ID de licitación",
+            "minLength" : 1
+          },
+          "title" : {
+            "title" : "Título de la licitación",
+            "description" : "Un título para esta licitación. Éste se usará por aplicaciones como una cabecera para atraer interés y ayudar a los analistas a entender la naturaleza de esta contratación.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(title_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Título de la licitación"
+          },
+          "description" : {
+            "title" : "Descripción de la licitación",
+            "description" : "Una descripción breve de la licitación. Esto complementa cualquier información estructurada que se da utilizando la lista de artículos. Las descripciones deben de ser cortas y fáciles de leer. Evite utilizar MAYÚSCULAS.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Descripción de la licitación"
+          },
+          "status" : {
+            "title" : "Estado de la licitación",
+            "description" : "El estatus actual de la licitación, desde la lista de código cerrada [tenderStatus.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "planning", "planned", "active", "cancelled", "unsuccessful", "complete", "withdrawn", null ]
+          },
+          "procuringEntity" : {
+            "title" : "Entidad contratante",
+            "description" : "La entidad que gestiona el proceso de contratación. Esta puede ser distinta del comprador que paga/usa los artículos adquiridos.",
+            "$ref" : "#/components/schemas/OrganizationReference"
+          },
+          "items" : {
+            "title" : "Artículos que se adquirirán",
+            "description" : "Los bienes y servicios que se van a comprar, desglosados a líneas de artículos cuando sea posible. Los artículos no deben de duplicarse, y se deben de especificar las cantidades. ",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Item"
+            },
+            "uniqueItems" : true
+          },
+          "value" : {
+            "title" : "Valor",
+            "description" : "El valor máximo estimado de la contratación. Un valor negativo indica que el proceso de contratación puede incluir pagos del proveedor al comprador (usado comúnmente en contratos de concesión).",
+            "$ref" : "#/components/schemas/Value"
+          },
+          "minValue" : {
+            "title" : "Valor mínimo",
+            "description" : "El valor mínimo estimado de la contratación. Un valor negativo indica que el proceso de contratación puede incluir pagos del proveedor al comprador (usado comúnmente en contratos de concesión).",
+            "$ref" : "#/components/schemas/Value"
+          },
+          "procurementMethod" : {
+            "title" : "Método de contratación",
+            "description" : "El método de adquisición, de la lista de código cerrada [method.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "open", "selective", "limited", "direct", null ]
+          },
+          "procurementMethodDetails" : {
+            "title" : "Detalles del método de contratación",
+            "description" : "Detalles adicionales sobre el método de adquisiciones utilizado. Este campo puede usarse para dar el nombre local del método de adquisición particular que se utilizó.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Detalles del método de contratación"
+          },
+          "procurementMethodRationale" : {
+            "title" : "Justificación para el método de contratación",
+            "description" : "Justificación para el método de compra elegido. Esto es especialmente importante para dar una justificación en el caso de licitaciones limitadas o adjudicaciones directas.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(procurementMethodRationale_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Justificación para el método de contratación"
+          },
+          "mainProcurementCategory" : {
+            "title" : "Categoría principal de contratación",
+            "description" : "La principal categoría describiendo el objeto principal de este proceso de contrataciones, de la lista de código cerrada [procurementCategory.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "goods", "works", "services", null ]
+          },
+          "additionalProcurementCategories" : {
+            "title" : "Categorías adicionales de contratación",
+            "description" : "Cualquier categoría adicional que describe los objetos del proceso de contrataciones, utilizando la lista de código abierta [extendedProcurementCategory.csv].",
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "nullable" : true,
+              "enum" : [ "goods", "works", "services", "consultingServices", null ]
+            }
+          },
+          "awardCriteria" : {
+            "title" : "Criterios de adjudicación",
+            "description" : "Los criterios de adjudicación para esta compra, utilizando la lista de código abierta [awardCriteria.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "priceOnly", "costOnly", "qualityOnly", "ratedCriteria", null ]
+          },
+          "awardCriteriaDetails" : {
+            "title" : "Detalles de los criterios de adjudicación",
+            "description" : "Cualquier detalle o información adicional sobre la adjudicación o criterios de selección.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(awardCriteriaDetails_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Detalles de los criterios de adjudicación"
+          },
+          "submissionMethod" : {
+            "title" : "Método de presentación",
+            "description" : "Los métodos por los cuales se entregan las ofertas, utilizando la lista de código abierta [submissionMethod.csv].",
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "nullable" : true,
+              "enum" : [ "electronicSubmission", "electronicAuction", "written", "inPerson", null ]
+            }
+          },
+          "submissionMethodDetails" : {
+            "title" : "Detalles del método de presentación",
+            "description" : "Cualquier detalle o más información sobre el método de entrega. Esto puede incluir la dirección, correo electrónico o servicio en línea en el cual se entregan las ofertas, y cualquier requisito especial que debe de seguirse para entregarlas.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(submissionMethodDetails_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Detalles del método de presentación"
+          },
+          "tenderPeriod" : {
+            "title" : "Periodo de licitación",
+            "description" : "El periodo cuando la licitación está abierta para la recepción de las propuestas. La fecha de final es la fecha de cierre de recepción de las propuestas.",
+            "$ref" : "#/components/schemas/Period"
+          },
+          "enquiryPeriod" : {
+            "title" : "Periodo de consulta",
+            "description" : "El periodo durante el cual los postulantes potenciales pueden hacer preguntas o solicitudes de aclaración a la entidad que gestiona el proceso de contratación. Los detalles de cómo enviar solicitudes deben especificarse en documentos de notificaciones adjuntos o en el campo submissionMethodDetails. Las fechas estructuradas para cuando se dará respuesta a las preguntas se puede proveer usando hitos de la licitación.",
+            "$ref" : "#/components/schemas/Period"
+          },
+          "hasEnquiries" : {
+            "title" : "¿Tiene consultas?",
+            "description" : "Un campo true/false para indicar si se recibieron consultas durante el proceso de licitación. La información estructurada sobre preguntas que se recibieron y sus respuestas pueden proveerse usando la extensión de consultas.",
+            "type" : "boolean",
+            "nullable" : true,
+            "example" : true
+          },
+          "eligibilityCriteria" : {
+            "title" : "Criterios de elegibilidad",
+            "description" : "Una descripción de los criterios de elegibilidad para proveedores potenciales. Requisitos y condiciones que deben cumplir los interesados para participar en el procedimiento de contratación.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(eligibilityCriteria_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Criterios de elegibilidad"
+          },
+          "awardPeriod" : {
+            "title" : "Periodo de evaluación y adjudicación",
+            "description" : "El período para tomar decisiones relacionados a la adjudicación del contrato. La fecha final debe de indicar la fecha en que se debe finalizar la decisión de adjudicación. La fecha de inicio puede usarse para indicar el comienzo de un período de evaluación.",
+            "$ref" : "#/components/schemas/Period"
+          },
+          "contractPeriod" : {
+            "description" : "El periodo sobre el cual se estima el contrato o requiere que esté activo. Si la licitación no especifica fechas, se puede usar el campo de duración.",
+            "title" : "Periodo de contrato",
+            "$ref" : "#/components/schemas/Period"
+          },
+          "numberOfTenderers" : {
+            "title" : "Número de licitantes",
+            "description" : "El número total de propuestas recibidas.",
+            "type" : "integer",
+            "nullable" : true,
+            "example" : 10
+          },
+          "tenderers" : {
+            "title" : "Licitantes",
+            "description" : "Todas las partes que hacen una oferta en una licitación. Información más detallada sobre las ofertas y la organización que hace la oferta puede proveerse usando la extensión Bid.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OrganizationReference"
+            },
+            "uniqueItems" : true
+          },
+          "documents" : {
+            "title" : "Documentos",
+            "description" : "Todos los documentos y archivos adjuntos relacionados a esta licitación, incluyendo los avisos. Vea la lista de código [documentType]  para detalles sobre los documentos que potencialmente se deben de incluir. Documentos comúnes incluyen avisos legales oficiales de la licitación, especificaciones técnicas, criterios de evaluación y como va avanzando el proceso de licitación, aclaraciones y respuestas a consultas.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Document"
+            }
+          },
+          "milestones" : {
+            "title" : "Hitos",
+            "description" : "Una lista de hitos asociados con la licitación.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Milestone"
+            }
+          },
+          "amendments" : {
+            "description" : "Una enmienda de licitación es un cambio formal a los detalles de la misma y generalmente implica la publicación de una nueva entrega o aviso de una nueva licitación. La justificación y descripción de los cambios realizados pueden ser proveídos aquí.",
+            "type" : "array",
+            "title" : "Enmiendas",
+            "items" : {
+              "$ref" : "#/components/schemas/Amendment"
+            }
+          },
+          "amendment" : {
+            "title" : "Enmienda",
+            "description" : "El uso la propiedad de enmienda individual es obsoleto. Desde el OCDS 1.1 la información debe de proveerse en la lista de enmiendas.",
+            "$ref" : "#/components/schemas/Amendment",
+            "deprecated" : true
+          }
+        }
+      },
+      "Award" : {
+        "title" : "Adjudicación",
+        "description" : "Una adjudicación para una compra específica. Puede haber más de una adjudicación por proceso de contrataciones; por ejemplo, porque el contrato se divide entre varios proveedores, o porque es una oferta permanente.",
+        "type" : "object",
+        "required" : [ "id" ],
+        "properties" : {
+          "id" : {
+            "title" : "ID de Adjudicación",
+            "description" : "El identificador para esta adjudicación. Debe ser único y no debe cambiar en el Proceso de Contrataciones Abiertas del cual es parte (definido por un ocid único). Vea la  [guía de identificadores] para más detalles.",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "example" : "ID de Adjudicación",
+            "minLength" : 1
+          },
+          "title" : {
+            "title" : "Título",
+            "description" : "Título de la adjudicación",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(title_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Título"
+          },
+          "description" : {
+            "title" : "Descripción",
+            "description" : "Descripción de la adjudicación",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Descripción"
+          },
+          "status" : {
+            "title" : "Estado de la Adjudicación",
+            "description" : "El status actual de la adjudicación, de la lista de código cerrada [awardStatus.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "pending", "active", "cancelled", "unsuccessful", null ]
+          },
+          "date" : {
+            "title" : "Fecha de adjudicación",
+            "description" : "La fecha de la adjudicación del contrato. Usualmente es la fecha en que se tomó la decisión de adjudicar.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z",
+            "format" : "date-time"
+          },
+          "value" : {
+            "title" : "Valor",
+            "description" : "El valor o monto total de esta adjudicación. En el caso de un contracto marco este puede ser el estimado del valor total o valor máximo del acuerdo. Puede haber más de una adjudicación por proceso de contratación. Un valor negativo indica que la adjudicación puede implicar pagos del proveedor al comprador (comúnmente utilizado en contratos de concesiones).",
+            "$ref" : "#/components/schemas/Value"
+          },
+          "suppliers" : {
+            "title" : "Proveedores",
+            "description" : "Los proveedores adjudicados. Si hay diferentes proveedores adjudicados para los artículos del procedimiento de contratación, estos deben ser separados en diferentes bloques de adjudicaciones.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OrganizationReference"
+            },
+            "uniqueItems" : true
+          },
+          "items" : {
+            "title" : "Artículos Adjudicados",
+            "description" : "Los bienes y servicios adjudicados, desglosados en tipos de artículos de una clasificación preexistente cuando sea posible. Los artículos no deben de estar duplicados, sino se debe especificar la cantidad.",
+            "type" : "array",
+            "minItems" : 1,
+            "items" : {
+              "$ref" : "#/components/schemas/Item"
+            },
+            "uniqueItems" : true
+          },
+          "contractPeriod" : {
+            "title" : "Periodo de contrato",
+            "description" : "El periodo por el cual se ha adjudicado el contrato.",
+            "$ref" : "#/components/schemas/Period"
+          },
+          "documents" : {
+            "title" : "Documentos",
+            "description" : "Todos los documentos y archivos adjuntos relacionados con la adjudicación, incluyendo cualquier aviso o notificación.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Document"
+            },
+            "uniqueItems" : true
+          },
+          "amendments" : {
+            "description" : "Una enmienda de la adjudicación es un cambio formal a los detalles de la misma y generalmente implica la publicación de una nueva entrega o aviso de una nueva licitación. La justificación y descripción de los cambios realizados pueden ser proveídos aquí.",
+            "type" : "array",
+            "title" : "Enmiendas",
+            "items" : {
+              "$ref" : "#/components/schemas/Amendment"
+            }
+          },
+          "amendment" : {
+            "title" : "Enmienda",
+            "description" : "El uso la propiedad de enmienda individual es obsoleto. Desde el OCDS 1.1 la información debe de proveerse en la lista de enmiendas.",
+            "$ref" : "#/components/schemas/Amendment",
+            "deprecated" : true
+          }
+        }
+      },
+      "Contract" : {
+        "type" : "object",
+        "title" : "Contrato",
+        "description" : "Información sobre el contrato firmado entre el comprador y el o los proveedores.",
+        "required" : [ "id", "awardID" ],
+        "properties" : {
+          "id" : {
+            "title" : "ID del Contrato",
+            "description" : "El identificador para este contrato.  Debe ser único y no debe cambiar en el Proceso de Contrataciones Abiertas del cual es parte (definido por un ocid único). Vea la [guía de identificadores] para más detalles.",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "pattern" : "^(title_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "ID del Contrato",
+            "minLength" : 1
+          },
+          "awardID" : {
+            "title" : "ID de Adjudicación",
+            "description" : "El identificador de adjudicación (award.id) contra el cual se está expidiendo este contrato.",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "example" : "ID de Adjudicación",
+            "minLength" : 1
+          },
+          "title" : {
+            "title" : "Título del contrato",
+            "description" : "Título del contrato",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Título del contrato"
+          },
+          "description" : {
+            "title" : "Descripción del contrato",
+            "description" : "Descripción del contrato",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Descripción del contrato"
+          },
+          "status" : {
+            "title" : "Estado del Contrato",
+            "description" : "El estatus actual del contrato, de la lista de código cerrada [contractStatus.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "pending", "active", "cancelled", "terminated", null ]
+          },
+          "period" : {
+            "title" : "Periodo",
+            "description" : "Las fechas de inicio y fin del contrato.",
+            "$ref" : "#/components/schemas/Period"
+          },
+          "value" : {
+            "title" : "Valor",
+            "description" : "Un valor o monto total de este contrato. Un valor negativo indica que el contrato implicará pagos del proveedor al comprador (comúnmente usado en contratos de concesión).",
+            "$ref" : "#/components/schemas/Value"
+          },
+          "items" : {
+            "title" : "Artículos Contratados",
+            "description" : "Los bienes, servicios y cualquier resultado intangible de este contrato. Nota: No repetir si los artículos son los mismos que la adjudicación.",
+            "type" : "array",
+            "minItems" : 1,
+            "items" : {
+              "$ref" : "#/components/schemas/Item"
+            },
+            "uniqueItems" : true
+          },
+          "dateSigned" : {
+            "title" : "Fecha de firma",
+            "description" : "La fecha en que se firmó el contrato. En el caso de múltiples firmas, la fecha de la última firma. ",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z",
+            "format" : "date-time"
+          },
+          "documents" : {
+            "title" : "Documentos",
+            "description" : "Todos los documentos y archivos adjuntos relacionados con el contrato, incluyendo cualquier aviso o notificación.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Document"
+            },
+            "uniqueItems" : true
+          },
+          "implementation" : {
+            "title" : "Implementación",
+            "description" : "La información relacionada con la implementación del contrato de acuerdo con las obligaciones definidas en el mismo.",
+            "$ref" : "#/components/schemas/Implementation"
+          },
+          "relatedProcesses" : {
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/components/schemas/RelatedProcess"
+            },
+            "description" : "Los detalles de procesos relacionados, por ejemplo, si el proceso es seguido por uno o más procesos de contrataciones, representados bajo diferentes identificadores de contrataciones abiertas (ocid). Esto se utiliza normalmente para referir a subcontratos o renovaciones y reemplazos de este contrato.",
+            "title" : "Procesos relacionados",
+            "type" : "array"
+          },
+          "milestones" : {
+            "title" : "Hitos del contrato",
+            "description" : "Una lista de hitos asociados con la terminación de este contrato.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Milestone"
+            }
+          },
+          "amendments" : {
+            "description" : "Una enmienda de contrato es un cambio formal a los detalles del mismo y generalmente implica la publicación de una nueva entrega o aviso de una nueva licitación, así como de otros documentos de detallan el cambio. La razón y una descripción de los cambios realizados se pueden proveer aquí.",
+            "type" : "array",
+            "title" : "Enmiendas",
+            "items" : {
+              "$ref" : "#/components/schemas/Amendment"
+            }
+          },
+          "amendment" : {
+            "title" : "Enmienda",
+            "description" : "El uso la propiedad de enmienda individual es obsoleto. Desde el OCDS 1.1 la información debe de proveerse en la lista de enmiendas.",
+            "$ref" : "#/components/schemas/Amendment",
+            "deprecated" : true
+          }
+        }
+      },
+      "Implementation" : {
+        "type" : "object",
+        "title" : "Implementación",
+        "description" : "Información durante la etapa de realización/implementación del contrato",
+        "properties" : {
+          "transactions" : {
+            "title" : "Transacciones",
+            "description" : "Una lista de transacciones de pago realizadas contra este contrato.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Transaction"
+            },
+            "uniqueItems" : true
+          },
+          "milestones" : {
+            "title" : "Hitos",
+            "description" : "Cuando se completen los hitos, se deben de actualizar el estatus de los hitos y las fechas.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Milestone"
+            },
+            "uniqueItems" : true
+          },
+          "documents" : {
+            "title" : "Documentos",
+            "description" : "Documentos y reportes que son parte de la fase de implementación, por ejemplo, reportes de auditoría y evaluación.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Document"
+            },
+            "uniqueItems" : true
+          }
+        }
+      },
+      "Milestone" : {
+        "title" : "Hito",
+        "description" : "El bloque hito puede usarse para representar una gran variedad de eventos en la duración de un proceso de contrataciones.",
+        "type" : "object",
+        "required" : [ "id" ],
+        "properties" : {
+          "id" : {
+            "title" : "ID",
+            "description" : "Un identificador local para este hito, único dentro de este bloque. Este campo se usa para llevar registro de múltiples revisiones de un hito a través de la compilación de entrega a mecanismo de registro.",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "example" : "ID",
+            "minLength" : 1
+          },
+          "title" : {
+            "title" : "Título",
+            "description" : "Título del hito",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(title_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Título"
+          },
+          "type" : {
+            "title" : "Tipo de hito",
+            "description" : "El tipo del hito, utilizando la lista de código abierta [milestoneType.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "preProcurement", "approval", "engagement", "assessment", "delivery", "reporting", "financing", null ]
+          },
+          "description" : {
+            "title" : "Descripción",
+            "description" : "Una descripción del hito.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Descripción"
+          },
+          "code" : {
+            "title" : "Código de hito",
+            "description" : "Los códigos de hito pueden usarse para seguir eventos específicos que toman lugar para un tipo particular de proceso de contrataciones. Por ejemplo, un código de 'approvalLetter' puede usarse para permitir a las aplicaciones entender que el hito representa una fecha cuando el approvalLetter debe entregarse o firmarse.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Código de hito"
+          },
+          "dueDate" : {
+            "title" : "Fecha límite",
+            "description" : "La fecha límite del hito.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z",
+            "format" : "date-time"
+          },
+          "dateMet" : {
+            "format" : "date-time",
+            "title" : "Fecha de cumplimiento",
+            "description" : "La fecha en que el hito se cumplió.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z"
+          },
+          "dateModified" : {
+            "title" : "Fecha de modificación",
+            "description" : "La fecha en que el hito fue revisado o modificado y se cambió el estado o se confirmó que continuaba siendo correcto.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z",
+            "format" : "date-time"
+          },
+          "status" : {
+            "title" : "Estado",
+            "description" : "El estatus que se realizó en la fecha en `dateModified`, de la lista de código cerrada [milestoneStatus.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "scheduled", "met", "notMet", "partiallyMet", null ]
+          },
+          "documents" : {
+            "title" : "Documentos",
+            "description" : "Lista de documentos asociados con este hito (Obsoleta en 1.1).",
+            "type" : "array",
+            "deprecated" : true,
+            "items" : {
+              "$ref" : "#/components/schemas/Document"
+            },
+            "uniqueItems" : true
+          }
+        }
+      },
+      "Document" : {
+        "type" : "object",
+        "title" : "Documento",
+        "description" : "Enlaces a, o descripciones de, documentos externos pueden adjuntarse en varias ubicaciones dentro del estándar. Los documentos pueden ser información de respaldo, avisos formales, formas descargables o cualquier otro tipo de recurso que deba de hacerse público como parte de contrataciones completamente abiertas.",
+        "required" : [ "id" ],
+        "properties" : {
+          "id" : {
+            "title" : "ID",
+            "description" : "Identificador local y único para este documento. Este campo se utiliza para darle seguimiento a las múltiples versiones de un documento en el proceso de creación de un registro del proceso de contratación (record) que se genera a partir de las entregas (release).",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "example" : "ID",
+            "minLength" : 1
+          },
+          "documentType" : {
+            "title" : "Tipo de Documento",
+            "description" : "Una clasificación del documento descrito, utilizando la lista de códigos [documentType.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "plannedProcurementNotice", "tenderNotice", "awardNotice", "contractNotice", "completionCertificate", "procurementPlan", "biddingDocuments", "technicalSpecifications", "evaluationCriteria", "evaluationReports", "contractDraft", "contractSigned", "contractArrangements", "contractSchedule", "physicalProgressReport", "financialProgressReport", "finalAudit", "hearingNotice", "marketStudies", "eligibilityCriteria", "clarifications", "shortlistedFirms", "environmentalImpact", "assetAndLiabilityAssessment", "riskProvisions", "winningBid", "complaints", "contractAnnexe", "contractGuarantees", "subContract", "needsAssessment", "feasibilityStudy", "projectPlan", "billOfQuantity", "bidders", "conflictOfInterest", "debarments", "illustration", "submissionDocuments", "contractSummary", "cancellationDetails", null ]
+          },
+          "title" : {
+            "title" : "Título",
+            "description" : "El título del documento.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(title_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Título"
+          },
+          "description" : {
+            "title" : "Descripción",
+            "description" : "Una descripción corta del documento. Se recomienda que las descripciones no excedan 250 palabras. En el caso en que el documento no esté accesible en línea, el campo de descripción puede utilizarse para describir los arreglos necesarios para obtener una copia del documento.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Descripción"
+          },
+          "url" : {
+            "title" : "URL",
+            "description" : "Un enlace directo al documento o archivo adjunto. El servidor que da acceso a este documento debe de estar configurado para reportar correctamente el tipo MIME de documento.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "URL",
+            "format" : "uri"
+          },
+          "datePublished" : {
+            "title" : "Fecha de publicación",
+            "description" : "La fecha de publicación del documento. Esto es particularmente importante para documentos relevantes desde el punto de vista legal, como los avisos de licitación.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z",
+            "format" : "date-time"
+          },
+          "dateModified" : {
+            "title" : "Fecha de modificación",
+            "description" : "Fecha en que se modificó por última vez el documento.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z",
+            "format" : "date-time"
+          },
+          "format" : {
+            "title" : "Formato",
+            "description" : "El formato del documento, utilizando la lista de códigos abierta [IANA Media Types] (vea los valores en la columna 'Template'), o utilizando el código 'offline/print'  si el documento descrito se publica offline. Por ejemplo, páginas web tienen el formato 'text/html'.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Formato"
+          },
+          "language" : {
+            "title" : "Idioma",
+            "description" : "El idioma predeterminado de los datos con dos letras [ISO639-1].",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Idioma"
+          }
+        }
+      },
+      "Budget" : {
+        "type" : "object",
+        "title" : "Información de presupuesto",
+        "description" : "Esta sección contiene información sobre la línea presupuestaria, y los proyectos asociados, a través de los cuales se está financiando este proceso de contrataciones. Se basa en el modelo de datos del [Fiscal Data Package], y debe de usarse para hacer referencias cruzadas con información más detallada contenida en un Paquete de Datos de Presupuesto, o cuando no hay un Paquete de Datos de Presupuesto enlazado, para dar información suficiente que permita al usuario realizar una referencia cruzada manual o automática con otra fuente publicada de presupuesto e información del proyecto.",
+        "properties" : {
+          "id" : {
+            "title" : "ID",
+            "description" : "Un identificador para la partida presupuestaria que provee fondos para este proceso de contratación. Este identificador debe de poder hacer una referencia cruzada contra la fuente de datos .",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "nullable" : true,
+            "example" : "ID"
+          },
+          "description" : {
+            "title" : "Fuente del Presupuesto",
+            "description" : "Un texto descriptivo breve de la fuente del presupuesto. Puede usarse para proveer el título del la partida presupuestaria o el programa usado para financiar este proyecto. ",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Fuente del Presupuesto"
+          },
+          "amount" : {
+            "title" : "Monto",
+            "description" : "El valor reservado en el presupuesto para este proceso de contratación. Un valor negativo indica ingresos anticipados al presupuesto como resultado de este proceso de contratación, en lugar de gastos. Cuando se extrae el presupuesto de múltiples fuentes, se puede utilizar la extensión del desglose presupuestario.",
+            "$ref" : "#/components/schemas/Value"
+          },
+          "project" : {
+            "title" : "Título del Proyecto",
+            "description" : "El nombre del proyecto a través del cual el proceso de contrataciones está financiado (si aplica). Algunas organizaciones mantienen un registro de proyectos, y los datos deben de usar el nombre por el cual se conoce al proyecto en ese registro. No se ofrece una opción de traducción para esta cadena, ya que los valores traducidos pueden darse en datos de terceros, ligados a la fuente de datos anteriormente presentada.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(project_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Título del Proyecto"
+          },
+          "projectID" : {
+            "title" : "Identificador de proyecto",
+            "description" : "Un identificador externo para el proyecto del que forma parte este proceso de contratación o a través del cual está financiado (si aplica). Algunas organizaciones mantienen un registro de proyectos y los datos deben usar el identificador del registro de proyectos relevante. ",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "nullable" : true,
+            "example" : "Identificador de proyecto"
+          },
+          "uri" : {
+            "title" : "Información vinculada de presupuesto",
+            "description" : "Una URI que apunta a un registro leíble por máquina sobre la línea (o líneas) de presupuesto que financian este proceso de contrataciones. Se puede dar información en un rango de formatos, incluyendo IATI, el Estándar de Datos Fiscales Abiertos o cualquier otro estándar que dé datos estructurados sobre fuentes de presupuesto. Los documentos leíbles por humanos pueden incluirse utilizando el bloque planning.documents.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Información vinculada de presupuesto",
+            "format" : "uri"
+          },
+          "source" : {
+            "title" : "Fuente de los Datos",
+            "description" : "(Obsoleto en 1.1) Usado para apuntar a un Paquete de Datos de Presupuesto, o una fuente legible por computadora o por un humano donde los usuarios puedan obtener más información sobre los identificadores de partida presupuestaria o identificadores de proyectos, provistos aquí. ",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(source_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Fuente de los Datos",
+            "deprecated" : true,
+            "format" : "uri"
+          }
+        }
+      },
+      "Transaction" : {
+        "type" : "object",
+        "title" : "Información de Transacción",
+        "description" : "Una transacción de gasto relacionada al proceso de contrataciones. Se obtiene de los modelos de datos del [Fiscal Data Package] y del [International Aid Transparency Initiative] y debe usarse para hacer referencias cruzadas hacia información más detallada contenida en Paquete de Datos Fiscales, archivo IATI o dar suficiente información para permitir al usuario hacer una referencia cruzada manual o automática con otra fuente de información que publique datos transaccionales de gasto.",
+        "required" : [ "id" ],
+        "properties" : {
+          "id" : {
+            "title" : "ID",
+            "description" : "Un identificador único para esta transacción de pago. Este identificador debe de permitir referenciar contra la fuente de datos provista. Para IATI esta es la referencia de transacción.",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "example" : "ID",
+            "minLength" : 1
+          },
+          "source" : {
+            "title" : "Fuente de los Datos",
+            "description" : "Usado para apuntar a un Fiscal Data Package, un archivo IATI o una fuente legible por computadora o por un humano donde los usuarios puedan obtener más información sobre los identificadores de partida presupuestaria o identificadores de proyectos, provistos aquí. ",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Fuente de los Datos",
+            "format" : "uri"
+          },
+          "date" : {
+            "title" : "Fecha",
+            "description" : "La fecha de la transacción",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Fecha",
+            "format" : "date-time"
+          },
+          "value" : {
+            "$ref" : "#/components/schemas/Value",
+            "title" : "Valor",
+            "description" : "El monto o valor de la transacción."
+          },
+          "payer" : {
+            "$ref" : "#/components/schemas/OrganizationReference",
+            "title" : "Pagador",
+            "description" : "Una referencia a la organización que provee los fondos para esta transacción de pago."
+          },
+          "payee" : {
+            "$ref" : "#/components/schemas/OrganizationReference",
+            "title" : "Beneficiarios",
+            "description" : "Una referencia a la organización que recibe los fondos en esta transacción."
+          },
+          "uri" : {
+            "title" : "Información de gasto vinculado",
+            "description" : "Una URI apuntando directamente al registro legible por computadora sobre esta transacción.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "https://",
+            "format" : "uri"
+          },
+          "amount" : {
+            "title" : "Monto",
+            "description" : "(Obsoleto en 1.1. Usar transaction.value) El valor de la transacción. Un valor negativo indica un reembolso o una corrección.",
+            "$ref" : "#/components/schemas/Value",
+            "deprecated" : true
+          },
+          "providerOrganization" : {
+            "title" : "Organización proveedora",
+            "description" : "(Obsoleto en 1.1. Usar transaction.payer.) El Identificador de Organización para la organización de la cuál se originan los fondos en esta transacción. Expresados siguiendo el estándar de Identificador Organizacional - consulta la documentación y la lista de códigos. ",
+            "$ref" : "#/components/schemas/Identifier",
+            "deprecated" : true
+          },
+          "receiverOrganization" : {
+            "title" : "Organización receptora",
+            "description" : "(Obsoleto en 1.1. Usar transaction.payee.) El Identificador de Organización para la organización que recibe los fondos en esta transacción. Expresados siguiendo el estándar de Identificador Organizacional - consulta la documentación y la lista de códigos. ",
+            "$ref" : "#/components/schemas/Identifier",
+            "deprecated" : true
+          }
+        }
+      },
+      "OrganizationReference" : {
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "nullable" : true,
+            "description" : "El nombre de la parte involucrada al que se hace referencia. Este debe de ser igual al nombre de una entrada en la sección de partes involucradas.",
+            "title" : "Nombre de la Organización",
+            "example" : "Nombre de la Organización",
+            "minLength" : 1
+          },
+          "id" : {
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "description" : "El id de una parte involucrada a la que se hace referencia. Este debe de ser igual al id de una entrada en la sección de partes involucradas.",
+            "title" : "ID de Organización",
+            "example" : "ID de Organización"
+          },
+          "identifier" : {
+            "title" : "Identificador principal",
+            "description" : "El identificador primario para esta organización o participante. Son preferibles los identificadores que identifican a una sola entidad legal. Consulta la [guía de identificadores de organización] para encontrar el esquema preferido y el identificador que usarás.",
+            "deprecated" : true,
+            "$ref" : "#/components/schemas/Identifier"
+          },
+          "address" : {
+            "deprecated" : true,
+            "$ref" : "#/components/schemas/Address",
+            "description" : "(Obsoleto fuera de la sección de partes involucradas)",
+            "title" : "Dirección"
+          },
+          "additionalIdentifiers" : {
+            "type" : "array",
+            "deprecated" : true,
+            "items" : {
+              "$ref" : "#/components/schemas/Identifier"
+            },
+            "title" : "Identificadores adicionales",
+            "uniqueItems" : true,
+            "description" : "(Obsoleto fuera de la sección de parties) Una lista adicional/suplementaria de identificadores para la organización, utilizando la [guía de identificadores de organizaciones]. Esto puede usarse para dar un identificador utilizado internamente por esta organización además del identificador primario legal de la entidad. "
+          },
+          "contactPoint" : {
+            "deprecated" : true,
+            "$ref" : "#/components/schemas/ContactPoint",
+            "description" : "(Obsoleto fuera de la sección de partes involucradas)",
+            "title" : "Punto de contacto"
+          }
+        },
+        "type" : "object",
+        "description" : "El id y nombre de la parte a la que se hace referencia. Usado para hacer referencia de la sección de partes",
+        "title" : "Referencia de la organización"
+      },
+      "Organization" : {
+        "title" : "Organización",
+        "description" : "Una parte involucrada (organización)",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "title" : "Nombre común",
+            "description" : "Un nombre común para esta organización u otro participante en el proceso de contrataciones. El objeto identificador da un espacio para un nombre legal formal, y esto podría repetir el valor o dar un nombre común por el cual se conoce a la organización o entidad. Este campo también pude incluir detalles del departamento o sub-unidad involucrada en este proceso de contrataciones. ",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(name_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Nombre común"
+          },
+          "id" : {
+            "type" : "string",
+            "description" : "El ID utilizado para hacer referencia a esta parte involucrada desde otras secciones de la entrega. Este campo puede construirse con la siguiente estructura {identifier.scheme}-{identifier.id}(-{department-identifier}).",
+            "title" : "ID de Entidad"
+          },
+          "identifier" : {
+            "title" : "Identificador principal",
+            "description" : "El identificador primario para esta organización o participante. Son preferibles los identificadores que denotan de forma única a una entidad legal. Consulta la [guía de identificadores de organización] para el esquema e identificador preferido.",
+            "$ref" : "#/components/schemas/Identifier"
+          },
+          "additionalIdentifiers" : {
+            "title" : "Identificadores adicionales",
+            "description" : " Una lista adicional/suplemental de identificadores para la organización o participante, usando la [guía de identificadores de organizaciones] .Esto puede usarse para dar un identificador de uso interno para esta organización además del identificador legal primario. ",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Identifier"
+            },
+            "uniqueItems" : true
+          },
+          "address" : {
+            "title" : "Dirección",
+            "description" : "Una dirección. Esta puede ser la dirección legalmente registrada de la organización o puede ser una dirección donde se reciba correspondencia para este proceso de contratación particular.",
+            "$ref" : "#/components/schemas/Address"
+          },
+          "contactPoint" : {
+            "title" : "Punto de contacto",
+            "description" : "Detalles de contacto que pueden usarse para esta parte involucrada.",
+            "$ref" : "#/components/schemas/ContactPoint"
+          },
+          "roles" : {
+            "title" : "Roles de las partes",
+            "description" : "El rol (o roles) de las partes involucradas en el proceso de contrataciones, utilizando la lista de código abierta [partyRole.csv].",
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "nullable" : true,
+              "enum" : [ "buyer", "procuringEntity", "supplier", "tenderer", "funder", "enquirer", "payer", "payee", "reviewBody", "interestedParty", null ]
+            }
+          },
+          "details" : {
+            "type" : "object",
+            "description" : "Información adicional de clasificación de las partes involucradas pueden ser proveídas usando las extensiones de partyDetail que definen propiedades particulares y esquemas de clasificación.",
+            "title" : "Detalles",
+            "properties" : {
+              "scale" : {
+                "title" : "Escala",
+                "description" : "Para las organizaciones comerciales, es una entidad micro (micro), pequeña o mediana empresa (sme) o grande (large) de acuerdo con las definiciones utilizadas por la entidad contratante o el comprador. Este campo puede dejarse en blanco si no tales conceptos se aplican, utilizando la lista de código abierta [partyScale.csv].",
+                "type" : "string",
+                "nullable" : true,
+                "enum" : [ "micro", "sme", "large", null ]
+              }
+            }
+          }
+        }
+      },
+      "Item" : {
+        "title" : "Artículo",
+        "type" : "object",
+        "description" : "Un bien, servicio u obra a contratar.",
+        "required" : [ "id" ],
+        "properties" : {
+          "id" : {
+            "title" : "ID",
+            "description" : "Un identificador local al cual hacer referencia y con el cual unir los artículos. Debe de ser único en relación a los demás ítems del mismo proceso de contratación presentes en la matriz de artículos.",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "example" : "ID",
+            "minLength" : 1
+          },
+          "description" : {
+            "title" : "Descripción",
+            "description" : "Una descripción de los bienes o servicios objetos del procedimiento de contratación.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Descripción"
+          },
+          "classification" : {
+            "title" : "Clasificación",
+            "description" : "La clasificación primaria para un artículo.",
+            "$ref" : "#/components/schemas/Classification"
+          },
+          "additionalClassifications" : {
+            "title" : "Clasificaciones adicionales",
+            "description" : "Una lista de clasificaciones adicionales para el artículo.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Classification"
+            },
+            "uniqueItems" : true
+          },
+          "quantity" : {
+            "title" : "Cantidad",
+            "description" : "El número de unidades que se dan.",
+            "type" : "number",
+            "nullable" : true,
+            "example" : 10
+          },
+          "unit" : {
+            "title" : "Unidad",
+            "description" : "Una descripción de la unidad en la cual los suministros, servicios o trabajos están provistos (ej. horas, kilos) y el precio por unidad.",
+            "type" : "object",
+            "properties" : {
+              "scheme" : {
+                "title" : "Esquema",
+                "description" : "La lista de la cual se obtienen los identificadores de unidades de medida, utilizando la lista de código abierta [unitClassificationScheme.csv]. Se recomienda 'UNCEFACT'.",
+                "type" : "string",
+                "nullable" : true,
+                "enum" : [ "UNCEFACT", "QUDT", null ]
+              },
+              "id" : {
+                "title" : "ID",
+                "description" : "El identificador de la lista de códigos a la que se hace referencia en la propiedad de esquema. Revisa la lista de códigos para tener detalles sobre cómo encontrar y usar identificadores del esquema en uso.",
+                "type" : "string",
+                "nullable" : true,
+                "example" : "ID"
+              },
+              "name" : {
+                "title" : "Nombre",
+                "description" : "Nombre de la unidad.",
+                "type" : "string",
+                "nullable" : true,
+                "pattern" : "^(name_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+                "example" : "Nombre"
+              },
+              "value" : {
+                "title" : "Valor",
+                "description" : "El valor monetario de una unidad.",
+                "$ref" : "#/components/schemas/Value"
+              },
+              "uri" : {
+                "title" : "URI",
+                "description" : "Un URI leíble por máquina para la unidad de medida, dada por el esquema.",
+                "format" : "uri",
+                "example" : "https://",
+                "type" : "string",
+                "nullable" : true
+              }
+            }
+          }
+        }
+      },
+      "Amendment" : {
+        "title" : "Enmienda",
+        "type" : "object",
+        "description" : "Información de enmienda",
+        "properties" : {
+          "date" : {
+            "title" : "Fecha de enmienda",
+            "description" : "La fecha de esta enmienda.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z",
+            "format" : "date-time"
+          },
+          "rationale" : {
+            "title" : "Justificación",
+            "description" : "Una explicación de la enmienda.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(rationale_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Justificación"
+          },
+          "id" : {
+            "description" : "Un identificador para esta enmienda: comúnmente el número de enmienda",
+            "type" : "string",
+            "nullable" : true,
+            "title" : "ID",
+            "example" : "ID"
+          },
+          "description" : {
+            "description" : "Un texto libre o semi estructurado, describiendo los cambios hechos en esta enmienda.",
+            "type" : "string",
+            "nullable" : true,
+            "title" : "Descripción",
+            "example" : "Descripción"
+          },
+          "amendsReleaseID" : {
+            "description" : "Provee el identificador (release.id) de la entrega OCDS (de este proceso de contratación) que provee los valores para este proceso de contratación **antes** de realizada la enmienda.",
+            "type" : "string",
+            "nullable" : true,
+            "title" : "Entrega enmendada (identificador)",
+            "example" : "Entrega enmendada (identificador)"
+          },
+          "releaseID" : {
+            "description" : "Provee el identificador (release.id) de la entrega OCDS (de este proceso de contratación) que provee los valores para este proceso de contratación **después** de realizada la enmienda.",
+            "type" : "string",
+            "nullable" : true,
+            "title" : "Entrega de enmienda (identificador)",
+            "example" : "Entrega de enmienda (identificador)"
+          },
+          "changes" : {
+            "title" : "Campos enmendados",
+            "description" : "Una lista de cambios que describen los campos que cambiaron y sus valores previos. (Obsoleto en 1.1)",
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "property" : {
+                  "title" : "Propiedad ",
+                  "description" : "El nombre de propiedad que ha sido cambiado con relación al lugar donde se encuentra la enmienda. Por ejemplo si el valor del contrato ha cambiado, entonces los cambios en el contract.amendment serían value.amount.(Obsoleto en 1.1)",
+                  "type" : "string",
+                  "example" : "Propiedad "
+                },
+                "former_value" : {
+                  "title" : "Valor anterior",
+                  "description" : "El valor previo de la propiedad cambiada en cualquier tipo de propiedad. (Obsoleto en 1.1)",
+                  "oneOf" : [ {
+                    "type" : "string"
+                  }, {
+                    "type" : "number"
+                  }, {
+                    "type" : "integer"
+                  }, {
+                    "type" : "array"
+                  }, {
+                    "type" : "object"
+                  } ],
+                  "nullable" : true
+                }
+              }
+            },
+            "deprecated" : true
+          }
+        }
+      },
+      "Classification" : {
+        "title" : "Clasificación",
+        "description" : "Una clasificación consiste de al menos dos partes: un identificador para la lista (esquema) del cual se obtiene la clasificación, y un identificador para la categoría de la lista que se está aplicando. Es útil también publicar una etiqueta de texto y/o un URI del cual los usuarios pueden basarse para interpretar la clasificación.",
+        "type" : "object",
+        "properties" : {
+          "scheme" : {
+            "title" : "Esquema",
+            "description" : "El esquema o lista de código del cual se obtiene el código de clasificación. Para clasificaciones de artículos de linea, esto utiliza la lista de código abierta [itemClassificationScheme.csv].",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "CPV", "CPVS", "GSIN", "UNSPSC", "CPC", "OKDP", "OKPD", "CUCOP", null ]
+          },
+          "id" : {
+            "title" : "ID",
+            "description" : "El código de clasificación que se obtiene del esquema.",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "nullable" : true,
+            "example" : "ID"
+          },
+          "description" : {
+            "title" : "Descripción",
+            "description" : "Una descripción textual o título del código de clasificación.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Descripción"
+          },
+          "uri" : {
+            "title" : "URI",
+            "description" : "Un URI para identificar únicamente el código de clasificación.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "https://",
+            "format" : "uri"
+          }
+        }
+      },
+      "Identifier" : {
+        "title" : "Identificador",
+        "description" : "Un identificador único para una parte involucrada (organización).",
+        "type" : "object",
+        "properties" : {
+          "scheme" : {
+            "title" : "Esquema",
+            "description" : "Los identificadores de organización deben de obtenerse de una lista de identificadores de organizaciones existentes. El campo scheme se usa para indicar o registrar de dónde se toma el identificador. Este valor debería tomarse del [Esquema de Identificadores de Organizaciones].",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Esquema"
+          },
+          "id" : {
+            "title" : "ID",
+            "description" : "El identificador de la organización en el esquema seleccionado.",
+            "oneOf" : [ {
+              "type" : "string"
+            }, {
+              "type" : "integer"
+            } ],
+            "nullable" : true,
+            "example" : "ID"
+          },
+          "legalName" : {
+            "title" : "Nombre Legal",
+            "description" : "El nombre legalmente registrado de la organización.",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(legalName_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "example" : "Nombre Legal"
+          },
+          "uri" : {
+            "title" : "URI",
+            "description" : "Una URI para identificar a la organización, como los proveídos por [Open Corporates] o algún otro proveedor relevante de URIs. Este campo no debe ser utilizado para especificar el sitio web de la organización, el cual puede ser especificado en el campo URL del punto de contacto de la Organización.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "https://",
+            "format" : "uri"
+          }
+        }
+      },
+      "Address" : {
+        "title" : "Dirección",
+        "description" : "Una dirección.",
+        "type" : "object",
+        "properties" : {
+          "streetAddress" : {
+            "title" : "Dirección",
+            "type" : "string",
+            "nullable" : true,
+            "description" : "La dirección de la calle. Por ejemplo: 1600 Amphitheatre Pkwy.",
+            "example" : "1600 Amphitheatre Pkwy."
+          },
+          "locality" : {
+            "title" : "Localidad",
+            "type" : "string",
+            "nullable" : true,
+            "description" : "La localidad. Por ejemplo: Mountain View.",
+            "example" : "Mountain View."
+          },
+          "region" : {
+            "title" : "Región",
+            "type" : "string",
+            "nullable" : true,
+            "description" : "La región. Por ejemplo: CA.",
+            "example" : "CA."
+          },
+          "postalCode" : {
+            "title" : "Código postal",
+            "type" : "string",
+            "nullable" : true,
+            "description" : "El código postal. Por ejemplo: 94043",
+            "example" : "94043"
+          },
+          "countryName" : {
+            "title" : "País",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(countryName_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "description" : "El nombre del país. Por ejemplo: Estados Unidos.",
+            "example" : "Estados Unidos."
+          }
+        }
+      },
+      "ContactPoint" : {
+        "title" : "Punto de contacto",
+        "type" : "object",
+        "description" : "Una persona, punto de contacto o departamento para contactar en relación a este proceso de contrataciones.",
+        "properties" : {
+          "name" : {
+            "title" : "Nombre",
+            "type" : "string",
+            "nullable" : true,
+            "pattern" : "^(name_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$",
+            "description" : "El nombre de la persona de contacto, departamento o punto de contacto en relación a este proceso de contratación.",
+            "example" : "El nombre de la persona"
+          },
+          "email" : {
+            "title" : "Correo electrónico",
+            "type" : "string",
+            "nullable" : true,
+            "description" : "La dirección de correo del punto o persona de contacto.",
+            "example" : "La dirección de correo"
+          },
+          "telephone" : {
+            "title" : "Teléfono",
+            "type" : "string",
+            "nullable" : true,
+            "description" : "El número de teléfono del punto o persona de contacto. Este debe de incluir el código de marcación internacional.",
+            "example" : "El número de teléfono"
+          },
+          "faxNumber" : {
+            "title" : "Número de fax",
+            "type" : "string",
+            "nullable" : true,
+            "description" : "El número de fax del punto o persona de contacto. Este debe de incluir el código de marcación internacional.",
+            "example" : "El número de fax"
+          },
+          "url" : {
+            "title" : "URL",
+            "type" : "string",
+            "nullable" : true,
+            "description" : "Una dirección web para el punto o persona de contacto.",
+            "example" : "https://",
+            "format" : "uri"
+          }
+        }
+      },
+      "Value" : {
+        "title" : "Valor",
+        "description" : "Valores financieros deben de ser publicados con un valor de moneda adjunto.",
+        "type" : "object",
+        "properties" : {
+          "amount" : {
+            "title" : "Monto",
+            "description" : "Monto como una cifra.",
+            "type" : "number",
+            "nullable" : true,
+            "example" : 10
+          },
+          "currency" : {
+            "title" : "Moneda",
+            "description" : "La moneda del monto, de la lista de código cerrada [currency.csv]. ",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "MXN", "USD", null ]
+          }
+        }
+      },
+      "Period" : {
+        "title" : "Periodo",
+        "description" : "Los eventos clave durante un proceso de contratación pueden tener una fecha de inicio, una fecha de finalización, una duración o un alcance máximo conocidos (la última fecha a la que se puede extender el período). En algunos casos, no todos estos campos tendrán valores conocidos o relevantes.",
+        "type" : "object",
+        "properties" : {
+          "startDate" : {
+            "title" : "Fecha de inicio",
+            "description" : "La fecha de inicio del período. Cuando se sabe, se debe dar una fecha de inicio precisa.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z",
+            "format" : "date-time"
+          },
+          "endDate" : {
+            "title" : "Fecha de fin",
+            "description" : "La fecha de conclusión del período. Cuando se sabe, se debe dar una fecha de conclusión precisa.",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z",
+            "format" : "date-time"
+          },
+          "maxExtentDate" : {
+            "description" : "El período no puede extenderse después de esta fecha. Este campo debe usarse para expresar la fecha máxima disponible para la extensión o renovación de este período.",
+            "format" : "date-time",
+            "title" : "Extensión máxima",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "2017-07-21T17:32:28Z"
+          },
+          "durationInDays" : {
+            "description" : "El nivel máximo de duración de este período en días. Una interfaz de usuario puede recolectar o mostrar estos datos en meses o años (como sea apropiado), y luego convertirlo a días cuando se guarda esta fecha. Este campo puede usarse cuando no se sabe las fechas exactas. Si ya se fijaron los startDate y endDate, este campo, si se utiliza, debe de ser igual a la diferencia entre startDate y endDate. De otra manera, si se fija startDate y maxExtentDate, este campo, si se utiliza, debe ser igual a la diferencia entre startDate y maxExtentDate.",
+            "title" : "Duración (días)",
+            "type" : "integer",
+            "nullable" : true,
+            "example" : 10
+          }
+        }
+      },
+      "RelatedProcess" : {
+        "description" : "Una referencia a un proceso de contratación relacionado: generalmente uno antes o después del proceso actual.",
+        "type" : "object",
+        "title" : "Proceso Relacionado",
+        "properties" : {
+          "id" : {
+            "title" : "ID de relación",
+            "description" : "Un identificador local para esta relación, único dentro de esta lista.",
+            "type" : "string",
+            "example" : "ID de relación"
+          },
+          "relationship" : {
+            "items" : {
+              "type" : "string",
+              "nullable" : true,
+              "enum" : [ "framework", "planning", "parent", "prior", "unsuccessfulProcess", "subContract", "replacementProcess", "renewalProcess", null ]
+            },
+            "description" : "El tipo de relación, utilizando la lista de código abierta [relatedProcess.csv].",
+            "title" : "Relación",
+            "type" : "array"
+          },
+          "title" : {
+            "description" : "El título del proceso relacionado, cuando se hace referencia a un proceso de contratación abierta, este debe de ser el mismo que el campo de tender/title en el proceso relacionado.",
+            "title" : "Título de proceso relacionado",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Título de proceso relacionado"
+          },
+          "scheme" : {
+            "title" : "Esquema",
+            "description" : "El esquema de identificación usado por esta referencia cruzada, utilizando la lista de código abierta [relatedProcessScheme.csv]. ",
+            "type" : "string",
+            "nullable" : true,
+            "enum" : [ "ocid", null ]
+          },
+          "identifier" : {
+            "description" : "El identificador del proceso relacionado. Si el esquema es 'ocid', debe ser un ID de Open Contracting (odid).",
+            "title" : "Identificador",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "Identificador"
+          },
+          "uri" : {
+            "format" : "uri",
+            "description" : "Una URI que apunta a un documento legible por computadora, entrega o paquete de registro que contenga el proceso relacionado identificado.",
+            "title" : "URI de proceso relacionado",
+            "type" : "string",
+            "nullable" : true,
+            "example" : "https://"
+          }
+        }
+      },
+      "resError" : {
+        "description" : "Estos valores son definidos por el sistema del API.",
+        "required" : [ "code", "message" ],
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "description" : "Código alfa numérico del error de la consulta.",
+            "example" : "abc123"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "Texto descriptivo para el usuario final del error en la consulta",
+            "example" : "Error al formar la consulta, revise el formato de los campos."
+          }
+        }
+      }
+    }
+  }
+}
