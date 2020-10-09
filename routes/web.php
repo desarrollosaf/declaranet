@@ -20,5 +20,7 @@ Route::get('/', function () {
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource("/DatosDeclarante", "DatosGeneralesDeclaranteController")->name('*', 'datosDeclarante');
-Route::resource("/domicilioDeclarante", "DomicilioDeclaranteController")->name('*', 'domicilioDeclarante');
+Route::resource("/datos_declarante", "DatosGeneralesDeclaranteController")->name('*', 'datos_declarante');
+Route::resource("/domicilio_declarante", "DomicilioDeclaranteController")->name('*', 'domicilio_declarante');
+Route::resource("/datos_curriculares_decarante", "DatosCurricularesDeclaranteController")->name('*', 'datos_curriculares_decarante');
+Route::resource("/datos_empleo_decarante", "DatosEmpleoDeclaranteController")->name('*', 'datos_empleo_decarante');
