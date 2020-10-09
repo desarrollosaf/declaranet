@@ -4,13 +4,13 @@
  		<div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
                 <h1>DATOS GENERALES DEL DECLARANTE</h1>
-            </div>            
+            </div>
             <div class="card-body">
-                 {!! Form::open(['route'=>'DatosDeclarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosDeclarante']) !!}
+                 {!! Form::open(['route'=>'datos_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosDeclarante']) !!}
                 @include('datosGeneralesDeclarante.form')
                 {!! Form::close() !!}
-            </div>            
-        </div>                   
+            </div>
+        </div>
     </div>
 @endsection
 @section('scripts')

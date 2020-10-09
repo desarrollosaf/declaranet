@@ -20,22 +20,21 @@
         <div class="logo">
             <div class="text-center mt-3">
                 <img src="{{asset('img/Logoplem.png')}}" class="image align-content-center" width="80%">
-                <h5 class="text-center text-light mt-2">Nombre sistema</h5>
+                <h5 class="text-center text-light mt-2">Declaranet</h5>
             </div>
         </div>
         <div class="menu list-group-flush">
-            <a href="#Menu1" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-folder mr-2"></i>Archivos</a>
-            <a href="#Menu2" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person-stalker mr-2"></i>Usuarios</a>
-            <a href="#Menu3" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-arrow-swap mr-2"></i>Movimientos</a>
-            <a href="#Menu4" class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                        class="ion ion-upload mr-2"></i>Cargas</a>
+            <a href="{{route('datos_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person mr-2"></i>Datos generales</a>
+            <a href="{{route('domicilio_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-home mr-2"></i>Domicilio declarante</a>
+            <a href="{{route('datos_curriculares_decarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-ribbon-a mr-2"></i>Datos curriculares</a>
+            <a href="{{route('datos_empleo_decarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Datos empleo</a>
         </div>
     </div>
     <!-- Fin sidebar -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper" class="w-100 bg-light-blue">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom mt-2 ml-2 mr-2">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <div class="container">
                 <button class="btn border-light text-light" id="menu-toggle">
                     <i class="ion ion-android-menu"></i>
@@ -55,7 +54,7 @@
 
         <div id="content" class="container-fluid p-5">
             <section class="py-3">
-                @yield('content')                
+                @yield('content')
             </section>
         </div>
     </div>
