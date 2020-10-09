@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\SituacionPersonalEstadoCivil;
+use App\RegimenMatrimonial;
+
 
 class DatosGeneralesDeclaranteController extends Controller
 {
@@ -24,7 +27,17 @@ class DatosGeneralesDeclaranteController extends Controller
      */
     public function create()
     {
-        return view('datosGeneralesDeclarante.create');
+        $situacionPersonalEstadoCivil = SituacionPersonalEstadoCivil::all();
+        $selectSituacionPersonal = [];
+        foreach($situacionPersonalEstadoCivil as $item){
+            $selectSituacionPersonal[$item->id] = $item->valor;
+        }
+        $regimenMatrimonial = RegimenMatrimonial::all();
+        $selectRegimenMatrimonial = [];
+        foreach($regimenMatrimonial as $item){
+            $selectRegimenMatrimonial[$item->id] = $item->valor;
+        }
+        return view('datosGeneralesDeclarante.create', compact('selectSituacionPersonal','selectRegimenMatrimonial'));
     }
 
     /**

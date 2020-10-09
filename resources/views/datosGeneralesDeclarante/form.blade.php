@@ -57,13 +57,11 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('ecivil', 'Estado civil / Situación personal:') !!}
-        {!! Form::text('ecivil',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'ecivil']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
+        {!! Form::select('ecivil', $selectSituacionPersonal, null, ['class'=>'form-control']) !!}
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('rpatrimonial', 'Régimen matrimonial:') !!}
-        {!! Form::text('rpatrimonial',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'rpatrimonial']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
+        {!! Form::select('rpatrimonial', $selectRegimenMatrimonial, null, ['class'=>'form-control']) !!}
     </div>
 </div>
 <div class="form-row">

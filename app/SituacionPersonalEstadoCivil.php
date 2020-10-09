@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RegimenMatrimonial extends Model
+class SituacionPersonalEstadoCivil extends Model
 {
-    protected $table = "regimen_matrimoniales";
+    protected $table = "situacion_personal_estado_civiles";
 	protected $guarded=["id","created_at","updated_at","deleted_at"];
 }
