@@ -35,7 +35,7 @@
 <div class="form-row">
     <div class="form-group col-md-12">
         {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
-        {!! Form::textarea('aclaraciones', null, ['class'=>'form-control']) !!}
+        {!! Form::textarea('aclaraciones', null, ['class'=>'form-control alert-danger']) !!}
     </div>
 </div>
 <div class="form-row">

@@ -48,7 +48,15 @@
 @section('scripts')
     <script type="text/javascript">
         $(document).ready(function(){
-            $()
+            $("#nivel").on("change", function(){
+                var nivel = $('#nivel option:selected').html();
+                if(nivel == "PRIMARIA" || nivel == "SECUNDARIA"){
+                    $("#carrera").prop("disabled", true);
+                }
+                else{
+                    $("#carrera").prop("disabled", false);
+                }
+            });
         });
     </script>
 @endsection

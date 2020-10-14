@@ -23,6 +23,7 @@ class DomicilioDeclaranteController extends Controller
      */
     public function create()
     {
+        //$entidad = ;
         return view('domicilioDeclarante.create');
     }
 

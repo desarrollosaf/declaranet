@@ -1,7 +1,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('nivel', 'Nivel:') !!}
-        {!! Form::text('nivel',null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nivel']) !!}
+        {!! Form::select('nivel',$nivelesSelect, null,['class'=>'form-control text-uppercase', 'id' => 'nivel']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -43,7 +43,7 @@
 <div class="form-row">
     <div class="form-group col-md-12">
         {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
-        {!! Form::textarea('aclaraciones', null, ['class'=>'form-control']) !!}
+        {!! Form::textarea('aclaraciones', null, ['class'=>'form-control alert-danger']) !!}
     </div>
 </div>
 <div class="form-row text-center">

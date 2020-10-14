@@ -72,7 +72,7 @@
         $("#content-wrapper").toggleClass("toggled");
     });
 </script>
-
+@yield("scripts")
 </body>
 
 </html>

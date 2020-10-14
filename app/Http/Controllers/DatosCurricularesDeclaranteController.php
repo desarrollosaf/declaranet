@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\nivel;
 
 class DatosCurricularesDeclaranteController extends Controller
 {
@@ -23,7 +24,13 @@ class DatosCurricularesDeclaranteController extends Controller
      */
     public function create()
     {
-        return view('datosCurricularesDeclarante.create');
+        $niveles = nivel::all();
+        $nivelesSelect = [];
+        $nivelesSelect[""]="SELECCIONA UNA OPCIÓN";
+        foreach ($niveles as $item){
+            $nivelesSelect[$item->id]=$item->valor;
+        }
+        return view('datosCurricularesDeclarante.create', compact("nivelesSelect"));
     }
 
     /**
