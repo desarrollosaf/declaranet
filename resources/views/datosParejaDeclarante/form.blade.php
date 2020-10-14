@@ -17,8 +17,8 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('curp', 'Curp:') !!}
-        {!! Form::text('curp',null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'curp']) !!}
+        {!! Form::label('fechanacimiento', 'Fecha de nacimiento:') !!}
+        {!! Form::text('fechanacimiento',null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'fechanacimiento']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -35,38 +35,31 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('extranjero', '¿Es ciudadano extranjero? * :') !!}
-        {!! Form::text('extranjero', $selectRegimenMatrimonial, null,['class'=>'form-control text-uppercase',  'id' => 'extranjero']) !!}
+        {!! Form::select('extranjero', $selectCiudadano, null,['class'=>'form-control text-uppercase',  'id' => 'extranjero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('cpersonal', 'Correo personal:') !!}
-        {!! Form::text('cpersonal',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'cpersonal']) !!}
+        {!! Form::label('curp', 'CURP:') !!}
+        {!! Form::text('curp',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'curp']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('telcasa', 'Número telefónico de casa:') !!}
-        {!! Form::text('telcasa',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'telcasa']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-4">
-        {!! Form::label('celpersonal', 'Número de celular personal:') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'celpersonal']) !!}
+        {!! Form::label('dependiente', '¿Es dependiente económico?:') !!}
+        {!! Form::text('dependiente',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'dependiente']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
-        {!! Form::label('pnacimiento', 'País de nacimiento:') !!}
-        {!! Form::text('pnacimiento',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'pnacimiento']) !!}
+        {!! Form::label('habitadomicilio', '¿Habita en el domicilio del Declarante?:') !!}
+        {!! Form::text('habitadomicilio',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'habitadomicilio']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-6">
-        {!! Form::label('nacionalidad', 'Nacionalidad:') !!}
-        {!! Form::text('nacionalidad',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'nacionalidad']) !!}
+        {!! Form::label('reside', 'Lugar donde reside:') !!}
+        {!! Form::text('reside',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'reside']) !!}
         <span class="text-danger" style="font-size:150%"></span>
-    </div>
+     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-12">
