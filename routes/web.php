@@ -24,4 +24,5 @@ Route::resource("/datos_declarante", "DatosGeneralesDeclaranteController")->name
 Route::resource("/domicilio_declarante", "DomicilioDeclaranteController")->name('*', 'domicilio_declarante');
 Route::resource("/datos_curriculares_decarante", "DatosCurricularesDeclaranteController")->name('*', 'datos_curriculares_decarante');
 Route::resource("/datos_empleo_decarante", "DatosEmpleoDeclaranteController")->name('*', 'datos_empleo_decarante');
-Route::resource("datos_pareja_decarante", "DatosParejaController")->name('*', 'datos_pareja_decarante');
+Route::resource("/datos_pareja_decarante", "DatosParejaController")->name('*', 'datos_pareja_decarante');
+Route::resource("/datos_dependiente_economico_decarante", "DatosDependienteEconomicoController")->name('*', 'datos_dependiente_economico_decarante');
