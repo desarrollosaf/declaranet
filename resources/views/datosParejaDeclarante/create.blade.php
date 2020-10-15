@@ -6,7 +6,7 @@
                 <h1>DATOS DE LA PAREJA</h1>
             </div>
             <div class="card-body">
-                {!! Form::open(['route'=>'datos_pareja_decarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosDeclarante']) !!}
+                {!! Form::open(['route'=>'datos_pareja_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosDeclarante']) !!}
                 @include('datosParejaDeclarante.form')
                 {!! Form::close() !!}
             </div>
