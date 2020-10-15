@@ -26,3 +26,4 @@ Route::resource("/datos_curriculares_decarante", "DatosCurricularesDeclaranteCon
 Route::resource("/datos_empleo_decarante", "DatosEmpleoDeclaranteController")->name('*', 'datos_empleo_decarante');
 Route::resource("/datos_pareja_decarante", "DatosParejaController")->name('*', 'datos_pareja_decarante');
 Route::resource("/datos_dependiente_economico_decarante", "DatosDependienteEconomicoController")->name('*', 'datos_dependiente_economico_decarante');
+Route::resource("/experiencia_laboral", "DatosDependienteEconomicoController")->name('*', 'experiencia_laboral');
