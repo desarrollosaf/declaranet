@@ -20,7 +20,7 @@ class CreateTipoVialidadsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-        $path = base_path("database/catalogos/catalogos/json/tipovialidad.json");
+        $path = base_path("database/catalogos/catalogos/json/tipoVialidad.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_inmueble){
             DB::table("tipo_vialidades")->insert([
