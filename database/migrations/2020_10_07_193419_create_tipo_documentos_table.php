@@ -19,9 +19,9 @@ class CreateTipoDocumentosTable extends Migration
             $table->string("valor");
             $table->timestamps();
             $table->softDeletes();
-           
+
         });
-         $path = base_path("database/catalogos/catalogos/json/tipodocumento.json");
+         $path = base_path("database/catalogos/catalogos/json/tipoDocumento.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_inmueble){
             DB::table("tipo_documentos")->insert([
@@ -30,7 +30,7 @@ class CreateTipoDocumentosTable extends Migration
             ]);
         }
     }
-    
+
 
     /**
      * Reverse the migrations.

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\ambitoSector;
+use App\extranjero;
+use App\lugarDondeReside;
+use App\parentescoRelacion;
 use Illuminate\Http\Request;
 
 class DatosDependienteEconomicoController extends Controller
@@ -23,7 +27,32 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function create()
     {
-        return view('dependienteEconomico.create');
+        $parentesco = parentescoRelacion::all();
+        $selectParentesco = [];
+        $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($parentesco as $item){
+            $selectParentesco[$item->id] = $item->valor;
+        }
+        $extranjero = extranjero::all();
+        $selectExtranjero = [];
+        $selectExtranjero[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($extranjero as $item){
+            $selectExtranjero[$item->id] = $item->valor;
+        }
+        $residencia = lugarDondeReside::all();
+        $selectResidencia = [];
+        $selectResidencia[""] = "SELECCIONA UNA OPCIÓN";
+        foreach($residencia as $item){
+            $selectResidencia[$item->id] = $item->valor;
+        }
+        $sector = ambitoSector::all();
+        $selectSector = [];
+        $selectSector[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($sector as $item){
+            $selectSector[$item->id] = $item->valor;
+        }
+
+        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector'));
     }
 
     /**
