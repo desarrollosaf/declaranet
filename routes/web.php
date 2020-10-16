@@ -28,4 +28,4 @@ Route::resource("/datos_pareja_declarante", "DatosParejaController")->name('*', 
 Route::resource("/datos_dependiente_declarante", "DatosDependienteEconomicoController")->name('*', 'datos_dependiente_declarante');
 Route::resource("/experiencia_laboral", "DatosDependienteEconomicoController")->name('*', 'experiencia_laboral');
 Route::resource("/ingreso_neto", "IngresoNetoDeclaranteController")->name('*', 'ingreso_neto');
-Route::resource("/ingreso_neto", "IngresoNetoDeclaranteController")->name('*', 'ingreso_neto');
+Route::resource("/servidor_publico", "ServidorPublicoController")->name('*', 'servidor_publico');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TeDesempeñasteComoServidorPublicoController extends Controller
+class ServidorPublicoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,8 @@ class TeDesempeñasteComoServidorPublicoController extends Controller
      */
     public function create()
     {
-        //
+         return view("servidorPublico.create");
+
     }
 
     /**
