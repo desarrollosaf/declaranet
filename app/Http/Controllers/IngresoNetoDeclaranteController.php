@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\SituacionPersonalEstadoCivil;
-use App\RegimenMatrimonial;
 
-class ExperieciaLaboralController extends Controller
+class IngresoNetoDeclaranteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,7 @@ class ExperieciaLaboralController extends Controller
      */
     public function index()
     {
-        return view("experienciaLaboral.index");
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class ExperieciaLaboralController extends Controller
      */
     public function create()
     {
-        return view("experienciaLaboral.create");
+       return view("ingresosNetos.create");
     }
 
     /**

@@ -27,3 +27,5 @@ Route::resource("/datos_empleo_declarante", "DatosEmpleoDeclaranteController")->
 Route::resource("/datos_pareja_declarante", "DatosParejaController")->name('*', 'datos_pareja_declarante');
 Route::resource("/datos_dependiente_declarante", "DatosDependienteEconomicoController")->name('*', 'datos_dependiente_declarante');
 Route::resource("/experiencia_laboral", "DatosDependienteEconomicoController")->name('*', 'experiencia_laboral');
+Route::resource("/ingreso_neto", "IngresoNetoDeclaranteController")->name('*', 'ingreso_neto');
+Route::resource("/ingreso_neto", "IngresoNetoDeclaranteController")->name('*', 'ingreso_neto');

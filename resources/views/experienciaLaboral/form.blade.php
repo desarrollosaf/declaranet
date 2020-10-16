@@ -82,3 +82,9 @@
                       <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
+   <div class="form-group col-md-12">
+                    {!! Form::label('celpersonal', 'ACLARACIONES/OBSERVACIONES: *') !!}
+                    {!! Form::textarea('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}
+                      <span class="text-danger" style="font-size:150%"></span>
+                </div>
+     
