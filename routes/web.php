@@ -26,6 +26,6 @@ Route::resource("/datos_curriculares_declarante", "DatosCurricularesDeclaranteCo
 Route::resource("/datos_empleo_declarante", "DatosEmpleoDeclaranteController")->name('*', 'datos_empleo_declarante');
 Route::resource("/datos_pareja_declarante", "DatosParejaController")->name('*', 'datos_pareja_declarante');
 Route::resource("/datos_dependiente_declarante", "DatosDependienteEconomicoController")->name('*', 'datos_dependiente_declarante');
-Route::resource("/experiencia_laboral", "DatosDependienteEconomicoController")->name('*', 'experiencia_laboral');
+Route::resource("/experiencia_laboral", "ExperieciaLaboralController")->name('*', 'experiencia_laboral');
 Route::resource("/ingreso_neto", "IngresoNetoDeclaranteController")->name('*', 'ingreso_neto');
 Route::resource("/servidor_publico", "ServidorPublicoController")->name('*', 'servidor_publico');
