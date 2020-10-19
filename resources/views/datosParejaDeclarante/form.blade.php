@@ -61,14 +61,116 @@
         <span class="text-danger" style="font-size:150%"></span>
      </div>
 </div>
-<div class="form-row">
-    <div class="form-group col-md-12">
-        {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
-        {!! Form::textarea('aclaraciones', null, ['class'=>'form-control alert-danger']) !!}
+<hr>
+<div class="card-body">
+    <h5> DOMICILIO DE LA PAREJA </h5>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            {!! Form::label('calleempleo', 'Calle:') !!}
+            {!! Form::text('calleempleo',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'calleempleo']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-3">
+            {!! Form::label('numexterior', 'Número exterior:') !!}
+            {!! Form::text('numexterior',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'numexterior']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-3">
+            {!! Form::label('numinterior', 'Número interior / Piso:') !!}
+            {!! Form::text('numinterior',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'numinterior']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-3">
+            {!! Form::label('colonia', 'Colonia / Localidad:') !!}
+            {!! Form::text('colonia',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'colonia']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+            {!! Form::label('estado', 'Estado / Provincia: :') !!}
+            {!! Form::text('estado',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'estado']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-5">
+            {!! Form::label('pais', 'País::') !!}
+            {!! Form::text('pais',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'pais']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-2">
+            {!! Form::label('codigo', 'Código Postal:') !!}
+            {!! Form::text('codigo',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'codigo']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    </div>
+<hr>
+<div class="card-body">
+    <h5> ACTIVIDAD LABORAL DE LA PAREJA </h5>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            {!! Form::label('ambito', 'Ámbito / Sector :') !!}
+            {!! Form::text('ambito', null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'ambito']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            {!! Form::label('nivel', 'Nivel / Orden de Gobierno:') !!}
+            {!! Form::text('nivel',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'nivel']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            {!! Form::label('ambitopublico', 'Ámbito Público:') !!}
+            {!! Form::text('ambitopublico',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'ambitopublico']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            {!! Form::label('entepublico', 'Nombre del Ente Público:') !!}
+            {!! Form::text('entepublico',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'entepublico']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-3">
+            {!! Form::label('area', 'Área de adscripción:') !!}
+            {!! Form::text('area',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'area']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-3">
+            {!! Form::label('empleo', 'Empleo, cargo o comisión:') !!}
+            {!! Form::text('empleo',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'empleo']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            {!! Form::label('funcion', 'Especifique función principal:') !!}
+            {!! Form::text('funcion',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'funcion']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            {!! Form::label('salario', 'Salario mensual neto:') !!}
+            {!! Form::text('salario',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'salario']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            {!! Form::label('fechaempleo', 'Fecha de ingreso al empleo:') !!}
+            {!! Form::text('fechaempleo',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'fechaempleo']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
+            {!! Form::textarea('aclaraciones', null, ['class'=>'form-control alert-danger']) !!}
+        </div>
+    </div>
+    <div class="form-row">
+    <div class="col">
+        {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+    </div>
+    <div class="col">
+        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
     </div>
 </div>
-<div class="form-row text-center">
-    <div class="col">
-        {{ Form::button('Envíar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
-    </div>
 </div>
