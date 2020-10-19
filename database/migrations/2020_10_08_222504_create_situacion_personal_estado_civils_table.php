@@ -13,7 +13,7 @@ class CreateSituacionPersonalEstadoCivilsTable extends Migration
      */
     public function up()
     {
-        Schema::create('situacion_personal_estado_civiles', function (Blueprint $table) {
+        Schema::create('situaciones_personales', function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->string("clave");
             $table->string("valor");
@@ -23,7 +23,7 @@ class CreateSituacionPersonalEstadoCivilsTable extends Migration
         $path = base_path("database/catalogos/catalogos/json/s1/situacionPersonalEstadoCivil.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_inmueble){
-            DB::table("situacion_personal_estado_civiles")->insert([
+            DB::table("situaciones_personales")->insert([
                 "clave" => $tipo_inmueble->clave,
                 "valor" => $tipo_inmueble->valor
             ]);
@@ -37,6 +37,6 @@ class CreateSituacionPersonalEstadoCivilsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('situacion_personal_estado_civils');
+        Schema::dropIfExists('situaciones_personales');
     }
 }
