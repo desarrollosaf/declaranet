@@ -24,10 +24,8 @@
             </div>
         </div>
         <div class="menu list-group-flush">
-            <a href="{{route('datos_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person mr-2"></i>Datos generales</a>
-            <a href="{{route('domicilio_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-home mr-2"></i>Domicilio declarante</a>
-            <a href="{{route('datos_curriculares_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-ribbon-a mr-2"></i>Datos curriculares</a>
-            <a href="{{route('datos_empleo_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Datos empleo</a>
+            <a href="{{route('home')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person mr-2"></i>Mis declaraciones</a>
+            
         </div>
     </div>
     <!-- Fin sidebar -->
@@ -45,8 +43,8 @@
                         <i class="ion ion-person"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button"><i class="ion ion-person"></i> Perfil</button>
-                        <button class="dropdown-item" type="button" onclick="cerrarSesion(event)"><i class="ion ion-power"></i> Cerrar sesion</button>
+                        <button class="dropdown-item" type="button"><i class="ion ion-person"></i> {{auth()->user()->servidor_publico->nombre}}</button>
+                        <button class="dropdown-item" type="button"><i class="ion ion-power"></i> Cerrar sesión</button>
                     </div>
                 </div>
             </div>
@@ -61,9 +59,7 @@
     <!-- Fin Page Content -->
 </div>
 <!-- Fin wrapper -->
-<form id="logout-formm" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
+
 <!-- Bootstrap y JQuery -->
 <script src="{{asset('js/app.js')}}"></script>
 
@@ -73,10 +69,6 @@
         e.preventDefault();
         $("#content-wrapper").toggleClass("toggled");
     });
-    function cerrarSesion(event){
-        event.preventDefault();
-        $("#logout-formm").submit();
-    }
 </script>
 @yield("scripts")
 </body>
