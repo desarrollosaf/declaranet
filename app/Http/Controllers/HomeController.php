@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\TipoMovimiento;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $tipo_movimientos = TipoMovimiento::all();
+        $declaraciones = [];
+        return view('home', compact("declaraciones","tipo_movimientos"));
     }
 }
