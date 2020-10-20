@@ -29,9 +29,9 @@
             <a href="{{route('datos_curriculares_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-ribbon-a mr-2"></i>Datos curriculares</a>
             <a href="{{route('datos_empleo_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Datos empleo</a>
             <a href="{{route('experiencia_laboral.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Experiencia laboral</a>
-            <a href="{{route('datos_pareja_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Datos de la pareja</a>
-            <a href="{{route('datos_dependiente_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Datos de los dependientes</a>
-            <a href="{{route('ingreso_neto.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Ingresos netos</a>
+            <a href="{{route('datos_pareja_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person-stalker mr-2"></i>Datos de la pareja</a>
+            <a href="{{route('datos_dependiente_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person-add mr-2"></i>Datos de los dependientes</a>
+            <a href="{{route('ingreso_neto.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Ingresos netos</a>
         </div>
     </div>
     <!-- Fin sidebar -->
