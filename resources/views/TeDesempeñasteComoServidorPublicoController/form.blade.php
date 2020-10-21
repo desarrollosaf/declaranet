@@ -17,10 +17,10 @@
                 </center>
             </div>
         </div>
-        <div class="col-lg-8">
-            <div class="form-group">
-            </div>
-        </div>
+     <div class="col-lg-8">
+        <div  class="form-group">
+                </div>
+             </div>
     </div>
 </div>
 <hr>

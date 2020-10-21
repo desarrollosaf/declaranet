@@ -142,3 +142,7 @@ a:focus {
 .btn-submit{
     background-color: var(--primary);
 }
+
+thead th{
+    background: var(--primary); 
+}
