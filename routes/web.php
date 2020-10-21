@@ -31,3 +31,4 @@ Route::resource("/ingreso_neto", "IngresoNetoDeclaranteController")->name('*', '
 Route::resource("/servidor_publico", "ServidorPublicoController")->name('*', 'servidor_publico');
 Route::resource("/bienes_inmuebles", "BienesInmueblesController")->name('*', 'bienes_inmuebles');
 Route::resource("/vehiculos", "VehiculosController")->name('*', 'vehiculos');
+Route::resource("/bienes_muebles", "BienesMueblesController")->name('*', 'bienes_muebles');
