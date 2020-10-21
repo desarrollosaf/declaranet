@@ -17,7 +17,7 @@ class CreateEntePublicosTable extends Migration
             $table->string("poder");
             $table->string("clave");
             $table->string("siglas");
-            $table->string("valor");
+            $table->string("valor", 255);
             $table->timestamps();
             $table->softDeletes();
         });

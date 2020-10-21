@@ -6,17 +6,17 @@
                 <h1>DATOS DEL DEPENDIENTE ECONÓMICO</h1>
             </div>
             <div class="card-body">
-                <p class="text-justify"> Deberá proporcionar la información correspondiente a los últimos cinco empleos, cargos o comisiones que haya tenido (en caso de que se cuente con ellos).</p>
+                <p class="text-justify">Deberá proporcionar la información de CADA UNA de las personas, familiares o no, cuya manutención dependa principalmente de los ingresos del Declarante.</p>
                 <div class="alert alert-danger text-center" role="alert">
                     Para registrar información pulse:
                     <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
                         Agregar
                     </button>
                     <br>
-                    Deberá seleccionar
+                    Sí no tiene dependientes económicos, seleccione
                     <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
                         Ninguno
-                    </button> Sí éste es su primer empleo
+                    </button>
                 </div>
                 <br>
                 <a href="" class="btn btn-submit float-left text-light">Ir a la sección anterior</a>
@@ -34,8 +34,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    {!! Form::open(['route'=>'datos_curriculares_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosCurricularesDeclarante']) !!}
-                    @include('datosCurricularesDeclarante.form')
+                    {!! Form::open(['route'=>'datos_dependiente_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosCurricularesDeclarante']) !!}
+                        @include('dependienteEconomico.form')
                     {!! Form::close() !!}
                 </div>
                 <div class="modal-footer">
@@ -48,13 +48,14 @@
 @section('scripts')
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#nivel").on("change", function(){
-                var nivel = $('#nivel option:selected').html();
-                if(nivel == "PRIMARIA" || nivel == "SECUNDARIA"){
-                    $("#carrera").prop("disabled", true);
+            $("#parentesco").on("change", function(){
+                var nivel = $('#parentesco option:selected').html();
+                if(nivel === "OTRO(ESPECIFIQUE)"){
+                    $("#especifique-parentezco").prop("disabled", false);
                 }
                 else{
-                    $("#carrera").prop("disabled", false);
+                    $("#especifique-parentezco").val("");
+                    $("#especifique-parentezco").prop("disabled", true);
                 }
             });
         });

@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\SituacionPersonalEstadoCivil;
+use App\SituacionPersonal;
 use App\RegimenMatrimonial;
+use App\Pais;
+use App\Declaracion;
+
 
 
 class DatosGeneralesDeclaranteController extends Controller
 {
+    public function __construct() {
+        $this->middleware("auth");
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +33,9 @@ class DatosGeneralesDeclaranteController extends Controller
      */
     public function create()
     {
-        $situacionPersonalEstadoCivil = SituacionPersonalEstadoCivil::all();
+        $servidor = auth()->user()->servidor_publico;
+        
+        $situacionPersonalEstadoCivil = SituacionPersonal::all();
         $selectSituacionPersonal = [];
         foreach($situacionPersonalEstadoCivil as $item){
             $selectSituacionPersonal[$item->id] = $item->valor;
@@ -37,7 +45,12 @@ class DatosGeneralesDeclaranteController extends Controller
         foreach($regimenMatrimonial as $item){
             $selectRegimenMatrimonial[$item->id] = $item->valor;
         }
-        return view('datosGeneralesDeclarante.create', compact('selectSituacionPersonal','selectRegimenMatrimonial'));
+        $paisesAll = Pais::all();
+        $paises = [];
+        foreach($paisesAll as $item){
+            $paises[$item->id] = $item->valor;
+        }
+        return view('datosGeneralesDeclarante.create', compact('selectSituacionPersonal','selectRegimenMatrimonial','servidor','paises'));
     }
 
     /**
@@ -48,7 +61,27 @@ class DatosGeneralesDeclaranteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $declaracion = $request->declaracion;
+//        dd($declaracion);
+//        $request->validate([
+//            "correo_institucional" => "required",
+//            "correo_personal" => "required",
+//            "telefono_casa" => "required",
+//            "telefono_personal" => "required",
+//            "situacion_personal_id" => "required",
+//            "regimen_matrimonial_id" => "required",
+//            "pais_id" => "required",
+//            "nacionalidad" => "required",
+//        ]);
+        
+        $declaracion["fecha_declaracion"] = now();
+        $declaracion["estatus_declaracion_id"] = 1;
+        $declaracion["tipo_movimiento_id"] = 1;
+        $declaracion["servidor_publico_id"] = auth()->user()->servidor_publico_id;
+
+        $declaracionResponse = Declaracion::create($declaracion);
+        return redirect()->back()->with('success', 'Se registraron los datos del servidor');
     }
 
     /**

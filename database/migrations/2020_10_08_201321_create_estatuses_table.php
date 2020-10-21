@@ -13,7 +13,7 @@ class CreateEstatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('estatuses', function (Blueprint $table) {
+        Schema::create('estatus', function (Blueprint $table) {
           $table->bigIncrements("id");
             $table->string("clave");
             $table->string("valor");
@@ -23,7 +23,7 @@ class CreateEstatusesTable extends Migration
         $path = base_path("database/catalogos/catalogos/json/s1/estatus.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_inmueble){
-            DB::table("estatuses")->insert([
+            DB::table("estatus")->insert([
                 "clave" => $tipo_inmueble->clave,
                 "valor" => $tipo_inmueble->valor
             ]);

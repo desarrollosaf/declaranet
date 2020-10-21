@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    protected $connection= 'mysql2';
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +37,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function servidor_publico(){
+        return $this->belongsTo(ServidorPublico::class);
+    }
 }

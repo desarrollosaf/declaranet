@@ -1,85 +1,85 @@
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('nombre', 'Nombre (s):') !!}
-        {!! Form::text('nombre',null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre']) !!}
+        {!! Form::label('declaracion.nombre', 'Nombre (s):') !!}
+        {!! Form::text('declaracion.[nombre]',$servidor->nombre,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('apellidop', 'Primer apellido:') !!}
-        {!! Form::text('apellidop',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'apellidop']) !!}
+        {!! Form::label('declaracion.apellidop', 'Primer apellido:') !!}
+        {!! Form::text('declaracion.[apellidop]',$servidor->primer_apellido,['class'=>'form-control', 'placeholder'=>'',  'id' => 'apellidop']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('apellidom', 'Segundo apellido:') !!}
-        {!! Form::text('apellidom',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'apellidom']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-4">
-        {!! Form::label('curp', 'Curp:') !!}
-        {!! Form::text('curp',null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'curp']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4">
-        {!! Form::label('rfc', 'RFC:') !!}
-        {!! Form::text('rfc',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'rfc']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4">
-        {!! Form::label('homoclave', 'Homoclave:') !!}
-        {!! Form::text('homoclave',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'homoclave']) !!}
+        {!! Form::label('declaracion.apellidom', 'Segundo apellido:') !!}
+        {!! Form::text('declaracion.[apellidom]',$servidor->segundo_apellido,['class'=>'form-control', 'placeholder'=>'',  'id' => 'apellidom']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('c_institucional', 'Correo institucional:') !!}
-        {!! Form::text('c_institucional',null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'c_institucional']) !!}
+        {!! Form::label('declaracion.curp', 'Curp:') !!}
+        {!! Form::text('declaracion.[curp]',$servidor->curp,['class'=>'form-control alert-danger text-uppercase',  'id' => 'curp']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('cpersonal', 'Correo personal:') !!}
-        {!! Form::text('cpersonal',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'cpersonal']) !!}
+        {!! Form::label('declaracion.rfc', 'RFC:') !!}
+        {!! Form::text('declaracion[rfc]',$servidor->rfc,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'rfc']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('telcasa', 'Número telefónico de casa:') !!}
-        {!! Form::text('telcasa',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'telcasa']) !!}
+        {!! Form::label('declaracion.homoclave', 'Homoclave:') !!}
+        {!! Form::text('declaracion[homoclave]',$servidor->homoclave,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'homoclave']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('celpersonal', 'Número de celular personal:') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'celpersonal']) !!}
+        {!! Form::label('correo_institucional', 'Correo institucional:') !!}
+        {!! Form::text('declaracion[correo_institucional]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'c_institucional']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('ecivil', 'Estado civil / Situación personal:') !!}
-        {!! Form::select('ecivil', $selectSituacionPersonal, null, ['class'=>'form-control alert-danger']) !!}
+        {!! Form::label('declaracion.correo_personal', 'Correo personal:') !!}
+        {!! Form::text('declaracion[correo_personal]',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'cpersonal']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('rpatrimonial', 'Régimen matrimonial:') !!}
-        {!! Form::select('rpatrimonial', $selectRegimenMatrimonial, null, ['class'=>'form-control alert-danger']) !!}
+        {!! Form::label('declaracion.telefono_casa', 'Número telefónico de casa:') !!}
+        {!! Form::text('declaracion[telefono_casa]',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'telcasa']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-4">
+        {!! Form::label('declaracion.telefono_personal', 'Número de celular personal:') !!}
+        {!! Form::text('declaracion[telefono_personal]',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'celpersonal']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4">
+        {!! Form::label('declaracion.situacion_personal_id', 'Estado civil / Situación personal:') !!}
+        {!! Form::select('declaracion[situacion_personal_id]', $selectSituacionPersonal, null, ['class'=>'form-control alert-danger']) !!}
+    </div>
+    <div class="form-group col-md-4">
+        {!! Form::label('declaracion.regimen_matrimonial_id', 'Régimen matrimonial:') !!}
+        {!! Form::select('declaracion[regimen_matrimonial_id]', $selectRegimenMatrimonial, null, ['class'=>'form-control alert-danger']) !!}
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
-        {!! Form::label('pnacimiento', 'País de nacimiento:') !!}
-        {!! Form::text('pnacimiento',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'pnacimiento']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
+        {!! Form::label('declaracion.pais_id', 'País de nacimiento:') !!}
+        {!! Form::select('declaracion[pais_id]', $paises, null, ['class'=>'form-control alert-danger']) !!}
     </div>
+    
     <div class="form-group col-md-6">
-        {!! Form::label('nacionalidad', 'Nacionalidad:') !!}
-        {!! Form::text('nacionalidad',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'nacionalidad']) !!}
+        {!! Form::label('declaracion.nacionalidad', 'Nacionalidad:') !!}
+        {!! Form::text('declaracion[nacionalidad]',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'nacionalidad']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-12">
-        {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
-        {!! Form::textarea('aclaraciones', null, ['class'=>'form-control alert-danger']) !!}
+        {!! Form::label('declaracion.observaciones', 'Aclaraciones / Observaciones:') !!}
+        {!! Form::textarea('declaracion[observaciones]', null, ['class'=>'form-control alert-danger']) !!}
     </div>
 </div>
 <div class="form-row text-center">

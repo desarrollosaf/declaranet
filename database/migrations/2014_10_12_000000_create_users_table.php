@@ -13,8 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
+        Schema::connection("mysql2")->create('users', function (Blueprint $table) {
+            $table->bigIncrements("id");
+            $table->unsignedBigInteger("servidor_publico_id");
+            $table->foreign("servidor_publico_id")->references("id")->on("servidores_publicos");
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
