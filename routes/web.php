@@ -34,3 +34,4 @@ Route::resource("/vehiculos", "VehiculosController")->name('*', 'vehiculos');
 Route::resource("/inversiones", "InversionesDeclaranteController")->name('*', 'inversiones');
 Route::resource("/adeudos", "AdeudosPasivosDeclaranteController")->name('*', 'adeudos');
 Route::resource("/bienes_muebles", "BienesMueblesController")->name('*', 'bienes_muebles');
+Route::resource("/prestamos", "PrestamoOComodatoPorTercerosController")->name('*', 'prestamos');
