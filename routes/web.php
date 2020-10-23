@@ -36,3 +36,4 @@ Route::resource("/adeudos", "AdeudosPasivosDeclaranteController")->name('*', 'ad
 Route::resource("/bienes_muebles", "BienesMueblesController")->name('*', 'bienes_muebles');
 Route::resource("/prestamos", "PrestamoOComodatoPorTercerosController")->name('*', 'prestamos');
 Route::resource("/participacion_empresas", "ParticipacionEnEmpresasSociedadesYAsociacionesController")->name('*', 'participacion_empresas');
+Route::resource("/apoyo_beneficio", "ApoyoBeneficioController")->name('*', 'apoyo_beneficio');
