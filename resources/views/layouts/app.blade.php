@@ -12,6 +12,8 @@
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <!-- Hoja de estilos -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
 </head>
 <body>
 <div class="d-flex" id="content-wrapper">
@@ -70,6 +72,8 @@
 </form>
 <!-- Bootstrap y JQuery -->
 <script src="{{asset('js/app.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+@include('sweet::alert')
 
 <!-- Abrir / cerrar menu -->
 <script>

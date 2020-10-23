@@ -13,7 +13,9 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function index()
     {
-        //
+        alert()->basic('Notificación Básica, mensaje y título', 'Título');
+        return view('adeudosDeclarante.index');
+
     }
 
     /**
@@ -23,7 +25,7 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function create()
     {
-        return view('adeudosDeclarante.index');
+        return view('adeudosDeclarante.create');
     }
 
     /**
