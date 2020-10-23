@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PrestamoOComodatoPorTercerosController extends Controller
+class ParticipacionEnEmpresasSociedadesYAsociacionesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class PrestamoOComodatoPorTercerosController extends Controller
      */
     public function index()
     {
-        return view("Prestamos.index");
+       return view("ParticipacionEmpresas.index");
     }
 
     /**
@@ -23,7 +23,7 @@ class PrestamoOComodatoPorTercerosController extends Controller
      */
     public function create()
     {
-          return view("Prestamos.create");
+         return view("ParticipacionEmpresas.create");
     }
 
     /**
