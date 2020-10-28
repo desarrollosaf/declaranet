@@ -41,4 +41,7 @@ Route::resource("/beneficios_privados", "BeneficiosPrivadosController")->name('*
 Route::resource("/representacion", "RepresentacionController")->name('*', 'representacion');
 Route::resource("/clientes_principales", "ClientesPrincipalesController")->name('*', 'clientes_principales');
 Route::resource("/fideicomisos", "FideicomisosController")->name('*', 'fideicomisos');
+Route::post("declaracion/iniciar", "DeclaranetController@IniciarDeclaracion");
+Route::post("declaracion/continuar", "DeclaranetController@ContinuarDeclaracion");
+
 
