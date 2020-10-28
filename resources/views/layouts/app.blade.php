@@ -26,6 +26,9 @@
             </div>
         </div>
         <div class="menu list-group-flush">
+            <a href="" class="nav-tabs nav-link text-light ml-2"><i class="ion ion-ios-book mr-2"></i>Declaración de situación patrimonial</a>
+        </div>
+        <div class="menu list-group-flush">
             <a href="{{route('datos_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person mr-2"></i>Datos generales</a>
             <a href="{{route('domicilio_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-home mr-2"></i>Domicilio declarante</a>
             <a href="{{route('datos_curriculares_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-ribbon-a mr-2"></i>Datos curriculares</a>
@@ -34,6 +37,10 @@
             <a href="{{route('datos_pareja_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person-stalker mr-2"></i>Datos de la pareja</a>
             <a href="{{route('datos_dependiente_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person-add mr-2"></i>Datos de los dependientes</a>
             <a href="{{route('ingreso_neto.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Ingresos netos</a>
+            <a href="{{route('ingreso_neto.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>¿Te desempeñaste como servidor público?</a>
+            <a href="{{route('ingreso_neto.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Bienes inmuebles</a>
+            <a href="{{route('ingreso_neto.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Vehiculos</a>
+
         </div>
     </div>
     <!-- Fin sidebar -->

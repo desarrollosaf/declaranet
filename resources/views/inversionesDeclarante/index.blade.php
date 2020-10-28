@@ -58,7 +58,7 @@
     </div>
 @endsection
 @section('scripts')
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
             Swal.fire('Oops...', 'Something went wrong!', 'error');
         })
