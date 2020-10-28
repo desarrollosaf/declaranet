@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMunicipiosTable extends Migration
+class CreateEntidadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateMunicipiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('municipios', function (Blueprint $table) {
+        Schema::create('entidades', function (Blueprint $table) {
             $table->id();
-            $table->string("cve_agee");
-            $table->string("nom_agee");
+            $table->string("entidad");
+            $table->string("abreviatura");
             $table->timestamps();
-            $table->softDeletes();
         });
-        $path = base_path("database/catalogos/catalogos/json/municipios.json");
+        $path = base_path("database/catalogos/catalogos/json/entidades.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_inmueble){
-            DB::table("municipios")->insert([
-                "cve_agee" => $tipo_inmueble->cve_agee,
-                "nom_agee" => $tipo_inmueble->nom_agee
+            DB::table("entidades")->insert([
+                "entidad" => $tipo_inmueble->nom_agee,
+                "abreviatura" => $tipo_inmueble->abrev_agee,
             ]);
         }
     }
@@ -37,6 +36,6 @@ class CreateMunicipiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('municipios');
+        Schema::dropIfExists('entidades');
     }
 }
