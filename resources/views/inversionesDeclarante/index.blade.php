@@ -57,3 +57,10 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            Swal.fire('Oops...', 'Something went wrong!', 'error');
+        })
+    </script>
+@endsection
