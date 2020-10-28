@@ -25,10 +25,10 @@
                     <tbody>
                         @foreach($declaraciones as $declaracion)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$declaracion->tipo_movimiento->tipo_movimiento}}</td>
+                            <td>{{$declaracion->fecha_declaracion}}</td>
+                            <td>{{$declaracion->estatus_declaracion->estatus}}</td>
+                            <td><button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal" onclick="ContinuarDeclaracion({{$declaracion->id}})">Continuar</button></td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -58,7 +58,7 @@
                                 @foreach($tipo_movimientos as $tipo_movimiento)
                                 <tr>
                                     <td>{{$tipo_movimiento->tipo_movimiento}}</td>
-                                    <td><a class="btn btn-submit btn-sm text-light" href="{{route('datos_declarante.create')}}"><i class="ion ion-edit"></i></a></td>
+                                    <td><button class="btn btn-submit btn-sm text-light" onclick="iniciarDeclaracion({{$tipo_movimiento->id}})"><i class="ion ion-edit"></i></button></td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -77,5 +77,81 @@
 $("#btnDeclaraciones").on("click",function(){
     $("#modalDeclaracion").modal("show");
 });
+function iniciarDeclaracion(tipo_movimiento_id){
+    var r = confirm("Al oprimir el botón de aceptar se dará inicio a la audiencia");
+    if (r == true) {
+        $.ajax({
+            url:"declaracion/iniciar",
+            async:true,
+            type:"POST",
+            data:{
+                tipo_movimiento_id:tipo_movimiento_id,
+                _token:"{{ csrf_token() }}"
+            },
+            success:function(data){
+                window.location.href = "{{route('datos_declarante.create')}}";
+            }
+        });
+    }
+//     swal({
+//        title: '¿Está seguro?',
+//        text: 'Al oprimir el botón de aceptar se dará inicio a la audiencia',
+//        icon: 'warning',
+//        buttons: {
+//            cancel: {
+//                text: 'Cancelar',
+//                value: null,
+//                visible: true,
+//                className: 'btn btn-default',
+//                closeModal: true,
+//            },
+//            confirm: {
+//                text: 'Aceptar',
+//                value: true,
+//                visible: true,
+//                className: 'btn btn-warning',
+//                closeModal: true
+//            }
+//        }
+//    }).then(function(isConfirm){
+//        if(isConfirm){
+//            $.ajax({
+//                url:"declaracion/iniciar",
+//                async:true,
+//                type:"POST",
+//                data:{
+//                    tipo_movimiento_id:tipo_movimiento_id
+//                },
+//                success:function(data){
+//                    alert("holi");
+//                }
+//            });
+//        }
+//    });
+}
+function ContinuarDeclaracion(declaracion_id){
+    Swal.fire({
+        title: '¿Está seguro?',
+        text: 'Deseas continuar con tu declaración',
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar'
+    }).then(function(isConfirm){
+        if(isConfirm){
+            $.ajax({
+                url:"declaracion/continuar",
+                async:true,
+                type:"POST",
+                data:{
+                    declaracion_id:declaracion_id,
+                    _token:"{{ csrf_token() }}"
+                },
+                success:function(data){
+                    window.location.href = "{{route('datos_declarante.create')}}";
+                }
+            });
+        }
+    });
+}
 </script>
 @endsection

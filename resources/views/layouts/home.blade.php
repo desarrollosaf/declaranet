@@ -12,6 +12,7 @@
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <!-- Hoja de estilos -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 </head>
 <body>
 <div class="d-flex" id="content-wrapper">
@@ -62,12 +63,20 @@
 
 <!-- Bootstrap y JQuery -->
 <script src="{{asset('js/app.js')}}"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+@include('sweet::alert')
 <!-- Abrir / cerrar menu -->
 <script>
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#content-wrapper").toggleClass("toggled");
+    });
+    $(document).ready(function(){
+        swal({
+            title: 'Error',
+            text: 'No está configurada la disponibilidad del centro',
+            icon: 'warning'
+        });
     });
 </script>
 @yield("scripts")
