@@ -12,8 +12,10 @@ use App\Declaracion;
 
 class DatosGeneralesDeclaranteController extends Controller
 {
-    public function __construct() {
+    private $request;
+    public function __construct(Request $request) {
         $this->middleware("auth");
+        $this->request = $request;
     }
     /**
      * Display a listing of the resource.
@@ -34,6 +36,7 @@ class DatosGeneralesDeclaranteController extends Controller
     public function create()
     {
         $servidor = auth()->user()->servidor_publico;
+//        $declaracion = Declaracion::find($this->request->session()->get("declaracion_id"));
         
         $situacionPersonalEstadoCivil = SituacionPersonal::all();
         $selectSituacionPersonal = [];
@@ -61,9 +64,7 @@ class DatosGeneralesDeclaranteController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $declaracion = $request->declaracion;
-//        dd($declaracion);
+        $declaracion = Declaracion::find($this->request->session()->get("declaracion_id"));
 //        $request->validate([
 //            "correo_institucional" => "required",
 //            "correo_personal" => "required",
@@ -74,13 +75,8 @@ class DatosGeneralesDeclaranteController extends Controller
 //            "pais_id" => "required",
 //            "nacionalidad" => "required",
 //        ]);
-        
-        $declaracion["fecha_declaracion"] = now();
-        $declaracion["estatus_declaracion_id"] = 1;
-        $declaracion["tipo_movimiento_id"] = 1;
-        $declaracion["servidor_publico_id"] = auth()->user()->servidor_publico_id;
 
-        $declaracionResponse = Declaracion::create($declaracion);
+        $declaracionResponse = $declaracion->update($request->declaracion);
         return redirect()->back()->with('success', 'Se registraron los datos del servidor');
     }
 

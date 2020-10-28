@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TipoMovimiento;
+use App\Declaracion;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $tipo_movimientos = TipoMovimiento::all();
-        $declaraciones = [];
+        $declaraciones = Declaracion::where("servidor_publico_id", auth()->user()->servidor_publico_id)->get();
+//        dd($declaraciones[0]->tipo_movimiento);
         return view('home', compact("declaraciones","tipo_movimientos"));
     }
 }
