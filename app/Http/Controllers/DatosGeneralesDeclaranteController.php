@@ -36,8 +36,8 @@ class DatosGeneralesDeclaranteController extends Controller
     public function create()
     {
         $servidor = auth()->user()->servidor_publico;
-//        $declaracion = Declaracion::find($this->request->session()->get("declaracion_id"));
-        
+//        dd($this->request->session()->get("declaracion_id"));
+        $declaracion = Declaracion::find($this->request->session()->get("declaracion_id"));
         $situacionPersonalEstadoCivil = SituacionPersonal::all();
         $selectSituacionPersonal = [];
         foreach($situacionPersonalEstadoCivil as $item){
@@ -53,7 +53,7 @@ class DatosGeneralesDeclaranteController extends Controller
         foreach($paisesAll as $item){
             $paises[$item->id] = $item->valor;
         }
-        return view('datosGeneralesDeclarante.create', compact('selectSituacionPersonal','selectRegimenMatrimonial','servidor','paises'));
+        return view('datosGeneralesDeclarante.create', compact('selectSituacionPersonal','selectRegimenMatrimonial','servidor','paises','declaracion'));
     }
 
     /**

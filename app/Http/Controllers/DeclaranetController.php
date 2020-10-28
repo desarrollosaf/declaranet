@@ -25,16 +25,13 @@ class DeclaranetController extends Controller
             "fecha_declaracion" => now(),
             "estatus_declaracion_id" => 1
         ]);
-        $this->request->session()->put("declaracion_id",$declaracion);
+        $this->request->session()->put("declaracion_id",$declaracion->id);
 
         return $declaracion;
     }
     public function ContinuarDeclaracion()
     {
-        $domicilio = Declacion::find($this->request->session()->get("declaracion_id"));
-        return $declaracion->domicilio;
-        
-        
+     
         $this->request->session()->put("declaracion_id",$this->request->declaracion_id);
         return "Correcto";
     }
