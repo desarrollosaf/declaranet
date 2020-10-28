@@ -35,51 +35,51 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('correo_institucional', 'Correo institucional:') !!}
-        {!! Form::text('declaracion[correo_institucional]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'c_institucional']) !!}
+        {!! Form::text('declaracion[correo_institucional]',$declaracion->correo_institucional,['class'=>'form-control', 'placeholder'=>'',  'id' => 'c_institucional']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('declaracion.correo_personal', 'Correo personal:') !!}
-        {!! Form::text('declaracion[correo_personal]',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'cpersonal']) !!}
+        {!! Form::text('declaracion[correo_personal]',$declaracion->correo_personal,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'cpersonal']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('declaracion.telefono_casa', 'Número telefónico de casa:') !!}
-        {!! Form::text('declaracion[telefono_casa]',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'telcasa']) !!}
+        {!! Form::text('declaracion[telefono_casa]',$declaracion->telefono_casa,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'telcasa']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('declaracion.telefono_personal', 'Número de celular personal:') !!}
-        {!! Form::text('declaracion[telefono_personal]',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'celpersonal']) !!}
+        {!! Form::text('declaracion[telefono_personal]',$declaracion->telefono_personal,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'celpersonal']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('declaracion.situacion_personal_id', 'Estado civil / Situación personal:') !!}
-        {!! Form::select('declaracion[situacion_personal_id]', $selectSituacionPersonal, null, ['class'=>'form-control alert-danger']) !!}
+        {!! Form::select('declaracion[situacion_personal_id]', $selectSituacionPersonal, $declaracion->situacion_personal_id, ['class'=>'form-control alert-danger']) !!}
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('declaracion.regimen_matrimonial_id', 'Régimen matrimonial:') !!}
-        {!! Form::select('declaracion[regimen_matrimonial_id]', $selectRegimenMatrimonial, null, ['class'=>'form-control alert-danger']) !!}
+        {!! Form::select('declaracion[regimen_matrimonial_id]', $selectRegimenMatrimonial, $declaracion->regimen_matrimonial_id, ['class'=>'form-control alert-danger']) !!}
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
         {!! Form::label('declaracion.pais_id', 'País de nacimiento:') !!}
-        {!! Form::select('declaracion[pais_id]', $paises, null, ['class'=>'form-control alert-danger']) !!}
+        {!! Form::select('declaracion[pais_id]', $paises, $declaracion->pais_id, ['class'=>'form-control alert-danger']) !!}
     </div>
     
     <div class="form-group col-md-6">
         {!! Form::label('declaracion.nacionalidad', 'Nacionalidad:') !!}
-        {!! Form::text('declaracion[nacionalidad]',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'nacionalidad']) !!}
+        {!! Form::text('declaracion[nacionalidad]',$declaracion->nacionalidad,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'nacionalidad']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-12">
         {!! Form::label('declaracion.observaciones', 'Aclaraciones / Observaciones:') !!}
-        {!! Form::textarea('declaracion[observaciones]', null, ['class'=>'form-control alert-danger']) !!}
+        {!! Form::textarea('declaracion[observaciones]', $declaracion->observaciones, ['class'=>'form-control alert-danger']) !!}
     </div>
 </div>
 <div class="form-row text-center">
