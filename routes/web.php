@@ -37,6 +37,7 @@ Route::resource("/bienes_muebles", "BienesMueblesController")->name('*', 'bienes
 Route::resource("/prestamos", "PrestamoOComodatoPorTercerosController")->name('*', 'prestamos');
 Route::resource("/participacion_empresas", "ParticipacionEnEmpresasSociedadesYAsociacionesController")->name('*', 'participacion_empresas');
 Route::resource("/apoyo_beneficio", "ApoyoBeneficioController")->name('*', 'apoyo_beneficio');
+Route::resource("/beneficios_privados", "BeneficiosPrivadosController")->name('*', 'beneficios_privados');
 Route::resource("/representacion", "RepresentacionController")->name('*', 'representacion');
 Route::resource("/clientes_principales", "ClientesPrincipalesController")->name('*', 'clientes_principales');
 Route::resource("/fideicomisos", "FideicomisosController")->name('*', 'fideicomisos');
