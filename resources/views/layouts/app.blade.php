@@ -72,7 +72,7 @@
 </form>
 <!-- Bootstrap y JQuery -->
 <script src="{{asset('js/app.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 @include('sweet::alert')
 
 <!-- Abrir / cerrar menu -->
