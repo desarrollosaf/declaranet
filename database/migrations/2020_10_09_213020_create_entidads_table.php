@@ -15,6 +15,7 @@ class CreateEntidadsTable extends Migration
     {
         Schema::create('entidades', function (Blueprint $table) {
             $table->id();
+            $table->string("clave");
             $table->string("entidad");
             $table->string("abreviatura");
             $table->timestamps();
@@ -23,6 +24,7 @@ class CreateEntidadsTable extends Migration
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_inmueble){
             DB::table("entidades")->insert([
+                "clave" => $tipo_inmueble->cve_agee,
                 "entidad" => $tipo_inmueble->nom_agee,
                 "abreviatura" => $tipo_inmueble->abrev_agee,
             ]);
