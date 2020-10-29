@@ -11,4 +11,24 @@
     </div>
 </div>
 @endsection
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        $(".PRIVADO").hide();
+        $(".PÚBLICO").hide();
+    });
+    $("#ambito").on("change", function () {
+        if ($(this).val() == "PRIVADO") {
+            $(".PRIVADO").show();
+            $(".PÚBLICO").hide();
+        } else if($(this).val() == "PÚBLICO") {
+            $(".PRIVADO").hide();
+            $(".PÚBLICO").show();
+        }else{
+            $(".PRIVADO").hide();
+            $(".PÚBLICO").hide();
+        }
+    });
+</script>
+@endsection
 
