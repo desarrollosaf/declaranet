@@ -43,5 +43,6 @@ Route::resource("/clientes_principales", "ClientesPrincipalesController")->name(
 Route::resource("/fideicomisos", "FideicomisosController")->name('*', 'fideicomisos');
 Route::post("declaracion/iniciar", "DeclaranetController@IniciarDeclaracion");
 Route::post("declaracion/continuar", "DeclaranetController@ContinuarDeclaracion");
+Route::get("getMunicipiosDomicilio/{id}", "DomicilioDeclaranteController@getMunicipios");
 
 

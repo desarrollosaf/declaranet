@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Entidad;
+use App\Municipio;
 use Illuminate\Http\Request;
 
 class DomicilioDeclaranteController extends Controller
@@ -23,8 +25,19 @@ class DomicilioDeclaranteController extends Controller
      */
     public function create()
     {
-        //$entidad = ;
-        return view('domicilioDeclarante.create');
+        $entidad = Entidad::all();
+        $selectEntidad = [];
+        foreach($entidad as $item){
+            $selectEntidad[$item->id] = $item->entidad;
+        }
+
+        $municipio = Municipio::where('entidad_id', '=', 1)->get();
+        $selectMunicipio = [];
+        foreach($municipio as $item){
+            $selectMunicipio[$item->id] = $item->municipio;
+        }
+
+        return view('domicilioDeclarante.create', compact('selectEntidad','selectMunicipio'));
     }
 
     /**
@@ -81,5 +94,10 @@ class DomicilioDeclaranteController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getMunicipios($id){
+        $municipio = Municipio::where('entidad_id', '=', $id)->get();
+        return json_encode($municipio);
     }
 }
