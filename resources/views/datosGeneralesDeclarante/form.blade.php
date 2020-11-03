@@ -82,6 +82,12 @@
         {!! Form::textarea('declaracion[observaciones]', $declaracion->observaciones, ['class'=>'form-control alert-danger']) !!}
     </div>
 </div>
+<div class="form-row">
+    <div class="form-group col-md-12">
+        {!! Form::label('declaracion.observaciones', 'Aclaraciones / Observaciones:') !!}
+        {!! Form::textarea('declaracion [observaciones]', $declaracion->observaciones, ['class'=>'form-control alert-danger']) !!}
+    </div>
+</div>
 <div class="form-row text-center">
     <div class="col">
         {{ Form::button('Envíar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
