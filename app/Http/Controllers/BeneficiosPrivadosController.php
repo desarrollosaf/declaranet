@@ -7,9 +7,17 @@ use App\tipoBeneficio;
 use App\beneficiariosPrograma;
 use App\sector;
 use App\formaRecepcion;
+use App\BeneficioPrivado;
+use App\Declaracion;
 
 class BeneficiosPrivadosController extends Controller
 {
+    private $request;
+    function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +25,8 @@ class BeneficiosPrivadosController extends Controller
      */
     public function index()
     {
-        return view("beneficiosPrivados.index");
+        $beneficios = BeneficioPrivado::where("declaracion_id",$this->request->session()->get('declaracion_id'))->get();
+        return view("beneficiosPrivados.index",compact("beneficios"));
     }
 
     /**
@@ -70,9 +79,15 @@ class BeneficiosPrivadosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+//        $beneficios = new BeneficioPrivado;
+//        $beneficios->tipo_beneficio_id = $request->tipo_beneficio_id;
+//        $beneficios->save();
+        $beneficios = $this->request->input("beneficio_privado");
+        $beneficios['declaracion_id']=$this->request->session()->get('declaracion_id');
+       BeneficioPrivado::create($beneficios);
+       return redirect("beneficios_privados");
     }
 
     /**

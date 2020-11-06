@@ -8,7 +8,7 @@ class Declaracion extends Model
 {
     protected $table = "declaraciones";
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
-    
+
     public function tipo_movimiento(){
         return $this->belongsTo(TipoMovimiento::class);
     }
@@ -26,5 +26,8 @@ class Declaracion extends Model
     }
     public function estatus_declaracion(){
         return $this->belongsTo(EstatusDeclaracion::class);
+    }
+    public function beneficios_privados(){
+        return $this->hasMany(BeneficioPrivado::class);
     }
 }

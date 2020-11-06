@@ -8,7 +8,9 @@
                 </div>
             </div>
             <div class="card-body">
+                {!! Form::open(['route'=>'beneficios_privados.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'frmBeneficiosPrivados']) !!}
                 @include('beneficiosPrivados.form')
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
