@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Nivelordengobierno;
+use App\ambitoPublico;
+use App\DatoEmpleoDeclarante;
 
 class DatosEmpleoDeclaranteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    private $request;
+    function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
     public function index()
     {
-        //
+
     }
 
     /**
@@ -23,7 +26,20 @@ class DatosEmpleoDeclaranteController extends Controller
      */
     public function create()
     {
-        return view('datosEmpleoDeclarante.create');
+        $nivel_orden = Nivelordengobierno::all();
+        $nivel = [];
+        $nivel[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($nivel_orden as $item){
+            $nivel[$item->id] = $item->valor;
+        }
+
+        $ambito_publico = ambitoPublico::all();
+        $ambito = [];
+        $ambito[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($ambito_publico as $item){
+            $ambito[$item->id] = $item->valor;
+        }
+        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito"));
 
     }
 
@@ -35,7 +51,12 @@ class DatosEmpleoDeclaranteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $datos_empleo_declarante = $this->request->input("datos_empleo_declarante");
+        $datos_empleo_declarante['declaracion_id']=$this->request->session()->get('declaracion_id');
+        DatoEmpleoDeclarante::create($datos_empleo_declarante);
+        return redirect("experiencia_laboral");
+
     }
 
     /**
