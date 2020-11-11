@@ -15,6 +15,8 @@ class CreateDomiciliosTable extends Migration
     {
         Schema::create('domicilios', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('domiciliable_id');
+            $table->string('domiciliable_type');
             $table->string("calle");
             $table->string("num_ext");
             $table->string("num_int")->nullable();
@@ -25,8 +27,10 @@ class CreateDomiciliosTable extends Migration
             $table->foreign("entidad_id")->references("id")->on("entidades");
             $table->foreign("municipio_id")->references("id")->on("municipios");
             $table->string("codigo_postal");
-            $table->string("aclaraciones");
+            $table->string("observaciones");
+            $table->index(['domiciliable_id', 'domiciliable_type']);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

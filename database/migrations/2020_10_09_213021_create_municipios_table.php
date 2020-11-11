@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 use App\Entidad;
 
 class CreateMunicipiosTable extends Migration
@@ -19,6 +20,7 @@ class CreateMunicipiosTable extends Migration
             $table->string("clave");
             $table->string("municipio");
             $table->unsignedBigInteger("entidad_id");
+            $table->string("clave_estado");
             $table->foreign("entidad_id")->references("id")->on("entidades");
             $table->timestamps();
             $table->softDeletes();
@@ -31,6 +33,7 @@ class CreateMunicipiosTable extends Migration
             DB::table("municipios")->insert([
                 "clave" => $tipo_inmueble->cve_agem,
                 "municipio" => $tipo_inmueble->nom_agem,
+                "clave_estado" => $tipo_inmueble->cve_agee,
                 "entidad_id" => $entidad->id
             ]);
         }
