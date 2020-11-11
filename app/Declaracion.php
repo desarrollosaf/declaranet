@@ -30,4 +30,7 @@ class Declaracion extends Model
     public function beneficios_privados(){
         return $this->hasMany(BeneficioPrivado::class);
     }
+    public function domicilio() {
+        return $this->morphOne(Domicilio::class, 'domiciliable');
+    }
 }
