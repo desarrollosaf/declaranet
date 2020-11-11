@@ -3,7 +3,7 @@
         <h5> EMPLEO, CARGO O COMISIÓN / PUESTO</h5>
     </div>
     <hr>
-    <div class="col-md-4"><strong>ÁMBITO / SECTOR EN EL QUE LABORASTE:</strong></div>
+    <div class="col-md-8"><strong>ÁMBITO / SECTOR EN EL QUE LABORASTE:</strong></div>
     <div class="form-group col-md-4">
         <select id="ambito" name="ambito" class="form-control" required="">
             <option value="">Seleccione una opción</option>                                                    
@@ -11,7 +11,7 @@
             <option value="PÚBLICO">PÚBLICO</option>
         </select>  
     </div>
-    <div class="col-md-4"></div>
+    <!--<div class="col-md-4"></div>-->
     <div class="form-group col-md-4 PRIVADO">
         {!! Form::label('celpersonal', 'NOMBRE DE LA EMPRESA,SOCIEDAD O ASOCIACIÓN:  *') !!}
         {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.',  'id' => 'celpersonal']) !!}

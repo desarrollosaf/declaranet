@@ -71,13 +71,6 @@
         e.preventDefault();
         $("#content-wrapper").toggleClass("toggled");
     });
-    $(document).ready(function(){
-        swal({
-            title: 'Error',
-            text: 'No está configurada la disponibilidad del centro',
-            icon: 'warning'
-        });
-    });
 </script>
 @yield("scripts")
 </body>

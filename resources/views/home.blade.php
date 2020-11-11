@@ -78,56 +78,28 @@ $("#btnDeclaraciones").on("click",function(){
     $("#modalDeclaracion").modal("show");
 });
 function iniciarDeclaracion(tipo_movimiento_id){
-    var r = confirm("Al oprimir el botón de aceptar se dará inicio a la audiencia");
-    if (r == true) {
-        $.ajax({
-            url:"declaracion/iniciar",
-            async:true,
-            type:"POST",
-            data:{
-                tipo_movimiento_id:tipo_movimiento_id,
-                _token:"{{ csrf_token() }}"
-            },
-            success:function(data){
-                window.location.href = "{{route('datos_declarante.create')}}";
-            }
-        });
-    }
-//     swal({
-//        title: '¿Está seguro?',
-//        text: 'Al oprimir el botón de aceptar se dará inicio a la audiencia',
-//        icon: 'warning',
-//        buttons: {
-//            cancel: {
-//                text: 'Cancelar',
-//                value: null,
-//                visible: true,
-//                className: 'btn btn-default',
-//                closeModal: true,
-//            },
-//            confirm: {
-//                text: 'Aceptar',
-//                value: true,
-//                visible: true,
-//                className: 'btn btn-warning',
-//                closeModal: true
-//            }
-//        }
-//    }).then(function(isConfirm){
-//        if(isConfirm){
-//            $.ajax({
-//                url:"declaracion/iniciar",
-//                async:true,
-//                type:"POST",
-//                data:{
-//                    tipo_movimiento_id:tipo_movimiento_id
-//                },
-//                success:function(data){
-//                    alert("holi");
-//                }
-//            });
-//        }
-//    });
+     Swal.fire({
+        title: '¿Está seguro?',
+        text: 'Al oprimir el botón de aceptar se dará inicio a la audiencia',
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed){
+            $.ajax({
+                url:"declaracion/iniciar",
+                async:true,
+                type:"POST",
+                data:{
+                    tipo_movimiento_id:tipo_movimiento_id,
+                    _token:"{{ csrf_token() }}"
+                },
+                success:function(data){
+                    window.location.href = "{{route('datos_declarante.create')}}";
+                }
+            });
+        }
+    });
 }
 function ContinuarDeclaracion(declaracion_id){
     Swal.fire({
@@ -136,8 +108,8 @@ function ContinuarDeclaracion(declaracion_id){
         icon: 'warning',
         showCancelButton: true,
         cancelButtonText: 'Cancelar'
-    }).then(function(isConfirm){
-        if(isConfirm){
+    }).then((result) => {
+        if (result.isConfirmed){
             $.ajax({
                 url:"declaracion/continuar",
                 async:true,
