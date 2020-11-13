@@ -6,7 +6,14 @@
             <h1>Experiencia Laboral</h1>
         </div>
         <div class="card-body">
+            {!! Form::model($experiencia, ['route' => ['experiencia_laboral.update', $experiencia->id], 'method' => 'put'] ) !!}
             @include('experienciaLaboral.form')
+            <div class="form-row">
+                <center>
+                    {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                </center>
+            </div>
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
@@ -17,6 +24,7 @@
         $(".PRIVADO").hide();
         $(".PÚBLICO").hide();
         $(".AMBOS").hide();
+        $("#ambito").change();
     });
     $("#ambito").on("change", function () {
         if ($(this).val() == "2") {

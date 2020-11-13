@@ -38,13 +38,13 @@ class ExperienciaLaboralController extends Controller
      */
     public function create()
     {
-        $ambitos_publicos = Arr::pluck(\App\AmbitoSector::all(), 'valor','id');
+        $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor','id');
         $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
         
-        return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion'));
+        return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores'));
     }
 
     /**
@@ -62,7 +62,7 @@ class ExperienciaLaboralController extends Controller
         $experiencia["fecha_egreso"] = $fecha_egreso->format("Y-m-d");
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $declaracion->experiencias_laborales()->create($experiencia);
-        return view("experienciaLaboral.index");
+        return redirect()->route("experienciaLaboral.index");
     }
 
     /**
@@ -85,13 +85,13 @@ class ExperienciaLaboralController extends Controller
     public function edit($id)
     {
         $experiencia = ExperienciaLaboral::find($id);
-        $ambitos_publicos = Arr::pluck(\App\AmbitoSector::all(), 'valor','id');
+        $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor','id');
         $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
         
-        return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_publicos'));
+        return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_sectores'));
     }
 
     /**
@@ -103,7 +103,14 @@ class ExperienciaLaboralController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $experienciaData = $request->input("experiencia");
+        $fecha_ingreso = new Carbon($experienciaData["fecha_ingreso"]);
+        $experienciaData["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
+        $fecha_egreso = new Carbon($experienciaData["fecha_egreso"]);
+        $experienciaData["fecha_egreso"] = $fecha_egreso->format("Y-m-d");
+        $experiencia= ExperienciaLaboral::find($id);
+        $experiencia->update($experienciaData);
+        return redirect()->route("experiencia_laboral.index");
     }
 
     /**
