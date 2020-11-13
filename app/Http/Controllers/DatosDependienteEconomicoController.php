@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ambitoSector;
+use App\AmbitoSector;
 use App\extranjero;
 use App\lugarDondeReside;
 use App\parentescoRelacion;
