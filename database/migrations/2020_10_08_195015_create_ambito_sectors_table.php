@@ -13,7 +13,7 @@ class CreateAmbitoSectorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ambito_sectores', function (Blueprint $table) {
+        Schema::create('ambitos_sectores', function (Blueprint $table) {
         $table->bigIncrements("id");
             $table->string("clave");
             $table->string("valor");
@@ -23,7 +23,7 @@ class CreateAmbitoSectorsTable extends Migration
         $path = base_path("database/catalogos/catalogos/json/s1/ambitoSector.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_inmueble){
-            DB::table("ambito_sectores")->insert([
+            DB::table("ambitos_sectores")->insert([
                 "clave" => $tipo_inmueble->clave,
                 "valor" => $tipo_inmueble->valor
             ]);
@@ -37,6 +37,6 @@ class CreateAmbitoSectorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ambito_sectors');
+        Schema::dropIfExists('ambitos_sectores');
     }
 }

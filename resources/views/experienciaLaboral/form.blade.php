@@ -3,92 +3,81 @@
         <h5> EMPLEO, CARGO O COMISIÓN / PUESTO</h5>
     </div>
     <hr>
-    <div class="col-md-8"><strong>ÁMBITO / SECTOR EN EL QUE LABORASTE:</strong></div>
+    <div class="col-md-4"><strong>ÁMBITO / SECTOR EN EL QUE LABORASTE:</strong></div>
     <div class="form-group col-md-4">
-        <select id="ambito" name="ambito" class="form-control" required="">
-            <option value="">Seleccione una opción</option>                                                    
-            <option value="PRIVADO">PRIVADO</option>
-            <option value="PÚBLICO">PÚBLICO</option>
-        </select>  
+        {!! Form::select('experiencia[ambito_sector_id]', $ambitos_publicos, null,['class'=>'form-control','id' => 'ambito']) !!}
     </div>
-    <!--<div class="col-md-4"></div>-->
+    <div class="col-md-4"></div>
     <div class="form-group col-md-4 PRIVADO">
-        {!! Form::label('celpersonal', 'NOMBRE DE LA EMPRESA,SOCIEDAD O ASOCIACIÓN:  *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.',  'id' => 'celpersonal']) !!}
+        {!! Form::label('nombre_empresa', 'NOMBRE DE LA EMPRESA,SOCIEDAD O ASOCIACIÓN:  *') !!}
+        {!! Form::text('experiencia[nombre_empresa]',isset($experiencia) ? $experiencia->nombre_empresa : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.','id' => 'nombre_empresa']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PÚBLICO">
-        {!! Form::label('celpersonal', 'NIVEL/ORDEN DE GOBIERNO: *') !!}
-        {!! Form::select('ecivil', [], null, ['class'=>'form-control']) !!}
+        {!! Form::label('nivel_orden_gobierno_id', 'NIVEL/ORDEN DE GOBIERNO: *') !!}
+        {!! Form::select('experiencia[nivel_orden_gobierno_id]', isset($experiencia) ? $experiencia->nivel_orden_gobierno_id : null,['class'=>'form-control','id' => 'nivel_orden_gobierno_id']) !!}
     </div>
     <div class="form-group col-md-4 PRIVADO">
         {!! Form::label('celpersonal', 'RFC:  *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.XXX01011001010.',  'id' => 'celpersonal']) !!}
+        {!! Form::text('experiencia[rfc]' ,null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.XXX01011001010.','id' => 'rfc']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PÚBLICO">
         {!! Form::label('celpersonal', 'ÁMBITO PÚBLICO: *') !!}
-        {!! Form::select('ecivil', [], null, ['class'=>'form-control']) !!}
+        {!! Form::select('experiencia[ambito_publico_id]',isset($experiencia) ? $experiencia->ambito_publico_id : null, ['class'=>'form-control','id' => 'ambito_publico_id']) !!}
     </div>
     <div class="form-group col-md-4 PRIVADO">
         {!! Form::label('celpersonal', 'AREA:  *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DESARROLLO Y ACTUALIZACIÓN.',  'id' => 'celpersonal']) !!}
+        {!! Form::text('experiencia[area]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DESARROLLO Y ACTUALIZACIÓN.','id' => 'area'])  !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PÚBLICO">
         {!! Form::label('celpersonal', 'NOMBRE DEL ENTE PUBLICO: *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DESARROLLO Y ACTUALIZACIÓN.',  'id' => 'celpersonal']) !!}
+        {!! Form::text('experiencia[ente_publico]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DESARROLLO Y ACTUALIZACIÓN.','id' => 'ente_publico']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PRIVADO">
         {!! Form::label('celpersonal', 'PUESTO:  *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.ANÁLISTA EN SISTEMAS.',  'id' => 'celpersonal']) !!}
+        {!! Form::text('experiencia[puesto]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.ANÁLISTA EN SISTEMAS.','id' => 'puesto']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PÚBLICO">
         {!! Form::label('celpersonal', 'ÁREA DE ADSCRIPCIÓN:  *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.ANÁLISTA EN SISTEMAS.',  'id' => 'celpersonal']) !!}
+        {!! Form::text('experiencia[area_adscripcion]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.ANÁLISTA EN SISTEMAS.','id' => 'sector_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PRIVADO">
         {!! Form::label('celpersonal', 'SECTOR AL QUE PERTENECE: *') !!}
-        {!! Form::select('ecivil', [], null, ['class'=>'form-control']) !!}
+        {!! Form::select('experiencia[sector_id]', $sectores,null, ['class'=>'form-control','id' => 'sector_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PÚBLICO">
         {!! Form::label('celpersonal', 'EMPLEO, CARGO O COMISIÓN:  *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.ANÁLISTA EN SISTEMAS.',  'id' => 'celpersonal']) !!}
+        {!! Form::text('experiencia[cargo_comision]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.ANÁLISTA EN SISTEMAS.','id' => 'cargo_comision']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PRIVADO">
-        {!! Form::label('celpersonal', 'ESPECIFIQUE FUNCIÓN PRINCIPAL:  *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DESARROLLO DE SISTEMAS DE INFORMACIÓN.',  'id' => 'celpersonal']) !!}
+        {!! Form::label('funcion_principal', 'ESPECIFIQUE FUNCIÓN PRINCIPAL:  *') !!}
+        {!! Form::text('experiencia[funcion_principal]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DESARROLLO DE SISTEMAS DE INFORMACIÓN.','id' => 'funcion_principal']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4 AMBOS">
+        {!! Form::label('fecha_ingreso', 'FECHA DE INGRESO AL PUESTO:  *') !!}
+        {!! Form::text('experiencia[fecha_ingreso]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DD/MM/AAAA.','id' => 'fecha_ingreso']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4 AMBOS">
+        {!! Form::label('fecha_egreso', 'FECHA DE EGRESO:  *') !!}
+        {!! Form::text('experiencia[fecha_egreso]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DD/MM/AAAA.','id' => 'fecha_egreso']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PÚBLICO">
-        {!! Form::label('celpersonal', 'FECHA DE INGRESO AL PUESTO:  *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DD/MM/AAAA.',  'id' => 'celpersonal']) !!}
+        {!! Form::label('lugares_ubicacion', 'LUGAR DONDE SE UBICA: *') !!}
+        {!! Form::select('experiencia[lugares_ubicacion]', $ubicacion, null,['class'=>'form-control','id' => 'lugares_ubicacion']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
-    <div class="form-group col-md-4 PRIVADO">
-        {!! Form::label('celpersonal', 'FECHA DE EGRESO:  *') !!}
-        {!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.DD/MM/AAAA.',  'id' => 'celpersonal']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4 PÚBLICO">
-        {!! Form::label('celpersonal', 'LUGAR DONDE SE UBICA: *') !!}
-        {!! Form::select('ecivil', [], null, ['class'=>'form-control']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-12 PRIVADO">
-        {!! Form::label('celpersonal', 'ACLARACIONES/OBSERVACIONES: *') !!}
-        {!! Form::textarea('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
+    <div class="form-group col-md-12 AMBOS">
+        {!! Form::label('observaciones', 'ACLARACIONES/OBSERVACIONES: *') !!}
+        {!! Form::textarea('experiencia[observaciones]',null,['class'=>'form-control text-uppercase','id' => 'observaciones']) !!}
     </div>
 </div>
-<div class="form-group col-md-12 PÚBLICO">
-    {!! Form::label('celpersonal', 'ACLARACIONES/OBSERVACIONES: *') !!}
-    {!! Form::textarea('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}
-    <span class="text-danger" style="font-size:150%"></span>
-</div>
-

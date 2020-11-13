@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Nivelordengobierno;
+use App\NivelOrdenGobierno;
 use App\ambitoPublico;
+use App\sectores;
 use App\DatoEmpleoDeclarante;
 
 class DatosEmpleoDeclaranteController extends Controller
@@ -26,7 +27,7 @@ class DatosEmpleoDeclaranteController extends Controller
      */
     public function create()
     {
-        $nivel_orden = Nivelordengobierno::all();
+        $nivel_orden = NivelOrdenGobierno::all();
         $nivel = [];
         $nivel[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($nivel_orden as $item){
@@ -39,7 +40,13 @@ class DatosEmpleoDeclaranteController extends Controller
         foreach ($ambito_publico as $item){
             $ambito[$item->id] = $item->valor;
         }
-        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito"));
+        $sector = sectores::all();
+        $sector= [];
+        $sector[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($sectores as $item){
+        $sector[$item->id] = $item->valor;
+        }
+        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector"));
 
     }
 

@@ -33,4 +33,7 @@ class Declaracion extends Model
     public function domicilio() {
         return $this->morphOne(Domicilio::class, 'domiciliable');
     }
+    public function experiencias_laborales() {
+        return $this->morphMany(ExperienciaLaboral::class, 'experienciable');
+    }
 }
