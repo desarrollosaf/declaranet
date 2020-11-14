@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\ambitoPublico;
 use App\extranjero;
+use App\LugarUbicacion;
+use App\Nivelordengobierno;
 use App\relacionConDeclarante;
+use App\sector;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class DatosParejaController extends Controller
 {
@@ -37,7 +42,12 @@ class DatosParejaController extends Controller
         foreach ($ciudadanoExtranjero as $item){
             $selectCiudadano[$item->id] = $item->valor;
         }
-        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante','selectCiudadano'));
+        $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor','id');
+        $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
+        $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
+        $sectores = Arr::pluck(Sector::all(), "valor","id");
+        $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
+        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante','selectCiudadano','nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores'));
     }
 
     /**

@@ -76,8 +76,4 @@
         {!! Form::select('experiencia[lugares_ubicacion]',$ubicacion,isset($experiencia) ? $experiencia->lugares_ubicacion : null,['class'=>'form-control','id' => 'lugares_ubicacion']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
-    <div class="form-group col-md-12 AMBOS">
-        {!! Form::label('observaciones', 'ACLARACIONES/OBSERVACIONES: *') !!}
-        {!! Form::textarea('experiencia[observaciones]',isset($experiencia) ? $experiencia->observaciones : null,['class'=>'form-control text-uppercase','id' => 'observaciones']) !!}
-    </div>
 </div>

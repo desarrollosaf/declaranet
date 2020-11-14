@@ -107,58 +107,7 @@
 <hr>
 <div class="card-body">
     <h5> ACTIVIDAD LABORAL DE LA PAREJA </h5>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            {!! Form::label('ambito', 'Ámbito / Sector :') !!}
-            {!! Form::text('ambito', null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'ambito']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            {!! Form::label('nivel', 'Nivel / Orden de Gobierno:') !!}
-            {!! Form::text('nivel',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'nivel']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            {!! Form::label('ambitopublico', 'Ámbito Público:') !!}
-            {!! Form::text('ambitopublico',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'ambitopublico']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-3">
-            {!! Form::label('entepublico', 'Nombre del Ente Público:') !!}
-            {!! Form::text('entepublico',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'entepublico']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-3">
-            {!! Form::label('area', 'Área de adscripción:') !!}
-            {!! Form::text('area',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'area']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-3">
-            {!! Form::label('empleo', 'Empleo, cargo o comisión:') !!}
-            {!! Form::text('empleo',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'empleo']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            {!! Form::label('funcion', 'Especifique función principal:') !!}
-            {!! Form::text('funcion',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'funcion']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            {!! Form::label('salario', 'Salario mensual neto:') !!}
-            {!! Form::text('salario',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'salario']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            {!! Form::label('fechaempleo', 'Fecha de ingreso al empleo:') !!}
-            {!! Form::text('fechaempleo',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'fechaempleo']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-    </div>
+    @include('experienciaLaboral.form')
     <div class="form-row">
         <div class="form-group col-md-12">
             {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
@@ -174,3 +123,102 @@
     </div>
 </div>
 </div>
+@section('scripts')
+    <script>
+        $(document).ready(function(){
+            $(".PRIVADO").hide();
+            $(".PÚBLICO").hide();
+            $(".AMBOS").hide();
+        });
+        $("#ambito").on("change", function () {
+            if ($(this).val() == "2") {
+                $(".PRIVADO").show();
+                $(".AMBOS").show();
+                $(".PÚBLICO").hide();
+            } else if($(this).val() == "1") {
+                $(".PRIVADO").hide();
+                $(".PÚBLICO").show();
+                $(".AMBOS").show();
+            }else{
+                $(".PRIVADO").hide();
+                $(".PÚBLICO").hide();
+                $(".AMBOS").hide();
+            }
+        });
+        $(".submitForm").on("click",function(e){
+            e.preventDefault();
+            let that = this;
+            var error = false;
+            if($("#ambito").val() == 1){
+                if($("#nivel_orden_gobierno_id").val() == ""){
+                    error = true;
+                }
+                if($("#ambito_publico").val() == ""){
+                    error = true;
+                }
+                if($("#area_adscripcion").val() == ""){
+                    error = true;
+                }
+                if($("#cargo_comision").val() == ""){
+                    error = true;
+                }
+
+                if($("#fecha_ingreso").val() == ""){
+                    error = true;
+                }
+
+                if($("#fecha_egreso").val() == ""){
+                    error = true;
+                }
+
+                if($("#lugares_ubicacion").val() == ""){
+                    error = true;
+                }
+                if($("#observaciones").val() == ""){
+                    error = true;
+                }
+                console.log("ambito",$("#ambito").val());
+            }else if($("#ambito").val() == 2){
+                console.log("ambito",$("#ambito").val());
+                if($("#nombre_empresa").val() == ""){
+                    error = true;
+                }
+                if($("#rfc").val() == ""){
+                    error = true;
+                }
+                if($("#area").val() == ""){
+                    error = true;
+                }
+                if($("#puesto").val() == ""){
+                    error = true;
+                }
+                if($("#sector_id").val() == ""){
+                    error = true;
+                }
+                if($("#funcion_principal").val() == ""){
+                    error = true;
+                }
+                if($("#fecha_ingreso").val() == ""){
+                    error = true;
+                }
+                if($("#fecha_egreso").val() == ""){
+                    error = true;
+                }
+                if($("#observaciones").val() == ""){
+                    error = true;
+                }
+            }
+
+            console.log("error",error);
+            if(error){
+                Swal.fire({
+                    title: 'Error',
+                    text: 'llena todos los campos obligatorios',
+                    icon: 'error'
+                });
+            }else{
+                $('#frmExperienciaLaboral').submit();
+            }
+        });
+    </script>
+@endsection

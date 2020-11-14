@@ -8,6 +8,10 @@
         <div class="card-body">
             {!! Form::open(['route'=>'experiencia_laboral.store', 'method'=>'POST', 'role' => 'form','id' => 'frmExperienciaLaboral']) !!}
            @include('experienciaLaboral.form')
+            <div class="form-group col-md-12 AMBOS">
+                {!! Form::label('observaciones', 'ACLARACIONES/OBSERVACIONES: *') !!}
+                {!! Form::textarea('experiencia[observaciones]',isset($experiencia) ? $experiencia->observaciones : null,['class'=>'form-control text-uppercase','id' => 'observaciones']) !!}
+            </div>
            <center> {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light submitForm'] )}}</center>
            {!! Form::close() !!}
         </div>
@@ -18,7 +22,7 @@
 <script>
     $(document).ready(function(){
         $(".PRIVADO").hide();
-        $(".PÚBLICO").hide();
+        $(".PÚBLICO").show();
         $(".AMBOS").hide();
     });
     $("#ambito").on("change", function () {
@@ -53,15 +57,15 @@
             if($("#cargo_comision").val() == ""){
                 error = true;
             }
-            
+
             if($("#fecha_ingreso").val() == ""){
                 error = true;
             }
-     
+
             if($("#fecha_egreso").val() == ""){
                 error = true;
             }
-     
+
             if($("#lugares_ubicacion").val() == ""){
                 error = true;
             }
@@ -99,7 +103,7 @@
                     error = true;
                 }
         }
-        
+
         console.log("error",error);
         if(error){
             Swal.fire({
