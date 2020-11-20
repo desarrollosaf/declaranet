@@ -14,6 +14,7 @@ class DatosCurricularesDeclaranteController extends Controller
      */
     public function index()
     {
+        
         return view('datosCurricularesDeclarante.index');
     }
 
