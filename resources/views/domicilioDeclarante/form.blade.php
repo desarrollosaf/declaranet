@@ -21,12 +21,12 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('municipio', 'Municipio / Alcaldía:') !!}
-        {!! Form::select('domicilio[municipio_id]', isset($domicilio) ? $selectMunicipio : null, isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control', 'id' => 'municipio_id']) !!}
+        {!! Form::select('domicilio[municipio_id]', isset($domicilio) ? $selectMunicipio : [], isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control', 'id' => 'municipio_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('municipio', 'Asentamiento:') !!}
-        {!! Form::select('domicilio[asentamiento_id]', isset($domicilio) ? $selectAsentamiento : null, isset($domicilio) ? $domicilio->asentamiento_id : null,['class'=>'form-control', 'id' => 'asentamiento_id']) !!}
+        {!! Form::select('domicilio[asentamiento_id]', isset($domicilio) ? $selectAsentamiento : [], isset($domicilio) ? $domicilio->asentamiento_id : null,['class'=>'form-control', 'id' => 'asentamiento_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
    
@@ -40,14 +40,6 @@
     <div class="form-group col-md-12">
         {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
         {!! Form::textarea('domicilio[observaciones]', isset($domicilio) ? $domicilio->observaciones : null, ['class'=>'form-control alert-danger']) !!}
-    </div>
-</div>
-<div class="form-row">
-    <div class="col">
-        {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-    </div>
-    <div class="col">
-        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
     </div>
 </div>
 @section('scripts')

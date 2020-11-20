@@ -8,6 +8,14 @@
             <div class="card-body">
                 {!! Form::model($domicilio, ['route' => ['domicilio_declarante.update', $domicilio->id], 'method' => 'put'] ) !!}
                 @include('domicilioDeclarante.form')
+                <div class="form-row">
+                    <div class="col">
+                        {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+                    </div>
+                    <div class="col">
+                        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                    </div>
+                </div>
                 {!! Form::close() !!}
             </div>
         </div>

@@ -35,7 +35,6 @@
                 </div>
                 <div class="modal-body">
                     {!! Form::open(['route'=>'datos_curriculares_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosCurricularesDeclarante']) !!}
-                    @include('datosCurricularesDeclarante.form')
                     {!! Form::close() !!}
                 </div>
                 <div class="modal-footer">
