@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\sector;
 use Illuminate\Http\Request;
 use App\NivelOrdenGobierno;
 use App\ambitoPublico;
@@ -40,7 +41,7 @@ class DatosEmpleoDeclaranteController extends Controller
         foreach ($ambito_publico as $item){
             $ambito[$item->id] = $item->valor;
         }
-        $sector = sectores::all();
+        $sectores = sector::all();
         $sector= [];
         $sector[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($sectores as $item){

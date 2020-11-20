@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ambitoPublico;
+use App\Entidad;
 use App\extranjero;
 use App\LugarUbicacion;
 use App\Nivelordengobierno;
@@ -47,7 +48,8 @@ class DatosParejaController extends Controller
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
-        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante','selectCiudadano','nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores'));
+        $selectEntidad = Arr::pluck(Entidad::all(), "entidad","id");
+        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante','selectCiudadano','nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','selectEntidad'));
     }
 
     /**
