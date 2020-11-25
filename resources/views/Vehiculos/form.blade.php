@@ -43,7 +43,7 @@
 
                                     <hr>
 
-                                    <!-- Primera fila  --> 
+                                    <!-- Primera fila  -->
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-4">
@@ -55,7 +55,7 @@
                                             <div class="col-lg-4" id="combo_otro_Disabled" style="display: block;">
                                                 <div class="form-group">
                                                     <label class="control-label" style="text-align:justify"><h6>Especifique</h6></label>
-                                                    <input type="text" disabled="" class="form-control" placeholder="p. ej. Otro" title="Ingresa otro">
+                                                    <input type="text" disabled="true" class="form-control" placeholder="p. ej. Otro" title="Ingresa otro" id="otroVehiculo">
                                                 </div>
                                             </div>
 
@@ -193,13 +193,13 @@
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label class="control-label" for="State" style="line-height : 15px !important;">Relación del transmisor del vehículo con el titular:</label>
-                                                    <select name="dsp_D_parentescoRelacion" id="dsp_D_parentescoRelacion" class="form-control" required=""><option value="">Seleccione una opción</option><option value="ABU">ABUELO(A)</option><option value="NIE">NIETO(A)</option><option value="TIOA">TIO(A)</option><option value="AHI">AHIJADO(A)</option><option value="NUE">NUERA</option><option value="YER">YERNO</option><option value="CUN">CUÑADO(A)</option><option value="PAD">PADRE</option><option value="HER">HERMANO(A)</option><option value="PRI">PRIMO(A)</option><option value="HIJ">HIJO(A)</option><option value="SOB">SOBRINO(A)</option><option value="MAD">MADRE</option><option value="SUE">SUEGRO(A)</option><option value="NIN">NINGUNO</option><option value="OTRO">OTRO(ESPECIFIQUE)</option></select><!-- llamas la funcio  -->
+                                                    <select name="dsp_D_parentescoRelacion" id="dsp_D_parentescoRelacion" class="form-control alert-danger" required=""><option value="">Seleccione una opción</option><option value="ABU">ABUELO(A)</option><option value="NIE">NIETO(A)</option><option value="TIOA">TIO(A)</option><option value="AHI">AHIJADO(A)</option><option value="NUE">NUERA</option><option value="YER">YERNO</option><option value="CUN">CUÑADO(A)</option><option value="PAD">PADRE</option><option value="HER">HERMANO(A)</option><option value="PRI">PRIMO(A)</option><option value="HIJ">HIJO(A)</option><option value="SOB">SOBRINO(A)</option><option value="MAD">MADRE</option><option value="SUE">SUEGRO(A)</option><option value="NIN">NINGUNO</option><option value="OTRO">OTRO(ESPECIFIQUE)</option></select><!-- llamas la funcio  -->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- SEPTIMA fila  --> 
+                                    <!-- SEPTIMA fila  -->
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-4">
@@ -223,7 +223,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- SEPTIMA fila  --> 
+                                    <!-- SEPTIMA fila  -->
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-4">
@@ -262,7 +262,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- SEPTIMA fila  --> 
+                                    <!-- SEPTIMA fila  -->
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-4">
@@ -284,7 +284,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- SEPTIMA fila  --> 
+                                    <!-- SEPTIMA fila  -->
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-4">
@@ -303,7 +303,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- SEPTIMA fila  --> 
+                                    <!-- SEPTIMA fila  -->
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -327,3 +327,25 @@
                                     <br>
                                 </div>
                             </div>
+
+
+
+@section('scripts')
+    <script type="text/javascript">
+        $("#dsp_D_tipoVehiculo").on("change",function(){
+            var dsp_D_tipoVehiculo = document.getElementById("dsp_D_tipoVehiculo").value
+            if(dsp_D_tipoVehiculo == "OTRO"){
+                $("#otroVehiculo").prop("disabled", false);
+            }else{
+                $("#otroVehiculo").prop("disabled", true);
+            }
+        });
+        $("#dsp_D_titular").on("change",function(){
+            var dsp_D_titular = document.getElementById("dsp_D_titular").value
+            alert(dsp_D_titular);
+            if(dsp_D_titular == "DEC"){
+                document.getElementById("dsp_D_parentescoRelacion").style.backgroundColor='#e8cecf';
+            }
+        });
+    </script>
+@endsection

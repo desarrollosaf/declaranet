@@ -8,10 +8,6 @@
         <div class="card-body">
             {!! Form::open(['route'=>'experiencia_laboral.store', 'method'=>'POST', 'role' => 'form','id' => 'frmExperienciaLaboral']) !!}
            @include('experienciaLaboral.form')
-            <div class="form-group col-md-12 AMBOS">
-                {!! Form::label('observaciones', 'ACLARACIONES/OBSERVACIONES: *') !!}
-                {!! Form::textarea('experiencia[observaciones]',isset($experiencia) ? $experiencia->observaciones : null,['class'=>'form-control text-uppercase','id' => 'observaciones']) !!}
-            </div>
            <center> {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light submitForm'] )}}</center>
            {!! Form::close() !!}
         </div>
@@ -35,7 +31,7 @@
             $(".PÚBLICO").show();
             $(".AMBOS").show();
         }else{
-            $(".PRIVADO").hide();
+            $(".PRIVADO").show();
             $(".PÚBLICO").hide();
             $(".AMBOS").hide();
         }
