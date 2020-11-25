@@ -43,7 +43,7 @@
             <a href="{{route('bienes_muebles.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Bienes Muebles</a>
             <a href="{{route('inversiones.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Inversiones, cuentas bancarias</a>
             <a href="{{route('adeudos.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Adeudos / Pasivos</a>
-            <a href="{{route('vehiculos.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Prestamo o comodato a terceros</a>
+            <a href="{{route('prestamos.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Prestamo o comodato a terceros</a>
 
         </div>
     </div>
