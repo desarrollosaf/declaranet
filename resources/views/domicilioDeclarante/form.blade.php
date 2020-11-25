@@ -1,48 +1,48 @@
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('calle', 'Calle: *') !!}
+        <strong>{!! Form::label('calle', 'Calle: *') !!}</strong>
         {!! Form::text('domicilio[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'nombre', 'required' => 'true', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}", 'title' => "Ingresa la calle" ]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('exterior', 'Número exterior: *') !!}
+        <strong>{!! Form::label('exterior', 'Número exterior: *') !!}</strong>
         {!! Form::number('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control alert-danger', 'placeholder'=>'p.ej. 102',  'id' => 'exterior','required' =>'true', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('interior', 'Número interior / Piso: ') !!}
+        <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
         {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('colonia', 'Colonia / Localidad: *') !!}
+        <strong>{!! Form::label('colonia', 'Colonia / Localidad: *') !!}</strong>
         {!! Form::text('domicilio[colonia]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('entidad', 'Entidad federativa: *') !!}
+        <strong>{!! Form::label('entidad', 'Entidad federativa: *') !!}</strong>
         {!! Form::select('domicilio[entidad_id]', $selectEntidad, isset($domicilio) ? $domicilio->entidad_id : null,['class'=>'form-control',  'id' => 'entidad_id', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('municipio', 'Municipio / Alcaldía: *') !!}
+        <strong>{!! Form::label('municipio', 'Municipio / Alcaldía: *') !!}</strong>
         {!! Form::select('domicilio[municipio_id]', isset($domicilio) ? $selectMunicipio : [], isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control', 'id' => 'municipio_id', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('colonia', 'Código postal:') !!}
+        <strong>{!! Form::label('colonia', 'Código postal:') !!}</strong>
         {!! Form::text('domicilio[codigo_postal]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'cp', 'pattern' => "[0-9]{5}", 'title' => "Ingresa código postal a 5 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-12">
-        {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
-        {!! Form::textarea('domicilio[observaciones]', isset($domicilio) ? $domicilio->observaciones : null, ['class'=>'form-control alert-danger']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}</strong>
+        {!! Form::textarea('domicilio[observaciones]', isset($domicilio) ? $domicilio->observaciones : null, ['class'=>'form-control alert-danger', 'id' => 'observaciones']) !!}
     </div>
 </div>
 
