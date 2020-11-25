@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\IngresoNeto;
 
 class IngresoNetoDeclaranteController extends Controller
 {
@@ -11,6 +12,13 @@ class IngresoNetoDeclaranteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $request;
+    public function __construct(Request $request) {
+        $this->middleware("auth");
+        $this->request = $request;
+    }
+
     public function index()
     {
         //
@@ -34,7 +42,10 @@ class IngresoNetoDeclaranteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ingresoMensual = $this->request->input("ingresoMensual");
+        $ingresoMensual['declaracion_id']=$this->request->session()->get('declaracion_id');
+        IngresoNeto::create($ingresoMensual);
+        return redirect()->back()->with('success', 'Se registraron los datos del servidor');
     }
 
     /**

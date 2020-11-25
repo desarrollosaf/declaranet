@@ -11,8 +11,8 @@
     <div class="col-md-2">
         <table>
             <tr>
-                <td align='right'>$</td>
-                <td align='left'>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}</td>
+                <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_publico', '$') !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_publico]',null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_mensual_publico']) !!}</td>
             </tr>
         </table>
     </div>
@@ -29,8 +29,8 @@
     <div class="col-md-2"> 
         <table>
             <tr>
-                <td align='right'>$</td>
-                <td align='left'>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}</td>
+                <td align='right'>{!! Form::label('ingresoMensual.ingreso_por_actividad_ice', '$') !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_por_actividad_ice]',null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_por_actividad_ice']) !!}</td>
             </tr>
         </table>
     </div>
@@ -38,8 +38,8 @@
     <div class="col-md-9">
         <table style="width: 100%;">
             <tr>
-                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;Nombre o razón social:</td>
-                <td>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.',  'id' => 'celpersonal']) !!}</td>
+                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('ingresoMensual.nombre_razon_social', 'Nombre o razón social') !!}</td>
+                <td>{!! Form::text('ingresoMensual[nombre_razon_social]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.',  'id' => 'nombre_razon_social']) !!}</td>
             </tr>
         </table>
     </div>
@@ -48,8 +48,8 @@
     <div class="col-md-9">
         <table style="width: 100%;">
             <tr>
-                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;Tipo de negocio:</td>
-                <td>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo y comercialización de sistemas.',  'id' => 'celpersonal']) !!}</td>
+                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('ingresoMensual.tipo_de_negocio', 'Tipo de negocio:') !!}</td>
+                <td>{!! Form::text('ingresoMensual[tipo_de_negocio]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo y comercialización de sistemas.',  'id' => 'tipo_de_negocio']) !!}</td>
             </tr>
         </table>
     </div>
@@ -63,8 +63,8 @@
     <div class="col-md-2"> 
         <table>
             <tr>
-                <td align='right'>$</td>
-                <td align='left'>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}</td>
+                <td align='right'>{!! Form::label('ingresoMensual.ingreso_por_actividad_financiera', '$') !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_por_actividad_financiera]',null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_por_actividad_financiera']) !!}</td>
             </tr>
         </table>
     </div>
@@ -72,8 +72,8 @@
     <div class="col-md-9">
         <table style="width: 100%;">
             <tr>
-                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;Tipo de instrumento que generó el rendimiento o ganancia:</td>
-                <td>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.',  'id' => 'celpersonal']) !!}</td>
+                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('ingresoMensual.tipo_de_instrumento', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</td>
+                <td>{!! Form::text('ingresoMensual[tipo_de_instrumento]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.',  'id' => 'tipo_de_instrumento']) !!}</td>
             </tr>
         </table>
     </div>
@@ -86,8 +86,8 @@
     <div class="col-md-2"> 
         <table>
             <tr>
-                <td align='right'>$</td>
-                <td align='left'>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}</td>
+                <td align='right'>{!! Form::label('ingresoMensual.ingreso_por_servicios_profesionales', '$') !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_por_servicios_profesionales]',null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_por_servicios_profesionales']) !!}</td>
             </tr>
         </table>
     </div>
@@ -95,8 +95,8 @@
     <div class="col-md-9">
         <table style="width: 100%;">
             <tr>
-                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;Tipo de servicio prestado:*</td>
-                <td>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'celpersonal']) !!}</td>
+                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('ingresoMensual.tipo_de_servicio', 'Tipo de servicio prestado:*') !!}</td>
+                <td>{!! Form::text('ingresoMensual[tipo_de_servicio]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_servicio']) !!}</td>
             </tr>
         </table>
     </div>
@@ -109,8 +109,8 @@
     <div class="col-md-2"> 
         <table>
             <tr>
-                <td align='right'>$</td>
-                <td align='left'>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}</td>
+                <td align='right'>{!! Form::label('ingresoMensual.ingreso_otros', '$') !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_otros]',null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_otros']) !!}</td>
             </tr>
         </table>
     </div>
@@ -118,8 +118,8 @@
     <div class="col-md-9">
         <table style="width: 100%;">
             <tr>
-                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;Especificar tipo de ingreso:*</td>
-                <td>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'celpersonal']) !!}</td>
+                <td width='40%'>&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('ingresoMensual.tipo_de_ingreso', 'Especificar tipo de ingreso:*') !!}</td>
+                <td>{!! Form::text('ingresoMensual[tipo_de_ingreso]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_ingreso']) !!}</td>
             </tr>
         </table>
     </div>
@@ -130,8 +130,8 @@
     <div class="col-md-2"> 
         <table>
             <tr>
-                <td align='right'>$</td>
-                <td align='left'>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}</td>
+                <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto', '$') !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto]',null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_mensual_neto']) !!}</td>
             </tr>
         </table>
     </div>
@@ -141,8 +141,8 @@
     <div class="col-md-2"> 
         <table>
             <tr>
-                <td align='right'>$</td>
-                <td align='left'>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}</td>
+                <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto_pareja', '$') !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto_pareja]',null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_mensual_neto_pareja']) !!}</td>
             </tr>
         </table>
     </div>
@@ -152,20 +152,20 @@
     <div class="col-md-2"> 
         <table>
             <tr>
-                <td align='right'>$</td>
-                <td align='left'>{!! Form::text('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}</td>
+                <td align='right'>{!! Form::label('ingresoMensual.total_ingresos_declarante_pareja', '$') !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[total_ingresos_declarante_pareja]',null,['class'=>'form-control text-uppercase',  'id' => 'total_ingresos_declarante_pareja']) !!}</td>
             </tr>
         </table>
     </div>
       <div class="form-group col-md-12">
           <h6>ACLARACIONES/OBSERVACIONES:</h6>
-                    {!! Form::textarea('celpersonal',null,['class'=>'form-control text-uppercase',  'id' => 'celpersonal']) !!}
+                    {!! Form::textarea('ingresoMensual[aclaraciones_observaciones]',null,['class'=>'form-control text-uppercase',  'id' => 'aclaraciones_observaciones']) !!}
                       <span class="text-danger" style="font-size:150%"></span>
                 </div>
       <div class="col-md-12">
                     <center>
-                        <button class="btn btn-submit btn-sm text-light">Ir a la sección anterior</button>
-                        <button class="btn btn-submit btn-sm text-light">Ir a la siguiente sección</button>
+                        {{ Form::button('Ir a la sección anterior', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
+                        {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
                     </center>
-                </div>
+        </div>
      
