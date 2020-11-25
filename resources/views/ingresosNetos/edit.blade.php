@@ -5,8 +5,10 @@
         <div class="card-header">
             <h1>INGRESOS NETOS DEL DECLARANTE, PAREJA Y/O DEPENDIENTES ECONÓMICOS</h1>
         </div>
-        <div class="card-body">
-            @include('ingresosNetos.form')
+        <div class="card-body"> 
+            {!! Form::open(['route'=>["ingreso_neto.update", $id], 'method'=>'PUT', 'files' => true, 'role' => 'form','id' => 'frmIngresosNetos']) !!}
+                @include('ingresosNetos.form')
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
