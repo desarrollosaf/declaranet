@@ -1,62 +1,62 @@
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('nombre', 'Nombre (s):') !!}
-        {!! Form::text('nombre',null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre']) !!}
+        <strong>{!! Form::label('nombre', 'Nombre (s):') !!}</strong>
+        {!! Form::text('nombre',null,['class'=>'form-control text-uppercase alert-danger', 'placeholder'=>'',  'id' => 'nombre', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('apellidop', 'Primer apellido:') !!}
-        {!! Form::text('apellidop',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'apellidop']) !!}
+        <strong>{!! Form::label('apellidop', 'Primer apellido:') !!}</strong>
+        {!! Form::text('apellidop',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'apellidop','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('apellidom', 'Segundo apellido:') !!}
-        {!! Form::text('apellidom',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'apellidom']) !!}
+        <strong>{!! Form::label('apellidom', 'Segundo apellido:') !!}</strong>
+        {!! Form::text('apellidom',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'apellidom', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('fechanacimiento', 'Fecha de nacimiento:') !!}
-        {!! Form::text('fechanacimiento',null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'fechanacimiento']) !!}
+        <strong>{!! Form::label('fechanacimiento', 'Fecha de nacimiento:') !!}</strong>
+        {!! Form::date('fechanacimiento',null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'fechanacimiento', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('rfc', 'RFC:') !!}
-        {!! Form::text('rfc',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'rfc']) !!}
+        <strong>{!! Form::label('rfc', 'RFC:') !!}</strong>
+        {!! Form::text('rfc',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'rfc', 'required' => true, 'pattern' => '([A-Z]{4}[0-9]{6}[A-Z0-9]{3})']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('relacion', ' Relación con el Declarante: * :') !!}
-        {!! Form::select('relacion', $selectRelacioDeclarante, null,['class'=>'form-control alert-danger',  'id' => 'relacion']) !!}
+        {!! Form::select('relacion', $selectRelacioDeclarante, null,['class'=>'form-control alert-danger',  'id' => 'relacion', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('extranjero', '¿Es ciudadano extranjero? * :') !!}
+        <strong>{!! Form::label('extranjero', '¿Es ciudadano extranjero? * :') !!}</strong>
         {!! Form::select('extranjero', $selectCiudadano, null,['class'=>'form-control text-uppercase',  'id' => 'extranjero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('curp', 'CURP:') !!}
+        <strong>{!! Form::label('curp', 'CURP:') !!}</strong>
         {!! Form::text('curp',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'curp']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('dependiente', '¿Es dependiente económico?:') !!}
+        <strong>{!! Form::label('dependiente', '¿Es dependiente económico?:') !!}</strong>
         {!! Form::text('dependiente',null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'dependiente']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
-        {!! Form::label('habitadomicilio', '¿Habita en el domicilio del Declarante?:') !!}
+        <strong>{!! Form::label('habitadomicilio', '¿Habita en el domicilio del Declarante?:') !!}</strong>
         {!! Form::text('habitadomicilio',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'habitadomicilio']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-6">
-        {!! Form::label('reside', 'Lugar donde reside:') !!}
+        <strong>{!! Form::label('reside', 'Lugar donde reside:') !!}</strong>
         {!! Form::text('reside',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'reside']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -72,7 +72,7 @@
     @include('experienciaLaboral.form')
     <div class="form-row">
         <div class="form-group col-md-12">
-            {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
+            <strong>{!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}</strong>
             {!! Form::textarea('aclaraciones', null, ['class'=>'form-control alert-danger']) !!}
         </div>
     </div>
