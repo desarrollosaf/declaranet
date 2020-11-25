@@ -1,0 +1,97 @@
+[{
+		"clave": "DEC",
+		"valor": "DECLARANTE"
+	},
+	{
+		"clave": "DECON",
+		"valor": "DECLARANTE Y CÓNYUGE"
+	},
+	{
+		"clave": "DCT",
+		"valor": "DECLARANTE EN COPROPIEDAD CON TERCEROS"
+	},
+	{
+		"clave": "DCCT",
+		"valor": "DECLARANTE Y CÓNYUGE EN COPROPIEDAD CON TERCEROS"
+	},
+	{
+		"clave": "DCC",
+		"valor": "DECLARANTE Y CONCUBINA O CONCUBINÁRIO"
+	},
+	{
+		"clave": "DCCCT",
+		"valor": "DECLARANTE Y CONCUBINA O CONCUBINÁRIO EN COPROPIEDAD CON TERCEROS"
+	},
+	{
+		"clave": "CYG",
+		"valor": "CÓNYUGE"
+	},
+	{
+		"clave": "CCT",
+		"valor": "CÓNYUGE EN COPROPIEDAD CON TERCEROS"
+	},
+	{
+		"clave": "CBN",
+		"valor": "CONCUBINA O CONCUBINÁRIO"
+	},
+	{
+		"clave": "CCCT",
+		"valor": "CONCUBINA O CONCUBINÁRIO EN COPROPIEDAD CON TERCEROS"
+	},
+	{
+		"clave": "CVV",
+		"valor": "CONVIVIENTE"
+	},
+	{
+		"clave": "DECO",
+		"valor": "DECLARANTE Y CONVIVIENTE"
+	},
+	{
+		"clave": "DCCTE",
+		"valor": "DECLARANTE Y CONVIVIENTE EN COPROPIEDAD CON TERCEROS"
+	},
+	{
+		"clave": "CDEC",
+		"valor": "CONVIVIENTE Y DEPENDIENTE ECONÓMICO"
+	},
+	{
+		"clave": "CDECT",
+		"valor": "CONVIVIENTE Y DEPENDIENTE ECONÓMICO EN COPROPIEDAD CON TERCEROS"
+	},
+	{
+		"clave": "DEN",
+		"valor": "DEPENDIENTE ECONÓMICO"
+	},
+	{
+		"clave": "DDE",
+		"valor": "DECLARANTE Y DEPENDIENTE ECONÓMICO"
+	},
+	{
+		"clave": "DDECT",
+		"valor": "DECLARANTE Y DEPENDIENTE ECONÓMICO EN COPROPIEDAD CON TERCEROS"
+	},
+	{
+		"clave": "DECT",
+		"valor": "DEPENDIENTE ECONÓMICO EN COPROPIEDAD CON TERCEROS"
+	},
+	{
+		"clave": "DCDE",
+		"valor": "DECLARANTE CÓNYUGE Y DEPENDIENTE ECONÓMICO"
+	},
+	{
+		"clave": "DCCDE",
+		"valor": "DECLARANTE, CONCUBINA O CONCUBINÁRIO Y DEPENDIENTE ECONÓMICO"
+	},
+	{
+		"clave": "CDE",
+		"valor": "CÓNYUGE Y DEPENDIENTE ECONÓMICO"
+	},
+	{
+		"clave": "CCDE",
+		"valor": "CONCUBINA O CONCUBINÁRIO Y DEPENDIENTE ECONÓMICO"
+	},
+	{
+		"clave": "CDCTE",
+		"valor": "CÓNYUGE Y DEPENDIENTE ECONOMICO EN COPROPIEDAD CON TERCEROS"
+	}
+]

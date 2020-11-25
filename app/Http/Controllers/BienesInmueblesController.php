@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class BienesInmueblesController extends Controller
 {
@@ -23,7 +24,18 @@ class BienesInmueblesController extends Controller
      */
     public function create()
     {
-         return view("BienesInmuebles.create");
+        $selecttipoInmueble = Arr::pluck(\App\TipoInmueble::all(), "valor","id");
+        $selecttitularInmueble = Arr::pluck(\App\titularBien::all(), "valor","id");
+        $selectformaAdquisicion = Arr::pluck(\App\formaAdquisicion::all(), "valor","id");
+        $selectformaPago = Arr::pluck(\App\FormasPagos::all(), "valor","id");
+        $selectRelacionTransmisor = Arr::pluck(\App\relacionTransmisor::all(), "valor","id");
+        $selectvalorConforme = Arr::pluck(\App\valorConformeA::all(), "valor","id");
+        $selectubicacionInmueble = Arr::pluck(\App\LugarUbicacion::all(), "valor","id");
+        $selectTipoTransmisores = Arr::pluck(\App\tipoTransmisores::all(), "valor","id");
+        
+         
+        return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectTipoTransmisores'));
+        
 
     }
 
