@@ -11,24 +11,32 @@
                     <table class="table table-bordered table-striped table-hover" style="border-collapse: collapse;">
                         <thead style="background-color: #682244;" class="text-light">
                             <tr>
-                                <th>Ambito</th>
-                                <th>Nombre</th>
-                                <th>Fecha ingreso</th>
-                                <th>Fecha egreso</th>
-                                <th>Acciones</th>
+                                <th><center>Nivel</center></th>
+                                <th><center>Información adicional</center></th>
+                                <th><center>Acciones</center></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($experiencias as $experiencia)
                             <tr>
-                                <td>{{$experiencia->ambito_sector->valor}}</td>
+                                <td><center>{{$experiencia->ambito_sector->valor}}</center></td>
                                 @if($experiencia->ambito_sector_id == 1)
-                                <td>{{$experiencia->ente_publico}}</td>
+                                <td><center>
+                                    <strong>Nombre:</strong> {{$experiencia->ente_publico}} <br>
+                                    <strong>Cargo/Puesto:</strong> {{$experiencia->puesto}} {{$experiencia->cargo_comision}}<br>
+                                    <strong>Periodo:</strong>{{$experiencia->fecha_ingreso}}
+                                    {{$experiencia->fecha_egreso}}<br>
+                                    </center>
+                                </td>
                                 @else
-                                <td>{{$experiencia->nombre_empresa}}</td>
+                                <td><center>
+                                    <strong>Nombre:</strong> {{$experiencia->ente_publico}} <br>
+                                    <strong>Cargo/Puesto:</strong> {{$experiencia->puesto}} {{$experiencia->cargo_comision}}<br>
+                                    <strong>Periodo:</strong>{{$experiencia->fecha_ingreso}}
+                                    {{$experiencia->fecha_egreso}}<br>
+                                    </center>
+                                </td>
                                 @endif
-                                <td>{{$experiencia->fecha_ingreso}}</td>
-                                <td>{{$experiencia->fecha_egreso}}</td>
                                 <td class="all">
                                     {!! Form::open(['action' => ['ExperienciaLaboralController@destroy', $experiencia->id], 'method'=>'DELETE']) !!}
                                     <div style="display: inline-block;">

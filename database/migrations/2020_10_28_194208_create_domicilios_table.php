@@ -28,6 +28,7 @@ class CreateDomiciliosTable extends Migration
             $table->foreign("municipio_id")->references("id")->on("municipios");
             $table->string("codigo_postal");
             $table->string("observaciones");
+            $table->string("colonia");
             $table->index(['domiciliable_id', 'domiciliable_type']);
             $table->timestamps();
             $table->softDeletes();

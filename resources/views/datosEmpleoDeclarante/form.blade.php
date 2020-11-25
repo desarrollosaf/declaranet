@@ -2,63 +2,63 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('nivel', 'Nivel / Orden de gobierno:') !!}
-            {!! Form::select('datos_empleo_declarante[nivel_gobierno_id]',$nivel,null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nivel_gobierno_id', 'disabled' => 'disabled']) !!}
+            {!! Form::select('datos_empleo_declarante[nivel_gobierno_id]',$nivel,null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nivel_gobierno_id']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('ambito', 'Ámbito público:') !!}
-            {!! Form::select('datos_empleo_declarante[ambito_publico_id]',$ambito,null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'ambito_publico_id', 'disabled' => 'disabled']) !!}
+            {!! Form::select('datos_empleo_declarante[ambito_publico_id]',$ambito,null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'ambito_publico_id']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('entepublico', 'Nombre del Ente Público:') !!}
-            {!! Form::text('datos_empleo_declarante[nombre_ente_publico]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nombre_ente_publico', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[nombre_ente_publico]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nombre_ente_publico']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('adscripcion', 'Área de adscripción:') !!}
-            {!! Form::text('datos_empleo_declarante[area_adscripcion]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'area_adscripcion', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[area_adscripcion]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'area_adscripcion']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('empleo', 'Empleo, cargo o comisión:') !!}
-            {!! Form::text('datos_empleo_declarante[empleo_cargo]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'empleo_cargo', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[empleo_cargo]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'empleo_cargo']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('honorarios', '¿Está contratado por honorarios?:') !!}
-            {!! Form::text('datos_empleo_declarante[honorarios]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'honorarios', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[honorarios]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'honorarios']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             {!! Form::label('nivelempleo', 'Nivel del empleo, cargo o comisión:') !!}
-            {!! Form::text('datos_empleo_declarante[nivel_empleo]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nivel_empleo', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[nivel_empleo]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nivel_empleo']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-6">
             {!! Form::label('funcion', 'Especifique función principal: *') !!}
-            {!! Form::text('datos_empleo_declarante[funcion_principal]',null,['class'=>'form-control', 'placeholder'=>'p. ej. Desarrollo de sistemas',  'id' => 'funcion_principal' ]) !!}
+            {!! Form::text('datos_empleo_declarante[funcion_principal]',null,['class'=>'form-control', 'placeholder'=>'p. ej. Desarrollo de sistemas',  'id' => 'funcion_principal', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             {!! Form::label('fecha', 'Fecha de toma de posesión del empleo, cargo o comisión:') !!}
-            {!! Form::date('datos_empleo_declarante[fecha_posecion_empleo]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'fecha_posecion_empleo', 'disabled' => 'disabled']) !!}
+            {!! Form::date('datos_empleo_declarante[fecha_posecion_empleo]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'fecha_posecion_empleo']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('telefono', 'Teléfono de oficina:  *:') !!}
-            {!! Form::text('datos_empleo_declarante[telefono_oficina]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 5555555555',  'id' => 'telefono_oficina']) !!}
+            {!! Form::text('datos_empleo_declarante[telefono_oficina]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 5555555555',  'id' => 'telefono_oficina', 'required' => 'true', 'pattern' => "[0-9]{10}",'title' => "Ingresa el número a 10 dígitos"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-2">
             {!! Form::label('ext', 'Extensión:  *:') !!}
-            {!! Form::text('datos_empleo_declarante[extension]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 555',  'id' => 'extension']) !!}
+            {!! Form::text('datos_empleo_declarante[extension]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 555',  'id' => 'extension', 'required' => 'true', 'pattern' => "[0-9]{4}",'title' => "Ingresa el número de extensión a 4 dígitos"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -69,39 +69,39 @@
     <div class="form-row">
         <div class="form-group col-md-3">
             {!! Form::label('calleempleo', 'Calle: *') !!}
-            {!! Form::text('datos_empleo_declarante[calle]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'calle']) !!}
+            {!! Form::text('datos_empleo_declarante[calle]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'calle', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-3">
             {!! Form::label('numexterior', 'Número exterior: *') !!}
-            {!! Form::text('datos_empleo_declarante[numero_exterior]',null,['class'=>'form-control', 'placeholder'=>'p. ej. 0101',  'id' => 'numero_exterior']) !!}
+            {!! Form::text('datos_empleo_declarante[numero_exterior]',null,['class'=>'form-control', 'placeholder'=>'p. ej. 0101',  'id' => 'numero_exterior', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-3">
             {!! Form::label('numinterior', 'Número interior / Piso: *') !!}
-            {!! Form::text('datos_empleo_declarante[numero_interior_piso]',null,['class'=>'form-control', 'placeholder'=>'p. ej. 02',  'id' => 'numero_interior_piso']) !!}
+            {!! Form::text('datos_empleo_declarante[numero_interior_piso]',null,['class'=>'form-control', 'placeholder'=>'p. ej. 02',  'id' => 'numero_interior_piso', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-3">
             {!! Form::label('colonia', 'Colonia / Localidad: *') !!}
-            {!! Form::text('datos_empleo_declarante[colonia_localidad]',null,['class'=>'form-control', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_localidad']) !!}
+            {!! Form::text('datos_empleo_declarante[colonia_localidad]',null,['class'=>'form-control', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_localidad', 'required' => 'true' ]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-5">
             {!! Form::label('municipio', 'Municipio: *') !!}
-            {!! Form::text('datos_empleo_declarante[municipio]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Toluca',  'id' => 'municipio']) !!}
+            {!! Form::text('datos_empleo_declarante[municipio]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Toluca',  'id' => 'municipio', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-5">
             {!! Form::label('entidad', 'Entidad Federativa: *') !!}
-            {!! Form::text('datos_empleo_declarante[entidad_federativa]',null,['class'=>'form-control', 'placeholder'=>'p. ej. 0101',  'id' => 'entidad_federativa', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[entidad_federativa]',null,['class'=>'form-control', 'placeholder'=>'p. ej. 0101',  'id' => 'entidad_federativa', 'disabled' => 'disabled', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-2">
             {!! Form::label('codigo', 'Código Postal: *') !!}
-            {!! Form::text('datos_empleo_declarante[codigo_postal]',null,['class'=>'form-control', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postal']) !!}
+            {!! Form::text('datos_empleo_declarante[codigo_postal]',null,['class'=>'form-control', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postal', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>

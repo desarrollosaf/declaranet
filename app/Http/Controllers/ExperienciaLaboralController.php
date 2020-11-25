@@ -43,7 +43,7 @@ class ExperienciaLaboralController extends Controller
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
-        
+
         return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores'));
     }
 
@@ -62,7 +62,7 @@ class ExperienciaLaboralController extends Controller
         $experiencia["fecha_egreso"] = $fecha_egreso->format("Y-m-d");
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $declaracion->experiencias_laborales()->create($experiencia);
-        return redirect()->route("experienciaLaboral.index");
+        return redirect()->route("experiencia_laboral.index");
     }
 
     /**
@@ -90,7 +90,7 @@ class ExperienciaLaboralController extends Controller
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
-        
+
         return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_sectores'));
     }
 
