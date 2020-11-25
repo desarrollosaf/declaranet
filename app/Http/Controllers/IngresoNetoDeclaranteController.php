@@ -21,7 +21,12 @@ class IngresoNetoDeclaranteController extends Controller
 
     public function index()
     {
-        //
+        $ingresoMensual = IngresoNeto::find($this->request->session()->get('declaracion_id'));
+        if($ingresoMensual == NULL){
+            return \redirect()->route("ingreso_neto.create");
+        } else {
+            return \redirect()->route("ingreso_neto.edit",$ingresoMensual->id);
+        }
     }
 
     /**
@@ -67,7 +72,9 @@ class IngresoNetoDeclaranteController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $ingresoMensual = IngresoNeto::find($id);
+        return view("ingresosNetos.edit",\compact("ingresoMensual","id"));
     }
 
     /**
@@ -79,7 +86,10 @@ class IngresoNetoDeclaranteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ingresoMensualRequest = $request->input("ingresoMensual");
+        $ingresoMensual = Ingresoneto::find($id);
+        $ingresoMensual->update($ingresoMensualRequest);
+        return redirect()->back();
     }
 
     /**

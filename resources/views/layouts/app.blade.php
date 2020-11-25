@@ -36,7 +36,7 @@
             <a href="{{route('experiencia_laboral.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Experiencia laboral</a>
             <a href="{{route('datos_pareja_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person-stalker mr-2"></i>Datos de la pareja</a>
             <a href="{{route('datos_dependiente_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person-add mr-2"></i>Datos de los dependientes</a>
-            <a href="{{route('ingreso_neto.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Ingresos netos</a>
+            <a href="{{route('ingreso_neto.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Ingresos netos</a>
             <a href="{{route('servidor_publico.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>¿Te desempeñaste como servidor público?</a>
             <a href="{{route('bienes_inmuebles.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Bienes inmuebles</a>
             <a href="{{route('vehiculos.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-cash mr-2"></i>Vehiculos</a>
