@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\titular;
 use Illuminate\Http\Request;
 
 class FideicomisosController extends Controller
@@ -23,6 +24,9 @@ class FideicomisosController extends Controller
      */
     public function create()
     {
+        $selectPrincipalesActividadLucrativa = Arr::pluck(titular::all(), "PrincipalesActividadLucrativa","id");
+        $selectLugarDondeSeUbica = Arr::pluck(titular::all(), "LugarDondeSeUbica","id");
+
         return view("Fideicomisos.create");
     }
 
