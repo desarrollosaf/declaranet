@@ -57,7 +57,7 @@
     </div>
     <div class="form-group col-md-6">
         <strong>{!! Form::label('reside', 'Lugar donde reside:') !!}</strong>
-        {!! Form::text('reside',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'reside']) !!}
+        {!! Form::select('reside',$selectLugarReside,null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'reside']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
