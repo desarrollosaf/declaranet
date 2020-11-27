@@ -18,7 +18,7 @@ class CreateRespuestasTable extends Migration
             $table->string("respuesta");
             $table->timestamps();
         });
-        $path = base_path("database/catalogos/catalogos/json/respuestas.json");
+        $path = base_path("database/catalogos/catalogos/json/s1/respuestas.json");
         $json = json_decode(file_get_contents($path));
         foreach ($json as $item) {
             DB::table("respuestas")->insert([
