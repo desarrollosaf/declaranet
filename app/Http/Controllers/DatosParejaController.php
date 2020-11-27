@@ -9,6 +9,7 @@ use App\lugarDondeReside;
 use App\LugarUbicacion;
 use App\Nivelordengobierno;
 use App\relacionConDeclarante;
+use App\Respuesta;
 use App\sector;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -51,7 +52,8 @@ class DatosParejaController extends Controller
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad","id");
         $selectLugarReside = Arr::pluck(lugarDondeReside::all(), "valor","id");
-        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante','selectCiudadano','nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','selectEntidad', 'selectLugarReside'));
+        $selectRespuesta = Arr::pluck(Respuesta::all(), "respuesta","id");
+        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante','selectCiudadano','nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','selectEntidad', 'selectLugarReside','selectRespuesta'));
     }
 
     /**
