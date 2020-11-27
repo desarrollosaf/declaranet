@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\tipoMoneda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\titularBien;
@@ -35,11 +36,11 @@ class BienesMueblesController extends Controller
       $selectTipoBien = Arr::pluck(tipoBienBienesMuebles::all(), "valor","id");
       $selectTransmisores = Arr::pluck(RegimenFiscal::all(), "valor","id");
       $selectRelacionTransmisor = Arr::pluck(relacionTransmisor::all(), "valor","id");
-      $selectDenominacionRazonSocial = Arr::pluck(relacionTransmisor::all(), "valor","id");
       $selectFormaAdquisicion = Arr::pluck(formaAdquisicion::all(), "valor","id");
       $selectFormaPago = Arr::pluck(FormasPagos::all(), "valor","id");
       $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor","id");
-      return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien','selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero'));
+      $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor","id");
+      return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien','selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda'));
 
     }
 
