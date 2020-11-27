@@ -2,131 +2,157 @@
   {
     "tipoInversion": "BANC",
     "clave": "CNOM",
-    "valor": "CUENTA DE NÓMINA"
+    "valor": "CUENTA DE NÓMINA",
+    "tipoInversion_id": "1"
   },
   {
     "tipoInversion": "BANC",
     "clave": "CAHO",
-    "valor": "CUENTA DE AHORRO"
+    "valor": "CUENTA DE AHORRO",
+    "tipoInversion_id": "1"
   },
   {
     "tipoInversion": "BANC",
     "clave": "CCHE",
-    "valor": "CUENTA DE CHEQUES"
+    "valor": "CUENTA DE CHEQUES",
+    "tipoInversion_id": "1"
   },
   {
     "tipoInversion": "BANC",
     "clave": "CMAS",
-    "valor": "CUENTA MAESTRA"
+    "valor": "CUENTA MAESTRA",
+    "tipoInversion_id": "1"
   },
   {
     "tipoInversion": "BANC",
     "clave": "CEJE",
-    "valor": "CUENTA EJE"
+    "valor": "CUENTA EJE",
+    "tipoInversion_id": "1"
   },
   {
     "tipoInversion": "BANC",
     "clave": "DPLA",
-    "valor": "DEPÓSITO A PLAZOS"
+    "valor": "DEPÓSITO A PLAZOS",
+    "tipoInversion_id": "1"
   },
   {
     "tipoInversion": "FINV",
     "clave": "SOIN",
-    "valor": "SOCIEDADES DE INVERSIÓN"
+    "valor": "SOCIEDADES DE INVERSIÓN",
+    "tipoInversion_id": "2"
   },
   {
     "tipoInversion": "FINV",
     "clave": "IFEX",
-    "valor": "INVERSIONES FINANCIERAS EN EL EXTRANJERO"
+    "valor": "INVERSIONES FINANCIERAS EN EL EXTRANJERO",
+    "tipoInversion_id": "2"
   },
   {
     "tipoInversion": "ORPM",
     "clave": "ACCI",
-    "valor": "ACCIONES"
+    "valor": "ACCIONES",
+    "tipoInversion_id": "3"
   },
   {
     "tipoInversion": "ORPM",
     "clave": "CSAH",
-    "valor": "CAJAS DE AHORRO"
+    "valor": "CAJAS DE AHORRO",
+    "tipoInversion_id": "3"
   },
   {
     "tipoInversion": "POMM",
     "clave": "CENT",
-    "valor": "CENTENARIOS"
+    "valor": "CENTENARIOS",
+    "tipoInversion_id": "4"
   },
   {
     "tipoInversion": "POMM",
     "clave": "DIVS",
-    "valor": "DIVISAS"
+    "valor": "DIVISAS",
+    "tipoInversion_id": "4"
   },
   {
     "tipoInversion": "POMM",
     "clave": "MONN",
-    "valor": "MONEDA NACIONAL"
+    "valor": "MONEDA NACIONAL",
+    "tipoInversion_id": "4"
   },
   {
     "tipoInversion": "POMM",
     "clave": "ONZT",
-    "valor": "ONZAS TROY"
+    "valor": "ONZAS TROY",
+    "tipoInversion_id": "4"
   },
   {
     "tipoInversion": "POMM",
     "clave": "CRIP",
-    "valor": "CRIPTOMONEDAS"
+    "valor": "CRIPTOMONEDAS",
+    "tipoInversion_id": "4"
   },
   {
     "tipoInversion": "SEGR",
     "clave": "SSIN",
-    "valor": "SEGURO DE SEPARACIÓN INDIVIDUALIZADO"
+    "valor": "SEGURO DE SEPARACIÓN INDIVIDUALIZADO",
+    "tipoInversion_id": "5"
   },
   {
     "tipoInversion": "SEGR",
     "clave": "SEGI",
-    "valor": "SEGURO DE INVERSIÓN"
+    "valor": "SEGURO DE INVERSIÓN",
+    "tipoInversion_id": "5"
   },
   {
     "tipoInversion": "SEGR",
     "clave": "SEGV",
-    "valor": "SEGURO DE VIDA"
+    "valor": "SEGURO DE VIDA",
+    "tipoInversion_id": "5"
   },
   {
     "tipoInversion": "VBUR",
     "clave": "ADER",
-    "valor": "ACCIONES Y DERIVADOS"
+    "valor": "ACCIONES Y DERIVADOS",
+    "tipoInversion_id": "6"
   },
   {
     "tipoInversion": "VBUR",
     "clave": "ABAN",
-    "valor": "ACEPTACIONES BANCARIAS"
+    "valor": "ACEPTACIONES BANCARIAS",
+    "tipoInversion_id": "6"
   },
   {
     "tipoInversion": "VBUR",
     "clave": "BGUB",
-    "valor": "BONOS GUBERNAMENTALES"
+    "valor": "BONOS GUBERNAMENTALES",
+    "tipoInversion_id": "6"
   },
   {
     "tipoInversion": "VBUR",
     "clave": "PCOM",
-    "valor": "PAPEL COMERCIAL"
+    "valor": "PAPEL COMERCIAL",
+    "tipoInversion_id": "6"
   },
   {
     "tipoInversion": "AFOT",
     "clave": "AFOR",
-    "valor": "AFORES"
+    "valor": "AFORES",
+    "tipoInversion_id": "7"
   },
   {
     "tipoInversion": "AFOT",
     "clave": "FIDE",
-    "valor": "FIDEICOMISOS"
+    "valor": "FIDEICOMISOS",
+    "tipoInversion_id": "7"
   },
   {
     "tipoInversion": "AFOT",
     "clave": "CTES",
-    "valor": "CERTIFICADOS DE LA TESORERÍA"
+    "valor": "CERTIFICADOS DE LA TESORERÍA",
+    "tipoInversion_id": "7"
   },
   {
     "tipoInversion": "AFOT",
     "clave": "PFTE",
-    "valor": "PRÉSTAMOS A FAVOR DE UN TERCERO"
+    "valor": "PRÉSTAMOS A FAVOR DE UN TERCERO",
+    "tipoInversion_id": "7"
   }
 ]

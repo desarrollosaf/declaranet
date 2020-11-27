@@ -18,9 +18,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                        
+                    
                     <tr>
-                       
+                        @if($inversiones != null)
                         <td>BANC</td>
                         <td>DCT</td>
                         <td>
@@ -30,7 +30,7 @@
                         </td>
                         <td>
                         </td>
-                        
+                      
                     </tr>
                     <tr>
                         <td>BANC</td>
@@ -42,9 +42,9 @@
                         </td>
                         <td>
                         </td>
-                       
+                        @endif
                     </tr>
-                   
+                    
                     </tbody>
                 </table>
             </div>

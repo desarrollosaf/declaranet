@@ -17,6 +17,8 @@ class CreateSubTipoInversionsTable extends Migration
    $table->bigIncrements("id");
             $table->string("clave");
             $table->string("valor");
+            $table->unsignedBigInteger("tipoInversion_id");
+            $table->foreign("tipoInversion_id")->references("id")->on("tipo_inversiones");
             $table->timestamps();
             $table->softDeletes();
         });
@@ -25,7 +27,8 @@ class CreateSubTipoInversionsTable extends Migration
         foreach($json as $tipo_inmueble){
             DB::table("sub_tipo_inversiones")->insert([
                 "clave" => $tipo_inmueble->clave,
-                "valor" => $tipo_inmueble->valor
+                "valor" => $tipo_inmueble->valor,
+                "tipoInversion_id" => $tipo_inmueble->tipoInversion_id
             ]);
         }
     }

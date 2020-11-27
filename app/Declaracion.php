@@ -37,6 +37,6 @@ class Declaracion extends Model
         return $this->morphMany(ExperienciaLaboral::class, 'experienciable');
     }
     public function inversiones_cuentas() {
-        return $this->morphMany(InversionesDeclarante::class, 'inversiones');
+        return $this->belongsTo(InversionesDeclarante::class);
     }
 }

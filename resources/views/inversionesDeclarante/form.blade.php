@@ -1,20 +1,22 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.tipo_de_inversion', 'Tipo de inversión / activo:') !!}
-        {!! Form::text('inversiones[tipo_de_inversion]',null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'tipo_de_inversion']) !!}
+        {!! Form::select('inversiones[tipo_de_inversion]', $tipoInversion, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_inversion', 'onchange' => 'tipoInversion()']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.descripcion_tipo_de_inversion', 'Fondo de inversión:') !!}
-        {!! Form::text('inversiones[descripcion_tipo_de_inversion]',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'descripcion_tipo_de_inversion']) !!}
+        {!! Form::select('inversiones[descripcion_tipo_de_inversion]', $subTipoInversion, [],['class'=>'form-control', 'id' => 'descripcion_tipo_de_inversion', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
+
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.titular_inversion', 'Titular de la inversión, cuenta bancaria y otros tipo de valores:') !!}
-        {!! Form::select('inversiones[titular_inversion]', ['1' => 'DECLARANTE', '2' => 'DECLARANTE CON PROPIEDAD DE TERCEROS'], null, ['placeholder' => 'SELECCIONE UNA OPCION',  'id' => 'inputSelect', 'onchange' => 'seleccionado()'])!!}
+        {!! Form::select('inversiones[titular_inversion]', $tipoDeclarante, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'inputSelect', 'onchange' => 'seleccionado()']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
+
 <div class="form-row" id="mydiv" style="display: none">
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.tipo_de_tercero', 'Tipo de Tercero:') !!}
@@ -89,7 +91,7 @@
     if(opt=="1"){
         $('#mydiv').hide();
     }else{
-        if(opt=="2"){
+        if(opt=="3"){
             $('#mydiv').show();
         }else{
             $('#mydiv').hide(); 
@@ -97,5 +99,31 @@
         
    
     }
+
 }
 </script>
+@section('scripts')
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+        });
+        $("#tipo_de_inversion").on('change', function (){
+            var tipoInversion = $(this).val();
+            console.log(tipoInversion);
+            $.ajax({
+                url: "{{asset('getDescripcionInversion')}}/" + tipoInversion,
+                type: 'get',
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    $("#descripcion_tipo_de_inversion").find('option').remove();
+                    $("#descripcion_tipo_de_inversion").append('<option value="">-- Selecciona tipo inversion</option>');
+                    $(response).each(function (i, v) { // indice, valor
+                        $("#descripcion_tipo_de_inversion").append('<option value="' + v.id + '">' + v.valor + '</option>');
+                    });
+                }
+            });
+        });
+    </script>
+@endsection
+

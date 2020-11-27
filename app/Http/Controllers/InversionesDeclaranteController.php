@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\InversionesDeclarante;
 use App\Declaracion;
+use App\subTipoInversion;
+use Illuminate\Support\Arr;
 
 
 class InversionesDeclaranteController extends Controller
@@ -20,8 +22,10 @@ class InversionesDeclaranteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $inversiones= InversionesDeclarante::find($this->request->session()->get('declaracion_id'));
+    {   
+        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $inversiones = $declaracion->inversiones_cuentas;
+        //$inversiones= InversionesDeclarante::find($this->request->session()->get('declaracion_id'));
         return view("inversionesDeclarante.index", compact('inversiones'));
     }
 
@@ -32,7 +36,10 @@ class InversionesDeclaranteController extends Controller
      */
     public function create()
     {
-        return  view('inversionesDeclarante.create');
+        $tipoDeclarante = Arr::pluck(\App\titularInversion::all(), "valor","id");
+        $tipoInversion = Arr::pluck(\App\tipoInversion::all(), "valor","id");
+        $subTipoInversion = Arr::pluck(\App\subTipoInversion::all(), "valor","id");
+        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion'));
 
     }
 
@@ -90,5 +97,10 @@ class InversionesDeclaranteController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getDescripcion($id){
+        $inversionesDeclarante = subTipoInversion::where('tipoInversion_id', '=', $id)->get();
+        return json_encode($inversionesDeclarante);
     }
 }
