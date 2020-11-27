@@ -178,6 +178,7 @@
 
 @section('scripts')
     <script type="text/javascript">
-        $(document).ready
+        $(document).ready(function () {
+            $(".PRIVADO").hide();
     </script>
 @endsection
