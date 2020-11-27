@@ -13,7 +13,7 @@
     </div> 
     <div class="text-center">
         <label style="margin-top:10px;">
-            <strong>Si desea registrar algún Bien Mueble pulse: </strong><a href="dsp_bienes_muebles_ini.php" class="btn btn-sm btn-secondary">Agregar</a> ,<strong> de lo contrario vaya al siguiente apartado</strong></h6>.
+            <strong>Si desea registrar algún Bien Mueble pulse: </strong><a href="bienes_muebles/create" class="btn btn-sm btn-secondary">Agregar</a> ,<strong> de lo contrario vaya al siguiente apartado</strong></h6>.
         </label> 
     </div>                                
     <div class="text-center">
