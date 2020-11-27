@@ -200,14 +200,18 @@
 
 @section('scripts')
 <script>
-    $(document).ready(function(){
-        $('#tipo_inmueble').change(function(){
-            if(parseInt($(this).val())== 9){
-                $('#especifique').prop('disabled',false);
-            }else{
-                $('#especifique').prop('disabled',true);
+    $(document).ready(function () {
+        $('#tipo_inmueble').change(function () {
+            if (parseInt($(this).val()) == 9) {
+                $('#especifique').prop('disabled', false);
+            } else {
+                $('#especifique').prop('disabled', true);
             }
-        });
+        }
+        
+        
+        );
     });
+
 </script>
 @endsection

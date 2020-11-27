@@ -24,6 +24,7 @@ class BienesInmueblesController extends Controller
      */
     public function create()
     {
+        $selecttipoInmueble = Arr::pluck(\App\TipoInmueble::all(), "valor","id");
         $selecttitularInmueble = Arr::pluck(\App\Titular::all(), "valor","id");
         $selectformaAdquisicion = Arr::pluck(\App\formaAdquisicion::all(), "valor","id");
         $selectformaPago = Arr::pluck(\App\FormasPagos::all(), "valor","id");

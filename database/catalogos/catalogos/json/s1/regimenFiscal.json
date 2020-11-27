@@ -1,10 +1,10 @@
 [
   {
     "clave": "FI",
-    "valor": "FÍSICA"
+    "valor": "PERSONA FÍSICA"
   },
   {
     "clave": "MO",
-    "valor": "MORAL"
+    "valor": "PERSONA MORAL"
   }
 ]
