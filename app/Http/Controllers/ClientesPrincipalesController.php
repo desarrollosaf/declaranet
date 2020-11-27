@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\RegimenFiscal;
+use App\Respuesta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class ClientesPrincipalesController extends Controller
 {
@@ -23,7 +26,9 @@ class ClientesPrincipalesController extends Controller
      */
     public function create()
     {
-         return view("Clientes.create");
+        $selectRespuestas = Arr::pluck(Respuesta::all(), "respuesta","id");
+        $selectTipoDePersona = Arr::pluck(RegimenFiscal::all(), "TipoDePersona","id");
+        return view("Clientes.create",compact("selectRespuestas","selectTipoDePersona"));
     }
 
     /**

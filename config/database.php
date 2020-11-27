@@ -67,7 +67,7 @@ return [
             'host'      => env('DB_HOST', '127.0.0.1'),
             'database'  => 'cddiputados',
             'username'  => 'root',
-            'password'  => 'secret',
+            'password'  => '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

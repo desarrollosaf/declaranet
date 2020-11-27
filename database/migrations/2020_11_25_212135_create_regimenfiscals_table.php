@@ -12,7 +12,7 @@ class CreateRegimenfiscalsTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('regimenfiscales', function (Blueprint $table) {
+        Schema::create('regimen_fiscal', function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->string("clave");
             $table->string("valor");
@@ -22,7 +22,7 @@ class CreateRegimenfiscalsTable extends Migration {
         $path = base_path("database/catalogos/catalogos/json/s1/regimenFiscal.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $regimen_Fiscal){
-            DB::table("regimenfiscales")->insert([
+            DB::table("regimen_fiscal")->insert([
                 "clave" => $regimen_Fiscal->clave,
                 "valor" => $regimen_Fiscal->valor
             ]);

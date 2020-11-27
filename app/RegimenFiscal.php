@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class RegimenFiscal extends Model
 {
-    protected $table='regimenfiscales';
+    protected $table='regimen_fiscal';
 }

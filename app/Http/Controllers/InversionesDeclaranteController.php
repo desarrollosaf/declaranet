@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\InversionesDeclarante;
+use App\Declaracion;
+
 
 class InversionesDeclaranteController extends Controller
 {
+    private $request;
+    public function __construct(Request $request) {
+        $this->middleware("auth");
+        $this->request=$request;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,8 @@ class InversionesDeclaranteController extends Controller
      */
     public function index()
     {
-        return  view('inversionesDeclarante.index');
+        $inversiones= InversionesDeclarante::find($this->request->session()->get('declaracion_id'));
+        return view("inversionesDeclarante.index", compact('inversiones'));
     }
 
     /**

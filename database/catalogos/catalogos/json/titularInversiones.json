@@ -1,0 +1,100 @@
+[
+    {
+      "clave": "DECL",
+      "valor": "DECLARANTE"
+    },
+    {
+      "clave": "DECLCON",
+      "valor": "DECLARANTE Y CÓNYUGE"
+    },
+    {
+        "clave": "COPTER",
+        "valor": "DECLARANTE EN COPROPIEDAD CON TERCEROS"
+    },
+    {
+        "clave": "DECLCONTER",
+        "valor": "DECLARANTE Y CÓNYUGE EN COPROPIEDAD CON TERCEROS"
+    },
+    {
+        "clave": "DECLCONC",
+        "valor": "DECLARANTE Y CONCUBINA O CONCUBINÁRIO"
+    },
+    {
+        "clave": "DECLCONCTER",
+        "valor": "DECLARANTE Y CONCUBINA O CONCUBINÁRIO EN COPROPIEDAD CON TERCEROS"
+    },
+    {
+        "clave": "CONY",
+        "valor": "CÓNYUGE"
+    },
+    {
+        "clave": "CONYTER",
+        "valor": "CÓNYUGE EN COPROPIEDAD CON TERCEROS"
+    },
+    {
+        "clave": "CONCU",
+        "valor": "CONCUBINA O CONCUBINÁRIO"
+    },
+    {
+        "clave": "CONCUTER",
+        "valor": "CONCUBINA O CONCUBINÁRIO EN COPROPIEDAD CON TERCEROS"
+    },
+    {
+        "clave": "CONV",
+        "valor": "CONVIVIENTE"
+    },
+    {
+        "clave": "DECLCONV",
+        "valor": "DECLARANTE Y CONVIVIENTE"
+    },
+    {
+        "clave": "CONVTER",
+        "valor": "DECLARANTE Y CONVIVIENTE EN COPROPIEDAD CON TERCEROS"
+    },
+    {
+        "clave": "CONDEP",
+        "valor": "CONVIVIENTE Y DEPENDIENTE ECONÓMICO"
+    },
+    {
+        "clave": "CONDTER",
+        "valor": "CONVIVIENTE Y DEPENDIENTE ECONÓMICO EN COPROPIEDAD CON TERCEROS"
+    },
+    {
+        "clave": "DEP",
+        "valor": "DEPENDIENTE ECONÓMICO"
+    },
+    {
+        "clave": "DEEC",
+        "valor": "DECLARANTE Y DEPENDIENTE ECONÓMICO"
+    },
+    {
+        "clave": "DEECTER",
+        "valor": "DECLARANTE Y DEPENDIENTE ECONÓMICO EN COPROPIEDAD CON TERCEROS"
+    },
+    {
+        "clave": "DEPCOTER",
+        "valor": "DEPENDIENTE ECONÓMICO EN COPROPIEDAD CON TERCEROS"
+    },
+    {
+        "clave": "DECONEC",
+        "valor": "DECLARANTE CÓNYUGE Y DEPENDIENTE ECONÓMICO"
+    },
+    {
+        "clave": "DEDEEC",
+        "valor": "DECLARANTE, CONCUBINA O CONCUBINÁRIO Y DEPENDIENTE ECONÓMICO"
+    },
+    {
+        "clave": "CONDEEC",
+        "valor": "CÓNYUGE Y DEPENDIENTE ECONÓMICO"
+    },
+    {
+        "clave": "CONCDEEC",
+        "valor": "CONCUBINA O CONCUBINÁRIO Y DEPENDIENTE ECONÓMICO"
+    },
+    {
+        "clave": "CONDECOTER",
+        "valor": "CÓNYUGE Y DEPENDIENTE ECONÓMICO EN COPROPIEDAD CON TERCEROS"
+    }
+
+  ]
+  

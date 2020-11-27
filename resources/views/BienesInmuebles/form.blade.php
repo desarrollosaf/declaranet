@@ -12,7 +12,7 @@
         <div class="col-lg-4" id="combo_otro_Disabled" style="display: block;">
             <div class="form-group">
                 <strong>{!! Form::label('especifique', ' Especifique: ') !!}</strong>
-                {!! Form::text('especifique',null,['class'=>'form-control', 'placeholder'=>'p. ej. Hacienda',  'id' => 'especifique']) !!}
+                {!! Form::text('especifique',null,['class'=>'form-control', 'placeholder'=>'p. ej. Hacienda',  'id' => 'especifique', 'disabled' => 'true' ]) !!}
             </div>
         </div>
         <div class="col-lg-4">
@@ -53,7 +53,7 @@
         </div>
         <div class="col-lg-4">
             <strong>{!! Form::label('formaPago', ' Forma de pago:') !!}</strong>
-            {!! Form::select('formaPago', $selectformaAdquisicion, null,['class'=>'form-control alert-danger',  'id' => 'forma_Pago']) !!}            
+            {!! Form::select('formaPago', $selectformaPago, null,['class'=>'form-control alert-danger',  'id' => 'forma_Pago']) !!}            
         </div>
         <div class="col-lg-4">
             <div class="form-group">
@@ -197,3 +197,17 @@
         </center>
     </div>
 </div>
+
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        $('#tipo_inmueble').change(function(){
+            if(parseInt($(this).val())== 9){
+                $('#especifique').prop('disabled',false);
+            }else{
+                $('#especifique').prop('disabled',true);
+            }
+        });
+    });
+</script>
+@endsection
