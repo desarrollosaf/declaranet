@@ -67,7 +67,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('tipoTransmisor', ' Tipo de transmisor de la propiedad:') !!}</strong>
-                {!! Form::select('tipoTransmisor', $selectTipoTransmisores, null,['class'=>'form-control alert-danger',  'id' => 'tipo_Transmisor']) !!}
+                {!! Form::select('tipoTransmisor', $selectRegimenFiscal, null,['class'=>'form-control alert-danger',  'id' => 'tipo_Transmisor']) !!}
             </div>
         </div>
         <div class="col-lg-4" id="disabledNombretransmisor">
