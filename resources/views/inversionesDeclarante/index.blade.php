@@ -18,7 +18,9 @@
                     </tr>
                     </thead>
                     <tbody>
+                        
                     <tr>
+                       
                         <td>BANC</td>
                         <td>DCT</td>
                         <td>
@@ -28,6 +30,7 @@
                         </td>
                         <td>
                         </td>
+                        
                     </tr>
                     <tr>
                         <td>BANC</td>
@@ -39,15 +42,18 @@
                         </td>
                         <td>
                         </td>
+                       
                     </tr>
+                   
                     </tbody>
                 </table>
             </div>
             <div class="text-center">
                 <label class="mt-5">Sí desea registrar algún Inversion, Cuentas Bancarias y Otro tipo de
-                    valores/activos pulse:<a href="" class="btn btn-sm btn-secondary">Agregar</a>, de lo
+                    valores/activos pulse:<a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Agregar</a>, de lo
                     contrario vaya al siguiente apartado.
                 </label>
+           
             </div>
             <div class="text-center">
                 <br>
