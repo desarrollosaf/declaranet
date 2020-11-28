@@ -29,12 +29,12 @@ class CreateBienesMueblesTable extends Migration
             $table->string('denominacion_razon')->nullable();
             $table->string('rfc_tercero')->nullable();
             $table->unsignedBigInteger('transmisor_propiedad_id');
-            $table->foreign('transmisor_propiedad_id')->references('id')->on('relacion_transmisores');
+            $table->foreign('transmisor_propiedad_id')->references('id')->on('regimen_fiscal');
             $table->string('nombre_transmisor')->nullable();
             $table->string('denominacion_rs_transmisor')->nullable();
             $table->string('rfc_transmisor')->nullable();
             $table->unsignedBigInteger('relacion_transmisor_id');
-            $table->foreign('relacion_transmisor_id')->references('id')->on('regimen_fiscal');
+            $table->foreign('relacion_transmisor_id')->references('id')->on('relacion_transmisores');
             $table->string('especifique_relacion_transmisor')->nullable();
             $table->unsignedBigInteger('forma_adquisicion_id');
             $table->foreign('forma_adquisicion_id')->references('id')->on('forma_adquisiciones');

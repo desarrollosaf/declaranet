@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\LugarUbicacion;
 
-class CreateLugarDondeSeUbicaTable extends Migration
+class CreateLugarDondeSeUbicasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,11 +16,11 @@ class CreateLugarDondeSeUbicaTable extends Migration
      {
         Schema::create('lugares_ubicacion', function (Blueprint $table) {
             $table->bigIncrements("id");
-         
+
             $table->string("valor");
             $table->timestamps();
             $table->softDeletes();
-            
+
         });
         collect([
             ["valor" => "MÉXICO"],

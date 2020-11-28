@@ -39,7 +39,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.tipo_tercero_id', 'Tipo de tercero:') !!}</strong>
-                {!! Form::select('bienesMuebles[tipo_tercero_id]',$selectTipoTercero, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_tercero'])!!}
+                {!! Form::select('bienesMuebles[tipo_tercero_id]',$selectTipoTercero, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_tercero', 'disabled' => true])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -183,10 +183,10 @@
                     $(".tipo-dato").addClass("alert-danger");
                     if (tipoTitular === "6") {
                         $(".tipo-tercero").show();
-                        $("#tipo_tercero").prop("disable", false);
+                        $("#tipo_tercero").prop("disabled", false);
                     } else {
                         $(".tipo-tercero").hide();
-                        $("#tipo_tercero").prop("disable", true);
+                        $("#tipo_tercero").prop("disabled", true);
                         $("#nombre_tercero").val("");
                         $("#denominacion_razon").val("");
                         $("#rfc-tercero").val("");
@@ -217,26 +217,26 @@
                     $("#denominacion_razon").val("");
                 }
             })
-            $("#transmisor_propiedad").change(function(){
+            $("#transmisor_propiedad").change(function () {
                 var transmisorDenominacion = parseInt($(this).val());
-                if (transmisorDenominacion === 2){
+                if (transmisorDenominacion === 2) {
                     $(".nombre-razon").hide();
                     $("#nombre_transmisor").val("");
                     $(".denominacion-rs-transmisor").show();
-                } else{
+                } else {
                     $(".nombre-razon").show();
                     $("#denominacion_rs_transmisor").val("");
                     $(".denominacion-rs-transmisor").hide();
                 }
             });
-            $("#relacion_transmisor").change(function(){
+            $("#relacion_transmisor").change(function () {
                 var relacionTransmisorMueble = parseInt($(this).val());
-                if (relacionTransmisorMueble === 20){
-                    $(".especifique-relacion-transmisor"). show();
+                if (relacionTransmisorMueble === 20) {
+                    $(".especifique-relacion-transmisor").show();
                 } else {
                     $(".especifique-relacion-transmisor").hide();
                 }
-                });
+            });
         });
 
     </script>

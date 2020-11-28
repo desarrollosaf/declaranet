@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Declaracion;
 use App\tipoMoneda;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\titularBien;
@@ -55,8 +56,7 @@ class BienesMueblesController extends Controller
       array_unshift($selectFormaPago,"Selecciona una opción");
       array_unshift($selectTipoTercero,"Selecciona una opción");
       array_unshift($selectTipoMoneda,"Selecciona una opción");
-
-        return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien','selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda'));
+      return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien','selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda'));
 
     }
 
@@ -69,8 +69,11 @@ class BienesMueblesController extends Controller
     public function store(Request $request)
     {
         $bienesMuebles = $request->input("bienesMuebles");
+        $fecha_adquisicion = new Carbon($bienesMuebles["fecha_adquisicion"]);
+        $bienesMuebles["fecha_adquisicion"] = $fecha_adquisicion->format("Y-m-d");
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
-        var_dump($bienesMuebles);
+        $declarante->BienesMuebles()->create($bienesMuebles);
+        return redirect()->back();
     }
 
     /**
