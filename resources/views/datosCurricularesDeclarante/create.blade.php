@@ -6,41 +6,14 @@
                 <h1>DATOS CURRICULARES DEL DECLARANTE</h1>
             </div>
             <div class="card-body">
-                <p class="text-justify"> Deberá proporcionar la información correspondiente a los últimos cinco empleos, cargos o comisiones que haya tenido (en caso de que se cuente con ellos).</p>
-                    <div class="alert alert-danger text-center" role="alert">
-                        Para registrar información pulse:
-                        <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                            Agregar
-                        </button>
-                        <br>
-                        Deberá seleccionar
-                        <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                            Ninguno
-                        </button> Sí éste es su primer empleo
-                    </div>
-                    <br>
-                    <a href="" class="btn btn-submit float-left text-light">Ir a la sección anterior</a>
-                    <a href="" class="btn btn-submit float-right text-light">Ir a la siguiente sección</a>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    {!! Form::open(['route'=>'datos_curriculares_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosCurricularesDeclarante']) !!}
+                {!! Form::open(['route'=>'datos_curriculares_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosCurricularesDeclarante']) !!}
                     @include('datosCurricularesDeclarante.form')
-                    {!! Form::close() !!}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
+                    <div class="form-row text-center">
+                        <div class="col">
+                            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light btnGuardar'] )}}
+                        </div>
+                    </div>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
@@ -58,5 +31,60 @@
                 }
             });
         });
+        $(".btnGuardar").on("click",function(e){
+            e.preventDefault();
+            var validar = validarCurriculares();
+            if(!validar){
+                $('#datosCurricularesDeclarante').submit();
+            }else{
+                Swal.fire({
+                    title: 'Error',
+                    text: 'llena todos los campos obligatorios',
+                    icon: 'error'
+                });
+            }
+        });
+        function validarCurriculares(){
+            var error = false;
+            $(".validar").css("color","");
+            if($("#nivel_id").val() == 0){
+                error = true;
+                $("#nivel_id").prev().css("color","red");
+            }else{
+                var nivel = $('#nivel_id option:selected').text();
+                console.log(nivel);
+                if(nivel != "PRIMARIA" && nivel != "SECUNDARIA"){
+                    if($("#carrera_area").val() == ""){
+                        $("#carrera_area").prev().css("color","red");
+                        error = true;
+                    }
+                }
+            }
+            if($("#institucion_educativa").val() == ""){
+                error = true;
+                $("#institucion_educativa").prev().css("color","red");
+            }
+            if($("#estatus_id").val() == 0){
+                error = true;
+                $("#estatus_id").prev().css("color","red");
+            }else{
+                var nivel = $('#estatus_id option:selected').text();
+                if(nivel == "FINALIZADO"){
+                    if($("#documento_id").val() == 0){
+                        error = true;
+                        $("#documento_id").prev().css("color","red");
+                    }
+                    if($("#fecha_documento").val() == ""){
+                        error = true;
+                        $("#fecha_documento").prev().css("color","red");
+                    }
+                }
+            }
+            if($("#lugar_ubicacion_id").val() == 0){
+                error = true;
+                $("#lugar_ubicacion_id").prev().css("color","red");
+            }
+            return error;
+        }
     </script>
 @endsection

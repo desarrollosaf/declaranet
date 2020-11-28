@@ -6,12 +6,46 @@
                 <h1>DATOS CURRICULARES DEL DECLARANTE</h1>
             </div>
             <div class="card-body">
-                <p class="text-justify"> Deberá proporcionar la información correspondiente a los últimos cinco empleos, cargos o comisiones que haya tenido (en caso de que se cuente con ellos).</p>
+                <div class="col-md-12">
+                    <table class="table table-bordered table-striped table-hover" style="border-collapse: collapse;">
+                        <thead style="background-color: #682244;" class="text-light">
+                            <tr>
+                                <th><center>Nivel</center></th>
+                                <th><center>Institucion</center></th>
+                                <th><center>Carrera</center></th>
+                                <th><center>Estatus</center></th>
+                                <th><center>Acciones</center></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($curriculares as $curricular)
+                            <tr>
+                                <td><center>{{$curricular->nivel->valor}}</center></td>
+                                <td><center>{{$curricular->institucion}}</center></td>
+                                <td><center>{{$curricular->carrera}}</center></td>
+                                <td><center>{{$curricular->estatus->valor}}</center></td>
+                                <td class="all">
+                                    {!! Form::open(['action' => ['ExperienciaLaboralController@destroy', $curricular->id], 'method'=>'DELETE']) !!}
+                                    <div style="display: inline-block;">
+                                        <a href="{{route('experiencia_laboral.edit',[$curricular])}}" class="btn btn-xs btn-warning">
+                                            <i class="ion ion-edit"></i>
+                                        </a>
+                                        <button class="btn btn-xs btn-danger btn-borrar">
+                                            <i class="ion ion-trash-a btn-borrar"></i>
+                                        </button>
+                                    </div>
+                                    {!! Form::close() !!}
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
                     <div class="alert alert-danger text-center" role="alert">
                         Para registrar información pulse:
-                        <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                        <a type="button" class="btn btn-sm btn-secondary" href="{{route("datos_curriculares_declarante.create")}}">
                             Agregar
-                        </button>
+                        </a>
                         <br>
                         Deberá seleccionar
                         <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
@@ -21,25 +55,6 @@
                     <br>
                     <a href="" class="btn btn-submit float-left text-light">Ir a la sección anterior</a>
                     <a href="" class="btn btn-submit float-right text-light">Ir a la siguiente sección</a>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    {!! Form::open(['route'=>'datos_curriculares_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosCurricularesDeclarante']) !!}
-                    {!! Form::close() !!}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
             </div>
         </div>
     </div>
