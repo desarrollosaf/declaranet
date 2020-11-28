@@ -10,15 +10,15 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
-                <strong> {!! Form::label('titular_bien', 'Titular del bien:') !!}</strong>
-                {!! Form::select('titular_bien',$selectTitular, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'titular_bien'])!!}
+                <strong> {!! Form::label('titular_bien_id', 'Titular del bien:') !!}</strong>
+                {!! Form::select('titular_bien_id',$selectTitular, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'titular_bien'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('tipo_bien', 'Tipo de bien:') !!}</strong>
-                {!! Form::select('tipo_bien',$selectTipoBien, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_bien'])!!}
+                <strong>{!! Form::label('tipo_bien_id', 'Tipo de bien:') !!}</strong>
+                {!! Form::select('tipo_bien_id',$selectTipoBien, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_bien'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -38,8 +38,8 @@
     <div class="row tipo-tercero">
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('tipo_tercero', 'Tipo de tercero:') !!}</strong>
-                {!! Form::select('tipo_tercero',$selectTipoTercero, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_tercero'])!!}
+                <strong>{!! Form::label('tipo_tercero_id', 'Tipo de tercero:') !!}</strong>
+                {!! Form::select('tipo_tercero_id',$selectTipoTercero, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_tercero'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -57,8 +57,8 @@
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('rfc', 'RFC:') !!}</strong>
-                {!! Form::text('rfc', null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'rfc', 'placeholder'=>"p. ej. xxxx010101"])!!}
+                <strong>{!! Form::label('rfc_tercero', 'RFC:') !!}</strong>
+                {!! Form::text('rfc_tercero', null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'rfc', 'placeholder'=>"p. ej. xxxx010101"])!!}
                 <span class="text-danger" style="font-size:150%"></span>
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
@@ -67,8 +67,8 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('transmisor_propiedad', 'Transmisor de la propiedad:') !!}</strong>
-                {!! Form::select('transmisor_propiedad',$selectTransmisores, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'transmisor_propiedad'])!!}
+                <strong>{!! Form::label('transmisor_propiedad_id', 'Transmisor de la propiedad:') !!}</strong>
+                {!! Form::select('transmisor_propiedad_id',$selectTransmisores, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'transmisor_propiedad'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -86,8 +86,8 @@
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('rfc', 'RFC:') !!}</strong>
-                {!! Form::text('rfc', null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'rfc', 'placeholder'=>"p. ej. XXXX010101", 'pattern'=>"([A-Z]{4}([0-9]{6}[A-Z0-9]{3})"])!!}
+                <strong>{!! Form::label('rfc_transmisor', 'RFC:') !!}</strong>
+                {!! Form::text('rfc_transmisor', null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'rfc', 'placeholder'=>"p. ej. XXXX010101", 'pattern'=>"([A-Z]{4}([0-9]{6}[A-Z0-9]{3})"])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -95,8 +95,8 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group relacion-transmisor">
-                <strong>{!! Form::label('relacion_transmisor', 'Relación del transmisor del mueble con el titular:') !!}</strong>
-                {!! Form::select('relacion_transmisor', $selectRelacionTransmisor, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'relacion_transmisor'])!!}
+                <strong>{!! Form::label('relacion_transmisor_id', 'Relación del transmisor del mueble con el titular:') !!}</strong>
+                {!! Form::select('relacion_transmisor_id', $selectRelacionTransmisor, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'relacion_transmisor'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -111,15 +111,15 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('forma_adquisicion', 'Forma de adquisición:') !!}</strong>
-                {!! Form::select('forma_adquisicion',$selectFormaAdquisicion, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_adquisicion'])!!}
+                <strong>{!! Form::label('forma_adquisicion_id', 'Forma de adquisición:') !!}</strong>
+                {!! Form::select('forma_adquisicion_id',$selectFormaAdquisicion, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_adquisicion'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('forma_pago', 'Forma de pago:') !!}</strong>
-                {!! Form::select('forma_pago',$selectFormaPago, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_pago'])!!}
+                <strong>{!! Form::label('forma_pago_id', 'Forma de pago:') !!}</strong>
+                {!! Form::select('forma_pago_id',$selectFormaPago, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_pago'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -134,8 +134,8 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('tipo_moneda', 'Tipo de moneda:') !!}</strong>
-                {!! Form::select('tipo_moneda', $selectTipoMoneda, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_moneda'])!!}
+                <strong>{!! Form::label('tipo_moneda_id', 'Tipo de moneda:') !!}</strong>
+                {!! Form::select('tipo_moneda_id', $selectTipoMoneda, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_moneda'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
