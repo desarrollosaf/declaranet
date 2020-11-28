@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Declaracion;
 use App\tipoMoneda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -20,6 +21,12 @@ class BienesMueblesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $request;
+    public function __construct(Request $request) {
+        $this->middleware("auth");
+        $this->request = $request;
+    }
+
     public function index()
     {
        return view("Bienesmuebles.index");
@@ -40,7 +47,16 @@ class BienesMueblesController extends Controller
       $selectFormaPago = Arr::pluck(FormasPagos::all(), "valor","id");
       $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor","id");
       $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor","id");
-      return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien','selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda'));
+      array_unshift($selectTitular,"Selecciona una opción");
+      array_unshift($selectTipoBien,"Selecciona una opción");
+      array_unshift($selectTransmisores,"Selecciona una opción");
+      array_unshift($selectRelacionTransmisor,"Selecciona una opción");
+      array_unshift($selectFormaAdquisicion,"Selecciona una opción");
+      array_unshift($selectFormaPago,"Selecciona una opción");
+      array_unshift($selectTipoTercero,"Selecciona una opción");
+      array_unshift($selectTipoMoneda,"Selecciona una opción");
+
+        return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien','selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda'));
 
     }
 
@@ -52,7 +68,9 @@ class BienesMueblesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bienesMuebles = $request->input("bienesMuebles");
+        $declarante = Declaracion::find($request->session()->get("declaracion_id"));
+        var_dump($bienesMuebles);
     }
 
     /**

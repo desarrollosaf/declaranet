@@ -5,7 +5,9 @@
         <div class="card-header">
         </div>
         <div class="card-body">
-           @include('BienesMuebles.form')
+            {!! Form::open(['route'=>'bienes_muebles.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'form-bienes-muebles']) !!}
+            @include('BienesMuebles.form')
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
