@@ -15,6 +15,8 @@ class CreateDatoCurricularsTable extends Migration
     {
         Schema::create('datos_curriculares', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('curricular_id');
+            $table->string('curricular_type');
             $table->unsignedBigInteger("nivel_id")->nullable();
             $table->foreign("nivel_id")->references("id")->on("niveles");
             $table->string("institucion_educativa");
@@ -22,13 +24,12 @@ class CreateDatoCurricularsTable extends Migration
             $table->unsignedBigInteger("estatus_id");
             $table->foreign("estatus_id")->references("id")->on("estatus");
             $table->unsignedBigInteger("documento_id")->nullable();
-            $table->foreign("documento_id")->references("id")->on("documento_obtenidos");
-            $table->date("fecha_documento");
-            $table->unsignedBigInteger("lugar_id");
-            $table->foreign("lugar_id")->references("id")->on("documento_obtenidos");
+            $table->foreign("documento_id")->references("id")->on("documentos_obtenidos");
+            $table->date("fecha_documento")->nullable();
             $table->unsignedBigInteger("lugar_ubicacion_id");
             $table->foreign("lugar_ubicacion_id")->references("id")->on("lugares_ubicacion");
             $table->string("observaciones")->nullable();
+            $table->index(['curricular_id', 'curricular_type']);
             $table->softDeletes();
             $table->timestamps();
         });

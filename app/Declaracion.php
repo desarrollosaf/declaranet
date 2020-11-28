@@ -39,12 +39,13 @@ class Declaracion extends Model
     public function inversiones_cuentas() {
         return $this->belongsTo(InversionesDeclarante::class);
     }
-
-    public  function  vehiculos() {
+    public function datos_curriculares() {
+        return $this->morphMany(DatoCurricular::class, 'curricular');
+    }
+    public  function vehiculos(){
         return $this->hasMany(Vehiculo::class);
     }
-
-    public  function  BienesMuebles() {
+    public  function BienesMuebles() {
         return $this->hasMany(BienesMuebles::class);
     }
 }

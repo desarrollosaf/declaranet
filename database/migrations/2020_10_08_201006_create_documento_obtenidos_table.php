@@ -13,7 +13,7 @@ class CreateDocumentoObtenidosTable extends Migration
      */
     public function up()
     {
-        Schema::create('documento_obtenidos', function (Blueprint $table) {
+        Schema::create('documentos_obtenidos', function (Blueprint $table) {
            $table->bigIncrements("id");
             $table->string("clave");
             $table->string("valor");
@@ -23,7 +23,7 @@ class CreateDocumentoObtenidosTable extends Migration
         $path = base_path("database/catalogos/catalogos/json/s1/documentoObtenido.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_inmueble){
-            DB::table("documento_obtenidos")->insert([
+            DB::table("documentos_obtenidos")->insert([
                 "clave" => $tipo_inmueble->clave,
                 "valor" => $tipo_inmueble->valor
             ]);
