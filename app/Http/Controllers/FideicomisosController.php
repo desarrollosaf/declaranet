@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\titular;
 use Illuminate\Http\Request;
+use \App\LugarUbicacion;
+use Illuminate\Support\Arr;
 
 class FideicomisosController extends Controller
 {
@@ -24,10 +26,13 @@ class FideicomisosController extends Controller
      */
     public function create()
     {
-        $selectPrincipalesActividadLucrativa = Arr::pluck(titular::all(), "PrincipalesActividadLucrativa","id");
-        $selectLugarDondeSeUbica = Arr::pluck(titular::all(), "LugarDondeSeUbica","id");
-
-        return view("Fideicomisos.create");
+        $selectTitularActividadLucrativa = Arr::pluck(\App\Titular::all(), "valor","id");
+        $selecttipoPersona = Arr::pluck(\App\RegimenFiscal::all(), "valor","id");
+        $selectLugarDondeSeUbica = Arr::pluck(LugarUbicacion::all(), "valor","id");
+        $selectSectores = Arr::pluck(\App\sector::all(), "sector","id");
+        $respuestas = Arr::pluck(\App\Respuesta::all(),"respuesta","id");
+        return view("Fideicomisos.create",compact("selectTitularActividadLucrativa","selecttipoPersona","selectLugarDondeSeUbica","selectSectores",'respuestas'));
+        
     }
 
     /**

@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\LugarUbicacion;
 
-class CreateLugarDondeSeUbicasTable extends Migration
+class CreateLugarDondeSeUbicaTable extends Migration
 {
     /**
      * Run the migrations.

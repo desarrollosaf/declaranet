@@ -28,19 +28,145 @@
             </div>
         </div>
         <div class="card-body">
-            @include('Fideicomisos.form')
+            
+            {!! Form::open(['route'=>'fideicomisos.store', 'method'=>'POST', 'role' => 'form','id' => 'frmFideicomisos']) !!}
+           @include('Fideicomisos.form')
+           <center> {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light submitForm'] )}}</center>
+           {!! Form::close() !!}
         </div>
     </div>
 </div>
 @endsection
 @section('scripts')
 <script>
-    $("#c_principales_actividadLucrativa").on("change", function () {
+    $(document).ready(function(){
+        $(".actividad lucrativa").hide();
+        $(".PÚBLICO").show();
+        $(".AMBOS").hide();
+     
+    }
+    $("#respuestas").on("change", function () {
         if ($(this).val() == "SI") {
-            $("#contenedores").show();
+            $("#actividad lucrativa").show();
         } else {
             $("#contenedores").hide();
         }
+    $("#respuestas").on("change", function () {
+        if ($(this).val() == "NO") {
+            $("#actividad lucrativa").hide
+            ();
+        } else {
+            $("#contenedores").hide();
+        }
+        
+        
+         });
+    $(".submitForm").on("click",function(e){
+        e.preventDefault();
+        let that = this;
+        var error = false;
+        if($("#respuestas").val() == 1){
+            if($("#títular_actividad_lucrativa_id").val() == ""){
+                error = true;
+            }
+            if($("#nombre_empresa").val() == ""){
+                error = true;
+            }
+            if($("#rfc").val() == ""){
+                error = true;
+            }
+            if($("#tipoDePersona").val() == ""){
+                error = true;
+            }
+
+            if($("#cliente_principal").val() == ""){
+                error = true;
+            }
+
+            if($("#rfc").val() == ""){
+                error = true;
+            }
+
+            if($("#cliente_principal").val() == ""){
+                error = true;
+            }
+            if($("#rfc").val() == ""){
+                error = true;
+            }
+            
+      
+            if($("#razon_cliente").val() == ""){
+                error = true;
+            }
+            
+            if($("#rfc").val() == ""){
+                error = true;
+            }
+            if($("#sector").val() == ""){
+                error = true;
+            }
+            if($("#especifique").val() == ""){
+                error = true;
+            }
+            if($("#especifique").val() == ""){
+                error = true;
+            }
+            if($("#monto_beneficio").val() == ""){
+                error = true;
+            }
+            if($("#entidad_federativa").val() == ""){
+                error = true;
+            }
+            if($("#LugarUbicacio").val() == ""){
+                error = true;
+            }
+            
+            
+            
+            
+            console.log("ambito",$("#ambito").val());
+        }else if($("#ambito").val() == 2){
+            console.log("ambito",$("#ambito").val());
+            if($("#nombre_empresa").val() == ""){
+                    error = true;
+                }
+            if($("#rfc").val() == ""){
+                    error = true;
+                }
+            if($("#area").val() == ""){
+                    error = true;
+                }
+            if($("#puesto").val() == ""){
+                    error = true;
+                }
+            if($("#sector_id").val() == ""){
+                    error = true;
+                }
+            if($("#funcion_principal").val() == ""){
+                    error = true;
+                }
+            if($("#fecha_ingreso").val() == ""){
+                    error = true;
+                }
+            if($("#fecha_egreso").val() == ""){
+                    error = true;
+                }
+            if($("#observaciones").val() == ""){
+                    error = true;
+                }
+        }
+
+        console.log("error",error);
+        if(error){
+            Swal.fire({
+                title: 'Error',
+                text: 'llena todos los campos obligatorios',
+                icon: 'error'
+            });
+        }else{
+            $('#frmFideicomisos').submit();
+        }
+   
     });
 </script>
 @endsection
