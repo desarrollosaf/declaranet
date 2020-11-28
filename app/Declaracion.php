@@ -39,4 +39,8 @@ class Declaracion extends Model
     public function inversiones_cuentas() {
         return $this->belongsTo(InversionesDeclarante::class);
     }
+
+    public  function  vehiculos() {
+        return $this->hasMany(Vehiculo::class);
+    }
 }
