@@ -6,7 +6,10 @@
             <h1>BIENES MUEBLES</h1> <h5>(A la fecha de ingreso)</h5>
         </div>
         <div class="card-body">
-            @include('BienesMuebles.form')
+            {!! Form::open(['route'=>['bienes_muebles.update', $bienMueble->id], 'method'=>'PUT', 'files' => true, 'role' => 'form', 'id' => 'form-bienes-muebles']) !!}
+                @include('BienesMuebles.form')
+            {!! Form::close() !!}
+            <input type="text" value="editar" id="editar" hidden>
         </div>
     </div>
 </div>

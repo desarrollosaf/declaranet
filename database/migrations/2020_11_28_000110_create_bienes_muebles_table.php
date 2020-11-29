@@ -44,6 +44,7 @@ class CreateBienesMueblesTable extends Migration
             $table->unsignedBigInteger('tipo_moneda_id');
             $table->foreign('tipo_moneda_id')->references('id')->on('tipo_monedas');
             $table->date("fecha_adquisicion")->nullable();
+            $table->string("aclaraciones", 240)->nullable();
             $table->timestamps();
         });
     }
