@@ -83,7 +83,16 @@ class DatosCurricularesDeclaranteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nivelesSelect = Arr::pluck(nivel::all(), "valor","id");
+        array_unshift($nivelesSelect,"Selecciona una opcion");
+        $estatusSelect = Arr::pluck(Estatus::all(), "valor","id");
+        array_unshift($estatusSelect,"Selecciona una opcion");
+        $documentoSelect = Arr::pluck(DocumentoObtenido::all(), "valor","id");
+        array_unshift($documentoSelect,"Selecciona una opcion");
+        $lugaresSelect = Arr::pluck(LugarUbicacion::all(), "valor","id");
+        array_unshift($lugaresSelect,"Selecciona una opcion");
+        $curricular = DatoCurricular::find($id);
+        return view('datosCurricularesDeclarante.edit', compact("nivelesSelect","estatusSelect","documentoSelect","lugaresSelect","curricular"));
     }
 
     /**
@@ -95,7 +104,9 @@ class DatosCurricularesDeclaranteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $curricular = DatoCurricular::find($id);
+        $curricular->update($request->input('curriculares'));
+        return redirect()->route('datos_curriculares_declarante.index');
     }
 
     /**
@@ -106,6 +117,8 @@ class DatosCurricularesDeclaranteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $curricular = DatoCurricular::find($id);
+        $curricular->delete();
+        return redirect()->back();
     }
 }
