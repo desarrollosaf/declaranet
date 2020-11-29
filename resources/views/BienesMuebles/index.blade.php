@@ -20,11 +20,11 @@
                             <tbody>
                             @foreach($bienesMuebles as $item)
                                 <tr>
-                                    <td>{{$item->titular_bien_id}}</td>
+                                    <td>{{$item->TitularBien->valor}}</td>
                                     @if($item->descripcion_bien)
                                         <td>{{$item->descripcion_bien}}</td>
                                     @else
-                                        <td>{{$item->descripcion_bien}}</td>
+                                        <td>{{$item->especifique}}</td>
                                     @endif
                                     <td>
                                         <a href="{{route("bienes_muebles.edit",$item->id)}}" type="button"
@@ -56,9 +56,9 @@
             </div>
             <div class="text-center">
                 <br>
-                <a href="dsp_d_vehiculos_buscar.php" class="btn btn-sm btn-submit text-light">Ir a la sección
+                <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección
                     anterior</a>
-                <a href="dsp_inversiones_cuentas_bancarias_buscar.php" class="btn btn-sm btn-submit text-light">Ir a la
+                <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                     siguiente sección</a>
             </div>
         </div>

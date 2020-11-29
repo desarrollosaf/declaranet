@@ -8,6 +8,7 @@ use App\extranjero;
 use App\lugarDondeReside;
 use App\LugarUbicacion;
 use App\Nivelordengobierno;
+use App\Pais;
 use App\relacionConDeclarante;
 use App\Respuesta;
 use App\sector;
@@ -50,10 +51,20 @@ class DatosParejaController extends Controller
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
-        $selectEntidad = Arr::pluck(Entidad::all(), "entidad","id");
         $selectLugarReside = Arr::pluck(lugarDondeReside::all(), "valor","id");
         $selectRespuesta = Arr::pluck(Respuesta::all(), "respuesta","id");
-        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante','selectCiudadano','nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','selectEntidad', 'selectLugarReside','selectRespuesta'));
+        $selectEntidad = Arr::pluck(Entidad::all(), "entidad","id");
+        $selectPais = Arr::pluck(Pais::all(), "valor","id");
+        array_unshift($ambitos_sectores,"Selecciona una opción");
+        array_unshift($nivelOrdenGobierno,"Selecciona una opción");
+        array_unshift($ambito,"Selecciona una opción");
+        array_unshift($sectores,"Selecciona una opción");
+        array_unshift($ubicacion,"Selecciona una opción");
+        array_unshift($selectLugarReside,"Selecciona una opción");
+        array_unshift($selectRespuesta,"Selecciona una opción");
+        array_unshift($selectEntidad,"Selecciona una opción");
+        array_unshift($selectPais,"Selecciona una opción");
+        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante','selectCiudadano','nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','selectEntidad', 'selectLugarReside','selectRespuesta','selectEntidad', 'selectPais'));
     }
 
     /**

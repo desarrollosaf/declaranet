@@ -9,7 +9,6 @@
             {!! Form::open(['route'=>['bienes_muebles.update', $bienMueble->id], 'method'=>'PUT', 'files' => true, 'role' => 'form', 'id' => 'form-bienes-muebles']) !!}
                 @include('BienesMuebles.form')
             {!! Form::close() !!}
-            <input type="text" value="editar" id="editar" hidden>
         </div>
     </div>
 </div>

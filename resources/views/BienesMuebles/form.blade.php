@@ -239,13 +239,13 @@
                     $(".especifique-relacion-transmisor").hide();
                 }
             });
-            if ($("#editar").val() === "editar") {
+            @isset($bienMueble)
                 $("#titular_bien").change();
                 $("#tipo_bien").change();
                 $("#tipo_tercero").change();
                 $("#transmisor_propiedad").change();
                 $("#relacion_transmisor").change();
-            }
+            @endisset
         });
 
     </script>
