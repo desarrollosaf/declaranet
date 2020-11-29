@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BienesMuebles;
 use App\Declaracion;
 use App\tipoMoneda;
 use Carbon\Carbon;
@@ -95,7 +96,16 @@ class BienesMueblesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $selectTitular = Arr::pluck(titularBien::all(), "valor","id");
+        $selectTipoBien = Arr::pluck(tipoBienBienesMuebles::all(), "valor","id");
+        $selectTransmisores = Arr::pluck(RegimenFiscal::all(), "valor","id");
+        $selectRelacionTransmisor = Arr::pluck(relacionTransmisor::all(), "valor","id");
+        $selectFormaAdquisicion = Arr::pluck(formaAdquisicion::all(), "valor","id");
+        $selectFormaPago = Arr::pluck(FormasPagos::all(), "valor","id");
+        $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor","id");
+        $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor","id");
+        $bienMueble = BienesMuebles::find($id);
+        return view("BienesMuebles.edit", compact("selectTitular", "selectTipoBien",  "selectTransmisores", "selectRelacionTransmisor", "selectFormaAdquisicion", "selectFormaPago", "selectTipoTercero", "selectTipoMoneda", "bienMueble"));
     }
 
     /**
@@ -107,7 +117,12 @@ class BienesMueblesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->input("bienesMuebles");
+        $bienMueble = BienesMuebles::find($id);
+        $fecha_adquisicion = new Carbon($data["fecha_adquisicion"]);
+        $data["fecha_adquisicion"] = $fecha_adquisicion->format("Y-m-d");
+        $bienMueble->update($data);
+        return redirect()->route("bienes_muebles.index");
     }
 
     /**
