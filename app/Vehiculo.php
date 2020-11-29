@@ -9,8 +9,8 @@ class Vehiculo extends Model
     protected $table = 'vehiculos';
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
 
-    public function vehiculo(){
-        return $this->belongsTo(tipoVehiculo::class);
+    public function experienciable(){
+        return $this->morphTo();
     }
 
     public function relacion(){
@@ -35,5 +35,9 @@ class Vehiculo extends Model
 
     public function regimen(){
         return $this->belongsTo(RegimenFiscal::class);
+    }
+
+    public function tipo_vehiculo(){
+        return $this->belongsTo(tipoVehiculo::class,'tipoVehiculo_id');
     }
 }

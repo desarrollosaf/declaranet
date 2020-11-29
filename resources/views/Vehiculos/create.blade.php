@@ -5,8 +5,11 @@
         <div class="card-header">
         </div>
         <div class="card-body">
-           @include('Vehiculos.form')
+            {!! Form::open(['route'=>'vehiculos.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => '']) !!}
+            @include('Vehiculos.form')
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
+<input type="hidden" id="accion" value="crear">
 @endsection

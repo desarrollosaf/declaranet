@@ -11,18 +11,22 @@ use App\lugarDondeReside;
 use App\formaAdquisicion;
 use App\FormasPagos;
 use App\RegimenFiscal;
-
+use App\Titular;
+use App\Declaracion;
+use Illuminate\Support\Arr;
 
 class VehiculosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    private $request;
+    function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
     public function index()
     {
-      return view("Vehiculos.index");
+        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $vehiculos = $declaracion->vehiculos;
+        return view("Vehiculos.index", compact('vehiculos'));
     }
 
     /**
@@ -81,7 +85,14 @@ class VehiculosController extends Controller
             $regimen[$item->id] = $item->valor;
         }
 
-        return view("Vehiculos.create", compact('vehiculo',  'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen'));
+        $titular_inmueble = Titular::all();
+        $titular = [];
+        $titular[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($titular_inmueble as $item){
+            $titular[$item->id] = $item->valor;
+        }
+
+        return view("Vehiculos.create", compact('vehiculo',  'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular'));
     }
 
     /**
@@ -95,7 +106,7 @@ class VehiculosController extends Controller
         $vehiculos = $this->request->input("vehiculos");
         $vehiculos['declaracion_id']=$this->request->session()->get('declaracion_id');
         Vehiculo::create($vehiculos);
-        return redirect("Vehiculos");
+        return redirect("vehiculos");
     }
 
     /**
@@ -117,7 +128,17 @@ class VehiculosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vehiculos = Vehiculo::find($id);
+        $vehiculo = Arr::pluck(tipoVehiculo::all(), 'valor','id');
+        $relacion = Arr::pluck(relacionTransmisor::all(),'valor','id');
+        $registro = Arr::pluck(lugarDondeReside::all(), "valor","id");
+        $tipoAdquisicion = Arr::pluck(formaAdquisicion::all(), "valor","id");
+        $pago = Arr::pluck(FormasPagos::all(), "valor","id");
+        $pais = Arr::pluck(Pais::all(), "valor","id");
+        $regimen = Arr::pluck(RegimenFiscal::all(), "valor","id");
+        $titular = Arr::pluck(Titular::all(), "valor","id");
+
+        return view("Vehiculos.edit", compact( 'vehiculos', 'vehiculo','relacion','registro','tipoAdquisicion','pago','pais','regimen','titular'));
     }
 
     /**
@@ -129,7 +150,10 @@ class VehiculosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $vehiculosDate = $request->input("vehiculos");
+        $vehiculo= Vehiculo::find($id);
+        $vehiculo->update($vehiculosDate);
+        return redirect()->route("vehiculos.index");
     }
 
     /**
@@ -140,6 +164,8 @@ class VehiculosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vehiculo = Vehiculo::find($id);
+        $vehiculo->delete();
+        return redirect()->route("vehiculos.index");
     }
 }

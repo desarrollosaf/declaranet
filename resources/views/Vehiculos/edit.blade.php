@@ -6,11 +6,12 @@
             <h1>VEHICULOS</h1> <h5>(A la fecha de ingreso)</h5>
         </div>
         <div class="card-body">
-            @include('Vehículos.form')
+            {!! Form::model($vehiculos, ['route' => ['vehiculos.update', $vehiculos->id], 'method' => 'put'] ) !!}
+            @include('vehiculos.form')
+
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
+    <input type="hidden" id="accion" value="editar">
 @endsection
-
-
-
