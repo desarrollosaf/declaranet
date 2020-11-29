@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\InversionesDeclarante;
 use App\Declaracion;
 use App\subTipoInversion;
+use App\Pais;
 use Illuminate\Support\Arr;
 
 
@@ -39,7 +40,8 @@ class InversionesDeclaranteController extends Controller
         $tipoDeclarante = Arr::pluck(\App\titularInversion::all(), "valor","id");
         $tipoInversion = Arr::pluck(\App\tipoInversion::all(), "valor","id");
         $subTipoInversion = Arr::pluck(\App\subTipoInversion::all(), "valor","id");
-        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion'));
+        $paises = Arr::pluck(\App\Pais::all(), "valor","id");
+        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises'));
 
     }
 
@@ -51,7 +53,10 @@ class InversionesDeclaranteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inversionesDeclarante = $this->request->input("inversiones");
+        $inversionesDeclarante['declaracion_id']=$this->request->session()->get('declaracion_id');
+        InversionesDeclarante::create($inversionesDeclarante);
+        return redirect()->back()->with('success', 'Se registraron los datos del servidor');
     }
 
     /**
