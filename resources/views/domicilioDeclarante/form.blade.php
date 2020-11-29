@@ -39,65 +39,54 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
-<div class="form-row">
-    <div class="form-group col-md-12">
-        <strong>{!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}</strong>
-        {!! Form::textarea('domicilio[observaciones]', isset($domicilio) ? $domicilio->observaciones : null, ['class'=>'form-control alert-danger', 'id' => 'observaciones']) !!}
-    </div>
-</div>
 
-<div class="form-row">
-    <div class="form-group col-md-12">
-        {!! Form::label('nota', ' Todos los campos marcados con * son obligatorios. ') !!}
-    </div>
-</div>
-@section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function(){
+@push('scripts')
+<script type="text/javascript">
+    $(document).ready(function () {
 
-        });
-        $("#entidad_id").on('change', function (){
-            var idEntidad = $(this).val();
-            if(parseInt(idEntidad) === 15){
-                $(".foraneo").hide();
+    });
+    $("#entidad_id").on('change', function () {
+        var idEntidad = $(this).val();
+        if (parseInt(idEntidad) === 15) {
+            $(".foraneo").hide();
+        }
+        $.ajax({
+            url: "{{asset('getMunicipiosDomicilio')}}/" + idEntidad,
+            type: 'get',
+            dataType: 'json',
+            success: function (response) {
+                console.log(response);
+                $("#municipio_id").find('option').remove();
+                $("#municipio_id").append('<option value="">-- Selecciona un municipio</option>');
+                $(response).each(function (i, v) { // indice, valor
+                    $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
+                });
             }
+        });
+    });
+    $("#municipio_id").on("change", function () {
+        if ($(this).val() != "") {
             $.ajax({
-                url: "{{asset('getMunicipiosDomicilio')}}/" + idEntidad,
+                url: "{{asset('getAsentamientosDomicilio')}}/" + $(this).val(),
                 type: 'get',
                 dataType: 'json',
                 success: function (response) {
                     console.log(response);
-                    $("#municipio_id").find('option').remove();
-                    $("#municipio_id").append('<option value="">-- Selecciona un municipio</option>');
+                    $("#asentamiento_id").find('option').remove();
+                    $("#asentamiento_id").append('<option data-codigo_postal="" value="">-- Selecciona un asentamiento</option>');
                     $(response).each(function (i, v) { // indice, valor
-                        $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
+                        $("#asentamiento_id").append('<option data-codigo_postal="' + v.codigo_postal + '" value="' + v.id + '">' + v.asentamiento + '</option>');
                     });
                 }
             });
-        });
-        $("#municipio_id").on("change",function(){
-            if($(this).val() != ""){
-                $.ajax({
-                    url: "{{asset('getAsentamientosDomicilio')}}/" + $(this).val(),
-                    type: 'get',
-                    dataType: 'json',
-                    success: function (response) {
-                        console.log(response);
-                        $("#asentamiento_id").find('option').remove();
-                        $("#asentamiento_id").append('<option data-codigo_postal="" value="">-- Selecciona un asentamiento</option>');
-                        $(response).each(function (i, v) { // indice, valor
-                            $("#asentamiento_id").append('<option data-codigo_postal="'+v.codigo_postal+'" value="' + v.id + '">' + v.asentamiento + '</option>');
-                        });
-                    }
-                });
-            }
-        });
-        $("#asentamiento_id").on("change",function(){
-            if($(this).val() != ""){
-                $("#cp").val($("#asentamiento_id option:selected").data("codigo_postal"));
-            }else{
-                $("#cp").val("");
-            }
-        });
-    </script>
-@endsection
+        }
+    });
+    $("#asentamiento_id").on("change", function () {
+        if ($(this).val() != "") {
+            $("#cp").val($("#asentamiento_id option:selected").data("codigo_postal"));
+        } else {
+            $("#cp").val("");
+        }
+    });
+</script>
+@endpush

@@ -48,7 +48,9 @@
             </div>
         </div>
         <div class="card-body">
+            {!! Form::open(['route'=>'bienes_inmuebles.store', 'method'=>'POST',  'role' => 'form', 'id' => 'frm_BienesInmuebles']) !!}
            @include('BienesInmuebles.form')
+           {!! Form::close() !!}
         </div>
     </div>
 </div>

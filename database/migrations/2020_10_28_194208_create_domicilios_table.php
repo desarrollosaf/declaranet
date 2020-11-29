@@ -23,11 +23,15 @@ class CreateDomiciliosTable extends Migration
             $table->unsignedBigInteger("asentamiento_id")->nullable();
             $table->unsignedBigInteger("entidad_id")->nullable();
             $table->unsignedBigInteger("municipio_id")->nullable();
+            $table->string("municipio")->nullable();
+            $table->unsignedBigInteger("pais_id")->nullable();
+            $table->string("pais")->nullable();
             $table->foreign("asentamiento_id")->references("id")->on("asentamientos");
             $table->foreign("entidad_id")->references("id")->on("entidades");
+            $table->string("entidad")->nullable();
             $table->foreign("municipio_id")->references("id")->on("municipios");
             $table->string("codigo_postal");
-            $table->string("observaciones");
+            $table->string("observaciones")->nullable();
             $table->string("colonia");
             $table->index(['domiciliable_id', 'domiciliable_type']);
             $table->timestamps();
