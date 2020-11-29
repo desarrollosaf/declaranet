@@ -31,7 +31,9 @@ class BienesMueblesController extends Controller
 
     public function index()
     {
-       return view("Bienesmuebles.index");
+        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $bienesMuebles = $declaracion->BienesMuebles;
+       return view("Bienesmuebles.index", compact("bienesMuebles"));
     }
 
     /**
@@ -74,7 +76,7 @@ class BienesMueblesController extends Controller
         $bienesMuebles["fecha_adquisicion"] = $fecha_adquisicion->format("Y-m-d");
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
         $declarante->BienesMuebles()->create($bienesMuebles);
-        return redirect()->back();
+        return redirect()->route("bienes_muebles.index");
     }
 
     /**
@@ -133,6 +135,7 @@ class BienesMueblesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bien = BienesMuebles::find($id)->destroy();
+        return redirect()->route("bienes_muebles.index");
     }
 }
