@@ -21,17 +21,17 @@
                             @foreach($curriculares as $curricular)
                             <tr>
                                 <td><center>{{$curricular->nivel->valor}}</center></td>
-                                <td><center>{{$curricular->institucion}}</center></td>
-                                <td><center>{{$curricular->carrera}}</center></td>
+                                <td><center>{{$curricular->institucion_educativa}}</center></td>
+                                <td><center>{{$curricular->carrera_area}}</center></td>
                                 <td><center>{{$curricular->estatus->valor}}</center></td>
                                 <td class="all">
-                                    {!! Form::open(['action' => ['ExperienciaLaboralController@destroy', $curricular->id], 'method'=>'DELETE']) !!}
+                                    {!! Form::open(['action' => ['DatosCurricularesDeclaranteController@destroy', $curricular->id], 'method'=>'DELETE']) !!}
                                     <div style="display: inline-block;">
-                                        <a href="{{route('experiencia_laboral.edit',[$curricular])}}" class="btn btn-xs btn-warning">
+                                        <a href="{{route('datos_curriculares_declarante.edit',[$curricular])}}" class="btn btn-xs btn-warning">
                                             <i class="ion ion-edit"></i>
                                         </a>
                                         <button class="btn btn-xs btn-danger btn-borrar">
-                                            <i class="ion ion-trash-a btn-borrar"></i>
+                                            <i class="ion ion-trash-a"></i>
                                         </button>
                                     </div>
                                     {!! Form::close() !!}
@@ -71,6 +71,23 @@
                     $("#carrera").prop("disabled", false);
                 }
             });
+        });
+        $('.btn-borrar').on('click', function (e) {
+            let that = this;
+            console.log('boton clic');
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Está seguro?',
+                text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    $(that).closest('form').submit();
+                }
+            });            
+            return false;
         });
     </script>
 @endsection
