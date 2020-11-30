@@ -49,7 +49,7 @@ class Declaracion extends Model
         return $this->hasMany(BienesMuebles::class);
     }
     public  function pareja() {
-        return $this->belongsTo(DatosPareja::class);
+        return $this->hasOne(DatosPareja::class);
     }
     public  function datos_empleo_declarante(){
         return $this->hasOne(DatoEmpleoDeclarante::class);
