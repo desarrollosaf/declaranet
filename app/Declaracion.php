@@ -51,4 +51,7 @@ class Declaracion extends Model
     public  function pareja() {
         return $this->belongsTo(DatosPareja::class);
     }
+    public  function datos_empleo_declarante(){
+        return $this->hasOne(DatoEmpleoDeclarante::class);
+    }
 }
