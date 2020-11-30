@@ -7,6 +7,7 @@ use App\InversionesDeclarante;
 use App\Declaracion;
 use App\subTipoInversion;
 use App\Pais;
+use App\tipoMoneda;
 use Illuminate\Support\Arr;
 
 
@@ -41,7 +42,8 @@ class InversionesDeclaranteController extends Controller
         $tipoInversion = Arr::pluck(\App\tipoInversion::all(), "valor","id");
         $subTipoInversion = Arr::pluck(\App\subTipoInversion::all(), "valor","id");
         $paises = Arr::pluck(\App\Pais::all(), "valor","id");
-        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises'));
+        $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
+        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda'));
 
     }
 

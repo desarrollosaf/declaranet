@@ -1,7 +1,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.tipo_de_inversion', 'Tipo de inversión / activo:') !!}
-        {!! Form::select('inversiones[tipo_de_inversion]', isset($inveriones) ? $tipoInversion : [], isset($inversiones) ? $inversiones->tipo_de_inversion : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_inversion', 'onchange' => 'tipoInversion()']) !!}
+        {!! Form::select('inversiones[tipo_de_inversion]', $tipoInversion, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_inversion', 'onchange' => 'tipoInversion()']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -64,7 +64,7 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.tipo_de_moneda', 'Tipo de moneda:') !!}
-        {!! Form::text('inversiones[tipo_de_moneda]',isset($inversiones) ? $inversiones->tipo_de_moneda : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'tipo_de_moneda']) !!}
+        {!! Form::select('inversiones[tipo_de_moneda]',$tipoMoneda, [],['class'=>'form-control', 'placeholder'=>'Seleccione una opcion','id' => 'tipo_de_moneda']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
