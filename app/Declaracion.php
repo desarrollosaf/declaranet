@@ -48,4 +48,7 @@ class Declaracion extends Model
     public  function BienesMuebles() {
         return $this->hasMany(BienesMuebles::class);
     }
+    public  function pareja() {
+        return $this->belongsTo(DatosPareja::class);
+    }
 }

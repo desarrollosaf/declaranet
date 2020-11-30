@@ -21,16 +21,19 @@ class CreateDatosParejasTable extends Migration
             $table->string("primer_apellido");
             $table->string("segundo_apellido")->nullable();
             $table->date("fecha_nacimiento");
-            $table->string("rfc")->nullable();
+            $table->string("rfc_pareja")->nullable();
             $table->unsignedBigInteger("relacion_id");
             $table->foreign("relacion_id")->references("id")->on("relacion_con_declarantes");
             $table->unsignedBigInteger("ciudadano_id");
             $table->foreign("ciudadano_id")->references("id")->on("extranjeros");
             $table->string("curp")->nullable();
-            $table->boolean("dependiente_economico");
-            $table->boolean("mismo_domicilio");
-            $table->unsignedBigInteger("lugar_reside_id");
+            $table->unsignedBigInteger("respuesta_dependiente_id");
+            $table->foreign("respuesta_dependiente_id")->references("id")->on("respuestas");
+            $table->unsignedBigInteger("respuesta_domicilio_id");
+            $table->foreign("respuesta_domicilio_id")->references("id")->on("respuestas");
+            $table->unsignedBigInteger("lugar_reside_id")->nullable();
             $table->foreign("lugar_reside_id")->references("id")->on("lugar_donde_resides");
+            $table->string("observaciones")->nullable();
             $table->timestamps();
         });
     }

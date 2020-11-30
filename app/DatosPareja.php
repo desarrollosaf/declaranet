@@ -17,7 +17,7 @@ class DatosPareja extends Model
         return $this->belongsTo(extranjero::class);
     }
 
-    public function lugarResidencia(){
+    public function lugarReside(){
         return $this->belongsTo(lugarDondeReside::class);
     }
 
@@ -25,8 +25,8 @@ class DatosPareja extends Model
         return $this->morphOne(Domicilio::class,"domiciliable");
     }
 
-    public function actividadLaboral(){
-        return $this->morphOne(actividadLaboral::class, "actividadLaboral");
+    public function experienciaLaboral(){
+        return $this->morphOne(ExperienciaLaboral::class, "experienciable");
     }
 }
 
