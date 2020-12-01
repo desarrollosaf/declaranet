@@ -20,11 +20,11 @@
 <div class="form-row" id="mydiv" style="display: none">
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.tipo_de_tercero_id', 'Tipo de Tercero:') !!}
-        {!! Form::select('inversiones[tipo_de_tercero_id]', $tipoPersona, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_tercero']) !!}
+        {!! Form::select('inversiones[tipo_de_tercero_id]', $tipoPersona, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_tercero', 'onchange' => 'ShowSelected()']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.nombre_del_tercero', 'Nombre del Tercero:') !!}
+        {!! Form::label('inversiones.nombre_del_tercero', 'Nombre del Tercero:', ['id' => 'labelter']) !!}
         {!! Form::text('inversiones[nombre_del_tercero]',isset($inversiones) ? $inversiones->nombre_del_tercero : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nombre_del_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -117,6 +117,19 @@
             $('#paises').hide();
         }
 
+    }
+
+    function ShowSelected() { 
+        var cod = document.getElementById("tipo_de_tercero").value;
+        var txt = document.getElementById("labelter").value;  
+        /* Para obtener el texto */
+        var combo = document.getElementById("tipo_de_tercero");
+        var selected = combo.options[combo.selectedIndex].value;  
+        if (selected > "1") {
+            document.getElementById('labelter').innerText = 'Razón social del tercero:';
+        } else {
+            document.getElementById('labelter').innerText = 'Nombre del Tercero:';
+        }
     }
 </script>
 @section('scripts')
