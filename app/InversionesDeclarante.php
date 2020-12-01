@@ -14,7 +14,7 @@ class InversionesDeclarante extends Model
     }
 
     public function nombreTitular(){
-        return $this->belongsTo(titularInversion::class);
+        return $this->hasOne(titularInversion::class);
     }
   
 }

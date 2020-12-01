@@ -1,26 +1,26 @@
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.tipo_de_inversion', 'Tipo de inversión / activo:') !!}
-        {!! Form::select('inversiones[tipo_de_inversion]', $tipoInversion, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_inversion', 'onchange' => 'tipoInversion()']) !!}
+        {!! Form::label('inversiones.tipo_de_inversion_id', 'Tipo de inversión / activo:') !!}
+        {!! Form::select('inversiones[tipo_de_inversion_id]', $tipoInversion, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_inversion', 'onchange' => 'tipoInversion()']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.descripcion_tipo_inversion', 'Fondo de inversión:') !!}
-        {!! Form::select('inversiones[descripcion_tipo_inversion]', $subTipoInversion, [],['class'=>'form-control', 'id' => 'descripcion_tipo_inversion', 'required' => 'true']) !!}
+        {!! Form::label('inversiones.descripcion_tipo_inversion_id', 'Fondo de inversión:') !!}
+        {!! Form::select('inversiones[descripcion_tipo_inversion_id]', $subTipoInversion, [],['class'=>'form-control', 'id' => 'descripcion_tipo_inversion', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.titular_inversion', 'Titular de la inversión, cuenta bancaria y otros tipo de valores:') !!}
-        {!! Form::select('inversiones[titular_inversion]', $tipoDeclarante, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'inputSelect', 'onchange' => 'seleccionado()']) !!}
+        {!! Form::label('inversiones.titular_inversion_id', 'Titular de la inversión, cuenta bancaria y otros tipo de valores:') !!}
+        {!! Form::select('inversiones[titular_inversion_id]', $tipoDeclarante, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'inputSelect', 'onchange' => 'seleccionado()']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 
 <div class="form-row" id="mydiv" style="display: none">
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.tipo_de_tercero', 'Tipo de Tercero:') !!}
-        {!! Form::select('inversiones[tipo_de_tercero]', $tipoPersona, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_tercero']) !!}
+        {!! Form::label('inversiones.tipo_de_tercero_id', 'Tipo de Tercero:') !!}
+        {!! Form::select('inversiones[tipo_de_tercero_id]', $tipoPersona, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -36,8 +36,8 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.ubicacion_inversion', '¿Dónde se localiza la inversión, cuenta bancaria y otro tipo de valores/activos?:') !!}
-        {!! Form::select('inversiones[ubicacion_inversion]', $ubicacionInversion, [],['class'=>'form-control','id' => 'localizacion_cuenta', 'onchange' => 'pais()', 'required' => 'true']) !!}
+        {!! Form::label('inversiones.ubicacion_inversion_id', '¿Dónde se localiza la inversión, cuenta bancaria y otro tipo de valores/activos?:') !!}
+        {!! Form::select('inversiones[ubicacion_inversion_id]', $ubicacionInversion, [],['class'=>'form-control','id' => 'localizacion_cuenta', 'onchange' => 'pais()', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -51,8 +51,8 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
-        {!! Form::label('inversiones.pais_ubicacion_cuenta', 'País dónde se localiza:') !!}
-        {!! Form::select('inversiones[pais_ubicacion_cuenta]',$paises, [],['class'=>'form-control', 'placeholder'=>'Seleccione una opcion','id' => 'pais_cuenta']) !!}
+        {!! Form::label('inversiones.pais_ubicacion_cuenta_id', 'País dónde se localiza:') !!}
+        {!! Form::select('inversiones[pais_ubicacion_cuenta_id]',$paises, [],['class'=>'form-control', 'placeholder'=>'Seleccione una opcion','id' => 'pais_cuenta']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -63,8 +63,8 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.tipo_de_moneda', 'Tipo de moneda:') !!}
-        {!! Form::select('inversiones[tipo_de_moneda]',$tipoMoneda, [],['class'=>'form-control', 'placeholder'=>'Seleccione una opcion','id' => 'tipo_de_moneda']) !!}
+        {!! Form::label('inversiones.tipo_de_moneda_id', 'Tipo de moneda:') !!}
+        {!! Form::select('inversiones[tipo_de_moneda_id]',$tipoMoneda, [],['class'=>'form-control', 'placeholder'=>'Seleccione una opcion','id' => 'tipo_de_moneda']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">

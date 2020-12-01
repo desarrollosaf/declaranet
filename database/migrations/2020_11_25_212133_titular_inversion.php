@@ -18,6 +18,7 @@ class TitularInversion extends Migration
             $table->string("clave");
             $table->string("valor");
             $table->timestamps();
+            $table->softDeletes();
         });
         $path = base_path("database/catalogos/catalogos/json/titularInversiones.json");
         $json = json_decode(file_get_contents($path));
