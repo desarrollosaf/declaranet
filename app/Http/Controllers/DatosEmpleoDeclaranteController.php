@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Declaracion;
 use App\sector;
 use Illuminate\Http\Request;
 use App\NivelOrdenGobierno;
 use App\ambitoPublico;
 use App\sectores;
 use App\DatoEmpleoDeclarante;
+use Illuminate\Support\Arr;
 
 class DatosEmpleoDeclaranteController extends Controller
 {
@@ -18,7 +20,12 @@ class DatosEmpleoDeclaranteController extends Controller
     }
     public function index()
     {
-
+        $declarante = Declaracion::find($this->request->session()->get("declaracion_id"));
+        if($declarante->datos_empleo_declarante == null){
+            return redirect()->route("datos_empleo_declarante.create");
+        }else{
+            return redirect()->route("datos_empleo_declarante.edit",$declarante->datos_empleo_declarante->id);
+        }
     }
 
     /**
@@ -28,6 +35,8 @@ class DatosEmpleoDeclaranteController extends Controller
      */
     public function create()
     {
+        $declaracion = Declaracion::find($this->request->session()->get("declaracion_id"));
+
         $nivel_orden = NivelOrdenGobierno::all();
         $nivel = [];
         $nivel[""] = "SELECCIONA UNA OPCIÓN";
@@ -41,14 +50,15 @@ class DatosEmpleoDeclaranteController extends Controller
         foreach ($ambito_publico as $item){
             $ambito[$item->id] = $item->valor;
         }
+
         $sectores = sector::all();
         $sector= [];
         $sector[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($sectores as $item){
         $sector[$item->id] = $item->valor;
         }
-        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector"));
 
+        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector", "declaracion"));
     }
 
     /**
@@ -59,12 +69,10 @@ class DatosEmpleoDeclaranteController extends Controller
      */
     public function store(Request $request)
     {
-
         $datos_empleo_declarante = $this->request->input("datos_empleo_declarante");
         $datos_empleo_declarante['declaracion_id']=$this->request->session()->get('declaracion_id');
         DatoEmpleoDeclarante::create($datos_empleo_declarante);
         return redirect("experiencia_laboral");
-
     }
 
     /**
@@ -86,7 +94,12 @@ class DatosEmpleoDeclaranteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $DatoEmpleoDeclarante = DatoEmpleoDeclarante::find($id);
+        $nivel = Arr::pluck(NivelOrdenGobierno::all(), 'valor','id');
+        $ambito = Arr::pluck(ambitoPublico::all(), 'valor','id');
+        $sector = Arr::pluck(sector::all(), 'valor','id');
+        return view("datosEmpleoDeclarante.edit", compact( 'DatoEmpleoDeclarante','nivel','ambito','sector'));
+
     }
 
     /**
@@ -98,7 +111,10 @@ class DatosEmpleoDeclaranteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datos_empleo_declarante = $request->input("datos_empleo_declarante");
+        $datosEmpleo= DatoEmpleoDeclarante::find($id);
+        $datosEmpleo->update($datos_empleo_declarante);
+        return redirect("experiencia_laboral");
     }
 
     /**
