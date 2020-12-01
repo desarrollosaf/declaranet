@@ -57,7 +57,7 @@
     </div>
     <div class="form-group col-md-6 lugar-reside">
         <strong>{!! Form::label('datosPareja.lugar_reside_id', 'Lugar donde reside:') !!}</strong>
-        {!! Form::select('datosPareja[lugar_reside_id]',$selectLugarReside,(isset($pareja->lugar_reside_id)) ? $pareja->lugar_reside_id : null,['class'=>'form-control alert-danger',  'id' => 'lugar-reside']) !!}
+        {!! Form::select('datosPareja[lugar_reside_id]',$selectLugarReside,(isset($pareja->lugar_reside_id)) ? $pareja->lugar_reside_id : null,['class'=>'form-control alert-danger lugar-reside-change',  'id' => 'lugar-reside']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -72,12 +72,12 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('exterior', 'Número exterior:') !!}</strong>
-            {!! Form::number('domicilio[num_ext]',isset($domicilio) ? $domicilio->numext : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior"]) !!}
+            {!! Form::number('domicilio[num_ext]',isset($domicilio->num_int) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
-            {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->numint : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
+            {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -295,16 +295,34 @@
                 if (parseInt($(this).val()) === 1) {
                     $('.domicilio-MXBinmuebles').show();
                     $('.domicilio-EXBinmuebles').hide();
-                    $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
                 } else if (parseInt($(this).val()) === 2) {
                     $('.domicilio-MXBinmuebles').hide();
-                    $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
                     $('.domicilio-EXBinmuebles').show();
+                    $('#municipio_id').find("option").remove();
                 } else {
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').find("input").val("");
+                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("input").val("");
+                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $('#municipio_id').find("option").remove();
+                }
+            });
+            $('.lugar-reside-change').change(function () {
+                if (parseInt($(this).val()) === 1) {
+                    $('.domicilio-EXBinmuebles').find("input").val("");
+                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                } else if (parseInt($(this).val()) === 2) {
+                    $('.domicilio-MXBinmuebles').find("input").val("");
+                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                } else {
+                    $('.domicilio-MXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').find("input").val("");
+                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("input").val("");
+                    $('.domicilio-MXBinmuebles').find("select").val(0);
                 }
             });
             $("#entidad_id").on('change', function () {
@@ -329,12 +347,15 @@
             $("#habita-domicilio").change(function () {
                 const respuesta = parseInt($(this).val());
                 if (respuesta !== 2) {
-                    $(".domicilio-MXBinmuebles").hide();
-                    $(".domicilio-EXBinmuebles").hide();
-                    $("#lugar-reside").prop("disabled", true);
+                    $('.domicilio-MXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').find("input").val("");
+                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("input").val("");
+                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $("#lugar-reside").val("0");
                     $(".lugar-reside").hide();
                 } else {
-                    $("#lugar-reside").prop("disabled", false);
                     $(".lugar-reside").show();
                     $("#lugar-reside").change();
 
