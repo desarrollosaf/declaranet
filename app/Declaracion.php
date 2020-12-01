@@ -37,7 +37,7 @@ class Declaracion extends Model
         return $this->morphMany(ExperienciaLaboral::class, 'experienciable');
     }
     public function inversiones_cuentas() {
-        return $this->belongsTo(InversionesDeclarante::class);
+        return $this->hasMany(InversionesDeclarante::class);
     }
     public function datos_curriculares() {
         return $this->morphMany(DatoCurricular::class, 'curricular');

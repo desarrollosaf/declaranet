@@ -5,8 +5,8 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.descripcion_tipo_de_inversion', 'Fondo de inversión:') !!}
-        {!! Form::select('inversiones[descripcion_tipo_de_inversion]', $subTipoInversion, [],['class'=>'form-control', 'id' => 'descripcion_tipo_de_inversion', 'required' => 'true']) !!}
+        {!! Form::label('inversiones.descripcion_tipo_inversion', 'Fondo de inversión:') !!}
+        {!! Form::select('inversiones[descripcion_tipo_inversion]', $subTipoInversion, [],['class'=>'form-control', 'id' => 'descripcion_tipo_inversion', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 
@@ -20,7 +20,7 @@
 <div class="form-row" id="mydiv" style="display: none">
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.tipo_de_tercero', 'Tipo de Tercero:') !!}
-        {!! Form::text('inversiones[tipo_de_tercero]',isset($inversiones) ? $inversiones->tipo_de_tercero : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'tipo_de_tercero']) !!}
+        {!! Form::select('inversiones[tipo_de_tercero]', $tipoPersona, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -37,7 +37,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.ubicacion_inversion', '¿Dónde se localiza la inversión, cuenta bancaria y otro tipo de valores/activos?:') !!}
-        {!! Form::select('inversiones[descripcion_tipo_de_inversion]', $subTipoInversion, [],['class'=>'form-control','id' => 'localizacion_cuenta', 'onchange' => 'pais()', 'required' => 'true']) !!}
+        {!! Form::select('inversiones[ubicacion_inversion]', $ubicacionInversion, [],['class'=>'form-control','id' => 'localizacion_cuenta', 'onchange' => 'pais()', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -133,10 +133,10 @@
                 dataType: 'json',
                 success: function (response) {
                     console.log(response);
-                    $("#descripcion_tipo_de_inversion").find('option').remove();
-                    $("#descripcion_tipo_de_inversion").append('<option value="">-- Selecciona tipo inversion</option>');
+                    $("#descripcion_tipo_inversion").find('option').remove();
+                    $("#descripcion_tipo_inversion").append('<option value="">-- Selecciona tipo inversion</option>');
                     $(response).each(function (i, v) { // indice, valor
-                        $("#descripcion_tipo_de_inversion").append('<option value="' + v.id + '">' + v.valor + '</option>');
+                        $("#descripcion_tipo_inversion").append('<option value="' + v.id + '">' + v.valor + '</option>');
                     });
                 }
             });

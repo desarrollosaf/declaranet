@@ -8,6 +8,8 @@ use App\Declaracion;
 use App\subTipoInversion;
 use App\Pais;
 use App\tipoMoneda;
+use App\tipoPersona;
+use App\ubicacionInversion;
 use Illuminate\Support\Arr;
 
 
@@ -27,6 +29,7 @@ class InversionesDeclaranteController extends Controller
     {   
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $inversiones = $declaracion->inversiones_cuentas;
+        //dd($inversiones[0]->tipoInversion);
         //$inversiones= InversionesDeclarante::find($this->request->session()->get('declaracion_id'));
         return view("inversionesDeclarante.index", compact('inversiones'));
     }
@@ -43,7 +46,9 @@ class InversionesDeclaranteController extends Controller
         $subTipoInversion = Arr::pluck(\App\subTipoInversion::all(), "valor","id");
         $paises = Arr::pluck(\App\Pais::all(), "valor","id");
         $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
-        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda'));
+        $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
+        $ubicacionInversion = Arr::pluck(\App\ubicacionInversion::all(), "valor","id");
+        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion'));
 
     }
 
@@ -57,6 +62,7 @@ class InversionesDeclaranteController extends Controller
     {
         $inversionesDeclarante = $this->request->input("inversiones");
         $inversionesDeclarante['declaracion_id']=$this->request->session()->get('declaracion_id');
+        //dd($inversionesDeclarante);
         InversionesDeclarante::create($inversionesDeclarante);
         return redirect()->back()->with('success', 'Se registraron los datos del servidor');
     }
@@ -80,7 +86,17 @@ class InversionesDeclaranteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tipoDeclarante = Arr::pluck(\App\titularInversion::all(), "valor","id");
+        $tipoInversion = Arr::pluck(\App\tipoInversion::all(), "valor","id");
+        $subTipoInversion = Arr::pluck(\App\subTipoInversion::all(), "valor","id");
+        $paises = Arr::pluck(\App\Pais::all(), "valor","id");
+        $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
+        $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
+        $ubicacionInversion = Arr::pluck(\App\ubicacionInversion::all(), "valor","id");
+        $inversiones = InversionesDeclarante::find($id);
+
+        //return view("inversionesDeclarante.edit",\compact("inversiones","id"));
+        return view("inversionesDeclarante.edit", compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion','inversiones'));
     }
 
     /**
