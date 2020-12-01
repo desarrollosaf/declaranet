@@ -9,19 +9,19 @@ class BeneficioPrivado extends Model
     protected $table = 'beneficios_privados';
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
 
-    public function tipo_beneficio(){
+    public function tipoBeneficio(){
         return $this->belongsTo(tipoBeneficio::class);
     }
 
-    public function beneficiarios_programa(){
-        return $this->belongsTo(beneficiariosPrograma::class);
+    public function beneficiariosP(){
+        return $this->belongsTo(beneficiariosPrograma::class,'beneficiario_id');
     }
 
-    public function sector(){
-        return $this->belongsTo(sector::class);
+    public function sectoresP(){
+        return $this->belongsTo(sector::class,'sector_id');
     }
 
-    public function forma_recepcion(){
+    public function formaRecepcion(){
         return $this->belongsTo(formaRecepcion::class);
     }
 }

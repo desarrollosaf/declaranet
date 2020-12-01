@@ -1,40 +1,50 @@
 @extends('layouts.app')
 @section('content')
-    <div class="card">
+<div class="container">
+    <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
-            <h1>BENEFICIOS PRIVADOS</h1>
-            <h6>(Hasta los últimos dos años)</h6>
+            <h1>BENEFICIOS PRIVADOS<br>
+                (Hasta los últimos dos años)</h1>
+        </div>
+        <div class="table-responsive">
+            <label>
+            Es la contribución monetaria o en especie que otorga una persona física o moral con recursos privados, al Declarante, pareja y/o dependientes económicos.<br>
+            Deberá señalar la información de CADA BENEFICIO PRIVADO recibido por el Declarante, pareja y/o dependientes económicos.</label>
         </div>
         <div class="card-body">
-            <div class="table-responsive">
-                Es la contribución monetaria o en especie que otorga una persona física o moral con recursos privados, al Declarante, pareja y/o dependientes económicos.<br>
-                Deberá señalar la información de CADA BENEFICIO PRIVADO recibido por el Declarante, pareja y/o dependientes económicos.
-            </div>
-            <div class="col-md-12">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th>Tipo de beneficio</th>
-                        <th>beneficiario</th>
-                        <th>Sector Productivo</th>
-                        <th>Tipo de otorgante</th>
-                        <th>Nombre</th>
-                        <th>Recepción</th>
-                        <th>Monto</th>
-                        <th>Acciones</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+            <table class="table table-bordered table-striped">
+                <thead class="text-center text-light">
+                <tr>
+                    <th scope="col" width="20%">Tipo de beneficio</th>
+                    <th scope="col" width="20%">Beneficiario</th>
+                    <th scope="col" width="40%">Información adicional</th>
+                    <th scope="col" width="20%">Acciones</th></tr>
+                </thead>
+                <tbody class="text-center">
+
                     @foreach($beneficios as $beneficio)
                         <tr>
-                            <td>{{$beneficio->tipo_beneficio_id}}</td>
-                            <td>{{$beneficio->beneficiario_id}}</td>
-                            <td>{{$beneficio->sector_id}}</td>
-                            <td>{{$beneficio->otorgante_id}}</td>
-                            <td>{{$beneficio->nombre_otorgante}}</td>
-                            <td>{{$beneficio->forma_recepcion_id}}</td>
-                            <td>{{$beneficio->monto_mensual}}</td>
-                            <td><button>EDITAR</button></td>
+                            <td>{{$beneficio->tipoBeneficio->valor}}</td>
+                            <td>{{$beneficio->beneficiariosP->valor}}</td>
+                            <td>
+                                <center>
+                                    <strong>Sector: </strong> {{$beneficio->sectoresP->valor}} <br>
+                                    <strong>Nombre del otorgante:</strong> {{$beneficio->nombre_otorgante}} {{$beneficio->razon_social_otorgante}}<br>
+                                    <strong>Forma de recepción:</strong> {{$beneficio->formaRecepcion->valor}}
+                                </center>
+                            </td>
+                            <td class="all">
+                                {!! Form::open(['action' => ['BeneficiosPrivadosController@destroy', $beneficio->id], 'method'=>'DELETE']) !!}
+                                <div style="display: inline-block;">
+                                    <a href="{{route('beneficios_privados.edit',[$beneficio])}}" class="btn btn-xs btn-warning">
+                                        <i class="ion ion-edit"></i>
+                                    </a>
+                                    <button class="btn btn-xs btn-danger btn-borrar">
+                                        <i class="ion ion-trash-a btn-borrar"></i>
+                                    </button>
+                                </div>
+                                {!! Form::close() !!}
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

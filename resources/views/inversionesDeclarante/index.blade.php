@@ -18,33 +18,29 @@
                     </tr>
                     </thead>
                     <tbody>
-                    
+                    @foreach($inversiones as $inversion)
                     <tr>
-                        @if($inversiones != null)
-                        <td>BANC</td>
-                        <td>DCT</td>
+                        @if($inversiones!= null)
+                        <td>{{$inversion->tipo_de_inversion_id}}</td>
+                        <td>{{$inversion->nombreTitular->valor}}</td>
                         <td>
-                            <h8><strong>Monto original:</strong> 5<br><strong>Saldo insoluto:</strong> 5</h8>
+                            <h8><strong>Monto original:</strong>{{$inversion->saldo_a_la_fecha}}<br><strong>Saldo insoluto:</strong> 5</h8>
                         </td>
                         <td>
+                            <a href="{{route("inversiones.destroy",$inversion->id)}}" type="button"
+                                class="btn btn-danger ion ion-">
+                                 <i class="ion ion-android-delete"></i>
+                             </a>
                         </td>
                         <td>
-                        </td>
-                      
-                    </tr>
-                    <tr>
-                        <td>BANC</td>
-                        <td>DCT</td>
-                        <td>
-                            <h8><strong>Monto original:</strong> 142536<br><strong>Saldo insoluto:</strong> 142536</h8>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
+                            <a href="{{route("inversiones.edit",$inversion)}}" type="button"
+                                class="btn btn-warning ion ion-">
+                                 <i class="ion ion-edit"></i>
+                             </a>
                         </td>
                         @endif
                     </tr>
-                    
+                    @endforeach
                     </tbody>
                 </table>
             </div>

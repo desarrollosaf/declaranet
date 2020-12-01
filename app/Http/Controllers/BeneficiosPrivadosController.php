@@ -9,6 +9,8 @@ use App\sector;
 use App\formaRecepcion;
 use App\BeneficioPrivado;
 use App\Declaracion;
+use App\RegimenFiscal;
+use Illuminate\Support\Arr;
 
 class BeneficiosPrivadosController extends Controller
 {
@@ -56,7 +58,7 @@ class BeneficiosPrivadosController extends Controller
             $sectoProductivo[$item->id] = $item->valor;
         }
 
-        $otorganteBeneficio = sector::all();
+        $otorganteBeneficio = RegimenFiscal::all();
         $otorgante = [];
         $otorgante[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($otorganteBeneficio as $item){
@@ -81,13 +83,10 @@ class BeneficiosPrivadosController extends Controller
      */
     public function store()
     {
-//        $beneficios = new BeneficioPrivado;
-//        $beneficios->tipo_beneficio_id = $request->tipo_beneficio_id;
-//        $beneficios->save();
         $beneficios = $this->request->input("beneficio_privado");
         $beneficios['declaracion_id']=$this->request->session()->get('declaracion_id');
-       BeneficioPrivado::create($beneficios);
-       return redirect("beneficios_privados");
+        BeneficioPrivado::create($beneficios);
+        return redirect("beneficios_privados");
     }
 
     /**
@@ -109,7 +108,14 @@ class BeneficiosPrivadosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $beneficio = BeneficioPrivado::find($id);
+        $tipoBeneficio = Arr::pluck(tipoBeneficio::all(), 'valor','id');
+        $beneficiarios = Arr::pluck(beneficiariosPrograma::all(), 'valor','id');
+        $sectoProductivo = Arr::pluck(sector::all(), 'valor','id');
+        $otorgante = Arr::pluck(RegimenFiscal::all(),'valor','id');
+        $formaRecepcion = Arr::pluck(formaRecepcion::all(), 'valor','id');
+        return view("beneficiosPrivados.edit", compact('beneficio', 'beneficiarios','sectoProductivo','otorgante','formaRecepcion','tipoBeneficio'));
+
     }
 
     /**
@@ -121,7 +127,10 @@ class BeneficiosPrivadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $beneficios = $request->input("beneficio_privado");
+        $beneficio= BeneficioPrivado::find($id);
+        $beneficio->update($beneficios);
+        return redirect()->route("beneficios_privados.index");
     }
 
     /**
@@ -132,6 +141,8 @@ class BeneficiosPrivadosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $beneficios = BeneficioPrivado::find($id);
+        $beneficios->delete();
+        return redirect()->route("beneficios_privados.index");
     }
 }
