@@ -108,7 +108,10 @@ class InversionesDeclaranteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->input("inversiones");
+        $inversionesDeclarante = InversionesDeclarante::find($id);
+        $inversionesDeclarante->update($data);
+        return redirect()->route("inversiones.index");
     }
 
     /**
