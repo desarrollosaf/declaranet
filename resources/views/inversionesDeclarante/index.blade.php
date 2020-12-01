@@ -21,7 +21,7 @@
                     @foreach($inversiones as $inversion)
                     <tr>
                         @if($inversiones!= null)
-                        <td>{{$inversion->tipo_de_inversion_id}}</td>
+                        <td>{{$inversion->tipoInversion->valor}}</td>
                         <td>{{$inversion->nombreTitular->valor}}</td>
                         <td>
                             <h8><strong>Monto original:</strong>{{$inversion->saldo_a_la_fecha}}<br><strong>Saldo insoluto:</strong> 5</h8>
@@ -33,7 +33,7 @@
                              </a>
                         </td>
                         <td>
-                            <a href="{{route("inversiones.edit",$inversion)}}" type="button"
+                            <a href="{{route("inversiones.edit",$inversion->id)}}" type="button"
                                 class="btn btn-warning ion ion-">
                                  <i class="ion ion-edit"></i>
                              </a>
@@ -58,11 +58,4 @@
             </div>
         </div>
     </div>
-@endsection
-@section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function () {
-            Swal.fire('Oops...', 'Something went wrong!', 'error');
-        })
-    </script>
 @endsection

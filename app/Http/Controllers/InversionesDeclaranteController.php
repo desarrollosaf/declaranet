@@ -64,7 +64,7 @@ class InversionesDeclaranteController extends Controller
         $inversionesDeclarante['declaracion_id']=$this->request->session()->get('declaracion_id');
         //dd($inversionesDeclarante);
         InversionesDeclarante::create($inversionesDeclarante);
-        return redirect()->back()->with('success', 'Se registraron los datos del servidor');
+        return redirect()->route("inversiones.index");
     }
 
     /**
@@ -122,7 +122,8 @@ class InversionesDeclaranteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $inversionesDeclarante = InversionesDeclarante::find($id)->destroy();
+        return redirect()->route("inversiones.index");
     }
 
     public function getDescripcion($id){
