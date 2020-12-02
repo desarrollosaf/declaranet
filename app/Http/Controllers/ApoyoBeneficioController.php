@@ -100,7 +100,10 @@ class ApoyoBeneficioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->input("apoyo");
+        $apoyoDeclarante = ApoyoBeneficio::find($id);
+        $apoyoDeclarante->update($data);
+        return redirect()->route("apoyo_beneficio.index");
     }
 
     /**

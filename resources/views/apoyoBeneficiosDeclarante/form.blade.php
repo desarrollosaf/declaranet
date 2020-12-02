@@ -1,7 +1,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.titular_apoyo_id', 'Titular del apoyo o beneficio:') !!}
-        {!! Form::select('apoyo[titular_apoyo_id]', $parentesco, [],['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'titular_apoyo', 'required' => 'true', 'onchange' => 'seleccionado()']) !!}
+        {!! Form::select('apoyo[titular_apoyo_id]', $parentesco, isset($apoyo) ? $apoyo->titular_apoyo_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'titular_apoyo', 'required' => 'true', 'onchange' => 'seleccionado()']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -24,12 +24,12 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.nivel_orden_gobierno_id', 'Nivel u orden de Gobierno:') !!}
-        {!! Form::select('apoyo[nivel_orden_gobierno_id]', $nivelGobierno, [],['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'nivel_orden_gobierno_id', 'required' => 'true']) !!}
+        {!! Form::select('apoyo[nivel_orden_gobierno_id]', $nivelGobierno, isset($apoyo) ? $apoyo->nivel_orden_gobierno_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'nivel_orden_gobierno_id', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="tipo_apoyo_id">
         {!! Form::label('apoyo.tipo_apoyo_id', 'Tipo de apoyo:') !!}
-        {!! Form::select('apoyo[tipo_apoyo_id]', $tipoApoyo, [],['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_apoyo', 'required' => 'true', 'onchange' => 'apoyo()']) !!}
+        {!! Form::select('apoyo[tipo_apoyo_id]', $tipoApoyo, isset($apoyo) ? $apoyo->tipo_apoyo_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_apoyo', 'required' => 'true', 'onchange' => 'apoyo()']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -41,12 +41,12 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.forma_recepcion_id', 'Forma de recepción del beneficio:') !!}
-        {!! Form::select('apoyo[forma_recepcion_id]', $formaRecepcion, [],['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'forma_recepcion', 'required' => 'true', 'onchange' => 'recepcion()']) !!}
+        {!! Form::select('apoyo[forma_recepcion_id]', $formaRecepcion, isset($apoyo) ? $apoyo->forma_recepcion_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'forma_recepcion', 'required' => 'true', 'onchange' => 'recepcion()']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="moneda" style="display: none">
         {!! Form::label('apoyo.tipo_de_moneda_id', 'Tipo de moneda:') !!}
-        {!! Form::select('apoyo[tipo_de_moneda_id]', $tipoMoneda, [],['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_de_moneda_id', 'required' => 'true']) !!}
+        {!! Form::select('apoyo[tipo_de_moneda_id]', $tipoMoneda, isset($apoyo) ? $apoyo->tipo_de_moneda_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_de_moneda_id', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="esp" style="display: none">
