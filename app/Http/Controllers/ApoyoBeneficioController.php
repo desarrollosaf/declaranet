@@ -81,7 +81,14 @@ class ApoyoBeneficioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $parentesco = Arr::pluck(\App\parentescoRelacion::all(), "valor","id");
+        $nivelGobierno = Arr::pluck(\App\Nivelordengobierno::all(), "valor","id");
+        $tipoApoyo = Arr::pluck(\App\tipoApoyo::all(), "valor","id");
+        $formaRecepcion = Arr::pluck(\App\formaRecepcion::all(), "valor","id");
+        $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
+        $apoyo = ApoyoBeneficio::find($id);
+
+        return view("apoyoBeneficiosDeclarante.edit", compact('parentesco', 'nivelGobierno', 'tipoApoyo', 'formaRecepcion', 'tipoMoneda', 'apoyo'));
     }
 
     /**

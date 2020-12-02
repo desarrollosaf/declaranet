@@ -36,7 +36,7 @@
                              </a>
                         </td>
                         <td>
-                            <a href="{{route("apoyo_beneficio.create")}}" type="button"
+                            <a href="{{route("apoyo_beneficio.edit",$apoyo->id)}}" type="button"
                                 class="btn btn-warning ion ion-">
                                  <i class="ion ion-edit"></i>
                              </a>

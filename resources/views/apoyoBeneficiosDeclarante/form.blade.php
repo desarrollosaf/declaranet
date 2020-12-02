@@ -6,20 +6,20 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.especifique_titular', 'Especifique otro:') !!}
-        {!! Form::text('apoyo[especifique_titular]',isset($inversiones) ? $inversiones->numero_cuenta_poliza : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'especifique_otro', 'disabled' => 'true']) !!}
+        {!! Form::text('apoyo[especifique_titular]',isset($apoyo) ? $apoyo->especifique_titular : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'especifique_otro', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.nombre_programa', 'Nombre del programa:') !!}
-        {!! Form::text('apoyo[nombre_programa]',isset($inversiones) ? $inversiones->numero_cuenta_poliza : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre_programa']) !!}
+        {!! Form::text('apoyo[nombre_programa]',isset($apoyo) ? $apoyo->nombre_programa : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre_programa']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.nombre_institucion', 'Institución que otorga el apoyo:') !!}
-        {!! Form::text('apoyo[nombre_institucion]',isset($inversiones) ? $inversiones->numero_cuenta_poliza : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre_institucion']) !!}
+        {!! Form::text('apoyo[nombre_institucion]',isset($apoyo) ? $apoyo->nombre_institucion : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre_institucion']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -36,7 +36,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.especifique_apoyo', 'Especifique otro:') !!}
-        {!! Form::text('apoyo[especifique_apoyo]',isset($inversiones) ? $inversiones->numero_cuenta_poliza : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'especifique_apoyo', 'disabled' => 'true']) !!}
+        {!! Form::text('apoyo[especifique_apoyo]',isset($apoyo) ? $apoyo->especifique_apoyo : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'especifique_apoyo', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -51,26 +51,26 @@
     </div>
     <div class="form-group col-md-4" id="esp" style="display: none">
         {!! Form::label('apoyo.especifique_especie', 'Especifique especie:') !!}
-        {!! Form::text('apoyo[especifique_especie]',isset($inversiones) ? $inversiones->saldo_a_la_fecha : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'especifique_especie']) !!}
+        {!! Form::text('apoyo[especifique_especie]',isset($apoyo) ? $apoyo->especifique_especie : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'especifique_especie']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="espRep" >
         {!! Form::label('apoyo.saldo_a_la_fecha', 'Especifique forma de recepción') !!}
-        {!! Form::text('apoyo[saldo_a_la_fecha]',isset($inversiones) ? $inversiones->saldo_a_la_fecha : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'saldo_a_la_fecha', 'disabled' => 'true']) !!}
+        {!! Form::text('apoyo[saldo_a_la_fecha]',isset($apoyo) ? $apoyo->saldo_a_la_fecha : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'saldo_a_la_fecha', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.monto_mensual', 'Monto mensual aproximado del beneficio') !!}
-        {!! Form::text('apoyo[monto_mensual]',isset($inversiones) ? $inversiones->numero_cuenta_poliza : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'monto_mensual']) !!}
+        {!! Form::text('apoyo[monto_mensual]',isset($apoyo) ? $apoyo->monto_mensual : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'monto_mensual']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-12">
         {!! Form::label('apoyo.aclaraciones_observaciones', 'Aclaraciones / Observaciones:') !!}
-        {!! Form::textarea('apoyo[aclaraciones_observaciones]',isset($inversiones) ? $inversiones->aclaraciones_observaciones : null,['class'=>'form-control alert-danger',  'id' => 'aclaraciones_observaciones']) !!}
+        {!! Form::textarea('apoyo[aclaraciones_observaciones]',isset($apoyo) ? $apoyo->aclaraciones_observaciones : null,['class'=>'form-control alert-danger',  'id' => 'aclaraciones_observaciones']) !!}
     </div>
 </div>
 <div class="form-row">
