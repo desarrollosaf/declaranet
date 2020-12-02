@@ -54,4 +54,7 @@ class Declaracion extends Model
     public  function datos_empleo_declarante(){
         return $this->hasOne(DatoEmpleoDeclarante::class);
     }
+    public function apoyo_beneficio() {
+        return $this->hasMany(ApoyoBeneficio::class);
+    }
 }

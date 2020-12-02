@@ -3,10 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ApoyoBeneficio;
 use App\Declaracion;
+use App\parentescoRelacion;
+use App\Nivelordengobierno;
+use App\tipoApoyo;
+use App\formaRecepcion;
+use App\tipoMoneda;
+use Illuminate\Support\Arr;
 
 class ApoyoBeneficioController extends Controller
 {
+    private $request;
+    public function __construct(Request $request) {
+        $this->middleware("auth");
+        $this->request=$request;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +27,9 @@ class ApoyoBeneficioController extends Controller
      */
     public function index()
     {
-        return view("apoyoBeneficiosDeclarante.index");
+        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $apoyos = $declaracion->apoyo_beneficio;
+        return view("apoyoBeneficiosDeclarante.index", compact('apoyos'));
     }
 
     /**
@@ -24,7 +39,12 @@ class ApoyoBeneficioController extends Controller
      */
     public function create()
     {
-        return view("apoyoBeneficiosDeclarante.create");
+        $parentesco = Arr::pluck(\App\parentescoRelacion::all(), "valor","id");
+        $nivelGobierno = Arr::pluck(\App\Nivelordengobierno::all(), "valor","id");
+        $tipoApoyo = Arr::pluck(\App\tipoApoyo::all(), "valor","id");
+        $formaRecepcion = Arr::pluck(\App\formaRecepcion::all(), "valor","id");
+        $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
+        return view("apoyoBeneficiosDeclarante.create", compact('parentesco', 'nivelGobierno', 'tipoApoyo', 'formaRecepcion', 'tipoMoneda'));
     }
 
     /**
@@ -35,7 +55,11 @@ class ApoyoBeneficioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $apoyoDeclarante = $this->request->input("apoyo");
+        $apoyoDeclarante['declaracion_id']=$this->request->session()->get('declaracion_id');
+        //dd($inversionesDeclarante);
+        ApoyoBeneficio::create($apoyoDeclarante);
+        return redirect()->route("apoyo_beneficio.index");
     }
 
     /**

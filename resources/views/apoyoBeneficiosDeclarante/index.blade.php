@@ -10,19 +10,25 @@
                 <table class="table table-striped">
                     <thead class="text-center text-light">
                     <tr>
-                        <th scope="col">Institución</th>
-                        <th scope="col">Nivel</th>
-                        <th scope="col">Tipo de apoyo</th>
+                        <th scope="col">Beneficiario</th>
+                        <th scope="col">Nombre del programa</th>
+                        <th scope="col">Información Adicional</th>
                         <th scope="col">Eliminar</th>
                         <th scope="col">Editar</th>
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($apoyos as $apoyo)
                     <tr>
-                       
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        @if($apoyos!= null)
+                        <td>{{$apoyo->tipoBeneficiario->valor}}</td>
+                        <td>{{$apoyo->nombre_programa}}</td>
+                        <td>
+                            <h8><strong>Institución:</strong>{{$apoyo->nombre_institucion}}<br>
+                                <strong>Nivel:</strong> {{$apoyo->nivelGobierno->valor}}<br>
+                                <strong>Tipo de apoyo:</strong> {{$apoyo->tipoApoyo->valor}}
+                            </h8>
+                        </td>
                         <td>
                             <a href="{{route("apoyo_beneficio.create")}}" type="button"
                                 class="btn btn-danger ion ion-">
@@ -35,9 +41,9 @@
                                  <i class="ion ion-edit"></i>
                              </a>
                         </td>
-                     
+                        @endif
                     </tr>
-                    
+                    @endforeach
                     </tbody>
                 </table>
             </div>
