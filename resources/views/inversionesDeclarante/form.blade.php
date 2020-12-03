@@ -91,16 +91,11 @@
 <script>
     function seleccionado(){
         var opt = $('#inputSelect').val();
-        if(opt=="1"){
-            $('#mydiv').hide();
+   
+        if(opt=="3" || opt=="4" || opt=="6" || opt=="8" || opt=="10" || opt=="13" || opt=="15" || opt=="18" || opt=="19" || opt=="24"){
+            $('#mydiv').show();
         }else{
-            if(opt=="3"){
-                $('#mydiv').show();
-            }else{
-                $('#mydiv').hide(); 
-            }
-            
-    
+            $('#mydiv').hide(); 
         }
 
     }
