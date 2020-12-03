@@ -3,8 +3,8 @@
         <div class="col-lg-2">
             <div class="form-group">
                 <center>
-                    <input class="form-check-input" type="radio" id="servidor_anio_anteriorS" name="servidor_anio_anterior" required="" value="SI" onclick="anioAnterior(1);">
-                    <label class="form-check-label" for="inlineCheckbox1">Sí</label>
+                    <input class="form-check-input" type="radio" id="servidor_anio_anteriorS" name="servidor_anio_anterior" required="" value="Si" >
+                    <label class="form-check-label" for="servidor_anio_anteriorS">Sí</label>
                 </center>
 
             </div>
@@ -12,8 +12,8 @@
         <div class="col-lg-2">
             <div class="form-group">
                 <center>
-                    <input class="form-check-input" type="radio" id="servidor_anio_anteriorN" name="servidor_anio_anterior" value="NO" onclick="anioAnterior(2);" checked="checked">
-                    <label class="form-check-label" for="inlineCheckbox1">No</label>
+                    <input class="form-check-input" type="radio" id="servidor_anio_anteriorN" name="servidor_anio_anterior" value="No" checked="checked">
+                    <label class="form-check-label" for="servidor_anio_anteriorN">No</label>
                 </center>
             </div>
         </div>
@@ -25,7 +25,7 @@
 </div>
 <hr>
 <!-- Primera fila  --> 
-<div id="contenidos" style="display: block;">
+<div id="contenidos" style="display: none;">
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">

@@ -39,28 +39,17 @@
 @endsection
 @section('scripts')
 <script>
+  
     $(document).ready(function(){
-        $(".actividad lucrativa").hide();
-        $(".PÚBLICO").show();
-        $(".AMBOS").hide();
-     
-    }
+        $(".Titular").hide();
+    });
     $("#respuestas").on("change", function () {
-        if ($(this).val() == "SI") {
-            $("#actividad lucrativa").show();
+        if ($(this).val() == "1") {
+            $("#contenedores").show();
         } else {
             $("#contenedores").hide();
         }
-    $("#respuestas").on("change", function () {
-        if ($(this).val() == "NO") {
-            $("#actividad lucrativa").hide
-            ();
-        } else {
-            $("#contenedores").hide();
-        }
-        
-        
-         });
+    });
     $(".submitForm").on("click",function(e){
         e.preventDefault();
         let that = this;

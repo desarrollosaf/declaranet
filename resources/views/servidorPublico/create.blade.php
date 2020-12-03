@@ -11,3 +11,16 @@
     </div>
 </div>
 @endsection
+@section('scripts')
+<script>
+    $('input[name=servidor_anio_anterior]').on("click",function(){
+        var desempeño = $('input[name=servidor_anio_anterior]:checked').val();
+        if(desempeño == "Si"){
+            $("#contenidos").show();
+        }else{
+            $("#contenidos").hide();
+            
+        }
+    });
+</script>
+@endsection

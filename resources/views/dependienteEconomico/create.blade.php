@@ -1,63 +1,199 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
-        <div class="card mb-5 shadow-sm border-0 shadow-hover">
-            <div class="card-header">
-                <h1>DATOS DEL DEPENDIENTE ECONÓMICO</h1>
-            </div>
-            <div class="card-body">
-                <p class="text-justify">Deberá proporcionar la información de CADA UNA de las personas, familiares o no, cuya manutención dependa principalmente de los ingresos del Declarante.</p>
-                <div class="alert alert-danger text-center" role="alert">
-                    Para registrar información pulse:
-                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                        Agregar
-                    </button>
-                    <br>
-                    Sí no tiene dependientes económicos, seleccione
-                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                        Ninguno
-                    </button>
-                </div>
-                <br>
-                <a href="" class="btn btn-submit float-left text-light">Ir a la sección anterior</a>
-                <a href="" class="btn btn-submit float-right text-light">Ir a la siguiente sección</a>
+<div class="container">
+    <div class="card mb-5 shadow-sm border-0 shadow-hover">
+        <div class="card-header">
+            <h1>DATOS DEL DEPENDIENTE ECONÓMICO</h1>
+            <div class="float-right">
+                <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
             </div>
         </div>
     </div>
-    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    {!! Form::open(['route'=>'datos_dependiente_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosCurricularesDeclarante']) !!}
-                        @include('dependienteEconomico.form')
-                    {!! Form::close() !!}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
+    <div class="collapse" id="collapseExample">
+        <div class="card-body">
+            <ol>
+                <li><strong>Nombre(s), primer y segundo apellidos.</strong> Escribir el nombre o los nombres completos, así como los apellidos completos, sin abreviaturas, sin acentos, ni signos especiales. Si se tiene un solo apellido deberá colocarse en el espacio del primer apellido y dejar el espacio del segundo apellido en blanco.</li>
+                <li><strong>Fecha de nacimiento.</strong> Señalar la fecha de nacimiento del dependiente económico en el formato de día, mes y año.</li>
+                <li><strong>Registro Federal de Contribuyentes (RFC).</strong> Escribir los diez caracteres básicos con los tres caracteres de la homoclave.</li>
+                <li><strong>Parentesco o relación con el Declarante.</strong> Seleccionar de la lista desplegable el parentesco o tipo de relación con el Declarante.</li>
+                <li><strong>¿Es ciudadano extranjero?</strong> Deberá indicar sí o no, según el caso.</li>
+                <li><strong>Clave Única de Registro de Población (CURP).</strong> Escribir los dieciocho caracteres como la emitió la Secretaría de Gobernación. En caso de no contar con ella, podrá consultarla en la página de la Secretaría de Gobernación, en el apartado de Trámites. <a style="color:#1F1F1F !important;" href="https://www.sat.gob.mx/tramites/operacion/28753/obten-tu-rfc-con-la-clave-unica-de-registro-de-poblacion-(curp)" target="_blank">www.sat.gob.mx</a></li>
+                <li><strong>Habita en el domicilio del Declarante.</strong> Indicar sí o no, el dependiente económico vive en el domicilio del Declarante.</li>
+                <li><strong>Lugar donde reside.</strong> En caso de que el dependiente económico, no viva en el domicilio del Declarante, indicar si vive en México, en el extranjero o si se desconoce.</li>
+                <li><strong>Domicilio del dependiente económico.</strong> En caso de seleccionar México, proporcionar los siguientes datos: calle, número exterior, número interior (si aplica), colonia o localidad, municipio o alcaldía, entidad federativa y código postal.<br>
+                    En caso de seleccionar extranjero, proporcionar los siguientes datos: calle, número exterior, número interior (si aplica), ciudad/localidad, estado o provincia, país y código postal.
+                </li>
+                <li><strong>Actividad laboral.</strong> Indicar si el dependiente económico, se encuentra trabajando actualmente, seleccionando alguno de los siguientes campos: privado, público, otro (especificar) o ninguno.</li>
+            </ol>
+            <ol>
+                <li type="circle"><strong>Sector público.</strong>
+                    <ol>
+                        <li><strong>Nivel/orden de gobierno.</strong> Seleccionar el orden de gobierno en el que se encuentra: federal, estatal o municipal/alcaldía.</li>
+                        <li><strong>Ámbito público.</strong> Señalar la naturaleza jurídica al que pertenece: ejecutivo, legislativo, judicial u órgano autónomo.</li>
+                        <li><strong>Nombre del Ente Público. </strong>Señalar el Ente Público al cual se encuentra adscrita la plaza.</li>
+                        <li><strong>Área de adscripción.</strong> Especificar el nombre de la Unidad Administrativa u homóloga superior inmediata en la que está adscrito. (Superior jerárquico).</li>
+                        <li><strong>Empleo, cargo o comisión.</strong> Señalar el nombre del empleo, cargo o comisión que se establece en su recibo de nómina, nombramiento, contrato u oficio de comisión.</li>
+                        <li><strong>Especifique función principal.</strong> Señalar cual es la función o actividad principal que desempeña su dependiente económico.</li>
+                        <li><strong>Salario mensual neto.</strong> Especificar el monto mensual neto, sin centavos, que percibe el dependiente económico.</li>
+                        <li><strong>Fecha de ingreso al empleo.</strong> Señalar la fecha en que inició empleo, cargo o comisión.</li>
+                    </ol>
+                </li>
+                <li type="circle"><strong>Sector privado/otro.</strong>
+                    <ol>
+                        <li><strong>Nombre de la empresa, sociedad o asociación.</strong> Proporcionar el nombre de la empresa, sociedad o asociación en la que labora.</li>
+                        <li><strong>RFC de la empresa.</strong> Proporcionar los 12 dígitos de la empresa en que labora el dependiente económico.</li>
+                        <li><strong>Empleo o cargo.</strong> Proporcionar el nombre del puesto que desempeña.</li>
+                        <li><strong>Fecha de ingreso al empleo.</strong> Señalar la fecha en que inició empleo, cargo o comisión.</li>
+                        <li><strong>Sector al que pertenece.</strong> Elegir el sector al que pertenece la empresa, sociedad o asociación. En caso de señalar otros, especifique.</li>
+                        <li><strong>Salario mensual neto.</strong> Especificar el monto mensual neto, sin centavos, que percibe el dependiente económico.</li>
+                        <li><strong>¿Es proveedor o contratista del gobierno?</strong> Señalar sí o no, el dependiente económico vende o presta algún servicio al gobierno.</li>
+                    </ol>
+                </li>
+            </ol>
+            <strong>Aclaraciones/observaciones. </strong>En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
         </div>
     </div>
+    <div class="card-body">
+        {!! Form::open(['route'=>'datos_dependiente_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'dependienteEconomico']) !!}
+        @include('dependienteEconomico.form')
+        {!! Form::close() !!}
+    </div>
+</div>
+</div>
 @endsection
 @section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#parentesco").on("change", function(){
-                var nivel = $('#parentesco option:selected').html();
-                if(nivel === "OTRO(ESPECIFIQUE)"){
-                    $("#especifique-parentezco").prop("disabled", false);
-                }
-                else{
-                    $("#especifique-parentezco").val("");
-                    $("#especifique-parentezco").prop("disabled", true);
-                }
+<script>
+
+
+    $(document).ready(function () {
+        $(".PRIVADO").hide();
+        $(".PÚBLICO").hide();
+        $(".AMBOS").hide();
+        $("#domicilio-mexico").hide();
+        $("#domicilio-extranjero").hide();
+    });
+    $("#habita-domicilio").on("change", function () {
+        if ($(this).val() == "2") {
+            $("#divLugarResidencia").show();
+        } else {
+            $("#divLugarResidencia").hide();
+        }
+    });
+    $("#residencia").on("change", function () {
+        console.log($(this).val());
+        if ($(this).val() == "1") {
+            $("#domicilio-mexico").show();
+            $("#domicilio-extranjero").hide();
+        } else if ($(this).val() == "2") {
+            $("#domicilio-mexico").hide();
+            $("#domicilio-extranjero").show();
+        } else {
+            $("#domicilio-mexico").hide();
+            $("#domicilio-extranjero").hide();
+        }
+    });
+
+    $("#sector").on("change", function () {
+        if ($(this).val() == "2" || $(this).val() == "3") {
+            $(".PRIVADO").show();
+            $(".AMBOS").show();
+            $(".PÚBLICO").hide();
+        } else if ($(this).val() == "1") {
+            $(".PRIVADO").hide();
+            $(".PÚBLICO").show();
+            $(".AMBOS").show();
+        } else if ($(this).val() == "") {
+            $(".PRIVADO").hide();
+            $(".PÚBLICO").hide();
+        }
+    });
+
+
+    $(".submitForm").on("click", function (e) {
+        e.preventDefault();
+        let that = this;
+        var error = false;
+        if ($("#ambito").val() == 1) {
+            if ($("#nivel_orden_gobierno_id").val() == "") {
+                error = true;
+            }
+            if ($("#ambito_publico").val() == "") {
+                error = true;
+            }
+            if ($("#area_adscripcion").val() == "") {
+                error = true;
+            }
+            if ($("#cargo_comision").val() == "") {
+                error = true;
+            }
+
+            if ($("#fecha_ingreso").val() == "") {
+                error = true;
+            }
+
+            if ($("#fecha_egreso").val() == "") {
+                error = true;
+            }
+
+            if ($("#lugares_ubicacion").val() == "") {
+                error = true;
+            }
+            if ($("#observaciones").val() == "") {
+                error = true;
+            }
+            console.log("ambito", $("#ambito").val());
+        } else if ($("#ambito").val() == 2) {
+            console.log("ambito", $("#ambito").val());
+            if ($("#nombre_empresa").val() == "") {
+                error = true;
+            }
+            if ($("#rfc").val() == "") {
+                error = true;
+            }
+            if ($("#area").val() == "") {
+                error = true;
+            }
+            if ($("#puesto").val() == "") {
+                error = true;
+            }
+            if ($("#sector_id").val() == "") {
+                error = true;
+            }
+            if ($("#funcion_principal").val() == "") {
+                error = true;
+            }
+            if ($("#fecha_ingreso").val() == "") {
+                error = true;
+            }
+            if ($("#fecha_egreso").val() == "") {
+                error = true;
+            }
+            if ($("#observaciones").val() == "") {
+                error = true;
+            }
+        }
+
+        console.log("error", error);
+        if (error) {
+            Swal.fire({
+                title: 'Error',
+                text: 'llena todos los campos obligatorios',
+                icon: 'error'
             });
+        } else {
+            $('#frmExperienciaLaboral').submit();
+        }
+    });
+    $(document).ready(function () {
+        $("#parentesco").on("change", function () {
+            var nivel = $('#parentesco option:selected').html();
+            if (nivel === "OTRO(ESPECIFIQUE)") {
+                $("#especifique-parentezco").prop("disabled", false);
+            } else {
+                $("#especifique-parentezco").val("");
+                $("#especifique-parentezco").prop("disabled", true);
+            }
         });
-    </script>
+    });
+</script>
 @endsection

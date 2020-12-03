@@ -51,21 +51,15 @@
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-5">
-            {!! Form::label('mismodomicilio', '¿Habita en el domicilio del Declarante? : *') !!}
-            <div class="custom-control custom-radio custom-control-inline">
-                {!! Form::radio('mismodomicilio', 1, null, ['class'=>'custom-control-input', 'id'=>'si']);  !!}
-                <label class="custom-control-label" for="si">Si</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-                {!! Form::radio('mismodomicilio', 2, null, ['class'=>'custom-control-input', 'id'=>'no']);  !!}
-                <label class="custom-control-label" for="no">No</label>
-            </div>
+        <div class="form-group col-md-4">
+            {!! Form::label('habita-domicilio', '¿Habita en el domicilio del Declarante?:') !!}
+            {!! Form::select('habita-domicilio', $respuestas, null,['class'=>'form-control alert-danger',  'id' => 'habita-domicilio']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
+
+        <div class="form-group col-md-4"  id='divLugarResidencia' style="display:none;">
             {!! Form::label('residencia', 'Lugar donde reside: *') !!}
-            {!! Form::select('residencia', $selectResidencia, null,['class'=>'form-control alert-danger',  'id' => 'extranjero']) !!}
+            {!! Form::select('residencia', $selectResidencia, null,['class'=>'form-control alert-danger',  'id' => 'residencia']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -74,7 +68,7 @@
 <h4>DOMICILIO DEL DEPENDIENTE ECONÓMICO</h4>
 <div id="domicilio-mexico">
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 ">
             {!! Form::label('calle-nacional', 'Calle: *') !!}
             {!! Form::text('calle-nacional',null,['class'=>'form-control alert-danger', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'calle-nacional']) !!}
             <span class="text-danger" style="font-size:150%"></span>
@@ -113,7 +107,7 @@
         </div>
     </div>
 </div>
-<div id="domicilio-mexico">
+<div id="domicilio-extranjero">
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('calle-extranjero', 'Calle: *') !!}
@@ -163,105 +157,95 @@
 </div>
 <div class="actividad-privada">
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('empresa', 'Nombre de la empresa, sociedad o asociación: *') !!}
             {!! Form::text('empresa',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V',  'id' => 'empresa']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('rfc', 'RFC: *') !!}
             {!! Form::text('rfc',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XXX0101001010',  'id' => 'rfc']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('rfc', 'Empleo o cargo: *') !!}
             {!! Form::text('rfc',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Analista de sistemas',  'id' => 'rfc']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('fechaingreso', 'Fecha de ingreso al empleo: *') !!}
             {!! Form::text('fechaingreso',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'fechaingreso']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('sector', 'Sector al que pertenece: *') !!}
             {!! Form::text('sector',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'sector']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('especificar', 'Especifique: *') !!}
             {!! Form::text('especificar',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Parentezco',  'id' => 'especificar']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('salario', 'Salario mensual neto: *') !!}
             {!! Form::text('salario',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p.ej. $10,000 Mxn',  'id' => 'salario']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
-            {!! Form::label('contratista', '¿Es proveedor o contratista del gobierno? : *') !!}
-            <div class="custom-control custom-radio custom-control-inline">
-                {!! Form::radio('contratista', 1, null, ['class'=>'custom-control-input', 'id'=>'si']);  !!}
-                <label class="custom-control-label" for="si">Si</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-                {!! Form::radio('contratista', 2, null, ['class'=>'custom-control-input', 'id'=>'no']);  !!}
-                <label class="custom-control-label" for="no">No</label>
-            </div>
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
+      
     </div>
 </div>
 <div class="actividad-publica">
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('nivel', 'Nivel / Orden de gobierno: *') !!}
             {!! Form::text('nivel',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'nivel']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('ambito', 'Ámbito público: *') !!}
             {!! Form::text('ambito',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'ambito']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('ente', 'Nombre del Ente Público: *') !!}
             {!! Form::text('ente',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'ente']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('area', 'Área de adscripción: *') !!}
             {!! Form::text('area',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'area']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('cargo', 'Empleo cargo o comisión: *') !!}
             {!! Form::text('cargo',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'cargo']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('funcion', 'Especifique función principal: *') !!}
             {!! Form::text('funcion',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'funcion']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('funcion', 'Salario mensual neto: *') !!}
             {!! Form::text('funcion',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'funcion']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-        <div class="form-group col-md-4">
-            {!! Form::label('proveedor', 'Fecha de ingreso al empleo: *') !!}
-            {!! Form::text('proveedor',null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'proveedor']) !!}
+          <div class="form-group col-md-4 PRIVADO">
+            {!! Form::label('proveedor', '¿Es proveedor o contratista del gobierno?:') !!}
+            {!! Form::select('habita-domicilio', $respuestas, null,['class'=>'form-control alert-danger',  'id' => 'proveedor']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
+       
     </div>
 </div>
 
@@ -276,4 +260,3 @@
         {{ Form::button('Envíar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
     </div>
 </div>
-

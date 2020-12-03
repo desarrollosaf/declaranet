@@ -7,6 +7,7 @@ use App\extranjero;
 use App\lugarDondeReside;
 use App\parentescoRelacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class DatosDependienteEconomicoController extends Controller
 {
@@ -17,18 +18,8 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
         $parentesco = parentescoRelacion::all();
-        $selectParentesco = [];
+       
         $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($parentesco as $item){
             $selectParentesco[$item->id] = $item->valor;
@@ -51,8 +42,47 @@ class DatosDependienteEconomicoController extends Controller
         foreach ($sector as $item){
             $selectSector[$item->id] = $item->valor;
         }
+        $respuestas = Arr::pluck(\App\Respuesta::all(),'respuesta',"id");
+        array_unshift($respuestas,"Selecciona una opcion");
 
-        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector'));
+        return view('dependienteEconomico.index', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $parentesco = parentescoRelacion::all();
+       
+        $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($parentesco as $item){
+            $selectParentesco[$item->id] = $item->valor;
+        }
+        $extranjero = extranjero::all();
+        $selectExtranjero = [];
+        $selectExtranjero[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($extranjero as $item){
+            $selectExtranjero[$item->id] = $item->valor;
+        }
+        $residencia = lugarDondeReside::all();
+        $selectResidencia = [];
+        $selectResidencia[""] = "SELECCIONA UNA OPCIÓN";
+        foreach($residencia as $item){
+            $selectResidencia[$item->id] = $item->valor;
+        }
+        $sector = ambitoSector::all();
+        $selectSector = [];
+        $selectSector[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($sector as $item){
+            $selectSector[$item->id] = $item->valor;
+        }
+        $respuestas = Arr::pluck(\App\Respuesta::all(),'respuesta',"id");
+        array_unshift($respuestas,"Selecciona una opcion");
+
+        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas'));
     }
 
     /**

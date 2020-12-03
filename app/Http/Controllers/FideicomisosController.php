@@ -1,19 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\titular;
 use Illuminate\Http\Request;
-use \App\LugarUbicacion;
+use App\titular;
+use App\RegimenFiscal;
+use App\LugarUbicacion;
+use App\Sector;
+use App\Respuesta;
 use Illuminate\Support\Arr;
+use Carbon\Carbon;
 
 class FideicomisosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
          return view("Fideicomisos.index");
@@ -26,11 +25,16 @@ class FideicomisosController extends Controller
      */
     public function create()
     {
-        $selectTitularActividadLucrativa = Arr::pluck(\App\Titular::all(), "valor","id");
+        $selectTitularActividadLucrativa = Arr::pluck(\App\Titular::all(), "valor","id"); 
+        array_unshift($selectTitularActividadLucrativa,"Selecciona una opcion");
         $selecttipoPersona = Arr::pluck(\App\RegimenFiscal::all(), "valor","id");
+         array_unshift($selecttipoPersona,"Selecciona una opcion");
         $selectLugarDondeSeUbica = Arr::pluck(LugarUbicacion::all(), "valor","id");
-        $selectSectores = Arr::pluck(\App\sector::all(), "sector","id");
+         array_unshift(  $selectLugarDondeSeUbica,"Selecciona una opcion");
+        $selectSectores = Arr::pluck(\App\sector::all(), "valor","id");
+         array_unshift($selectSectores,"Selecciona una opcion");
         $respuestas = Arr::pluck(\App\Respuesta::all(),"respuesta","id");
+         array_unshift( $respuestas,"Selecciona una opcion");
         return view("Fideicomisos.create",compact("selectTitularActividadLucrativa","selecttipoPersona","selectLugarDondeSeUbica","selectSectores",'respuestas'));
         
     }

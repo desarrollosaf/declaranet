@@ -21,6 +21,15 @@
         $(".PÚBLICO").show();
         $(".AMBOS").hide();
     });
+    $('input[name=mismodomicilio]').on("click",function(){
+        var desempeño = $('input[name=mismodomicilio]:checked').val();
+        if(desempeño == "1"){
+            $("#divLugarResidencia").show();
+        }else{
+            $("#divLugarResidencia").hide();
+            
+        }
+    });
     $("#ambito").on("change", function () {
         if ($(this).val() == "2") {
             $(".PRIVADO").show();

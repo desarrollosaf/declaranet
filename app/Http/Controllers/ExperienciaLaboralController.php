@@ -39,11 +39,15 @@ class ExperienciaLaboralController extends Controller
     public function create()
     {
         $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor','id');
+         array_unshift($ambitos_sectores,"Selecciona una opcion");
         $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
+         array_unshift($nivelOrdenGobierno,"Selecciona una opcion");
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
+         array_unshift($ambito,"Selecciona una opcion");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
+         array_unshift($sectores,"Selecciona una opcion");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
-
+         array_unshift($ubicacion,"Selecciona una opcion");
         return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores'));
     }
 

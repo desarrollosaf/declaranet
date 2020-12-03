@@ -13,7 +13,7 @@
         <div class="col-lg-4 actividad lucrativa">
             <div class="form-group">
                 <br>
-                {!! Form::select('respuesta', $respuestas, null,['class'=>'form-control alert-danger',  'id' => 'títular_actividad_lucrativa']) !!}
+                {!! Form::select('respuesta', $respuestas, null,['class'=>'form-control alert-danger',  'id' => 'respuestas']) !!}
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
             <div class="form-group col-md-4">
-                <strong>{!! Form::label('Nombre del cliente principall:') !!} </strong>
+                <strong>{!! Form::label('Nombre del cliente principal:') !!} </strong>
                 {!! Form::text('cliente_principal', null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. Juan Pérez.','id' => 'rfc']) !!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
@@ -62,7 +62,7 @@
         <div class="row">   
             <div class="form-group col-md-4 ">
                 <strong>{!! Form::label('sector_id','Sector productivo al que pertenece:') !!} </strong>
-                {!! Form::select('sector_id', [], null,['class'=>'form-control alert-danger',  'id' => 'sector productivo al que pertenece']) !!}
+                {!! Form::select('sector_id', $selectSectores, null,['class'=>'form-control alert-danger',  'id' => 'sector productivo al que pertenece']) !!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
             <div class="form-group col-md-4">
@@ -79,12 +79,12 @@
         <div class="row">   
             <div class="form-group col-md-4 ">
                 <strong>{!! Form::label('lugar_ubicacion_id','Lugar dónde se ubica:') !!} </strong>
-                {!! Form::select('lugar_ubicacion_id', [], null,['class'=>'form-control alert-danger',  'id' => 'sector productivo al que pertenece']) !!}
+                {!! Form::select('lugar_ubicacion_id', $selectLugarDondeSeUbica, null,['class'=>'form-control alert-danger',  'id' => 'sector productivo al que pertenece']) !!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
             <div class="form-group col-md-4 ">
                 <strong>{!! Form::label('Entidad Federativa:') !!}</strong>
-                {!! Form::text('entidad_federativa', null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.eje.Mexico".','id' => 'entidad_federativa']) !!}
+                {!! Form::text('entidad_federativa', null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.ej.Mèxico.','id' => 'entidad_federativa']) !!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
