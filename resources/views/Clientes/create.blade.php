@@ -4,7 +4,7 @@
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
             <div class="float-left">
-                <h3>CLIENTES PRINCIPALES</h3> <h3> (Hasta los últimos dos años)</h3> 
+                <h3>CLIENTES PRINCIPALES</h3> <h3> (Hasta los últimos dos años)</h3>
             </div>
             <div class="float-right">
                 <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
@@ -29,19 +29,12 @@
             </div>
         </div>
         <div class="card-body">
+            {!! Form::open(['route'=>'clientes_principales.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => '']) !!}
             @include('Clientes.form')
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
+<input type="hidden" id="accion" value="crear">
 @endsection
-@section('scripts')
-<script>
-    $("#c_principales_actividadLucrativa").on("change", function () {
-        if ($(this).val() == "SI") {
-            $("#contenedores").show();
-        } else {
-            $("#contenedores").hide();
-        }
-    });
-</script>
-@endsection
+
