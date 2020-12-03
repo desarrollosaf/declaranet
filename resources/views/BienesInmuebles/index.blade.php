@@ -34,7 +34,8 @@
                     </tr>
                     @endforeach
                 </tbody> 
-            </table><center><label style="margin-top:10px;">Si desea registrar algún Bien Inmueble pulse:<a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary">Agregar</a>, de lo contrario vaya a la siguiente sección.</label> </center>    
+            </table>
+            <center><label style="margin-top:10px;">Si desea registrar algún Bien Inmueble pulse:<a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary">Agregar</a>, de lo contrario vaya a la siguiente sección.</label> </center>    
 
             <div class="text-center">
                 <a href="dsp_deSerPu_aInmAnt_ini.php" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>

@@ -57,4 +57,9 @@ class Declaracion extends Model
     public function apoyo_beneficio() {
         return $this->hasMany(ApoyoBeneficio::class);
     }
+    
+    public  function participacion_empresas(){
+        return $this->hasMany(ParticipacionEmpresa::class);
+    }
+    
 }

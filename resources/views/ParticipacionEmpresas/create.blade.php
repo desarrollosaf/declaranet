@@ -30,9 +30,12 @@
             </div>
         </div>
         <div class="card-body">
+            {!! Form::open(['route'=>'participacion_empresas.store', 'method'=>'POST',  'role' => 'form', 'id' => 'frm_ParticipacionEmpresas']) !!}
             @include('ParticipacionEmpresas.form')
+            {!! Form::close() !!}
         </div>
     </div>
-    </div>
-    @endsection
+</div>
+</div>
+@endsection
 

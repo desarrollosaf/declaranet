@@ -8,21 +8,47 @@
             <h6 class="card-subtitle">(Hasta los últimos dos años)</h6>
         </div>
     </div>
+
+
     <div class="card-body">
-            <p style="text-align : justify;"> Deberá señalar la información de CADA UNA de las empresas, sociedades o asociaciones donde el Declarante, pareja y/o dependientes económicos, participan como socios, accionistas, comisarios, representantes, apoderados, colaboradores, beneficiarios u otros.</p>
-            <center>
-                <div class="alert alert-danger" role="alert">
-                    Para registrar información pulse:&nbsp;&nbsp;&nbsp;<a href="dsp_d_part_empresas_ini.php" class="btn btn-secondary"><small>Agregar</small></a>
-                    <br>
-                    <form action="dsp_d_part_empresas_ini.php" method="POST" enctype="application/x-www-form-urlencoded" name="frmdo$incrementoB" id="frmdo" onsubmit="return ninguno()">
-                        Si no tiene participación en empresas, sociedades o asociaciones, seleccione: &nbsp;&nbsp;&nbsp;<a href="dsp_d_part_empresas_ini.php" class="btn btn-secondary"><small>Ninguno</small></a>;si éste es su primer empleo.
-                    </form>
-                </div></center>    
-            <center>
-                <br>
-                <a href="dsp_d_generales_ini.php" class="btn btn-secondary"><small>Ir a la Declaración de Situación Patrimonial</small></a>
-                <a href="dsp_di_part_toma_des_intit_ini_busca.php" class="btn btn-secondary"><small>Ir a la siguiente sección<</small></a>
-            </center> 
+        <table class="table table-bordered table-striped">
+            <thead class="text-center text-light">
+                <tr> 
+                    <th scope="col" width="20%">Nombre de la empresa</th> 
+                    <th scope="col" width="20%">Titular</th>
+                    <th scope="col" width="40%">Información adicional</th>
+                    <th scope="col" width="20%">Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="text-center"> 
+                @foreach($empresas as $empresa)
+                <tr> 
+                    <th scope="col" width="20%">{{$empresa->tipoInmueble->valor}}</th> 
+                    <th scope="col" width="20%">{{$empresa->titular->valor}}</th> 
+                    <th scope="col" width="40%">{{$empresa->titular->valor}}</th> 
+                    <td class="all">
+                        {!! Form::open(['action' => ['BParticipacionEnEmpresasSociedadesYAsociacionesController@destroy', $empresa->id], 'method'=>'DELETE']) !!}
+                        <div style="display: inline-block;">
+                            <a href="{{route('bienes_inmuebles.edit',[$empresa])}}" class="btn btn-xs btn-warning">
+                                <i class="ion ion-edit"></i>
+                            </a>
+                            <button class="btn btn-xs btn-danger btn-borrar">
+                                <i class="ion ion-trash-a"></i>
+                            </button>
+                        </div>
+                        {!! Form::close() !!}
+                    </td>
+                </tr>
+                @endforeach
+            </tbody> 
+        </table><center><label style="margin-top:10px;">Para adicionar información pulse:<a href="{{route('participacion_empresas.create')}}" class="btn btn-sm btn-secondary">Agregar</a>, de lo contrario vaya a la siguiente sección.</label> </center>    
+
+        <div class="text-center">
+            <a href="dsp_deSerPu_aInmAnt_ini.php" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+            <a href="dsp_d_vehiculos_buscar.php" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+        </div>
     </div>
+
+
 </div>
 @endsection
