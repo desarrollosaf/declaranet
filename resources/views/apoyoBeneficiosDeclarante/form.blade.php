@@ -82,6 +82,8 @@
     </div>
 </div>
 
+
+@section('scripts')
 <script>
 
     function seleccionado(){
@@ -123,4 +125,5 @@
     }
 
 </script>
+@endsection
 

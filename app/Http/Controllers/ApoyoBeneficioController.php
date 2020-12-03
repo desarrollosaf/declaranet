@@ -114,6 +114,8 @@ class ApoyoBeneficioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $apoyoDeclarante = ApoyoBeneficio::find($id);
+        $apoyoDeclarante->delete();
+        return redirect()->route("apoyo_beneficio.index");
     }
 }

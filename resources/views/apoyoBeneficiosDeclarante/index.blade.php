@@ -30,10 +30,13 @@
                             </h8>
                         </td>
                         <td>
-                            <a href="{{route("apoyo_beneficio.create")}}" type="button"
-                                class="btn btn-danger ion ion-">
+                            {!! Form::open(['action' => ['ApoyoBeneficioController@destroy', $apoyo->id], 'method'=>'DELETE']) !!}
+                            <button
+                                class="btn btn-danger ion ion- btn-borrar">
                                  <i class="ion ion-android-delete"></i>
-                             </a>
+                                </button>
+                            {!! Form::close() !!}
+                           
                         </td>
                         <td>
                             <a href="{{route("apoyo_beneficio.edit",$apoyo->id)}}" type="button"
@@ -60,4 +63,27 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('scripts')
+<script>
+    $('.btn-borrar').on('click', function (e) {
+            let that = this;
+            console.log('boton clic');
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Está seguro?',
+                text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    $(that).closest('form').submit();
+                }
+            });            
+            return false;
+        });
+</script>
 @endsection
