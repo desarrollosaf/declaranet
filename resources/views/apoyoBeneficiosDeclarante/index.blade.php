@@ -31,9 +31,8 @@
                         </td>
                         <td>
                             {!! Form::open(['action' => ['ApoyoBeneficioController@destroy', $apoyo->id], 'method'=>'DELETE']) !!}
-                            <button
-                                class="btn btn-danger ion ion- btn-borrar">
-                                 <i class="ion ion-android-delete"></i>
+                                <button class="btn btn-danger ion ion- btn-borrar">
+                                  <i class="ion ion-android-delete"></i>
                                 </button>
                             {!! Form::close() !!}
                            

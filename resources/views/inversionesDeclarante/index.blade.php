@@ -27,10 +27,11 @@
                             <h8><strong>Monto original:</strong>{{$inversion->saldo_a_la_fecha}}<br><strong>Saldo insoluto:</strong> 5</h8>
                         </td>
                         <td>
-                            <a href="{{route("inversiones.destroy",$inversion->id)}}" type="button"
-                                class="btn btn-danger ion ion-">
-                                 <i class="ion ion-android-delete"></i>
-                             </a>
+                            {!! Form::open(['action' => ['InversionesDeclaranteController@destroy', $inversion->id], 'method'=>'DELETE']) !!}
+                                <button class="btn btn-danger ion ion- btn-borrar">
+                                  <i class="ion ion-android-delete"></i>
+                                </button>
+                            {!! Form::close() !!}
                         </td>
                         <td>
                             <a href="{{route("inversiones.edit",$inversion->id)}}" type="button"
@@ -58,4 +59,27 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('scripts')
+<script>
+    $('.btn-borrar').on('click', function (e) {
+            let that = this;
+            console.log('boton clic');
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Está seguro?',
+                text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    $(that).closest('form').submit();
+                }
+            });            
+            return false;
+        });
+</script>
 @endsection

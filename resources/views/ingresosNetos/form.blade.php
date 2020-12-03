@@ -12,7 +12,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_publico', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_publico]',(isset($ingresoMensual->ingreso_mensual_publico)) ? $ingresoMensual->ingreso_mensual_publico : null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_mensual_publico']) !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_publico]',(isset($ingresoMensual->ingreso_mensual_publico)) ? $ingresoMensual->ingreso_mensual_publico : null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_mensual_publico', 'required' => 'true']) !!}</td>
             </tr>
         </table>
     </div>
@@ -131,7 +131,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_mensual_neto']) !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'id' => 'ingreso_mensual_neto', 'required' => 'true']) !!}</td>
             </tr>
         </table>
     </div>
@@ -153,7 +153,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.total_ingresos_declarante_pareja', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[total_ingresos_declarante_pareja]',(isset($ingresoMensual->total_ingresos_declarante_pareja)) ? $ingresoMensual->total_ingresos_declarante_pareja : null,['class'=>'form-control text-uppercase',  'id' => 'total_ingresos_declarante_pareja']) !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[total_ingresos_declarante_pareja]',(isset($ingresoMensual->total_ingresos_declarante_pareja)) ? $ingresoMensual->total_ingresos_declarante_pareja : null,['class'=>'form-control text-uppercase',  'id' => 'total_ingresos_declarante_pareja', 'required' => 'true']) !!}</td>
             </tr>
         </table>
     </div>

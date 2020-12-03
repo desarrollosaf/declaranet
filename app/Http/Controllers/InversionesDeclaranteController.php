@@ -122,7 +122,9 @@ class InversionesDeclaranteController extends Controller
      */
     public function destroy($id)
     {
-        $inversionesDeclarante = InversionesDeclarante::find($id)->destroy();
+        
+        $inversionesDeclarante = InversionesDeclarante::find($id);
+        $inversionesDeclarante->delete();
         return redirect()->route("inversiones.index");
     }
 
