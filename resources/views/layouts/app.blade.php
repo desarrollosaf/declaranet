@@ -31,7 +31,7 @@
         <div class="menu list-group-flush">
             <a href="{{route('datos_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person mr-2"></i>Datos generales</a>
             <a href="{{route('domicilio_declarante.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-home mr-2"></i>Domicilio declarante</a>
-            <a href="{{route('datos_curriculares_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-ribbon-a mr-2"></i>Datos curriculares</a>
+            <a href="{{route('datos_curriculares_declarante.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-ribbon-a mr-2"></i>Datos curriculares</a>
             <a href="{{route('datos_empleo_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Datos empleo</a>
             <a href="{{route('experiencia_laboral.index')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-briefcase mr-2"></i>Experiencia laboral</a>
             <a href="{{route('datos_pareja_declarante.create')}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i class="ion ion-person-stalker mr-2"></i>Datos de la pareja</a>

@@ -6,6 +6,15 @@
             <h1>DATOS DEL DEPENDIENTE ECONÓMICO</h1>
         </div>
         <div class="card-body">
+            <div class="col-md-12">
+                <table class="table table-bordered table-striped table-hover" style="border-collapse: collapse;">
+                    <thead style="background-color: #682244;" class="text-light">
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <thead>
+                </table>
+            </div>
             <p class="text-justify">Deberá proporcionar la información de CADA UNA de las personas, familiares o no, cuya manutención dependa principalmente de los ingresos del Declarante.</p>
             <div class="alert alert-danger text-center" role="alert">
                 Para registrar información pulse:

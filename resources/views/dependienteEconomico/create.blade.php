@@ -54,7 +54,7 @@
         </div>
     </div>
     <div class="card-body">
-        {!! Form::open(['route'=>'datos_dependiente_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'dependienteEconomico']) !!}
+        {!! Form::open(['route'=>'datos_dependiente_declarante.store', 'method'=>'POST', 'role' => 'form', 'id' => 'dependienteEconomico']) !!}
         @include('dependienteEconomico.form')
         {!! Form::close() !!}
     </div>
@@ -113,67 +113,7 @@
         e.preventDefault();
         let that = this;
         var error = false;
-        if ($("#ambito").val() == 1) {
-            if ($("#nivel_orden_gobierno_id").val() == "") {
-                error = true;
-            }
-            if ($("#ambito_publico").val() == "") {
-                error = true;
-            }
-            if ($("#area_adscripcion").val() == "") {
-                error = true;
-            }
-            if ($("#cargo_comision").val() == "") {
-                error = true;
-            }
 
-            if ($("#fecha_ingreso").val() == "") {
-                error = true;
-            }
-
-            if ($("#fecha_egreso").val() == "") {
-                error = true;
-            }
-
-            if ($("#lugares_ubicacion").val() == "") {
-                error = true;
-            }
-            if ($("#observaciones").val() == "") {
-                error = true;
-            }
-            console.log("ambito", $("#ambito").val());
-        } else if ($("#ambito").val() == 2) {
-            console.log("ambito", $("#ambito").val());
-            if ($("#nombre_empresa").val() == "") {
-                error = true;
-            }
-            if ($("#rfc").val() == "") {
-                error = true;
-            }
-            if ($("#area").val() == "") {
-                error = true;
-            }
-            if ($("#puesto").val() == "") {
-                error = true;
-            }
-            if ($("#sector_id").val() == "") {
-                error = true;
-            }
-            if ($("#funcion_principal").val() == "") {
-                error = true;
-            }
-            if ($("#fecha_ingreso").val() == "") {
-                error = true;
-            }
-            if ($("#fecha_egreso").val() == "") {
-                error = true;
-            }
-            if ($("#observaciones").val() == "") {
-                error = true;
-            }
-        }
-
-        console.log("error", error);
         if (error) {
             Swal.fire({
                 title: 'Error',
@@ -181,7 +121,7 @@
                 icon: 'error'
             });
         } else {
-            $('#frmExperienciaLaboral').submit();
+            $('#dependienteEconomico').submit();
         }
     });
     $(document).ready(function () {
@@ -192,6 +132,25 @@
             } else {
                 $("#especifique-parentezco").val("");
                 $("#especifique-parentezco").prop("disabled", true);
+            }
+        });
+    });
+    $("#entidad_id").on('change', function () {
+        var idEntidad = $(this).val();
+//        if (parseInt(idEntidad) === 15) {
+//            $(".foraneo").hide();
+//        }
+        $.ajax({
+            url: "{{asset('getMunicipiosDomicilio')}}/" + idEntidad,
+            type: 'get',
+            dataType: 'json',
+            success: function (response) {
+                console.log(response);
+                $("#municipio_id").find('option').remove();
+                $("#municipio_id").append('<option value="">-- Selecciona un municipio</option>');
+                $(response).each(function (i, v) { // indice, valor
+                    $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
+                });
             }
         });
     });
