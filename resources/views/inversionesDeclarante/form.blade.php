@@ -1,7 +1,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.tipo_de_inversion_id', 'Tipo de inversión / activo:') !!}
-        {!! Form::select('inversiones[tipo_de_inversion_id]', $tipoInversion, isset($inversiones) ? $inversiones->tipo_de_inversion_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_inversion', 'onchange' => 'tipoInversion()', 'required' => 'true']) !!}
+        {!! Form::select('inversiones[tipo_de_inversion_id]', $tipoInversion, isset($inversiones) ? $inversiones->tipo_de_inversion_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_inversion', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -12,7 +12,7 @@
 
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.titular_inversion_id', 'Titular de la inversión, cuenta bancaria y otros tipo de valores:') !!}
-        {!! Form::select('inversiones[titular_inversion_id]', $tipoDeclarante, isset($inversiones) ? $inversiones->titular_inversion_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'inputSelect', 'onchange' => 'seleccionado()', 'required' => 'true']) !!}
+        {!! Form::select('inversiones[titular_inversion_id]', $tipoDeclarante, isset($inversiones) ? $inversiones->titular_inversion_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'inputSelect', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -20,7 +20,7 @@
 <div class="form-row" id="mydiv" style="display: none">
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.tipo_de_tercero_id', 'Tipo de Tercero:') !!}
-        {!! Form::select('inversiones[tipo_de_tercero_id]', $tipoPersona, isset($inversiones) ? $inversiones->tipo_de_tercero_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_tercero', 'onchange' => 'ShowSelected()']) !!}
+        {!! Form::select('inversiones[tipo_de_tercero_id]', $tipoPersona, isset($inversiones) ? $inversiones->tipo_de_tercero_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -37,7 +37,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('inversiones.ubicacion_inversion_id', '¿Dónde se localiza la inversión, cuenta bancaria y otro tipo de valores/activos?:') !!}
-        {!! Form::select('inversiones[ubicacion_inversion_id]', $ubicacionInversion, isset($inversiones) ? $inversiones->ubicacion_inversion_id : null,['class'=>'form-control','id' => 'localizacion_cuenta', 'onchange' => 'pais()', 'required' => 'true']) !!}
+        {!! Form::select('inversiones[ubicacion_inversion_id]', $ubicacionInversion, isset($inversiones) ? $inversiones->ubicacion_inversion_id : null,['class'=>'form-control','id' => 'localizacion_cuenta', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -88,50 +88,12 @@
     </div>
 </div>
 
-<script>
-    function seleccionado(){
-        var opt = $('#inputSelect').val();
-   
-        if(opt=="3" || opt=="4" || opt=="6" || opt=="8" || opt=="10" || opt=="13" || opt=="15" || opt=="18" || opt=="19" || opt=="24"){
-            $('#mydiv').show();
-        }else{
-            $('#mydiv').hide(); 
-        }
 
-    }
-
-    function pais(){
-        var option = $('#localizacion_cuenta').val();
-        
-        // alert(opt);
-        if(option!="1"){
-            $('#ubicacion_rfc').hide();
-            $('#paises').show();
-        }else{
-            $('#ubicacion_rfc').show();
-            $('#paises').hide();
-        }
-
-    }
-
-    function ShowSelected() { 
-        var cod = document.getElementById("tipo_de_tercero").value;
-        var txt = document.getElementById("labelter").value;  
-        /* Para obtener el texto */
-        var combo = document.getElementById("tipo_de_tercero");
-        var selected = combo.options[combo.selectedIndex].value;  
-        if (selected > "1") {
-            document.getElementById('labelter').innerText = 'Razón social del tercero:';
-        } else {
-            document.getElementById('labelter').innerText = 'Nombre del Tercero:';
-        }
-    }
-</script>
 @section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function(){
+<script type="text/javascript">
+    $(document).ready(function(){
 
-        });
+       
         $("#tipo_de_inversion").on('change', function (){
             var tipoInversion = $(this).val();
             console.log(tipoInversion);
@@ -149,6 +111,51 @@
                 }
             });
         });
-    </script>
+
+        
+        $('#inputSelect').change(function () {
+           var opt = $(this).val();
+           console.log(opt);
+           if (opt=="3" || opt=="4" || opt=="6" || opt=="8" || opt=="10" || opt=="13" || opt=="15" || opt=="18" || opt=="19" || opt=="24") {
+                $('#mydiv').show();
+            } else {
+                $('#mydiv').hide();
+            }
+        });
+
+        $('#localizacion_cuenta').change(function () {
+           var value = $(this).val();
+           console.log(value);
+            if(value!="1"){
+                $('#ubicacion_rfc').hide();
+                $('#paises').show();
+            }else{
+                $('#ubicacion_rfc').show();
+                $('#paises').hide();
+            }
+        });
+
+          
+        $('#tipo_de_tercero').change(function () {
+            var cod = document.getElementById("tipo_de_tercero").value;
+            var txt = document.getElementById("labelter").value;  
+            /* Para obtener el texto */
+            var combo = document.getElementById("tipo_de_tercero");
+            var selected = combo.options[combo.selectedIndex].value;
+            if (selected > "1") {
+            document.getElementById('labelter').innerText = 'Razón social del tercero:';
+            } else {
+                document.getElementById('labelter').innerText = 'Nombre del Tercero:';
+            }
+        });
+
+        @isset($inversiones)
+            $('#inputSelect').change();
+            $('#tipo_de_tercero').change();
+            $('#localizacion_cuenta').change();
+        @endisset
+
+    });
+</script>
 @endsection
 
