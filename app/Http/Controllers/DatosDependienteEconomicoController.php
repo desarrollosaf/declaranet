@@ -11,6 +11,9 @@ use Illuminate\Support\Arr;
 
 class DatosDependienteEconomicoController extends Controller
 {
+    public function __construct(Request $request) {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -81,8 +84,14 @@ class DatosDependienteEconomicoController extends Controller
         }
         $respuestas = Arr::pluck(\App\Respuesta::all(),'respuesta',"id");
         array_unshift($respuestas,"Selecciona una opcion");
+        $entidades = Arr::pluck(\App\Entidad::all(),'entidad',"id");
+        array_unshift($entidades,"Selecciona una opcion");
+        $paises = Arr::pluck(\App\Pais::all(),'valor',"id");
+        array_unshift($paises,"Selecciona una opcion");
+        $sectores = Arr::pluck(\App\Sector::all(),'valor',"id");
+        array_unshift($sectores,"Selecciona una opcion");
 
-        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas'));
+        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores'));
     }
 
     /**
@@ -93,7 +102,12 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dump($request->input('declarante'));
+        dump($request->input('nacional'));
+        dump($request->input('extranjero'));
+        dump($request->input('laboral'));
+        dump($request->input('publico'));
+        dump($request->input('privado'));
     }
 
     /**
