@@ -16,6 +16,8 @@ class CreateVehiculos extends Migration
         Schema::create('vehiculos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('declaracion_id');
+            $table->bigInteger('vehiculosable_id');
+            $table->string('vehiculosable_type');
             $table->foreign('declaracion_id')->references('id')->on('declaraciones');
             $table->unsignedBigInteger('tipoVehiculo_id');
             $table->foreign('tipoVehiculo_id')->references('id')->on('tipo_vehiculos');
@@ -34,7 +36,7 @@ class CreateVehiculos extends Migration
             $table->string('v_nombreMoral')->nullable();
             $table->string('v_rfcFisica')->nullable();
             $table->string('v_rfcMoral')->nullable();
-            $table->unsignedBigInteger('relacion_id');
+            $table->unsignedBigInteger('relacion_id')->nullable();
             $table->foreign('relacion_id')->references('id')->on('relacion_transmisores');
             $table->string('v_marca')->nullable();
             $table->string('v_modelo')->nullable();
@@ -45,13 +47,20 @@ class CreateVehiculos extends Migration
             $table->string('v_entidadFederativa')->nullable();
             $table->unsignedBigInteger('pais_id')->nullable();
             $table->foreign('pais_id')->references('id')->on('paises');
-            $table->unsignedBigInteger('tipo_adquisicion_id');
+            $table->unsignedBigInteger('tipo_adquisicion_id')->nullable();
             $table->foreign('tipo_adquisicion_id')->references('id')->on('forma_adquisiciones');
-            $table->unsignedBigInteger('pago_id');
+            $table->unsignedBigInteger('pago_id')->nullable();
             $table->foreign('pago_id')->references('id')->on('forma_pagos');
             $table->string('v_valor')->nullable();
             $table->string('v_moneda')->nullable();
             $table->date('v_fecha')->nullable();
+            $table->unsignedBigInteger('rf_dueno_titular_id')->nullable();
+            $table->foreign('rf_dueno_titular_id')->references('id')->on('regimen_fiscal');
+            $table->string('nombre_dueno')->nullable();
+            $table->string('nombre_titular')->nullable();
+            $table->string('rfc_dueno_titular')->nullable();
+            $table->unsignedBigInteger('relacion_dueno_titular_id')->nullable();
+            $table->foreign('relacion_dueno_titular_id')->references('id')->on('relacion_transmisores');
             $table->string('v_aclaraciones')->nullable();
             $table->softDeletes();
             $table->timestamps();

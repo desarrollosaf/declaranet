@@ -16,13 +16,17 @@ class Domicilio extends Model
     {
         return $this->morphTo();
     }
-    public function entidad()
+    public function entidad_domicilio()
     {
-        return $this->belongsTo(Entidad::class);
+        return $this->belongsTo(Entidad::class,'entidad_id');
     }
-    public function municipio()
+    public function municipio_domicilio()
     {
-        return $this->belongsTo(Municipio::class);
+        return $this->belongsTo(Municipio::class, "municipio_id");
+    }
+    public function pais_domicilio()
+    {
+        return $this->belongsTo(Pais::class, "pais_id");
     }
     public function asentamiento()
     {

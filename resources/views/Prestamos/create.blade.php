@@ -31,7 +31,9 @@
             </div>
         </div>
         <div class="card-body">
-           @include('Prestamos.form')
+            {!! Form::open(['route'=>'prestamos.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'prestamosForm']) !!}
+            @include('Prestamos.form')
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

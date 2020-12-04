@@ -69,4 +69,7 @@ class Declaracion extends Model
         return $this->hasMany(Participacion::class);
     }
 
+    public function prestamosComodato(){
+        return $this->hasMany(PrestamoComodato::class);
+    }
 }

@@ -7,37 +7,50 @@ use Illuminate\Database\Eloquent\Model;
 class Vehiculo extends Model
 {
     protected $table = 'vehiculos';
-    protected $guarded = ["id","created_at","updated_at","deleted_at"];
+    protected $guarded = ["id", "created_at", "updated_at", "deleted_at"];
 
-    public function experienciable(){
+    public function experienciable()
+    {
         return $this->morphTo();
     }
 
-    public function relacion(){
+    public function relacion()
+    {
         return $this->belongsTo(relacionTransmisor::class);
     }
 
-    public function registro(){
+    public function registro()
+    {
         return $this->belongsTo(lugarDondeReside::class);
     }
 
-    public function tipoAdquisicion(){
+    public function tipoAdquisicion()
+    {
         return $this->belongsTo(formaAdquisicion::class);
     }
 
-    public function pago(){
+    public function pago()
+    {
         return $this->belongsTo(FormasPagos::class);
     }
 
-    public function pais(){
+    public function pais()
+    {
         return $this->belongsTo(Pais::class);
     }
 
-    public function regimen(){
+    public function regimen()
+    {
         return $this->belongsTo(RegimenFiscal::class);
     }
 
-    public function tipo_vehiculo(){
-        return $this->belongsTo(tipoVehiculo::class,'tipoVehiculo_id');
+    public function tipo_vehiculo()
+    {
+        return $this->belongsTo(tipoVehiculo::class, 'tipoVehiculo_id');
+    }
+
+    public function vehiculosable()
+    {
+        return $this->morphTo();
     }
 }
