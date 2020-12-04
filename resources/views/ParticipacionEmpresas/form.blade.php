@@ -134,7 +134,6 @@
             
         //CAMBIO DE COLOR TITULAR
         $("#titular_operacion_id").change(function () {
-           
             var tipoTitular = $(this).val();
             if (tipoTitular === "0") {
                 $(".tipo-titular").removeClass("alert-danger");
@@ -182,6 +181,17 @@
                 $("#dom_ext").show();
             }
         });
+        
+        @isset($empresas)
+            $('#titular_operacion_id').change();
+            $("#tipo_participacion_id").change();
+            $('#tipo_respuesta_id').change();
+            $('#sector_productivo_id').change();
+            $('#part_ubicacion_id').change();
+
+        @endisset
+
+ 
         
 </script>
 @endsection

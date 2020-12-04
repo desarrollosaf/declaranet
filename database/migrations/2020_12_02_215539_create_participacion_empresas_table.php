@@ -36,6 +36,7 @@ class CreateParticipacionEmpresasTable extends Migration
             $table->string('entidad_federativa')->nullable();
             $table->unsignedBigInteger('pais_id')->nullable();
             $table->foreign('pais_id')->references('id')->on('paises');
+            $table->string('observaciones')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
