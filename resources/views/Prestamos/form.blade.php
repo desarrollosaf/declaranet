@@ -2,7 +2,7 @@
     <div class="row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('prestamo.tipo_bien_id', 'Tipo de bien en préstamo: *') !!}</strong>
-            {!! Form::select('prestamo[tipo_bien_id]',$selectTipoBien, null,['class'=>'form-control alert-danger',  'id' => 'tipo_bien']) !!}
+            {!! Form::select('prestamo[tipo_bien_id]',$selectTipoBien, (isset($prestamo->tipo_bien_id)) ? $prestamo->tipo_bien_id : null,['class'=>'form-control alert-danger',  'id' => 'tipo_bien']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -402,6 +402,9 @@
                     $("#especifique-inmueble").prop("disabled", true).val("");
                 }
             });
+            $("#tipo_bien").change();
+            $("#tipoVehiculo_id").change();
+            $("#lugar_registro").change();
         });
     </script>
 @endsection

@@ -20,48 +20,60 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($prestamos as $item)
-                    <tr>
-                        <td>{{$item->tipoBien->valor}}</td>
-                        @if($item->tipo_bien_id == 2)
-                            <td>
-                                <p><strong>Calle: </strong>{{$item->inmuebles->domicilio->calle}}</p>
-                                <p><strong>Número interior: </strong>{{$item->inmuebles->domicilio->num_int}}</p>
-                                <p><strong>Número exterior: </strong>{{$item->inmuebles->domicilio->num_ext}}</p>
-                                <p><strong>Colonia / localidad: </strong>{{$item->inmuebles->domicilio->colonia}}</p>
-                                @if($item->inmuebles->domicilio->entidad_id != null)
-                                    <p><strong>
-                                            Entidad
-                                            Federativa: </strong>{{$item->inmuebles->domicilio->entidad_domicilio->entidad}}
-                                    </p>
-                                    <p><strong>Municipio /
-                                            Alcaldia:</strong>{{$item->inmuebles->domicilio->municipio_domicilio->municipio}}
-                                    </p>
-                                @else
-                                    <p><strong>Pais: </strong>{{$item->inmuebles->domicilio->pais_domicilio->valor}}
-                                    </p>
-                                    <p><strong>Estado / Provincia: </strong>{{$item->inmuebles->domicilio->entidad}}
-                                    </p>
+                @if(($prestamos != null))
+                    @foreach($prestamos as $item)
+                        <tr>
+                            <td>{{$item->tipoBien->valor}}</td>
+                            @if($item->tipo_bien_id == 2)
+                                <td>
+                                    <p><strong>Calle: </strong>{{$item->inmuebles->domicilio->calle}}</p>
+                                    <p><strong>Número interior: </strong>{{$item->inmuebles->domicilio->num_int}}</p>
+                                    <p><strong>Número exterior: </strong>{{$item->inmuebles->domicilio->num_ext}}</p>
                                     <p><strong>Colonia / localidad: </strong>{{$item->inmuebles->domicilio->colonia}}
                                     </p>
-                                @endif
-                            </td>
-                        @else
-                            <td class="py-2">
-                                <p><strong>Marca: </strong>{{$item->vehiculos->v_marca}}</p>
-                                <p><strong>Modelo: </strong>{{$item->vehiculos->v_modelo}}</p>
-                                <p><strong>Año: </strong>{{$item->vehiculos->v_ano}}</p>
-                                <p><strong>Número de serie: </strong>{{$item->vehiculos->v_num_serie}}</p>
-                            </td>
+                                    @if($item->inmuebles->domicilio->entidad_id != null)
+                                        <p><strong>
+                                                Entidad
+                                                Federativa: </strong>{{$item->inmuebles->domicilio->entidad_domicilio->entidad}}
+                                        </p>
+                                        <p><strong>Municipio /
+                                                Alcaldia:</strong>{{$item->inmuebles->domicilio->municipio_domicilio->municipio}}
+                                        </p>
+                                    @else
+                                        <p><strong>Pais: </strong>{{$item->inmuebles->domicilio->pais_domicilio->valor}}
+                                        </p>
+                                        <p><strong>Estado / Provincia: </strong>{{$item->inmuebles->domicilio->entidad}}
+                                        </p>
+                                        <p><strong>Colonia /
+                                                localidad: </strong>{{$item->inmuebles->domicilio->colonia}}
+                                        </p>
+                                    @endif
+                                </td>
+                            @else
+                                <td class="py-2">
+                                    <p><strong>Marca: </strong>{{$item->vehiculos->v_marca}}</p>
+                                    <p><strong>Modelo: </strong>{{$item->vehiculos->v_modelo}}</p>
+                                    <p><strong>Año: </strong>{{$item->vehiculos->v_ano}}</p>
+                                    <p><strong>Número de serie: </strong>{{$item->vehiculos->v_num_serie}}</p>
+                                </td>
 
-                        @endif
-                        <td class="py-2"><a href="{{route("prestamos.edit",$item->id)}}"
-                                            class="btn btn-warning btn-sm ion ion-edit"></a></td>
-                        <td class="py-2">
-                            <button class="btn btn-danger btn-sm ion ion-android-delete"></button>
-                        </td>
+                            @endif
+                            <td class="py-2"><a href="{{route("prestamos.edit",$item->id)}}"
+                                                class="btn btn-warning btn-sm ion ion-edit"></a></td>
+                            <td class="py-2">
+                                {!! Form::open(['action' => ['PrestamoOComodatoPorTercerosController@destroy', $item->id], 'method'=>'DELETE']) !!}
+                                <div style="display: inline-block;">
+                                    <button class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
+                                </div>
+                                {!! Form::close() !!}
+                            </td>
+                        </tr>
+                    @endforeach
+                @else
+                    <tr>
+                        <td colspan="4"><h3 class="text-center">No sé encotraron registros aún</h3></td>
                     </tr>
-                @endforeach
+                @endif
                 </tbody>
             </table>
             <div class='text-center'>
@@ -76,4 +88,23 @@
         <a href="dsp_adeudos_pasivos_buscar.php" class="btn btn-secondary"> <small>Ir a la sección anterior</small></a>
         <a href="#" class="btn btn-secondary"> <small>Entregar</small></a>
     </center>
+@endsection
+@section('scripts')
+    <script>
+        $('.btn-borrar').on('click', function (e) {
+            let that = this;
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Está seguro?',
+                text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(that).closest('form').submit();
+                }
+            });
+        });
+    </script>
 @endsection

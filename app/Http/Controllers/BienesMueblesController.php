@@ -24,16 +24,18 @@ class BienesMueblesController extends Controller
      * @return \Illuminate\Http\Response
      */
     private $request;
-    public function __construct(Request $request) {
+
+    public function __construct(Request $request)
+    {
         $this->middleware("auth");
         $this->request = $request;
     }
 
     public function index()
     {
-        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $bienesMuebles = $declaracion->BienesMuebles;
-       return view("Bienesmuebles.index", compact("bienesMuebles"));
+        return view("Bienesmuebles.index", compact("bienesMuebles"));
     }
 
     /**
@@ -43,30 +45,30 @@ class BienesMueblesController extends Controller
      */
     public function create()
     {
-      $selectTitular = Arr::pluck(titularBien::all(), "valor","id");
-      $selectTipoBien = Arr::pluck(tipoBienBienesMuebles::all(), "valor","id");
-      $selectTransmisores = Arr::pluck(RegimenFiscal::all(), "valor","id");
-      $selectRelacionTransmisor = Arr::pluck(relacionTransmisor::all(), "valor","id");
-      $selectFormaAdquisicion = Arr::pluck(formaAdquisicion::all(), "valor","id");
-      $selectFormaPago = Arr::pluck(FormasPagos::all(), "valor","id");
-      $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor","id");
-      $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor","id");
-      array_unshift($selectTitular,"Selecciona una opción");
-      array_unshift($selectTipoBien,"Selecciona una opción");
-      array_unshift($selectTransmisores,"Selecciona una opción");
-      array_unshift($selectRelacionTransmisor,"Selecciona una opción");
-      array_unshift($selectFormaAdquisicion,"Selecciona una opción");
-      array_unshift($selectFormaPago,"Selecciona una opción");
-      array_unshift($selectTipoTercero,"Selecciona una opción");
-      array_unshift($selectTipoMoneda,"Selecciona una opción");
-      return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien','selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda'));
+        $selectTitular = Arr::pluck(titularBien::all(), "valor", "id");
+        $selectTipoBien = Arr::pluck(tipoBienBienesMuebles::all(), "valor", "id");
+        $selectTransmisores = Arr::pluck(RegimenFiscal::all(), "valor", "id");
+        $selectRelacionTransmisor = Arr::pluck(relacionTransmisor::all(), "valor", "id");
+        $selectFormaAdquisicion = Arr::pluck(formaAdquisicion::all(), "valor", "id");
+        $selectFormaPago = Arr::pluck(FormasPagos::all(), "valor", "id");
+        $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
+        $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor", "id");
+        array_unshift($selectTitular, "Selecciona una opción");
+        array_unshift($selectTipoBien, "Selecciona una opción");
+        array_unshift($selectTransmisores, "Selecciona una opción");
+        array_unshift($selectRelacionTransmisor, "Selecciona una opción");
+        array_unshift($selectFormaAdquisicion, "Selecciona una opción");
+        array_unshift($selectFormaPago, "Selecciona una opción");
+        array_unshift($selectTipoTercero, "Selecciona una opción");
+        array_unshift($selectTipoMoneda, "Selecciona una opción");
+        return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien', 'selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda'));
 
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -82,7 +84,7 @@ class BienesMueblesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -93,28 +95,28 @@ class BienesMueblesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $selectTitular = Arr::pluck(titularBien::all(), "valor","id");
-        $selectTipoBien = Arr::pluck(tipoBienBienesMuebles::all(), "valor","id");
-        $selectTransmisores = Arr::pluck(RegimenFiscal::all(), "valor","id");
-        $selectRelacionTransmisor = Arr::pluck(relacionTransmisor::all(), "valor","id");
-        $selectFormaAdquisicion = Arr::pluck(formaAdquisicion::all(), "valor","id");
-        $selectFormaPago = Arr::pluck(FormasPagos::all(), "valor","id");
-        $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor","id");
-        $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor","id");
+        $selectTitular = Arr::pluck(titularBien::all(), "valor", "id");
+        $selectTipoBien = Arr::pluck(tipoBienBienesMuebles::all(), "valor", "id");
+        $selectTransmisores = Arr::pluck(RegimenFiscal::all(), "valor", "id");
+        $selectRelacionTransmisor = Arr::pluck(relacionTransmisor::all(), "valor", "id");
+        $selectFormaAdquisicion = Arr::pluck(formaAdquisicion::all(), "valor", "id");
+        $selectFormaPago = Arr::pluck(FormasPagos::all(), "valor", "id");
+        $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
+        $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor", "id");
         $bienMueble = BienesMuebles::find($id);
-        return view("BienesMuebles.edit", compact("selectTitular", "selectTipoBien",  "selectTransmisores", "selectRelacionTransmisor", "selectFormaAdquisicion", "selectFormaPago", "selectTipoTercero", "selectTipoMoneda", "bienMueble"));
+        return view("BienesMuebles.edit", compact("selectTitular", "selectTipoBien", "selectTransmisores", "selectRelacionTransmisor", "selectFormaAdquisicion", "selectFormaPago", "selectTipoTercero", "selectTipoMoneda", "bienMueble"));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -130,12 +132,12 @@ class BienesMueblesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $bien = BienesMuebles::find($id)->destroy();
+        BienesMuebles::destroy($id);
         return redirect()->route("bienes_muebles.index");
     }
 }

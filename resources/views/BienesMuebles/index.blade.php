@@ -14,7 +14,8 @@
                             <tr>
                                 <th scope="col">Titular bien</th>
                                 <th scope="col">Descripción</th>
-                                <th scope="col">Opciones</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -28,13 +29,15 @@
                                     @endif
                                     <td>
                                         <a href="{{route("bienes_muebles.edit",$item->id)}}" type="button"
-                                           class="btn btn-warning ion ion-">
-                                            <i class="ion ion-edit"></i>
-                                        </a>
-                                        <a href="{{route("bienes_muebles.destroy",$item->id)}}" type="button"
-                                           class="btn btn-danger ion ion-">
-                                            <i class="ion ion-android-delete"></i>
-                                        </a>
+                                           class="btn btn-warning btn-sm ion ion-edit"></a>
+                                    </td>
+                                    <td>
+                                        {!! Form::open(['action' => ['BienesMueblesController@destroy', $item->id], 'method'=>'DELETE']) !!}
+                                        <div style="display: inline-block;">
+                                            <button
+                                                class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
+                                        </div>
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach
@@ -63,4 +66,23 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $('.btn-borrar').on('click', function (e) {
+            let that = this;
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Está seguro?',
+                text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(that).closest('form').submit();
+                }
+            });
+        });
+    </script>
 @endsection
