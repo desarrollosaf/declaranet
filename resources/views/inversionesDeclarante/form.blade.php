@@ -143,7 +143,7 @@
             var combo = document.getElementById("tipo_de_tercero");
             var selected = combo.options[combo.selectedIndex].value;
             if (selected > "1") {
-            document.getElementById('labelter').innerText = 'Razón social del tercero:';
+                document.getElementById('labelter').innerText = 'Razón social del tercero:';
             } else {
                 document.getElementById('labelter').innerText = 'Nombre del Tercero:';
             }

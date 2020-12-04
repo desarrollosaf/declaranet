@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class AdeudosPasivosDeclaranteController extends Controller
 {
@@ -25,7 +26,12 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function create()
     {
-        return view('adeudosDeclarante.create');
+        $tipoDeclarante = Arr::pluck(\App\titularInversion::all(), "valor","id");
+        $tipoAdeudos = Arr::pluck(\App\tipoAdeudo::all(), "valor","id");
+        $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
+        $lugarUbicacion = Arr::pluck(\App\LugarUbicacion::all(), "valor","id");
+        $paises = Arr::pluck(\App\Pais::all(), "valor","id");
+        return view('adeudosDeclarante.create', compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises'));
     }
 
     /**
