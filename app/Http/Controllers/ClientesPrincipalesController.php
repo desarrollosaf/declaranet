@@ -11,6 +11,7 @@ use App\tipoRelacion;
 use App\sector;
 use App\lugarDondeReside;
 use App\Pais;
+use App\Declaracion;
 
 class ClientesPrincipalesController extends Controller
 {
@@ -21,7 +22,9 @@ class ClientesPrincipalesController extends Controller
     }
     public function index()
     {
-         return view("Clientes.index");
+        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $clientes = $declaracion->clientes;
+        return view("Clientes.index", compact('clientes'));
     }
 
     /**
@@ -32,6 +35,7 @@ class ClientesPrincipalesController extends Controller
     public function create()
     {
         $selectRespuestas = Arr::pluck(Respuesta::all(), "respuesta","id");
+        array_unshift($selectRespuestas, "Selecciona una opcion");
 
         $titulares = tipoRelacion::all();
         $titular = [];
@@ -83,7 +87,7 @@ class ClientesPrincipalesController extends Controller
         $clientes = $this->request->input("clientes");
         $clientes['declaracion_id']=$this->request->session()->get('declaracion_id');
         Clientes::create($clientes);
-        return redirect("clientes");
+        return redirect("clientes_principales");
     }
 
     /**
@@ -106,7 +110,8 @@ class ClientesPrincipalesController extends Controller
     public function edit($id)
     {
         $clientes = Clientes::find($id);
-        $selectRespuestas = Arr::pluck(Respuesta::all(), 'valor','id');
+        $selectRespuestas = Arr::pluck(Respuesta::all(), 'respuesta','id');
+        array_unshift($selectRespuestas, "Selecciona una opcion");
         $titular = Arr::pluck(tipoRelacion::all(), 'valor','id');
         $regimen = Arr::pluck(RegimenFiscal::all(), 'valor','id');
         $sector = Arr::pluck(sector::all(), 'valor','id');

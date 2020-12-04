@@ -6,7 +6,9 @@
             <h1>CLIENTES PRINCIPALES</h1> <h5>(Hasta los últimos dos años)</h5>
         </div>
         <div class="card-body">
-            @include(Clientes.form')
+            {!! Form::model($clientes, ['route' => ['clientes_principales.update', $clientes->id], 'method' => 'put'] ) !!}
+            @include('Clientes.form')
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

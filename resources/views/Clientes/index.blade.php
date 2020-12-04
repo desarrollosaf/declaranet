@@ -16,24 +16,29 @@
                         <th scope="col" width="20%">Acciones</th></tr>
                     </thead>
                     <tbody class="text-center">
+                    @if($clientes)
+                        @foreach($clientes as $cliente)
+
                             <tr>
                                 <td>
-                                    <center></center>
+                                    <center>{{$cliente->tipoRelaciones->valor}}</center>
                                 </td>
                                 <td>
-                                    <center></center>
+                                    <center>{{$cliente->nombre_empresa}}</center>
                                 </td>
                                 <td>
                                     <center>
-                                        <strong>Nombre del cliente:</strong>  <br>
-                                        <strong>Sector:</strong> <br>
-                                        <strong>Monto aproximado:</strong>
+                                        <strong>Nombre del cliente:{{$cliente->nombre_cliente}} {{$cliente->nombre_cliente_moral}}</strong>  <br>
+                                        <strong>Sector:{{$cliente->sectores->valor}}</strong> <br>
+                                        <strong>Monto aproximado:{{$cliente->monto_beneficio}}</strong>
                                     </center>
                                 </td>
                                 <td class="all">
-
+                                    {!! Form::open(['action' => ['ClientesPrincipalesController@destroy', $cliente->id], 'method'=>'DELETE']) !!}
                                     <div style="display: inline-block;">
-
+                                        <a href="{{route('clientes_principales.edit',[$cliente])}}" class="btn btn-xs btn-warning">
+                                            <i class="ion ion-edit"></i>
+                                        </a>
                                         <button class="btn btn-xs btn-danger btn-borrar">
                                             <i class="ion ion-trash-a btn-borrar"></i>
                                         </button>
@@ -41,7 +46,8 @@
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
-
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
                 <center>
