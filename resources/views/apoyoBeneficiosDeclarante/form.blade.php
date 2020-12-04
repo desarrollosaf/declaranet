@@ -1,7 +1,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.titular_apoyo_id', 'Titular del apoyo o beneficio:') !!}
-        {!! Form::select('apoyo[titular_apoyo_id]', $parentesco, isset($apoyo) ? $apoyo->titular_apoyo_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'titular_apoyo', 'required' => 'true', 'onchange' => 'seleccionado()']) !!}
+        {!! Form::select('apoyo[titular_apoyo_id]', $parentesco, isset($apoyo) ? $apoyo->titular_apoyo_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'titular_apoyo', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -29,7 +29,7 @@
     </div>
     <div class="form-group col-md-4" id="tipo_apoyo_id">
         {!! Form::label('apoyo.tipo_apoyo_id', 'Tipo de apoyo:') !!}
-        {!! Form::select('apoyo[tipo_apoyo_id]', $tipoApoyo, isset($apoyo) ? $apoyo->tipo_apoyo_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_apoyo', 'required' => 'true', 'onchange' => 'apoyo()']) !!}
+        {!! Form::select('apoyo[tipo_apoyo_id]', $tipoApoyo, isset($apoyo) ? $apoyo->tipo_apoyo_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_apoyo', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -41,7 +41,7 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('apoyo.forma_recepcion_id', 'Forma de recepción del beneficio:') !!}
-        {!! Form::select('apoyo[forma_recepcion_id]', $formaRecepcion, isset($apoyo) ? $apoyo->forma_recepcion_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'forma_recepcion', 'required' => 'true', 'onchange' => 'recepcion()']) !!}
+        {!! Form::select('apoyo[forma_recepcion_id]', $formaRecepcion, isset($apoyo) ? $apoyo->forma_recepcion_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'forma_recepcion', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="moneda" style="display: none">
@@ -83,47 +83,58 @@
 </div>
 
 
+
 @section('scripts')
-<script>
+<script type="text/javascript">
+    $(document).ready(function(){
 
-    function seleccionado(){
-        var opt = $('#titular_apoyo').val();
-        if(opt == "23"){
+
+        $('#titular_apoyo').change(function () {
+           var opt = $(this).val();
+           if(opt == "23"){
             document.getElementById("especifique_otro").disabled = false;
-        }else{
+           }else{
             document.getElementById("especifique_otro").disabled = true;
-        }
-    }
+           }
+        });
 
-    function apoyo(){
-        var opt = $('#tipo_apoyo').val();
-        if(opt == "4"){
-            document.getElementById("especifique_apoyo").disabled = false;
-        }else{
-            document.getElementById("especifique_apoyo").disabled = true;
-        }
-    }
+        $('#tipo_apoyo').change(function () {
+            var value = $(this).val();
+            if(value == "4"){
+                document.getElementById("especifique_apoyo").disabled = false;
+            }else{
+                document.getElementById("especifique_apoyo").disabled = true;
+            }
+        });
 
-    function recepcion(){
-        var option = $('#forma_recepcion').val();
+          
+        $('#forma_recepcion').change(function () {
+            var val = $(this).val();
+            if(val!="1"){
+                $('#moneda').hide();
+                $('#esp').show();
+                $('#espRep').hide();
+            }else{
+                $('#moneda').show();
+                $('#esp').hide();
+                $('#espRep').hide();
+            }
+            if(val == ""){
+                $('#moneda').hide();
+                $('#esp').hide();
+                $('#espRep').show();
+            }
+        });
 
-        if(option!="1"){
-            $('#moneda').hide();
-            $('#esp').show();
-            $('#espRep').hide();
-        }else{
-            $('#moneda').show();
-            $('#esp').hide();
-            $('#espRep').hide();
-        }
-        if(option == ""){
-            $('#moneda').hide();
-            $('#esp').hide();
-            $('#espRep').show();
-        }
+        @isset($apoyo)
+            $('#titular_apoyo').change();
+            $('#tipo_apoyo').change();
+            $('#forma_recepcion').change();
+        @endisset
 
-    }
-
+    });
 </script>
 @endsection
+
+
 
