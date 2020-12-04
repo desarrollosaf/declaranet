@@ -65,4 +65,8 @@ class Declaracion extends Model
         return $this->hasMany(Clientes::class);
     }
 
+    public  function participacion(){
+        return $this->hasMany(Participacion::class);
+    }
+
 }

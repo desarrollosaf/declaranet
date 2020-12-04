@@ -6,10 +6,10 @@
             <h1>¿PARTICIPA EN LA TOMA DE DECISIONES DE ALGUNA DE ESTAS INSTITUCIONES?</h1> <h5>(Hasta los últimos dos años)</h5>
         </div>
         <div class="card-body">
-            @include(ParticipaDecision.form')
+            {!! Form::model($participaciones, ['route' => ['participacion.update', $participaciones->id], 'method' => 'put'] ) !!}
+            @include('ParticipaDecision.form')
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
-@endsection
-
-
+<input type="hidden" id="accion" value="editar">
