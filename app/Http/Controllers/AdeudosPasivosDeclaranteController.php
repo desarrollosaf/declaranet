@@ -95,7 +95,10 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->input("adeudos");
+        $adeudoDeclarante = AdeudosPasivos::find($id);
+        $adeudoDeclarante->update($data);
+        return redirect()->route("adeudos.index");
     }
 
     /**
@@ -106,6 +109,8 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $adeudoDeclarante = AdeudosPasivos::find($id);
+        $adeudoDeclarante->delete();
+        return redirect()->route("adeudos.index");
     }
 }

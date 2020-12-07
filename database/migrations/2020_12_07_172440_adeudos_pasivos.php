@@ -35,8 +35,6 @@ class AdeudosPasivos extends Migration
             $table->foreign('tipo_otorgante_id')->references('id')->on('tipo_persona');
             $table->string('nombre_otorgante')->nullable();
             $table->string('rfc_otorgante')->nullable();
-            $table->string('institucion_otorgante')->nullable();
-            $table->string('rfc_institucion')->nullable();
             $table->unsignedBigInteger('ubicacion_adeudo_id');
             $table->foreign('ubicacion_adeudo_id')->references('id')->on('lugares_ubicacion');
             $table->string('entidad_federativa')->nullable();

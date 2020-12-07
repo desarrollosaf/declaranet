@@ -11,7 +11,7 @@
     </div>
     <div class="form-group col-md-4" id="myEsp" style="display: none">
         {!! Form::label('adeudos.especifique_adeudo', 'Especifique:') !!}
-        {!! Form::text('adeudos[especifique_adeudo]',isset($adeudos) ? $adeudos->especifique_adeudo : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'carrera']) !!}
+        {!! Form::text('adeudos[especifique_adeudo]',isset($adeudos) ? $adeudos->especifique_adeudo : null,['class'=>'form-control', 'placeholder'=>'p.ej. Tipo de Adeudo',  'id' => 'carrera']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -35,7 +35,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('adeudos.numero_cuenta', 'Número de cuenta o contrato:') !!}
-        {!! Form::text('adeudos[numero_cuenta]',isset($adeudos) ? $adeudos->numero_cuenta : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'inst_educativa']) !!}
+        {!! Form::text('adeudos[numero_cuenta]',isset($adeudos) ? $adeudos->numero_cuenta : null,['class'=>'form-control', 'placeholder'=>'p.ej. 01010101',  'id' => 'inst_educativa']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -45,19 +45,19 @@
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('adeudos.monto_adeudo', 'Monto original del adeudo/pasivo:') !!}
-        {!! Form::text('adeudos[monto_adeudo]', isset($adeudos) ? $adeudos->monto_adeudo : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'carrera']) !!}
+        {!! Form::text('adeudos[monto_adeudo]', isset($adeudos) ? $adeudos->monto_adeudo : null,['class'=>'form-control', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'carrera']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('adeudos.tipo_moneda', 'Tipo de moneda:') !!}
-        {!! Form::text('adeudos[tipo_moneda]', isset($adeudos) ? $adeudos->tipo_moneda : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'inst_educativa']) !!}
+        {!! Form::text('adeudos[tipo_moneda]', isset($adeudos) ? $adeudos->tipo_moneda : null,['class'=>'form-control', 'placeholder'=>'p.ej. Peso Mexicano',  'id' => 'inst_educativa']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         {!! Form::label('adeudos.saldo_insoluto', 'Saldo insoluto (a la fecha de ingreso):') !!}
-        {!! Form::text('adeudos[saldo_insoluto]', isset($adeudos) ? $adeudos->saldo_insoluto : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'inst_educativa']) !!}
+        {!! Form::text('adeudos[saldo_insoluto]', isset($adeudos) ? $adeudos->saldo_insoluto : null,['class'=>'form-control', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'inst_educativa']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -141,14 +141,20 @@
            console.log(valcod);
            if (valcod > "1") {
                 document.getElementById('labelcod').innerText = 'Denominación o razón social:';
+                document.getElementById('nombre_del_codeudor').placeholder = 'p.ej. Desarrollo y Redes S.A de C.V.';
+                document.getElementById('rfc_codeudor').placeholder = 'p.ej.XXX010101';
                 document.getElementById("nombre_del_codeudor").disabled = false;
                 document.getElementById("rfc_codeudor").disabled = false;
             } else {
                 document.getElementById('labelcod').innerText = 'Nombre:';
+                document.getElementById('nombre_del_codeudor').placeholder = 'p.ej. Juan Perez';
+                document.getElementById('rfc_codeudor').placeholder = 'p.ej.XXXX010101';
                 document.getElementById("nombre_del_codeudor").disabled = false;
                 document.getElementById("rfc_codeudor").disabled = false;
             }
            if(valcod == ""){
+                document.getElementById('nombre_del_codeudor').placeholder = '';
+                document.getElementById('rfc_codeudor').placeholder = '';
                 document.getElementById("nombre_del_codeudor").disabled = true;
                 document.getElementById("rfc_codeudor").disabled = true;
             }
@@ -161,17 +167,23 @@
            if (oto > "1") {
                 document.getElementById('nom_credito').innerText = 'Institución o razón social del otorgante:';
                 document.getElementById('rfc_credito').innerText = 'RFC de la Institución o razón social:';
+                document.getElementById('nomC').placeholder = 'p.ej. Desarrollo y Redes S.A de C.V.';
+                document.getElementById('rfC').placeholder = 'p.ej.XXX010101';
                 document.getElementById("nomC").disabled = false;
                 document.getElementById("rfC").disabled = false;
             } else {
                 document.getElementById('nom_credito').innerText = 'Nombre del otorgante:';
                 document.getElementById('rfc_credito').innerText = 'RFC del otorgante:';
+                document.getElementById('nomC').placeholder = 'p.ej. Juan Perez';
+                document.getElementById('rfC').placeholder = 'p.ej.XXXX010101';
                 document.getElementById("nomC").disabled = false;
                 document.getElementById("rfC").disabled = false;
             }
            if(oto == ""){
                 document.getElementById('nom_credito').innerText = 'Nombre:';
                 document.getElementById('rfc_credito').innerText = 'RFC:';
+                document.getElementById('nomC').placeholder = '';
+                document.getElementById('rfC').placeholder = '';
                 document.getElementById("nomC").disabled = true;
                 document.getElementById("rfC").disabled = true;
             }
