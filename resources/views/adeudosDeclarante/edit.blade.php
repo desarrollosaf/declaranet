@@ -13,7 +13,7 @@
             </div>
             <label>ADEUDOS DEL DECLARANTE, PAREJA Y/O DEPENDIENTES ECONÓMICOS.</label>
             <hr>
-            {!! Form::open(['route'=>'adeudos.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => '']) !!}
+            {!! Form::open(['route'=>['adeudos.edit', $adeudos->id], 'method'=>'PUT', 'files' => true, 'role' => 'form', 'id' => '']) !!}
                 @include('adeudosDeclarante.form')
             {!! Form::close() !!}
             

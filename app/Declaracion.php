@@ -72,4 +72,7 @@ class Declaracion extends Model
     public function prestamosComodato(){
         return $this->hasMany(PrestamoComodato::class);
     }
+    public function adeudos_pasivos() {
+        return $this->hasMany(AdeudosPasivos::class);
+    }
 }

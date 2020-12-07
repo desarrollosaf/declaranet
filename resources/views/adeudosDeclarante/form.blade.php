@@ -1,106 +1,115 @@
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', 'Titular del adeudo:') !!}
-        {!! Form::select('inversiones[titular_inversion_id]', $tipoDeclarante, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'inputSelect', 'required' => 'true']) !!}
+        {!! Form::label('adeudos.titular_adeudo_id', 'Titular del adeudo:') !!}
+        {!! Form::select('adeudos[titular_adeudo_id]', $tipoDeclarante, isset($adeudos) ? $adeudos->titular_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'inputSelect', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', ' Tipo de adeudo: ') !!}
-        {!! Form::select('inversiones[titular_inversion_id]', $tipoAdeudos, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_adeudo', 'required' => 'true']) !!}
+        {!! Form::label('adeudos.tipo_adeudo_id', ' Tipo de adeudo: ') !!}
+        {!! Form::select('adeudos[tipo_adeudo_id]', $tipoAdeudos, isset($adeudos) ? $adeudos->tipo_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_adeudo', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="myEsp" style="display: none">
-        {!! Form::label('carrera', 'Especifique:') !!}
-        {!! Form::text('carrera',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'carrera']) !!}
+        {!! Form::label('adeudos.especifique_adeudo', 'Especifique:') !!}
+        {!! Form::text('adeudos[especifique_adeudo]',isset($adeudos) ? $adeudos->especifique_adeudo : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'carrera']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row" id="mydiv" style="display: none">
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.tipo_de_tercero_id', 'Codeudor:') !!}
-        {!! Form::select('inversiones[tipo_de_tercero_id]', $tipoPersona, isset($inversiones) ? $inversiones->tipo_de_tercero_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'codeudor']) !!}
+        {!! Form::label('adeudos.codeudor_id', 'Codeudor:') !!}
+        {!! Form::select('adeudos[codeudor_id]', $tipoPersona, isset($adeudos) ? $adeudos->codeudor_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'codeudor']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.nombre_del_tercero', 'Nombre del codeudor:', ['id' => 'labelcod']) !!}
-        {!! Form::text('inversiones[nombre_del_tercero]',isset($inversiones) ? $inversiones->nombre_del_tercero : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nombre_del_codeudor', 'disabled' => 'true']) !!}
+        {!! Form::label('adeudos.nombre_codeudor', 'Nombre del codeudor:', ['id' => 'labelcod']) !!}
+        {!! Form::text('adeudos[nombre_codeudor]',isset($adeudos) ? $adeudos->nombre_codeudor : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nombre_del_codeudor', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('inversiones.rfc_tercero', 'RFC:') !!}
-        {!! Form::text('inversiones[rfc_tercero]',isset($inversiones) ? $inversiones->rfc_tercero : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'rfc_codeudor', 'disabled' => 'true']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', 'Número de cuenta o contrato:') !!}
-        {!! Form::text('inst_educativa',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'inst_educativa']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', 'Fecha de adquisición del adeudo/pasivo:') !!}
-        {!! Form::date('bienesinmuebles[fecha_adquisicion]', isset($bien) ? $bien->fecha_adquisicion : null,['class'=>'form-control tipo-titular', 'id' => 'fecha_adquisicion']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4">
-        {!! Form::label('carrera', 'Monto original del adeudo/pasivo:') !!}
-        {!! Form::text('carrera',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'carrera']) !!}
+        {!! Form::label('adeudos.rfc_codeudor', 'RFC:') !!}
+        {!! Form::text('adeudos[rfc_codeudor]',isset($adeudos) ? $adeudos->rfc_codeudor : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'rfc_codeudor', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', 'Tipo de moneda:') !!}
-        {!! Form::text('inst_educativa',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'inst_educativa']) !!}
+        {!! Form::label('adeudos.numero_cuenta', 'Número de cuenta o contrato:') !!}
+        {!! Form::text('adeudos[numero_cuenta]',isset($adeudos) ? $adeudos->numero_cuenta : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'inst_educativa']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', 'Saldo insoluto (a la fecha de ingreso):') !!}
-        {!! Form::text('inst_educativa',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'inst_educativa']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', 'Otorgante del crédito:') !!}
-        {!! Form::select('inversiones[titular_inversion_id]', $tipoPersona, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'otorgante_credito', 'required' => 'true']) !!}
+        {!! Form::label('adeudos.fecha_adquisicion', 'Fecha de adquisición del adeudo/pasivo:') !!}
+        {!! Form::date('adeudos[fecha_adquisicion]', isset($adeudos) ? $adeudos->fecha_adquisicion : null,['class'=>'form-control tipo-titular', 'id' => 'fecha_adquisicion']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', 'Nombre:', ['id' => 'nom_credito']) !!}
-        {!! Form::text('inst_educativa',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nomC', 'disabled' => 'true']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', 'RFC:', ['id' => 'rfc_credito']) !!}
-        {!! Form::text('inst_educativa',null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'rfC', 'disabled' => 'true']) !!}
+        {!! Form::label('adeudos.monto_adeudo', 'Monto original del adeudo/pasivo:') !!}
+        {!! Form::text('adeudos[monto_adeudo]', isset($adeudos) ? $adeudos->monto_adeudo : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'carrera']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        {!! Form::label('inst_educativa', 'Localización del adeudo:') !!}
-        {!! Form::select('inversiones[titular_inversion_id]', $lugarUbicacion, [],['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'localizacion_adeudo', 'required' => 'true']) !!}
+        {!! Form::label('adeudos.tipo_moneda', 'Tipo de moneda:') !!}
+        {!! Form::text('adeudos[tipo_moneda]', isset($adeudos) ? $adeudos->tipo_moneda : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'inst_educativa']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4">
+        {!! Form::label('adeudos.saldo_insoluto', 'Saldo insoluto (a la fecha de ingreso):') !!}
+        {!! Form::text('adeudos[saldo_insoluto]', isset($adeudos) ? $adeudos->saldo_insoluto : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'inst_educativa']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-4">
+        {!! Form::label('adeudos.tipo_otorgante_id', 'Otorgante del crédito:') !!}
+        {!! Form::select('adeudos[tipo_otorgante_id]', $tipoPersona, isset($adeudos) ? $adeudos->tipo_otorgante_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'otorgante_credito', 'required' => 'true']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4">
+        {!! Form::label('adeudos.nombre_otorgante', 'Nombre:', ['id' => 'nom_credito']) !!}
+        {!! Form::text('adeudos[nombre_otorgante]', isset($adeudos) ? $adeudos->nombre_otorgante : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nomC', 'disabled' => 'true']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4">
+        {!! Form::label('adeudos.rfc_otorgante', 'RFC:', ['id' => 'rfc_credito']) !!}
+        {!! Form::text('adeudos[rfc_otorgante]', isset($adeudos) ? $adeudos->rfc_otorgante : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'rfC', 'disabled' => 'true']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-4">
+        {!! Form::label('adeudos.ubicacion_adeudo_id', 'Localización del adeudo:') !!}
+        {!! Form::select('adeudos[ubicacion_adeudo_id]', $lugarUbicacion, isset($adeudos) ? $adeudos->ubicacion_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'localizacion_adeudo', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="entidad" style="display: none">
-        {!! Form::label('inst_educativa', 'Entidad federativa:') !!}
-        {!! Form::text('inversiones[rfc_tercero]',isset($inversiones) ? $inversiones->rfc_tercero : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'rfc_codeudor']) !!}
+        {!! Form::label('adeudos.entidad_federativa', 'Entidad federativa:') !!}
+        {!! Form::text('adeudos[entidad_federativa]',isset($adeudos) ? $adeudos->entidad_federativa : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'rfc_codeudor']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
-        {!! Form::label('inversiones.pais_ubicacion_cuenta_id', 'País dónde se localiza:') !!}
-        {!! Form::select('inversiones[pais_ubicacion_cuenta_id]',$paises, isset($inversiones) ? $inversiones->pais_ubicacion_cuenta_id : null,['class'=>'form-control', 'placeholder'=>'Seleccione una opcion','id' => 'pais_cuenta']) !!}
+        {!! Form::label('adeudos.pais_id', 'País dónde se localiza:') !!}
+        {!! Form::select('adeudos[pais_id]',$paises, isset($adeudos) ? $adeudos->pais_id : null,['class'=>'form-control', 'placeholder'=>'Seleccione una opcion','id' => 'pais_cuenta']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-12">
-        {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}
-        {!! Form::textarea('aclaraciones', null, ['class'=>'form-control alert-danger']) !!}
+        {!! Form::label('adeudos.aclaraciones_observaciones', 'Aclaraciones / Observaciones:') !!}
+        {!! Form::textarea('adeudos[aclaraciones_observaciones]',isset($adeudos) ? $adeudos->aclaraciones_observaciones : null,['class'=>'form-control alert-danger']) !!}
     </div>
 </div>
+<div class="form-row">
+    <div class="col">
+        {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+    </div>
+    <div class="col">
+        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+    </div>
+</div>
+
 
 
 @section('scripts')
@@ -186,7 +195,7 @@
         });
 
    
-        @isset($inversiones)
+        @isset($adeudos)
             $('#inputSelect').change();
             $('#tipo_adeudo').change();
             $('#codeudor').change();
