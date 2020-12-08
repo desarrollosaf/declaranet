@@ -21,12 +21,20 @@
                     @foreach($apoyos as $apoyo)
                     <tr>
                         @if($apoyos!= null)
-                        <td>{{$apoyo->tipoBeneficiario->valor}}</td>
+                            @if($apoyo->tipoBeneficiario->id != 23)
+                                <td>{{$apoyo->tipoBeneficiario->valor}}</td>
+                            @else
+                                <td>{{$apoyo->especifique_titular}}</td>
+                            @endif
                         <td>{{$apoyo->nombre_programa}}</td>
                         <td>
                             <h8><strong>Institución:</strong>{{$apoyo->nombre_institucion}}<br>
                                 <strong>Nivel:</strong> {{$apoyo->nivelGobierno->valor}}<br>
-                                <strong>Tipo de apoyo:</strong> {{$apoyo->tipoApoyo->valor}}
+                                @if($apoyo->tipoApoyo->id != 4)
+                                     <strong>Tipo de apoyo:</strong> {{$apoyo->tipoApoyo->valor}}
+                                @else
+                                     <strong>Tipo de apoyo:</strong>{{$apoyo->especifique_apoyo}}
+                                @endif
                             </h8>
                         </td>
                         <td>

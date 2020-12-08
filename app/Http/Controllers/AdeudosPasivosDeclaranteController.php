@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\AdeudosPasivos;
+use App\Declaracion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
 class AdeudosPasivosDeclaranteController extends Controller
 {
+
+    private $request;
+    public function __construct(Request $request) {
+        $this->middleware("auth");
+        $this->request=$request;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,9 +22,9 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function index()
     {
-        alert()->basic('Notificación Básica, mensaje y título', 'Título');
-        return view('adeudosDeclarante.index');
-
+        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $adeudos = $declaracion->adeudos_pasivos;
+        return view("adeudosDeclarante.index", compact('adeudos'));
     }
 
     /**
@@ -42,7 +50,11 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $adeudoDeclarante = $this->request->input("adeudos");
+        $adeudoDeclarante['declaracion_id']=$this->request->session()->get('declaracion_id');
+        //dd($inversionesDeclarante);
+        AdeudosPasivos::create($adeudoDeclarante);
+        return redirect()->route("adeudos.index");
     }
 
     /**
@@ -64,7 +76,14 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tipoDeclarante = Arr::pluck(\App\titularInversion::all(), "valor","id");
+        $tipoAdeudos = Arr::pluck(\App\tipoAdeudo::all(), "valor","id");
+        $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
+        $lugarUbicacion = Arr::pluck(\App\LugarUbicacion::all(), "valor","id");
+        $paises = Arr::pluck(\App\Pais::all(), "valor","id");
+        $adeudos = AdeudosPasivos::find($id);
+
+        return view("adeudosDeclarante.edit", compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises', 'adeudos'));
     }
 
     /**
@@ -76,7 +95,10 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->input("adeudos");
+        $adeudoDeclarante = AdeudosPasivos::find($id);
+        $adeudoDeclarante->update($data);
+        return redirect()->route("adeudos.index");
     }
 
     /**
@@ -87,6 +109,8 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $adeudoDeclarante = AdeudosPasivos::find($id);
+        $adeudoDeclarante->delete();
+        return redirect()->route("adeudos.index");
     }
 }
