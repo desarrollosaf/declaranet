@@ -11,8 +11,10 @@ use Illuminate\Support\Arr;
 
 class DatosDependienteEconomicoController extends Controller
 {
+    private $request;
     public function __construct(Request $request) {
         $this->middleware('auth');
+        $this->request = $request;
     }
     /**
      * Display a listing of the resource.
@@ -21,34 +23,9 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function index()
     {
-        $parentesco = parentescoRelacion::all();
-       
-        $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
-        foreach ($parentesco as $item){
-            $selectParentesco[$item->id] = $item->valor;
-        }
-        $extranjero = extranjero::all();
-        $selectExtranjero = [];
-        $selectExtranjero[""] = "SELECCIONA UNA OPCIÓN";
-        foreach ($extranjero as $item){
-            $selectExtranjero[$item->id] = $item->valor;
-        }
-        $residencia = lugarDondeReside::all();
-        $selectResidencia = [];
-        $selectResidencia[""] = "SELECCIONA UNA OPCIÓN";
-        foreach($residencia as $item){
-            $selectResidencia[$item->id] = $item->valor;
-        }
-        $sector = ambitoSector::all();
-        $selectSector = [];
-        $selectSector[""] = "SELECCIONA UNA OPCIÓN";
-        foreach ($sector as $item){
-            $selectSector[$item->id] = $item->valor;
-        }
-        $respuestas = Arr::pluck(\App\Respuesta::all(),'respuesta',"id");
-        array_unshift($respuestas,"Selecciona una opcion");
-
-        return view('dependienteEconomico.index', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas'));
+        $dependientes = \App\DependienteEconomico::where('declaracion_id',$this->request->session()->get('declaracion_id'))->get();
+//        dd($dependientes[0]);
+        return view('dependienteEconomico.index', compact('dependientes'));
     }
 
     /**
@@ -90,8 +67,12 @@ class DatosDependienteEconomicoController extends Controller
         array_unshift($paises,"Selecciona una opcion");
         $sectores = Arr::pluck(\App\Sector::all(),'valor',"id");
         array_unshift($sectores,"Selecciona una opcion");
+        $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
+        array_unshift($nivel,"Selecciona una opcion");
+        $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
+        array_unshift($ambito,"Selecciona una opcion");
 
-        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores'));
+        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito'));
     }
 
     /**
@@ -102,12 +83,28 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function store(Request $request)
     {
-        dump($request->input('declarante'));
-        dump($request->input('nacional'));
-        dump($request->input('extranjero'));
-        dump($request->input('laboral'));
-        dump($request->input('publico'));
-        dump($request->input('privado'));
+        $dependiente = $request->input('declarante');
+        $nacional = $request->input('nacional');
+        $extranjero = $request->input('extranjero');
+        $laboral = $request->input('laboral');
+        $publico = $request->input('publico');
+        $privado = $request->input('privado');
+        $dependiente["declaracion_id"] = $this->request->session()->get('declaracion_id');
+//        dd($dependiente);
+        $declarante = \App\DependienteEconomico::create($dependiente);
+        $privado["ambito_sector_id"] = $laboral["ambito_sector_id"];
+        $publico["ambito_sector_id"] = $laboral["ambito_sector_id"];
+        if($dependiente["lugar_residencia_id"] == 1){
+            $domiclilio = $declarante->domicilio()->create($nacional);
+        }else{
+            $domiclilio = $declarante->domicilio()->create($extranjero);
+        }
+        if($laboral["ambito_sector_id"] == 1){
+            $laboral = $declarante->dato_laboral()->create($publico);
+        }else{
+            $laboral = $declarante->dato_laboral()->create($privado);
+        }
+        return redirect()->route('datos_dependiente_declarante.index');
     }
 
     /**
@@ -129,7 +126,54 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $parentesco = parentescoRelacion::all();
+       
+        $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($parentesco as $item){
+            $selectParentesco[$item->id] = $item->valor;
+        }
+        $extranjero = extranjero::all();
+        $selectExtranjero = [];
+        $selectExtranjero[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($extranjero as $item){
+            $selectExtranjero[$item->id] = $item->valor;
+        }
+        $residencia = lugarDondeReside::all();
+        $selectResidencia = [];
+        $selectResidencia[""] = "SELECCIONA UNA OPCIÓN";
+        foreach($residencia as $item){
+            $selectResidencia[$item->id] = $item->valor;
+        }
+        $sector = ambitoSector::all();
+        $selectSector = [];
+        $selectSector[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($sector as $item){
+            $selectSector[$item->id] = $item->valor;
+        }
+        $respuestas = Arr::pluck(\App\Respuesta::all(),'respuesta',"id");
+        array_unshift($respuestas,"Selecciona una opcion");
+        $entidades = Arr::pluck(\App\Entidad::all(),'entidad',"id");
+        array_unshift($entidades,"Selecciona una opcion");
+        $paises = Arr::pluck(\App\Pais::all(),'valor',"id");
+        array_unshift($paises,"Selecciona una opcion");
+        $sectores = Arr::pluck(\App\Sector::all(),'valor',"id");
+        array_unshift($sectores,"Selecciona una opcion");
+        $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
+        array_unshift($nivel,"Selecciona una opcion");
+        $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
+        array_unshift($ambito,"Selecciona una opcion");
+        
+        $dependiente = \App\DependienteEconomico::find($id);
+        $domicilio = $dependiente->domicilio;
+        $municipios = array();
+        if($domicilio != null){
+            if($domicilio->entidad_id != ""){
+                $municipios = Arr::pluck(\App\Municipio::where("entidad_id",$domicilio->entidad_id)->get(),'municipio','id');
+            }
+        }
+        $dato_laboral = $dependiente->dato_laboral;
+
+        return view('dependienteEconomico.edit', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','dependiente','domicilio','dato_laboral','municipios'));
     }
 
     /**
@@ -141,7 +185,7 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
