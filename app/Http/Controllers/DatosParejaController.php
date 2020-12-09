@@ -227,7 +227,7 @@ class DatosParejaController extends Controller
             }
         } else {
             if ($pareja->domicilio != null) {
-                $pareja->domicilio()->delete();
+                $pareja->domicilio()->destroy();
             }
         }
         $pareja->experienciaLaboral->update($actividadLaboral);

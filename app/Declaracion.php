@@ -75,4 +75,8 @@ class Declaracion extends Model
     public function adeudos_pasivos() {
         return $this->hasMany(AdeudosPasivos::class);
     }
+
+    public function fueServidorPublico(){
+        return $this->hasOne(FueServidorPublico::class);
+    }
 }

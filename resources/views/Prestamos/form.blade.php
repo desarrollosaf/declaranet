@@ -122,7 +122,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <strong>{!! Form::label('tipo_inmueble_id', ' Tipo de inmueble:') !!}</strong>
-                    {!! Form::select('bienesinmuebles[tipo_inmueble_id]', $selecttipoInmueble, isset($domicilio) ? $domicilio->tipo_inmueble_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_inmueble_id']) !!}
+                    {!! Form::select('bienesinmuebles[tipo_inmueble_id]', $selecttipoInmueble, isset($bienesinmuebles->tipo_inmueble_id) ? $bienesinmuebles->tipo_inmueble_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_inmueble_id']) !!}
                 </div>
             </div>
             <div class="col-md-4">
@@ -133,7 +133,7 @@
             </div>
             <div class="col-md-4">
                 <strong>{!! Form::label('ubicacion_inmueble_id', ' Ubicación del inmueble:') !!}</strong>
-                {!! Form::select('bienesinmuebles[ubicacion_inmueble_id]', isset($selectubicacionInmueble) ? $selectubicacionInmueble : [], isset($domicilio) ? $domicilio->ubicacion_inmueble_id : null, ['class'=>'form-control tipo-titular lugar-inmueble',  'id' => 'lugar-inmueble']) !!}
+                {!! Form::select('bienesinmuebles[ubicacion_inmueble_id]', isset($selectubicacionInmueble) ? $selectubicacionInmueble : [], isset($bienesinmuebles->ubicacion_inmueble_id) ? $bienesinmuebles->ubicacion_inmueble_id : null, ['class'=>'form-control tipo-titular lugar-inmueble',  'id' => 'lugar-inmueble']) !!}
             </div>
         </div>
         <div class="domicilio-MXBinmuebles">
@@ -208,12 +208,12 @@
                 </div>
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('domicilio.pais_id', 'País:') !!}</strong>
-                    {!! Form::select('domicilio[pais_id]', $pais,isset($domicilio) ? $domicilio->entidad_pais : null,['class'=>'form-control tipo-titular',  'id' => 'pais']) !!}
+                    {!! Form::select('domicilio[pais_id]', $pais,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control tipo-titular',  'id' => 'pais']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('domicilioExt.estadoprovincia', 'Estado / Provincia:') !!}</strong>
-                    {!! Form::text('domicilioExt[estadoprovincia]',isset($domicilio) ? $domicilio->municipio_provincia : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. México',  'id' => 'estado_provincia']) !!}
+                    {!! Form::text('domicilioExt[estadoprovincia]',isset($domicilio) ? $domicilio->entidad : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. México',  'id' => 'estado_provincia']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
@@ -405,6 +405,10 @@
             $("#tipo_bien").change();
             $("#tipoVehiculo_id").change();
             $("#lugar_registro").change();
+            $("#dueno_titular").change();
+            $('#lugar-inmueble').change();
+            $("#habita-domicilio").change();
+            $("#tipo_inmueble_id").change();
         });
     </script>
 @endsection

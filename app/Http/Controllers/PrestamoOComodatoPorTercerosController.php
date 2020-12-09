@@ -202,7 +202,65 @@ class PrestamoOComodatoPorTercerosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $idDeclaracion = $request->session()->get("declaracion_id");
+        $prestamComodatoData = $request->input("prestamo");
+        $prestamComodatoData["declaracion_id"] = $idDeclaracion;
+        $prestamoComodato = PrestamoComodato::find($id);
+        $prestamoComodato->update($prestamComodatoData);
+        if ($prestamComodatoData["tipo_bien_id"] == 2) {
+            if ($prestamoComodato->vehiculos != null) {
+                $prestamoComodato->vehiculos->destroy($prestamoComodato->vehiculos->id);
+            }
+            $bienInmueble = $request->input("bienesinmuebles");
+            $domicilio = $request->input("domicilio");
+            $domicilioExt = $request->input("domicilioExt");
+            $bienInmueble["declaracion_id"] = $idDeclaracion;
+            $domicilio["declaracion_id"] = $idDeclaracion;
+            if ($prestamoComodato->inmuebles == null) {
+                $bien = $prestamoComodato->inmuebles()->create($bienInmueble);
+            } else {
+                $bien = $prestamoComodato->inmuebles()->update($bienInmueble);
+            }
+            if (isset($bienInmueble["ubicacion_inmueble_id"]) && $bienInmueble["ubicacion_inmueble_id"] == 2) {
+                $domicilio['calle'] = $domicilioExt['calleExt'];
+                $domicilio['num_ext'] = $domicilioExt['numextExt'];
+                $domicilio['num_int'] = $domicilioExt['numintExt'];
+                $domicilio['colonia'] = $domicilioExt['coloniaExt'];
+                $domicilio['entidad'] = $domicilioExt['estadoprovincia'];
+                $domicilio['codigo_postal'] = $domicilioExt['codigopostalExt'];
+            }
+            if ($domicilio['entidad_id'] == 0) {
+                $domicilio['entidad_id'] = null;
+            }
+            if (isset($domicilio['municipio_id']) && $domicilio['municipio_id'] == 0) {
+                $domicilio['municipio_id'] = null;
+            }
+            if ($domicilio['pais_id'] == 0) {
+                $domicilio['pais_id'] = null;
+            }
+            if ($bien->domicilio == null) {
+                $bien->domicilio()->create($domicilio);
+            } else {
+                $bien->domicilio()->update($domicilio);
+            }
+
+        } elseif ($prestamComodatoData["tipo_bien_id"] == 3) {
+            if ($prestamoComodato->inmuebles != null) {
+                $prestamoComodato->inmuebles->domicilio->destroy($prestamoComodato->inmuebles->domicilio->id);
+                $prestamoComodato->inmuebles->destroy($prestamoComodato->inmuebles->id);
+            }
+            $vehiculo = $request->input("vehiculos");
+            $vehiculo["declaracion_id"] = $idDeclaracion;
+            if ($vehiculo['pais_id'] == 0) {
+                $vehiculo['pais_id'] = null;
+            }
+            if ($prestamoComodato->vehiculos == null) {
+                $prestamoComodato->vehiculos()->create($vehiculo);
+            } else {
+                $prestamoComodato->vehiculos()->update($vehiculo);
+            }
+        }
+        return redirect()->route("prestamos.index");
     }
 
     /**
