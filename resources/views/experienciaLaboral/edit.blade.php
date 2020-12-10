@@ -24,9 +24,9 @@
         $(".PRIVADO").hide();
         $(".PÚBLICO").hide();
         $(".AMBOS").hide();
-        $("#ambito").change();
+        $("#ambito_sector_id").change();
     });
-    $("#ambito").on("change", function () {
+    $("#ambito_sector_id").on("change", function () {
         if ($(this).val() == "2") {
             $(".PRIVADO").show();
             $(".AMBOS").show();
@@ -34,6 +34,10 @@
         } else if($(this).val() == "1") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").show();
+            $(".AMBOS").show();
+        }else if($(this).val() == "3"){
+            $(".PRIVADO").show();
+            $(".PÚBLICO").hide();
             $(".AMBOS").show();
         }else{
             $(".PRIVADO").hide();
