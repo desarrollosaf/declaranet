@@ -57,7 +57,7 @@ class ParticipacionEnEmpresasSociedadesYAsociacionesController extends Controlle
         $selectpais= Arr::pluck(\App\Pais::all(), "valor", "id");
         array_unshift($selectpais, "Selecciona una opcion");
         
-        return view("ParticipacionEmpresas.create", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais'));return view("ParticipacionEmpresas.create", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais'));
+        return view("ParticipacionEmpresas.create", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais'));
     }
 
     /**

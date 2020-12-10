@@ -5,56 +5,94 @@
         <div>
             <h3 class="card-title mb-0">REPRESENTACIÓN</h3>
             <br>
-                <h6 class="card-subtitle">(Hasta los últimos dos años)</h6>
+            <h6 class="card-subtitle">(Hasta los últimos dos años)</h6>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <div class="card"
-                     
-                    </div>
+    <div class="card-body">
+        @if($representacion != null)
 
-                    <!-- Cuerpo del documento -->
-                    <div class="card-body">
-                        <center><label style="margin-top:10px;"><strong>No se registro información en este apartado.</strong></label> </center>    
-                        <h8><strong>Nombre:</strong><br>
-                                <strong>Sector:</strong>
-                                <br>
-                                    <strong>Fecha de inicio:</strong>
-                                    <br>
-                                        </h8>
-                        <td></td>
-                    <td class="py-2">     
-                        <form>
-                            <button type="submit" class="btn btn-warning ion ion-android-create" name="boton"></button>
-                            <input type="hidden" value="2" name="id_update" id="id_update">
-                        </form>  
-                        <form>
-                            <button type="submit" class="btn btn-danger ion ion-android-delete" name="boton"></button>
-                            <input type="hidden" value="2" name="id_update" id="id_update">
-                        </form>  
-                    </td> 
-                        <form action="dsp_representacion.php" method="POST" enctype="application/x-www-form-urlencoded" name="frmdo1" id="frmdo1" onsubmit="return confirmation()">
-                                            <button type="submit" class="btn" name="boton">
-                                            <svg class="svg-inline--fa fa-trash-alt fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="trash-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 84V56c0-13.3 10.7-24 24-24h112l9.4-18.7c4-8.2 12.3-13.3 21.4-13.3h114.3c9.1 0 17.4 5.1 21.5 13.3L312 32h112c13.3 0 24 10.7 24 24v28c0 6.6-5.4 12-12 12H12C5.4 96 0 90.6 0 84zm416 56v324c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V140c0-6.6 5.4-12 12-12h360c6.6 0 12 5.4 12 12zm-272 68c0-8.8-7.2-16-16-16s-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208zm96 0c0-8.8-7.2-16-16-16s-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208zm96 0c0-8.8-7.2-16-16-16s-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208z"></path></svg><!-- <i class="fas fa-trash-alt"></i> --></button>
-                                            <input type="hidden" value="1" name="id_delete" id="id_delete">
-                                        </form>   <form action="dsp_representacion.php" method="POST" enctype="application/x-www-form-urlencoded" name="frmdo1" id="frmdo1">
-                                            <button type="submit" class="btn" name="boton">
-                                            <svg class="svg-inline--fa fa-pencil-alt fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="pencil-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path></svg><!-- <i class="fas fa-pencil-alt"></i> --></button>
-                                            <input type="hidden" value="1" name="id_update" id="id_update">
-                                        </form>   
-                                        <center>
-                                            <label style="margin-top:10px;"><strong>Para adicionar información pulse:</strong><a href="dsp_representacion.php" class="btn btn-secondary"><small>Agregar</small></a><strong>, de lo contrario vaya a la siguiente sección.</strong></label> </center>    
-
-                                        <center>
-                                            <br>
-                                                <a href="dsp_apoyos_publicos_ini_buscar.php" class="btn btn-secondary"><small>Ir a la sección anterior</small></a>
-                                                <a href="dsp_di_c_principales_buscar.php" class="btn btn-secondary"><small>Ir a la siguiente sección</small></a>
-                                        </center> 
-                                        </div>
-                                        </div>
-                                        </div>
+        <table class="table table-bordered table-striped">
+            <thead class="text-center text-light">
+                <tr> 
+                    <th scope="col" width="20%">Tipo de representacion</th> 
+                    <th scope="col" width="20%">Titular</th>
+                    <th scope="col" width="40%">Información adicional</th>
+                    <th scope="col" width="20%">Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach($representacion as $repre)
+                <tr> 
+                    <th scope="col" width="20%">{{$repre->tipotipoParticipaciones->valor}}</th> 
+                    <th scope="col" width="20%">{{$repre->tipotitularParticipaciones->valor}}</th> 
+                    <th scope="col" width="40%">
+            <center>
+                <strong>Sector: </strong> {{$repre->tipoSector->valor}} <br>
+                <strong>Lugar donde se ubica: </strong> {{$repre->lugarUbicacion->valor}}
+            </center>
+            </th> 
+            <td class="all">
+                {!! Form::open(['action' => ['RepresentacionController@destroy', $repre->id], 'method'=>'DELETE']) !!}
+                <div style="display: inline-block;">
+                    <a href="{{route('representacion.edit',[$repre])}}" class="btn btn-xs btn-warning">
+                        <i class="ion ion-edit"></i>
+                    </a>
+                    <button class="btn btn-xs btn-danger btn-borrar">
+                        <i class="ion ion-trash-a"></i>
+                    </button>
+                </div>
+                {!! Form::close() !!}
+            </td>
+            </tr>
+            @endforeach
+            </tbody> 
+        </table>
+        <center><label style="margin-top:10px;">Para adicionar información pulse:<a href="{{route('representacion.create')}}" class="btn btn-sm btn-secondary">Agregar</a>, de lo contrario vaya a la siguiente sección.</label> </center>    
 
 
-                                        @endsection
+        @else
+
+        <div class="alert alert-danger">
+            <center>
+                Para registrar información pulse: <a class="btn btn-submit btn-sm text-light" href="{{route('representacion.create')}}">Agregar</a>
+                <br><br>
+                Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a class="btn btn-submit btn-sm text-light" href="">Ninguno</a><br>
+            </center>
+        </div>
+    </div>
+
+    @endif
+
+
+    <div class="text-center">
+        <a href="dsp_deSerPu_aInmAnt_ini.php" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+        <a href="dsp_d_vehiculos_buscar.php" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+    </div>
+    <br>
+</div>
+
+
+@endsection
+
+
+@section('scripts')
+<script>
+    $('.btn-borrar').on('click', function (e) {
+            let that = this;
+            console.log('boton clic');
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Está seguro?',
+                text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    $(that).closest('form').submit();
+                }
+            });            
+            return false;
+        });
+</script>
+@endsection

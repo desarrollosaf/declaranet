@@ -29,7 +29,11 @@
             </div>
         </div>
         <div class="card-body">
-            @include('Representacion.form')
+           
+            {!! Form::open(['route'=>'representacion.store', 'method'=>'POST',  'role' => 'form', 'id' => 'frm_Representacion']) !!}
+             @include('Representacion.form')
+            {!! Form::close() !!}
+
         </div>
     </div>
 </div>
