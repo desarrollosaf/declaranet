@@ -91,6 +91,6 @@
                 }
             });            
             return false;
-        });
+    });
 </script>
 @endsection

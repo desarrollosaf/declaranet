@@ -14,20 +14,35 @@
         </div>
         <div class="collapse" id="collapseExample">
             <div class="card-body">
-                <ol class="ayuda">
-                    <li value="1"><strong>Nombre(s), primer y segundo apellidos, 2. Clave Única de Registro de Población (CURP) y 3. Registro Federal de Contribuyentes (RFC) y homoclave. </strong> La Dirección de Administración y Desarrollo de Personal de la Secretaría de Administración y Finanzas del Poder Legislativo del Estado de México, es la responsable de generar y capturar los movimientos de ingreso con esta información, en caso de existir algún error en los datos anteriores, deberá acudir a la citada Dirección para su corrección.</li>
-                    <li value="4"><strong>Correo electrónico institucional (si aplica)</strong>. Escribir la dirección de correo electrónico que le haya sido asignada por la Dirección de Informática de la Secretaría de Administración y Finanzas.</li>
-                    <li><strong>Correo electrónico personal/alterno</strong>. Escribir la dirección de correo electrónico que el Declarante haya generado para uso personal. En caso de no contar con él, deberá generar una cuenta.<br>
-                        Es importante considerar que en la cuenta que proporcione le será enviada la declaración patrimonial y de intereses que haya presentado y el acuse, asimismo será el medio de recuperación de contraseña en caso de haberla olvidado.
+                Tipo de bien. Indicar el bien que le haya sido prestado.
+                <ol>
+                    <li><strong>Inmueble.</strong> Elegir alguna de las siguientes opciones: casa, departamento, edificio, local comercial, bodega, palco, rancho, terreno, otro (especifique).
+                        <ul>
+                            <li><strong>Ubicación del inmueble.</strong> Proporcionar los datos relativos al lugar donde se ubica el inmueble declarado. Seleccionando si es en México o en el extranjero.<br>
+                                En caso de seleccionar México, proporcionar los siguientes datos: calle, número exterior, número interior (si aplica), colonia o localidad, municipio o alcaldía, entidad federativa y código postal.<br>
+                                En caso de seleccionar extranjero, proporcionar los siguientes datos: calle, número exterior, número interior (si aplica), ciudad/localidad, estado o provincia, país, código postal.
+                            </li>
+
+                        </ul>
                     </li>
-                    <li><strong>Número telefónico de casa</strong>. Escribir el número telefónico de su domicilio.</li>
-                    <li><strong>Número celular personal</strong>. Escribir los diez dígitos de su número celular.</li>
-                    <li><strong>Situación personal/estado civil</strong>. Es la condición del Declarante en función de si tiene o no Pareja, según sus circunstancias o situación legal respecto a ello. El Declarante deberá seleccionar una de las siguientes opciones: soltero (a), casado (a), divorciado (a), viudo (a), concubina/concubinario/unión libre y sociedad de convivencia.</li>
-                    <li><strong>Régimen matrimonial</strong>. En su caso, especificar: sociedad conyugal, separación de bienes u otro/especifique.</li>
-                    <li><strong>País de nacimiento</strong>. De la lista desplegable, deberá elegir el país donde nació.</li>
-                    <li><strong>Nacionalidad</strong>. De la lista desplegable, deberá elegir su nacionalidad.</li>
+                    <li><strong>Vehículo.</strong> Seleccionar el tipo de vehículo del listado desplegable: automóvil/motocicleta, aeronave, barco/yate, otro, especifique.
+                        <ol>
+                            <li><strong>Marca.</strong> Elegir la marca del catálogo desplegable.</li>
+                            <li><strong>Modelo.</strong> Señalar el modelo del vehículo, de acuerdo a la marca. (Ejemplo: marca Renault, modelo Clío).</li>
+                            <li><strong>Año.</strong> Indicar el año del vehículo.</li>
+                            <li><strong>Número de serie o registro.</strong> Proporcionar el número de serie o registro que aparece en la factura y/o en su caso, tarjeta de circulación.</li>
+                            <li><strong>Donde se encuentra registrado.</strong> Indicar si se encuentra registrado en México o en el extranjero. Señalando la entidad federativa o país según corresponda.</li>
+                            <li><strong>Dueño o titular.</strong> Seleccionar si es persona física o persona moral.</li>
+                            <li><strong>Nombre del dueño o el titular.</strong> Deberá proporcionar el nombre completo y/o razón social del propietario del bien prestado y usado por el Declarante.</li>
+                            <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos.</li>
+                            <li><strong>Relación con el dueño o el titular.</strong> Indicar que tipo de relación existe en entre el dueño del bien prestado y el Declarante.</li>
+
+                        </ol>
+                    </li>
+
                 </ol>
-                <strong>Aclaraciones/observaciones</strong>. En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
+
+                <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
             </div>
         </div>
         <div class="card-body">
