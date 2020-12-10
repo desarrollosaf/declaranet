@@ -97,6 +97,10 @@ class Declaracion extends Model {
         return $this->hasOne(FueServidorPublico::class);
     }
 
+    public  function fideicomisos(){
+        return $this->hasMany(Fideicomiso::class);
+    }
+
     public function representacion() {
         return $this->hasMany(Representacion::class);
     }

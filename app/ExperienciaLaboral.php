@@ -8,6 +8,7 @@ class ExperienciaLaboral extends Model
 {
     protected $table = "experiencias_laborales";
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
+
     public function experienciable(){
         return $this->morphTo();
     }
@@ -15,4 +16,3 @@ class ExperienciaLaboral extends Model
         return $this->belongsTo(AmbitoSector::class);
     }
 }
-    
