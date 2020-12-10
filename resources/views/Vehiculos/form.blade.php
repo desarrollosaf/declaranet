@@ -226,7 +226,7 @@
                                                 <div id="lugarRegistroMx" style="display: block;">
                                                     <div class="form-group">
                                                         <label class="control-label" for="NumDoc"><strong>Entidad Federativa</strong>:</label>
-                                                        {!! Form::text('vehiculos[v_entidadFederativa]', isset($vehiculos) ? $vehiculos->v_entidadFederativa : null,['class'=>'form-control', 'placeholder'=>'P. ej. México',   'id' => 'v_entidadFederativa', 'disabled' => "disabled"]) !!}
+                                                        {!! Form::select('vehiculos[entidades_id]',$entidad, isset($vehiculos) ? $vehiculos->entidades_id : [],['class'=>'form-control', 'placeholder'=>'',  'id' => 'entidades_id']) !!}
                                                     </div>
                                                 </div>
                                                 <div id="lugarRegistroEx" style="display: none;">
@@ -353,12 +353,12 @@
         $("#lugar_registro").on("change",function(){
             var dsp_D_extranjero = document.getElementById("lugar_registro").value
             if(dsp_D_extranjero == 1){
-                $("#v_entidadFederativa").prop("disabled", false);
+                $("#entidades_id").prop("disabled", false);
                 document.getElementById("lugarRegistroMx").style.display="block";
                 document.getElementById("lugarRegistroEx").style.display="none";
             }else if(dsp_D_extranjero == 2){
-                $("#v_entidadFederativa").prop("disabled", true);
-                $("#v_entidadFederativa").val("");
+                $("#entidades_id").prop("disabled", true);
+                $("#entidades_id").val("");
                 document.getElementById("lugarRegistroEx").style.display="block";
                 document.getElementById("lugarRegistroMx").style.display="none";
             }

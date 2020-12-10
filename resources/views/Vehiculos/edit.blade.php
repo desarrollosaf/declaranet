@@ -8,7 +8,6 @@
         <div class="card-body">
             {!! Form::model($vehiculos, ['route' => ['vehiculos.update', $vehiculos->id], 'method' => 'put'] ) !!}
             @include('vehiculos.form')
-
             {!! Form::close() !!}
         </div>
     </div>

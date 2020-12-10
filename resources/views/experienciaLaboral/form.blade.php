@@ -5,9 +5,10 @@
     <hr>
     <div class="col-md-5"><strong>Ámbito / Sector en el que laboraste:</strong></div>
     <div class="form-group col-md-5">
-        {!! Form::select('experiencia[ambito_sector_id]', $ambitos_sectores, [],['class'=>'form-control','id' => 'ambito']) !!}
+        {!! Form::select('experiencia[ambito_sector_id]', $ambitos_sectores, [],['class'=>'form-control','id' => 'ambito_sector_id']) !!}
     </div>
 </div>
+<div id="ninguno" style="display: none;">
 <div class="row">
     <div class="form-group col-md-4 PRIVADO">
         <strong>{!! Form::label('nombre_empresa', 'Nombre de la empresa, sociedad o asociación: *') !!} </strong>
@@ -78,7 +79,7 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
-
+</div>
 <div class="row">
     <div class="form-group col-md-12">
         <strong>{!! Form::label('aclaraciones', 'Aclaraciones / Observaciones: ') !!}</strong>
@@ -92,3 +93,50 @@
         <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
+
+
+
+@section('scripts')
+    <script type="text/javascript">
+        $("#ambito_sector_id").on("change",function(){
+            var ambito = document.getElementById("ambito_sector_id").value
+            if(ambito == 1 ||  ambito == 2 || ambito == 3){
+               document.getElementById('ninguno').style.display='block';
+
+            }else{
+                document.getElementById('ninguno').style.display='none';
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(".PRIVADO").hide();
+            $(".PÚBLICO").show();
+            $(".AMBOS").hide();
+        });
+        $('input[name=mismodomicilio]').on("click",function(){
+            var desempeño = $('input[name=mismodomicilio]:checked').val();
+            if(desempeño == "1"){
+                $("#divLugarResidencia").show();
+            }else{
+                $("#divLugarResidencia").hide();
+
+            }
+        });
+        $("#ambito").on("change", function () {
+            if ($(this).val() == "2") {
+                $(".PRIVADO").show();
+                $(".AMBOS").show();
+                $(".PÚBLICO").hide();
+            } else if($(this).val() == "1") {
+                $(".PRIVADO").hide();
+                $(".PÚBLICO").show();
+                $(".AMBOS").show();
+            }else{
+                $(".PRIVADO").show();
+                $(".PÚBLICO").hide();
+                $(".AMBOS").hide();
+            }
+        });
+    </script>
+@endsection

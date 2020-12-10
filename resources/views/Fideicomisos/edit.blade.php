@@ -6,10 +6,11 @@
             <h1>FIDEICOMISOS</h1> <h5>(Hasta los últimos dos años)</h5>
         </div>
         <div class="card-body">
-            @include(Fideicomisos.form')
+            {!! Form::model($fideicomisos, ['route' => ['fideicomisos.update', $fideicomisos->id], 'method' => 'put'] ) !!}
+            @include('Fideicomisos.form')
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
+<input type="hidden" id="accion" value="editar">
 @endsection
-
-

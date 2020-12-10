@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entidad;
 use App\Pais;
 use App\tipoVehiculo;
 use App\Vehiculo;
@@ -26,6 +27,7 @@ class VehiculosController extends Controller
     {
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $vehiculos = $declaracion->vehiculos;
+
         return view("Vehiculos.index", compact('vehiculos'));
     }
 
@@ -37,62 +39,60 @@ class VehiculosController extends Controller
     public function create()
     {
         $tipoVehiculo = tipoVehiculo::all();
-        $vehiculo = [];
         $vehiculo[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($tipoVehiculo as $item){
             $vehiculo[$item->id] = $item->valor;
         }
 
         $relacionTransmisor = relacionTransmisor::all();
-        $relacion = [];
         $relacion[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($relacionTransmisor as $item){
             $relacion[$item->id] = $item->valor;
         }
 
         $lugarDondeReside = lugarDondeReside::all();
-        $registro = [];
         $registro[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($lugarDondeReside as $item){
             $registro[$item->id] = $item->valor;
         }
 
         $formaAdquisicion = formaAdquisicion::all();
-        $tipoAdquisicion = [];
         $tipoAdquisicion[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($formaAdquisicion as $item){
             $tipoAdquisicion[$item->id] = $item->valor;
         }
 
         $FormasPagos = FormasPagos::all();
-        $pago = [];
         $pago[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($FormasPagos as $item){
             $pago[$item->id] = $item->valor;
         }
 
         $Paises = Pais::all();
-        $pais = [];
         $pais[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($Paises as $item){
             $pais[$item->id] = $item->valor;
         }
 
         $RegimenFiscal = RegimenFiscal::all();
-        $regimen = [];
         $regimen[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($RegimenFiscal as $item){
             $regimen[$item->id] = $item->valor;
         }
 
         $titular_inmueble = Titular::all();
-        $titular = [];
         $titular[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($titular_inmueble as $item){
             $titular[$item->id] = $item->valor;
         }
 
-        return view("Vehiculos.create", compact('vehiculo',  'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular'));
+        $entidades = Entidad::all();
+        $entidad[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($entidades as $item){
+            $entidad[$item->id] = $item->entidad;
+        }
+
+        return view("Vehiculos.create", compact('vehiculo',  'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad'));
     }
 
     /**
@@ -117,7 +117,7 @@ class VehiculosController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -137,8 +137,9 @@ class VehiculosController extends Controller
         $pais = Arr::pluck(Pais::all(), "valor","id");
         $regimen = Arr::pluck(RegimenFiscal::all(), "valor","id");
         $titular = Arr::pluck(Titular::all(), "valor","id");
+        $entidad = Arr::pluck(Entidad::all(), "entidad","id");
 
-        return view("Vehiculos.edit", compact( 'vehiculos', 'vehiculo','relacion','registro','tipoAdquisicion','pago','pais','regimen','titular'));
+        return view("Vehiculos.edit", compact( 'vehiculos', 'vehiculo','relacion','registro','tipoAdquisicion','pago','pais','regimen','titular','entidad'));
     }
 
     /**
@@ -150,9 +151,9 @@ class VehiculosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $vehiculosDate = $request->input("vehiculos");
+        $vehiculos = $request->input("vehiculos");
         $vehiculo= Vehiculo::find($id);
-        $vehiculo->update($vehiculosDate);
+        $vehiculo->update($vehiculos);
         return redirect()->route("vehiculos.index");
     }
 

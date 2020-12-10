@@ -53,4 +53,9 @@ class Vehiculo extends Model
     {
         return $this->morphTo();
     }
+
+    public function entidades()
+    {
+        return $this->belongsTo(Entidad::class, 'entidad_id');
+    }
 }
