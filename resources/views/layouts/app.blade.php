@@ -611,22 +611,29 @@
                                         <div class="submenu-box">
                                             <ul class="list-unstyled m-0">
                                                 <div class="menu list-group-flush">
-                                                    <a href="{{route("participacion_empresas.index")}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                    <a href="{{route("participacion_empresas.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-person mr-2"></i>Participación en empresas,
                                                         sociedades o asociaciones</a>
-                                                    <a href="{{route("participacion.index")}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                    <a href="{{route("participacion.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-ribbon-a mr-2"></i>¿Participa en la toma de
                                                         decisiones de alguna de estas instituciones?</a>
-                                                    <a href="{{route("apoyo_beneficio.index")}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                    <a href="{{route("apoyo_beneficio.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-briefcase mr-2"></i>Apoyo o beneficion
                                                         públicos</a>
-                                                    <a href="{{route("representacion.index")}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                    <a href="{{route("representacion.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-briefcase mr-2"></i>Representación</a>
-                                                    <a href="{{route("clientes_principales.index")}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                    <a href="{{route("clientes_principales.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-person-stalker mr-2"></i>Clientes principales</a>
-                                                    <a href="{{route("beneficios_privados.index")}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                    <a href="{{route("beneficios_privados.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-person-add mr-2"></i>Beneficios privados</a>
-                                                    <a href="{{route("fideicomisos.index")}}" class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                    <a href="{{route("fideicomisos.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-cash mr-2"></i>Fideicomisos</a>
                                                 </div>
                                             </ul>
@@ -702,6 +709,11 @@
             $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
         });
     });
+
+    function cerrarSesion(event) {
+        event.preventDefault();
+        $("#logout-formm").submit();
+    }
 </script>
 @yield("scripts")
 </body>
