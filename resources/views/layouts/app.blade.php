@@ -644,6 +644,12 @@
                         </div>
                     </div>
                 </li>
+                <li>
+                    <a href="" class="nav-link">
+                        <i class="ion-android-exit text-light text-lg-left"></i>
+                        <strong>Salir de la declaración</strong>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -708,6 +714,7 @@
             $(this).toggleClass('close');
             $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
         });
+        $('#bar').click();
     });
 
     function cerrarSesion(event) {
