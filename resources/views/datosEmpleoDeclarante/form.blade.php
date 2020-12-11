@@ -113,14 +113,11 @@
         <div class="form-group col-md-12">
             <strong>{!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}</strong>
             {!! Form::textarea('datos_empleo_declarante[aclaraciones]', isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->aclaraciones :null, ['class'=>'form-control alert-danger',  'id' => 'aclaraciones']) !!}
-        </div>
-    </div>
-    <br>
-    <div class="form-row">
-        <div class="form-group col-md-12">
             <strong>{!! Form::label('nota', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
         </div>
     </div>
+    <br>
+
     <div id="edit" style="display: none;">
         <div class="form-row">
             <div class="col">

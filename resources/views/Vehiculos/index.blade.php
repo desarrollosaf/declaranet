@@ -3,8 +3,8 @@
     <div class="container">
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
-                <h1>VEHÍCULOS<br>
-                    (A la fecha de ingreso)</h1>
+                <h3>VEHÍCULOS</h3>
+                <h6> (A la fecha de ingreso)</h6>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
@@ -50,11 +50,20 @@
                     @endif
                     </tbody>
                 </table>
-                <center>
-                    Si deseas registrar vehiculos pulse <a class="btn btn-submit btn-sm text-light"
-                                                           href="{{route('vehiculos.create')}}">Agregar</a><br><br>
-                    Si no tiene vehículos, seleccione<a class="btn btn-submit btn-sm text-light" href="">Ninguno</a><br>
-                </center>
+
+
+
+                Deberá proporcionar la información de CADA UNO de los vehículos, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como los de su pareja y/o dependientes económicos.
+                <div class="alert alert-danger text-center" role="alert">
+                    Si deseas registrar vehiculos pulse
+                    <a class="btn btn-submit btn-sm text-light" href="{{route('vehiculos.create')}}">Agregar</a>
+                    <br>
+                    Si no tiene vehículos, seleccione<a class="btn btn-submit btn-sm text-light" href="">Ninguno</a>
+
+                    </button> Sí éste es su primer empleo
+                </div>
+
+
                 <br>
                 <center>
                     <a class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
@@ -63,3 +72,4 @@
             </div>
 
 @endsection
+3

@@ -4,14 +4,14 @@
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
                 <div class="float-left">
-                  <h1>DATOS DE LA PAREJA</h1>
+                  <h3>DATOS DE LA PAREJA</h3>
                 </div>
                 <div class="float-right">
                     <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapsePareja" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
                 </div>
             </div>
             <div class="collapse" id="collapsePareja">
-                <div class="card card-body">               
+                <div class="card card-body">
                     Proporcionar los datos del cónyuge, concubina/concubinario, con quien tenga una
                     relación de sociedad de convivencia o cualquier otro similar a los anteriores.
                     <br>

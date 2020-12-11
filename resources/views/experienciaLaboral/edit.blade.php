@@ -3,7 +3,7 @@
 <div class="container">
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
-            <h1>Experiencia Laboral</h1>
+            <h3>Experiencia Laboral</h3>
         </div>
         <div class="card-body">
             {!! Form::model($experiencia, ['route' => ['experiencia_laboral.update', $experiencia->id], 'method' => 'put'] ) !!}
@@ -62,15 +62,15 @@
             if($("#cargo_comision").val() == ""){
                 error = true;
             }
-            
+
             if($("#fecha_ingreso").val() == ""){
                 error = true;
             }
-     
+
             if($("#fecha_egreso").val() == ""){
                 error = true;
             }
-     
+
             if($("#lugares_ubicacion").val() == ""){
                 error = true;
             }
@@ -108,7 +108,7 @@
                     error = true;
                 }
         }
-        
+
         console.log("error",error);
         if(error){
             Swal.fire({

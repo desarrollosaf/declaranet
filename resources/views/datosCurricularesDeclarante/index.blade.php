@@ -3,10 +3,11 @@
     <div class="container">
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
-                <h1>DATOS CURRICULARES DEL DECLARANTE</h1>
+                <h3>DATOS CURRICULARES DEL DECLARANTE</h3>
             </div>
             <div class="card-body">
                 <div class="col-md-12">
+
                     <table class="table table-bordered table-striped table-hover" style="border-collapse: collapse;">
                         <thead style="background-color: #682244;" class="text-light">
                             <tr>
@@ -41,6 +42,7 @@
                         </tbody>
                     </table>
                 </div>
+                Deberá proporcionar la información correspondiente al nivel máximo de estudios y documento que lo acrediten.
                     <div class="alert alert-danger text-center" role="alert">
                         Para registrar información pulse:
                         <a type="button" class="btn btn-sm btn-secondary" href="{{route("datos_curriculares_declarante.create")}}">
@@ -86,7 +88,7 @@
                 if (result.isConfirmed){
                     $(that).closest('form').submit();
                 }
-            });            
+            });
             return false;
         });
     </script>

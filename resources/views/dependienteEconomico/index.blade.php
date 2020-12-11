@@ -3,7 +3,7 @@
 <div class="container">
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
-            <h1>DATOS DEL DEPENDIENTE ECONÓMICO</h1>
+            <h3>DATOS DEL DEPENDIENTE ECONÓMICO</h3>
         </div>
         <div class="card-body">
             <div class="col-md-12">
@@ -56,7 +56,7 @@
                 </button>
             </div>
             <br>
-            <a href="" class="btn btn-submit float-left text-light">Ir a la sección anterior</a> 
+            <a href="" class="btn btn-submit float-left text-light">Ir a la sección anterior</a>
             <a href="" class="btn btn-submit float-right text-light">Ir a la siguiente sección</a>
         </div>
     </div>
@@ -67,6 +67,6 @@
 <script>
 
 
-    
+
 </script>
 @endsection

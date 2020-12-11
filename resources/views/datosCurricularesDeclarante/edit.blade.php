@@ -10,6 +10,7 @@
                     @include('datosCurricularesDeclarante.form')
                     <div class="form-row text-center">
                         <div class="col">
+
                             {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light btnGuardar'] )}}
                         </div>
                     </div>

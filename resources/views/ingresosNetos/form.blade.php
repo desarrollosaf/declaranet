@@ -1,8 +1,8 @@
 <div class="row">
     <div class="form-group col-md-12">
-        <center>
-            {!! Form::label('Capturar cantidades libres de impuestos, sin comas, puntos, centavos y ceros a la izquierda:') !!}
-        </center>
+
+            <strong>{!! Form::label('Capturar cantidades libres de impuestos, sin comas, puntos, centavos y ceros a la izquierda:') !!}</strong>
+
     </div>
     <div class="col-md-10">
         <h6>I. REMUNERACIÓN MENSUAL NETA DEL DECLARANTE POR SU CARGO PÚBLICO (POR CONCEPTO DE SUELDOS, HONORARIOS, COMPENSACIONES, BONOS Y OTRAS PRESTACIONES)</h6>
@@ -26,7 +26,7 @@
         <h6>II.1. Por actividad industrial, comercial y / o empresarial:</h6>
         &nbsp;&nbsp;&nbsp;&nbsp;(Después de impuestos).
     </div>
-    <div class="col-md-2"> 
+    <div class="col-md-2">
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_por_actividad_ice', '$') !!}</td>
@@ -54,13 +54,13 @@
         </table>
     </div>
     <div class="col-md-2"></div>
-    <br> 
+    <br>
     <div class="col-md-1"></div>
     <div class="col-md-9">
         <h6>II.2 Por actividad financiera (rendimientos o ganancias:</h6>
         &nbsp;&nbsp;&nbsp;&nbsp;(Después de impuestos).
     </div>
-    <div class="col-md-2"> 
+    <div class="col-md-2">
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_por_actividad_financiera', '$') !!}</td>
@@ -83,7 +83,7 @@
         <h6>II.3 Por servicios profesionales, consejos, consultorias y/o asesorias:</h6>
         &nbsp;&nbsp;&nbsp;&nbsp;(Después de impuestos).
     </div>
-    <div class="col-md-2"> 
+    <div class="col-md-2">
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_por_servicios_profesionales', '$') !!}</td>
@@ -106,7 +106,7 @@
         <h6>II.4 Otros ingresos no considerados a los anteriores:</h6>
         &nbsp;&nbsp;&nbsp;&nbsp;(Después de impuestos).
     </div>
-    <div class="col-md-2"> 
+    <div class="col-md-2">
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_otros', '$') !!}</td>
@@ -127,7 +127,7 @@
     <div class="col-md-10">
         <h6>A.INGRESO MENSUAL NETO DEL DECLARANTE:</h6>(Suma del I y II)
     </div>
-    <div class="col-md-2"> 
+    <div class="col-md-2">
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto', '$') !!}</td>
@@ -138,7 +138,7 @@
     <div class="col-md-10">
         <h6>B.INGRESO MENSUAL NETO DE LA PAREJA Y/O DEPENDIENTES ECONÓMICOS:</h6>(Después de impuestos).
     </div>
-    <div class="col-md-2"> 
+    <div class="col-md-2">
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto_pareja', '$') !!}</td>
@@ -149,7 +149,7 @@
     <div class="col-md-10">
         <h6>C. TOTAL DE INGRESOS MENSUALES NETOS PERCIBIDOS POR EL DECLARANTE, PAREJA Y/O DEPENDIENTES ECONÓMICOS:</h6>(Suma de A y B)
     </div>
-    <div class="col-md-2"> 
+    <div class="col-md-2">
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.total_ingresos_declarante_pareja', '$') !!}</td>
@@ -168,4 +168,3 @@
                         {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
                     </center>
         </div>
-     

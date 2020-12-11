@@ -3,22 +3,22 @@
 <div class="container">
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
-            <h3>BIENES INMUEBLES</h3> <small><h6> (A la fecha de ingreso)</h6></small> <span class="badge badge-success ml-auto px-4" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree"> AYUDA</span>
+            <h3>BIENES INMUEBLES</h3> <small><h6> (A la fecha de ingreso)</h6></small>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped">
                 <thead class="text-center text-light">
-                    <tr> 
-                        <th scope="col" width="40%">Tipo de Bien</th> 
-                        <th scope="col" width="40%">Titular</th> 
+                    <tr>
+                        <th scope="col" width="40%">Tipo de Bien</th>
+                        <th scope="col" width="40%">Titular</th>
                         <th scope="col" width="20%">Acciones</th>
                     </tr>
                 </thead>
-                <tbody class="text-center"> 
+                <tbody class="text-center">
                     @foreach($bienes as $bien)
-                    <tr> 
-                        <th scope="col" width="40%">{{$bien->tipoInmueble->valor}}</th> 
-                        <th scope="col" width="40%">{{$bien->titular->valor}}</th> 
+                    <tr>
+                        <th scope="col" width="40%">{{$bien->tipoInmueble->valor}}</th>
+                        <th scope="col" width="40%">{{$bien->titular->valor}}</th>
                         <td class="all">
                             {!! Form::open(['action' => ['BienesInmueblesController@destroy', $bien->id], 'method'=>'DELETE']) !!}
                             <div style="display: inline-block;">
@@ -33,9 +33,9 @@
                         </td>
                     </tr>
                     @endforeach
-                </tbody> 
+                </tbody>
             </table>
-            <center><label style="margin-top:10px;">Si desea registrar algún Bien Inmueble pulse:<a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary">Agregar</a>, de lo contrario vaya a la siguiente sección.</label> </center>    
+            <center><label style="margin-top:10px;">Si desea registrar algún Bien Inmueble pulse:<a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary">Agregar</a>, de lo contrario vaya a la siguiente sección.</label> </center>
 
             <div class="text-center">
                 <a href="dsp_deSerPu_aInmAnt_ini.php" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
@@ -62,7 +62,7 @@
                 if (result.isConfirmed){
                     $(that).closest('form').submit();
                 }
-            });            
+            });
             return false;
         });
 </script>
