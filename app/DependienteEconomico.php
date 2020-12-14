@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class DependienteEconomico extends Model
 {
+    use SoftDeletes;
     protected $tabla = "dependiente_economicos";
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
     public function domicilio(){

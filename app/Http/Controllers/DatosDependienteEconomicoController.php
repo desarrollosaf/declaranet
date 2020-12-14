@@ -185,7 +185,35 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $dependienteRequest = $request->input('declarante');
+        $nacional = $request->input('nacional');
+        $extranjero = $request->input('extranjero');
+        $laboral = $request->input('laboral');
+        $publico = $request->input('publico');
+        $privado = $request->input('privado');
+//        dump($dependiente);
+//        dump($nacional);
+//        dump($extranjero);
+//        dump($laboral);
+//        dump($publico);
+//        dd($privado);
+        $dependiente  = \App\DependienteEconomico::find($id);
+        $dependiente->update($dependienteRequest);
+        $privado["ambito_sector_id"] = $laboral["ambito_sector_id"];
+        $publico["ambito_sector_id"] = $laboral["ambito_sector_id"];
+        $dependiente->domicilio()->delete();
+        if($dependiente["lugar_residencia_id"] == 1){
+            $dependiente->domicilio()->create($nacional);
+        }else{
+            $dependiente->domicilio()->create($extranjero);
+        }
+        $dependiente->dato_laboral()->delete();
+        if($laboral["ambito_sector_id"] == 1){
+            $laboral = $dependiente->dato_laboral()->create($publico);
+        }else{
+            $laboral = $dependiente->dato_laboral()->create($privado);
+        }
+        return redirect()->route('datos_dependiente_declarante.index');
     }
 
     /**
@@ -196,6 +224,8 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dependiente = \App\DependienteEconomico::find($id);
+        $dependiente->delete();
+        return redirect()->route('datos_dependiente_declarante.index');
     }
 }

@@ -29,6 +29,7 @@ class IngresoNeto extends Migration
             $table->double('ingreso_otros')->nullable();
             $table->string('tipo_de_ingreso')->nullable();
             $table->double('ingreso_mensual_neto');
+            $table->double('ingreso_mensual_suma');
             $table->double('ingreso_mensual_neto_pareja')->nullable();
             $table->double('total_ingresos_declarante_pareja')->nullable();
             $table->string('aclaraciones_observaciones')->nullable();

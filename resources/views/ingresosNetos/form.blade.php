@@ -75,7 +75,7 @@
             <tr>
                 <td width='40%'>
                     <strong>{!! Form::label('ingresoMensual.tipo_de_instrumento', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</strong></td>   
-                <td>{!! Form::select('ingresoMensual[tipo_de_instrumento]', $tipoInstrumento, isset($ingresoMensual) ? $ingresoMensual->tipo_de_instrumento : null,['placeholder' => 'SELECCIONE UNA OPCION','class'=>'form-control text-uppercase', 'id' => 'tipo_de_instrumento', 'required' => 'true']) !!}</td>
+                <td>{!! Form::select('ingresoMensual[tipo_de_instrumento]', $tipoInstrumento, isset($ingresoMensual) ? $ingresoMensual->tipo_de_instrumento : null,['placeholder' => 'SELECCIONE UNA OPCION','class'=>'form-control text-uppercase', 'id' => 'tipo_de_instrumento']) !!}</td>
             </tr>
         </table>
     </div>
@@ -139,12 +139,12 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_neto', 'required' => 'true', 'disabled' => 'true']) !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_neto', 'required' => 'true', 'disabled' => 'true', 'value' => "0", 'onchange' => 'sumar()']) !!}</td>
                 
             </tr>
             <tr>
-                <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'total', 'required' => 'true', 'disabled' => 'true']) !!}</td>
+                <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_suma', '$') !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_suma]',(isset($ingresoMensual->ingreso_mensual_suma)) ? $ingresoMensual->ingreso_mensual_suma: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'total', 'required' => 'true', 'disabled' => 'true']) !!}</td>
                 
             </tr>
         </table>
@@ -193,7 +193,7 @@
        function sumar()
         {
             var x = document.forms[0];
-            
+
             var n1 = Number(x.elements["ingreso_mensual_publico"].value);
             var n2 = Number(x.elements["ingreso_por_actividad_ice"].value);
             var n3 = Number(x.elements["ingreso_por_actividad_financiera"].value);
@@ -203,12 +203,13 @@
             var total = n1 + n2 + n3 + n4 + n5;
             var totalDecl = n2 + n3 + n4 + n5;
             var totalDP = total + n6;
+             
             x.elements["ingreso_mensual_neto"].value = totalDecl;
             x.elements["total_ingresos_declarante_pareja"].value = totalDP;
             x.elements["total"].value = total;
-              
+            //document.getElementById('ingreso_mensual_neto').innerHTML = totalDecl;
         }
- 
+
     </script>
     @endsection
     
