@@ -6,12 +6,6 @@
             <h3>INVERSIONES, CUENTAS BANCARIAS Y OTRO TIPO DE VALORES/ACTIVOS</h3>
             <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
         </div>
-
-
-
-
-
-
             <div class="card-body">
                 @if(count($inversiones))
                     <div class="table-responsive-lg">

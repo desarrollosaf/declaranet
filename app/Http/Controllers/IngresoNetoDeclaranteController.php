@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\IngresoNeto;
+use App\tipoInstrumento;
+use Illuminate\Support\Arr;
 
 class IngresoNetoDeclaranteController extends Controller
 {
@@ -36,7 +38,8 @@ class IngresoNetoDeclaranteController extends Controller
      */
     public function create()
     {
-       return view("ingresosNetos.create");
+       $tipoInstrumento = Arr::pluck(\App\tipoInstrumento::all(), "valor","id");
+       return view("ingresosNetos.create", compact('tipoInstrumento'));
     }
 
     /**

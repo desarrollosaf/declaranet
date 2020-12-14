@@ -22,7 +22,8 @@ class IngresoNeto extends Migration
             $table->string('nombre_razon_social')->nullable();
             $table->string('tipo_de_negocio')->nullable();
             $table->double('ingreso_por_actividad_financiera')->nullable();
-            $table->string('tipo_de_instrumento')->nullable();
+            $table->unsignedBigInteger('tipo_de_instrumento')->nullable();
+            $table->foreign('tipo_de_instrumento')->references('id')->on('tipo_instrumentos');
             $table->double('ingreso_por_servicios_profesionales')->nullable();
             $table->string('tipo_de_servicio')->nullable();
             $table->double('ingreso_otros')->nullable();
