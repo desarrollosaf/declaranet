@@ -24,26 +24,26 @@
                                 @foreach($experiencias as $experiencia)
                                     <tr>
                                         <td>
-                                            <center>{{$experiencia->ambito_sector->valor}}</center>
+                                            <center>{{$experiencia->ambito_sectores->valor}}</center>
                                         </td>
                                         @if($experiencia->ambito_sector_id == 1)
                                             <td>
                                                 <center>
-                                                    <strong>Nombre:</strong> {{$experiencia->ente_publico}} <br>
-                                                    <strong>Cargo/Puesto:</strong> {{$experiencia->puesto}} {{$experiencia->cargo_comision}}
+                                                    <strong>NOMBRE:</strong> {{strtoupper($experiencia->ente_publico)}} <br>
+                                                    <strong>CARGO/PUESTO:</strong> {{strtoupper($experiencia->puesto)}} {{strtoupper($experiencia->cargo_comision)}}
                                                     <br>
-                                                    <strong>Periodo:</strong>{{$experiencia->fecha_ingreso}}
-                                                    {{$experiencia->fecha_egreso}}<br>
+                                                    <strong>PERIODO:</strong>{{strtoupper($experiencia->fecha_ingreso)}}
+                                                    {{strtoupper($experiencia->fecha_egreso)}}<br>
                                                 </center>
                                             </td>
                                         @else
                                             <td>
                                                 <center>
-                                                    <strong>Nombre:</strong> {{$experiencia->ente_publico}} <br>
-                                                    <strong>Cargo/Puesto:</strong> {{$experiencia->puesto}} {{$experiencia->cargo_comision}}
+                                                    <strong>NOMBRE:</strong> {{strtoupper($experiencia->ente_publico)}} <br>
+                                                    <strong>CARGO/PUESTO:</strong> {{strtoupper($experiencia->puesto)}} {{strtoupper($experiencia->cargo_comision)}}
                                                     <br>
-                                                    <strong>Periodo:</strong>{{$experiencia->fecha_ingreso}}
-                                                    {{$experiencia->fecha_egreso}}<br>
+                                                    <strong>PERIODO:</strong>{{strtoupper($experiencia->fecha_ingreso)}}
+                                                    {{strtoupper($experiencia->fecha_egreso)}}<br>
                                                 </center>
                                             </td>
                                         @endif
@@ -80,7 +80,7 @@
                                     href="{{route('experiencia_laboral.create')}}"
                                     class="btn btn-sm btn-secondary">Agregar</a><br>
                                 <strong>Deberá seleccionar <a href="{{route('experiencia_laboral.create')}}"
-                                                              class="btn btn-sm btn-secondary">Ninguno</a>si éste es su
+                                                              class="btn btn-ninguno btn-secondary">Ninguno</a>si éste es su
                                     primer empleo.</strong>
                             </label>
                         </div>
@@ -92,56 +92,14 @@
 
                 <div class="text-center">
                     <br>
-                    <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                    <a href="{{route("datos_empleo_declarante.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                         sección
                         anterior</a>
-                    <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                    <a href="{{route("datos_pareja_declarante.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                         siguiente sección</a>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 @endsection
 @section('scripts')
@@ -155,9 +113,24 @@
                 icon: 'warning',
                 showCancelButton: true,
                 cancelButtonText: 'Cancelar'
+            });
+        });
+
+        $('.btn-ninguno').on('click', function (e) {
+            let that = this;
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
             }).then((result) => {
-                if (result.isConfirmed) {
-                    $(that).closest('form').submit();
+                if (result.isConfirmed){
+                    Swal.fire({
+                        text: 'No se registró información en este apartado. Si desea registrar Experiencia Laboral del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        icon: 'warning',
+                        cancelButtonText: 'Aceptar'
+                    });
                 }
             });
         });

@@ -61,55 +61,55 @@
                             </center>
                         </div>
                     @else
-                        <span style="text-align: left !important;">Deberá proporcionar la información de CADA UNO de los vehículos, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como los de su pareja y/o dependientes económicos.</span>
+                    <span style="text-align: left !important;"><strong>Deberá proporcionar la información de CADA UNO de los vehículos, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como los de su pareja y/o dependientes económicos.</strong></span>
                         <br>
                         <div class="alert alert-danger text-center" role="alert">
                             <label style="margin-top:10px;">
                                 <strong>Para registrar información pulse: </strong><a
                                     href="{{route('vehiculos.create')}}"
-                                    class="btn btn-sm btn-secondary ">Agregar</a><br>
-                                <strong>Si no tiene vehículos, seleccione <a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                                    class="btn btn-sm btn-secondary ">Agregar</a><br><br>
+                                <strong>Si no tiene vehículos, seleccione <a href="{{route('vehiculos.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                             </label>
                         </div>
-
-
-
                     @endif
 
 
                 <div class="text-center">
                     <br>
-                    <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                    <a href="{{route("bienes_inmuebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                         sección
                         anterior</a>
-                    <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                    <a href="{{route("bienes_muebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                         siguiente sección</a>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+    </div>
 @endsection
-3
+
+@section('scripts')
+    <script>
+
+
+        $('.btn-ninguno').on('click', function (e) {
+            let that = this;
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    Swal.fire({
+                        text: 'No se registró información en este apartado. Si desea registrar Vehiculos del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        icon: 'warning',
+                        cancelButtonText: 'Aceptar'
+                    });
+                }
+            });
+        });
+    </script>
+@endsection
+
+

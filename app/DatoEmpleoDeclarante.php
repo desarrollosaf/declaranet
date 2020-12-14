@@ -17,4 +17,12 @@ class DatoEmpleoDeclarante extends Model
     public function ambito_publico(){
         return $this->belongsTo(ambitoPublico::class);
     }
+
+    public function entidades(){
+        return $this->belongsTo(Entidad::class);
+    }
+
+    public function municipios(){
+        return $this->belongsTo(Municipio::class);
+    }
 }

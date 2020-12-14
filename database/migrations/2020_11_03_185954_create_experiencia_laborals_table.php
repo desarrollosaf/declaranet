@@ -15,9 +15,9 @@ class CreateExperienciaLaboralsTable extends Migration
     {
         Schema::create('experiencias_laborales', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('experienciable_id');
+            $table->bigInteger('experienciable_id')->nullable();
             // Clase del objeto al que se está asignando la disponibilidad
-            $table->string('experienciable_type');
+            $table->string('experienciable_type')->nullable();
 //            $table->index(['experienciable_id', 'experienciable_type']);
             $table->unsignedBigInteger("ambito_sector_id")->nullable();
             $table->foreign("ambito_sector_id")->references("id")->on("ambitos_sectores");

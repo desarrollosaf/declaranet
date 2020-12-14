@@ -53,7 +53,8 @@ class CreateVehiculos extends Migration
             $table->unsignedBigInteger('pago_id')->nullable();
             $table->foreign('pago_id')->references('id')->on('forma_pagos');
             $table->string('v_valor')->nullable();
-            $table->string('v_moneda')->nullable();
+            $table->unsignedBigInteger('tipo_monedas_id')->nullable();
+            $table->foreign('tipo_monedas_id')->references('id')->on('tipo_monedas');
             $table->date('v_fecha')->nullable();
             $table->unsignedBigInteger('rf_dueno_titular_id')->nullable();
             $table->foreign('rf_dueno_titular_id')->references('id')->on('regimen_fiscal');

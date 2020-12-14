@@ -11,6 +11,7 @@ use App\ExperienciaLaboral;
 use App\Declaracion;
 use Illuminate\Support\Arr;
 use Carbon\Carbon;
+use App\AmbitoSector;
 
 class ExperienciaLaboralController extends Controller
 {
@@ -38,7 +39,14 @@ class ExperienciaLaboralController extends Controller
      */
     public function create()
     {
-        $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor','id');
+
+        $ambitoSector = AmbitoSector::all();
+        $ambitos_sectores= [];
+        //$ambitos_sectores[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($ambitoSector as $item){
+            $ambitos_sectores[$item->id] = $item->valor;
+        }
+
         $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");

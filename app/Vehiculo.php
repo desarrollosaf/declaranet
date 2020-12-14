@@ -58,4 +58,10 @@ class Vehiculo extends Model
     {
         return $this->belongsTo(Entidad::class, 'entidad_id');
     }
+
+    public function tipoMonedas()
+    {
+        return $this->belongsTo(tipoMoneda::class);
+    }
 }
+

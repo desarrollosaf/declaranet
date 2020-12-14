@@ -55,11 +55,11 @@
             <strong> {!! Form::label('', 'Teléfono de oficina y extensión: *') !!}</strong>
         </div>
         <div class="form-group col-md-4">
-            {!! Form::text('datos_empleo_declarante[telefono_oficina]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->telefono_oficina :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 5555555555',  'id' => 'telefono_oficina', 'required' => 'true', 'pattern' => "[0-9]{10}",'title' => "Ingresa el número a 10 dígitos"]) !!}
+            {!! Form::number('datos_empleo_declarante[telefono_oficina]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->telefono_oficina :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 5555555555',  'id' => 'telefono_oficina', 'required' => 'true', 'pattern' => "[0-9]{10}",'title' => "Ingresa el número a 10 dígitos"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            {!! Form::text('datos_empleo_declarante[extension]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->extension :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 555',  'id' => 'extension', 'required' => 'true', 'pattern' => "[0-9]{4}",'title' => "Ingresa el número de extensión a 4 dígitos"]) !!}
+            {!! Form::number('datos_empleo_declarante[extension]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->extension :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 555',  'id' => 'extension', 'required' => 'true', 'pattern' => "[0-9]{4}",'title' => "Ingresa el número de extensión a 4 dígitos"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -86,21 +86,20 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('colonia', 'Colonia / Localidad: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[colonia_localidad]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->colonia_localidad :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_localidad', 'required' => 'true' ]) !!}
+            <strong>{!! Form::label('entidad', 'Entidad Federativa: *') !!}</strong>
+            {!! Form::select('datos_empleo_declarante[entidad_federativa_id]',$entidad,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->entidad_federativa_id :null,['class'=>'form-control text-uppercase',  'id' => 'entidad_federativa_id',  'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('municipio', 'Municipio: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[municipio]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->municipio :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Toluca',  'id' => 'municipio', 'required' => 'true']) !!}
+            {!! Form::select('datos_empleo_declarante[municipio_id]', isset($DatoEmpleoDeclarante) ?  $selectMunicipio : [], isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->municipio_id :null,['class'=>'form-control text-uppercase',  'id' => 'municipio_id', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('entidad', 'Entidad Federativa: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[entidad_federativa]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->entidad_federativa :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 0101',  'id' => 'entidad_federativa', 'disabled' => 'disabled', 'required' => 'true']) !!}
+            <strong>{!! Form::label('colonia', 'Colonia / Localidad: *') !!}</strong>
+            {!! Form::text('datos_empleo_declarante[colonia_localidad]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->colonia_localidad :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_localidad', 'required' => 'true' ]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
-
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
@@ -146,5 +145,25 @@
         }else if ($("#accion").val() == "crear"){
             document.getElementById("crearF").style.display="block";
         }
+
+        $("#entidad_federativa_id").on('change', function () {
+            var idEntidad = $(this).val();
+            if (parseInt(idEntidad) === 15) {
+                $(".foraneo").hide();
+            }
+            $.ajax({
+                url: "{{asset('getMunicipiosDomicilio')}}/" + idEntidad,
+                type: 'get',
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    $("#municipio_id").find('option').remove();
+                    $("#municipio_id").append('<option value="">SELECCIONE UNA OPCIÓN</option>');
+                    $(response).each(function (i, v) { // indice, valor
+                        $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
+                    });
+                }
+            });
+        });
     </script>
 @endsection

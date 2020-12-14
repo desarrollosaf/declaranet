@@ -12,7 +12,7 @@ class ExperienciaLaboral extends Model
     public function experienciable(){
         return $this->morphTo();
     }
-    public function ambito_sector(){
-        return $this->belongsTo(AmbitoSector::class);
+    public function ambito_sectores(){
+        return $this->belongsTo(AmbitoSector::class,'ambito_sector_id');
     }
 }

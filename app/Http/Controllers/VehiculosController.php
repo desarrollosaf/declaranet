@@ -15,6 +15,7 @@ use App\RegimenFiscal;
 use App\Titular;
 use App\Declaracion;
 use Illuminate\Support\Arr;
+use App\tipoMoneda;
 
 class VehiculosController extends Controller
 {
@@ -39,60 +40,66 @@ class VehiculosController extends Controller
     public function create()
     {
         $tipoVehiculo = tipoVehiculo::all();
-        $vehiculo[""] = "SELECCIONA UNA OPCIÓN";
+        $vehiculo= [];
         foreach ($tipoVehiculo as $item){
             $vehiculo[$item->id] = $item->valor;
         }
 
         $relacionTransmisor = relacionTransmisor::all();
-        $relacion[""] = "SELECCIONA UNA OPCIÓN";
+        $relacion= [];
         foreach ($relacionTransmisor as $item){
             $relacion[$item->id] = $item->valor;
         }
 
         $lugarDondeReside = lugarDondeReside::all();
-        $registro[""] = "SELECCIONA UNA OPCIÓN";
+        $registro= [];
         foreach ($lugarDondeReside as $item){
             $registro[$item->id] = $item->valor;
         }
 
         $formaAdquisicion = formaAdquisicion::all();
-        $tipoAdquisicion[""] = "SELECCIONA UNA OPCIÓN";
+        $tipoAdquisicion= [];
         foreach ($formaAdquisicion as $item){
             $tipoAdquisicion[$item->id] = $item->valor;
         }
 
         $FormasPagos = FormasPagos::all();
-        $pago[""] = "SELECCIONA UNA OPCIÓN";
+        $pago[""] = [];
         foreach ($FormasPagos as $item){
             $pago[$item->id] = $item->valor;
         }
 
         $Paises = Pais::all();
-        $pais[""] = "SELECCIONA UNA OPCIÓN";
+        $pais[""] = [];
         foreach ($Paises as $item){
             $pais[$item->id] = $item->valor;
         }
 
         $RegimenFiscal = RegimenFiscal::all();
-        $regimen[""] = "SELECCIONA UNA OPCIÓN";
+        $regimen[""] = [];
         foreach ($RegimenFiscal as $item){
             $regimen[$item->id] = $item->valor;
         }
 
         $titular_inmueble = Titular::all();
-        $titular[""] = "SELECCIONA UNA OPCIÓN";
+        $titular[""] = [];
         foreach ($titular_inmueble as $item){
             $titular[$item->id] = $item->valor;
         }
 
         $entidades = Entidad::all();
-        $entidad[""] = "SELECCIONA UNA OPCIÓN";
+        $entidad[""] = [];
         foreach ($entidades as $item){
             $entidad[$item->id] = $item->entidad;
         }
 
-        return view("Vehiculos.create", compact('vehiculo',  'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad'));
+        $tipoMoneda = tipoMoneda::all();
+        $moneda[""] = [];
+        foreach ($tipoMoneda as $item){
+            $moneda[$item->id] = $item->valor;
+        }
+
+        return view("Vehiculos.create", compact('vehiculo',  'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda'));
     }
 
     /**
@@ -138,8 +145,9 @@ class VehiculosController extends Controller
         $regimen = Arr::pluck(RegimenFiscal::all(), "valor","id");
         $titular = Arr::pluck(Titular::all(), "valor","id");
         $entidad = Arr::pluck(Entidad::all(), "entidad","id");
+        $moneda = Arr::pluck(tipoMoneda::all(), "valor","id");
 
-        return view("Vehiculos.edit", compact( 'vehiculos', 'vehiculo','relacion','registro','tipoAdquisicion','pago','pais','regimen','titular','entidad'));
+        return view("Vehiculos.edit", compact( 'vehiculos', 'vehiculo','relacion','registro','tipoAdquisicion','pago','pais','regimen','titular','entidad','moneda'));
     }
 
     /**

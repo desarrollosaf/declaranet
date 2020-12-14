@@ -10,6 +10,8 @@ use App\ambitoPublico;
 use App\sectores;
 use App\DatoEmpleoDeclarante;
 use Illuminate\Support\Arr;
+use App\Entidad;
+use App\Municipio;
 
 class DatosEmpleoDeclaranteController extends Controller
 {
@@ -58,7 +60,15 @@ class DatosEmpleoDeclaranteController extends Controller
         $sector[$item->id] = $item->valor;
         }
 
-        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector", "declaracion"));
+        $Entidades = Entidad::all();
+        $entidad= [];
+        $entidad[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($Entidades as $item){
+            $entidad[$item->id] = $item->entidad;
+        }
+
+
+        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector", "declaracion",'entidad'));
     }
 
     /**
@@ -98,7 +108,9 @@ class DatosEmpleoDeclaranteController extends Controller
         $nivel = Arr::pluck(NivelOrdenGobierno::all(), 'valor','id');
         $ambito = Arr::pluck(ambitoPublico::all(), 'valor','id');
         $sector = Arr::pluck(sector::all(), 'valor','id');
-        return view("datosEmpleoDeclarante.edit", compact( 'DatoEmpleoDeclarante','nivel','ambito','sector'));
+        $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
+        $selectMunicipio = Arr::pluck(Municipio::where("entidad_id",$DatoEmpleoDeclarante->entidad_federativa_id)->get(), "municipio","id");
+        return view("datosEmpleoDeclarante.edit", compact( 'DatoEmpleoDeclarante','nivel','ambito','sector','entidad','selectMunicipio'));
 
     }
 
