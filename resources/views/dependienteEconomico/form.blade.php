@@ -36,7 +36,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('especifique', 'Especifique:') !!}
-            {!! Form::text('declarante[relacion_transmisor]',isset($dependiente) ? $dependiente->nombre : relacion_transmisor,['class'=>'form-control alert-danger', 'placeholder'=>'p. ej. Parentezco',  'id' => 'especifique-parentezco' , 'disabled' => true]) !!}
+            {!! Form::text('declarante[relacion_transmisor]',isset($dependiente) ? $dependiente->relacion_transmisor : null,['class'=>'form-control alert-danger', 'placeholder'=>'p. ej. Parentezco',  'id' => 'especifique-parentezco' , 'disabled' => true]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -97,7 +97,7 @@
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('municipio', 'Municipio / Alcaldía:') !!}
-            {!! Form::select('nacional[municipio_id]',$municipios,isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control alert-danger',  'id' => 'municipio_id']) !!}
+            {!! Form::select('nacional[municipio_id]',isset($domicilio) ? $municipios : [],isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control alert-danger',  'id' => 'municipio_id']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
