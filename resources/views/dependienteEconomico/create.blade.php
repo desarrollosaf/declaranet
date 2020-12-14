@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="card-body">
-            {!! Form::open(['route'=>'datos_dependiente_declarante.store', 'method'=>'POST', 'role' => 'form', 'id' => 'dependienteEconomico']) !!}
+            {!! Form::open(['route'=>'datos_dependiente_declarante.store', 'method'=>'POST', 'role' => 'form', 'id' => 'frmDependienteEconomico']) !!}
             @include('dependienteEconomico.form')
             {!! Form::close() !!}
         </div>
@@ -108,21 +108,21 @@
     });
 
 
-    $(".submitForm").on("click", function (e) {
-        e.preventDefault();
-        let that = this;
-        var error = false;
-
-        if (error) {
-            Swal.fire({
-                title: 'Error',
-                text: 'llena todos los campos obligatorios',
-                icon: 'error'
-            });
-        } else {
-            $('#dependienteEconomico').submit();
-        }
-    });
+//    $(".submitForm").on("click", function (e) {
+//        e.preventDefault();
+//        let that = this;
+//        var error = false;
+//
+//        if (error) {
+//            Swal.fire({
+//                title: 'Error',
+//                text: 'llena todos los campos obligatorios',
+//                icon: 'error'
+//            });
+//        } else {
+//            $('#dependienteEconomico').submit();
+//        }
+//    });
     $(document).ready(function () {
         $("#parentesco").on("change", function () {
             var nivel = $('#parentesco option:selected').html();
@@ -153,5 +153,29 @@
             }
         });
     });
+    $("#frmDependienteEconomico").on("submit",function(e){
+        e.preventDefault();
+        var validacion = validarDependiente();
+        if(!validacion){
+//            $("#frmDependienteEconomico").submit();
+        }else{
+            Swal.fire({
+                title: 'Error',
+                text: 'llena todos los campos obligatorios',
+                icon: 'error'
+            });
+        }
+        
+    });
+    function validarDependiente(){
+        var error = false;
+        if($("#nombre").val() == ""){
+            error = true;
+        }
+        if($("#apellidop").val() == ""){
+            error = true;
+        }
+        return error;
+    }
 </script>
 @endsection
