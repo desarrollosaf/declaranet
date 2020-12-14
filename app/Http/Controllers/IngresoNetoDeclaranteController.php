@@ -52,6 +52,7 @@ class IngresoNetoDeclaranteController extends Controller
     {
         $ingresoMensual = $this->request->input("ingresoMensual");
         $ingresoMensual['declaracion_id']=$this->request->session()->get('declaracion_id');
+        //dd($ingresoMensual);
         IngresoNeto::create($ingresoMensual);
         return redirect()->back()->with('success', 'Se registraron los datos del servidor');
     }
