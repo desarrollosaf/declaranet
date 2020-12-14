@@ -13,7 +13,7 @@ class CreateDependienteEconomicosTable extends Migration
      */
     public function up()
     {
-        Schema::create('dependiente_economicos', function (Blueprint $table) {
+        Schema::create('dependientes_economicos', function (Blueprint $table) {
             $table->id();
             $table->string("nombre");
             $table->string("primer_apellido");
@@ -30,6 +30,7 @@ class CreateDependienteEconomicosTable extends Migration
             $table->foreign('respuesta_id')->references('id')->on('respuestas');
             $table->unsignedBigInteger('lugar_residencia_id');
             $table->foreign('lugar_residencia_id')->references('id')->on('lugar_donde_resides');
+            $table->text('observaciones')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -42,6 +43,6 @@ class CreateDependienteEconomicosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('de    pendiente_economicos');
+        Schema::dropIfExists('dependientes_economicos');
     }
 }
