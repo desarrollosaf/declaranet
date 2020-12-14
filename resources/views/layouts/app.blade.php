@@ -97,6 +97,7 @@
 
     table thead th {
         border: 0 !important;
+        background-color: var(--primary);
     }
 
     table tbody tr {
