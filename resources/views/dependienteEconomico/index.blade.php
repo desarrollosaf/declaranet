@@ -7,6 +7,7 @@
         </div>
         <div class="card-body">
             <div class="col-md-12">
+                @if(count($dependientes) > 0)
                 <table class="table table-bordered table-striped table-hover" style="border-collapse: collapse;">
                     <thead style="background-color: #682244;" class="text-light">
                     <tr>
@@ -42,6 +43,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                @endif
             </div>
             <p class="text-justify">Deberá proporcionar la información de CADA UNA de las personas, familiares o no, cuya manutención dependa principalmente de los ingresos del Declarante.</p>
             <div class="alert alert-danger text-center" role="alert">
@@ -51,7 +53,7 @@
                 </a>
                 <br>
                 Sí no tiene dependientes económicos, seleccione
-                <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-sm btn-secondary" id="btnNinguno">
                     Ninguno
                 </button>
             </div>
@@ -65,7 +67,22 @@
 @endsection
 @section('scripts')
 <script>
-
+$("#btnNinguno").on("click",function(){
+    Swal.fire({
+        text: '¿Esta seguro que no desea solicitar la información solicitada en este apartado?',
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed){
+            Swal.fire({
+                text: 'No se registró información en este apartado. Si desea registrar Datos Curriculares del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                icon: 'warning',
+                cancelButtonText: 'Aceptar'
+            });
+        }
+    });
+});
 
 
 </script>

@@ -8,7 +8,7 @@
                 <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
             </div>
         </div>
-    </div>
+    <!--</div>-->
     <div class="collapse" id="collapseExample">
         <div class="card-body">
             <ol>
