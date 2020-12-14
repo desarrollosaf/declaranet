@@ -1,75 +1,110 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+
+
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
                 <h3>DATOS CURRICULARES DEL DECLARANTE</h3>
             </div>
             <div class="card-body">
-                <div class="col-md-12">
 
-                    <table class="table table-bordered table-striped table-hover" style="border-collapse: collapse;">
-                        <thead style="background-color: #682244;" class="text-light">
+                @if(count($curriculares))
+                    <div class="table-responsive-lg">
+                        <table class="table table-active table-striped">
+                            <thead class="badge-primary">
                             <tr>
-                                <th><center>Nivel</center></th>
-                                <th><center>Institucion</center></th>
-                                <th><center>Carrera</center></th>
-                                <th><center>Estatus</center></th>
-                                <th><center>Acciones</center></th>
+                                <th>
+                                    <center>Nivel</center>
+                                </th>
+                                <th>
+                                    <center>Institucion</center>
+                                </th>
+                                <th>
+                                    <center>Acciones</center>
+                                </th>
                             </tr>
-                        </thead>
-                        <tbody>
+                            </thead>
+                            <tbody>
                             @foreach($curriculares as $curricular)
-                            <tr>
-                                <td><center>{{$curricular->nivel->valor}}</center></td>
-                                <td><center>{{$curricular->institucion_educativa}}</center></td>
-                                <td><center>{{$curricular->carrera_area}}</center></td>
-                                <td><center>{{$curricular->estatus->valor}}</center></td>
-                                <td class="all">
-                                    {!! Form::open(['action' => ['DatosCurricularesDeclaranteController@destroy', $curricular->id], 'method'=>'DELETE']) !!}
-                                    <div style="display: inline-block;">
-                                        <a href="{{route('datos_curriculares_declarante.edit',[$curricular])}}" class="btn btn-xs btn-warning">
-                                            <i class="ion ion-edit"></i>
-                                        </a>
-                                        <button class="btn btn-xs btn-danger btn-borrar">
-                                            <i class="ion ion-trash-a"></i>
-                                        </button>
-                                    </div>
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>
+                                        <center>{{$curricular->nivel->valor}}</center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <strong>Institución
+                                                educativa: </strong>{{$curricular->institucion_educativa}}<br>
+                                            <strong>Carrera o área de
+                                                conocimiento: </strong>{{$curricular->carrera_area}}<br>
+                                            <strong>Documento obtenido: </strong>{{$curricular->estatus->valor}}
+
+
+                                        </center>
+                                    </td>
+
+                                    <td class="all text-center">
+                                        {!! Form::open(['action' => ['DatosCurricularesDeclaranteController@destroy', $curricular->id], 'method'=>'DELETE']) !!}
+                                        <div style="display: inline-block;">
+                                            <a href="{{route('datos_curriculares_declarante.edit',[$curricular])}}"
+                                               class="btn btn-xs btn-warning">
+                                                <i class="ion ion-edit"></i>
+                                            </a>
+                                            <button class="btn btn-xs btn-danger btn-borrar">
+                                                <i class="ion ion-trash-a"></i>
+                                            </button>
+                                        </div>
+                                        {!! Form::close() !!}
+                                    </td>
+                                </tr>
                             @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                Deberá proporcionar la información correspondiente al nivel máximo de estudios y documento que lo acrediten.
-                    <div class="alert alert-danger text-center" role="alert">
-                        Para registrar información pulse:
-                        <a type="button" class="btn btn-sm btn-secondary" href="{{route("datos_curriculares_declarante.create")}}">
-                            Agregar
-                        </a>
-                        <br>
-                        Deberá seleccionar
-                        <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                            Ninguno
-                        </button> Sí éste es su primer empleo
+                            </tbody>
+                        </table>
+                        <center>
+                            <strong>Si desea registrar Datos Curriculares del Declarante pulse: <a
+                                    href="{{route('datos_curriculares_declarante.create')}}"
+                                    class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
+                                apartado.</strong>
+                        </center>
                     </div>
+                @else
+                    <span style="text-align: left !important;">Deberá proporcionar la información correspondiente al nivel máximo de estudios y documento que lo acrediten.</span>
                     <br>
-                    <a href="" class="btn btn-submit float-left text-light">Ir a la sección anterior</a>
-                    <a href="" class="btn btn-submit float-right text-light">Ir a la siguiente sección</a>
+                    <div class="alert alert-danger text-center" role="alert">
+                        <label style="margin-top:10px;">
+                            <strong>Para registrar información pulse: </strong><a
+                                href="{{route('datos_curriculares_declarante.create')}}"
+                                class="btn btn-sm btn-secondary">Agregar</a><br>
+                            <strong>Deberá seleccionar <a href="{{route('datos_curriculares_declarante.create')}}"
+                                                          class="btn btn-sm btn-secondary">Ninguno</a>si éste es su
+                                primer empleo.</strong>
+                        </label>
+                    </div>
+
+
+
+                @endif
+
+
+                <div class="text-center">
+                    <br>
+                    <a href="{{route("domicilio_declarante.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                    <a href="{{route("datos_empleo_declarante.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+                </div>
             </div>
         </div>
+
+
     </div>
 @endsection
 @section('scripts')
     <script type="text/javascript">
-        $(document).ready(function(){
-            $("#nivel").on("change", function(){
+        $(document).ready(function () {
+            $("#nivel").on("change", function () {
                 var nivel = $('#nivel option:selected').html();
-                if(nivel == "PRIMARIA" || nivel == "SECUNDARIA"){
+                if (nivel == "PRIMARIA" || nivel == "SECUNDARIA") {
                     $("#carrera").prop("disabled", true);
-                }
-                else{
+                } else {
                     $("#carrera").prop("disabled", false);
                 }
             });
@@ -85,7 +120,7 @@
                 showCancelButton: true,
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
-                if (result.isConfirmed){
+                if (result.isConfirmed) {
                     $(that).closest('form').submit();
                 }
             });

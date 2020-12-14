@@ -6,12 +6,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('exterior', 'Número exterior: *') !!}</strong>
-        {!! Form::number('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control alert-danger', 'placeholder'=>'p.ej. 102',  'id' => 'exterior','required' =>'true', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
+        {!! Form::number('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 102',  'id' => 'exterior','required' =>'true', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
-        {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
+        {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 5',  'id' => 'interior']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>

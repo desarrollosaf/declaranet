@@ -4,6 +4,7 @@
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
             <h3>INGRESOS NETOS DEL DECLARANTE, PAREJA Y/O DEPENDIENTES ECONÓMICOS</h3> <h6>(SITUACIÓN ACTUAL)</h6>
+
             <div class="float-right">
                 <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseInversion" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
             </div>
@@ -18,7 +19,7 @@
                 la fecha de la conclusión del empleo, cargo o comisión.<br>
                 Es necesario capturar cantidades después de impuestos, sin comas, sin puntos, sin centavos y
                 sin ceros a la izquierda.<br>
-                
+
               <ol>
                     <ul>
                         <li type="circle">Remuneración neta del Declarante por su cargo público (por concepto de sueldos, honorarios, compensaciones, bonos y otras prestaciones) (Cantidades netas después de impuestos). Es el ingreso neto que recibe el Declarante incluyendo bonos, compensaciones u otras prestaciones, se recomienda manifestar la cantidad que se encuentra en su recibo de nómina.</li>

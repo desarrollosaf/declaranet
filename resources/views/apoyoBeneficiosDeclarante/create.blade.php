@@ -4,15 +4,15 @@
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
                 <div class="float-left">
-                    <h1>APOYO O BENEFICIO DECLARANTE</h1>
-                    <h6>(Hasta los últimos dos años)</h6>
+                    <h4>APOYOS O BENEFICIOS PÚBLICOS</h4>
+                    <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
                 </div>
                 <div class="float-right">
                     <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseApoyo" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
                 </div>
             </div>
             <div class="collapse" id="collapseApoyo">
-                <div class="card card-body">               
+                <div class="card card-body">
                     <ol>
                         <li><strong>Titular del apoyo o beneficio.</strong> Son las personas que reciben el apoyo o beneficio público. De las opciones del catálogo indicar quien o quienes son los beneficiarios, señalar las veces que sean necesarias.</li>
                         <li><strong>Nombre del programa.</strong> Proporcionar el nombre del programa por el cual recibe el apoyo o beneficio público.</li>
@@ -24,7 +24,7 @@
                         <li><strong>Monto mensual aproximado del beneficio.</strong> Es necesario capturar cantidades sin comas, sin puntos, sin centavos y sin ceros a la izquierda. Indicar cantidad mensual del apoyo, si este no fuera mensual, realizar la operación aritmética a efecto de establecer la cantidad como lo solicita el formato.</li>
                     </ol>
                     <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
-    
+
               </div>
           </div>
             <div class="card-body">

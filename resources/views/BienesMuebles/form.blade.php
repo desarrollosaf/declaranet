@@ -1,52 +1,17 @@
-<div class="card-header bg-info  border-0 py-3 d-flex align-items-center" style="background-color:#F1F1F1 !important;">
-    <div>
-        <h3 class="card-title mb-0">BIENES MUEBLES</h3>
-        <h6>(A la fecha de ingreso)</h6>
-    </div>
-    <span class="badge badge-success ml-auto px-4" data-toggle="collapse" data-target="#collapseMuebles"
-          aria-expanded="false" aria-controls="collapseThree"> AYUDA</span>
-          
-</div>
-<div class="collapse" id="collapseMuebles">
-    <div class="card card-body">               
-        Se refiere a la información que el Declarante reportará sobre bienes que conforme a la normatividad aplicable se consideran muebles, que por su naturaleza de manera individual o en conjunto representan una parte considerable del patrimonio del servidor público de acuerdo con su situación socioeconómica y que para efectos de referencia el monto de su valor comercial sea mayor a 1200 Unidades de Medida y Actualización (UMA) por lo que se refiere al conjunto de menaje. En el caso de los demás bienes dicho valor será en lo individual.
-                <br>
-                <br>
-                <strong>BIENES DEL DECLARANTE, PAREJA Y/O DEPENDIENTES ECONÓMICOS</strong>
-                <br>
-                <ol>
-                    <li><strong>Titular del bien.</strong> Seleccionar alguna de las opciones del catálogo desplegable. En caso de señalar copropiedad deberá indicar el nombre del tercero o terceros.</li>
-                    <li><strong>Tipo de bien.</strong> Seleccionar de la lista desplegable: menaje de casa (muebles y accesorios de casa), aparatos electrónicos y electrodomésticos, joyas, colecciones, obras de arte y otros, especifique.</li>
-                    <li><strong>Descripción general del bien.</strong> Referir brevemente el bien reportado.</li>
-                    <li><strong>Tercero.</strong> En caso de copropiedad con un tercero, seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre del tercero.</strong> En caso de señalar copropiedad, escribir el nombre o nombres completos, así como apellidos completos sin abreviaturas y sin acentos ni signos especiales. Si se trata de persona moral deberá proporcionar la denominación o razón social de la institución tal y como se encuentra en el documento con el que se acredita la adquisición.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos. </li>
-                    <li><strong>Transmisor de la propiedad.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre o razón social del transmisor.</strong> Escribir el nombre o nombres completos, así como apellidos completos sin abreviaturas y sin acentos ni signos especiales, como se encuentra en el documento con el que se acredita la propiedad.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos.</li>
-                    <li><strong>Relación del transmisor del mueble con el titular.</strong> Elegir del catálogo qué relación tiene el titular del mueble con el transmisor.</li>
-                    <li><strong>Forma de adquisición.</strong> Seleccionar alguna de las opciones del catálogo.</li>
-                    <li><strong>Forma de pago.</strong> Seleccionar la forma en que realizó el pago para adquirir el bien mueble, en caso de que no haya pagado por el mismo, indicará no aplica.</li>
-                    <li><strong>Valor de adquisición del mueble.</strong> Proporcionar el monto de adquisición.</li>
-                    <li><strong>Tipo de moneda.</strong> Seleccionar la moneda relativa al valor de adquisición.</li>
-                    <li><strong>Fecha de adquisición.</strong> Señalar la fecha de adquisición del mueble.</li>
-                </ol>
-                <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
 
-  </div>
-</div>
+
 <div class="card-body">
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
-                <strong> {!! Form::label('bienesMuebles.titular_bien_id', 'Titular del bien:') !!}</strong>
+                <strong> {!! Form::label('bienesMuebles.titular_bien_id', 'Titular del bien: *') !!}</strong>
                 {!! Form::select('bienesMuebles[titular_bien_id]',$selectTitular, (isset($bienMueble->titular_bien_id)) ? $bienMueble->titular_bien_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'titular_bien'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('bienesMuebles.tipo_bien_id', 'Tipo de bien:') !!}</strong>
+                <strong>{!! Form::label('bienesMuebles.tipo_bien_id', 'Tipo de bien: *') !!}</strong>
                 {!! Form::select('bienesMuebles[tipo_bien_id]',$selectTipoBien, (isset($bienMueble->tipo_bien_id)) ? $bienMueble->tipo_bien_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_bien'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
@@ -96,26 +61,26 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('bienesMuebles.transmisor_propiedad_id', 'Transmisor de la propiedad:') !!}</strong>
+                <strong>{!! Form::label('bienesMuebles.transmisor_propiedad_id', 'Transmisor de la propiedad: *') !!}</strong>
                 {!! Form::select('bienesMuebles[transmisor_propiedad_id]',$selectTransmisores, (isset($bienMueble->transmisor_propiedad_id)) ? $bienMueble->transmisor_propiedad_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'transmisor_propiedad'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group nombre-razon">
-                <strong>{!! Form::label('bienesMuebles.nombre_transmisor', 'Nombre del transmisor:') !!}</strong>
+                <strong>{!! Form::label('bienesMuebles.nombre_transmisor', 'Nombre del transmisor: *') !!}</strong>
                 {!! Form::text('bienesMuebles[nombre_transmisor]', (isset($bienMueble->nombre_transmisor)) ? $bienMueble->nombre_transmisor : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'nombre_transmisor', 'placeholder'=>"p. ej. Juan Pérez.", "pattern"=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}"])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
             <div class="form-group denominacion-rs-transmisor">
-                <strong>{!! Form::label('bienesMuebles.denominacion_rs_transmisor', 'Denominacion o razón social del transmisor:') !!}</strong>
+                <strong>{!! Form::label('bienesMuebles.denominacion_rs_transmisor', 'Denominacion o razón social del transmisor: *') !!}</strong>
                 {!! Form::text('bienesMuebles[denominacion_rs_transmisor]', (isset($bienMueble->denominacion_rs_transmisor)) ? $bienMueble->denominacion_rs_transmisor : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'denominacion_rs_transmisor', 'placeholder '=>"p. ej. Desarrollo y Redes S.A. de C.V.", "pattern"=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}"])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('bienesMuebles.rfc_transmisor', 'RFC:') !!}</strong>
+                <strong>{!! Form::label('bienesMuebles.rfc_transmisor', 'RFC: *') !!}</strong>
                 {!! Form::text('bienesMuebles[rfc_transmisor]', (isset($bienMueble->rfc_transmisor)) ? $bienMueble->rfc_transmisor : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'rfc-transmisor', 'placeholder'=>"p. ej. XXXX010101", 'pattern'=>"([A-Z]{4}([0-9]{6}[A-Z0-9]{3})"])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
@@ -124,7 +89,7 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group relacion-transmisor">
-                <strong>{!! Form::label('bienesMuebles.relacion_transmisor_id', 'Relación del transmisor del mueble con el titular:') !!}</strong>
+                <strong>{!! Form::label('bienesMuebles.relacion_transmisor_id', 'Relación del transmisor del mueble con el titular: *') !!}</strong>
                 {!! Form::select('bienesMuebles[relacion_transmisor_id]', $selectRelacionTransmisor, (isset($bienMueble->relacion_transmisor_id)) ? $bienMueble->relacion_transmisor_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'relacion_transmisor'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
@@ -140,14 +105,14 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('bienesMuebles.forma_adquisicion_id', 'Forma de adquisición:') !!}</strong>
+                <strong>{!! Form::label('bienesMuebles.forma_adquisicion_id', 'Forma de adquisición: *') !!}</strong>
                 {!! Form::select('bienesMuebles[forma_adquisicion_id]',$selectFormaAdquisicion, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_adquisicion'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('bienesMuebles.forma_pago_id', 'Forma de pago:') !!}</strong>
+                <strong>{!! Form::label('bienesMuebles.forma_pago_id', 'Forma de pago: *') !!}</strong>
                 {!! Form::select('bienesMuebles[forma_pago_id]',$selectFormaPago, (isset($bienMueble->forma_pago_id)) ? $bienMueble->forma_pago_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_pago'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
@@ -170,7 +135,7 @@
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <strong>{!! Form::label('bienesMuebles.fecha_adquisicion', 'Fecha de adquisición del mueble:') !!}</strong>
+                <strong>{!! Form::label('bienesMuebles.fecha_adquisicion', 'Fecha de adquisición del mueble: *') !!}</strong>
                 {!! Form::date('bienesMuebles[fecha_adquisicion]', (isset($bienMueble->fecha_adquisicion)) ? $bienMueble->fecha_adquisicion : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'fecha_adquisicion'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>

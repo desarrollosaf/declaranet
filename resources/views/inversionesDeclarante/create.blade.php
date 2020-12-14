@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @section('content')
-    <div class="card">
-        <div class="card-header">
+    <div class="container">
+        <div class="card mb-5 shadow-sm border-0 shadow-hover">
+            <div class="card-header">
             <div class="float-left">
-                <h2>INVERSIONES, CUENTAS BANCARIAS Y OTRO TIPO DE VALORES/ACTIVOS</h2>
-                <h6>(A la fecha de ingreso)</h6>
+                <h4>INVERSIONES, CUENTAS BANCARIAS Y OTRO TIPO DE VALORES/ACTIVOS</h4>
+                <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
             </div>
             <div class="float-right">
                 <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseInversion" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
@@ -12,7 +13,7 @@
         </div>
         <div class="collapse" id="collapseInversion">
             <div class="card card-body">
-             
+
               <ol>
                   <li>Tipo de inversión/activo. Elegir del catálogo la inversión, la cuenta o el valor a reportar, dependiendo la elección deberá señalar número de cuenta, número de contrato o número de póliza.</li>
                     <ul>

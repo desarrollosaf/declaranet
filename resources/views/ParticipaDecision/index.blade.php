@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<div class="card">
+    <div class="container">
+        <div class="card mb-5 shadow-sm border-0 shadow-hover">
     <div class="card-header bg-info  border-0 py-3 d-flex align-items-center" style="background-color:#F1F1F1 !important;">
         <div>
-            <h3 class="card-title mb-0">¿PARTICIPA EN LA TOMA DE DECISIONES DE ALGUNA DE ESTAS INSTITUCIONES?</h3>
-            <br>
-                <h6 class="card-subtitle">(Hasta los últimos dos años)</h6>
+            <h4>¿PARTICIPA EN LA TOMA DE DECISIONES DE ALGUNA DE ESTAS INSTITUCIONES?</h4>
+            <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
         </div>
     </div>
     <div class="container">
@@ -16,20 +16,26 @@
                     </div>
 
                     <!-- Cuerpo del documento -->
-                    <div class="card-body">
-                        <table class="table table-bordered table-striped">
-                            <thead class="text-center text-light">
-                            <tr>
-                                <th scope="col" width="20%">Títular</th>
-                                <th scope="col" width="20%">Tipo de institución </th>
-                                <th scope="col" width="40%">Información adicional</th>
-                                <th scope="col" width="20%">Acciones</th></tr>
-                            </thead>
-                            <tbody class="text-center">
-                            @if($participaciones)
-                                @foreach($participaciones as $participaciones)
 
-                                    <tr>
+
+
+
+
+                <div class="card-body">
+                    @if(count($participaciones))
+                        <div class="table-responsive-lg">
+                            <table class="table table-active table-striped">
+                                <thead class="badge-primary">
+                                <tr class="text-center">
+                                    <th scope="col" width="20%">Títular</th>
+                                    <th scope="col" width="20%">Tipo de institución </th>
+                                    <th scope="col" width="40%">Información adicional</th>
+                                    <th scope="col" width="20%">Acciones</th></tr>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($participaciones as $participaciones)
+                                    <tr class="text-center">
                                         <td>
                                             <center>{{$participaciones->tipoRelaciones->valor}}</center>
                                         </td>
@@ -57,18 +63,82 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                            @endif
-                            </tbody>
-                        </table>
-                                        <center>
-                                            Para adicionar información pulse:<a class="btn btn-submit btn-sm text-light" href="{{route('participacion.create')}}">Agregar</a>                                            , de lo contrario vaya a la siguiente sección.
-                                        </center>
-                                        <br>
-                                        <center>
-                                            <a class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
-                                            <a class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
-                                        </center>
-                                        </div>
+                                </tbody>
+                            </table>
+                            <center>
+                                <strong>Si desea registrar algún Préstamo o Comodato por Terceros pulse: <a
+                                        href="{{route('participacion.create')}}"
+                                        class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
+                                    apartado.</strong>
+                            </center>
+                        </div>
+                    @else
+
+                        <div class="alert alert-danger text-center" role="alert">
+                            <label style="margin-top:10px;">
+                                <strong>Para registrar información pulse: </strong><a
+                                    href="{{route('participacion.create')}}"
+                                    class="btn btn-sm btn-secondary ">Agregar</a><br>
+                                <strong>Si no participa en la toma de decisiones de insituciiones <a href="{{route('prestamos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                            </label>
+                        </div>
+
+
+
+                    @endif
+
+
+                    <div class="text-center">
+                        <br>
+                        <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                            sección
+                            anterior</a>
+                        <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                            siguiente sección</a>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                         </div>
                                         </div>
 

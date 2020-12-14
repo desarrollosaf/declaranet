@@ -1,67 +1,103 @@
 @extends('layouts.app')
 @section('content')
-    <div class="card">
-        <div class="card-header">
-            <h1>ADEUDOS / PASIVOS</h1>
-            <h6>(A la fecha de ingreso)</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead class="text-center text-light">
-                    <tr>
-                        <th scope="col">Titular del adeudo:</th>
-                        <th scope="col">Tipo de adeudo:</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($adeudos as $adeudo)
-                    <tr>
-                        @if($adeudo!= null)
-                        <td>{{$adeudo->titularAdeudo->valor}}</td>
-                            @if($adeudo->tipoAdeudo->id != 7)
-                                 <td>{{$adeudo->tipoAdeudo->valor}}<br>
-                            @else
-                                 <td>{{$adeudo->especifique_adeudo}}<br>
-                            @endif
-                            <h8>
-                                <strong>Número de cuenta o contrato:</strong>{{$adeudo->numero_cuenta}}
-                                <br>
-                                <strong>Saldo insoluto:</strong>{{$adeudo->saldo_insoluto}}
-                            </h8>
-                        </td>
-                        <td class="py-2">
-                            {!! Form::open(['action' => ['AdeudosPasivosDeclaranteController@destroy', $adeudo->id], 'method'=>'DELETE']) !!}
-                            <div style="display: inline-block;">
-                                <a href="{{route('adeudos.edit',[$adeudo])}}" class="btn btn-xs btn-warning">
-                                    <i class="ion ion-edit"></i>
-                                </a>
-                                <button class="btn btn-xs btn-danger btn-borrar">
-                                    <i class="ion ion-trash-a"></i>
-                                </button>
-                            </div>
-                            {!! Form::close() !!}
-                        </td>
-                        @endif
-                    </tr>
-                    </tbody>
-                    @endforeach
-                </table>
+    <div class="container">
+        <div class="card mb-5 shadow-sm border-0 shadow-hover">
+            <div class="card-header">
+                <h3>ADEUDOS / PASIVOS</h3>
+                <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
             </div>
-            <div class="text-center">
-                <label style="margin-top:10px;">
-                    <strong>Si desea registrar algún Adeudo/Pasivo pulse: </strong>
-                    <a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary">Agregar</a>
-                    <strong>, de lo contrario vaya al siguiente apartado.</strong>
-                </label>
+
+
+
+
+            <div class="card-body">
+                @if(count($adeudos))
+                    <div class="table-responsive-lg">
+                        <table class="table table-active table-striped">
+                            <thead class="badge-primary">
+                            <tr class="text-center">
+                                <th scope="col">Titular del adeudo:</th>
+                                <th scope="col">Tipo de adeudo:</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($adeudos as $adeudo)
+                                <tr class="text-center">
+                                    @if($adeudo!= null)
+                                        <td>{{$adeudo->titularAdeudo->valor}}</td>
+                                        @if($adeudo->tipoAdeudo->id != 7)
+                                            <td>{{$adeudo->tipoAdeudo->valor}}<br>
+                                        @else
+                                            <td>{{$adeudo->especifique_adeudo}}<br>
+                                                @endif
+                                                <h8>
+                                                    <strong>Número de cuenta o contrato:</strong>{{$adeudo->numero_cuenta}}
+                                                    <br>
+                                                    <strong>Saldo insoluto:</strong>{{$adeudo->saldo_insoluto}}
+                                                </h8>
+                                            </td>
+                                            <td class="py-2">
+                                                {!! Form::open(['action' => ['AdeudosPasivosDeclaranteController@destroy', $adeudo->id], 'method'=>'DELETE']) !!}
+                                                <div style="display: inline-block;">
+                                                    <a href="{{route('adeudos.edit',[$adeudo])}}" class="btn btn-xs btn-warning">
+                                                        <i class="ion ion-edit"></i>
+                                                    </a>
+                                                    <button class="btn btn-xs btn-danger btn-borrar">
+                                                        <i class="ion ion-trash-a"></i>
+                                                    </button>
+                                                </div>
+                                                {!! Form::close() !!}
+                                            </td>
+                                        @endif
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                        <center>
+                            <strong>Si desea registrar algún Adeudo/Pasivo pulse: <a
+                                    href="{{route('adeudos.create')}}"
+                                    class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
+                                apartado.</strong>
+                        </center>
+                    </div>
+                @else
+                    <span style="text-align: left !important;">Deberá proporcionar la información de CADA UNO de los adeudos o pasivos, que a la fecha de ingreso al cargo tenga el Declarante, así como los de su pareja y/o dependientes económicos</span>
+                    <br>
+                    <div class="alert alert-danger text-center" role="alert">
+                        <label style="margin-top:10px;">
+                            <strong>Para registrar información pulse: </strong><a
+                                href="{{route('adeudos.create')}}"
+                                class="btn btn-sm btn-secondary ">Agregar</a><br>
+                            <strong>Si no tiene adeudos, seleccione <a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                        </label>
+                    </div>
+
+
+
+                @endif
+
+
+                <div class="text-center">
+                    <br>
+                    <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                        sección
+                        anterior</a>
+                    <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                        siguiente sección</a>
+                </div>
             </div>
-            <div class="text-center">
-                <br>
-                <a class="btn btn-submit text-light btn-sm">Ir a la sección anterior</a>
-                <a class="btn btn-submit text-light btn-sm">Ir a la siguiente sección</a>
-            </div>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
     </div>
 @endsection
 
@@ -81,7 +117,7 @@
                 if (result.isConfirmed){
                     $(that).closest('form').submit();
                 }
-            });            
+            });
             return false;
         });
 </script>

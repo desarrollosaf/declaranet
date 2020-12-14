@@ -1,29 +1,23 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+
+
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
                 <h3>EXPERIENCIA LABORAL</h3>
-                <h6>(Últimos cinco empleos)</h6>
+                <h6 class="card-subtitle">(ÚLTIMOS CINCO EMPLEOS)</h6>
             </div>
-                        <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        Deberá proporcionar la información correspondiente a los cinco empleos, cargos o comisiones que haya
-                        tenido (en caso de que cuente con ellos).
-                        @if(count($experiencias))
-                            <table class="table table-bordered table-striped table-hover" style="border-collapse: collapse;">
-                                <thead style="background-color: #682244;" class="text-light">
+            <div class="card-body">
+                <div class='text-center'>
+                    @if(count($experiencias))
+                        <div class="table-responsive-lg">
+                            <table class="table table-active table-striped">
+                                <thead class="badge-primary">
                                 <tr>
-                                    <th>
-                                        <center>Nivel</center>
-                                    </th>
-                                    <th>
-                                        <center>Información adicional</center>
-                                    </th>
-                                    <th>
-                                        <center>Acciones</center>
-                                    </th>
+                                    <th> <center>Nivel</center> </th>
+                                    <th> <center>Información adicional</center> </th>
+                                    <th> <center>Acciones</center> </th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -70,40 +64,84 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                        @endif
-                    </div>
+                            <center>
+                                <strong>Si desea registrar Experiencia Laboral pulse: <a
+                                        href="{{route('experiencia_laboral.create')}}"
+                                        class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
+                                    apartado.</strong>
+                            </center>
+                        </div>
+                    @else
+                        <span style="text-align: left !important;">Deberá proporcionar la información correspondiente a los cinco empleos, cargos o comisiones que haya tenido (en caso de que cuente con ellos).</span>
+                        <br>
+                        <div class="alert alert-danger text-center" role="alert">
+                            <label style="margin-top:10px;">
+                                <strong>Para registrar información pulse: </strong><a
+                                    href="{{route('experiencia_laboral.create')}}"
+                                    class="btn btn-sm btn-secondary">Agregar</a><br>
+                                <strong>Deberá seleccionar <a href="{{route('experiencia_laboral.create')}}"
+                                                              class="btn btn-sm btn-secondary">Ninguno</a>si éste es su
+                                    primer empleo.</strong>
+                            </label>
+                        </div>
 
 
+
+                    @endif
                 </div>
 
-
-                <div class="alert alert-danger text-center" role="alert">
-                    <center>
-                    Para registrar información pulse: <a class="btn btn-submit btn-sm text-light"
-                                                         href="{{route('experiencia_laboral.create')}}">Agregar</a><br>Deberá
-                    seleccionar <a class="btn btn-submit btn-sm text-light">Ninguno</a> si éste es su primer
-                    empleo.
-                    </center>
-                </div>
-                <br>
-                <center>
-                    <button class="btn btn-submit btn-sm text-light"><a class="btn btn-submit btn-sm text-light"  href="{{route('datos_empleo_declarante.index')}}">Ir a la sección anterior</a></button>
-                    <button class="btn btn-submit btn-sm text-light"><a class="btn btn-submit btn-sm text-light"  href="{{route('datos_pareja_declarante.index')}}">Ir a la siguiente sección</a></button>
-                </center>
-
-
-
-            </div>
-
-            <br><br>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12">
-
-                    </div>
+                <div class="text-center">
+                    <br>
+                    <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                        sección
+                        anterior</a>
+                    <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                        siguiente sección</a>
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 @endsection
 @section('scripts')

@@ -3,18 +3,18 @@
         Todos los datos de la participación en empresas, sociedades o asociaciones de la pareja o dependientes económicos no serán públicos.
     </div>
     <hr>
-    <!-- Primera fila  --> 
+    <!-- Primera fila  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
                     <strong>{!! Form::label('titular_operacion_id', ' Titular de la participación: ') !!}</strong>
-                    {!! Form::select('empresas[titular_operacion_id]', isset($selecttitularParticipacion) ? $selecttitularParticipacion : [], isset($empresas) ? $empresas->titular_operacion_id : null,['class'=>'form-control tipo-titular',  'id' => 'titular_operacion_id']) !!}  
+                    {!! Form::select('empresas[titular_operacion_id]', isset($selecttitularParticipacion) ? $selecttitularParticipacion : [], isset($empresas) ? $empresas->titular_operacion_id : null,['class'=>'form-control tipo-titular',  'id' => 'titular_operacion_id']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <strong>{!! Form::label('nombre_empresa', ' Nombre de la empresa, sociedad o asociación: ') !!}</strong>
+                    <strong style="line-height : 15px;">{!! Form::label('nombre_empresa', ' Nombre de la empresa, sociedad o asociación: ') !!}</strong>
                     {!! Form::text('empresas[nombre_empresa]',isset($empresas) ? $empresas->nombre_empresa : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. Consultora S.A. de C.V.',  'id' => 'nombre_empresa']) !!}
                 </div>
             </div>
@@ -26,19 +26,19 @@
             </div>
         </div>
     </div>
-    <!-- Segunda fila  --> 
+    <!-- Segunda fila  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <strong>{!! Form::label('porcentaje', ' Porcentaje de participación de acuerdo a escrituras: ') !!}</strong>
+                    <strong style="line-height : 15px;">{!! Form::label('porcentaje', ' Porcentaje de participación de acuerdo a escrituras: ') !!}</strong>
                     {!! Form::text('empresas[porcentaje]',isset($empresas) ? $empresas->porcentaje : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 10%',  'id' => 'porcentaje']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <strong>{!! Form::label('tipo_participacion_id', ' Tipo de participación: ') !!}</strong>
-                    {!! Form::select('empresas[tipo_participacion_id]', isset($selecttipoParticipacion) ? $selecttipoParticipacion : [], isset($empresas) ? $empresas->tipo_participacion_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_participacion_id']) !!}    
+                    {!! Form::select('empresas[tipo_participacion_id]', isset($selecttipoParticipacion) ? $selecttipoParticipacion : [], isset($empresas) ? $empresas->tipo_participacion_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_participacion_id']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="otro_Disabled">
@@ -49,14 +49,14 @@
             </div>
         </div>
     </div>
-    <!-- Tercer fila  --> 
+    <!-- Tercer fila  -->
     <div class="container">
         <div class="row">
 
             <div class="col-lg-4">
-                <div class="form-group">                    
+                <div class="form-group">
                     <strong>{!! Form::label('tipo_respuesta_id', ' ¿Recibe remuneración por su participación? ') !!}</strong>
-                    {!! Form::select('empresas[tipo_respuesta_id]', isset($selecttipoRespuesta) ? $selecttipoRespuesta : [], isset($empresas) ? $empresas->tipo_respuesta_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_respuesta_id']) !!}    
+                    {!! Form::select('empresas[tipo_respuesta_id]', isset($selecttipoRespuesta) ? $selecttipoRespuesta : [], isset($empresas) ? $empresas->tipo_respuesta_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_respuesta_id']) !!}
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <strong>{!! Form::label('part_ubicacion_id', ' Lugar donde se ubica: ') !!}</strong>
-                    {!! Form::select('empresas[part_ubicacion_id]', isset($selectubicacionParticipacion) ? $selectubicacionParticipacion : [], isset($empresas) ? $empresas->part_ubicacion_id : null,['class'=>'form-control tipo-titular',  'id' => 'part_ubicacion_id']) !!}    
+                    {!! Form::select('empresas[part_ubicacion_id]', isset($selectubicacionParticipacion) ? $selectubicacionParticipacion : [], isset($empresas) ? $empresas->part_ubicacion_id : null,['class'=>'form-control tipo-titular',  'id' => 'part_ubicacion_id']) !!}
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <strong>{!! Form::label('sector_productivo_id', ' Sector productivo al que pertenece: ') !!}</strong>
-                    {!! Form::select('empresas[sector_productivo_id]', isset($selectsectorProductivo) ? $selectsectorProductivo : [], isset($empresas) ? $empresas->sector_productivo_id : null,['class'=>'form-control tipo-titular',  'id' => 'sector_productivo_id']) !!}    
+                    {!! Form::select('empresas[sector_productivo_id]', isset($selectsectorProductivo) ? $selectsectorProductivo : [], isset($empresas) ? $empresas->sector_productivo_id : null,['class'=>'form-control tipo-titular',  'id' => 'sector_productivo_id']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="otro_Disabled_sector">
@@ -93,10 +93,10 @@
                         <strong>{!! Form::label('entidad_federativa', ' Entidad Federativa: ') !!}</strong>
                         {!! Form::text('empresas[entidad_federativa]',isset($empresas) ? $empresas->entidad_federativa : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. México',  'id' => 'entidad_federativa' ]) !!}
                     </div>
-                    <!-- EX  --> 
+                    <!-- EX  -->
                     <div id="dom_ext" >
                         <strong>{!! Form::label('pais_id', ' País donde se localiza: ') !!}</strong>
-                        {!! Form::select('empresas[pais_id]', isset($selectpais) ? $selectpais : [], isset($empresas) ? $empresas->pais_id : null,['class'=>'form-control tipo-titular',  'id' => 'pais_id']) !!}    
+                        {!! Form::select('empresas[pais_id]', isset($selectpais) ? $selectpais : [], isset($empresas) ? $empresas->pais_id : null,['class'=>'form-control tipo-titular',  'id' => 'pais_id']) !!}
                     </div>
 
 
@@ -109,11 +109,11 @@
             <div class="col-lg-12">
                 <div class="form-group">
                     <strong>{!! Form::label('obsercaciones', ' Especifique: ') !!}</strong>
-                    {!! Form::textarea('empresas[observaciones]', isset($empresas) ? $empresas->observaciones : null, ['class'=>'form-control tipo-titular', 'cols'=>'62', 'rows'=>'5', 'id' => 'observaciones']) !!}                
+                    {!! Form::textarea('empresas[observaciones]', isset($empresas) ? $empresas->observaciones : null, ['class'=>'form-control tipo-titular', 'cols'=>'62', 'rows'=>'5', 'id' => 'observaciones']) !!}
                 </div>
             </div>
         </div>
-    </div>                        
+    </div>
 
     <center>
         <br>
@@ -127,11 +127,11 @@
 
 
 @section('scripts')
-<script>    
-        
+<script>
+
         $("#dom_mex").hide();
         $("#dom_ext").hide();
-            
+
         //CAMBIO DE COLOR TITULAR
         $("#titular_operacion_id").change(function () {
             var tipoTitular = $(this).val();
@@ -143,7 +143,7 @@
                 $(".tipo-titular").removeClass("alert-danger");
             }
         });
-        
+
         //HABILITAR CAJA DE TEXTO OTROS TIPO PARTICIPACION
         $('#tipo_participacion_id').change(function () {
             if (parseInt($(this).val()) === 8) {
@@ -152,7 +152,7 @@
                 $('#participacion_otro').prop('disabled', true);
             }
         });
-        
+
         //HABILITAR CAJA DE TEXTO OTROS RECIBE REMUNERACIÓN
         $('#tipo_respuesta_id').change(function () {
             if (parseInt($(this).val()) ===1) {
@@ -161,7 +161,7 @@
                 $('#monto_mensual').prop('disabled', true);
             }
         });
-        
+
         //HABILITAR CAJA DE TEXTO OTROS RECIBE REMUNERACIÓN
         $('#sector_productivo_id').change(function () {
             if (parseInt($(this).val()) ===17) {
@@ -170,7 +170,7 @@
                 $('#espec_sector').prop('disabled', true);
             }
         });
-        
+
         //HABILITAR CAJA DE TEXTO OTROS RECIBE REMUNERACIÓN
         $('#part_ubicacion_id').change(function () {
             if (parseInt($(this).val()) === 1) {
@@ -181,7 +181,7 @@
                 $("#dom_ext").show();
             }
         });
-        
+
         @isset($empresas)
             $('#titular_operacion_id').change();
             $("#tipo_participacion_id").change();
@@ -191,7 +191,7 @@
 
         @endisset
 
- 
-        
+
+
 </script>
 @endsection

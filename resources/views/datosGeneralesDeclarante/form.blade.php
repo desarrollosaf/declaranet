@@ -25,7 +25,7 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.curp', 'Curp:') !!}</strong>
+        <strong>{!! Form::label('declaracion.curp', 'CURP:') !!}</strong>
         {!! Form::text('declaracion.[curp]',$servidor->curp,['class'=>'form-control alert-danger text-uppercase',  'id' => 'curp', 'readonly' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -43,24 +43,24 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('correo_institucional', 'Correo institucional:') !!}</strong>
-        {!! Form::email('declaracion[correo_institucional]',$declaracion->correo_institucional,['class'=>'form-control', 'placeholder'=>'',  'id' => 'c_institucional','required' => true]) !!}
+        {!! Form::email('declaracion[correo_institucional]',$declaracion->correo_institucional,['class'=>'form-control', 'placeholder'=>'P. EJ. carlosperez@cddiputados.gob.mx',  'id' => 'c_institucional']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.correo_personal', 'Correo personal: *') !!}</strong>
-        {!! Form::email('declaracion[correo_personal]',$declaracion->correo_personal,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'cpersonal','required' => true]) !!}
+        {!! Form::email('declaracion[correo_personal]',$declaracion->correo_personal,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. carlosperez@hotmail.com',  'id' => 'cpersonal','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.telefono_casa', 'Número telefónico de casa: *') !!}</strong>
-        {!! Form::text('declaracion[telefono_casa]',$declaracion->telefono_casa,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'telcasa','required' => true , 'pattern'=>'[0-9]{10}']) !!}
+        <strong>{!! Form::label('declaracion.telefono_casa', 'Número telefónico de casa: ') !!}</strong>
+        {!! Form::text('declaracion[telefono_casa]',$declaracion->telefono_casa,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 7225555555',  'id' => 'telcasa' , 'pattern'=>'[0-9]{10}']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.telefono_personal', 'Número de celular personal: *') !!}</strong>
-        {!! Form::text('declaracion[telefono_personal]',$declaracion->telefono_personal,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'celpersonal','required' => true , 'pattern'=>'[0-9]{10}']) !!}
+        {!! Form::text('declaracion[telefono_personal]',$declaracion->telefono_personal,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. 7225555555',  'id' => 'celpersonal','required' => true , 'pattern'=>'[0-9]{10}']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -75,12 +75,12 @@
     </div>
 </div>
 <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.pais_id', 'País de nacimiento: *') !!}</strong>
         {!! Form::select('declaracion[pais_id]', $paises, $declaracion->pais_id, ['class'=>'form-control alert-danger']) !!}
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.nacionalidad', 'Nacionalidad: *') !!}</strong>
         {!! Form::text('declaracion[nacionalidad]',$declaracion->nacionalidad,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'nacionalidad','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>

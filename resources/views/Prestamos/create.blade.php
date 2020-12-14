@@ -4,9 +4,10 @@
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
             <div class="float-left">
-                <h3 class="card-title mb-0">PRÉSTAMO O COMODATO POR TERCEROS</h3>
-                <br>
-                <h6 class="card-subtitle">(A la fecha de ingreso)</h6>
+
+                <h3>PRÉSTAMO O COMODATO POR TERCEROS</h3>
+                <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
+
             </div>
             <div class="float-right">
                 <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>

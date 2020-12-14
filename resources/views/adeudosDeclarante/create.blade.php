@@ -1,17 +1,18 @@
 @extends('layouts.app')
 @section('content')
-    <div class="card">
+    <div class="container">
+        <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
             <div class="float-left">
-                <h1>ADEUDOS / PASIVOS </h1>
-                <h6>(A la fecha de ingreso)</h6>
+                <h3>ADEUDOS / PASIVOS</h3>
+                <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
             </div>
             <div class="float-right">
                 <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseAdeudos" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
             </div>
         </div>
         <div class="collapse" id="collapseAdeudos">
-            <div class="card card-body">               
+            <div class="card card-body">
                 <ol>
                     <li><strong>Titular del adeudo.</strong> Seleccionar alguna de las opciones del catálogo desplegable. En caso de señalar codeudor deberá indicar el nombre del tercero o terceros.</li>
                     <li><strong>Tipo de adeudo.</strong> Seleccionar cualquiera de las siguientes opciones: crédito hipotecario, crédito automotriz, crédito personal, tarjeta de crédito bancaria, tarjeta de crédito departamental y préstamo personal, otros.<br>
@@ -47,7 +48,7 @@
             {!! Form::open(['route'=>'adeudos.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => '']) !!}
                 @include('adeudosDeclarante.form')
             {!! Form::close() !!}
-            
+
         </div>
     </div>
 @endsection

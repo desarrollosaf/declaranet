@@ -4,7 +4,8 @@
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
                 <div class="float-left">
-                    <h3>BENEFICIOS PRIVADOS</h3> <small><h6> (Hasta los últimos dos años)</h6></small>
+                    <h4>BENEFICIOS PRIVADOS</h4>
+                    <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
                 </div>
             </div>
             <div class="card-body">

@@ -25,7 +25,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="ProcessNum"><strong>Nombre de la empresa o del servicio que proporciona:</strong></label>
+                    <label class="control-label" for="ProcessNum"><strong style="line-height : 15px;">Nombre de la empresa o del servicio que proporciona:</strong></label>
                     {!! Form::text('clientes[nombre_empresa]', isset($clientes) ? $clientes->nombre_empresa : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_empresa']) !!}
                 </div>
             </div>

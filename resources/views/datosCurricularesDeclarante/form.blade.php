@@ -8,12 +8,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong>  {!! Form::label('curriculares[institucion_educativa]', 'Institución educativa: *',['class' => 'validar']) !!}</strong>
-        {!! Form::text('curriculares[institucion_educativa]',isset($curricular) ? $curricular->institucion_educativa : null,['class'=>'form-control', 'placeholder'=>'', 'id' => 'institucion_educativa']) !!}
+        {!! Form::text('curriculares[institucion_educativa]',isset($curricular) ? $curricular->institucion_educativa : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. UNAM', 'id' => 'institucion_educativa']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('curriculares[carrera_area]', 'Carrera o área de conocimiento: *',['class' => 'validar']) !!}</strong>
-        {!! Form::text('curriculares[carrera_area]',isset($curricular) ? $curricular->carrera_area : null,['class'=>'form-control', 'placeholder'=>'', 'id' => 'carrera_area']) !!}
+        {!! Form::text('curriculares[carrera_area]',isset($curricular) ? $curricular->carrera_area : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. LICENCIATURA EN DERECHO', 'id' => 'carrera_area']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -46,7 +46,7 @@
 <div class="form-row">
     <div class="form-group col-md-12">
         <strong>{!! Form::label('curriculares[observaciones]', 'Aclaraciones / Observaciones: *') !!}</strong>
-        {!! Form::textarea('curriculares[observaciones]', isset($curricular) ? $curricular->observaciones : null, ['class'=>'form-control alert-danger', 'id' => 'observaciones']) !!}
-        <label class="requerido">&nbsp;Todos los campos marcados con * son obligatorios. </label>
+        {!! Form::textarea('curriculares[observaciones]', isset($curricular) ? $curricular->observaciones : null, ['class'=>'form-control alert-danger text-uppercase', 'id' => 'observaciones']) !!}
+        <strong><label class="requerido">&nbsp;Todos los campos marcados con * son obligatorios. </label></strong>
     </div>
 </div>

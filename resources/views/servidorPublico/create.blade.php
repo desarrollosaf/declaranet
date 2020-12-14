@@ -4,7 +4,7 @@
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
                 <div class="float-left">
-                 <h3>¿TE DESEMPEÑASTE COMO SERVIDOR PÚBLICO EN EL AÑO INMEDIATO ANTERIOR?</h3>
+                 <h4>¿TE DESEMPEÑASTE COMO SERVIDOR PÚBLICO EN EL AÑO INMEDIATO ANTERIOR?</h4>
                 </div>
                 <div class="float-right">
                     <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseServidor" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>

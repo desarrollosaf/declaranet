@@ -7,24 +7,24 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('ambito', 'Ámbito público:') !!}</strong>
-            {!! Form::select('datos_empleo_declarante[ambito_publico_id]',$ambito,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->ambito_publico_id :null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'ambito_publico_id', 'disabled' => 'disabled']) !!}
+            {!! Form::select('datos_empleo_declarante[ambito_publico_id]',$ambito,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->ambito_publico_id :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'ambito_publico_id', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('entepublico', 'Nombre del Ente Público:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[nombre_ente_publico]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->nombre_ente_publico :null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nombre_ente_publico', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[nombre_ente_publico]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->nombre_ente_publico :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre_ente_publico', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('adscripcion', 'Área de adscripción:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[area_adscripcion]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->area_adscripcion :null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'area_adscripcion', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[area_adscripcion]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->area_adscripcion :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'area_adscripcion', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('empleo', 'Empleo, cargo o comisión:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[empleo_cargo]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->empleo_cargo :null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'empleo_cargo', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[empleo_cargo]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->empleo_cargo :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'empleo_cargo', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -36,12 +36,12 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('nivelempleo', 'Nivel del empleo, cargo o comisión:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[nivel_empleo]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->nivel_empleo :null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nivel_empleo', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[nivel_empleo]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->nivel_empleo :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nivel_empleo', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('funcion', 'Especifique función principal: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[funcion_principal]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->funcion_principal :null,['class'=>'form-control', 'placeholder'=>'p. ej. Desarrollo de sistemas',  'id' => 'funcion_principal', 'required' => 'true']) !!}
+            {!! Form::text('datos_empleo_declarante[funcion_principal]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->funcion_principal :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo de sistemas',  'id' => 'funcion_principal', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -75,19 +75,19 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('numexterior', 'Número exterior: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[numero_exterior]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->numero_exterior :null,['class'=>'form-control', 'placeholder'=>'p. ej. 0101',  'id' => 'numero_exterior', 'required' => 'true']) !!}
+            {!! Form::text('datos_empleo_declarante[numero_exterior]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->numero_exterior :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 0101',  'id' => 'numero_exterior', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('numinterior', 'Número interior / Piso: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[numero_interior_piso]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->numero_interior_piso :null,['class'=>'form-control', 'placeholder'=>'p. ej. 02',  'id' => 'numero_interior_piso', 'required' => 'true']) !!}
+            {!! Form::text('datos_empleo_declarante[numero_interior_piso]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->numero_interior_piso :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 02',  'id' => 'numero_interior_piso', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('colonia', 'Colonia / Localidad: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[colonia_localidad]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->colonia_localidad :null,['class'=>'form-control', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_localidad', 'required' => 'true' ]) !!}
+            {!! Form::text('datos_empleo_declarante[colonia_localidad]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->colonia_localidad :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_localidad', 'required' => 'true' ]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -97,7 +97,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('entidad', 'Entidad Federativa: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[entidad_federativa]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->entidad_federativa :null,['class'=>'form-control', 'placeholder'=>'p. ej. 0101',  'id' => 'entidad_federativa', 'disabled' => 'disabled', 'required' => 'true']) !!}
+            {!! Form::text('datos_empleo_declarante[entidad_federativa]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->entidad_federativa :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 0101',  'id' => 'entidad_federativa', 'disabled' => 'disabled', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
 
@@ -105,7 +105,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('codigo', 'Código Postal: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[codigo_postal]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->codigo_postal :null,['class'=>'form-control', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postal', 'required' => 'true']) !!}
+            {!! Form::text('datos_empleo_declarante[codigo_postal]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->codigo_postal :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postal', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
