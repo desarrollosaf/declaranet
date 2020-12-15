@@ -13,7 +13,7 @@ class AddDeclaracionIdToDependienteEconomicos extends Migration
      */
     public function up()
     {
-        Schema::table('dependiente_economicos', function (Blueprint $table) {
+        Schema::table('dependientes_economicos', function (Blueprint $table) {
             $table->unsignedBigInteger('declaracion_id');
             $table->foreign('declaracion_id')->references('id')->on('declaraciones');
         });
@@ -26,7 +26,7 @@ class AddDeclaracionIdToDependienteEconomicos extends Migration
      */
     public function down()
     {
-        Schema::table('dependiente_economicos', function (Blueprint $table) {
+        Schema::table('dependientes_economicos', function (Blueprint $table) {
             $table->dropColumn('declaracion_id');
         });
     }
