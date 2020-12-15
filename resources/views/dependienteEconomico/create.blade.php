@@ -176,6 +176,104 @@
             error = true;
         }
         return error;
+        
+        if($("#apellidom").val() == ""){
+            error = true;
+        }
+        return error;
+        
+        if($("#nacimiento").val() == ""){
+            error = true;
+        }
+        return error;
+        
+        if($("#rfc").val() == ""){
+            error = true;
+        }
+        return error;
+        
+        if($("#parentesco").val() == ""){
+            error = true;
+        }
+        return error;
+        
+        if($("#especifique-parentezco").val() == ""){
+            error = true;
+        }
+        if($("#extranjero").val() == ""){
+            error = true;
+        }
+        if($("#curp").val() == ""){
+            error = true;
+        }
+        if($("#calle-nacional").val() == ""){
+            error = true;
+        }
+        if($("#exterior-nacional").val() == ""){
+            error = true;
+        }
+        if($("#interior-nacional").val() == ""){
+            error = true;
+        }
+        if($("#interior-nacional").val() == ""){
+            error = true;
+        }
+        if($("#calle-extranjero").val() == ""){
+            error = true;
+        }
+        if($("#exterior-extranjero").val() == ""){
+            error = true;
+        }
+        if($("#interior-extranjero").val() == ""){
+            error = true;
+        }
+        if($("#ciudad-extranjero").val() == ""){
+            error = true;
+        }
+        if($("#cp-extranjero").val() == ""){
+            error = true;
+        }
+        if($("#empresa").val() == ""){
+            error = true;
+        }
+        if($("#rfcpriv").val() == ""){
+            error = true;
+        }
+        if($("#rfcpriv").val() == ""){
+            error = true;
+        }
+        if($("#rfc").val() == ""){
+            error = true;
+        }
+        if($("#especificar").val() == ""){
+            error = true;
+        }
+        if($("#salario").val() == ""){
+            error = true;
+        }
+        if($("#nivel").val() == ""){
+            error = true;
+        }
+        if($("#ente").val() == ""){
+            error = true;
+        }
+        if($("#area").val() == ""){
+            error = true;
+        }
+        if($("#cargo").val() == ""){
+            error = true;
+        }
+        if($("#funcion").val() == ""){
+            error = true;
+        }
+        if($("#funcion").val() == ""){
+            error = true;
+        }
+        if($("#funcion").val() == ""){
+            error = true;
+        }
+        return error;
+  
     }
 </script>
 @endsection
