@@ -22,11 +22,11 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($bienes as $biene)
+                            @foreach($bienes as $bien)
                                 <tr>
-                                    <td scope="col" width="40%">{{$bien->tipoInmueble->valor}}</td>
-                                    <td scope="col" width="40%">{{$bien->titular->valor}}</td>
-                                    <td class="all">
+                                    <td scope="col" width="40%" align="center">{{$bien->tipoInmueble->valor}}</td>
+                                    <td scope="col" width="40%" align="center">{{$bien->titular->valor}}</td>
+                                    <td class="all" width="40%" align="center">
                                         {!! Form::open(['action' => ['BienesInmueblesController@destroy', $bien->id], 'method'=>'DELETE']) !!}
                                         <div style="display: inline-block;">
                                             <a href="{{route('bienes_inmuebles.edit',[$bien])}}" class="btn btn-xs btn-warning">
@@ -77,20 +77,6 @@
                     siguiente sección</a>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 </div>
 @endsection

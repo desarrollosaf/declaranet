@@ -30,40 +30,32 @@ class BienesInmueblesController extends Controller {
     public function create() {
         //COMBO TIPO INMUEBLE
         $selecttipoInmueble = Arr::pluck(\App\TipoInmueble::all(), "valor", "id");
-        array_unshift($selecttipoInmueble, "Selecciona una opcion");
-
+        
         //COMBO TITULAR INMUEBLE
         $selecttitularInmueble = Arr::pluck(\App\Titular::all(), "valor", "id");
-        array_unshift($selecttitularInmueble, "Selecciona una opcion");
+       
 
         //COMBO FORMA ADQUISICIÓN
         $selectformaAdquisicion = Arr::pluck(\App\formaAdquisicion::all(), "valor", "id");
-        array_unshift($selectformaAdquisicion, "Selecciona una opcion");
-
+       
         //COMBO FORMA DE PAGO
         $selectformaPago = Arr::pluck(\App\FormasPagos::all(), "valor", "id");
-        array_unshift($selectformaPago, "Selecciona una opcion");
-
+       
         //COMBO RELACION TRANSMISOR
         $selectRelacionTransmisor = Arr::pluck(\App\relacionTransmisor::all(), "valor", "id");
-        array_unshift($selectRelacionTransmisor, "Selecciona una opcion");
-
+       
         //COMBO VALOR CONFORME A
         $selectvalorConforme = Arr::pluck(\App\valorConformeA::all(), "valor", "id");
-        array_unshift($selectvalorConforme, "Selecciona una opcion");
-
+       
         //COMBO UBICACION INMUEBLE
         $selectubicacionInmueble = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-        array_unshift($selectubicacionInmueble, "Selecciona una opcion");
-
+       
         //COMBO REGIMEN FISCAL
         $selectRegimenFiscal = Arr::pluck(\App\regimenFiscal::all(), "valor", "id");
-        array_unshift($selectRegimenFiscal, "Selecciona una opcion");
-
+       
         //COMBO ENTIDAD
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
-        array_unshift($selectEntidad, "Selecciona una opcion");
-
+       
 
         return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad'));
     
@@ -113,18 +105,18 @@ class BienesInmueblesController extends Controller {
 
         if ($bien['ubicacion_inmueble_id'] == 1) {
             $domicilio['calle'] = $domicilio['calle'];
-            $domicilio['num_ext'] = $domicilio['num_ext'];
-            $domicilio['num_int'] = $domicilio['num_int'];
+            $domicilio['num_ext'] = $domicilio['exterior'];
+            $domicilio['num_int'] = $domicilio['interior'];
             $domicilio['colonia'] = $domicilio['colonia'];
             $domicilio['municipio'] = $domicilio['municipio'];
             $domicilio['entidad'] = $domicilio['entidad'];
             $domicilio['codigo_postal'] = $domicilio['codigo_postal'];
         } else if ($bien['ubicacion_inmueble_id'] == 2) {
             $domicilio['calle'] = $domicilio['calleExt'];
-            $domicilio['num_ext'] = $domicilio['numextExt'];
+            $domicilio['num_ext'] = $domicilio['num_extExt'];
             $domicilio['num_int'] = $domicilio['numintExt'];
             $domicilio['colonia'] = $domicilio['coloniaExt'];
-            $domicilio['entidad'] = $domicilio['estadoprovincia'];
+            $domicilio['entidad'] = $domicilio['entidadExt'];
             $domicilio['pais'] = $domicilio['pais'];
             $domicilio['codigo_postal'] = $domicilio['codigopostalExt'];
         }
