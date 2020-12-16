@@ -10,7 +10,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_publico', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_publico]',(isset($ingresoMensual->ingreso_mensual_publico)) ? $ingresoMensual->ingreso_mensual_publico : null,['class'=>'form-control text-uppercase','placeholder'=>'SUBTOTAL I',  'id' => 'ingreso_mensual_publico', 'required' => 'true', 'onchange' => 'sumar()' ]) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[ingreso_mensual_publico]',(isset($ingresoMensual->ingreso_mensual_publico)) ? $ingresoMensual->ingreso_mensual_publico : null,['class'=>'form-control text-uppercase','placeholder'=>'SUBTOTAL I',  'id' => 'ingreso_mensual_publico', 'required' => 'true', 'onchange' => 'sumar()' ]) !!}</td>
             </tr>
         </table>
     </div>
@@ -29,7 +29,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_por_actividad_ice', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_por_actividad_ice]',(isset($ingresoMensual->ingreso_por_actividad_ice)) ? $ingresoMensual->ingreso_por_actividad_ice : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_por_actividad_ice', 'onchange' => 'sumar()' ]) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[ingreso_por_actividad_ice]',(isset($ingresoMensual->ingreso_por_actividad_ice)) ? $ingresoMensual->ingreso_por_actividad_ice : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_por_actividad_ice', 'onchange' => 'sumar()' ]) !!}</td>
             </tr>
         </table>
     </div>
@@ -65,7 +65,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_por_actividad_financiera', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_por_actividad_financiera]',(isset($ingresoMensual->ingreso_por_actividad_financiera)) ? $ingresoMensual->ingreso_por_actividad_financiera : null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_por_actividad_financiera', 'onchange' => 'sumar()']) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[ingreso_por_actividad_financiera]',(isset($ingresoMensual->ingreso_por_actividad_financiera)) ? $ingresoMensual->ingreso_por_actividad_financiera : null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_por_actividad_financiera', 'onchange' => 'sumar()']) !!}</td>
             </tr>
         </table>
     </div>
@@ -89,7 +89,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_por_servicios_profesionales', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_por_servicios_profesionales]',(isset($ingresoMensual->ingreso_por_servicios_profesionales)) ? $ingresoMensual->ingreso_por_servicios_profesionales : null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_por_servicios_profesionales', 'onchange' => 'sumar()']) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[ingreso_por_servicios_profesionales]',(isset($ingresoMensual->ingreso_por_servicios_profesionales)) ? $ingresoMensual->ingreso_por_servicios_profesionales : null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_por_servicios_profesionales', 'onchange' => 'sumar()']) !!}</td>
             </tr>
         </table>
     </div>
@@ -113,7 +113,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_otros', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_otros]',(isset($ingresoMensual->ingreso_otros)) ? $ingresoMensual->ingreso_otros : null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_otros', 'onchange' => 'sumar()']) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[ingreso_otros]',(isset($ingresoMensual->ingreso_otros)) ? $ingresoMensual->ingreso_otros : null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_otros', 'onchange' => 'sumar()']) !!}</td>
             </tr>
         </table>
     </div>
@@ -139,12 +139,12 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_neto', 'required' => 'true', "readOnly"=> true, 'value' => '30']) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_neto', 'required' => 'true', "readOnly"=> true, 'value' => '30']) !!}</td>
                 
             </tr>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_suma', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_suma]',(isset($ingresoMensual->ingreso_mensual_suma)) ? $ingresoMensual->ingreso_mensual_suma: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_suma', 'required' => 'true', "readOnly"=> true]) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[ingreso_mensual_suma]',(isset($ingresoMensual->ingreso_mensual_suma)) ? $ingresoMensual->ingreso_mensual_suma: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_suma', 'required' => 'true', "readOnly"=> true]) !!}</td>
                 
             </tr>
         </table>
@@ -157,7 +157,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto_pareja', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto_pareja]',(isset($ingresoMensual->ingreso_mensual_neto_pareja)) ? $ingresoMensual->ingreso_mensual_neto_pareja : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000',  'id' => 'ingreso_mensual_neto_pareja', 'onchange' => 'sumar()']) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[ingreso_mensual_neto_pareja]',(isset($ingresoMensual->ingreso_mensual_neto_pareja)) ? $ingresoMensual->ingreso_mensual_neto_pareja : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000',  'id' => 'ingreso_mensual_neto_pareja', 'onchange' => 'sumar()']) !!}</td>
             </tr>
         </table>
     </div>
@@ -170,7 +170,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.total_ingresos_declarante_pareja', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[total_ingresos_declarante_pareja]',(isset($ingresoMensual->total_ingresos_declarante_pareja)) ? $ingresoMensual->total_ingresos_declarante_pareja : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000',  'id' => 'total_ingresos_declarante_pareja', 'required' => 'true', 'disabled' => 'true']) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[total_ingresos_declarante_pareja]',(isset($ingresoMensual->total_ingresos_declarante_pareja)) ? $ingresoMensual->total_ingresos_declarante_pareja : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000',  'id' => 'total_ingresos_declarante_pareja', 'required' => 'true', "readOnly"=> true]) !!}</td>
             </tr>
         </table>
     </div>
@@ -182,8 +182,10 @@
     </div>
     <div class="col-md-12">
         <center>
+           
             {{ Form::button('Ir a la sección anterior', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
-            {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
+            
+            {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}       
         </center>
     </div>
 
@@ -200,16 +202,24 @@
             var n4 = Number(neto["ingreso_por_servicios_profesionales"].value);
             var n5 = Number(neto["ingreso_otros"].value);
             var n6 = Number(neto["ingreso_mensual_neto_pareja"].value);
-            var total = n1 + n2 + n3 + n4 + n5;
-            var totalDecl = n2 + n3 + n4 + n5;
-            var totalDP = total + n6;
+            var to = n1 + n2 + n3 + n4 + n5;
+            var toDecl = n2 + n3 + n4 + n5;
+            var toDP = total + n6;
+            var total = to.toFixed(2);
+            var totalDecl = toDecl.toFixed(2);
+            var totalDP = toDP.toFixed(2);
 
-            neto["ingreso_mensual_neto"].value = total;
-            neto["ingreso_mensual_suma"].value = totalDecl;
-            neto["total_ingresos_declarante_pareja"].value = totalDP;
-        }
-
-        
+            if (!isNaN(total)) {
+                neto["ingreso_mensual_neto"].value = total;
+            }
+            if (!isNaN(totalDecl)) {
+                neto["ingreso_mensual_suma"].value = totalDecl;
+            }
+            if (!isNaN(totalDP)) {
+                neto["total_ingresos_declarante_pareja"].value = totalDP;
+            }
+    
+        }        
 
     </script>
     @endsection

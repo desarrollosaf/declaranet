@@ -97,10 +97,10 @@
 
                             <div class="text-center">
                                 <br>
-                                <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                                <a href="{{route("participacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                                     sección
                                     anterior</a>
-                                <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                                <a href="{{route("representacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                                     siguiente sección</a>
                             </div>
                         </div>
