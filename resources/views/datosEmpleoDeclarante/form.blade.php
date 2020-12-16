@@ -55,11 +55,11 @@
             <strong> {!! Form::label('', 'Teléfono de oficina y extensión: *') !!}</strong>
         </div>
         <div class="form-group col-md-4">
-            {!! Form::number('datos_empleo_declarante[telefono_oficina]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->telefono_oficina :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 5555555555',  'id' => 'telefono_oficina', 'required' => 'true', 'pattern' => "[0-9]{10}",'title' => "Ingresa el número a 10 dígitos", 'maxleng' =>'10']) !!}
+            {!! Form::text('datos_empleo_declarante[telefono_oficina]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->telefono_oficina :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 5555555555',  'id' => 'telefono_oficina', 'required' => 'true', 'pattern' => "[0-9]{10}",'title' => "Ingresa el número a 10 dígitos", 'size'=>"10", 'maxlength'=>"10"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            {!! Form::number('datos_empleo_declarante[extension]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->extension :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 555',  'id' => 'extension', 'required' => 'true', 'pattern' => "[0-9]{4}",'title' => "Ingresa el número de extensión a 4 dígitos"]) !!}
+            {!! Form::text('datos_empleo_declarante[extension]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->extension :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 555',  'id' => 'extension', 'required' => 'true', 'pattern' => "[0-9]{4}",'title' => "Ingresa el número de extensión a 4 dígitos", 'size'=>"4", 'maxlength'=>"4"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -104,7 +104,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('codigo', 'Código Postal: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[codigo_postal]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->codigo_postal :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postal', 'required' => 'true']) !!}
+            {!! Form::text('datos_empleo_declarante[codigo_postal]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->codigo_postal :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postal', 'required' => 'true', 'pattern' => "[0-9]{5}",'title' => "Ingresa el código postal a 5 dígitos", 'size'=>"5", 'maxlength'=>"5"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>

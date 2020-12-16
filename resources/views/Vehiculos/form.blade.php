@@ -46,40 +46,35 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label class="control-label" for="NumDoc"><strong>Tipo de Tercero</strong></label>
-                                    {!! Form::select('vehiculos[tipoPersonaTercero]', $regimen, isset($vehiculos) ? $vehiculos->tipoPersonaTercero : [],['class'=>'form-control',  'id' => 'tipoPersonaTercero', 'placeholder' => 'SELECCIONA UNA OPCION']) !!}
+                                    {!! Form::select('vehiculos[tipoPersonaTercero]', $regimen, isset($vehiculos) ? $vehiculos->tipoPersonaTercero : [],['class'=>'form-control',  'id' => 'tipoPersonaTercero', 'placeholder' => 'SELECCIONA UNA OPCION', 'required' => true]) !!}
                                 </div>
                             </div>
 
                             <div class="col-lg-4" id="disabledNombre">
                                 <div class="form-group">
-                                    <label class="control-label" for="NumDoc"><strong>Nombre del
-                                            tercero</strong></label>
-                                    <input type="text" class="form-control" disabled=""
-                                           placeholder="p. ej. Juan Robles Rosas" title="Ingresa nombre completo">
+                                    <label class="control-label" for="NumDoc"><strong>Nombre del tercero</strong></label>
+                                    <input type="text" class="form-control" placeholder="p. ej. Juan Robles Rosas" title="Ingresa nombre completo">
                                 </div>
                             </div>
 
                             <div class="col-lg-4" id="disabledRFC">
                                 <div class="form-group">
                                     <label class="control-label" for="NumDoc"><strong>RFC</strong> </label>
-                                    <input type="text" class="form-control" disabled=""
-                                           placeholder="p. ej. Juan Robles Rosas" title="Ingresa nombre completo"
-                                           id="rfcTransmisor">
+                                    <input type="text" class="form-control" disabled="" placeholder="p. ej. Juan Robles Rosas" title="Ingresa nombre completo" id="rfcTransmisor">
                                 </div>
                             </div>
 
                             <div class="col-lg-4">
                                 <div id="pFisica" style="display: none;">
                                     <div class="form-group">
-                                        <label class="control-label" for="NumDoc"><strong>Nombre del
-                                                tercero</strong></label>
-                                        {!! Form::text('vehiculos[bieniTerceroNombreF]',isset($vehiculos) ? $vehiculos->bieniTerceroNombreF :null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Robles Rosas',   'id' => 'bieniTerceroNombreF', 'pattern'=> "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.-]{2,50}", "title" => "Ingresa nombre completo" ]) !!}
+                                        <label class="control-label" for="NumDoc"><strong>Nombre del tercero</strong></label>
+                                        {!! Form::text('vehiculos[bieniTerceroNombreF]',isset($vehiculos) ? $vehiculos->bieniTerceroNombreF :null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Robles Rosas',   'id' => 'bieniTerceroNombreF', 'pattern'=> "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.-]{2,50}", "title" => "Ingresa nombre completo", 'required' => true ]) !!}
                                     </div>
                                 </div>
                                 <div id="pMoral" style="display: none;">
                                     <div class="form-group">
                                         <label class="control-label" for="NumDoc"><strong>Razón social</strong></label>
-                                        {!! Form::text('vehiculos[bieniTerceroNombreM]',isset($vehiculos) ? $vehiculos->bieniTerceroNombreM : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Robles Rosas',   'id' => 'bieniTerceroNombreM', 'pattern'=> "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.-]{2,50}", "title" => "Ingresa nombre completo" ]) !!}
+                                        {!! Form::text('vehiculos[bieniTerceroNombreM]',isset($vehiculos) ? $vehiculos->bieniTerceroNombreM : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Robles Rosas',   'id' => 'bieniTerceroNombreM', 'pattern'=> "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.-]{2,50}", "title" => "Ingresa nombre completo", 'required' => true ]) !!}
 
                                     </div>
                                 </div>
@@ -89,13 +84,13 @@
                                 <div id="pFisicaRfc" style="display: none;">
                                     <div class="form-group">
                                         <label class="control-label" for="ProcessNum"><strong>RFC</strong> </label>
-                                        {!! Form::text('vehiculos[bieniTerceroRfcF]', isset($vehiculos) ? $vehiculos->bieniTerceroRfcF : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Robles Rosas',   'id' => 'bieniTerceroRfcF', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}([0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
+                                        {!! Form::text('vehiculos[bieniTerceroRfcF]', isset($vehiculos) ? $vehiculos->bieniTerceroRfcF : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101XXX',   'id' => 'bieniTerceroRfcF','size' => '13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}([0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'required' => true]) !!}
                                     </div>
                                 </div>
                                 <div id="pMoralRfc" style="display: none;">
                                     <div class="form-group">
                                         <label class="control-label" for="ProcessNum"><strong>RFC</strong></label>
-                                        {!! Form::text('vehiculos[bieniTerceroRfcM]', isset($vehiculos) ? $vehiculos->bieniTerceroRfcM : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'bieniTerceroRfcM', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}([0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos" ]) !!}
+                                        {!! Form::text('vehiculos[bieniTerceroRfcM]', isset($vehiculos) ? $vehiculos->bieniTerceroRfcM : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101XX',   'id' => 'bieniTerceroRfcM', 'size' => '12', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}([0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true ]) !!}
                                     </div>
                                 </div>
                             </div>
@@ -108,8 +103,7 @@
 
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="control-label" for="ProcessNum"><strong>Tipo de
-                                        transmisor</strong></label>
+                                <label class="control-label" for="ProcessNum"><strong>Tipo de transmisor</strong></label>
                                 {!! Form::select('vehiculos[tipoDePersona]', $regimen, isset($vehiculos) ? $vehiculos->tipoDePersona : [],['class'=>'form-control',  'id' => 'tipoDePersona', 'placeholder' => 'SELECCIONA UNA OPCION', 'required' => true]) !!}
                             </div>
                         </div>
@@ -126,8 +120,7 @@
                                     {!! Form::text('vehiculos[v_nombreFisica]', isset($vehiculos) ? $vehiculos->v_nombreFisica : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. Carlos Pérez Pérez',   'id' => 'v_nombreFisica', 'disabled' => 'disabled' ]) !!}
                                 </div>
                                 <div id="terceroNombreMoral" style="display: none;">
-                                    <label class="control-label" for="NumDoc"><strong>Razón social del
-                                            transmisor:</strong></label>
+                                    <label class="control-label" for="NumDoc"><strong>Razón social del transmisor:</strong></label>
                                     {!! Form::text('vehiculos[v_nombreMoral]', isset($vehiculos) ? $vehiculos->v_nombreMoral : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. Carlos Pérez Pérez',   'id' => 'v_nombreMoral']) !!}
                                 </div>
                             </div>
@@ -150,8 +143,7 @@
                             <div class="form-group">
                                 <label class="control-label" for="State" style="line-height : 15px !important;"><strong>Relación
                                         del transmisor del vehículo con el titular:</strong></label>
-                                {!! Form::select('vehiculos[relacion_id]',$relacion, isset($vehiculos) ? $vehiculos->relacion_id : [],['class'=>'form-control',  'id' => 'relacion_id', 'placeholder' => 'SELECCIONA UNA OPCION']) !!}
-
+                                {!! Form::select('vehiculos[relacion_id]',$relacion, isset($vehiculos) ? $vehiculos->relacion_id : [],['class'=>'form-control',  'id' => 'relacion_id', 'placeholder' => 'SELECCIONA UNA OPCION','required' => true]) !!}
                             </div>
                         </div>
                     </div>
@@ -163,19 +155,19 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Marca</strong>:</label>
-                                {!! Form::text('vehiculos[v_marca]', isset($vehiculos) ? $vehiculos->v_marca : null,['class'=>'form-control', 'placeholder'=>'P. ej. Renault',   'id' => 'v_marca']) !!}
+                                {!! Form::text('vehiculos[v_marca]', isset($vehiculos) ? $vehiculos->v_marca : null,['class'=>'form-control', 'placeholder'=>'P. ej. Renault',   'id' => 'v_marca','required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="ProcessNum"><strong>Modelo</strong>:</label>
-                                {!! Form::text('vehiculos[v_modelo]', isset($vehiculos) ? $vehiculos->v_modelo : null,['class'=>'form-control', 'placeholder'=>'P. ej. Clío',   'id' => 'v_modelo']) !!}
+                                {!! Form::text('vehiculos[v_modelo]', isset($vehiculos) ? $vehiculos->v_modelo : null,['class'=>'form-control', 'placeholder'=>'P. ej. Clío',   'id' => 'v_modelo','required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="State"><strong>Año</strong>:</label>
-                                {!! Form::text('vehiculos[v_ano]', isset($vehiculos) ? $vehiculos->v_ano : null,['class'=>'form-control', 'placeholder'=>'P. ej. 2006',   'id' => 'v_ano']) !!}
+                                {!! Form::text('vehiculos[v_ano]', isset($vehiculos) ? $vehiculos->v_ano : null,['class'=>'form-control', 'placeholder'=>'P. ej. 2006',   'id' => 'v_ano','required' => true]) !!}
                             </div>
                         </div>
                     </div>
@@ -188,14 +180,14 @@
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Número de serie o
                                         registro</strong>:</label>
-                                {!! Form::text('vehiculos[v_num_serie]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. 1HGCM82633A004352',   'id' => 'v_num_serie']) !!}
+                                {!! Form::text('vehiculos[v_num_serie]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. 1HGCM82633A004352',   'id' => 'v_num_serie' ,'required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="ProcessNum">¿<strong>Dónde se encuentra
                                         registrado?</strong></label>
-                                {!! Form::select('vehiculos[lugar_registro]',$registro, isset($vehiculos) ? $vehiculos->lugar_registro : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'lugar_registro']) !!}
+                                {!! Form::select('vehiculos[lugar_registro]',$registro, isset($vehiculos) ? $vehiculos->lugar_registro : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'lugar_registro' ,'required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -204,13 +196,13 @@
                                 <div class="form-group">
                                     <label class="control-label" for="NumDoc"><strong>Entidad
                                             Federativa</strong>:</label>
-                                    {!! Form::select('vehiculos[entidades_id]',$entidad, isset($vehiculos) ? $vehiculos->entidades_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'entidades_id']) !!}
+                                    {!! Form::select('vehiculos[entidades_id]',$entidad, isset($vehiculos) ? $vehiculos->entidades_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'entidades_id','required' => true]) !!}
                                 </div>
                             </div>
                             <div id="lugarRegistroEx" style="display: none;">
                                 <div class="form-group">
                                     <label class="control-label" for="NumDoc"><strong>País</strong>:</label>
-                                    {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos) ? $vehiculos->pais_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'pais_id']) !!}
+                                    {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos) ? $vehiculos->pais_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'pais_id','required' => true]) !!}
                                 </div>
                             </div>
                         </div>
@@ -221,20 +213,19 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Forma de adquisición</strong>:</label>
-                                {!! Form::select('vehiculos[tipo_adquisicion_id]',$tipoAdquisicion, isset($vehiculos) ? $vehiculos->tipo_adquisicion_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'tipo_adquisicion_id']) !!}
+                                {!! Form::select('vehiculos[tipo_adquisicion_id]',$tipoAdquisicion, isset($vehiculos) ? $vehiculos->tipo_adquisicion_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'tipo_adquisicion_id','required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="ProcessNum"><strong>Forma de pago</strong>:</label>
-                                {!! Form::select('vehiculos[pago_id]',$pago, isset($vehiculos) ? $vehiculos->pago_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'pago_id']) !!}
+                                {!! Form::select('vehiculos[pago_id]',$pago, isset($vehiculos) ? $vehiculos->pago_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'pago_id','required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="control-label" for="State"><strong>Valor de adquisición del
-                                        vehículo</strong>:</label>
-                                {!! Form::text('vehiculos[v_valor]', isset($vehiculos) ? $vehiculos->v_valor : null,['class'=>'form-control', 'placeholder'=>'P. ej. 100000.00 Mxn',   'id' => 'v_valor']) !!}
+                                <label class="control-label" for="State"><strong>Valor de adquisición del vehículo</strong>:</label>
+                                {!! Form::text('vehiculos[v_valor]', isset($vehiculos) ? $vehiculos->v_valor : null,['class'=>'form-control', 'placeholder'=>'P. ej. 100000.00 Mxn',   'id' => 'v_valor','required' => true]) !!}
                             </div>
                         </div>
                     </div>
@@ -243,14 +234,13 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Tipo de moneda</strong>:</label>
-                                {!! Form::select('vehiculos[tipo_monedas_id]',$moneda, isset($vehiculos) ? $vehiculos->tipo_monedas_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'tipo_monedas_id']) !!}
+                                {!! Form::select('vehiculos[tipo_monedas_id]',$moneda, isset($vehiculos) ? $vehiculos->tipo_monedas_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'tipo_monedas_id','required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="control-label" for="ProcessNum"><strong>Fecha de adquisición del
-                                        vehículo</strong>:</label>
-                                {!! Form::date('vehiculos[v_fecha]', isset($vehiculos) ? $vehiculos->v_fecha : null,['class'=>'form-control', 'placeholder'=>'P. ej. Peso mexicano',   'id' => 'v_fecha']) !!}
+                                <label class="control-label" for="ProcessNum"><strong>Fecha de adquisición del vehículo</strong>:</label>
+                                {!! Form::date('vehiculos[v_fecha]', isset($vehiculos) ? $vehiculos->v_fecha : null,['class'=>'form-control', 'placeholder'=>'P. ej. Peso mexicano',   'id' => 'v_fecha','required' => true]) !!}
                             </div>
                         </div>
 
@@ -297,9 +287,11 @@
                     var tipoVehiculo_id = document.getElementById("tipoVehiculo_id").value
                     if (tipoVehiculo_id == 4) {
                         $("#otroVehiculo").prop("disabled", false);
+                        $("#otroVehiculo").prop("required",true);
                     } else {
                         $("#otroVehiculo").prop("disabled", true);
                         $("#otroVehiculo").val("");
+                        $("#otroVehiculo").prop("required",false);
                     }
                 });
                 $("#tipoDePersona").on("change", function () {
@@ -311,6 +303,10 @@
                         document.getElementById("terceroNombreMoral").style.display = "none";
                         document.getElementById("terceroFisicaTra").style.display = "block";
                         document.getElementById("terceroMoralTra").style.display = "none";
+                        $("#v_nombreMoral").val("");
+                        $("#v_nombreMoral").prop("required",false);
+                        $("#v_rfcMoral").val("");
+                        $("#v_rfcMoral").prop("required",false);
                     } else if (tipoDePersona == 2) {
                         $("#v_nombreFisica").prop("disabled", true);
                         $("#v_rfcFisica").prop("disabled", true);
@@ -320,6 +316,10 @@
                         document.getElementById("terceroNombreMoral").style.display = "block";
                         document.getElementById("terceroFisicaTra").style.display = "none";
                         document.getElementById("terceroMoralTra").style.display = "block";
+                        $("#v_nombreFisica").val("");
+                        $("#v_nombreFisica").prop("required",false);
+                        $("#v_rfcFisica").val("");
+                        $("#v_rfcFisica").prop("required",false);
                     } else {
                         $("#v_nombreFisica").prop("disabled", true);
                         $("#v_rfcFisica").prop("disabled", true);
@@ -327,6 +327,10 @@
                         document.getElementById("terceroNombreMoral").style.display = "none";
                         document.getElementById("terceroFisicaTra").style.display = "block";
                         document.getElementById("terceroMoralTra").style.display = "none";
+                        $("#v_nombreMoral").val("");
+                        $("#v_nombreMoral").prop("required",false);
+                        $("#v_rfcMoral").val("");
+                        $("#v_rfcMoral").prop("required",false);
                     }
                 });
                 $("#lugar_registro").on("change", function () {
@@ -369,6 +373,17 @@
                         document.getElementById("titular_tercero").style.display = "block";
                     } else {
                         document.getElementById("titular_tercero").style.display = "none";
+                        $("#tipoPersonaTercero").val("");
+                        $("#bieniTerceroNombreF").val("");
+                        $("#bieniTerceroNombreM").val("");
+                        $("#bieniTerceroRfcF").val("");
+                        $("#bieniTerceroRfcM").val("");
+
+                        $("#tipoPersonaTercero").prop("required", false);
+                        $("#bieniTerceroNombreF").prop("required", false);
+                        $("#bieniTerceroNombreM").prop("required", false);
+                        $("#bieniTerceroRfcF").prop("required", false);
+                        $("#bieniTerceroRfcM").prop("required", false);
                     }
                 });
 
@@ -381,6 +396,8 @@
                         document.getElementById("pMoralRfc").style.display = "none";
                         document.getElementById("disabledNombre").style.display = "none";
                         document.getElementById("disabledRFC").style.display = "none";
+                        $("#bieniTerceroNombreM").val("");
+                        $("#bieniTerceroRfcM").val("");
                     } else {
                         document.getElementById("pMoral").style.display = "block";
                         document.getElementById("pMoralRfc").style.display = "block";
@@ -388,6 +405,8 @@
                         document.getElementById("pFisicaRfc").style.display = "none";
                         document.getElementById("disabledNombre").style.display = "none";
                         document.getElementById("disabledRFC").style.display = "none";
+                        $("#bieniTerceroNombreF").val("");
+                        $("#bieniTerceroRfcF").val("");
                     }
                 });
                 if ($("#accion").val() == "editar") {

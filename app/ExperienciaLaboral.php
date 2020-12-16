@@ -15,4 +15,20 @@ class ExperienciaLaboral extends Model
     public function ambito_sectores(){
         return $this->belongsTo(AmbitoSector::class,'ambito_sector_id');
     }
+
+    public function sectores(){
+        return $this->belongsTo(sector::class,'sector_id');
+    }
+    public function Nivelordengobiernos(){
+        return $this->belongsTo(Nivelordengobierno::class,'nivel_orden_gobierno_id');
+    }
+
+    public function ambitoPublicos(){
+        return $this->belongsTo(ambitoPublico::class,'ambito_publico_id');
+    }
+
+    public function LugarUbicaciones(){
+        return $this->belongsTo(LugarUbicacion::class,'lugares_ubicacion_id');
+    }
+
 }

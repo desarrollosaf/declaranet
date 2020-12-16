@@ -39,7 +39,7 @@
                                         @else
                                             <td>
                                                 <center>
-                                                    <strong>NOMBRE:</strong> {{strtoupper($experiencia->ente_publico)}} <br>
+                                                    <strong>NOMBRE:</strong> {{strtoupper($experiencia->nombre_empresa)}} <br>
                                                     <strong>CARGO/PUESTO:</strong> {{strtoupper($experiencia->puesto)}} {{strtoupper($experiencia->cargo_comision)}}
                                                     <br>
                                                     <strong>PERIODO:</strong>{{strtoupper($experiencia->fecha_ingreso)}}
@@ -92,11 +92,8 @@
 
                 <div class="text-center">
                     <br>
-                    <a href="{{route("datos_empleo_declarante.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        sección
-                        anterior</a>
-                    <a href="{{route("datos_pareja_declarante.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        siguiente sección</a>
+                    <a href="{{route("datos_empleo_declarante.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                    <a href="{{route("datos_pareja_declarante.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                 </div>
             </div>
         </div>
@@ -113,9 +110,12 @@
                 icon: 'warning',
                 showCancelButton: true,
                 cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    $(that).closest('form').submit();
+                }
             });
         });
-
         $('.btn-ninguno').on('click', function (e) {
             let that = this;
             e.preventDefault();

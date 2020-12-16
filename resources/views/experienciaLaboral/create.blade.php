@@ -145,108 +145,54 @@
             $(".PRIVADO").show();
             $(".AMBOS").show();
             $(".PÚBLICO").hide();
+            $("#nivel_orden_gobierno_id").prop("required", false);
+            $("#ambito_publico_id").prop("required", false);
+            $("#ente_publico").prop("required", false);
+            $("#area_adscripcion").prop("required", false);
+            $("#cargo_comision").prop("required", false);
+            $("#funcion_principal").prop("required", false);
+
+            $("#nombre_empresa").val("");
+            $("#rfc").val("");
+            $("#area").val("");
+            $("#puesto").val("");
+            $("#sector_id").val("");
         } else if($(this).val() == "1") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").show();
             $(".AMBOS").show();
+            $("#nombre_empresa").prop("required", false);
+            $("#rfc").prop("required", false);
+            $("#area").prop("required", false);
+            $("#puesto").prop("required", false);
+            $("#sector_id").prop("required", false);
+
+            $("#nivel_orden_gobierno_id").val("");
+            $("#ambito_publico_id").val("");
+            $("#ente_publico").val("");
+            $("#area_adscripcion").val("");
+            $("#cargo_comision").val("");
+            $("#funcion_principal").val("");
         }else if($(this).val() == "3"){
             $(".PRIVADO").show();
             $(".PÚBLICO").hide();
             $(".AMBOS").show();
+            $("#nivel_orden_gobierno_id").prop("required", false);
+            $("#ambito_publico_id").prop("required", false);
+            $("#ente_publico").prop("required", false);
+            $("#area_adscripcion").prop("required", false);
+            $("#cargo_comision").prop("required", false);
+            $("#funcion_principal").prop("required", false);
+
+            $("#nombre_empresa").val("");
+            $("#rfc").val("");
+            $("#area").val("");
+            $("#puesto").val("");
+            $("#sector_id").val("");
         }else{
             $(".PRIVADO").hide();
             $(".PÚBLICO").hide();
             $(".AMBOS").hide();
-        }
-    });
-    $(".submitForm").on("click",function(e){
-        e.preventDefault();
-        let that = this;
-        var error = false;
-        console.log($("#ambito_sector_id").val());
-        if($("#ambito_sector_id").val() == ""){
-            error = true;
-        }
-        if($("#ambito_sector_id").val() == 1){
-            if($("#nivel_orden_gobierno_id").val() == ""){
-                error = true;
-            }
-            if($("#ambito_publico").val() == ""){
-                error = true;
-            }
-            if($("#area_adscripcion").val() == ""){
-                error = true;
-            }
-            if($("#cargo_comision").val() == ""){
-                error = true;
-            }
-
-            if($("#fecha_ingreso").val() == ""){
-                error = true;
-            }
-
-            if($("#fecha_egreso").val() == ""){
-                error = true;
-            }
-
-            if($("#lugares_ubicacion").val() == ""){
-                error = true;
-            }
-        }else if($("#ambito_sector_id").val() == 2){
-            if($("#nombre_empresa").val() == ""){
-                    error = true;
-                }
-            if($("#rfc").val() == ""){
-                    error = true;
-                }
-            if($("#area").val() == ""){
-                    error = true;
-                }
-            if($("#puesto").val() == ""){
-                    error = true;
-                }
-            if($("#sector_id").val() == ""){
-                    error = true;
-                }
-            if($("#fecha_ingreso").val() == ""){
-                    error = true;
-                }
-            if($("#fecha_egreso").val() == ""){
-                    error = true;
-                }
-        }else if($("#ambito_sector_id").val() == 3){
-            if($("#nombre_empresa").val() == ""){
-                error = true;
-            }
-            if($("#rfc").val() == ""){
-                error = true;
-            }
-            if($("#area").val() == ""){
-                error = true;
-            }
-            if($("#puesto").val() == ""){
-                error = true;
-            }
-            if($("#sector_id").val() == ""){
-                error = true;
-            }
-            if($("#fecha_ingreso").val() == ""){
-                error = true;
-            }
-            if($("#fecha_egreso").val() == ""){
-                error = true;
-            }
-        }
-
-        console.log("error",error);
-        if(error){
-            Swal.fire({
-                title: 'Error',
-                text: 'llena todos los campos obligatorios',
-                icon: 'error'
-            });
-        }else{
-            $('#frmExperienciaLaboral').submit();
         }
     });
 </script>

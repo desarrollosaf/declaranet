@@ -20,7 +20,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('curriculares[estatus_id]', 'Estatus: *',['class' => 'validar']) !!}</strong>
-        {!! Form::select('curriculares[estatus_id]',$estatusSelect, isset($curricular) ? $curricular->estatus_id : null,['class'=>'form-control text-uppercase', 'id' => 'estatus_id']) !!}
+        {!! Form::select('curriculares[estatus_id]',$estatusSelect, isset($curricular) ? $curricular->estatus_id : null,['class'=>'form-control text-uppercase', 'id' => 'estatus_id','placeholder' => "Selecciona un valor"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
