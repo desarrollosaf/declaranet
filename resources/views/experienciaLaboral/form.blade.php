@@ -89,3 +89,35 @@
         <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
+
+<div id="edit" style="display: none;">
+    <div class="form-row">
+        <div class="col">
+            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+        </div>
+    </div>
+</div>
+<div id="crearF"  style="display: none;">
+    <div class="text-center">
+        <br>
+        <a href="{{route("experiencia_laboral.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-sm btn-submit text-light'] )}}
+
+    </div>
+</div>
+
+
+@section('scripts')
+    <script type="text/javascript">
+        if ($("#accion").val() == "editar") {
+        $("#tipoDePersona").change();
+        $("#tipoVehiculo_id").change();
+        $("#lugar_registro").change();
+        $("#titular_id").change();
+        $("#tipoPersonaTercero").change();
+        document.getElementById("edit").style.display = "block";
+        } else {
+        document.getElementById("crearF").style.display = "block";
+        }
+    </script>
+@endsection
