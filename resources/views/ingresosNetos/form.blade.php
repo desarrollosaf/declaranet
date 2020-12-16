@@ -72,7 +72,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-9">
         <table style="width: 100%;">
-            <tr>
+            <tr>,
                 <td width='40%'>
                     <strong>{!! Form::label('ingresoMensual.tipo_de_instrumento', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</strong></td>   
                 <td>{!! Form::select('ingresoMensual[tipo_de_instrumento]', $tipoInstrumento, isset($ingresoMensual) ? $ingresoMensual->tipo_de_instrumento : null,['placeholder' => 'SELECCIONE UNA OPCION','class'=>'form-control text-uppercase', 'id' => 'tipo_de_instrumento']) !!}</td>
@@ -139,12 +139,12 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_neto', 'required' => 'true', 'disabled' => 'true', 'value' => "0", 'onchange' => 'sumar()']) !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_neto', 'required' => 'true', "readOnly"=> true, 'value' => '30']) !!}</td>
                 
             </tr>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_suma', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_suma]',(isset($ingresoMensual->ingreso_mensual_suma)) ? $ingresoMensual->ingreso_mensual_suma: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'total', 'required' => 'true', 'disabled' => 'true']) !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[ingreso_mensual_suma]',(isset($ingresoMensual->ingreso_mensual_suma)) ? $ingresoMensual->ingreso_mensual_suma: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_suma', 'required' => 'true', "readOnly"=> true]) !!}</td>
                 
             </tr>
         </table>
@@ -170,7 +170,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.total_ingresos_declarante_pareja', '$') !!}</td>
-                <td align='left'>{!! Form::text('ingresoMensual[total_ingresos_declarante_pareja]',(isset($ingresoMensual->total_ingresos_declarante_pareja)) ? $ingresoMensual->total_ingresos_declarante_pareja : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000',  'id' => 'total_ingresos_declarante_pareja', 'required' => 'true', 'disabled' => 'true', 'onchange' => 'sumar()']) !!}</td>
+                <td align='left'>{!! Form::text('ingresoMensual[total_ingresos_declarante_pareja]',(isset($ingresoMensual->total_ingresos_declarante_pareja)) ? $ingresoMensual->total_ingresos_declarante_pareja : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000',  'id' => 'total_ingresos_declarante_pareja', 'required' => 'true', 'disabled' => 'true']) !!}</td>
             </tr>
         </table>
     </div>
@@ -190,25 +190,26 @@
 
     @section('scripts')
     <script type="text/javascript">
-       function sumar()
-        {
-            var x = document.forms[0];
-
-            var n1 = Number(x.elements["ingreso_mensual_publico"].value);
-            var n2 = Number(x.elements["ingreso_por_actividad_ice"].value);
-            var n3 = Number(x.elements["ingreso_por_actividad_financiera"].value);
-            var n4 = Number(x.elements["ingreso_por_servicios_profesionales"].value);
-            var n5 = Number(x.elements["ingreso_otros"].value);
-            var n6 = Number(x.elements["ingreso_mensual_neto_pareja"].value);
+        function sumar(){
+            
+            neto = document.forms["frmIngresosNetos"].elements;
+            
+            var n1 = Number(neto["ingreso_mensual_publico"].value);
+            var n2 = Number(neto["ingreso_por_actividad_ice"].value);
+            var n3 = Number(neto["ingreso_por_actividad_financiera"].value);
+            var n4 = Number(neto["ingreso_por_servicios_profesionales"].value);
+            var n5 = Number(neto["ingreso_otros"].value);
+            var n6 = Number(neto["ingreso_mensual_neto_pareja"].value);
             var total = n1 + n2 + n3 + n4 + n5;
             var totalDecl = n2 + n3 + n4 + n5;
             var totalDP = total + n6;
-             
-            x.elements["ingreso_mensual_neto"].value = totalDecl;
-            x.elements["total_ingresos_declarante_pareja"].value = totalDP;
-            x.elements["total"].value = total;
-            //document.getElementById('ingreso_mensual_neto').innerHTML = totalDecl;
+
+            neto["ingreso_mensual_neto"].value = total;
+            neto["ingreso_mensual_suma"].value = totalDecl;
+            neto["total_ingresos_declarante_pareja"].value = totalDP;
         }
+
+        
 
     </script>
     @endsection

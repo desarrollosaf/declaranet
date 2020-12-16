@@ -77,7 +77,7 @@
       </div>
         <div class="card-body">
           {!! Form::open(['route'=>'ingreso_neto.store', 'method'=>'POST', 'files' => true, 'role' => 'form','id' => 'frmIngresosNetos']) !!}
-           @include('ingresosNetos.form')
+             @include('ingresosNetos.form')
           {!! Form::close() !!}
         </div>
     </div>

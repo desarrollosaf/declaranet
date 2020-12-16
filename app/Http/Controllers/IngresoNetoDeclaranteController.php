@@ -76,9 +76,10 @@ class IngresoNetoDeclaranteController extends Controller
      */
     public function edit($id)
     {
-        
+
+        $tipoInstrumento = Arr::pluck(\App\tipoInstrumento::all(), "valor","id");
         $ingresoMensual = IngresoNeto::find($id);
-        return view("ingresosNetos.edit",\compact("ingresoMensual","id"));
+        return view("ingresosNetos.edit",\compact("ingresoMensual","id", 'tipoInstrumento'));
     }
 
     /**
