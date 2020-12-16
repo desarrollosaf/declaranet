@@ -23,4 +23,8 @@ class Participacion extends Model
     public function Paises(){
         return $this->belongsTo(Pais::class);
     }
+
+    public function Entidades(){
+        return $this->belongsTo(Entidad::class);
+    }
 }

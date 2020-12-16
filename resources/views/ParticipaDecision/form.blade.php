@@ -23,7 +23,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" style="text-align:justify"> <strong>Especifique: </strong></label>
-                    {!! Form::text('participaciones[especifique_institucion]',isset($participaciones) ? $participaciones->especifique_institucion :null,['class'=>'form-control', 'placeholder'=>'P. ej. No gubernamental', 'disabled'=>'disabled',  'id' => 'especifique_institucion']) !!}
+                    {!! Form::text('participaciones[especifique_institucion]',isset($participaciones) ? $participaciones->especifique_institucion :null,['class'=>'form-control', 'placeholder'=>'P. ej. No gubernamental', 'disabled'=>'disabled',  'id' => 'especifique_institucion', 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -35,19 +35,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"> <strong>Nombre de la Institución: </strong></label>
-                    {!! Form::text('participaciones[nombre_institucion]',isset($participaciones) ? $participaciones->nombre_institucion :null,['class'=>'form-control', 'placeholder'=>'P. ej. Ayuda Canica A.C.',  'id' => 'nombre_institucion']) !!}
+                    {!! Form::text('participaciones[nombre_institucion]',isset($participaciones) ? $participaciones->nombre_institucion :null,['class'=>'form-control', 'placeholder'=>'P. ej. Ayuda Canica A.C.',  'id' => 'nombre_institucion', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"> <strong>RFC: </strong></label>
-                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control', 'placeholder'=>'P. ej. XAX010101010',  'id' => 'rfc', 'pattern' => "([A-Z]{4}[0-9]{6})"]) !!}
+                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control', 'placeholder'=>'P. ej. XAX010101010',  'id' => 'rfc', 'pattern' => "([A-Z]{4}[0-9]{6})", 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"> <strong>Puesto / rol: </strong></label>
-                    {!! Form::text('participaciones[puesto_rol]',isset($participaciones) ? $participaciones->puesto_rol :null,['class'=>'form-control', 'placeholder'=>'P. ej. Analista de sistemas',  'id' => 'puesto_rol', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}"]) !!}
+                    {!! Form::text('participaciones[puesto_rol]',isset($participaciones) ? $participaciones->puesto_rol :null,['class'=>'form-control', 'placeholder'=>'P. ej. Analista de sistemas',  'id' => 'puesto_rol', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}" , 'required' => true]) !!}
                 </div>
             </div>
 
@@ -61,7 +61,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" style="line-height : 13px;"> <strong>Fecha de inicio de participación dentro de la institución: </strong></label>
-                    {!! Form::date('participaciones[fecha_inicio]',isset($participaciones) ? $participaciones->fecha_inicio :null,['class'=>'form-control',   'id' => 'fecha_inicio']) !!}
+                    {!! Form::date('participaciones[fecha_inicio]',isset($participaciones) ? $participaciones->fecha_inicio :null,['class'=>'form-control',   'id' => 'fecha_inicio', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -75,7 +75,7 @@
             <div class="col-lg-4" >
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"> <strong>Monto mensual neto:</strong></label>
-                    {!! Form::text('participaciones[monto_mensual]',isset($participaciones) ? $participaciones->monto_mensual :null,['class'=>'form-control', 'placeholder'=>'P. ej. $1,000,000.00 Mxn',  'id' => 'monto_mensual', 'disabled' => 'disabled']) !!}
+                    {!! Form::text('participaciones[monto_mensual]',isset($participaciones) ? $participaciones->monto_mensual :null,['class'=>'form-control', 'placeholder'=>'P. ej. $1,000,000.00 Mxn',  'id' => 'monto_mensual', 'disabled' => 'disabled', 'required' => true, 'pattern' => "[0-9]{1,8}",'title' => "Ingresa monto mensual en dígitos", 'size'=>"8", 'maxlength'=>"8"]) !!}
                 </div>
             </div>
         </div>
@@ -90,11 +90,11 @@
                 <div class="form-group">
                     <div id="mx">
                         <label class="form-check-label" for="inlineCheckbox1"> <strong>Entidad federativa: </strong></label>
-                        {!! Form::text('participaciones[entidad_federativa]',isset($participaciones) ? $participaciones->entidad_federativa :null,['class'=>'form-control', 'placeholder'=>'P. ej. México',  'id' => 'entidad_federativa', 'disabled' => 'disabled']) !!}
+                        {!! Form::select('participaciones[entidades_id]', $entidad, isset($participaciones) ? $participaciones->entidades_id : [],['class'=>'form-control',  'id' => 'entidades_id','placeholder' => 'SELECCIONA UNA OPCIÓN', 'required' => true]) !!}
                     </div>
                     <div id="ex" style="display: none;">
                         <label class="form-check-label" for="inlineCheckbox1"> <strong>País donde se localiza: </strong></label>
-                        {!! Form::select('participaciones[paises_id]', $pais, isset($participaciones) ? $participaciones->paises_id : [],['class'=>'form-control',  'id' => 'paises_id']) !!}
+                        {!! Form::select('participaciones[paises_id]', $pais, isset($participaciones) ? $participaciones->paises_id : [],['class'=>'form-control',  'id' => 'paises_id', 'required' => true]) !!}
                     </div>
                 </div>
             </div>
@@ -143,6 +143,7 @@
                 $("#especifique_institucion").prop("disabled", false);
             }else{
                 $("#especifique_institucion").prop("disabled", true);
+                $("#especifique_institucion").prop("requires", false);
                 $("#especifique_institucion").val("");
             }
         });
@@ -153,6 +154,7 @@
                 $("#monto_mensual").prop("disabled", false);
             }else{
                 $("#monto_mensual").prop("disabled", true);
+                $("#monto_mensual").prop("required", false);
                 $("#monto_mensual").val("");
             }
         });
@@ -160,14 +162,16 @@
         $("#lugares_ubicacion_id").on("change",function(){
             var lugares_ubicacion_id = document.getElementById("lugares_ubicacion_id").value
             if(lugares_ubicacion_id == 1){
-                $("#entidad_federativa").prop("disabled", false);
+                $("#entidades_id").prop("disabled", false);
                 document.getElementById("mx").style.display="block";
                 document.getElementById("ex").style.display="none";
-
+                $("#paises_id").prop("required", false);
+                $("#paises_id").val("");
             }else{
-                $("#entidad_federativa").val("");
                 document.getElementById("mx").style.display="none";
                 document.getElementById("ex").style.display="block";
+                $("#entidades_id").prop("required", false);
+                $("#entidades_id").val("");
             }
         });
 

@@ -195,6 +195,49 @@
             $(".AMBOS").hide();
         }
     });
+
+    $("#fecha_ingreso").on("change", function () {
+        var fecha = document.getElementById("fecha_ingreso").value;
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        today = yyyy + '-' + mm + '-' + dd;
+        if (fecha > today) {
+            alert("La fecha es mayor a la fecha de registro, favor de comprobar");
+            var fechaB = document.getElementById("fecha_ingreso").value = '00/00/0000';
+        }
+    });
+
+    $("#fecha_egreso").on("change", function () {
+        var fecha = document.getElementById("fecha_egreso").value;
+        var fecha2 = document.getElementById("fecha_ingreso").value;
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        today = yyyy + '-' + mm + '-' + dd;
+        if (fecha > today) {
+            alert("La fecha es mayor a la fecha de registro, favor de comprobar");
+            var fechaB = document.getElementById("fecha_egreso").value = '00/00/0000';
+        }
+        if(fecha < fecha2) {
+                alert("La fecha de egreso es mejor a la fecha de ingreso, favor de comprobar");
+                var fechaB = document.getElementById("fecha_egreso").value = '00/00/0000';
+        }
+    });
 </script>
 @endsection
 

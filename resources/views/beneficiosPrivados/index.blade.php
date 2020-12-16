@@ -104,6 +104,10 @@
                     icon: 'warning',
                     showCancelButton: true,
                     cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed){
+                        $(that).closest('form').submit();
+                    }
                 });
             });
 

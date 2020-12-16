@@ -6,7 +6,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('tipo_beneficio', 'Especifique:') !!}</strong>
-        {!! Form::text('beneficio_privado[tipo_beneficio]',isset($beneficio) ? $beneficio->tipo_beneficio :null,['class'=>'form-control', 'placeholder'=>'P. ej. Beca', 'disabled'=>'disabled',  'id' => 'tipo_beneficio', 'type' => 'text']) !!}
+        {!! Form::text('beneficio_privado[tipo_beneficio]',isset($beneficio) ? $beneficio->tipo_beneficio :null,['class'=>'form-control', 'placeholder'=>'P. ej. Beca', 'disabled'=>'disabled',  'id' => 'tipo_beneficio', 'type' => 'text', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -19,7 +19,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('beneficiario', 'Especifique:') !!}</strong>
-        {!! Form::text('beneficio_privado[beneficiario]',isset($beneficio) ? $beneficio->beneficiario :null,['class'=>'form-control', 'placeholder'=>'p. ej. Concuño', 'disabled'=> 'disabled', 'id' => 'beneficiario']) !!}
+        {!! Form::text('beneficio_privado[beneficiario]',isset($beneficio) ? $beneficio->beneficiario :null,['class'=>'form-control', 'placeholder'=>'p. ej. Concuño', 'disabled'=> 'disabled', 'id' => 'beneficiario', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -29,7 +29,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('sector', 'Especifique:') !!}</strong>
-        {!! Form::text('beneficio_privado[sector]',isset($beneficio) ? $beneficio->sector : null,['class'=>'form-control', 'placeholder'=>'p. ej. Juan Pérez', 'disabled'=> 'disabled',  'id' => 'sector']) !!}
+        {!! Form::text('beneficio_privado[sector]',isset($beneficio) ? $beneficio->sector : null,['class'=>'form-control', 'placeholder'=>'p. ej. Juan Pérez', 'disabled'=> 'disabled',  'id' => 'sector', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -42,23 +42,23 @@
     </div>
     <div class="form-group col-md-4" id="fisicaN">
         <strong> {!! Form::label('nombre_otorgante', 'Nombre del otorgante:') !!}</strong>
-        {!! Form::text('beneficio_privado[nombre_otorgante]',isset($beneficio) ? $beneficio->nombre_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.Juan Pérez',  'id' => 'nombre_otorgante', 'disabled'=>'disabled']) !!}
+        {!! Form::text('beneficio_privado[nombre_otorgante]',isset($beneficio) ? $beneficio->nombre_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.Juan Pérez',  'id' => 'nombre_otorgante', 'disabled'=>'disabled', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="fisicaR">
         <strong> {!! Form::label('rfc', 'RFC:') !!}</strong>
-        {!! Form::text('beneficio_privado[rfc_otorgante]',isset($beneficio) ? $beneficio->rfc_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej. XXXX010101XXX',  'id' => 'rfc_otorgante', 'disabled'=>'disabled']) !!}
+        {!! Form::text('beneficio_privado[rfc_otorgante]',isset($beneficio) ? $beneficio->rfc_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej. XXXX010101XXX',  'id' => 'rfc_otorgante', 'disabled'=>'disabled', 'required' => true, 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 
     <div class="form-group col-md-4" id="moralRazon" style="display: none;">
         <strong> {!! Form::label('razon_social_otorgante', 'Razón social del otorgante:') !!}</strong>
-        {!! Form::text('beneficio_privado[razon_social_otorgante]',isset($beneficio) ? $beneficio->razon_social_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.Desarrollo y Redes S.A de C.V,',  'id' => 'razon_social_otorgante']) !!}
+        {!! Form::text('beneficio_privado[razon_social_otorgante]',isset($beneficio) ? $beneficio->razon_social_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.Desarrollo y Redes S.A de C.V,',  'id' => 'razon_social_otorgante', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="moralRfc" style="display: none;">
-        <strong>  {!! Form::label('rfc_otorgante', 'RFC:') !!}</strong>
-        {!! Form::text('beneficio_privado[rfc_otorgante]',isset($beneficio) ? $beneficio->rfc_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej. XXXX010101XXX',  'id' => 'rfc_otorgante']) !!}
+        <strong>  {!! Form::label('rfc_otorganteM', 'RFC:') !!}</strong>
+        {!! Form::text('beneficio_privado[rfc_otorganteM]',isset($beneficio) ? $beneficio->rfc_otorganteM :null,['class'=>'form-control', 'placeholder'=>'p. ej. XXXX010101XX',  'id' => 'rfc_otorganteM', 'required' => true, 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -71,17 +71,17 @@
     </div>
     <div class="form-group col-md-4" id="moneda">
         <strong>  {!! Form::label('tipo_moneda', 'Tipo de moneda:') !!}</strong>
-        {!! Form::select('beneficio_privado[tipo_monedas_id]',$moneda, isset($beneficio) ? $beneficio->tipo_monedas_id : [],['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'tipo_monedas_id']) !!}
+        {!! Form::select('beneficio_privado[tipo_monedas_id]',$moneda, isset($beneficio) ? $beneficio->tipo_monedas_id : [],['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'tipo_monedas_id', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
-    <div class="form-group col-md-4" id="especie" style="display: none;">
+    <div class="form-group col-md-4" id="Tespecie" style="display: none;">
         <strong> {!! Form::label('especie', 'Especifique el beneficio:') !!}</strong>
-        {!! Form::text('beneficio_privado[especie]',isset($beneficio) ? $beneficio->especie :null,['class'=>'form-control', 'placeholder'=>'p. ej. cheque',  'id' => 'especie']) !!}
+        {!! Form::text('beneficio_privado[especie]',isset($beneficio) ? $beneficio->especie :null,['class'=>'form-control', 'placeholder'=>'p. ej. cheque',  'id' => 'especie', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('monto_mensual', 'Monto mensual aproximado del beneficio:') !!}</strong>
-        {!! Form::number('beneficio_privado[monto_mensual]',isset($beneficio) ? $beneficio->monto_mensual :null,['class'=>'form-control', 'placeholder'=>'p. ej. $10,000 MxN',  'id' => 'monto_mensual']) !!}
+        {!! Form::number('beneficio_privado[monto_mensual]',isset($beneficio) ? $beneficio->monto_mensual :null,['class'=>'form-control', 'placeholder'=>'p. ej. $10,000 MxN',  'id' => 'monto_mensual', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -120,6 +120,7 @@
                 $( "#tipo_beneficio" ).prop( "disabled", false );
             }else{
                 $( "#tipo_beneficio" ).prop( "disabled", true );
+                $( "#tipo_beneficio" ).prop( "required", false );
                 $("#tipo_beneficio").val("");
             }
         });
@@ -129,6 +130,7 @@
                 $( "#beneficiario" ).prop( "disabled", false );
             }else{
                 $( "#beneficiario" ).prop( "disabled", true );
+                $( "#beneficiario" ).prop( "required", false );
                 $("#beneficiario").val("");
             }
         });
@@ -138,45 +140,64 @@
                 $( "#sector" ).prop( "disabled", false );
             }else{
                 $( "#sector" ).prop( "disabled", true );
+                $( "#sector" ).prop( "required", false );
                 $("#sector").val("");
             }
         });
         $("#otorgante_id").on("change", function (){
             var otorgante = document.getElementById("otorgante_id").value;
             if(otorgante == '1'){
+
                 $( "#nombre_otorgante" ).prop( "disabled", false );
                 $( "#rfc_otorgante" ).prop( "disabled", false );
-                $( "#razon_social_otorgante" ).prop( "disabled", true );
+
+
                 document.getElementById("fisicaN").style.display = "block";
                 document.getElementById("fisicaR").style.display = "block";
+
                 $("#nombre_otorgante").prop("class","form-control alert-danger");
                 $("#rfc_otorgante").prop("class","form-control alert-danger");
+
                 document.getElementById("moralRazon").style.display = "none";
                 document.getElementById("moralRfc").style.display = "none";
-                $("#sector").val("");
-                $("#sector").val("");
+
+                $("#razon_social_otorgante").val("");
+                $("#rfc_otorganteM").val("");
+                $( "#razon_social_otorgante" ).prop( "required", false );
+                $( "#rfc_otorganteM" ).prop( "required", false );
             }else{
-                $( "#nombre_otorgante" ).prop( "disabled", true );
+
                 $( "#razon_social_otorgante" ).prop( "disabled", false );
+                $( "#rfc_otorganteM" ).prop( "disabled", false );
+
                 document.getElementById("fisicaN").style.display = "none";
                 document.getElementById("fisicaR").style.display = "none";
                 document.getElementById("moralRazon").style.display = "block";
                 document.getElementById("moralRfc").style.display = "block";
-                $("#rfc_otorgante").prop("class","form-control");
+
+                $("#rfc_otorgante").val("");
+                $("#nombre_otorgante").val("");
+                $( "#nombre_otorgante" ).prop( "required", false );
+                $( "#rfc_otorgante" ).prop( "required", false );
             }
         })
+
         $('#forma_recepcion_id').on('change', function (){
             var formaRecepcion = document.getElementById("forma_recepcion_id").value;
             if(formaRecepcion == '1') {
                 $("#tipo_moneda").prop("disabled", false);
                 $("#especie").prop("disabled", true);
                 document.getElementById("moneda").style.display = "block";
-                document.getElementById("especie").style.display = "none";
+                document.getElementById("Tespecie").style.display = "none";
+                $("#especie").val("");
+                $( "#especie").prop( "required", false);
             }else{
                 $("#tipo_moneda").prop("disabled", true);
                 $("#especie").prop("disabled", false);
                 document.getElementById("moneda").style.display = "none";
-                document.getElementById("especie").style.display = "block";
+                document.getElementById("Tespecie").style.display = "block";
+                $("#tipo_monedas_id").val("");
+                $( "#tipo_monedas_id" ).prop( "required", false );
             }
         })
 

@@ -10,6 +10,7 @@ use App\tipoInstitucion;
 use App\LugarUbicacion;
 use Illuminate\Support\Arr;
 use App\Declaracion;
+use App\Entidad;
 
 class ParticipaDecisionController extends Controller
 {
@@ -65,7 +66,13 @@ class ParticipaDecisionController extends Controller
             $pais[$item->id] = $item->valor;
         }
 
-        return view("ParticipaDecision.create", compact('participacion','institucion','remuneracion','lugar','pais'));
+        $Entidad = Entidad::all();
+        $entidad = [];
+        foreach ($Entidad as $item){
+            $entidad[$item->id] = $item->entidad;
+        }
+
+        return view("ParticipaDecision.create", compact('participacion','institucion','remuneracion','lugar','pais','entidad'));
     }
 
     /**
@@ -110,8 +117,8 @@ class ParticipaDecisionController extends Controller
         $remuneracion[""] = "SELECCIONA UNA OPCIÓN";
         $remuneracion["1"] = "SÍ";
         $remuneracion["2"] = "NO";
-
-        return view("ParticipaDecision.edit", compact( 'participaciones','participacion','institucion','lugar','pais','remuneracion'));
+        $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
+        return view("ParticipaDecision.edit", compact( 'participaciones','participacion','institucion','lugar','pais','remuneracion','entidad'));
     }
 
     /**
