@@ -60,7 +60,6 @@ class DatosDependienteEconomicoController extends Controller
             $selectSector[$item->id] = $item->valor;
         }
         $respuestas = Arr::pluck(\App\Respuesta::all(),'respuesta',"id");
-        array_unshift($respuestas,"Selecciona una opcion");
         $entidades = Arr::pluck(\App\Entidad::all(),'entidad',"id");
         array_unshift($entidades,"Selecciona una opcion");
         $paises = Arr::pluck(\App\Pais::all(),'valor',"id");

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class DependienteEconomico extends Model
 {
     use SoftDeletes;
-    protected $tabla = "dependiente_economicos";
+    protected $table = "dependientes_economicos";
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
     public function domicilio(){
         return $this->morphOne(Domicilio::class, 'domiciliable');
