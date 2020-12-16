@@ -125,7 +125,6 @@
             <div class="card-body">
                 {!! Form::open(['route'=>'experiencia_laboral.store', 'method'=>'POST', 'role' => 'form','id' => 'frmExperienciaLaboral']) !!}
                @include('experienciaLaboral.form')
-               <center> {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light submitForm'] )}}</center>
                {!! Form::close() !!}
             </div>
         </div>
