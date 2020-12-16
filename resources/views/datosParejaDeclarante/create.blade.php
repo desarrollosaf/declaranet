@@ -135,7 +135,7 @@
               </div>
           </div>
             <div class="card-body">
-                {!! Form::open(['route'=>'datos_pareja_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosDeclarante']) !!}
+                {!! Form::open(['route'=>'datos_pareja_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datos-pareja']) !!}
                 @include('datosParejaDeclarante.form')
                 {!! Form::close() !!}
             </div>

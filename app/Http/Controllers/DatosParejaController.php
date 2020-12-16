@@ -54,13 +54,10 @@ class DatosParejaController extends Controller
     {
         $relacionDeclarante = relacionConDeclarante::all();
         $selectRelacioDeclarante = [];
-        $selectRelacioDeclarante[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($relacionDeclarante as $item) {
             $selectRelacioDeclarante[$item->id] = $item->valor;
         }
         $ciudadanoExtranjero = extranjero::all();
-        $selectCiudadano = [];
-        $selectCiudadano[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($ciudadanoExtranjero as $item) {
             $selectCiudadano[$item->id] = $item->valor;
         }
@@ -75,16 +72,6 @@ class DatosParejaController extends Controller
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
         $selectPais = Arr::pluck(Pais::all(), "valor", "id");
         $respuesta = Arr::pluck(Respuesta::all(), "respuesta", "id");
-        array_unshift($ambitos_sectores, "Selecciona una opción");
-        array_unshift($nivelOrdenGobierno, "Selecciona una opción");
-        array_unshift($ambito, "Selecciona una opción");
-        array_unshift($sectores, "Selecciona una opción");
-        array_unshift($ubicacion, "Selecciona una opción");
-        array_unshift($selectLugarReside, "Selecciona una opción");
-        array_unshift($selectRespuesta, "Selecciona una opción");
-        array_unshift($selectEntidad, "Selecciona una opción");
-        array_unshift($selectPais, "Selecciona una opción");
-        array_unshift($respuesta, "Selecciona una opción");
         return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector'));
     }
 
@@ -107,7 +94,7 @@ class DatosParejaController extends Controller
             $domicilio['entidad'] = $domicilio['estadoprovincia'];
             $domicilio['codigo_postal'] = $domicilio['codigopostalExt'];
         }
-        if ($actividadLaboral['sector_id'] == 1) {
+        if ($actividadLaboral['ambito_sector_id'] == 1) {
             $actividadLaboral['salario_mensual_neto'] = $actividadLaboral['salario_mensual_neto_publico'];
             $actividadLaboral['fecha_ingreso'] = $actividadLaboral['fecha_ingreso_publico'];
         }
@@ -117,12 +104,12 @@ class DatosParejaController extends Controller
         if (!isset($datosPareja['lugar_reside_id'])) {
             $datosPareja['lugar_reside_id'] = null;
         }
+        dd($datosPareja);
 
         $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
         $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
-        $datosPareja['declaracion_id'] = $request->session()->get("declaracion_id");
-        $declarante = Declaracion::find($request->session()->get("declaracion_id"));
-        $pareja = $declarante->pareja()->create($datosPareja);
+        $datosPareja['declaracion_id'] = $this->request->session()->get("declaracion_id");
+        $pareja = DatosPareja::create($datosPareja);
         if ($datosPareja['respuesta_domicilio_id'] == 2) {
             $pareja->domicilio()->create($domicilio);
         }
@@ -162,21 +149,13 @@ class DatosParejaController extends Controller
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
         $selectPais = Arr::pluck(Pais::all(), "valor", "id");
         $respuesta = Arr::pluck(Respuesta::all(), "respuesta", "id");
-        array_unshift($ambitos_sectores, "Selecciona una opción");
-        array_unshift($nivelOrdenGobierno, "Selecciona una opción");
-        array_unshift($ambito, "Selecciona una opción");
-        array_unshift($sectores, "Selecciona una opción");
-        array_unshift($ubicacion, "Selecciona una opción");
-        array_unshift($selectLugarReside, "Selecciona una opción");
-        array_unshift($selectRespuesta, "Selecciona una opción");
-        array_unshift($selectEntidad, "Selecciona una opción");
-        array_unshift($selectPais, "Selecciona una opción");
-        array_unshift($respuesta, "Selecciona una opción");
-        array_unshift($selectCiudadano, "Selecciona una opción");
-        array_unshift($selectRelacioDeclarante, "Selecciona una opción");
         $pareja = DatosPareja::find($id);
         $domicilio = $pareja->domicilio;
-        $selectMunicipio = Arr::pluck(Municipio::where("entidad_id", "=", $domicilio->entidad_id)->get(), "municipio", "id");
+        if ($domicilio != null) {
+            $selectMunicipio = Arr::pluck(Municipio::where("entidad_id", "=", $domicilio->entidad_id)->get(), "municipio", "id");
+        } else {
+            $selectMunicipio = [];
+        }
         $experienciaLaboral = $pareja->experienciaLaboral;
         return view('datosParejaDeclarante.edit', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'pareja', 'domicilio', 'experienciaLaboral', 'selectMunicipio'));
 
@@ -203,7 +182,7 @@ class DatosParejaController extends Controller
             $domicilio['entidad'] = $domicilioExt['estadoprovincia'];
             $domicilio['codigo_postal'] = $domicilioExt['codigopostalExt'];
         }
-        if ($actividadLaboral['sector_id'] == 1) {
+        if ($actividadLaboral['ambito_sector_id'] == 1) {
             $actividadLaboral['salario_mensual_neto'] = $actividadLaboral['salario_mensual_neto_publico'];
             $actividadLaboral['fecha_ingreso'] = $actividadLaboral['fecha_ingreso_publico'];
         }
@@ -231,7 +210,7 @@ class DatosParejaController extends Controller
             }
         }
         $pareja->experienciaLaboral->update($actividadLaboral);
-        return redirect()->route("datos_dependiente_declarante.index");
+        return redirect()->route("datos_dependiente_declarante.create");
     }
 
     /**

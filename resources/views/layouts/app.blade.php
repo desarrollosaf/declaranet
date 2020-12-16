@@ -723,6 +723,7 @@
         $("#logout-formm").submit();
     }
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.js"></script>
 @yield("scripts")
 </body>
 </html>

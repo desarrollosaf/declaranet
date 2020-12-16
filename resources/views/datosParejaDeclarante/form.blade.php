@@ -28,36 +28,36 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.relacion_id', ' Relación con el Declarante: *') !!}</strong>
-        {!! Form::select('datosPareja[relacion_id]', $selectRelacioDeclarante, (isset($pareja->relacion_id)) ? $pareja->relacion_id : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'relacion', 'required' => true]) !!}
+        {!! Form::select('datosPareja[relacion_id]', $selectRelacioDeclarante, (isset($pareja->relacion_id)) ? $pareja->relacion_id : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'relacion', 'required' => true, 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.ciudadano_id', '¿Es ciudadano extranjero?: *') !!}</strong>
-        {!! Form::select('datosPareja[ciudadano_id]', $selectCiudadano, (isset($pareja->ciudadano_id)) ? $pareja->ciudadano_id : null,['class'=>'form-control text-uppercase',  'id' => 'tipo-ciudadano']) !!}
+        {!! Form::select('datosPareja[ciudadano_id]', $selectCiudadano, (isset($pareja->ciudadano_id)) ? $pareja->ciudadano_id : null,['class'=>'form-control text-uppercase',  'id' => 'tipo-ciudadano', 'required' => true, 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.curp', 'CURP: *') !!}</strong>
-        {!! Form::text('datosPareja[curp]',(isset($pareja->curp)) ? $pareja->curp : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XAXAXA01',  'id' => 'curp']) !!}
+        {!! Form::text('datosPareja[curp]',(isset($pareja->curp)) ? $pareja->curp : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XAXAXA01',  'id' => 'curp', 'required' => true, "disabled" => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.respuesta_dependiente_id', '¿Es dependiente económico?: *') !!}</strong>
-        {!! Form::select('datosPareja[respuesta_dependiente_id]',$selectRespuesta, (isset($pareja->respuesta_dependiente_id)) ? $pareja->respuesta_dependiente_id : null,['class'=>'form-control alert-danger text-uppercase', 'id' => 'dependiente']) !!}
+        {!! Form::select('datosPareja[respuesta_dependiente_id]',$selectRespuesta, (isset($pareja->respuesta_dependiente_id)) ? $pareja->respuesta_dependiente_id : null,['class'=>'form-control alert-danger text-uppercase', 'id' => 'dependiente','required' => true, 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.respuesta_domicilio_id', '¿Habita en el domicilio del Declarante?: *') !!}</strong>
-        {!! Form::select('datosPareja[respuesta_domicilio_id]', $selectRespuesta, (isset($pareja->respuesta_domicilio_id)) ? $pareja->respuesta_domicilio_id : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'habita-domicilio']) !!}
+        {!! Form::select('datosPareja[respuesta_domicilio_id]', $selectRespuesta, (isset($pareja->respuesta_domicilio_id)) ? $pareja->respuesta_domicilio_id : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'habita-domicilio', 'required' => true, 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 lugar-reside">
         <strong>{!! Form::label('datosPareja.lugar_reside_id', 'Lugar donde reside:  *') !!}</strong>
-        {!! Form::select('datosPareja[lugar_reside_id]',$selectLugarReside,(isset($pareja->lugar_reside_id)) ? $pareja->lugar_reside_id : null,['class'=>'form-control alert-danger lugar-reside-change text-uppercase',  'id' => 'lugar-reside']) !!}
+        {!! Form::select('datosPareja[lugar_reside_id]',$selectLugarReside,(isset($pareja->lugar_reside_id)) ? $pareja->lugar_reside_id : null,['class'=>'form-control alert-danger lugar-reside-change text-uppercase',  'id' => 'lugar-reside', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -89,7 +89,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilio.id', 'Entidad Federativa:  *') !!}</strong>
-            {!! Form::select('domicilio[entidad_id]', $selectEntidad,isset($domicilio->entidad_id) ? $domicilio->entidad_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'entidad_id']) !!}
+            {!! Form::select('domicilio[entidad_id]', $selectEntidad,isset($domicilio->entidad_id) ? $domicilio->entidad_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'entidad_id', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -118,12 +118,12 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilioExt.numextExt', 'Número exterior:  *') !!}</strong>
-            {!! Form::number('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->numext : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
+            {!! Form::number('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso:  * ') !!}</strong>
-            {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->numint : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt']) !!}
+            {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -135,12 +135,12 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilio.pais_id', 'País: *') !!}</strong>
-            {!! Form::select('domicilio[pais_id]', $selectPais,isset($domicilio) ? $domicilio->entidad_pais : null,['class'=>'form-control tipo-titular text-uppercase',  'id' => 'pais']) !!}
+            {!! Form::select('domicilio[pais_id]', $selectPais,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control tipo-titular text-uppercase',  'id' => 'pais', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilioExt.estadoprovincia', 'Estado / Provincia: *') !!}</strong>
-            {!! Form::text('domicilioExt[estadoprovincia]',isset($domicilio) ? $domicilio->municipio_provincia : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. México',  'id' => 'estado_provincia']) !!}
+            {!! Form::text('domicilioExt[estadoprovincia]',isset($domicilio) ? $domicilio->entidad : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. México',  'id' => 'estado_provincia']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -156,8 +156,8 @@
 <h5> ACTIVIDAD LABORAL DE LA PAREJA </h5>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('actividadLaboral.sector_id', 'Ámbito / Sector :  *') !!}</strong>
-        {!! Form::select('actividadLaboral[sector_id]', $sectores,isset($experienciaLaboral->sector_id) ? $experienciaLaboral->sector_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'ambito-sector']) !!}
+        <strong>{!! Form::label('actividadLaboral.ambito_sector_id', 'Ámbito / Sector :  *') !!}</strong>
+        {!! Form::select('actividadLaboral[ambito_sector_id]', $sectores,isset($experienciaLaboral->ambito_sector_id) ? $experienciaLaboral->ambito_sector_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'ambito-sector', 'placeholder' => "SELECCIONA UNA OPCIÓN", "required" => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -175,7 +175,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('actividadLaboral.rfc', 'RFC: *') !!}</strong>
-            {!! Form::text('actividadLaboral[rfc]',isset($experienciaLaboral->rfc) ? $experienciaLaboral->rfc : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. XXX0101001010',  'id' => 'codigo_postalExt']) !!}
+            {!! Form::text('actividadLaboral[rfc]',isset($experienciaLaboral->rfc) ? $experienciaLaboral->rfc : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. XXX0101001010',  'id' => 'codigo_postalExt', 'pattern' => '([A-Z]{3}[0-9]{9})']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -187,7 +187,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('actividadLaboral.sector_id','Sector al que pertenece: *') !!}</strong>
-            {!! Form::select('actividadLaboral[sector_id]', $sector, isset($experienciaLaboral->sector_id) ? $experienciaLaboral->sector_id : null,['class'=>'form-control text-uppercase', 'id' => 'sector-privado']) !!}
+            {!! Form::select('actividadLaboral[sector_id]', $sector, isset($experienciaLaboral->sector_id) ? $experienciaLaboral->sector_id : null,['class'=>'form-control text-uppercase', 'id' => 'sector-privado', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4 especifique-sector">
@@ -204,7 +204,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('actividadLaboral.respuesta_proveedor_id','¿Es proveedor o contratista de gobierno? *') !!}</strong>
-            {!! Form::select('actividadLaboral[respuesta_proveedor_id]', $respuesta, isset($experienciaLaboral->respuesta_proveedor_id) ? $experienciaLaboral->respuesta_proveedor_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt']) !!}
+            {!! Form::select('actividadLaboral[respuesta_proveedor_id]', $respuesta, isset($experienciaLaboral->respuesta_proveedor_id) ? $experienciaLaboral->respuesta_proveedor_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -213,12 +213,12 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('nivel_orden_gobierno_id', 'Nivel / Orden de Gobierno: * ') !!}</strong>
-            {!! Form::select('actividadLaboral[nivel_orden_gobierno_id]', $nivelOrdenGobierno,isset($experienciaLaboral->nivel_orden_gobierno_id) ? $experienciaLaboral->nivel_orden_gobierno_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt']) !!}
+            {!! Form::select('actividadLaboral[nivel_orden_gobierno_id]', $nivelOrdenGobierno,isset($experienciaLaboral->nivel_orden_gobierno_id) ? $experienciaLaboral->nivel_orden_gobierno_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('ambito_publico_id', 'Ámbito Público: *') !!}</strong>
-            {!! Form::select('actividadLaboral[ambito_publico_id]', $ambito, isset($experienciaLaboral->ambito_publico_id) ? $experienciaLaboral->ambito_publico_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt']) !!}
+            {!! Form::select('actividadLaboral[ambito_publico_id]', $ambito, isset($experienciaLaboral->ambito_publico_id) ? $experienciaLaboral->ambito_publico_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -260,16 +260,12 @@
 <div class="form-row">
     <div class="form-group col-md-12">
         <strong>{!! Form::label('datosPareja.observaciones', 'Aclaraciones / Observaciones:  *') !!}</strong>
-        {!! Form::textarea('datosPareja[observaciones]', isset($pareja->observaciones) ? $pareja->observaciones : null, ['class'=>'form-control alert-danger']) !!}
+        {!! Form::textarea('datosPareja[observaciones]', isset($pareja->observaciones) ? $pareja->observaciones : null, ['class'=>'form-control alert-danger  text-uppercase']) !!}
     </div>
 </div>
-<div class="form-row">
-    <div class="col">
-        {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-    </div>
-    <div class="col">
-        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
-    </div>
+<div class="text-center">
+    {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+    {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light', 'id' => 'datos-pareja-submit'] )}}
 </div>
 
 @section('scripts')
@@ -294,35 +290,48 @@
             $('#lugar-reside').change(function () {
                 if (parseInt($(this).val()) === 1) {
                     $('.domicilio-MXBinmuebles').show();
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", true);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", true);
                     $('.domicilio-EXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", false);
+
                 } else if (parseInt($(this).val()) === 2) {
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').show();
                     $('#municipio_id').find("option").remove();
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", true);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", true);
                 } else {
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-EXBinmuebles').find("select").val("");
                     $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("select").val("");
                     $('#municipio_id').find("option").remove();
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", false);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", false);
                 }
             });
             $('.lugar-reside-change').change(function () {
                 if (parseInt($(this).val()) === 1) {
                     $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-EXBinmuebles').find("select").val("");
                 } else if (parseInt($(this).val()) === 2) {
                     $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("select").val("");
                 } else {
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-EXBinmuebles').find("select").val("");
                     $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("select").val("");
                 }
             });
             $("#entidad_id").on('change', function () {
@@ -350,34 +359,51 @@
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-EXBinmuebles').find("select").val("");
                     $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
-                    $("#lugar-reside").val("0");
+                    $('.domicilio-MXBinmuebles').find("select").val("");
+                    $("#lugar-reside").val("");
                     $(".lugar-reside").hide();
+                    $(".lugar-reside").prop("required", false);
                 } else {
                     $(".lugar-reside").show();
+                    $(".lugar-reside").prop("required", true);
                     $("#lugar-reside").change();
-
                 }
             });
             $("#ambito-sector").change(function () {
                 const sector = parseInt($(this).val());
                 if (sector === 1) {
                     $(".sector-privado-otro").hide();
+                    $(".sector-privado-otro").find("select").prop("required", false);
+                    $(".sector-privado-otro").find("input").prop("required", false);
                     $(".sector-publico").show();
+                    $(".sector-publico").find("select").prop("required", true);
+                    $(".sector-publico").find("input").prop("required", true);
+                    $(".sector-privado-otro").find("select").val("");
+                    $(".sector-privado-otro").find("input").val("");
                 } else if (sector === 2 || sector === 3) {
                     $(".sector-privado-otro").show();
                     $(".sector-publico").hide();
+                    $(".sector-publico").find("input").val("");
+                    $(".sector-publico").find("select").val("");
+                    $(".sector-privado-otro").find("select").val("");
+                    $(".sector-privado-otro").find("input").val("");
+                    $(".sector-privado-otro").find("select").prop("required", true);
+                    $(".sector-privado-otro").find("input").prop("required", true);
+                    $(".sector-publico").find("select").prop("required", false);
+                    $(".sector-publico").find("input").prop("required", false);
                 }
             });
             $("#sector-privado").change(function () {
                 const sector = parseInt($(this).val());
                 if (sector === 17) {
                     $(".especifique-sector").show();
+                    $("#especifique-sector").prop("required", true);
                 } else {
                     $(".especifique-sector").hide();
                     $("#especifique-sector").val("");
+                    $("#especifique-sector").prop("required", false);
                 }
             });
             @isset($pareja)
