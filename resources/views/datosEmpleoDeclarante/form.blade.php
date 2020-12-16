@@ -55,7 +55,7 @@
             <strong> {!! Form::label('', 'Teléfono de oficina y extensión: *') !!}</strong>
         </div>
         <div class="form-group col-md-4">
-            {!! Form::number('datos_empleo_declarante[telefono_oficina]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->telefono_oficina :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 5555555555',  'id' => 'telefono_oficina', 'required' => 'true', 'pattern' => "[0-9]{10}",'title' => "Ingresa el número a 10 dígitos"]) !!}
+            {!! Form::number('datos_empleo_declarante[telefono_oficina]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->telefono_oficina :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 5555555555',  'id' => 'telefono_oficina', 'required' => 'true', 'pattern' => "[0-9]{10}",'title' => "Ingresa el número a 10 dígitos", 'maxleng' =>'10']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
