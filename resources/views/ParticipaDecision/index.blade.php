@@ -27,26 +27,26 @@
                             <table class="table table-active table-striped">
                                 <thead class="badge-primary">
                                 <tr class="text-center">
-                                    <th scope="col" width="20%">Títular</th>
-                                    <th scope="col" width="20%">Tipo de institución </th>
-                                    <th scope="col" width="40%">Información adicional</th>
-                                    <th scope="col" width="20%">Acciones</th></tr>
+                                    <th scope="col" width="20%">TITULAR</th>
+                                    <th scope="col" width="20%">TIPO DE INSTITUCIÓN </th>
+                                    <th scope="col" width="40%">INFORMACIÓN ADICIONAL</th>
+                                    <th scope="col" width="20%">ACCIONES</th></tr>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($participaciones as $participaciones)
                                     <tr class="text-center">
                                         <td>
-                                            <center>{{$participaciones->tipoRelaciones->valor}}</center>
+                                            <center>{{strtoupper($participaciones->tipoRelaciones->valor)}}</center>
                                         </td>
                                         <td>
-                                            <center>{{$participaciones->tipoInstituciones->valor}}</center>
+                                            <center>{{strtoupper($participaciones->tipoInstituciones->valor)}}</center>
                                         </td>
                                         <td>
                                             <center>
-                                                <strong>Nombre institucion:</strong> {{$participaciones->nombre_institucion}} <br>
-                                                <strong>Puesto / rol:</strong> {{$participaciones->puesto_rol}}<br>
-                                                <strong>Monto mensual neto:</strong>{{$participaciones->monto_mensual}}
+                                                <strong>NOMBRE INSTITUCIÓN:</strong> {{strtoupper($participaciones->nombre_institucion)}} <br>
+                                                <strong>PUESTO / ROL:</strong> {{strtoupper($participaciones->puesto_rol)}}<br>
+                                                <strong>MONTO MENSUAL NETO:</strong>{{strtoupper($participaciones->monto_mensual)}}
                                             </center>
                                         </td>
                                         <td class="all">
@@ -79,68 +79,42 @@
                                 <strong>Para registrar información pulse: </strong><a
                                     href="{{route('participacion.create')}}"
                                     class="btn btn-sm btn-secondary ">Agregar</a><br>
-                                <strong>Si no participa en la toma de decisiones de insituciiones <a href="{{route('prestamos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                                <strong>Si no participa en la toma de decisiones de insituciiones <a href="{{route('participacion.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                             </label>
                         </div>
-
-
-
                     @endif
-
-
                     <div class="text-center">
                         <br>
-                        <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                            sección
-                            anterior</a>
-                        <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                            siguiente sección</a>
+                        <a href="{{route("participacion_empresas.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                        <a href="{{route("apoyo_beneficio.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                     </div>
                 </div>
+            </div>
+        </div>
+@endsection
 
 
+@section('scripts')
+    <script>
+        $('.btn-ninguno').on('click', function (e) {
+            let that = this;
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    Swal.fire({
+                        text: 'No se registró información en este apartado. Si desea registrar Participación en la toma de decisiones de alguna institución pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        icon: 'warning',
+                        cancelButtonText: 'Aceptar'
+                    });
+                }
+            });
+        });
+    </script>
+@endsection
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                        </div>
-                                        </div>
-
-
-                                        @endsection

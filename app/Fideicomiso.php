@@ -40,4 +40,8 @@ class Fideicomiso extends Model
     public function tipoPersonaFideicomisos(){
         return $this->belongsTo(tipoPersonaFideicomiso::class);
     }
+
+    public function Entidades(){
+        return $this->belongsTo(Entidad::class);
+    }
 }

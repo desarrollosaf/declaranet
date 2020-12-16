@@ -4,19 +4,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Titular de la participación:</strong></label>
-                    {!! Form::select('fideicomisos[tipo_relaciones_id]', $participacion, isset($fideicomisos) ? $fideicomisos->tipo_relaciones_id : [],['class'=>'form-control',  'id' => 'tipo_relaciones_id']) !!}
+                    {!! Form::select('fideicomisos[tipo_relaciones_id]', $participacion, isset($fideicomisos) ? $fideicomisos->tipo_relaciones_id : [],['class'=>'form-control',  'id' => 'tipo_relaciones_id', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Tipo de fideicomiso:</strong></label>
-                    {!! Form::select('fideicomisos[tipo_fideicomisos_id]', $fideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_fideicomisos_id : [],['class'=>'form-control',  'id' => 'tipo_fideicomisos_id']) !!}
+                    {!! Form::select('fideicomisos[tipo_fideicomisos_id]', $fideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_fideicomisos_id : [],['class'=>'form-control',  'id' => 'tipo_fideicomisos_id', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>Tipo de participación:</strong></label>
-                    {!! Form::select('fideicomisos[tipo_participacion_fideicomisos_id]', $tipoPfideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_participacion_fideicomisos_id : [],['class'=>'form-control',  'id' => 'tipo_participacion_fideicomisos_id']) !!}
+                    {!! Form::select('fideicomisos[tipo_participacion_fideicomisos_id]', $tipoPfideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_participacion_fideicomisos_id : [],['class'=>'form-control',  'id' => 'tipo_participacion_fideicomisos_id', 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -27,19 +27,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Tipo de persona del fideicomiso:</strong></label>
-                    {!! Form::select('fideicomisos[tipo_persona_fideicomiso]', $tipoPersonaFideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomiso : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomiso']) !!}
+                    {!! Form::select('fideicomisos[tipo_persona_fideicomiso]', $tipoPersonaFideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomiso : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomiso', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_fideicomiso">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Nombre de la persona fisica:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_persona_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_persona_fisica']) !!}
+                    {!! Form::text('fideicomisos[nombre_persona_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Hernandez.',   'id' => 'nombre_persona_fisica']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_fideicomiso">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC de la persona fisica:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_persona_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'rfc_persona_fisica']) !!}
+                    {!! Form::text('fideicomisos[rfc_persona_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_persona_fisica']) !!}
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
             <div class="col-lg-4" id="moral_fideicomiso" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC de la persona moral:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_persona_moral]', isset($fideicomisos) ? $fideicomisos->rfc_persona_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'rfc_persona_moral']) !!}
+                    {!! Form::text('fideicomisos[rfc_persona_moral]', isset($fideicomisos) ? $fideicomisos->rfc_persona_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_persona_moral']) !!}
                 </div>
             </div>
         </div>
@@ -63,19 +63,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Fideicomitente:</strong></label>
-                    {!! Form::select('fideicomisos[tipo_persona_fideicomitente]', $tipoPersonaFideicomisoD, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomitente : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomitente']) !!}
+                    {!! Form::select('fideicomisos[tipo_persona_fideicomitente]', $tipoPersonaFideicomisoD, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomitente : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomitente', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_Fideicomitente">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Nombre del fideicomitente:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_fideicomitente_fisica']) !!}
+                    {!! Form::text('fideicomisos[nombre_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Perez',   'id' => 'nombre_fideicomitente_fisica']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_Fideicomitente">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomitente:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'rfc_fideicomitente_fisica']) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fideicomitente_fisica']) !!}
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
             <div class="col-lg-4" id="moral_Fideicomitente" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomitente:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomitente_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'rfc_fideicomitente_moral']) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomitente_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fideicomitente_moral']) !!}
                 </div>
             </div>
         </div>
@@ -99,19 +99,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Fiduciario:</strong></label>
-                    {!! Form::select('fideicomisos[tipo_persona_fiduciario]', $tipoPersonaFideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_persona_fiduciario : [],['class'=>'form-control',  'id' => 'tipo_persona_fiduciario']) !!}
+                    {!! Form::select('fideicomisos[tipo_persona_fiduciario]', $tipoPersonaFideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_persona_fiduciario : [],['class'=>'form-control',  'id' => 'tipo_persona_fiduciario', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_Fiduciario">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Nombre del fiduciario:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_fiduciario_fisica']) !!}
+                    {!! Form::text('fideicomisos[nombre_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Perez',   'id' => 'nombre_fiduciario_fisica']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_Fiduciario">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fiduciario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'rfc_fiduciario_fisica']) !!}
+                    {!! Form::text('fideicomisos[rfc_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fiduciario_fisica']) !!}
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
             <div class="col-lg-4" id="moral_Fiduciario" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fiduciario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fiduciario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'rfc_fiduciario_moral']) !!}
+                    {!! Form::text('fideicomisos[rfc_fiduciario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fiduciario_moral']) !!}
                 </div>
             </div>
         </div>
@@ -135,19 +135,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Fideicomisario:</strong></label>
-                    {!! Form::select('fideicomisos[tipo_persona_fideicomisario]', $tipoPersonaFideicomisoD, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomisario : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomisario']) !!}
+                    {!! Form::select('fideicomisos[tipo_persona_fideicomisario]', $tipoPersonaFideicomisoD, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomisario : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomisario', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_Fideicomisario">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Nombre del fideicomisario:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_fideicomisario_fisica']) !!}
+                    {!! Form::text('fideicomisos[nombre_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Perez',   'id' => 'nombre_fideicomisario_fisica']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_Fideicomisario">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomisario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'rfc_fideicomisario_fisica']) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fideicomisario_fisica']) !!}
                 </div>
             </div>
 
@@ -160,7 +160,7 @@
             <div class="col-lg-4" id="moral_Fideicomisario" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomisario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomisario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'rfc_fideicomisario_moral']) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomisario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fideicomisario_moral']) !!}
                 </div>
             </div>
         </div>
@@ -171,7 +171,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Sector al que pertenece:</strong></label>
-                    {!! Form::select('fideicomisos[sectores_id]', $sector, isset($fideicomisos) ? $fideicomisos->sectores_id : [],['class'=>'form-control',  'id' => 'sectores_id']) !!}
+                    {!! Form::select('fideicomisos[sectores_id]', $sector, isset($fideicomisos) ? $fideicomisos->sectores_id : [],['class'=>'form-control',  'id' => 'sectores_id', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -184,7 +184,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>¿Dónde se localiza el fideicomiso?</strong></label>
-                    {!! Form::select('fideicomisos[lugares_ubicacion_id]', $lugar, isset($fideicomisos) ? $fideicomisos->lugares_ubicacion_id : [],['class'=>'form-control',  'id' => 'lugares_ubicacion_id']) !!}
+                    {!! Form::select('fideicomisos[lugares_ubicacion_id]', $lugar, isset($fideicomisos) ? $fideicomisos->lugares_ubicacion_id : [],['class'=>'form-control',  'id' => 'lugares_ubicacion_id', 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -195,7 +195,7 @@
             <div class="col-lg-4" id="mx">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Entidad federativa:</strong></label>
-                    {!! Form::text('fideicomisos[entidad_federativa]', isset($fideicomisos) ? $fideicomisos->entidad_federativa : null,['class'=>'form-control', 'placeholder'=>'P. ej. México',   'id' => 'entidad_federativa', 'disabled'=> 'disabled']) !!}
+                    {!! Form::select('fideicomisos[entidades_id]', $entidad, isset($fideicomisos) ? $fideicomisos->entidades_id : [],['class'=>'form-control',  'id' => 'entidades_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="ex" style="display: none;">
@@ -231,7 +231,7 @@
     <div id="crearF" style="display: none;">
         <div class="form-row">
             <div class="col">
-                {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+                <a href="{{route("beneficios_privados.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
             </div>
             <div class="col">
                 {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
@@ -376,7 +376,7 @@
             $("#tipo_relaciones_id").change();
             document.getElementById("edit").style.display="block";
             document.getElementById("crearF").style.display="none";
-        }else{
+        }else if($("#accion").val() == "crear"){
             document.getElementById("crearF").style.display="block";
             document.getElementById("edit").style.display="none";
         }

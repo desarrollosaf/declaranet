@@ -32,7 +32,8 @@ class CreateBeneficioPrivadosTable extends Migration
             $table->string('rfc_otorgante')->nullable();
             $table->unsignedBigInteger('forma_recepcion_id');
             $table->foreign('forma_recepcion_id')->references('id')->on('forma_recepciones');
-            $table->string('tipo_moneda')->nullable();
+            $table->unsignedBigInteger('tipo_monedas_id');
+            $table->foreign('tipo_monedas_id')->references('id')->on('tipo_monedas');
             $table->string('especie')->nullable();
             $table->string('monto_mensual')->nullable();
             $table->string('aclaraciones')->nullable();

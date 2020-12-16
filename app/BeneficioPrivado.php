@@ -24,4 +24,8 @@ class BeneficioPrivado extends Model
     public function formaRecepcion(){
         return $this->belongsTo(formaRecepcion::class);
     }
+
+    public function tipoMonedas(){
+        return $this->belongsTo(tipoMoneda::class);
+    }
 }

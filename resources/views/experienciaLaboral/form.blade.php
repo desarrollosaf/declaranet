@@ -8,7 +8,7 @@
         <strong> {!! Form::label('experiencia[ambito_sector_id]', 'Ámbito / Sector en el que laboraste: *') !!}</strong>
     </div>
     <div class="form-group col-md-5">
-        {!! Form::select('experiencia[ambito_sector_id]', $ambitos_sectores, isset($experiencia) ? $experiencia->ambito_sector_id : null,['class'=>'form-control text-uppercase','id' => 'ambito_sector_id', 'required' => 'required','placeholder' => 'Selecciona una opción']) !!}
+        {!! Form::select('experiencia[ambito_sector_id]', $ambitos_sectores, isset($experiencia) ? $experiencia->ambito_sector_id : [],['class'=>'form-control text-uppercase','id' => 'ambito_sector_id', 'placeholder' => 'Selecciona una opción']) !!}
     </div>
 </div>
 <div class="row">

@@ -8,6 +8,7 @@
             <h6> (Hasta los últimos dos años)</h6>
         </div>
         <div class="card-body">
+            @if(count($fideicomisos))
             <table class="table table-bordered table-striped">
                 <thead class="text-center text-light">
                 <tr>
@@ -17,7 +18,6 @@
                     <th scope="col" width="20%">Acciones</th></tr>
                 </thead>
                 <tbody class="text-center">
-                @if($fideicomisos)
                     @foreach($fideicomisos as $fideicomiso)
 
                         <tr>
@@ -48,20 +48,29 @@
                             </td>
                         </tr>
                     @endforeach
-                @endif
                 </tbody>
             </table>
-                <div class="col-md-12">
-                    <center>
-                        Para adicionar información pulse <a class="btn btn-submit btn-sm text-light" href="{{route('fideicomisos.create')}}">Agregar</a>, de lo contrario vaya al siguiente apartado
-                    </center>
+                <center>
+                    <strong>Para adicionar información pulse <a href="{{route('fideicomisos.create')}}" class="btn btn-sm btn-secondary">Agregar</a> </strong>
+                </center>
+            @else
+                <div class="alert alert-danger text-center" role="alert">
+                    <div class="col-md-12">
+                        <center>
+                            <strong>Para adicionar información pulse <a class="btn btn-sm btn-secondary" href="{{route('fideicomisos.create')}}">Agregar</a></strong>
+                            <br><br>
+                            <strong>Si no tiene fideicomisos, seleccione  <a href="{{route('fideicomisos.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                        </center>
+                    </div>
                 </div>
+            @endif
                 <br><br>
                 <div class="col-md-12">
-                    <center>
-                        <button class="btn btn-submit btn-sm text-light">Ir a la sección anterior</button>
-                        <button class="btn btn-submit btn-sm text-light">Ir a la siguiente sección</button>
-                    </center>
+                    <div class="text-center">
+                        <br>
+                        <a href="{{route("beneficios_privados.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                        <a href="{{route("fideicomisos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,5 +94,24 @@
             }
         });
     });
-</script>
+
+        $('.btn-ninguno').on('click', function (e) {
+            let that = this;
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    Swal.fire({
+                        text: 'No se registró información en este apartado. Si desea registrar Fideicomisos del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        icon: 'warning',
+                        cancelButtonText: 'Aceptar'
+                    });
+                }
+            });
+        });
+    </script>
 @endsection

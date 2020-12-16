@@ -11,6 +11,7 @@ use App\BeneficioPrivado;
 use App\Declaracion;
 use App\RegimenFiscal;
 use Illuminate\Support\Arr;
+use App\tipoMoneda;
 
 class BeneficiosPrivadosController extends Controller
 {
@@ -40,38 +41,39 @@ class BeneficiosPrivadosController extends Controller
     {
         $beneficio = tipoBeneficio::all();
         $tipoBeneficio = [];
-        $tipoBeneficio[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($beneficio as $item){
             $tipoBeneficio[$item->id] = $item->valor;
         }
         $beneficiario = beneficiariosPrograma::all();
         $beneficiarios = [];
-        $beneficiarios[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($beneficiario as $item){
             $beneficiarios[$item->id] = $item->valor;
         }
 
         $sector = sector::all();
         $sectoProductivo = [];
-        $sectoProductivo[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($sector as $item){
             $sectoProductivo[$item->id] = $item->valor;
         }
 
         $otorganteBeneficio = RegimenFiscal::all();
         $otorgante = [];
-        $otorgante[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($otorganteBeneficio as $item){
             $otorgante[$item->id] = $item->valor;
         }
 
         $recepcion = formaRecepcion::all();
         $formaRecepcion = [];
-        $formaRecepcion[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($recepcion as $item){
             $formaRecepcion[$item->id] = $item->valor;
         }
-        return view("beneficiosPrivados.create", compact("tipoBeneficio","beneficiarios", "sectoProductivo", "otorgante", "formaRecepcion"));
+
+        $tipoMoneda = tipoMoneda::all();
+        $moneda = [];
+        foreach ($tipoMoneda as $item){
+            $moneda[$item->id] = $item->valor;
+        }
+        return view("beneficiosPrivados.create", compact("tipoBeneficio","beneficiarios", "sectoProductivo", "otorgante", "formaRecepcion",'moneda'));
 
     }
 
@@ -114,7 +116,8 @@ class BeneficiosPrivadosController extends Controller
         $sectoProductivo = Arr::pluck(sector::all(), 'valor','id');
         $otorgante = Arr::pluck(RegimenFiscal::all(),'valor','id');
         $formaRecepcion = Arr::pluck(formaRecepcion::all(), 'valor','id');
-        return view("beneficiosPrivados.edit", compact('beneficio', 'beneficiarios','sectoProductivo','otorgante','formaRecepcion','tipoBeneficio'));
+        $moneda = Arr::pluck(tipoMoneda::all(), 'valor','id');
+        return view("beneficiosPrivados.edit", compact('beneficio', 'beneficiarios','sectoProductivo','otorgante','formaRecepcion','tipoBeneficio','moneda'));
 
     }
 

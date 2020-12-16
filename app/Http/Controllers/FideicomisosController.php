@@ -13,6 +13,7 @@ use App\Pais;
 use App\tipoFideicomiso;
 use App\tipoPersonaFideicomiso;
 use App\Declaracion;
+use App\Entidad;
 
 class FideicomisosController extends Controller
 {
@@ -92,7 +93,9 @@ class FideicomisosController extends Controller
             $tipoPersonaFideicomisoD[$item->id] = $item->tipo_persona_fideicomiso;
         }
 
-        return view("Fideicomisos.create",compact('participacion','tipoPfideicomiso','tipoPersonaFideicomiso','sector','lugar','pais', 'fideicomiso','tipoPersonaFideicomisoD'));
+        $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
+
+        return view("Fideicomisos.create",compact('participacion','tipoPfideicomiso','tipoPersonaFideicomiso','sector','lugar','pais', 'fideicomiso','tipoPersonaFideicomisoD','entidad'));
 
     }
 
@@ -138,8 +141,9 @@ class FideicomisosController extends Controller
         $pais = Arr::pluck(Pais::all(), 'valor','id');
         $fideicomiso = Arr::pluck(tipoFideicomiso::all(), 'valor','id');
         $tipoPersonaFideicomisoD = Arr::pluck(tipoPersonaFideicomiso::all(), 'tipo_persona_fideicomiso','id');
+        $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
 
-        return view("Fideicomisos.edit", compact( 'fideicomisos','participacion','tipoPfideicomiso','tipoPersonaFideicomiso','sector','lugar','pais','fideicomiso','tipoPersonaFideicomisoD'));
+        return view("Fideicomisos.edit", compact( 'fideicomisos','participacion','tipoPfideicomiso','tipoPersonaFideicomiso','sector','lugar','pais','fideicomiso','tipoPersonaFideicomisoD','entidad'));
     }
 
     /**

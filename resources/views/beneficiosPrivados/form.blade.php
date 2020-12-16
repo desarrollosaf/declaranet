@@ -1,7 +1,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
        <strong> {!! Form::label('tipo_beneficio_id', 'Tipo de beneficio:') !!}</strong>
-        {!! Form::select('beneficio_privado[tipo_beneficio_id]',$tipoBeneficio, isset($beneficio) ? $beneficio->tipo_beneficio_id : [],['class'=>'form-control', 'placeholder'=>'',  'id' => 'tipo_beneficio_id']) !!}
+        {!! Form::select('beneficio_privado[tipo_beneficio_id]',$tipoBeneficio, isset($beneficio) ? $beneficio->tipo_beneficio_id : [],['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'tipo_beneficio_id', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -11,7 +11,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('beneficiario_id', 'Beneficiario:') !!}</strong>
-        {!! Form::select('beneficio_privado[beneficiario_id]', $beneficiarios, isset($beneficio) ? $beneficio->beneficiario_id : [],['class'=>'form-control', 'placeholder'=>'',  'id' => 'beneficiario_id']) !!}
+        {!! Form::select('beneficio_privado[beneficiario_id]', $beneficiarios, isset($beneficio) ? $beneficio->beneficiario_id : [],['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'beneficiario_id', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -24,7 +24,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('sector_id', 'Sector productivo al que pertenece:') !!}</strong>
-        {!! Form::select('beneficio_privado[sector_id]',$sectoProductivo, isset($beneficio) ? $beneficio->sector_id : [],['class'=>'form-control', 'placeholder'=>'',  'id' => 'sector_id']) !!}
+        {!! Form::select('beneficio_privado[sector_id]',$sectoProductivo, isset($beneficio) ? $beneficio->sector_id : [],['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'sector_id', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -37,7 +37,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>  {!! Form::label('otorgante_id', 'Otorgante:') !!}</strong>
-        {!! Form::select('beneficio_privado[otorgante_id]', $otorgante, isset($beneficio) ? $beneficio->otorgante_id : [],['class'=>'form-control', 'placeholder'=>'',  'id' => 'otorgante_id']) !!}
+        {!! Form::select('beneficio_privado[otorgante_id]', $otorgante, isset($beneficio) ? $beneficio->otorgante_id : [],['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'otorgante_id', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="fisicaN">
@@ -66,12 +66,12 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>  {!! Form::label('forma_recepcion_id', 'Forma de recepción del beneficio:') !!}</strong>
-        {!! Form::select('beneficio_privado[forma_recepcion_id]',$formaRecepcion, isset($beneficio) ? $beneficio->forma_recepcion_id : [],['class'=>'form-control', 'placeholder'=>'',  'id' => 'forma_recepcion_id']) !!}
+        {!! Form::select('beneficio_privado[forma_recepcion_id]',$formaRecepcion, isset($beneficio) ? $beneficio->forma_recepcion_id : [],['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'forma_recepcion_id', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="moneda">
         <strong>  {!! Form::label('tipo_moneda', 'Tipo de moneda:') !!}</strong>
-        {!! Form::text('beneficio_privado[tipo_moneda]',isset($beneficio) ? $beneficio->tipo_moneda :null,['class'=>'form-control', 'placeholder'=>'p. ej. Peso Mexicano',  'id' => 'tipo_moneda', 'disabled' => 'disabled' ]) !!}
+        {!! Form::select('beneficio_privado[tipo_monedas_id]',$moneda, isset($beneficio) ? $beneficio->tipo_monedas_id : [],['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'tipo_monedas_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="especie" style="display: none;">
@@ -104,7 +104,7 @@
 <div id="crearF" style="display: none;">
     <div class="form-row">
         <div class="col">
-            {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+            <a href="{{route("beneficios_privados.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
         </div>
         <div class="col">
             {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}

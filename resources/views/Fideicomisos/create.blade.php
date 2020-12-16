@@ -14,7 +14,6 @@
 
             {!! Form::open(['route'=>'fideicomisos.store', 'method'=>'POST', 'role' => 'form','id' => 'frmFideicomisos']) !!}
            @include('Fideicomisos.form')
-           <center> {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light submitForm'] )}}</center>
            {!! Form::close() !!}
         </div>
     </div>

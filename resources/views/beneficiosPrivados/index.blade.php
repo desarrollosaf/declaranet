@@ -24,10 +24,10 @@
                     <table class="table table-active table-striped">
                         <thead class="badge-primary">
                         <tr class="text-center">
-                            <th scope="col" width="20%">Tipo de beneficio</th>
-                            <th scope="col" width="20%">Beneficiario</th>
-                            <th scope="col" width="40%">Información adicional</th>
-                            <th scope="col" width="20%">Acciones</th></tr>
+                            <th scope="col" width="20%">TIPO DE BENEFICIO</th>
+                            <th scope="col" width="20%">BENEFICIARIO</th>
+                            <th scope="col" width="40%">INFORMACIÓN ADICIONAL</th>
+                            <th scope="col" width="20%">ACCIONES</th></tr>
                         </tr>
                         </thead>
                         <tbody>
@@ -37,9 +37,9 @@
                                 <td>{{$beneficio->beneficiariosP->valor}}</td>
                                 <td>
                                     <center>
-                                        <strong>Sector: </strong> {{$beneficio->sectoresP->valor}} <br>
-                                        <strong>Nombre del otorgante:</strong> {{$beneficio->nombre_otorgante}} {{$beneficio->razon_social_otorgante}}<br>
-                                        <strong>Forma de recepción:</strong> {{$beneficio->formaRecepcion->valor}}
+                                        <strong>SECTOR: </strong> {{strtoupper($beneficio->sectoresP->valor)}} <br>
+                                        <strong>NOMBRE DEL OTORGANTE:</strong> {{strtoupper($beneficio->nombre_otorgante)}} {{strtoupper($beneficio->razon_social_otorgante)}}<br>
+                                        <strong>FORMA DE RECEPCIÓN:</strong> {{strtoupper($beneficio->formaRecepcion->valor)}}
                                     </center>
                                 </td>
                                 <td class="all">
@@ -72,8 +72,8 @@
                     <label style="margin-top:10px;">
                         <strong>Para registrar información pulse: </strong><a
                             href="{{route('beneficios_privados.create')}}"
-                            class="btn btn-sm btn-secondary ">Agregar</a><br>
-                        <strong>Si no recibe beneficios privados, seleccione <a href="{{route('prestamos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                            class="btn btn-sm btn-secondary ">Agregar</a><br><br>
+                        <strong>Si no recibe beneficios privados, seleccione <a href="{{route('beneficios_privados.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                     </label>
                 </div>
 
@@ -84,35 +84,84 @@
 
             <div class="text-center">
                 <br>
-                <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                <a href="{{route("clientes_principales.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                     sección
                     anterior</a>
-                <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                <a href="{{route("fideicomisos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                     siguiente sección</a>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
+@endsection
+    @section('scripts')
+        <script>
+            $('.btn-borrar').on('click', function (e) {
+                let that = this;
+                e.preventDefault();
+                Swal.fire({
+                    title: '¿Está seguro?',
+                    text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                });
+            });
+
+            $('.btn-ninguno').on('click', function (e) {
+                let that = this;
+                e.preventDefault();
+                Swal.fire({
+                    title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed){
+                        Swal.fire({
+                            text: 'No se registró información en este apartado. Si desea registrar Beneficios Privados del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                            icon: 'warning',
+                            cancelButtonText: 'Aceptar'
+                        });
+                    }
+                });
+            });
+        </script>
+@endsection
+    @section('scripts')
+        <script>
+            $('.btn-borrar').on('click', function (e) {
+                let that = this;
+                e.preventDefault();
+                Swal.fire({
+                    title: '¿Está seguro?',
+                    text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed){
+                        $(that).closest('form').submit();
+                    }
+                });
+            });
+
+            $('.btn-ninguno').on('click', function (e) {
+                let that = this;
+                e.preventDefault();
+                Swal.fire({
+                    title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed){
+                        Swal.fire({
+                            text: 'No se registró información en este apartado. Si desea registrar Fideicomisos del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                            icon: 'warning',
+                            cancelButtonText: 'Aceptar'
+                        });
+                    }
+                });
+            });
+        </script>
 @endsection

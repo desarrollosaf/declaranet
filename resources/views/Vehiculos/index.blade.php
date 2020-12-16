@@ -89,8 +89,6 @@
 
 @section('scripts')
     <script>
-
-
         $('.btn-ninguno').on('click', function (e) {
             let that = this;
             e.preventDefault();
