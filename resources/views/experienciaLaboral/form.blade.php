@@ -1,9 +1,4 @@
 <div class="row">
-    <div class="col-md-12">
-        <h5> EMPLEO, CARGO O COMISIÓN / PUESTO</h5>
-        <hr>
-    </div>
-    <hr>
     <div class="col-md-5">
         <strong> {!! Form::label('experiencia[ambito_sector_id]', 'Ámbito / Sector en el que laboraste: *') !!}</strong>
     </div>
@@ -62,7 +57,7 @@
     </div>
     <div class="form-group col-md-4 PÚBLICO">
         <strong>{!! Form::label('funcion_principal', 'Especifique función principal  *') !!}</strong>
-        {!! Form::text('experiencia[funcion_principal]',isset($experiencia) ? $experiencia->funcion_principal : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. DESARROLLO DE SISTEMAS DE INFORMACIÓN.','id' => 'funcion_principal', 'required' => true]) !!}
+        {!! Form::text('experiencia[funcion_pricipal]',isset($experiencia) ? $experiencia->funcion_pricipal : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. DESARROLLO DE SISTEMAS DE INFORMACIÓN.','id' => 'funcion_pricipal', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 AMBOS">
@@ -90,18 +85,20 @@
     </div>
 </div>
 
-<div id="edit" style="display: none;">
+<div id="edit" style="display: none;" class="all text-center">
     <div class="form-row">
         <div class="col">
-            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
         </div>
     </div>
 </div>
-<div id="crearF"  style="display: none;">
+<div id="crearF"  style="display: none;" class="all text-center">
     <div class="text-center">
         <br>
-        <a href="{{route("experiencia_laboral.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
-            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-sm btn-submit text-light'] )}}
+        <a href="{{route("experiencia_laboral.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
+            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
+
+    </div>
     </div>
 </div>
-<DIV></DIV>
+

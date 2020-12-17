@@ -16,12 +16,6 @@
 @endsection
 @section('scripts')
 <script>
-    $(document).ready(function(){
-        $(".PRIVADO").hide();
-        $(".PÚBLICO").hide();
-        $(".AMBOS").hide();
-        $("#ambito_sector_id").change();
-    });
     $("#ambito_sector_id").on("change", function () {
         if ($(this).val() == "2") {
             $(".PRIVADO").show();
@@ -34,11 +28,12 @@
             $("#cargo_comision").prop("required", false);
             $("#funcion_principal").prop("required", false);
 
-            $("#nombre_empresa").val("");
-            $("#rfc").val("");
-            $("#area").val("");
-            $("#puesto").val("");
-            $("#sector_id").val("");
+            $("#nivel_orden_gobierno_id").val("");
+            $("#ambito_publico_id").val("");
+            $("#ente_publico").val("");
+            $("#area_adscripcion").val("");
+            $("#cargo_comision").val("");
+            $("#funcion_principal").val("");
         } else if($(this).val() == "1") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").show();
@@ -49,12 +44,12 @@
             $("#puesto").prop("required", false);
             $("#sector_id").prop("required", false);
 
-            $("#nivel_orden_gobierno_id").val("");
-            $("#ambito_publico_id").val("");
-            $("#ente_publico").val("");
-            $("#area_adscripcion").val("");
-            $("#cargo_comision").val("");
-            $("#funcion_principal").val("");
+            $("#nombre_empresa").val("");
+            $("#rfc").val("");
+            $("#area").val("");
+            $("#puesto").val("");
+            $("#sector_id").val("");
+
         }else if($(this).val() == "3"){
             $(".PRIVADO").show();
             $(".PÚBLICO").hide();
@@ -66,100 +61,69 @@
             $("#cargo_comision").prop("required", false);
             $("#funcion_principal").prop("required", false);
 
-            $("#nombre_empresa").val("");
-            $("#rfc").val("");
-            $("#area").val("");
-            $("#puesto").val("");
-            $("#sector_id").val("");
+            $("#nivel_orden_gobierno_id").val("");
+            $("#ambito_publico_id").val("");
+            $("#ente_publico").val("");
+            $("#area_adscripcion").val("");
+            $("#cargo_comision").val("");
+            $("#funcion_principal").val("");
+
         }else{
             $(".PRIVADO").hide();
             $(".PÚBLICO").hide();
             $(".AMBOS").hide();
         }
     });
-    $(".submitForm").on("click",function(e){
-        e.preventDefault();
-        let that = this;
-        var error = false;
-        if($("#ambito").val() == 1){
-            if($("#nivel_orden_gobierno_id").val() == ""){
-                error = true;
-            }
-            if($("#ambito_publico").val() == ""){
-                error = true;
-            }
-            if($("#area_adscripcion").val() == ""){
-                error = true;
-            }
-            if($("#cargo_comision").val() == ""){
-                error = true;
-            }
 
-            if($("#fecha_ingreso").val() == ""){
-                error = true;
-            }
-
-            if($("#fecha_egreso").val() == ""){
-                error = true;
-            }
-
-            if($("#lugares_ubicacion").val() == ""){
-                error = true;
-            }
-            if($("#observaciones").val() == ""){
-                error = true;
-            }
-            console.log("ambito",$("#ambito").val());
-        }else if($("#ambito").val() == 2){
-            console.log("ambito",$("#ambito").val());
-            if($("#nombre_empresa").val() == ""){
-                    error = true;
-                }
-            if($("#rfc").val() == ""){
-                    error = true;
-                }
-            if($("#area").val() == ""){
-                    error = true;
-                }
-            if($("#puesto").val() == ""){
-                    error = true;
-                }
-            if($("#sector_id").val() == ""){
-                    error = true;
-                }
-            if($("#funcion_principal").val() == ""){
-                    error = true;
-                }
-            if($("#fecha_ingreso").val() == ""){
-                    error = true;
-                }
-            if($("#fecha_egreso").val() == ""){
-                    error = true;
-                }
-            if($("#observaciones").val() == ""){
-                    error = true;
-                }
+    $("#fecha_ingreso").on("change", function () {
+        var fecha = document.getElementById("fecha_ingreso").value;
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
         }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        today = yyyy + '-' + mm + '-' + dd;
+        if (fecha > today) {
+            alert("La fecha es mayor a la fecha de registro, favor de comprobar");
+            var fechaB = document.getElementById("fecha_ingreso").value = '00/00/0000';
+        }
+    });
 
-        console.log("error",error);
-        if(error){
-            Swal.fire({
-                title: 'Error',
-                text: 'llena todos los campos obligatorios',
-                icon: 'error'
-            });
-        }else{
-            $('#frmExperienciaLaboral').submit();
+    $("#fecha_egreso").on("change", function () {
+        var fecha = document.getElementById("fecha_egreso").value;
+        var fecha2 = document.getElementById("fecha_ingreso").value;
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        today = yyyy + '-' + mm + '-' + dd;
+        if (fecha > today) {
+            alert("La fecha es mayor a la fecha de registro, favor de comprobar");
+            var fechaB = document.getElementById("fecha_egreso").value = '00/00/0000';
+        }
+        if(fecha < fecha2) {
+            alert("La fecha de egreso es mejor a la fecha de ingreso, favor de comprobar");
+            var fechaB = document.getElementById("fecha_egreso").value = '00/00/0000';
         }
     });
 
     if ($("#accion").val() == "editar") {
-        $("#tipoDePersona").change();
-        $("#tipoVehiculo_id").change();
-        $("#lugar_registro").change();
-        $("#titular_id").change();
-        $("#tipoPersonaTercero").change();
         document.getElementById("edit").style.display = "block";
+        $("#ambito_sector_id").change();
+        $("#fecha_ingreso").change();
+        $("#fecha_egreso").change();
+
     } else {
         document.getElementById("crearF").style.display = "block";
     }
