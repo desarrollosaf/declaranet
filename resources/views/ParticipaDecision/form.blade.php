@@ -195,5 +195,24 @@
                 $("#submit").prop("class","btn btn-secondary");
             }
         });
+
+        $("#fecha_inicio").on("change", function () {
+            var fecha = document.getElementById("fecha_inicio").value;
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1;
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+            today = yyyy + '-' + mm + '-' + dd;
+            if (fecha > today) {
+                alert("La fecha es mayor a la fecha de registro, favor de comprobar");
+                var fechaB = document.getElementById("fecha_ingreso").value = '00/00/0000';
+            }
+        });
     </script>
 @endsection
