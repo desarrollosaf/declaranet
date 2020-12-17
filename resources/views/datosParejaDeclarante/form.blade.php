@@ -1,17 +1,17 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.nombre', 'Nombre (s): *') !!}</strong>
-        {!! Form::text('datosPareja[nombre]',(isset($pareja->nombre)) ? $pareja->nombre : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Carlos',  'id' => 'nombre', 'required' => true]) !!}
+        {!! Form::text('datosPareja[nombre]',(isset($pareja->nombre)) ? $pareja->nombre : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Carlos',  'id' => 'nombre', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}", 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.apellidop', 'Primer apellido: *') !!}</strong>
-        {!! Form::text('datosPareja[primer_apellido]',(isset($pareja->primer_apellido)) ? $pareja->primer_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'apellidop','required' => true]) !!}
+        {!! Form::text('datosPareja[primer_apellido]',(isset($pareja->primer_apellido)) ? $pareja->primer_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'apellidop','required' => true, 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.segundo_apellido', 'Segundo apellido: *') !!}</strong>
-        {!! Form::text('datosPareja[segundo_apellido]',(isset($pareja->segundo_apellido)) ? $pareja->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'apellidom', 'required' => true]) !!}
+        {!! Form::text('datosPareja[segundo_apellido]',(isset($pareja->segundo_apellido)) ? $pareja->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'apellidom', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -40,7 +40,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.curp', 'CURP: *') !!}</strong>
-        {!! Form::text('datosPareja[curp]',(isset($pareja->curp)) ? $pareja->curp : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XAXAXA01',  'id' => 'curp', 'required' => true, "disabled" => true]) !!}
+        {!! Form::text('datosPareja[curp]',(isset($pareja->curp)) ? $pareja->curp : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XAXAXA01',  'id' => 'curp', 'required' => true, "disabled" => true, 'pattern' => "([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">

@@ -104,8 +104,6 @@ class DatosParejaController extends Controller
         if (!isset($datosPareja['lugar_reside_id'])) {
             $datosPareja['lugar_reside_id'] = null;
         }
-        dd($datosPareja);
-
         $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
         $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
         $datosPareja['declaracion_id'] = $this->request->session()->get("declaracion_id");
