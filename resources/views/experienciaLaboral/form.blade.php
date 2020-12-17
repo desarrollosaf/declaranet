@@ -102,7 +102,6 @@
         <br>
         <a href="{{route("experiencia_laboral.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
             {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-sm btn-submit text-light'] )}}
-
     </div>
 </div>
 
