@@ -120,6 +120,7 @@
                         Aclaraciones/observaciones. En este espacio el Declarante podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
                     </ol>
 
+                    <DIV></DIV>
                 </div>
             </div>
             <div class="card-body">
@@ -251,5 +252,4 @@
 </script>
 @endsection
 
-<DIV></DIV>
 
