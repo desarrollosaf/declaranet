@@ -18,26 +18,27 @@
                         <table class="table table-active table-striped">
                             <thead class="badge-primary">
                             <tr class="text-center">
-                                <th scope="col" width="20%">Títular</th>
-                                <th scope="col" width="20%">Nombre</th>
-                                <th scope="col" width="40%">Información adicional</th>
-                                <th scope="col" width="20%">Acciones</th></tr>
+                                <th scope="col" width="20%">TÍTULAR</th>
+                                <th scope="col" width="20%">NOMBRE</th>
+                                <th scope="col" width="40%">INFORMACIÓN ADICIONAL</th>
+                                <th scope="col" width="20%">ACCIONES</th></tr>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($clientes as $cliente)
+                                @if($cliente->respuestas_id == 1)
                                 <tr class="text-center">
                                     <td>
-                                        <center>{{$cliente->tipoRelaciones->valor}}</center>
+                                        <center>{{strtoupper($cliente->tipoRelaciones->valor)}}</center>
                                     </td>
                                     <td>
-                                        <center>{{$cliente->nombre_empresa}}</center>
+                                        <center>{{strtoupper($cliente->nombre_empresa)}}</center>
                                     </td>
                                     <td>
                                         <center>
-                                            <strong>Nombre del cliente:{{$cliente->nombre_cliente}} {{$cliente->nombre_cliente_moral}}</strong>  <br>
-                                            <strong>Sector:{{$cliente->sectores->valor}}</strong> <br>
-                                            <strong>Monto aproximado:{{$cliente->monto_beneficio}}</strong>
+                                            <strong>NOMBRE DEL CLIENTE:{{strtoupper($cliente->nombre_cliente)}} {{strtoupper($cliente->nombre_cliente_moral)}}</strong>  <br>
+                                            <strong>SECTOR:{{strtoupper($cliente->sectoresC->valor)}}</strong> <br>
+                                            <strong>MONTO APROXIMADO:{{strtoupper($cliente->monto_beneficio)}}</strong>
                                         </center>
                                     </td>
                                     <td class="all">
@@ -53,13 +54,31 @@
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>
+                                @else
+                                    <tr class="text-center">
+                                        <td colspan="3">
+                                            <center> NO REALIZA ACTIVIDAD LUCRATIVA INDEPENDIENTE AL EMPLEO </center>
+                                        </td>
+
+                                        <td class="all">
+                                            {!! Form::open(['action' => ['ClientesPrincipalesController@destroy', $cliente->id], 'method'=>'DELETE']) !!}
+                                            <div style="display: inline-block;">
+                                                <a href="{{route('clientes_principales.edit',[$cliente])}}" class="btn btn-xs btn-warning">
+                                                    <i class="ion ion-edit"></i>
+                                                </a>
+                                                <button class="btn btn-xs btn-danger btn-borrar">
+                                                    <i class="ion ion-trash-a btn-borrar"></i>
+                                                </button>
+                                            </div>
+                                            {!! Form::close() !!}
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                             </tbody>
                         </table>
                         <center>
-                            <strong>Para adicionar información pulse: <a
-                                    href="{{route('clientes_principales.create')}}"
-                                    class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
+                            <strong>Para adicionar información pulse: <a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
                                 apartado.</strong>
                         </center>
                     </div>
@@ -68,10 +87,8 @@
 
                     <div class="alert alert-danger text-center" role="alert">
                         <label style="margin-top:10px;">
-                            <strong>Para registrar información pulse: </strong><a
-                                href="{{route('clientes_principales.create')}}"
-                                class="btn btn-sm btn-secondary ">Agregar</a><br>
-                            <strong>Si no participa en la toma de decisiones de insituciiones <a href="{{route('prestamos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                            <strong>Para registrar información pulse: </strong><a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br><br>
+                            <strong>Si no tiene clientes principales, seleccione<a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-ninguno btn-secondary">Ninguno</a></strong>
                         </label>
                     </div>
 
@@ -82,52 +99,32 @@
 
                 <div class="text-center">
                     <br>
-                    <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        sección
-                        anterior</a>
-                    <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        siguiente sección</a>
+                    <a href="{{route("representacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                    <a href="{{route("beneficios_privados.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @endsection
+
+@section('scripts')
+    <script>
+        $('.btn-ninguno').on('click', function (e) {
+            let that = this;
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    Swal.fire({
+                        text: 'No se registró información en este apartado. Si desea registrar clientes principales pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        icon: 'warning',
+                        cancelButtonText: 'Aceptar'
+                    });
+                }
+            });
+        });
+    </script>
+@endsection
+

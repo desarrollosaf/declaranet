@@ -10,7 +10,7 @@
                   <strong>¿Realiza alguna actividad lucrativa independiente al empleo, cargo o comisión?:</strong>
             </div>
             <div class="col-lg-4">
-                {!! Form::select('clientes[respuestas_id]', $selectRespuestas, isset($clientes) ? $clientes->respuestas_id : [],['class'=>'form-control',  'id' => 'respuestas_id']) !!}
+                {!! Form::select('clientes[respuestas_id]', $selectRespuestas, isset($clientes) ? $clientes->respuestas_id : [],['class'=>'form-control',  'id' => 'respuestas_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
             </div>
         </div>
     </div><br>
@@ -20,19 +20,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Títular de la actividad lucrativa:</strong></label>
-                    {!! Form::select('clientes[tipo_relaciones_id]', $titular, isset($clientes) ? $clientes->tipo_relaciones_id : [],['class'=>'form-control',  'id' => 'tipo_relaciones_id']) !!}
+                    {!! Form::select('clientes[tipo_relaciones_id]', $titular, isset($clientes) ? $clientes->tipo_relaciones_id : [],['class'=>'form-control',  'id' => 'tipo_relaciones_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong style="line-height : 15px;">Nombre de la empresa o del servicio que proporciona:</strong></label>
-                    {!! Form::text('clientes[nombre_empresa]', isset($clientes) ? $clientes->nombre_empresa : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_empresa']) !!}
+                    {!! Form::text('clientes[nombre_empresa]', isset($clientes) ? $clientes->nombre_empresa : null,['class'=>'form-control', 'placeholder'=>'P. EJ. MAE S.A. de C.V.',   'id' => 'nombre_empresa','required'=>true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC:</strong></label>
-                    {!! Form::text('clientes[rfc]', isset($clientes) ? $clientes->rfc : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc', 'pattern' => "([A-Z]{4}([0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
+                    {!! Form::text('clientes[rfc]', isset($clientes) ? $clientes->rfc : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAX010101010',   'id' => 'rfc', 'pattern' => "([A-Z]{3}[0-9]{9})", 'title' => "Ingresa RFC a 12 dígitos" ,'required'=>true, 'maxlength'=>'12','size'=>'12']) !!}
                 </div>
             </div>
         </div>
@@ -43,34 +43,34 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Tipo de cliente principal:</strong></label>
-                    {!! Form::select('clientes[regimen_fiscal_id]', $regimen, isset($clientes) ? $clientes->regimen_fiscal_id : [],['class'=>'form-control',  'id' => 'regimen_fiscal_id']) !!}
-                </div>
-            </div>
-            <div class="col-lg-4" id="fisica">
-                    <div class="form-group">
-                        <label class="control-label" for="ProcessNum"><strong>Nombre del cliente principal:</strong></label>
-                        {!! Form::text('clientes[nombre_cliente]', isset($clientes) ? $clientes->nombre_cliente : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Perez',   'id' => 'nombre_cliente']) !!}
-                    </div>
-            </div>
-            <div class="col-lg-4" id="fisica">
-                    <div class="form-group">
-                        <label class="control-label" for="State"><strong>RFC:</strong></label>
-                        {!! Form::text('clientes[rfc_cliente]', isset($clientes) ? $clientes->rfc_cliente : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_cliente', 'pattern' => "([A-Z]{4}([0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
-                    </div>
-            </div>
-            <div class="col-lg-4" id="moral" style="display: none;">
-                <div class="form-group">
-                    <label class="control-label" for="ProcessNum"><strong>Razón social del cliente principal:</strong></label>
-                    {!! Form::text('clientes[nombre_cliente_moral]', isset($clientes) ? $clientes->nombre_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. Desarrollo y Redes S.A. de C.V.',   'id' => 'nombre_cliente_moral']) !!}
-                </div>
-            </div>
-            <div class="col-lg-4" id="moral" style="display: none;">
-                <div class="form-group">
-                    <label class="control-label" for="State"><strong>RFC:</strong></label>
-                    {!! Form::text('clientes[rfc_cliente_moral]', isset($clientes) ? $clientes->rfc_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_cliente_moral', 'pattern' => "([A-Z]{4}([0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
+                    {!! Form::select('clientes[regimen_fiscal_id]', $regimen, isset($clientes) ? $clientes->regimen_fiscal_id : [],['class'=>'form-control',  'id' => 'regimen_fiscal_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
 
+            <div class="col-lg-4" id="fisicaN" style="display: block;">
+                <div class="form-group">
+                        <label class="control-label" for="ProcessNum"><strong>Nombre del cliente principal:</strong></label>
+                        {!! Form::text('clientes[nombre_cliente]', isset($clientes) ? $clientes->nombre_cliente : null,['class'=>'form-control', 'placeholder'=>'P. EJ. JUAN PÉREZ',   'id' => 'nombre_cliente','required'=>true, 'disabled'=>true]) !!}
+                </div>
+            </div>
+            <div class="col-lg-4" id="fisicaR" style="display: block;">
+                <div class="form-group">
+                        <label class="control-label" for="State"><strong>RFC:</strong></label>
+                        {!! Form::text('clientes[rfc_cliente]', isset($clientes) ? $clientes->rfc_cliente : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_cliente', 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos",'required'=>true, 'maxlength'=>'13','size'=>'13', 'disabled'=>true]) !!}
+                </div>
+            </div>
+            <div class="col-lg-4" id="moralN" style="display: none;">
+                <div class="form-group">
+                    <label class="control-label" for="ProcessNum"><strong>Razón social del cliente principal:</strong></label>
+                    {!! Form::text('clientes[nombre_cliente_moral]', isset($clientes) ? $clientes->nombre_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. DESARROLLO S.A. de C.V.',   'id' => 'nombre_cliente_moral','required'=>true]) !!}
+                </div>
+            </div>
+            <div class="col-lg-4" id="moralR" style="display: none;">
+                <div class="form-group">
+                    <label class="control-label" for="State"><strong>RFC:</strong></label>
+                    {!! Form::text('clientes[rfc_cliente_moral]', isset($clientes) ? $clientes->rfc_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XA',   'id' => 'rfc_cliente_moral', 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos",'required'=>true, 'maxlength'=>'12','size'=>'12']) !!}
+                </div>
+            </div>
         </div>
     </div>
 
@@ -79,13 +79,13 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Sector productivo al que pertenece:</strong></label>
-                    {!! Form::select('clientes[sectores_id]', $sector, isset($clientes) ? $clientes->sectores_id : [],['class'=>'form-control',  'id' => 'sectores_id']) !!}
+                    {!! Form::select('clientes[sectores_id]', $sector, isset($clientes) ? $clientes->sectores_id : [],['class'=>'form-control',  'id' => 'sectores_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Especifique:</strong></label>
-                    {!! Form::text('clientes[sector_especifique]', isset($clientes) ? $clientes->sector_especifique : null,['class'=>'form-control', 'placeholder'=>'P. ej. Sector Petrolero',   'id' => 'sector_especifique', 'disabled' => 'disabled']) !!}
+                    {!! Form::text('clientes[sector_especifique]', isset($clientes) ? $clientes->sector_especifique : null,['class'=>'form-control', 'placeholder'=>'P. EJ. SECTOR PETROLERO',   'id' => 'sector_especifique', 'disabled' => 'disabled' ,'required'=>true]) !!}
                 </div>
             </div>
         </div>
@@ -96,25 +96,25 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Monto aproximado del beneficio o ganancia mensual que obtiene del cliente principal:</strong></label>
-                    {!! Form::text('clientes[monto_beneficio]', isset($clientes) ? $clientes->monto_beneficio : null,['class'=>'form-control', 'placeholder'=>'P. ej. 10,000 MxN',   'id' => 'monto_beneficio']) !!}
+                    {!! Form::text('clientes[monto_beneficio]', isset($clientes) ? $clientes->monto_beneficio : null,['class'=>'form-control', 'placeholder'=>'P. EJ. 10,000 MxN',   'id' => 'monto_beneficio','required'=>true, 'pattern' => "([0-9]{1,8})", 'title' => "Ingresa ganancias mensuales en dígitos",'maxlength'=>'8', 'size' => '8']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Lugar donde se ubica:</strong></label>
-                    {!! Form::select('clientes[lugar_donde_resides_id]', $lugar, isset($clientes) ? $clientes->lugar_donde_resides_id : [],['class'=>'form-control',  'id' => 'lugar_donde_resides_id']) !!}
+                    {!! Form::select('clientes[lugar_donde_resides_id]', $lugar, isset($clientes) ? $clientes->lugar_donde_resides_id : [],['class'=>'form-control',  'id' => 'lugar_donde_resides_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="mx">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Entidad federativa:</strong></label>
-                    {!! Form::text('clientes[entidad_federativa]', isset($clientes) ? $clientes->entidad_federativa : null,['class'=>'form-control', 'placeholder'=>'P. ej. México',   'id' => 'entidad_federativa', 'disabled'=> 'disabled']) !!}
+                    {!! Form::select('clientes[entidades_id]', $entidad, isset($clientes) ? $clientes->entidades_id : [],['class'=>'form-control',  'id' => 'entidades_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="ex" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>País donde se localiza:</strong></label>
-                    {!! Form::select('clientes[paises_id]', $Pais, isset($clientes) ? $clientes->paises_id : [],['class'=>'form-control',  'id' => 'paises_id']) !!}
+                    {!! Form::select('clientes[paises_id]', $Pais, isset($clientes) ? $clientes->paises_id : [],['class'=>'form-control',  'id' => 'paises_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
         </div>
@@ -133,21 +133,20 @@
     </div>
 </div>
     <!-- Botones  -->
-    <div id="edit" style="display: none;">
+    <div id="edit" style="display: none;"  class="all text-center">
         <div class="form-row">
             <div class="col">
-                {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
             </div>
         </div>
     </div>
 
-    <div id="crearF" style="display: none;">
+    <div id="crearF" style="display: none;"  class="all text-center">
         <div class="form-row">
             <div class="col">
-                {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-            </div>
-            <div class="col">
-                {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                <a href="{{route("clientes_principales.index")}}" class="btn  btn-submit text-light">Ir a la sección anterior</a>
+
+                {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
             </div>
         </div>
     </div>
@@ -177,8 +176,25 @@
                 $("#sector_especifique").val("");
                 $("#monto_beneficio").val("");
                 $("#lugar_donde_resides_id").val("");
-                $("#entidad_federativa").val("");
+                $("#entidades_id").val("");
                 $("#paises_id").val("");
+
+                $("#tipo_relaciones_id").prop("required",false);
+                $("#nombre_empresa").prop("required",false);
+                $("#rfc").prop("required",false);
+                $("#regimen_fiscal_id").prop("required",false);
+
+                $("#nombre_cliente").prop("required",false);
+                $("#rfc_cliente").prop("required",false);
+                $("#nombre_cliente_moral").prop("required",false);
+                $("#rfc_cliente_moral").prop("required",false);
+
+                $("#sectores_id").prop("required",false);
+                $("#sector_especifique").prop("required",false);
+                $("#monto_beneficio").prop("required",false);
+                $("#lugar_donde_resides_id").prop("required",false);
+                $("#entidades_id").prop("required",false);
+                $("#paises_id").prop("required",false);
             }
         });
 
@@ -198,25 +214,52 @@
         $("#regimen_fiscal_id").on("change",function(){
             var regimen_fiscal_id = document.getElementById("regimen_fiscal_id").value
             if(regimen_fiscal_id == '1'){
-                document.getElementById("fisica").style.display="block";
-                document.getElementById("moral").style.display="none";
+                document.getElementById("fisicaN").style.display="block";
+                document.getElementById("fisicaR").style.display="block";
+                document.getElementById("moralN").style.display="none";
+                document.getElementById("moralR").style.display="none";
+                $("#nombre_cliente").prop("disabled",false);
+                $("#rfc_cliente").prop("disabled",false);
+
                 $("#nombre_cliente").prop("class","form-control alert-danger");
                 $("#rfc_cliente").prop("class","form-control alert-danger");
 
+                $("#nombre_cliente_moral").prop("required",false);
+                $("#rfc_cliente_moral").prop("required",false);
+                $("#nombre_cliente_moral").val("");
+                $("#rfc_cliente_moral").val("");
+            }else if(regimen_fiscal_id == '2'){
+                document.getElementById("fisicaN").style.display="none";
+                document.getElementById("fisicaR").style.display="none";
+                document.getElementById("moralN").style.display="block";
+                document.getElementById("moralR").style.display="block";
+
+                $("#nombre_cliente").prop("class","form-control");
+                $("#rfc_cliente").prop("class","form-control");
+
+                $("#nombre_cliente").prop("required",false);
+                $("#rfc_cliente").prop("required",false);
+                $("#nombre_cliente").val("");
+                $("#rfc_cliente").val("");
             }else{
-                document.getElementById("fisica").style.display="none";
-                document.getElementById("moral").style.display="block";
-                $("#nombre_cliente_moral").prop("class","form-control");
-                $("#rfc_cliente_moral").prop("class","form-control");
+                document.getElementById("fisicaN").style.display="block";
+                document.getElementById("fisicaR").style.display="block";
+                document.getElementById("moralN").style.display="none";
+                document.getElementById("moralR").style.display="none";
+                $("#nombre_cliente").prop("disabled",true);
+                $("#rfc_cliente").prop("disabled",true);
             }
         });
 
-        $("#sectores_id").on("change",function(){
+        $("#sectores_id").on("change",function() {
             var sectores_id = document.getElementById("sectores_id").value
-            if(sectores_id == '17'){
-                $("#sector_especifique").prop("disabled",false);
-            }else{
-                $("#sector_especifique").prop("disabled",true);            }
+            if (sectores_id == '17') {
+                $("#sector_especifique").prop("disabled", false);
+            } else {
+                $("#sector_especifique").prop("disabled", true);
+                $("#sector_especifique").prop("required", false);
+                $("#sector_especifique").val("");
+            }
         });
 
         $("#lugar_donde_resides_id").on("change",function(){
@@ -224,14 +267,23 @@
             if(lugar_donde_resides_id == '1'){
                 document.getElementById("mx").style.display="block";
                 document.getElementById("ex").style.display="none";
-                $("#entidad_federativa").prop("disabled", false);
+                $("#entidades_id").prop("disabled", false);
+                $("#paises_id").prop("required", false);
+                $("#paises_id").val("");
             }else if(lugar_donde_resides_id == '2'){
                 document.getElementById("mx").style.display="none";
                 document.getElementById("ex").style.display="block";
+                $("#paises_id").prop("disabled", false);
+                $("#entidades_id").prop("required", false);
+                $("#entidades_id").val("");
             }else{
                 document.getElementById("mx").style.display="block";
                 document.getElementById("ex").style.display="none";
-                $("#entidad_federativa").prop("disabled", true);
+                $("#entidades_id").prop("disabled", true);
+                $("#entidades_id").prop("required", false)
+                $("#paises_id").prop("required", false);
+                $("#paises_id").val("");
+                $("#entidades_id").val("");
             }
         });
         if($("#accion").val() == "editar"){

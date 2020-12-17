@@ -21,8 +21,8 @@ class Clientes extends Model
         return $this->belongsTo(tipoRelacion::class);
     }
 
-    public function sectores(){
-        return $this->belongsTo(sector::class);
+    public function sectoresC(){
+        return $this->belongsTo(sector::class,'sectores_id');
     }
 
     public function lugarDondeReside(){
@@ -33,5 +33,8 @@ class Clientes extends Model
         return $this->belongsTo(Pais::class);
     }
 
+    public function Entidades(){
+        return $this->belongsTo(Entidad::class);
+    }
 
 }

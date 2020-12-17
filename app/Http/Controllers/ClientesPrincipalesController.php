@@ -12,6 +12,7 @@ use App\sector;
 use App\lugarDondeReside;
 use App\Pais;
 use App\Declaracion;
+use App\Entidad;
 
 class ClientesPrincipalesController extends Controller
 {
@@ -35,45 +36,45 @@ class ClientesPrincipalesController extends Controller
     public function create()
     {
         $selectRespuestas = Arr::pluck(Respuesta::all(), "respuesta","id");
-        array_unshift($selectRespuestas, "Selecciona una opcion");
 
         $titulares = tipoRelacion::all();
         $titular = [];
-        $titular[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($titulares as $item){
             $titular[$item->id] = $item->valor;
         }
 
         $regimenFiscal = RegimenFiscal::all();
         $regimen = [];
-        $regimen[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($regimenFiscal as $item){
             $regimen[$item->id] = $item->valor;
         }
 
         $sectores = sector::all();
         $sector = [];
-        $sector[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($sectores as $item){
             $sector[$item->id] = $item->valor;
         }
 
         $lugarDondeReside = lugarDondeReside::all();
         $lugar = [];
-        $lugar[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($lugarDondeReside as $item){
             $lugar[$item->id] = $item->valor;
         }
 
         $Paises = Pais::all();
         $Pais = [];
-        $Pais[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($Paises as $item){
             $Pais[$item->id] = $item->valor;
         }
 
+        $Entidad = Entidad::all();
+        $entidad = [];
+        foreach ($Entidad as $item){
+            $entidad[$item->id] = $item->entidad;
+        }
 
-        return view("Clientes.create",compact("selectRespuestas",'titular','regimen','sector','lugar','Pais'));
+
+        return view("Clientes.create",compact("selectRespuestas",'titular','regimen','sector','lugar','Pais','entidad'));
     }
 
     /**
@@ -111,13 +112,14 @@ class ClientesPrincipalesController extends Controller
     {
         $clientes = Clientes::find($id);
         $selectRespuestas = Arr::pluck(Respuesta::all(), 'respuesta','id');
-        array_unshift($selectRespuestas, "Selecciona una opcion");
         $titular = Arr::pluck(tipoRelacion::all(), 'valor','id');
         $regimen = Arr::pluck(RegimenFiscal::all(), 'valor','id');
         $sector = Arr::pluck(sector::all(), 'valor','id');
         $lugar = Arr::pluck(lugarDondeReside::all(), 'valor','id');
         $Pais = Arr::pluck(Pais::all(), 'valor','id');
-        return view("Clientes.edit", compact('clientes','selectRespuestas','titular','regimen','sector','lugar','Pais'));
+        $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
+
+        return view("Clientes.edit", compact('clientes','selectRespuestas','titular','regimen','sector','lugar','Pais','entidad'));
 
     }
 

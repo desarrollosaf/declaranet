@@ -30,29 +30,29 @@
                     {!! Form::select('fideicomisos[tipo_persona_fideicomiso]', $tipoPersonaFideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomiso : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomiso', 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="fisica_fideicomiso">
+            <div class="col-lg-4" id="fisica_fideicomisoN">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Nombre de la persona fisica:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_persona_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Hernandez.',   'id' => 'nombre_persona_fisica']) !!}
+                    {!! Form::text('fideicomisos[nombre_persona_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. JUAN HERNANDEZ.',   'id' => 'nombre_persona_fisica', 'disabled'=>true , 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="fisica_fideicomiso">
+            <div class="col-lg-4" id="fisica_fideicomisoR">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC de la persona fisica:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_persona_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_persona_fisica']) !!}
+                    {!! Form::text('fideicomisos[rfc_persona_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_persona_fisica', 'disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'required' => true]) !!}
                 </div>
             </div>
 
-            <div class="col-lg-4" id="moral_fideicomiso" style="display: none;">
+            <div class="col-lg-4" id="moral_fideicomisoN" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Razón social de la persona moral:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_persona_moral]', isset($fideicomisos) ? $fideicomisos->nombre_persona_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_persona_moral']) !!}
+                    {!! Form::text('fideicomisos[nombre_persona_moral]', isset($fideicomisos) ? $fideicomisos->nombre_persona_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. MAE S.A. de C.V.',   'id' => 'nombre_persona_moral', 'disabled'=>true, 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="moral_fideicomiso" style="display: none;">
+            <div class="col-lg-4" id="moral_fideicomisoR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC de la persona moral:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_persona_moral]', isset($fideicomisos) ? $fideicomisos->rfc_persona_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_persona_moral']) !!}
+                    {!! Form::text('fideicomisos[rfc_persona_moral]', isset($fideicomisos) ? $fideicomisos->rfc_persona_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_persona_moral', 'disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -66,29 +66,29 @@
                     {!! Form::select('fideicomisos[tipo_persona_fideicomitente]', $tipoPersonaFideicomisoD, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomitente : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomitente', 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="fisica_Fideicomitente">
+            <div class="col-lg-4" id="fisica_FideicomitenteN">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Nombre del fideicomitente:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Perez',   'id' => 'nombre_fideicomitente_fisica']) !!}
+                    {!! Form::text('fideicomisos[nombre_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. JUAN PÉREZ',   'id' => 'nombre_fideicomitente_fisica', 'disabled'=>true, 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="fisica_Fideicomitente">
+            <div class="col-lg-4" id="fisica_FideicomitenteR">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomitente:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fideicomitente_fisica']) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomitente_fisica', 'disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'required' => true]) !!}
                 </div>
             </div>
 
-            <div class="col-lg-4" id="moral_Fideicomitente" style="display: none;">
+            <div class="col-lg-4" id="moral_FideicomitenteN" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Razón social del fideicomitente:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_fideicomitente_moral]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomitente_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_fideicomitente_moral']) !!}
+                    {!! Form::text('fideicomisos[nombre_fideicomitente_moral]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomitente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. MAE S.A. de C.V.',   'id' => 'nombre_fideicomitente_moral', 'disabled'=>true, 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="moral_Fideicomitente" style="display: none;">
+            <div class="col-lg-4" id="moral_FideicomitenteR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomitente:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomitente_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fideicomitente_moral']) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomitente_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomitente_moral', 'disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -102,29 +102,29 @@
                     {!! Form::select('fideicomisos[tipo_persona_fiduciario]', $tipoPersonaFideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_persona_fiduciario : [],['class'=>'form-control',  'id' => 'tipo_persona_fiduciario', 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="fisica_Fiduciario">
+            <div class="col-lg-4" id="fisica_FiduciarioN">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Nombre del fiduciario:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Perez',   'id' => 'nombre_fiduciario_fisica']) !!}
+                    {!! Form::text('fideicomisos[nombre_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. JUAN PÉREZ',   'id' => 'nombre_fiduciario_fisica','disabled'=>true, 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="fisica_Fiduciario">
+            <div class="col-lg-4" id="fisica_FiduciarioR">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fiduciario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fiduciario_fisica']) !!}
+                    {!! Form::text('fideicomisos[rfc_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fiduciario_fisica','disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'required' => true]) !!}
                 </div>
             </div>
 
-            <div class="col-lg-4" id="moral_Fiduciario" style="display: none;">
+            <div class="col-lg-4" id="moral_FiduciarioN" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Razón social del fiduciario:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_fiduciario_moral]', isset($fideicomisos) ? $fideicomisos->nombre_fiduciario_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_fiduciario_moral']) !!}
+                    {!! Form::text('fideicomisos[nombre_fiduciario_moral]', isset($fideicomisos) ? $fideicomisos->nombre_fiduciario_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. MAE S.A. de C.V.',   'id' => 'nombre_fiduciario_moral','disabled'=>true, 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="moral_Fiduciario" style="display: none;">
+            <div class="col-lg-4" id="moral_FiduciarioR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fiduciario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fiduciario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fiduciario_moral']) !!}
+                    {!! Form::text('fideicomisos[rfc_fiduciario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fiduciario_moral','disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -138,29 +138,29 @@
                     {!! Form::select('fideicomisos[tipo_persona_fideicomisario]', $tipoPersonaFideicomisoD, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomisario : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomisario', 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="fisica_Fideicomisario">
+            <div class="col-lg-4" id="fisica_FideicomisarioN">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Nombre del fideicomisario:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. Juan Perez',   'id' => 'nombre_fideicomisario_fisica']) !!}
+                    {!! Form::text('fideicomisos[nombre_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. JUAN PÉREZ',   'id' => 'nombre_fideicomisario_fisica', 'disabled'=>true, 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="fisica_Fideicomisario">
+            <div class="col-lg-4" id="fisica_FideicomisarioR">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomisario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fideicomisario_fisica']) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomisario_fisica', 'disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'required' => true]) !!}
                 </div>
             </div>
 
-            <div class="col-lg-4" id="moral_Fideicomisario" style="display: none;">
+            <div class="col-lg-4" id="moral_FideicomisarioN" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Razón social del fideicomisario:</strong></label>
-                    {!! Form::text('fideicomisos[nombre_fideicomisario_moral]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomisario_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. MAE S.A. de C.V.',   'id' => 'nombre_fideicomisario_moral']) !!}
+                    {!! Form::text('fideicomisos[nombre_fideicomisario_moral]', isset($fideicomisos) ? $fideicomisos->nombre_fideicomisario_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. MAE S.A. de C.V.',   'id' => 'nombre_fideicomisario_moral', 'disabled'=>true, 'required' => true]) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="moral_Fideicomisario" style="display: none;">
+            <div class="col-lg-4" id="moral_FideicomisarioR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomisario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomisario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_moral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'rfc_fideicomisario_moral']) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomisario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomisario_moral', 'disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -177,7 +177,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Especifique:</strong></label>
-                    {!! Form::text('fideicomisos[especifique_sector]', isset($fideicomisos) ? $fideicomisos->especifique_sector : null,['class'=>'form-control', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'especifique_sector', 'disabled' => 'disabled']) !!}
+                    {!! Form::text('fideicomisos[especifique_sector]', isset($fideicomisos) ? $fideicomisos->especifique_sector : null,['class'=>'form-control', 'placeholder'=>'P. EJ. SECTOR PETROLERO',   'id' => 'especifique_sector', 'disabled' => 'disabled', 'required' => true]) !!}
 
                 </div>
             </div>
@@ -195,13 +195,13 @@
             <div class="col-lg-4" id="mx">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Entidad federativa:</strong></label>
-                    {!! Form::select('fideicomisos[entidades_id]', $entidad, isset($fideicomisos) ? $fideicomisos->entidades_id : [],['class'=>'form-control',  'id' => 'entidades_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                    {!! Form::select('fideicomisos[entidades_id]', $entidad, isset($fideicomisos) ? $fideicomisos->entidades_id : [],['class'=>'form-control',  'id' => 'entidades_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN', 'disabled'=>true, 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="ex" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>País donde se localiza:</strong></label>
-                    {!! Form::select('fideicomisos[paises_id]', $pais, isset($fideicomisos) ? $fideicomisos->paises_id : [],['class'=>'form-control',  'id' => 'paises_id']) !!}
+                    {!! Form::select('fideicomisos[paises_id]', $pais, isset($fideicomisos) ? $fideicomisos->paises_id : [],['class'=>'form-control',  'id' => 'paises_id', 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -220,21 +220,19 @@
     </div>
 
     <!-- Botones  -->
-    <div id="edit" style="display: none;">
+    <div id="edit" style="display: none;" class="all text-center">
         <div class="form-row">
             <div class="col">
-                {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
             </div>
         </div>
     </div>
 
-    <div id="crearF" style="display: none;">
+    <div id="crearF" style="display: none;" class="all text-center">
         <div class="form-row">
             <div class="col">
-                <a href="{{route("beneficios_privados.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
-            </div>
-            <div class="col">
-                {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                <a href="{{route("fideicomisos.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
+                {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
             </div>
         </div>
     </div>
@@ -248,22 +246,90 @@
         $("#tipo_persona_fideicomiso").on("change",function(){
             var tipo_persona_fideicomiso = document.getElementById("tipo_persona_fideicomiso").value
             if(tipo_persona_fideicomiso == '1'){
-                document.getElementById('fisica_fideicomiso').style.display="block";
-                document.getElementById("moral_fideicomiso").style.display="none";
+                document.getElementById('fisica_fideicomisoN').style.display="block";
+                document.getElementById('fisica_fideicomisoR').style.display="block";
+                document.getElementById("moral_fideicomisoN").style.display="none";
+                document.getElementById("moral_fideicomisoR").style.display="none";
+
+                $("#nombre_persona_moral").val("");
+                $("#nombre_persona_moral").prop("required",false);
+                $("#rfc_persona_moral").val("");
+                $("#rfc_persona_moral").prop("required",false);
+
+                $("#nombre_persona_fisica").prop("disabled",false);
+                $("#rfc_persona_fisica").prop("disabled",false);
+            }else if(tipo_persona_fideicomiso == '2'){
+                document.getElementById('fisica_fideicomisoN').style.display="none";
+                document.getElementById('fisica_fideicomisoR').style.display="none";
+                document.getElementById("moral_fideicomisoN").style.display="block";
+                document.getElementById("moral_fideicomisoR").style.display="block";
+
+
+                $("#nombre_persona_fisica").val("");
+                $("#nombre_persona_fisica").prop("required",false);
+                $("#rfc_persona_fisica").val("");
+                $("#rfc_persona_fisica").prop("required",false);
+
+                $("#nombre_persona_moral").prop("disabled",false);
+                $("#rfc_persona_moral").prop("disabled",false);
             }else{
-                document.getElementById('fisica_fideicomiso').style.display="none";
-                document.getElementById("moral_fideicomiso").style.display="block";
+                document.getElementById('fisica_fideicomisoN').style.display="block";
+                document.getElementById('fisica_fideicomisoR').style.display="block";
+                document.getElementById("moral_fideicomisoN").style.display="none";
+                document.getElementById("moral_fideicomisoR").style.display="none";
+
+                $("#nombre_persona_moral").val("");
+                $("#nombre_persona_moral").prop("required",false);
+                $("#rfc_persona_moral").val("");
+                $("#rfc_persona_moral").prop("required",false);
+                $("#nombre_persona_fisica").val("");
+                $("#rfc_persona_fisica").val("");
+                $("#nombre_persona_fisica").prop("disabled",true);
+                $("#rfc_persona_fisica").prop("disabled",true);
             }
         });
 
         $("#tipo_persona_fiduciario").on("change",function(){
             var tipo_persona_fiduciario = document.getElementById("tipo_persona_fiduciario").value
             if(tipo_persona_fiduciario == '1'){
-                document.getElementById('fisica_Fiduciario').style.display="block";
-                document.getElementById("moral_Fiduciario").style.display="none";
+                document.getElementById('fisica_FiduciarioN').style.display="block";
+                document.getElementById('fisica_FiduciarioR').style.display="block";
+                document.getElementById("moral_FiduciarioN").style.display="none";
+                document.getElementById("moral_FiduciarioR").style.display="none";
+
+                $("#nombre_fiduciario_moral").val("");
+                $("#nombre_fiduciario_moral").prop("required",false);
+                $("#rfc_fiduciario_moral").val("");
+                $("#rfc_fiduciario_moral").prop("required",false);
+
+                $("#nombre_fiduciario_fisica").prop("disabled",false);
+                $("#rfc_fiduciario_fisica").prop("disabled",false);
+            }else if(tipo_persona_fiduciario == '2'){
+                document.getElementById('fisica_FiduciarioN').style.display="none";
+                document.getElementById('fisica_FiduciarioR').style.display="none";
+                document.getElementById("moral_FiduciarioN").style.display="block";
+                document.getElementById("moral_FiduciarioR").style.display="block";
+
+                $("#nombre_fiduciario_fisica").val("");
+                $("#nombre_fiduciario_fisica").prop("required",false);
+                $("#rfc_fiduciario_fisica").val("");
+                $("#rfc_fiduciario_fisica").prop("required",false);
+
+                $("#nombre_fiduciario_moral").prop("disabled",false);
+                $("#rfc_fiduciario_moral").prop("disabled",false);
             }else{
-                document.getElementById('fisica_Fiduciario').style.display="none";
-                document.getElementById("moral_Fiduciario").style.display="block";
+                document.getElementById('fisica_FiduciarioN').style.display="block";
+                document.getElementById('fisica_FiduciarioR').style.display="block";
+                document.getElementById("moral_FiduciarioN").style.display="none";
+                document.getElementById("moral_FiduciarioR").style.display="none";
+
+                $("#nombre_fiduciario_moral").val("");
+                $("#nombre_fiduciario_moral").prop("required",false);
+                $("#rfc_fiduciario_moral").val("");
+                $("#rfc_fiduciario_moral").prop("required",false);
+
+                $("#nombre_fiduciario_fisica").prop("disabled",true);
+                $("#rfc_fiduciario_fisica").prop("disabled",true);
             }
         });
 
@@ -273,6 +339,7 @@
                 $("#especifique_sector").prop("disabled",false);
             }else{
                 $("#especifique_sector").prop("disabled",true);
+                $("#especifique_sector").val("");
             }
         });
 
@@ -281,29 +348,65 @@
             if(lugares_ubicacion_id == '1'){
                 document.getElementById('mx').style.display="block";
                 document.getElementById("ex").style.display="none";
-                $("#entidad_federativa").prop("disabled",false);
+                $("#entidades_id").prop("disabled",false);
+                $("#paises_id").prop("required",false);
+                $("#paises_id").val("");
             }else if(lugares_ubicacion_id == '2'){
                 document.getElementById('mx').style.display="none";
                 document.getElementById("ex").style.display="block";
-                $("#entidad_federativa").prop("disabled",true);
+                $("#entidades_id").prop("disabled",true);
+                $("#entidades_id").prop("required",false);
+                $("#entidades_id").val("");
             }else{
                 document.getElementById('mx').style.display="block";
                 document.getElementById("ex").style.display="none";
-                $("#entidad_federativa").prop("disabled",true);
+                $("#entidades_id").prop("disabled",true);
+                $("#paises_id").prop("required",false);
+                $("#paises_id").val("");
             }
         });
 
         $("#tipo_persona_fideicomitente").on("change",function(){
             var tipo_persona_fideicomitente = document.getElementById("tipo_persona_fideicomitente").value
             if(tipo_persona_fideicomitente == '1'){
-                document.getElementById('fisica_Fideicomitente').style.display="block";
-                document.getElementById("moral_Fideicomitente").style.display="none";
+                document.getElementById('fisica_FideicomitenteN').style.display="block";
+                document.getElementById('fisica_FideicomitenteR').style.display="block";
+                document.getElementById("moral_FideicomitenteN").style.display="none";
+                document.getElementById("moral_FideicomitenteR").style.display="none";
+
+                $("#nombre_fideicomitente_moral").val("");
+                $("#nombre_fideicomitente_moral").prop("required",false);
+                $("#rfc_fideicomitente_moral").val("");
+                $("#rfc_fideicomitente_moral").prop("required",false);
+
+                $("#nombre_fideicomitente_fisica").prop("disabled",false);
+                $("#rfc_fideicomitente_fisica").prop("disabled",false);
             }else if(tipo_persona_fideicomitente == '2'){
-                document.getElementById('fisica_Fideicomitente').style.display="none";
-                document.getElementById("moral_Fideicomitente").style.display="block";
+                document.getElementById('fisica_FideicomitenteN').style.display="none";
+                document.getElementById('fisica_FideicomitenteR').style.display="none";
+                document.getElementById("moral_FideicomitenteN").style.display="block";
+                document.getElementById("moral_FideicomitenteR").style.display="block";
+
+                $("#nombre_fideicomitente_fisica").val("");
+                $("#nombre_fideicomitente_fisica").prop("required",false);
+                $("#rfc_fideicomitente_fisica").val("");
+                $("#rfc_fideicomitente_fisica").prop("required",false);
+
+                $("#nombre_fideicomitente_moral").prop("disabled",false);
+                $("#rfc_fideicomitente_moral").prop("disabled",false);
             }else{
-                document.getElementById('fisica_Fideicomitente').style.display="block";
-                document.getElementById("moral_Fideicomitente").style.display="none";
+                document.getElementById('fisica_FideicomitenteN').style.display="block";
+                document.getElementById('fisica_FideicomitenteR').style.display="block";
+                document.getElementById("moral_FideicomitenteN").style.display="none";
+                document.getElementById("moral_FideicomitenteR").style.display="none";
+
+                $("#nombre_fideicomitente_moral").val("");
+                $("#nombre_fideicomitente_moral").prop("required",false);
+                $("#rfc_fideicomitente_moral").val("");
+                $("#rfc_fideicomitente_moral").prop("required",false);
+
+                $("#nombre_fideicomitente_fisica").prop("disabled",false);
+                $("#rfc_fideicomitente_fisica").prop("disabled",false);
             }
         });
 
@@ -311,14 +414,44 @@
         $("#tipo_persona_fideicomisario").on("change",function(){
             var tipo_persona_fideicomisario = document.getElementById("tipo_persona_fideicomisario").value
             if(tipo_persona_fideicomisario == '1'){
-                document.getElementById('fisica_Fideicomisario').style.display="block";
-                document.getElementById("moral_Fideicomisario").style.display="none";
+                document.getElementById('fisica_FideicomisarioN').style.display="block";
+                document.getElementById('fisica_FideicomisarioR').style.display="block";
+                document.getElementById("moral_FideicomisarioN").style.display="none";
+                document.getElementById("moral_FideicomisarioR").style.display="none";
+
+                $("#nombre_fideicomisario_moral").val("");
+                $("#nombre_fideicomisario_moral").prop("required",false);
+                $("#rfc_fideicomisario_moral").val("");
+                $("#rfc_fideicomisario_moral").prop("required",false);
+
+                $("#nombre_fideicomisario_fisica").prop("disabled",false);
+                $("#rfc_fideicomisario_fisica").prop("disabled",false);
             }else if(tipo_persona_fideicomisario == '2'){
-                document.getElementById('fisica_Fideicomisario').style.display="none";
-                document.getElementById("moral_Fideicomisario").style.display="block";
+                document.getElementById('fisica_FideicomisarioN').style.display="none";
+                document.getElementById('fisica_FideicomisarioR').style.display="none";
+                document.getElementById("moral_FideicomisarioN").style.display="block";
+                document.getElementById("moral_FideicomisarioR").style.display="block";
+
+                $("#nombre_fideicomisario_fisica").val("");
+                $("#nombre_fideicomisario_fisica").prop("required",false);
+                $("#rfc_fideicomisario_fisica").val("");
+                $("#rfc_fideicomisario_fisica").prop("required",false);
+
+                $("#nombre_fideicomisario_moral").prop("disabled",false);
+                $("#rfc_fideicomisario_moral").prop("disabled",false);
             }else{
-                document.getElementById('fisica_Fideicomisario').style.display="block";
-                document.getElementById("moral_Fideicomisario").style.display="none";
+                document.getElementById('fisica_FideicomisarioN').style.display="block";
+                document.getElementById('fisica_FideicomisarioR').style.display="block";
+                document.getElementById("moral_FideicomisarioN").style.display="none";
+                document.getElementById("moral_FideicomisarioR").style.display="none";
+
+                $("#nombre_fideicomisario_moral").val("");
+                $("#nombre_fideicomisario_moral").prop("required",false);
+                $("#rfc_fideicomisario_moral").val("");
+                $("#rfc_fideicomisario_moral").prop("required",false);
+
+                $("#nombre_fideicomisario_fisica").prop("disabled",false);
+                $("#rfc_fideicomisario_fisica").prop("disabled",false);
             }
         });
 
