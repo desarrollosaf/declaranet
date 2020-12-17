@@ -52,6 +52,10 @@ class DatosParejaController extends Controller
      */
     public function create()
     {
+        $declarante = Declaracion::find($this->request->session()->get("declaracion_id"));
+        if ($declarante->pareja) {
+            return redirect()->route("datos_pareja_declarante.edit", $declarante->pareja->id);
+        }
         $relacionDeclarante = relacionConDeclarante::all();
         $selectRelacioDeclarante = [];
         foreach ($relacionDeclarante as $item) {
@@ -85,14 +89,15 @@ class DatosParejaController extends Controller
     {
         $datosPareja = $this->request->input("datosPareja");
         $domicilio = $request->input("domicilio");
+        $domicilioExt = $request->input("domicilioExt");
         $actividadLaboral = $request->input("actividadLaboral");
         if (isset($datosPareja["lugar_reside_id"]) && $datosPareja["lugar_reside_id"] == 2) {
-            $domicilio['calle'] = $domicilio['calleExt'];
-            $domicilio['num_ext'] = $domicilio['numextExt'];
-            $domicilio['num_int'] = $domicilio['numintExt'];
-            $domicilio['colonia'] = $domicilio['coloniaExt'];
-            $domicilio['entidad'] = $domicilio['estadoprovincia'];
-            $domicilio['codigo_postal'] = $domicilio['codigopostalExt'];
+            $domicilio['calle'] = $domicilioExt['calleExt'];
+            $domicilio['num_ext'] = $domicilioExt['numextExt'];
+            $domicilio['num_int'] = $domicilioExt['numintExt'];
+            $domicilio['colonia'] = $domicilioExt['coloniaExt'];
+            $domicilio['entidad'] = $domicilioExt['estadoprovincia'];
+            $domicilio['codigo_postal'] = $domicilioExt['codigopostalExt'];
         }
         if ($actividadLaboral['ambito_sector_id'] == 1) {
             $actividadLaboral['salario_mensual_neto'] = $actividadLaboral['salario_mensual_neto_publico'];

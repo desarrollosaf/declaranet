@@ -1,14 +1,18 @@
 [
-  {
-    "clave": "PUB",
-    "valor": "PÚBLICO"
-  },
-  {
-    "clave": "PRV",
-    "valor": "PRIVADO"
-  },
-  {
-    "clave": "OTR",
-    "valor": "OTRO (ESPECIFIQUE)"
-  }
+    {
+        "clave": "PUB",
+        "valor": "PÚBLICO"
+    },
+    {
+        "clave": "PRV",
+        "valor": "PRIVADO"
+    },
+    {
+        "clave": "OTR",
+        "valor": "OTRO (ESPECIFIQUE)"
+    },
+    {
+        "clave": "NIN",
+        "valor": "NINGUNO"
+    }
 ]

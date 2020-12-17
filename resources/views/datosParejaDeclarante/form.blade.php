@@ -72,12 +72,12 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('exterior', 'Número exterior:  *') !!}</strong>
-            {!! Form::number('domicilio[num_ext]',isset($domicilio->num_int) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior"]) !!}
+            {!! Form::text('domicilio[num_ext]',isset($domicilio->num_int) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior", 'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('interior', 'Número interior / Piso:  * ') !!}</strong>
-            {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
+            {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase num-int', 'placeholder'=>'p. ej. 5',  'id' => 'interior', 'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -101,7 +101,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilio.codigo_postal', 'Código postal:  *') !!}</strong>
-            {!! Form::text('domicilio[codigo_postal]',isset($domicilio->codigo_postal) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'cp']) !!}
+            {!! Form::text('domicilio[codigo_postal]',isset($domicilio->codigo_postal) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'cp', 'pattern' =>"[0-9]{5}"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -118,12 +118,12 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilioExt.numextExt', 'Número exterior:  *') !!}</strong>
-            {!! Form::number('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
+            {!! Form::text('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase num-int', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior", 'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso:  * ') !!}</strong>
-            {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt']) !!}
+            {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt', 'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -182,7 +182,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('actividadLaboral.fecha_ingreso', 'Fecha de ingreso al empleo: *') !!}</strong>
-            {!! Form::date('actividadLaboral[fecha_ingreso]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control tipo-titular text-uppercase',  'id' => 'codigo_postalExt', ]) !!}
+            {!! Form::date('actividadLaboral[fecha_ingreso]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control tipo-titular text-uppercase fecha',  'id' => 'codigo_postalExt', ]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -252,7 +252,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('fecha_ingreso_publico', 'Fecha de ingreso al empleo: *') !!}</strong>
-            {!! Form::date('actividadLaboral[fecha_ingreso_publico]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt']) !!}
+            {!! Form::date('actividadLaboral[fecha_ingreso_publico]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control tipo-titular text-uppercase fecha', 'id' => 'codigo_postalExt']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -278,6 +278,19 @@
             $(".sector-publico").hide();
             $(".lugar-reside").hide();
             $(".especifique-sector").hide();
+            $(".num-int").prop("required", false);
+            let date = new Date();
+            let day = date.getDate() - 1;
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let fecha;
+            if (month < 10) {
+                fecha = `${year}-0${month}-${day}`;
+            } else {
+                fecha = `${year}-${month}-${day}`;
+            }
+            console.log(fecha);
+            $(".fecha").attr("max", fecha)
             $("#tipo-ciudadano").change(function () {
                 const valor = parseInt($(this).val());
                 if (valor === 1) {
@@ -346,7 +359,7 @@
                     success: function (response) {
                         console.log(response);
                         $("#municipio_id").find('option').remove();
-                        $("#municipio_id").append('<option value="0">SELECCIONA UNA OPCIÓN</option>');
+                        $("#municipio_id").append('<option value="">SELECCIONA UNA OPCIÓN</option>');
                         $(response).each(function (i, v) { // indice, valor
                             $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
                         });
@@ -405,6 +418,10 @@
                     $("#especifique-sector").val("");
                     $("#especifique-sector").prop("required", false);
                 }
+            });
+            $("#curp").keyup(function () {
+                let curp = $(this).val();
+                $("#curp").val(curp.toString().toUpperCase());
             });
             @isset($pareja)
             $("#tipo-ciudadano").change();
