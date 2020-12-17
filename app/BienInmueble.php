@@ -56,5 +56,13 @@ class BienInmueble extends Model {
     public function tipoMoneda() {
         return $this->belongsTo(tipoMoneda::class);
     }
+    
+    public function tipoEntidad() {
+        return $this->belongsTo(Entidad::class);
+    }
+
+    public function tipoMunicipio() {
+        return $this->belongsTo(Municipio::class);
+    }
 
 }

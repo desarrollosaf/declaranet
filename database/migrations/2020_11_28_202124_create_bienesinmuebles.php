@@ -19,6 +19,7 @@ class CreateBienesinmuebles extends Migration
             $table->string('inmuebleable_type');
             $table->unsignedBigInteger('tipo_inmueble_id')->nullable();
             $table->foreign('tipo_inmueble_id')->references('id')->on('tipo_inmuebles');
+            $table->string('tipo_inmueble')->nullable();
             $table->unsignedBigInteger('titular_id')->nullable();
             $table->foreign('titular_id')->references('id')->on('titulares');
             $table->unsignedBigInteger('tipo_tercero_id')->nullable();

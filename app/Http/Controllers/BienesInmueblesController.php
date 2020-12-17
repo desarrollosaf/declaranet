@@ -56,11 +56,17 @@ class BienesInmueblesController extends Controller {
         //COMBO ENTIDAD
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
         
-        //COMBO ENTIDAD
+        //COMBO TIPO MONEDA
         $selectMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor", "id");
        
+        //COMBO ENTIDAD
+        $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
+        
+        //COMBO MUNICIPIO
+        $selectMunicipio = Arr::pluck(\App\Municipio::all(), "municipio", "id");
+       
 
-        return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMoneda'));
+        return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMoneda', 'selectEntidad', 'selectMunicipio'));
     
         
     }
@@ -111,8 +117,8 @@ class BienesInmueblesController extends Controller {
             $domicilio['num_ext'] = $domicilio['num_ext'];
             $domicilio['num_int'] = $domicilio['num_int'];
             $domicilio['colonia'] = $domicilio['colonia'];
-            $domicilio['municipio'] = $domicilio['municipio'];
-            $domicilio['entidad'] = $domicilio['entidad'];
+            $domicilio['municipio_id'] = $domicilio['municipio_id'];
+            $domicilio['entidad_id'] = $domicilio['entidad_id'];
             $domicilio['codigo_postal'] = $domicilio['codigo_postal'];
         } else if ($bien['ubicacion_inmueble_id'] == 2) {
             $domicilio['calle'] = $domicilio['calleExt'];
@@ -176,11 +182,18 @@ class BienesInmueblesController extends Controller {
         
         //COMBO ENTIDAD
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
+
+        //COMBO TIPO MONEDA
+        $selectMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor", "id");
+               
+        //COMBO MUNICIPIO
+        $selectMunicipio = Arr::pluck(\App\Municipio::all(), "municipio", "id");
+
         
         $bien = \App\BienInmueble::find($id);
         $domicilio = $bien->domicilio;
 //        dd($bien->domicilio);
-        return view("BienesInmuebles.edit", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'bien', 'domicilio'));
+        return view("BienesInmuebles.edit", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMoneda', 'selectMunicipio', 'bien', 'domicilio'));
     
         
     }
@@ -234,8 +247,8 @@ class BienesInmueblesController extends Controller {
             $domicilioB['num_ext'] = $domicilio['num_ext'];
             $domicilioB['num_int'] = $domicilio['num_int'];
             $domicilioB['colonia'] = $domicilio['colonia'];
-            $domicilioB['municipio'] = $domicilio['municipio'];
-            $domicilioB['entidad'] = $domicilio['entidad'];
+            $domicilioB['municipio_id'] = $domicilio['municipio_id'];
+            $domicilioB['entidad_id'] = $domicilio['entidad_id'];
             $domicilioB['codigo_postal'] = $domicilio['codigo_postal'];
         } else if ($bien['ubicacion_inmueble_id'] == 2) {
             $domicilioB['calle'] = $domicilio['calleExt'];

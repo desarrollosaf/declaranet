@@ -79,13 +79,13 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('superficieTerreno', ' Superficie del terreno: *') !!}</strong>
-                {!! Form::number('bienesinmuebles[superficie_terreno]', isset($bien) ? $bien->superficie_terreno : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m',  'id' => 'superficie_terreno', 'pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
+                {!! Form::number('bienesinmuebles[superficie_terreno]', isset($bien) ? $bien->superficie_terreno : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m', 'min'=>'1', 'id' => 'superficie_terreno', 'pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('superficie_construccion', ' Superficie de construcción: * ') !!}</strong>
-                {!! Form::number('bienesinmuebles[superficie_construccion]', isset($bien) ? $bien->superficie_construccion : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m',  'id' => 'superficie_construccion', 'pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
+                {!! Form::number('bienesinmuebles[superficie_construccion]', isset($bien) ? $bien->superficie_construccion : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m', 'min'=>'1', 'id' => 'superficie_construccion', 'pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
             </div>
         </div>
     </div>
@@ -159,7 +159,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('valor_adquisicion', ' Valor de adquisición: * ') !!}</strong>
-                {!! Form::number('bienesinmuebles[valor_adquisicion]', isset($bien) ? $bien->valor_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 100000.0 Mxn', 'id' => 'valor_adquisicion','pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
+                {!! Form::number('bienesinmuebles[valor_adquisicion]', isset($bien) ? $bien->valor_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 100000.0 Mxn','min'=>'1', 'id' => 'valor_adquisicion','pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
@@ -230,13 +230,13 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('entidad', 'Entidad Federativa: *') !!}</strong>
-            {!! Form::text('domicilio[entidad]',isset($domicilio) ? $domicilio->entidad : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. CDMX',  'id' => 'entidad']) !!}
+            <strong>{!! Form::label('entidad_id', 'Entidad Federativa: *') !!}</strong>
+            {!! Form::select('domicilio[entidad_id]', isset($selectEntidad) ? $selectEntidad : [], isset($bien) ? $bien->entidad_id : null, ['class'=>'form-control text-uppercase  tipo-titular',  'placeholder' => 'Selecciona una opción', 'id' => 'entidad_id', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('municipio', 'Municipio / Alcaldía: *') !!}</strong>
-            {!! Form::text('domicilio[municipio]',isset($domicilio) ? $domicilio->municipio : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Gustavo A. Madero',  'id' => 'municipio']) !!}
+            <strong>{!! Form::label('municipio_id', 'Municipio / Alcaldía: *') !!}</strong>
+            {!! Form::select('domicilio[municipio_id]', isset($selectMunicipio) ? $selectMunicipio : [], isset($bien) ? $bien->municipio_id : null, ['class'=>'form-control text-uppercase  tipo-titular',   'id' => 'municipio_id', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -366,7 +366,6 @@
                 $('#tipo_inmueble').prop('required', false);
             }
         });
-
 
 
         //CAMBIO DE COLOR TERCEROS
@@ -505,7 +504,10 @@
                 $('#colonia_Ext').prop('required', false);
                 $('#colonia_Ext').prop('required', false);
                 $('#pais').prop('required', false);
-                $('#codigo_postalExt').prop('required', false);
+//                $('#codigo_postalExt').prop('required', false);
+                $('#codigo_postalExt').removeAttr('required');
+                $('#codigo_postalExt').removeAttr('pattern');
+                
 
             } else if (parseInt($(this).val()) === 2) {
                 $('.domicilio-MXBinmuebles').hide();
@@ -547,8 +549,32 @@
                 $('#colonia_Ext').prop('required', false);
                 $('#pais').prop('required', false);
                 $('#codigo_postalExt').prop('required', false);
-
+                
+                $('#codigo_postalExt').removeAttr('required');
+                $('#codigo_postalExt').removeAttr('pattern');
+                
             }
+        });
+        
+        
+        $("#entidad_federativa_id").on('change', function () {
+            var idEntidad = $(this).val();
+            if (parseInt(idEntidad) === 15) {
+                $(".foraneo").hide();
+            }
+            $.ajax({
+                url: "{{asset('getMunicipiosDomicilio')}}/" + idEntidad,
+                type: 'get',
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    $("#municipio_id").find('option').remove();
+                    $("#municipio_id").append('<option value="">SELECCIONE UNA OPCIÓN</option>');
+                    $(response).each(function (i, v) { // indice, valor
+                        $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
+                    });
+                }
+            });
         });
 
 
