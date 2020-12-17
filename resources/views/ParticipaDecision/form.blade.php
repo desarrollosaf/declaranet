@@ -41,7 +41,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"> <strong>RFC: </strong></label>
-                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control', 'placeholder'=>'P. ej. XAX010101010',  'id' => 'rfc', 'pattern' => "([A-Z]{4}[0-9]{6})", 'required' => true]) !!}
+                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control', 'placeholder'=>'P. ej. XAX010101010',  'id' => 'rfc', 'pattern' => "([A-Z]{3}[0-9]{9})", 'required' => true,  'maxlength'=>"12", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -115,20 +115,18 @@
         </div>
     </div>
 </div>
-    <div id="edit" style="display: none;">
+    <div id="edit" style="display: none;" class="all text-center">
         <div class="form-row">
             <div class="col">
-                {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
             </div>
         </div>
     </div>
-    <div id="crearF" style="display: none;">
-        <div class="form-row">
-            <div class="col">
+    <div id="crearF" style="display: none;" class="all text-center">
+        <div class="text-center">
+            <br>
                 {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-            </div>
-            <div class="col">
-                {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
             </div>
         </div>
     </div>
