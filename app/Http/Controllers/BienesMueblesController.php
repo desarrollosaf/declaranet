@@ -53,14 +53,6 @@ class BienesMueblesController extends Controller
         $selectFormaPago = Arr::pluck(FormasPagos::all(), "valor", "id");
         $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
         $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor", "id");
-        array_unshift($selectTitular, "Selecciona una opción");
-        array_unshift($selectTipoBien, "Selecciona una opción");
-        array_unshift($selectTransmisores, "Selecciona una opción");
-        array_unshift($selectRelacionTransmisor, "Selecciona una opción");
-        array_unshift($selectFormaAdquisicion, "Selecciona una opción");
-        array_unshift($selectFormaPago, "Selecciona una opción");
-        array_unshift($selectTipoTercero, "Selecciona una opción");
-        array_unshift($selectTipoMoneda, "Selecciona una opción");
         return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien', 'selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda'));
 
     }

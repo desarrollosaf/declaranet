@@ -1,5 +1,3 @@
-
-
 <div class="container">
     <div class="row">
         <div class="col-lg-2">
@@ -52,12 +50,14 @@
     <div class="row">
         <div class="form-group col-md-12">
             <div>
-                <strong>Capturar cantidades libres de impuestos, sin comas, puntos, centavos y ceros a la izquierda</strong>
+                <strong>Capturar cantidades libres de impuestos, sin comas, puntos, centavos y ceros a la
+                    izquierda</strong>
             </div>
         </div>
         <div class="col-md-10">
             <span style="font-weight: bold; color:#640223;">I. REMUNERACIÓN MENSUAL NETA DEL DECLARANTE POR SU CARGO PÚBLICO (POR CONCEPTO DE SUELDOS, HONORARIOS,
-            COMPENSACIONES, BONOS Y OTRAS PRESTACIONES)</span><br> <label>(Cantidades netas después de impuestos).</label>
+            COMPENSACIONES, BONOS Y OTRAS PRESTACIONES)</span><br> <label>(Cantidades netas después de
+                impuestos).</label>
             &nbsp;
         </div>
         <div class="col-md-2">
@@ -71,18 +71,10 @@
         <div class="col-md-12">
             <hr>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-12">
 
-            <span style="font-weight: bold; color:#640223;">II. OTROS INGRESOS DEL DECLARANTE (SUMA DEL II.1 AL II.4) </span>
-        </div>
-        <div class="col-md-2">
-
-            <table>
-                <tr>
-                    <td class="text-right">{!! Form::label('ingreso.otros_ingresos_total', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[otros_ingresos_total]',(isset($ingreso->otros_ingresos_total)) ? $ingreso->otros_ingresos_total : null,['class'=>'form-control text-uppercase cantidad',  'placeholder'=>'0', 'id' => 'otros_ingresos', "readOnly"=>true]) !!}</td>
-                </tr>
-            </table>
+            <span
+                style="font-weight: bold; color:#640223;">II. OTROS INGRESOS DEL DECLARANTE (SUMA DEL II.1 AL II.4) </span>
         </div>
         <br>
         <br>
@@ -96,7 +88,7 @@
         <div class="col-md-2">
             <table>
                 <tr>
-                    <td class="text-right" >{!! Form::label('ingreso.ingreso_por_actividad_ice', '$') !!}</td>
+                    <td class="text-right">{!! Form::label('ingreso.ingreso_por_actividad_ice', '$') !!}</td>
                     <td class="text-left">{!! Form::text('ingreso[ingreso_por_actividad_ice]',(isset($ingreso->ingreso_por_actividad_ice)) ? $ingreso->ingreso_por_actividad_ice : null,['class'=>'form-control text-uppercase cantidad cantidad-otros', 'placeholder'=>'p. ej. $1000', 'id' => 'ingreso_por_actividad_ice']) !!}</td>
                 </tr>
             </table>
@@ -106,7 +98,8 @@
             <table style="width: 100%;">
                 <tr>
                     <td width='40%'>
-                        &nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.nombre_razon_social', 'Nombre o razón social') !!}</strong></td>
+                        &nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.nombre_razon_social', 'Nombre o razón social') !!}</strong>
+                    </td>
                     <td>{!! Form::text('ingreso[nombre_razon_social]',(isset($ingreso->nombre_razon_social)) ? $ingreso->nombre_razon_social : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.',  'id' => 'nombre_razon_social']) !!}</td>
                 </tr>
             </table>
@@ -117,7 +110,8 @@
             <table style="width: 100%;">
                 <tr>
                     <td width='40%'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.tipo_de_negocio', 'Tipo de negocio:') !!}</strong></td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.tipo_de_negocio', 'Tipo de negocio:') !!}</strong>
+                    </td>
                     <td>{!! Form::text('ingreso[tipo_de_negocio]',(isset($ingreso->tipo_de_negocio)) ? $ingreso->tipo_de_negocio : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo y comercialización de sistemas.',  'id' => 'tipo_de_negocio']) !!}</td>
                 </tr>
             </table>
@@ -126,7 +120,7 @@
         <br>
         <div class="col-md-1"></div>
         <div class="col-md-9">
-            <span style="font-weight: bold;"  >II.2 Por actividad financiera (rendimientos o ganancias:</span><br>
+            <span style="font-weight: bold;">II.2 Por actividad financiera (rendimientos o ganancias:</span><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<label>(Después de impuestos).</label>
         </div>
         <div class="col-md-2">
@@ -142,8 +136,9 @@
             <table style="width: 100%;">
                 <tr>
                     <td width='40%'>
-                        <strong>{!! Form::label('ingreso.tipo_de_instrumento_id', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</strong></td>
-                    <td>{!! Form::select('ingreso[tipo_de_instrumento_id]',$selectInsrumentos,(isset($ingreso->tipo_de_instrumento_id)) ? $ingreso->tipo_de_instrumento_id : null,['class'=>'form-control select', 'id' => 'tipo_de_instrumento_id']) !!}</td>
+                        <strong>{!! Form::label('ingreso.tipo_de_instrumento_id', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</strong>
+                    </td>
+                    <td>{!! Form::select('ingreso[tipo_de_instrumento_id]',$selectInsrumentos,(isset($ingreso->tipo_de_instrumento_id)) ? $ingreso->tipo_de_instrumento_id : null,['class'=>'form-control select', 'id' => 'tipo_de_instrumento_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}</td>
                 </tr>
                 <tr class="especifique-instrumento">
                     <td width='40%'>
@@ -155,7 +150,8 @@
         <div class="col-md-2"></div>
         <div class="col-md-1"></div>
         <div class="col-md-9">
-            <span style="font-weight: bold;">II.3 Por servicios profesionales, consejos, consultorias y/o asesorias:</span><br>
+            <span
+                style="font-weight: bold;">II.3 Por servicios profesionales, consejos, consultorias y/o asesorias:</span><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<label>(Después de impuestos).</label>
         </div>
         <div class="col-md-2">
@@ -171,7 +167,8 @@
             <table style="width: 100%;">
                 <tr>
                     <td width='40%'>
-                        &nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.tipo_de_servicio', 'Tipo de servicio prestado:*') !!}</strong></td>
+                        &nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.tipo_de_servicio', 'Tipo de servicio prestado:*') !!}</strong>
+                    </td>
                     <td>{!! Form::text('ingreso[tipo_de_servicio]',(isset($ingreso->tipo_de_servicio)) ? $ingreso->tipo_de_servicio : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_servicio']) !!}</td>
                 </tr>
             </table>
@@ -186,7 +183,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.ingreso_por_enajenacion_bienes', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[ingreso_por_enajenacion_bienes]',(isset($ingreso->ingreso_por_servicios_profesionales)) ? $ingreso->ingreso_por_servicios_profesionales : null,['class'=>'form-control cantidad cantidad-otros',  'placeholder'=>'p. ej. $1000','id' => 'ingreso_por_servicios_profesionales']) !!}</td>
+                    <td class="text-left">{!! Form::text('ingreso[ingreso_por_enajenacion_bienes]',(isset($ingreso->ingreso_por_servicios_profesionales)) ? $ingreso->ingreso_por_servicios_profesionales : null,['class'=>'form-control cantidad cantidad-otros',  'placeholder'=>'p. ej. $1000','id' => 'ingreso_por_enajenacion_bienes']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -195,8 +192,9 @@
             <table style="width: 100%;">
                 <tr>
                     <td width='40%'>
-                        &nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.tipo_de_bien_id', 'Tipo de bien enajenado:*') !!}</strong></td>
-                    <td>{!! Form::select('ingreso[tipo_de_bien_id]', $selectBienes,(isset($ingreso->tipo_de_bien_id)) ? $ingreso->tipo_de_bien_id : null,['class'=>'form-control text-uppercase select', 'id' => 'tipo_de_servicio']) !!}</td>
+                        &nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.tipo_de_bien_id', 'Tipo de bien enajenado:*') !!}</strong>
+                    </td>
+                    <td>{!! Form::select('ingreso[tipo_de_bien_id]', $selectBienes,(isset($ingreso->tipo_de_bien_id)) ? $ingreso->tipo_de_bien_id : null,['class'=>'form-control text-uppercase select', 'id' => 'tipo_de_bien_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -219,7 +217,8 @@
             <table style="width: 100%;">
                 <tr>
                     <td width='40%'>
-                        &nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.tipo_de_ingreso_no_considerado', 'Especificar tipo de ingreso:*') !!}</strong></td>
+                        &nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.tipo_de_ingreso_no_considerado', 'Especificar tipo de ingreso:*') !!}</strong>
+                    </td>
                     <td>{!! Form::text('ingreso[tipo_de_ingreso_no_considerado]',(isset($ingreso->tipo_de_ingreso_no_considerado)) ? $ingreso->tipo_de_ingreso_no_considerado : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_ingreso_no_considerado']) !!}</td>
                 </tr>
             </table>
@@ -228,10 +227,20 @@
         <div class="col-md-2"></div>
 
         <div class="col-md-12">
-        <hr>
+            <hr>
         </div>
         <div class="col-md-10">
             <span style="font-weight: bold; color:#640223;">A.INGRESO NETO DEL DECLARANTE RECIBIDO DURANTE EL AÑO INMEDIATO ANTERIOR:</span><br>
+        </div>
+        <div class="col-md-2">
+            <table>
+                <tr>
+                    <td class="text-right">{!! Form::label('ingreso.otros_ingresos_total', '$') !!}</td>
+                    <td class="text-left">{!! Form::text('ingreso[otros_ingresos_total]',(isset($ingreso->otros_ingresos_total)) ? $ingreso->otros_ingresos_total : null,['class'=>'form-control text-uppercase cantidad',  'placeholder'=>'0', 'id' => 'otros_ingresos', "readOnly"=>true]) !!}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-10">
             <label>(Suma del I y II)</label>
         </div>
         <div class="col-md-2">
@@ -287,10 +296,16 @@
                 const valor = $("input[name='ingreso[fue_servidor_publico]']:checked").val();
                 if (valor === "1") {
                     $(".si-fue-servidor").show();
+                    $("#fecha_inicio").prop("required", true);
+                    $("#fecha_conclusion").prop("required", true);
+                    $("#remuneracion_neta").prop("required", true);
                 } else {
                     $(".si-fue-servidor").hide();
                     $(".si-fue-servidor").find("input").val("");
-                    $(".select").val("0");
+                    $(".select").val("");
+                    $("#fecha_inicio").prop("required", false);
+                    $("#fecha_conclusion").prop("required", false);
+                    $("#remuneracion_neta").prop("required", false);
                 }
             });
             $("#tipo_de_instrumento_id").change(function () {
@@ -361,6 +376,47 @@
             $("#fue-servido-no").prop("checked", true);
             $("input[name='ingreso[fue_servidor_publico]']").change()
             @endif
+            $("#ingreso_por_actividad_ice").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#nombre_razon_social").prop("required", false)
+                    $("#tipo_de_negocio").prop("required", false)
+                } else {
+                    $("#nombre_razon_social").prop("required", true)
+                    $("#tipo_de_negocio").prop("required", true)
+                }
+            });
+
+            $("#ingreso_por_actividad_financiera").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#tipo_de_instrumento_id").prop("required", false)
+                } else {
+                    $("#tipo_de_instrumento_id").prop("required", true)
+                }
+            });
+
+            $("#ingreso_por_servicios_profesionales").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#tipo_de_servicio").prop("required", false)
+                } else {
+                    $("#tipo_de_servicio").prop("required", true)
+                }
+            });
+
+            $("#ingreso_por_enajenacion_bienes").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#tipo_de_bien_id").prop("required", false)
+                } else {
+                    $("#tipo_de_bien_id").prop("required", true)
+                }
+            });
+
+            $("#ingreso_otros_no_considerados").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#tipo_de_ingreso_no_considerado").prop("required", false)
+                } else {
+                    $("#tipo_de_ingreso_no_considerado").prop("required", true)
+                }
+            });
         });
     </script>
 @endsection

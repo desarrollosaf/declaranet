@@ -2,7 +2,7 @@
     <div class="row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('prestamo.tipo_bien_id', 'Tipo de bien en préstamo: *') !!}</strong>
-            {!! Form::select('prestamo[tipo_bien_id]',$selectTipoBien, (isset($prestamo->tipo_bien_id)) ? $prestamo->tipo_bien_id : null,['class'=>'form-control alert-danger',  'id' => 'tipo_bien']) !!}
+            {!! Form::select('prestamo[tipo_bien_id]',$selectTipoBien, (isset($prestamo->tipo_bien_id)) ? $prestamo->tipo_bien_id : null,['class'=>'form-control alert-danger',  'id' => 'tipo_bien', 'required' => true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -11,13 +11,13 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Tipo de vehículo</strong></label>
-                    {!! Form::select('vehiculos[tipoVehiculo_id]', $vehiculo, isset($vehiculos) ? $vehiculos->tipoVehiculo_id : [],['class'=>'form-control alert-danger',  'id' => 'tipoVehiculo_id']) !!}
+                    {!! Form::select('vehiculos[tipoVehiculo_id]', $vehiculo, isset($vehiculos) ? $vehiculos->tipoVehiculo_id : [],['class'=>'form-control alert-danger',  'id' => 'tipoVehiculo_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
-            <div class="col-lg-4" id="combo_otro" style="display: block;">
+            <div class="col-lg-4 especifique-otro" id="combo_otro">
                 <div class="form-group">
                     <label class="control-label" style="text-align:justify"><strong>Especifique</strong></label>
-                    {!! Form::text('vehiculos[otroVehiculo]',isset($vehiculos) ? $vehiculos->otroVehiculo :null,['class'=>'form-control', 'placeholder'=>'P. ej. Otro', 'disabled'=>'true',  'id' => 'otroVehiculo']) !!}
+                    {!! Form::text('vehiculos[otroVehiculo]',isset($vehiculos) ? $vehiculos->otroVehiculo :null,['class'=>'form-control', 'placeholder'=>'P. ej. Otro',  'id' => 'otroVehiculo']) !!}
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum">¿<strong>Dónde se encuentra
                             registrado?</strong></label>
-                    {!! Form::select('vehiculos[lugar_registro]',$registro, isset($vehiculos) ? $vehiculos->lugar_registro : [],['class'=>'form-control', 'id' => 'lugar_registro']) !!}
+                    {!! Form::select('vehiculos[lugar_registro]',$registro, isset($vehiculos) ? $vehiculos->lugar_registro : [],['class'=>'form-control', 'id' => 'lugar_registro', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -61,13 +61,13 @@
                 <div id="lugarRegistroMx" style="display: none;">
                     <div class="form-group">
                         <label class="control-label" for="NumDoc"><strong>Entidad Federativa</strong>:</label>
-                        {!! Form::text('vehiculos[v_entidadFederativa]', isset($vehiculos) ? $vehiculos->v_entidadFederativa : null,['class'=>'form-control', 'placeholder'=>'P. ej. México',   'id' => 'v_entidadFederativa']) !!}
+                        {!! Form::select('vehiculos[entidades_id]', $selectEntidad, isset($vehiculos) ? $vehiculos->entidades_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN', 'id' => 'entidades_id']) !!}
                     </div>
                 </div>
                 <div id="lugarRegistroEx" style="display: none;">
                     <div class="form-group">
                         <label class="control-label" for="NumDoc"><strong>País</strong>:</label>
-                        {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos) ? $vehiculos->pais_id : [],['class'=>'form-control', 'placeholder'=>'',  'id' => 'pais_id']) !!}
+                        {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos) ? $vehiculos->pais_id : [],['class'=>'form-control', 'placeholder'=>'',  'id' => 'pais_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                     </div>
                 </div>
             </div>
@@ -76,31 +76,31 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Dueño o titular:</strong>:</label>
-                    {!! Form::select('vehiculos[tipoDePersona]', $regimen, isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'id' => 'dueno_titular']) !!}
+                    {!! Form::select('vehiculos[tipoDePersona]', $regimen, isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'id' => 'dueno_titular', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4 vehiculo-dueno">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Nombre del dueño:</strong>:</label>
-                    {!! Form::text('vehiculos[v_nombreFisica]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'p. ej. Juan Pérez.','id' => 'v-dueno', 'disabled' => true]) !!}
+                    {!! Form::text('vehiculos[v_nombreFisica]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'p. ej. Juan Pérez.','id' => 'v-dueno']) !!}
                 </div>
             </div>
             <div class="col-lg-4 vehiculo-titular">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Nombre del titular:</strong>:</label>
-                    {!! Form::text('vehiculos[v_nombreMoral]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'p. ej. Desarrollo y Redes S.A. de C.V.',   'id' => 'v-titular', 'disabled' => true]) !!}
+                    {!! Form::text('vehiculos[v_nombreMoral]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'p. ej. Desarrollo y Redes S.A. de C.V.',   'id' => 'v-titular']) !!}
                 </div>
             </div>
             <div class="col-lg-4 fisica">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>RFC:</strong>:</label>
-                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-fisica', 'disabled' => true]) !!}
+                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-fisica', 'pattern' => '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})']) !!}
                 </div>
             </div>
             <div class="col-lg-4 moral">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>RFC:</strong>:</label>
-                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-moral', 'disabled' => true]) !!}
+                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-moral', 'pattern' => '([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{3})']) !!}
                 </div>
             </div>
         </div>
@@ -112,7 +112,13 @@
                             Relación con el dueño o el títular
                         </strong>
                     </label>
-                    {!! Form::select('vehiculos[relacion_dueno_titular_id]',$relacion, isset($vehiculos) ? $vehiculos->relacion_id : [],['class'=>'form-control', 'id' => 'relacion_id']) !!}
+                    {!! Form::select('vehiculos[relacion_dueno_titular_id]',$relacion, isset($vehiculos) ? $vehiculos->relacion_id : [],['class'=>'form-control', 'id' => 'relacion_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                </div>
+            </div>
+            <div class="col-lg-4 especifique-relacion">
+                <div class="form-group">
+                    <label class="control-label" for="NumDoc"><strong>Especifique:</strong>:</label>
+                    {!! Form::text('vehiculos[especifique_relacion_titular]', isset($vehiculos) ? $vehiculos->especifique_relacion_titular : null,['class'=>'form-control', 'placeholder'=>'P. ej. CONOCIDO',   'id' => 'especifique_relacion_titular']) !!}
                 </div>
             </div>
         </div>
@@ -121,19 +127,19 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <strong>{!! Form::label('tipo_inmueble_id', ' Tipo de inmueble:') !!}</strong>
-                    {!! Form::select('bienesinmuebles[tipo_inmueble_id]', $selecttipoInmueble, isset($bienesinmuebles->tipo_inmueble_id) ? $bienesinmuebles->tipo_inmueble_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_inmueble_id']) !!}
+                    <strong>{!! Form::label('especifique', 'Especifique:') !!}</strong>
+                    {!! Form::select('bienesinmuebles[tipo_inmueble_id]', $selecttipoInmueble, isset($bienesinmuebles->tipo_inmueble_id) ? $bienesinmuebles->tipo_inmueble_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_inmueble_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <strong>{!! Form::label('tipo_inmueble', ' Especifique: ') !!}</strong>
-                    {!! Form::text('bienesinmuebles[tipo_inmueble]',isset($domicilio) ? $domicilio->tipo_inmueble : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'especifique-inmueble', 'disabled' => 'true' ]) !!}
+                    {!! Form::text('bienesinmuebles[tipo_inmueble]',isset($domicilio) ? $domicilio->tipo_inmueble : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'especifique-inmueble' ]) !!}
                 </div>
             </div>
             <div class="col-md-4">
                 <strong>{!! Form::label('ubicacion_inmueble_id', ' Ubicación del inmueble:') !!}</strong>
-                {!! Form::select('bienesinmuebles[ubicacion_inmueble_id]', isset($selectubicacionInmueble) ? $selectubicacionInmueble : [], isset($bienesinmuebles->ubicacion_inmueble_id) ? $bienesinmuebles->ubicacion_inmueble_id : null, ['class'=>'form-control tipo-titular lugar-inmueble',  'id' => 'lugar-inmueble']) !!}
+                {!! Form::select('bienesinmuebles[ubicacion_inmueble_id]', isset($selectubicacionInmueble) ? $selectubicacionInmueble : [], isset($bienesinmuebles->ubicacion_inmueble_id) ? $bienesinmuebles->ubicacion_inmueble_id : null, ['class'=>'form-control tipo-titular lugar-inmueble',  'id' => 'lugar-inmueble', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
             </div>
         </div>
         <div class="domicilio-MXBinmuebles">
@@ -163,7 +169,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('domicilio.id', 'Entidad Federativa:') !!}</strong>
-                    {!! Form::select('domicilio[entidad_id]', $selectEntidad,isset($domicilio->entidad_id) ? $domicilio->entidad_id : null,['class'=>'form-control tipo-titular', 'id' => 'entidad_id']) !!}
+                    {!! Form::select('domicilio[entidad_id]', $selectEntidad,isset($domicilio->entidad_id) ? $domicilio->entidad_id : null,['class'=>'form-control tipo-titular', 'id' => 'entidad_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
@@ -208,7 +214,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('domicilio.pais_id', 'País:') !!}</strong>
-                    {!! Form::select('domicilio[pais_id]', $pais,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control tipo-titular',  'id' => 'pais']) !!}
+                    {!! Form::select('domicilio[pais_id]', $pais,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control tipo-titular',  'id' => 'pais', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
@@ -252,7 +258,11 @@
             $(".domicilio-EXBinmuebles").hide();
             $(".fisica").hide();
             $(".moral").hide();
-            $(".form-control").addClass("alert-danger");
+            $(".vehiculo-dueno").hide();
+            $(".vehiculo-titular").hide();
+            $(".form-control").addClass("alert-danger text-uppercase");
+            $(".especifique-otro").hide();
+            $(".especifique-relacion").hide();
             $("#tipo_bien").change(function () {
                 const tipo = parseInt($(this).val());
                 if (tipo === 3) {
@@ -260,22 +270,35 @@
                     $(".domicilio-MXBinmuebles").hide();
                     $(".domicilio-EXBinmuebles").hide();
                     $(".inmueble").hide();
-                    $(".inmueble").find("select").val(0);
+                    $(".inmueble").find("select").val("");
                     $(".inmueble").find("input").val("");
+                    $(".vehiculo").find("select").prop("required", true);
+                    $(".vehiculo").find("input").prop("required", true);
+                    $(".inmueble").find("select").prop("required", false);
+                    $(".inmueble").find("input").prop("required", false);
+
                 } else {
                     $(".vehiculo").hide();
-                    $(".vehiculo").find("select").val(0);
+                    $(".vehiculo").find("select").val("");
                     $(".vehiculo").find("input").val("");
-                    $("#otroVehiculo").prop("disabled", true);
+                    $(".inmueble").find("select").prop("required", true);
+                    $(".inmueble").find("input").prop("required", true);
+                    $(".vehiculo").find("select").prop("required", false);
+                    $(".vehiculo").find("input").prop("required", false);
+
+                    $(".especifique-otro").hide("");
                     $(".inmueble").show();
                 }
             });
             $("#tipoVehiculo_id").change(function () {
                 const valor = parseInt($(this).val());
                 if (valor === 4) {
-                    $("#otroVehiculo").prop("disabled", false);
+                    $(".especifique-otro").show();
+                    $("#otroVehiculo").prop("required", true);
                 } else {
-                    $("#otroVehiculo").prop("disabled", true);
+                    $(".especifique-otro").hide();
+                    $("#otroVehiculo").val("");
+                    $("#otroVehiculo").prop("required", false);
                 }
             });
             $("#lugar_registro").change(function () {
@@ -283,41 +306,48 @@
                 if (valor === 1) {
                     $("#lugarRegistroMx").show();
                     $("#lugarRegistroEx").hide();
-                    $("#lugarRegistroEx").find("select").val(0);
+                    $("#lugarRegistroEx").find("select").val("");
                     $("#lugarRegistroEx").find("input").val("");
                     $("#lugarRegistroEx").hide();
+                    $("#lugarRegistroMx").find("select").prop("required", true);
+                    $("#lugarRegistroEx").find("select").prop("required", false);
+
 
                 } else {
                     $("#lugarRegistroMx").hide();
-                    $("#lugarRegistroMx").find("select").val(0);
+                    $("#lugarRegistroMx").find("select").val("");
                     $("#lugarRegistroMx").find("input").val("");
                     $("#lugarRegistroEx").show();
-                    $("#pais_id").val(0);
+                    $("#pais_id").val("");
+                    $("#lugarRegistroMx").find("select").prop("required", false);
+                    $("#lugarRegistroEx").find("select").prop("required", true);
                 }
             });
             $("#dueno_titular").change(function () {
-                $("#v-rfc-dueno-fisica").prop("disabled", false);
-                $("#v-rfc-dueno-moral").prop("disabled", false);
                 const valor = parseInt($(this).val());
                 if (valor === 1) {
                     $(".vehiculo-dueno").show();
                     $(".vehiculo-titular").hide();
                     $(".vehiculo-dueno").find("text").val("");
-                    $("#pais_id").val(0);
-                    $("#v-dueno").prop("disabled", false);
-                    $("#v-titular").prop("disabled", true).val("");
                     $("#v-rfc-dueno-moral").val("");
                     $(".moral").hide();
+                    $(".moral").find("text").val("");
                     $(".fisica").show();
+                    $(".fisica").find("input").prop("required", true);
+                    $(".vehiculo-dueno").find("input").prop("required", true);
+                    $(".vehiculo-titular").find("input").prop("required", false);
+                    $(".moral").find("input").prop("required", false);
                 } else {
                     $(".vehiculo-dueno").hide();
                     $(".vehiculo-titular").show();
                     $(".vehiculo-titular").find("text").val("");
-                    $("#v-dueno").prop("disabled", true).val("");
                     $("#v-rfc-dueno-fisica").val("");
-                    $("#v-titular").prop("disabled", false);
                     $(".fisica").hide();
                     $(".moral").show();
+                    $(".vehiculo-titular").find("input").prop("required", true);
+                    $(".moral").find("input").prop("required", true);
+                    $(".fisica").find("input").prop("required", false);
+                    $(".vehiculo-dueno").find("input").prop("required", false);
                 }
             });
             $('#lugar-inmueble').change(function () {
@@ -325,37 +355,45 @@
                     $('.domicilio-MXBinmuebles').show();
                     $('.domicilio-EXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-EXBinmuebles').find("select").val("");
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", true);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", true);
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", false);
                 } else if (parseInt($(this).val()) === 2) {
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').show();
                     $('#municipio_id').find("option").remove();
                     $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("select").val("");
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", true);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", true);
                 } else {
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-EXBinmuebles').find("select").val("");
                     $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("select").val("");
                     $('#municipio_id').find("option").remove();
                 }
             });
             $('.lugar-reside-change').change(function () {
                 if (parseInt($(this).val()) === 1) {
                     $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-EXBinmuebles').find("select").val("");
                 } else if (parseInt($(this).val()) === 2) {
                     $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("select").val("");
                 } else {
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-EXBinmuebles').find("select").val("");
                     $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("select").val("");
                 }
             });
             $("#entidad_id").on('change', function () {
@@ -383,9 +421,9 @@
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').find("input").val("");
-                    $('.domicilio-EXBinmuebles').find("select").val(0);
+                    $('.domicilio-EXBinmuebles').find("select").val("");
                     $('.domicilio-MXBinmuebles').find("input").val("");
-                    $('.domicilio-MXBinmuebles').find("select").val(0);
+                    $('.domicilio-MXBinmuebles').find("select").val("");
                     $("#lugar-reside").val("0");
                     $(".lugar-reside").hide();
                 } else {
@@ -397,11 +435,26 @@
             $("#tipo_inmueble_id").change(function () {
                 const respuesta = parseInt($(this).val());
                 if (respuesta === 9) {
-                    $("#especifique-inmueble").prop("disabled", false);
+                    $("#especifique-inmueble").prop("readOnly", false);
+                    $("#especifique-inmueble").prop("required", true);
                 } else {
-                    $("#especifique-inmueble").prop("disabled", true).val("");
+                    $("#especifique-inmueble").prop("readonly", true).val("");
+                    $("#especifique-inmueble").prop("required", false);
+
                 }
             });
+
+            $("#relacion_id").change(function () {
+                let valor = parseInt($(this).val());
+                if (valor === 20) {
+                    $(".especifique-relacion").show();
+                    $(".especifique-relacion").find("input").prop("required", true);
+                } else {
+                    $(".especifique-relacion").hide();
+                    $(".especifique-relacion").find("input").prop("required", false).val("");
+                }
+            });
+            @isset($prestamo)
             $("#tipo_bien").change();
             $("#tipoVehiculo_id").change();
             $("#lugar_registro").change();
@@ -409,6 +462,9 @@
             $('#lugar-inmueble').change();
             $("#habita-domicilio").change();
             $("#tipo_inmueble_id").change();
+            $("#relacion_id").change();
+            @endisset
+
         });
     </script>
 @endsection

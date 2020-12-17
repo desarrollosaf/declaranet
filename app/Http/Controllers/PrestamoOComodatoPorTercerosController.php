@@ -45,36 +45,19 @@ class PrestamoOComodatoPorTercerosController extends Controller
     {
         $tipoEna = TipoBienEnajenacionBienes::where('id', '!=', 1)->get();
         $selectTipoBien = [];
-        $selectTipoBien[0] = "Selecciona una opción";
         foreach ($tipoEna as $item) {
             $selectTipoBien[$item->id] = $item->valor;
         }
 //        $selectTipoBien = Arr::pluck(TipoBienEnajenacionBienes::where('id', '!=', 1)->get(), "valor", "id");
 //        array_unshift($selectTipoBien, "Selecciona una opción");
-
         $vehiculo = Arr::pluck(tipoVehiculo::all(), "valor", "id");
-        array_unshift($vehiculo, "Selecciona una opción");
-
         $relacion = Arr::pluck(relacionTransmisor::all(), "valor", "id");
-        array_unshift($relacion, "Selecciona una opción");
-
         $registro = Arr::pluck(lugarDondeReside::where('id', '!=', '3')->get(), "valor", "id");
-        array_unshift($registro, "Selecciona una opción");
-
         $pais = Arr::pluck(Pais::all(), "valor", "id");
-        array_unshift($pais, "Selecciona una opción");
-
         $regimen = Arr::pluck(RegimenFiscal::all(), "valor", "id");
-        array_unshift($regimen, "Selecciona una opción");
-
         $selecttipoInmueble = Arr::pluck(TipoInmueble::all(), "valor", "id");
-        array_unshift($selecttipoInmueble, "Selecciona una opcion");
-
         $selectubicacionInmueble = Arr::pluck(LugarUbicacion::all(), "valor", "id");
-        array_unshift($selectubicacionInmueble, "Selecciona una opcion");
-
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
-        array_unshift($selectEntidad, "Selecciona una opcion");
         return view("Prestamos.create", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad'));
     }
 

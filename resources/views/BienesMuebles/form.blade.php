@@ -1,18 +1,16 @@
-
-
 <div class="card-body">
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
                 <strong> {!! Form::label('bienesMuebles.titular_bien_id', 'Titular del bien: *') !!}</strong>
-                {!! Form::select('bienesMuebles[titular_bien_id]',$selectTitular, (isset($bienMueble->titular_bien_id)) ? $bienMueble->titular_bien_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'titular_bien'])!!}
+                {!! Form::select('bienesMuebles[titular_bien_id]',$selectTitular, (isset($bienMueble->titular_bien_id)) ? $bienMueble->titular_bien_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'titular_bien', 'placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.tipo_bien_id', 'Tipo de bien: *') !!}</strong>
-                {!! Form::select('bienesMuebles[tipo_bien_id]',$selectTipoBien, (isset($bienMueble->tipo_bien_id)) ? $bienMueble->tipo_bien_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_bien'])!!}
+                {!! Form::select('bienesMuebles[tipo_bien_id]',$selectTipoBien, (isset($bienMueble->tipo_bien_id)) ? $bienMueble->tipo_bien_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_bien','placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -33,7 +31,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.tipo_tercero_id', 'Tipo de tercero:') !!}</strong>
-                {!! Form::select('bienesMuebles[tipo_tercero_id]',$selectTipoTercero, (isset($bienMueble->tipo_tercero_id)) ? $bienMueble->tipo_tercero_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_tercero', 'disabled' => true])!!}
+                {!! Form::select('bienesMuebles[tipo_tercero_id]',$selectTipoTercero, (isset($bienMueble->tipo_tercero_id)) ? $bienMueble->tipo_tercero_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_tercero', 'placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -62,7 +60,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.transmisor_propiedad_id', 'Transmisor de la propiedad: *') !!}</strong>
-                {!! Form::select('bienesMuebles[transmisor_propiedad_id]',$selectTransmisores, (isset($bienMueble->transmisor_propiedad_id)) ? $bienMueble->transmisor_propiedad_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'transmisor_propiedad'])!!}
+                {!! Form::select('bienesMuebles[transmisor_propiedad_id]',$selectTransmisores, (isset($bienMueble->transmisor_propiedad_id)) ? $bienMueble->transmisor_propiedad_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'transmisor_propiedad','placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -81,7 +79,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.rfc_transmisor', 'RFC: *') !!}</strong>
-                {!! Form::text('bienesMuebles[rfc_transmisor]', (isset($bienMueble->rfc_transmisor)) ? $bienMueble->rfc_transmisor : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'rfc-transmisor', 'placeholder'=>"p. ej. XXXX010101", 'pattern'=>"([A-Z]{4}([0-9]{6}[A-Z0-9]{3})"])!!}
+                {!! Form::text('bienesMuebles[rfc_transmisor]', (isset($bienMueble->rfc_transmisor)) ? $bienMueble->rfc_transmisor : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'rfc-transmisor'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -90,7 +88,7 @@
         <div class="col-lg-4">
             <div class="form-group relacion-transmisor">
                 <strong>{!! Form::label('bienesMuebles.relacion_transmisor_id', 'Relación del transmisor del mueble con el titular: *') !!}</strong>
-                {!! Form::select('bienesMuebles[relacion_transmisor_id]', $selectRelacionTransmisor, (isset($bienMueble->relacion_transmisor_id)) ? $bienMueble->relacion_transmisor_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'relacion_transmisor'])!!}
+                {!! Form::select('bienesMuebles[relacion_transmisor_id]', $selectRelacionTransmisor, (isset($bienMueble->relacion_transmisor_id)) ? $bienMueble->relacion_transmisor_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'relacion_transmisor','placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -106,14 +104,14 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.forma_adquisicion_id', 'Forma de adquisición: *') !!}</strong>
-                {!! Form::select('bienesMuebles[forma_adquisicion_id]',$selectFormaAdquisicion, null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_adquisicion'])!!}
+                {!! Form::select('bienesMuebles[forma_adquisicion_id]',$selectFormaAdquisicion, (isset($bienMueble->forma_adquisicion_id)) ? $bienMueble->forma_adquisicion_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_adquisicion','placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.forma_pago_id', 'Forma de pago: *') !!}</strong>
-                {!! Form::select('bienesMuebles[forma_pago_id]',$selectFormaPago, (isset($bienMueble->forma_pago_id)) ? $bienMueble->forma_pago_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_pago'])!!}
+                {!! Form::select('bienesMuebles[forma_pago_id]',$selectFormaPago, (isset($bienMueble->forma_pago_id)) ? $bienMueble->forma_pago_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'forma_pago','placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -129,7 +127,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.tipo_moneda_id', 'Tipo de moneda:') !!}</strong>
-                {!! Form::select('bienesMuebles[tipo_moneda_id]', $selectTipoMoneda, (isset($bienMueble->tipo_moneda_id)) ? $bienMueble->tipo_moneda_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_moneda'])!!}
+                {!! Form::select('bienesMuebles[tipo_moneda_id]', $selectTipoMoneda, (isset($bienMueble->tipo_moneda_id)) ? $bienMueble->tipo_moneda_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_moneda','placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -153,12 +151,12 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <center>
+            <div class="text-center">
                 <br>
-                <a href="#" class="btn btn-secondary">Ir a la sección anterior</a>
-                <input type="submit" name="submit" class="btn btn-secondary"
+                <a href="{{route("vehiculos.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
+                <input type="submit" name="submit" class="btn btn-submit text-light"
                        value="Guardar e ir a la siguiente sección">
-            </center>
+            </div>
         </div>
     </div>
 </div>
@@ -166,9 +164,12 @@
 @section('scripts')
     <script type="text/javascript">
         $(document).ready(function () {
+            $(".card-body").find("input").prop("required", true);
+            $(".card-body").find("select").prop("required", true);
             $(".tipo-tercero").hide();
             $(".especifique").hide();
             $(".denominacion-razon").hide();
+            $(".nombre-razon").hide();
             $(".denominacion-rs-transmisor").hide();
             $(".especifique-relacion-transmisor").hide();
             $("#titular_bien").change(function () {
@@ -177,10 +178,13 @@
                     $(".tipo-dato").addClass("alert-danger");
                     if (tipoTitular === "6") {
                         $(".tipo-tercero").show();
-                        $("#tipo_tercero").prop("disabled", false);
+                        $(".tipo-tercero").find("input").prop("required", true);
+                        $(".tipo-tercero").find("select").prop("required", true);
                     } else {
                         $(".tipo-tercero").hide();
-                        $("#tipo_tercero").prop("disabled", true);
+                        $(".tipo-tercero").find("input").prop("required", false);
+                        $(".tipo-tercero").find("select").prop("required", false);
+                        $("#tipo_tercero").val("");
                         $("#nombre_tercero").val("");
                         $("#denominacion_razon").val("");
                         $("#rfc-tercero").val("");
@@ -195,10 +199,16 @@
                     $(".descripcion-bien").hide();
                     $(".especifique").show();
                     $("#descripcion_bien").val("");
+                    $("#descripcion_bien").prop("required", false);
+                    $("#especifique").prop("required", true);
                 } else {
                     $(".descripcion-bien").show();
                     $(".especifique").hide();
                     $("#especifique").val("");
+                    $("#especifique").prop("required", false);
+                    $("#descripcion_bien").prop("required", true);
+
+
                 }
             });
             $("#tipo_tercero").change(function () {
@@ -219,26 +229,40 @@
                     $(".nombre-razon").hide();
                     $("#nombre_transmisor").val("");
                     $(".denominacion-rs-transmisor").show();
+                    $('#rfc-transmisor').attr("pattern", '([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{3})');
+                    $('#rfc-transmisor').attr("placeholder", "p. ej. XAX010101XXX");
+                    $("#denominacion_rs_transmisor").prop("required", true);
+                    $("#nombre_transmisor").prop("required", false);
+                    $("#nombre_transmisor").val("");
                 } else {
                     $(".nombre-razon").show();
                     $("#denominacion_rs_transmisor").val("");
                     $(".denominacion-rs-transmisor").hide();
+                    $('#rfc-transmisor').attr("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})');
+                    $('#rfc-transmisor').attr("placeholder", "p. ej. XXXX010101");
+                    $("#denominacion_rs_transmisor").prop("required", false)
+                    $("#nombre_transmisor").prop("required", true)
+                    $("#denominacion_rs_transmisor").val("");
                 }
             });
+
             $("#relacion_transmisor").change(function () {
                 var relacionTransmisorMueble = parseInt($(this).val());
                 if (relacionTransmisorMueble === 20) {
                     $(".especifique-relacion-transmisor").show();
+                    $("#especifique_relacion_transmisor").prop("required", true)
                 } else {
                     $(".especifique-relacion-transmisor").hide();
+                    $("#especifique_relacion_transmisor").prop("required", false)
+                    $("#especifique_relacion_transmisor").val('')
                 }
             });
             @isset($bienMueble)
-                $("#titular_bien").change();
-                $("#tipo_bien").change();
-                $("#tipo_tercero").change();
-                $("#transmisor_propiedad").change();
-                $("#relacion_transmisor").change();
+            $("#titular_bien").change();
+            $("#tipo_bien").change();
+            $("#tipo_tercero").change();
+            $("#transmisor_propiedad").change();
+            $("#relacion_transmisor").change();
             @endisset
         });
 

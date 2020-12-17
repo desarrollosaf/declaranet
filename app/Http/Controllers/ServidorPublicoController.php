@@ -47,9 +47,7 @@ class ServidorPublicoController extends Controller
             return redirect()->route("servidor_publico.edit", $declaracion->fueServidorPublico->id);
         } else {
             $selectInsrumentos = Arr::pluck(tipoInstrumento::all(), "valor", "id");
-            array_unshift($selectInsrumentos, "Selecciona una opción");
             $selectBienes = Arr::pluck(TipoBienEnajenacionBienes::all(), "valor", "id");
-            array_unshift($selectBienes, "Selecciona una opción");
             return view("servidorPublico.create", compact("selectInsrumentos", "selectBienes"));
         }
     }
@@ -100,9 +98,7 @@ class ServidorPublicoController extends Controller
     {
         $ingreso = FueServidorPublico::find($id);
         $selectInsrumentos = Arr::pluck(tipoInstrumento::all(), "valor", "id");
-        array_unshift($selectInsrumentos, "Selecciona una opción");
         $selectBienes = Arr::pluck(TipoBienEnajenacionBienes::all(), "valor", "id");
-        array_unshift($selectBienes, "Selecciona una opción");
         return view("servidorPublico.edit", compact("selectInsrumentos", "selectBienes", "ingreso"));
     }
 
