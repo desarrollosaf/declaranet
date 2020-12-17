@@ -79,7 +79,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Sector productivo al que pertenece:</strong></label>
-                    {!! Form::select('clientes[sectores_id]', $sector, isset($clientes) ? $clientes->sectores_id : [],['class'=>'form-control',  'id' => 'sectores_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                    {!! Form::select('clientes[sectores_id]', $sector, isset($clientes) ? $clientes->sectores_id : [],['class'=>'form-control',  'id' => 'sectores_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN','required'=>true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -153,7 +153,7 @@
 
     <br>
  </div>
-
+<div></div>
 @section('scripts')
     <script type="text/javascript">
         $("#respuestas_id").on("click",function(){
@@ -253,6 +253,7 @@
 
         $("#sectores_id").on("change",function() {
             var sectores_id = document.getElementById("sectores_id").value
+            $("#sectores_id").prop("required", true);
             if (sectores_id == '17') {
                 $("#sector_especifique").prop("disabled", false);
             } else {

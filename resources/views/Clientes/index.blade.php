@@ -38,7 +38,6 @@
                                         <center>
                                             <strong>NOMBRE DEL CLIENTE:{{strtoupper($cliente->nombre_cliente)}} {{strtoupper($cliente->nombre_cliente_moral)}}</strong>  <br>
                                             <strong>SECTOR:{{strtoupper($cliente->sectoresC->valor)}}</strong> <br>
-
                                             <strong>MONTO APROXIMADO:{{strtoupper($cliente->monto_beneficio)}}</strong>
                                         </center>
                                     </td>
@@ -104,6 +103,7 @@
                     <a href="{{route("beneficios_privados.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                 </div>
             </div>
+            <div></div>
 @endsection
 
 @section('scripts')

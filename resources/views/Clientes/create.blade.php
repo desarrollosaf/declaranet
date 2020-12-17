@@ -37,5 +37,6 @@
     </div>
 </div>
 <input type="hidden" id="accion" value="crear">
+<div></div>
 @endsection
 
