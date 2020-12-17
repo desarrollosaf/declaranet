@@ -46,3 +46,4 @@
     </div>
 </div>
 <input type="hidden" id="accion" value="editar">
+@endsection
