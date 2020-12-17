@@ -5,7 +5,7 @@
             <div class="card-header">
                 <div class="float-left">
                     <h3>BENEFICIOS PRIVADOS</h3>
-                    <h6 class="card-subtitle">(Hasta los últimos dos años)</h6>
+                    <h6 class="card-subtitle">(HASTA LOS ÚLTIMOS DOS AÑOS)</h6>
                 </div>
                 <div class="float-right">
             <span class="badge badge-success ml-0" data-toggle="collapse" href="#collapseDatosEmpleo"
