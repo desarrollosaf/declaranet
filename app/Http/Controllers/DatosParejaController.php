@@ -116,7 +116,9 @@ class DatosParejaController extends Controller
         if ($datosPareja['respuesta_domicilio_id'] == 2) {
             $pareja->domicilio()->create($domicilio);
         }
-        $pareja->experienciaLaboral()->create($actividadLaboral);
+        if ($actividadLaboral["ambito_sector_id"] != 4) {
+            $pareja->experienciaLaboral()->create($actividadLaboral);
+        }
         return redirect()->route("datos_dependiente_declarante.index");
     }
 
@@ -212,7 +214,17 @@ class DatosParejaController extends Controller
                 $pareja->domicilio()->destroy();
             }
         }
-        $pareja->experienciaLaboral->update($actividadLaboral);
+        if ($actividadLaboral["ambito_sector_id"] != 4) {
+            if ($pareja->experienciaLaboral == null) {
+                $pareja->experienciaLaboral()->create($actividadLaboral);
+            } else {
+                $pareja->experienciaLaboral()->update($actividadLaboral);
+            }
+        } else {
+            if ($pareja->experienciaLaboral != null) {
+                $pareja->experienciaLaboral()->delete();
+            }
+        }
         return redirect()->route("datos_dependiente_declarante.create");
     }
 

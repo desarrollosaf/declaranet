@@ -147,7 +147,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilioExt.codigopostalExt', 'Código postal: *') !!}</strong>
-            {!! Form::text('domicilioExt[codigopostalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postalExt']) !!}
+            {!! Form::text('domicilioExt[codigopostalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postalExt', 'pattern' => '[A-za-z0-9]{5}']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -289,7 +289,6 @@
             } else {
                 fecha = `${year}-${month}-${day}`;
             }
-            console.log(fecha);
             $(".fecha").attr("max", fecha)
             $("#tipo-ciudadano").change(function () {
                 const valor = parseInt($(this).val());
@@ -400,12 +399,23 @@
                     $(".sector-publico").hide();
                     $(".sector-publico").find("input").val("");
                     $(".sector-publico").find("select").val("");
-                    $(".sector-privado-otro").find("select").val("");
-                    $(".sector-privado-otro").find("input").val("");
                     $(".sector-privado-otro").find("select").prop("required", true);
                     $(".sector-privado-otro").find("input").prop("required", true);
                     $(".sector-publico").find("select").prop("required", false);
                     $(".sector-publico").find("input").prop("required", false);
+                } else {
+                    $(".sector-publico").find("select").prop("required", false);
+                    $(".sector-publico").find("input").prop("required", false);
+                    $(".sector-publico").hide();
+                    $(".sector-publico").find("input").val("");
+                    $(".sector-publico").find("select").val("");
+                    $(".sector-privado-otro").find("select").val("");
+                    $(".sector-privado-otro").find("input").val("");
+                    $(".sector-privado-otro").hide();
+                    $(".sector-privado-otro").find("select").prop("required", false);
+                    $(".sector-privado-otro").find("input").prop("required", false);
+                    $(".sector-privado-otro").find("select").val("");
+                    $(".sector-privado-otro").find("input").val("");
                 }
             });
             $("#sector-privado").change(function () {
@@ -428,8 +438,10 @@
             $('#lugar-reside').change();
             $("#habita-domicilio").change();
             $("#ambito-sector").change();
-            $("#ambito-sector").change();
             $("#sector-privado").change();
+            @if($experienciaLaboral == null)
+            $("#ambito-sector").val("4");
+            @endif
             @endisset
         });
     </script>
