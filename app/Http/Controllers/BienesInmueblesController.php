@@ -18,7 +18,7 @@ class BienesInmueblesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $bienes = \App\BienInmueble::where('declaracion_id',$this->request->session()->get('declaracion_id'))->get();
+        $bienes = \App\Declaracion::find($this->request->session()->get('declaracion_id'))->bienes_inmuebles;
         return view("BienesInmuebles.index", compact('bienes'));
     }
 
@@ -123,7 +123,9 @@ class BienesInmueblesController extends Controller {
 
         //dd($bien);
         $bien['declaracion_id'] = $request -> session() -> get('declaracion_id');
-        $inmueble = \App\BienInmueble::create($bien);
+//        dd($bien);
+        $declaracion = \App\Declaracion::find($request -> session() -> get('declaracion_id'));
+        $inmueble = $declaracion->bienes_inmuebles()->create($bien);
         $inmueble->domicilio()->create($domicilio);
         return redirect()->route('bienes_inmuebles.index');
     }
@@ -147,43 +149,34 @@ class BienesInmueblesController extends Controller {
     public function edit($id) {
        //COMBO TIPO INMUEBLE
         $selecttipoInmueble = Arr::pluck(\App\TipoInmueble::all(), "valor", "id");
-        array_unshift($selecttipoInmueble, "Selecciona una opcion");
-
+        
         //COMBO TITULAR INMUEBLE
         $selecttitularInmueble = Arr::pluck(\App\Titular::all(), "valor", "id");
-        array_unshift($selecttitularInmueble, "Selecciona una opcion");
-
+        
         //COMBO FORMA ADQUISICIÓN
         $selectformaAdquisicion = Arr::pluck(\App\formaAdquisicion::all(), "valor", "id");
-        array_unshift($selectformaAdquisicion, "Selecciona una opcion");
-
+        
         //COMBO FORMA DE PAGO
         $selectformaPago = Arr::pluck(\App\FormasPagos::all(), "valor", "id");
-        array_unshift($selectformaPago, "Selecciona una opcion");
-
+        
         //COMBO RELACION TRANSMISOR
         $selectRelacionTransmisor = Arr::pluck(\App\relacionTransmisor::all(), "valor", "id");
-        array_unshift($selectRelacionTransmisor, "Selecciona una opcion");
-
+        
         //COMBO VALOR CONFORME A
         $selectvalorConforme = Arr::pluck(\App\valorConformeA::all(), "valor", "id");
-        array_unshift($selectvalorConforme, "Selecciona una opcion");
-
+        
         //COMBO UBICACION INMUEBLE
         $selectubicacionInmueble = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-        array_unshift($selectubicacionInmueble, "Selecciona una opcion");
-
+        
         //COMBO REGIMEN FISCAL
         $selectRegimenFiscal = Arr::pluck(\App\regimenFiscal::all(), "valor", "id");
-        array_unshift($selectRegimenFiscal, "Selecciona una opcion");
-
+        
         //COMBO ENTIDAD
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
-        array_unshift($selectEntidad, "Selecciona una opcion");
-
+        
         $bien = \App\BienInmueble::find($id);
         $domicilio = $bien->domicilio;
-        
+//        dd($bien->domicilio);
         return view("BienesInmuebles.edit", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'bien', 'domicilio'));
     
         
@@ -212,7 +205,7 @@ class BienesInmueblesController extends Controller {
             $bien['rfc_tercero'] = null;
             $bien['tipo_tercero_id'] = null;
         }
-
+        //dd($bien['tipo_transmisor_id']);
         //TIPO TRANSMISOR
         if ($bien['tipo_transmisor_id'] == 1) {
             $bien['nombre_razon_transmisor'] = $bien['nombreTransmisorF'];
@@ -223,7 +216,7 @@ class BienesInmueblesController extends Controller {
         }
 
         //UBICACION INMUEBLE
-        if ($bien['ubicacion_inmueble_id'] == 1) {
+        if ($bien['tipo_transmisor_id'] == 1) {
             $bien['nombre_razon_transmisor'] = $bien['nombreTransmisorF'];
             $bien['rfc_transmisor'] = $bien['rfcTransmisorF'];
         } else if ($bien['tipo_transmisor_id'] == 2) {
@@ -252,7 +245,7 @@ class BienesInmueblesController extends Controller {
         }
         
         
-        
+        //dd($bien);
         $bienrow->update($bien);   
         $bienrow->domicilio()->update($domicilioB);    
         

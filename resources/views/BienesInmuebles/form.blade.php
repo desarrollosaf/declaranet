@@ -118,26 +118,26 @@
                 {!! Form::select('bienesinmuebles[tipo_transmisor_id]', isset($selectRegimenFiscal) ? $selectRegimenFiscal : [], isset($bien) ? $bien->tipo_transmisor_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_transmisor_id', 'required' => 'true']) !!}
             </div>
         </div>
-        <div class="col-md-4 nombre-Ftransmisor">
+        <div class="col-md-4 fisica">
             <div class="form-group">
                 <strong>{!! Form::label('nombreTransmisorF', ' Nombre del transmisor: * ') !!}</strong>
                 {!! Form::text('bienesinmuebles[nombreTransmisorF]', isset($bien) ? $bien->nombre_razon_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Juan Robles Rosas',  'id' => 'nombreTransmisorF']) !!}
             </div>
         </div>
-        <div class="col-md-4 rfc-Ftransmisor">
+        <div class="col-md-4 fisica">
             <div class="form-group">
                 <strong>{!! Form::label('rfcTransmisorF', ' RFC del transmisor: * ') !!}</strong>
                 {!! Form::text('bienesinmuebles[rfcTransmisorF]', isset($bien) ? $bien->rfc_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. XXXX010101XXX', 'maxlength'=>'13', 'id' => 'rfcTransmisorF', 'pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})','title' => 'El formato RFC es a 13 digitos']) !!}
             </div>
         </div>
 
-        <div class="col-md-4 nombre-Mtransmisor">
+        <div class="col-md-4 moral">
             <div class="form-group">
                 <strong>{!! Form::label('nombreTransmisorM', ' Nombre del transmisor: * ') !!}</strong>
                 {!! Form::text('bienesinmuebles[nombreTransmisorM]', isset($bien) ? $bien->nombre_razon_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Empresa S.A. de C.V.',  'id' => 'nombreTransmisorM']) !!}
             </div>
         </div>
-        <div class="col-md-4 rfc-Mtransmisor">
+        <div class="col-md-4 moral">
             <div class="form-group">
                 <strong>{!! Form::label('rfcTransmisorM', ' RFC del transmisor: *') !!}</strong>
                 {!! Form::text('bienesinmuebles[rfcTransmisorM]', isset($bien) ? $bien->rfc_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. XXXX010101XX', 'maxlength'=>'12', 'id' => 'rfcTransmisorM', 'pattern'=>'([A-ZÑ&]{3}\d{6}[A-Z\d]{3})','title' => 'El formato RFC es a 12 digitos']) !!}
@@ -218,13 +218,13 @@
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('exterior', 'Número exterior: *') !!}</strong>
-            {!! Form::number('domicilio[exterior]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
+            <strong>{!! Form::label('num_ext', 'Número exterior: *') !!}</strong>
+            {!! Form::number('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_ext', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('interior', 'Número interior / Piso: *') !!}</strong>
-            {!! Form::text('domicilio[interior]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
+            <strong>{!! Form::label('num_int', 'Número interior / Piso: *') !!}</strong>
+            {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -346,11 +346,6 @@
         $('.rs-nombre-RazonSocial').hide();
         $('.rfcM-tercero').hide();
 
-        //TIPO TRANSMISOR
-        $('.nombre-Ftransmisor').hide();
-        $('.rfc-Ftransmisor').hide();
-        $('.nombre-Mtransmisor').hide();
-        $('.rfc-Mtransmisor').hide();
 
         //DOMICILIO DECLARANTE
         $(".domicilio-MXBinmuebles").hide();
@@ -402,7 +397,7 @@
         //TIPO TERCERO
         $('#tipo_tercero_id').change(function () {
             console.log($(this).val());
-            if (parseInt($(this).val()) === 0) {
+            if ($(this).val() === "") {
                 $('.tercero_fisica').hide();
                 $('.tercero_moral').hide();
 
@@ -440,44 +435,47 @@
         //TIPO TRANSMISOR
         $('#tipo_transmisor_id').change(function () {
 
-//            alert($(this).val());
+            
             if ($(this).val() === '') {
-                $('.nombre-Ftransmisor').hide();
-                $('.rfc-Ftransmisor').hide();
+                $('.fisica').hide();
+                $('.moral').hide();
 
-                $('.nombre-Mtransmisor').hide();
-                $('.rfc-Mtransmisor').hide();
-
-                $('#nombreTransmisorF').prop('required', false);
-                $('#rfcTransmisorF').prop('required', false);
-
-                $('#nombreTransmisorM').prop('required', false);
-                $('#rfcTransmisorM').prop('required', false);
+//                $('#nombreTransmisorF').prop('required', false);
+//                $('#rfcTransmisorF').prop('required', false);
+                $('#nombreTransmisorF').removeAttr('required');
+                $('#rfcTransmisorF').removeAttr('required');
+                $('#nombreTransmisorF').removeAttr('pattern');
+                $('#rfcTransmisorF').removeAttr('pattern');
+                
+                $('#nombreTransmisorM').removeAttr('required');
+                $('#rfcTransmisorM').removeAttr('required');
+                $('#nombreTransmisorM').removeAttr('pattern');
+                $('#rfcTransmisorM').removeAttr('pattern');
 
 
 
             } else if (parseInt($(this).val()) === 1) {
-                $('.nombre-Ftransmisor').show();
-                $('.rfc-Ftransmisor').show();
-
-                $('.nombre-Mtransmisor').hide();
-                $('.rfc-Mtransmisor').hide();
+                console.log($(this).val());
+                $('.fisica').show();
+                $('.moral').hide();
 
                 $('#nombreTransmisorF').prop('required', true);
                 $('#rfcTransmisorF').prop('required', true);
 
-                $('#nombreTransmisorM').prop('required', false);
-                $('#rfcTransmisorM').prop('required', false);
+                $('#nombreTransmisorM').removeAttr('required');
+                $('#rfcTransmisorM').removeAttr('required');
+                $('#nombreTransmisorM').removeAttr('pattern');
+                $('#rfcTransmisorM').removeAttr('pattern');
 
             } else if (parseInt($(this).val()) === 2) {
-                $('.nombre-Ftransmisor').hide();
-                $('.rfc-Ftransmisor').hide();
-
-                $('.nombre-Mtransmisor').show();
-                $('.rfc-Mtransmisor').show();
-
-                $('#nombreTransmisorF').prop('required', false);
-                $('#rfcTransmisorF').prop('required', false);
+                $('.fisica').hide();
+                $('.moral').show();
+                
+                $('#nombreTransmisorF').removeAttr('required');
+                $('#rfcTransmisorF').removeAttr('required');
+                $('#nombreTransmisorF').removeAttr('pattern');
+                $('#rfcTransmisorF').removeAttr('pattern');
+                
 
                 $('#nombreTransmisorM').prop('required', true);
                 $('#rfcTransmisorM').prop('required', true);
@@ -552,17 +550,14 @@
         });
 
 
-        @isset($bien)
-                $('#tipo_inmueble_id').change();
-        $("#titular_id").change();
-        $('#tipo_tercero_id').change();
-        $('#tipo_transmisor_id').change();
-
-        @endisset
-
-                @isset($domicilio)
-                $('#ubicacion_inmueble_id').change();
-        @endisset
+        @if(isset($bien))
+            $('#tipo_inmueble_id').change();
+            $("#titular_id").change();
+            $('#tipo_tercero_id').change();
+            $('#tipo_transmisor_id').change();
+            $('#ubicacion_inmueble_id').change();
+        
+        @endif
     });
 //    $("#frm_BienesInmuebles").on("submit", function (e) {
 //        e.preventDefault();

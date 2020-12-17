@@ -104,5 +104,8 @@ class Declaracion extends Model {
     public function representacion() {
         return $this->hasMany(Representacion::class);
     }
+    public function bienes_inmuebles(){
+        return $this->morphMany(BienInmueble::class, 'inmuebleable');
+    }
 
 }
