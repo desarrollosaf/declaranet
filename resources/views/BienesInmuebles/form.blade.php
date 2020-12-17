@@ -362,6 +362,7 @@
                 $('#tipo_inmueble').prop('disabled', false);
                 $('#tipo_inmueble').prop('required', true);
             } else {
+                $('#tipo_inmueble').prop('value', '');
                 $('#tipo_inmueble').prop('disabled', true);
                 $('#tipo_inmueble').prop('required', false);
             }
