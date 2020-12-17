@@ -36,6 +36,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
             <div id="difDec">
                 <div id="titular_tercero" style="display: none;">
@@ -133,7 +134,7 @@
                                 </div>
                                 <div id="terceroMoralTra" style="display: none;">
                                     <label class="control-label" for="ProcessNum"><strong>RFC: * </strong></label>
-                                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. XXX010101X0X',   'id' => 'v_rfcMoral', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
+                                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. XXX010101X0X',   'id' => 'v_rfcMoral', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                                 </div>
                             </div>
                         </div>
@@ -254,21 +255,18 @@
                     </div>
                 </div>
                 <!-- Botones  -->
-                <div id="edit" style="display: none;">
+                <div id="edit" style="display: none;" class="all text-center">
                     <div class="form-row">
                         <div class="col">
-                            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
                         </div>
                     </div>
                 </div>
-                <div id="crearF"  style="display: none;">
-                    <div class="form-row">
-                        <div class="col">
+                <div id="crearF"  style="display: none;" class="all text-center">
+                    <div class="text-center">
+                        <br>
                             {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-                        </div>
-                        <div class="col">
-                            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
-                        </div>
+                            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
                     </div>
                 </div>
                 <br>

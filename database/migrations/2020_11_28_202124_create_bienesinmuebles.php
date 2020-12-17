@@ -15,8 +15,6 @@ class CreateBienesinmuebles extends Migration
     {
         Schema::create('bienes_inmuebles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('declaracion_id');
-            $table->foreign('declaracion_id')->references('id')->on('declaraciones');
             $table->bigInteger('inmuebleable_id');
             $table->string('inmuebleable_type');
             $table->unsignedBigInteger('tipo_inmueble_id')->nullable();

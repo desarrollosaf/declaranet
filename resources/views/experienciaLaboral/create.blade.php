@@ -120,6 +120,7 @@
                         Aclaraciones/observaciones. En este espacio el Declarante podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
                     </ol>
 
+                    <DIV></DIV>
                 </div>
             </div>
             <div class="card-body">
@@ -217,6 +218,7 @@
     $("#fecha_egreso").on("change", function () {
         var fecha = document.getElementById("fecha_egreso").value;
         var fecha2 = document.getElementById("fecha_ingreso").value;
+
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth() + 1;
@@ -232,22 +234,19 @@
             alert("La fecha es mayor a la fecha de registro, favor de comprobar");
             var fechaB = document.getElementById("fecha_egreso").value = '00/00/0000';
         }
+
         if(fecha < fecha2) {
-                alert("La fecha de egreso es mejor a la fecha de ingreso, favor de comprobar");
-                var fechaB = document.getElementById("fecha_egreso").value = '00/00/0000';
+            alert("La fecha de ingreso es mayor a la fecha de baja, favor de comprobar");
+            var fechaB = document.getElementById("fecha_egreso").value = '00/00/0000';
         }
     });
 
-    if ($("#accion").val() == "editar") {
-        $("#tipoDePersona").change();
-        $("#tipoVehiculo_id").change();
-        $("#lugar_registro").change();
-        $("#titular_id").change();
-        $("#tipoPersonaTercero").change();
-        document.getElementById("edit").style.display = "block";
-    } else {
-        document.getElementById("crearF").style.display = "block";
+    if($("#accion").val() == "editar"){
+        document.getElementById("edit").style.display="block";
+    }else if ($("#accion").val() == "crear"){
+        document.getElementById("crearF").style.display="block";
     }
 </script>
 @endsection
+
 
