@@ -398,6 +398,8 @@
                         document.getElementById("disabledRFC").style.display = "none";
                         $("#bieniTerceroNombreM").val("");
                         $("#bieniTerceroRfcM").val("");
+                        $("#bieniTerceroNombreM").prop("required", false);
+                        $("#bieniTerceroRfcM").prop("required", false);
                     } else {
                         document.getElementById("pMoral").style.display = "block";
                         document.getElementById("pMoralRfc").style.display = "block";
@@ -407,6 +409,8 @@
                         document.getElementById("disabledRFC").style.display = "none";
                         $("#bieniTerceroNombreF").val("");
                         $("#bieniTerceroRfcF").val("");
+                        $("#bieniTerceroNombreF").prop("required", false);
+                        $("#bieniTerceroRfcF").prop("required", false);
                     }
                 });
                 if ($("#accion").val() == "editar") {
