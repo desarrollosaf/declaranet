@@ -6,7 +6,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('tipo_beneficio', 'Especifique:') !!}</strong>
-        {!! Form::text('beneficio_privado[tipo_beneficio]',isset($beneficio) ? $beneficio->tipo_beneficio :null,['class'=>'form-control', 'placeholder'=>'P. ej. Beca', 'disabled'=>'disabled',  'id' => 'tipo_beneficio', 'type' => 'text', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[tipo_beneficio]',isset($beneficio) ? $beneficio->tipo_beneficio :null,['class'=>'form-control', 'placeholder'=>'P. ej. BECA', 'disabled'=>'disabled',  'id' => 'tipo_beneficio', 'type' => 'text', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -19,7 +19,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('beneficiario', 'Especifique:') !!}</strong>
-        {!! Form::text('beneficio_privado[beneficiario]',isset($beneficio) ? $beneficio->beneficiario :null,['class'=>'form-control', 'placeholder'=>'p. ej. Concuño', 'disabled'=> 'disabled', 'id' => 'beneficiario', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[beneficiario]',isset($beneficio) ? $beneficio->beneficiario :null,['class'=>'form-control', 'placeholder'=>'p. ej. CUÑADO', 'disabled'=> 'disabled', 'id' => 'beneficiario', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -29,7 +29,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('sector', 'Especifique:') !!}</strong>
-        {!! Form::text('beneficio_privado[sector]',isset($beneficio) ? $beneficio->sector : null,['class'=>'form-control', 'placeholder'=>'p. ej. Juan Pérez', 'disabled'=> 'disabled',  'id' => 'sector', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[sector]',isset($beneficio) ? $beneficio->sector : null,['class'=>'form-control', 'placeholder'=>'p. ej. JUAN PÉREZ', 'disabled'=> 'disabled',  'id' => 'sector', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -42,7 +42,7 @@
     </div>
     <div class="form-group col-md-4" id="fisicaN">
         <strong> {!! Form::label('nombre_otorgante', 'Nombre del otorgante:') !!}</strong>
-        {!! Form::text('beneficio_privado[nombre_otorgante]',isset($beneficio) ? $beneficio->nombre_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.Juan Pérez',  'id' => 'nombre_otorgante', 'disabled'=>'disabled', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[nombre_otorgante]',isset($beneficio) ? $beneficio->nombre_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.JUAN PÉREZ',  'id' => 'nombre_otorgante', 'disabled'=>'disabled', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="fisicaR">
@@ -53,7 +53,7 @@
 
     <div class="form-group col-md-4" id="moralRazon" style="display: none;">
         <strong> {!! Form::label('razon_social_otorgante', 'Razón social del otorgante:') !!}</strong>
-        {!! Form::text('beneficio_privado[razon_social_otorgante]',isset($beneficio) ? $beneficio->razon_social_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.Desarrollo y Redes S.A de C.V,',  'id' => 'razon_social_otorgante', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[razon_social_otorgante]',isset($beneficio) ? $beneficio->razon_social_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.DESARROLLO Y REDES S.A. de C.V.',  'id' => 'razon_social_otorgante', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="moralRfc" style="display: none;">
@@ -76,7 +76,7 @@
     </div>
     <div class="form-group col-md-4" id="Tespecie" style="display: none;">
         <strong> {!! Form::label('especie', 'Especifique el beneficio:') !!}</strong>
-        {!! Form::text('beneficio_privado[especie]',isset($beneficio) ? $beneficio->especie :null,['class'=>'form-control', 'placeholder'=>'p. ej. cheque',  'id' => 'especie', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[especie]',isset($beneficio) ? $beneficio->especie :null,['class'=>'form-control', 'placeholder'=>'p. ej. CHEQUE',  'id' => 'especie', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
