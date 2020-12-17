@@ -152,6 +152,17 @@
             $('#frmExperienciaLaboral').submit();
         }
     });
+
+    if ($("#accion").val() == "editar") {
+        $("#tipoDePersona").change();
+        $("#tipoVehiculo_id").change();
+        $("#lugar_registro").change();
+        $("#titular_id").change();
+        $("#tipoPersonaTercero").change();
+        document.getElementById("edit").style.display = "block";
+    } else {
+        document.getElementById("crearF").style.display = "block";
+    }
 </script>
 @endsection
 
