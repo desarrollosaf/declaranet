@@ -160,6 +160,22 @@
             var actividad_lucrativa = document.getElementById("respuestas_id").value
             if(actividad_lucrativa == '1'){
                 document.getElementById("si").style.display="block";
+                $("#tipo_relaciones_id").prop("required",true);
+                $("#nombre_empresa").prop("required",true);
+                $("#rfc").prop("required",true);
+                $("#regimen_fiscal_id").prop("required",true);
+
+                $("#nombre_cliente").prop("required",true);
+                $("#rfc_cliente").prop("required",true);
+                $("#nombre_cliente_moral").prop("required",true);
+                $("#rfc_cliente_moral").prop("required",true);
+
+                $("#sectores_id").prop("required",true);
+                $("#sector_especifique").prop("required",true);
+                $("#monto_beneficio").prop("required",true);
+                $("#lugar_donde_resides_id").prop("required",true);
+                $("#entidades_id").prop("required",true);
+                $("#paises_id").prop("required",true);
             }else{
                 document.getElementById("si").style.display="none";
                 $("#tipo_relaciones_id").val("");
