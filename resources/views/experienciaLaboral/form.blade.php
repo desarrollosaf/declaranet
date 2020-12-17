@@ -104,4 +104,4 @@
             {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-sm btn-submit text-light'] )}}
     </div>
 </div>
-
+<DIV></DIV>
