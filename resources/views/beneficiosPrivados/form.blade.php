@@ -6,7 +6,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('tipo_beneficio', 'Especifique:') !!}</strong>
-        {!! Form::text('beneficio_privado[tipo_beneficio]',isset($beneficio) ? $beneficio->tipo_beneficio :null,['class'=>'form-control', 'placeholder'=>'P. ej. BECA', 'disabled'=>'disabled',  'id' => 'tipo_beneficio', 'type' => 'text', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[tipo_beneficio]',isset($beneficio) ? $beneficio->tipo_beneficio :null,['class'=>'form-control', 'placeholder'=>'P. EJ. BECA', 'disabled'=>'disabled',  'id' => 'tipo_beneficio', 'type' => 'text', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -19,7 +19,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('beneficiario', 'Especifique:') !!}</strong>
-        {!! Form::text('beneficio_privado[beneficiario]',isset($beneficio) ? $beneficio->beneficiario :null,['class'=>'form-control', 'placeholder'=>'p. ej. CUÑADO', 'disabled'=> 'disabled', 'id' => 'beneficiario', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[beneficiario]',isset($beneficio) ? $beneficio->beneficiario :null,['class'=>'form-control', 'placeholder'=>'P. EJ. CUÑADO', 'disabled'=> 'disabled', 'id' => 'beneficiario', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -29,7 +29,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('sector', 'Especifique:') !!}</strong>
-        {!! Form::text('beneficio_privado[sector]',isset($beneficio) ? $beneficio->sector : null,['class'=>'form-control', 'placeholder'=>'p. ej. JUAN PÉREZ', 'disabled'=> 'disabled',  'id' => 'sector', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[sector]',isset($beneficio) ? $beneficio->sector : null,['class'=>'form-control', 'placeholder'=>'P. EJ. JUAN PÉREZ', 'disabled'=> 'disabled',  'id' => 'sector', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -42,23 +42,23 @@
     </div>
     <div class="form-group col-md-4" id="fisicaN">
         <strong> {!! Form::label('nombre_otorgante', 'Nombre del otorgante:') !!}</strong>
-        {!! Form::text('beneficio_privado[nombre_otorgante]',isset($beneficio) ? $beneficio->nombre_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.JUAN PÉREZ',  'id' => 'nombre_otorgante', 'disabled'=>'disabled', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[nombre_otorgante]',isset($beneficio) ? $beneficio->nombre_otorgante :null,['class'=>'form-control', 'placeholder'=>'P. EJ. JUAN PÉREZ',  'id' => 'nombre_otorgante', 'disabled'=>'disabled', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="fisicaR">
         <strong> {!! Form::label('rfc', 'RFC:') !!}</strong>
-        {!! Form::text('beneficio_privado[rfc_otorgante]',isset($beneficio) ? $beneficio->rfc_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej. XXXX010101XXX',  'id' => 'rfc_otorgante', 'disabled'=>'disabled', 'required' => true, 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
+        {!! Form::text('beneficio_privado[rfc_otorgante]',isset($beneficio) ? $beneficio->rfc_otorgante :null,['class'=>'form-control', 'placeholder'=>'P. EJ. XXXX010101XXX',  'id' => 'rfc_otorgante', 'disabled'=>'disabled', 'required' => true, 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 
     <div class="form-group col-md-4" id="moralRazon" style="display: none;">
         <strong> {!! Form::label('razon_social_otorgante', 'Razón social del otorgante:') !!}</strong>
-        {!! Form::text('beneficio_privado[razon_social_otorgante]',isset($beneficio) ? $beneficio->razon_social_otorgante :null,['class'=>'form-control', 'placeholder'=>'p. ej.DESARROLLO Y REDES S.A. de C.V.',  'id' => 'razon_social_otorgante', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[razon_social_otorgante]',isset($beneficio) ? $beneficio->razon_social_otorgante :null,['class'=>'form-control', 'placeholder'=>'P. EJ. DESARROLLO Y REDES S.A. de C.V.',  'id' => 'razon_social_otorgante', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="moralRfc" style="display: none;">
         <strong>  {!! Form::label('rfc_otorganteM', 'RFC:') !!}</strong>
-        {!! Form::text('beneficio_privado[rfc_otorganteM]',isset($beneficio) ? $beneficio->rfc_otorganteM :null,['class'=>'form-control', 'placeholder'=>'p. ej. XXXX010101XX',  'id' => 'rfc_otorganteM', 'required' => true, 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
+        {!! Form::text('beneficio_privado[rfc_otorganteM]',isset($beneficio) ? $beneficio->rfc_otorganteM :null,['class'=>'form-control', 'placeholder'=>'P. EJ. XXXX010101XX',  'id' => 'rfc_otorganteM', 'required' => true, 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -76,12 +76,12 @@
     </div>
     <div class="form-group col-md-4" id="Tespecie" style="display: none;">
         <strong> {!! Form::label('especie', 'Especifique el beneficio:') !!}</strong>
-        {!! Form::text('beneficio_privado[especie]',isset($beneficio) ? $beneficio->especie :null,['class'=>'form-control', 'placeholder'=>'p. ej. CHEQUE',  'id' => 'especie', 'required' => true]) !!}
+        {!! Form::text('beneficio_privado[especie]',isset($beneficio) ? $beneficio->especie :null,['class'=>'form-control', 'placeholder'=>'P. EJ. CHEQUE',  'id' => 'especie', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('monto_mensual', 'Monto mensual aproximado del beneficio:') !!}</strong>
-        {!! Form::number('beneficio_privado[monto_mensual]',isset($beneficio) ? $beneficio->monto_mensual :null,['class'=>'form-control', 'placeholder'=>'p. ej. $10,000 MxN',  'id' => 'monto_mensual', 'required' => true]) !!}
+        {!! Form::number('beneficio_privado[monto_mensual]',isset($beneficio) ? $beneficio->monto_mensual :null,['class'=>'form-control', 'placeholder'=>'P. EJ. $10,000 MxN',  'id' => 'monto_mensual', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
