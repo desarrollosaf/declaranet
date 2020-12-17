@@ -61,8 +61,5 @@ class BienInmueble extends Model {
         return $this->belongsTo(Entidad::class);
     }
 
-    public function tipoMunicipio() {
-        return $this->belongsTo(Municipio::class);
-    }
 
 }

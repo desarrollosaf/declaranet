@@ -236,7 +236,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('municipio_id', 'Municipio / Alcaldía: *') !!}</strong>
-            {!! Form::select('domicilio[municipio_id]', isset($selectMunicipio) ? $selectMunicipio : [], isset($bien) ? $bien->municipio_id : null, ['class'=>'form-control text-uppercase  tipo-titular',   'id' => 'municipio_id', 'required' => 'true']) !!}
+            {!! Form::select('domicilio[municipio_id]', isset($selectMunicipio) ? $selectMunicipio : [], isset($bien) ? $bien->municipio_id : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Seleccione  una opción',  'id' => 'municipio_id', 'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -557,7 +557,7 @@
         });
         
         
-        $("#entidad_federativa_id").on('change', function () {
+        $("#entidad_id").on('change', function () {
             var idEntidad = $(this).val();
             if (parseInt(idEntidad) === 15) {
                 $(".foraneo").hide();
@@ -587,6 +587,7 @@
 
         @endif
     });
+    
 //    $("#frm_BienesInmuebles").on("submit", function (e) {
 //        e.preventDefault();
 //        if (!validarFormulario()) {

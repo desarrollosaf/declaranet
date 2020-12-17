@@ -66,7 +66,7 @@ class BienesInmueblesController extends Controller {
         $selectMunicipio = Arr::pluck(\App\Municipio::all(), "municipio", "id");
        
 
-        return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMoneda', 'selectEntidad', 'selectMunicipio'));
+        return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMunicipio', 'selectMoneda'));
     
         
     }
