@@ -52,5 +52,9 @@ class BienInmueble extends Model {
     public function inmuebleable(){
         return $this->morphTo();
     }
+    
+    public function tipoMoneda() {
+        return $this->belongsTo(tipoMoneda::class);
+    }
 
 }
