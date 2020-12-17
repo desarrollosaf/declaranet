@@ -66,9 +66,7 @@
                                 </tbody>
                             </table>
                             <center>
-                                <strong>Si desea registrar algún Préstamo o Comodato por Terceros pulse: <a
-                                        href="{{route('participacion.create')}}"
-                                        class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
+                                <strong>Si desea adicionar información pulse: <a href="{{route('participacion.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
                                     apartado.</strong>
                             </center>
                         </div>
