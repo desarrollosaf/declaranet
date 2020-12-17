@@ -7,14 +7,13 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('tipo_inmueble_id', ' Tipo de inmueble: *', ['class' => 'labelValidate']) !!}</strong>
-
                 {!! Form::select('bienesinmuebles[tipo_inmueble_id]', isset($selecttipoInmueble) ? $selecttipoInmueble : [], isset($bien) ? $bien->tipo_inmueble_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción' ,  'id' => 'tipo_inmueble_id', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4" id="combo_otro_Disabled">
             <div class="form-group">
                 <strong>{!! Form::label('tipo_inmueble', ' Especifique: ', ['class' => 'labelValidate']) !!}</strong>
-                {!! Form::text('bienesinmuebles[tipo_inmueble]',isset($bien) ? $bien->tipo_inmueble : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'tipo_inmueble', 'disabled' => 'true' ]) !!}
+                {!! Form::text('bienesinmuebles[tipo_inmueble]',isset($bien) ? $bien->tipo_inmueble : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'tipo_inmueble', 'pattern' => '[A-Za-z]{0,300}', 'disabled' => 'true' ]) !!}
             </div>
         </div>
         <div class="col-md-4">
@@ -39,14 +38,14 @@
         <div class="col-md-4 tercero_fisica">
             <div class="form-group ">
                 <strong>{!! Form::label('nombre_razon_tercero_fisica', ' Nombre del tercero: ') !!}</strong>
-                {!! Form::text('bienesinmuebles[nombre_razon_tercero_fisica]', isset($bien) ? $bien->nombre_razon_tercero : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'nombre_razon_tercero_fisica']) !!}
+                {!! Form::text('bienesinmuebles[nombre_razon_tercero_fisica]', isset($bien) ? $bien->nombre_razon_tercero : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Juan Perez',  'id' => 'nombre_razon_tercero_fisica']) !!}
             </div>
         </div>
 
         <div class="col-md-4 tercero_moral">
             <div class="form-group">
                 <strong>{!! Form::label('nombre_razon_tercero_moral', ' Razón social: ') !!}</strong>
-                {!! Form::text('bienesinmuebles[nombre_razon_tercero_moral]', isset($bien) ? $bien->nombre_razon_tercero : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'nombre_razon_tercero_moral']) !!}
+                {!! Form::text('bienesinmuebles[nombre_razon_tercero_moral]', isset($bien) ? $bien->nombre_razon_tercero : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Empresa S.A. de C.V.',  'id' => 'nombre_razon_tercero_moral']) !!}
             </div>
         </div>
 
@@ -74,19 +73,19 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong style="line-height: 15px;">{!! Form::label('porcentaje_propiedad', ' Porcentaje de propiedad del Declarante conforme a escrituración o contrato: * ') !!}</strong>
-                {!! Form::text('bienesinmuebles[porcentaje_propiedad]', isset($bien) ? $bien->porcentaje_propiedad : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 10%',  'id' => 'porcentaje_propiedad', 'required' => 'true']) !!}
+                {!! Form::number('bienesinmuebles[porcentaje_propiedad]', isset($bien) ? $bien->porcentaje_propiedad : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 10%',  'id' => 'porcentaje_propiedad', 'maxlength'=>'3', 'min'=>'1', 'max'=>'100', 'pattern' => '[0-9]{0,3}', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('superficieTerreno', ' Superficie del terreno: *') !!}</strong>
-                {!! Form::text('bienesinmuebles[superficie_terreno]', isset($bien) ? $bien->superficie_terreno : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m',  'id' => 'superficie_terreno', 'required' => 'true']) !!}
+                {!! Form::number('bienesinmuebles[superficie_terreno]', isset($bien) ? $bien->superficie_terreno : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m',  'id' => 'superficie_terreno', 'pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('superficie_construccion', ' Superficie de construcción: * ') !!}</strong>
-                {!! Form::text('bienesinmuebles[superficie_construccion]', isset($bien) ? $bien->superficie_construccion : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m',  'id' => 'superficie_construccion', 'required' => 'true']) !!}
+                {!! Form::number('bienesinmuebles[superficie_construccion]', isset($bien) ? $bien->superficie_construccion : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m',  'id' => 'superficie_construccion', 'pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
             </div>
         </div>
     </div>
@@ -160,7 +159,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('valor_adquisicion', ' Valor de adquisición: * ') !!}</strong>
-                {!! Form::text('bienesinmuebles[valor_adquisicion]', isset($bien) ? $bien->valor_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 100000.0 Mxn', 'id' => 'valor_adquisicion', 'required' => 'true']) !!}
+                {!! Form::number('bienesinmuebles[valor_adquisicion]', isset($bien) ? $bien->valor_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 100000.0 Mxn', 'id' => 'valor_adquisicion','pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
@@ -176,15 +175,16 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <strong>{!! Form::label('tipo_moneda', ' Tipo de moneda: *') !!}</strong>
-                {!! Form::text('bienesinmuebles[tipo_moneda]', isset($bien) ? $bien->tipo_moneda : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Peso mexicano', 'id' => 'tipo_moneda', 'required' => 'true']) !!}
+                <strong>{!! Form::label('tipo_moneda_id', ' Tipo de moneda: *') !!}</strong>
+                {!! Form::select('bienesinmuebles[tipo_moneda_id]', isset($selectMoneda) ? $selectMoneda : [], isset($bien) ? $bien->tipo_moneda_id : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_moneda_id', 'required' => 'true']) !!}
+                <!--{!! Form::text('bienesinmuebles[tipo_moneda]', isset($bien) ? $bien->tipo_moneda : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Peso mexicano', 'id' => 'tipo_moneda', 'required' => 'true']) !!}-->
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('fecha_adquisicion', ' Fecha de adquisición del inmueble: *') !!}</strong>
-                {!! Form::date('bienesinmuebles[fecha_adquisicion]', isset($bien) ? $bien->fecha_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'id' => 'fecha_adquisicion', 'required' => 'true']) !!}
+                {!! Form::date('bienesinmuebles[fecha_adquisicion]', isset($bien) ? $bien->fecha_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'id' => 'fecha_adquisicion', 'required' => 'true', 'max'=>date("Y-m-d")]) !!}
             </div>
         </div>
         <div class="col-md-4">
@@ -219,19 +219,19 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('num_ext', 'Número exterior: *') !!}</strong>
-            {!! Form::number('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_ext', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
+            {!! Form::text('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_ext', 'pattern' => "[A-Za-z0-9-]{1,5}", 'title' => "Ingresa número exterior"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('num_int', 'Número interior / Piso: *') !!}</strong>
-            {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
+            {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5', 'pattern' => "[A-Za-z0-9-]{1,5}", 'id' => 'interior']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('colonia', 'Colonia / Localidad: *') !!}</strong>
-            {!! Form::text('domicilio[colonia]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia']) !!}
+            <strong>{!! Form::label('entidad', 'Entidad Federativa: *') !!}</strong>
+            {!! Form::text('domicilio[entidad]',isset($domicilio) ? $domicilio->entidad : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. CDMX',  'id' => 'entidad']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -240,15 +240,17 @@
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('entidad', 'Entidad Federativa: *') !!}</strong>
-            {!! Form::text('domicilio[entidad]',isset($domicilio) ? $domicilio->entidad : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. CDMX',  'id' => 'entidad']) !!}
+            <strong>{!! Form::label('colonia', 'Colonia / Localidad: *') !!}</strong>
+            {!! Form::text('domicilio[colonia]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
+
+
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('codigo_postal', 'Código postal: *') !!}</strong>
-            {!! Form::text('domicilio[codigo_postal]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postal', 'pattern' => "[0-9]{5}", 'title' => "Ingresa código postal a 5 dígitos"]) !!}
+            {!! Form::text('domicilio[codigo_postal]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 50000', 'maxlength'=>'5', 'id' => 'codigo_postal', 'pattern' => "[0-9]{5}", 'title' => "Ingresa código postal a 5 dígitos"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -263,19 +265,19 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('num_extExt', 'Número exterior: *') !!}</strong>
-            {!! Form::number('domicilio[num_extExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
+            {!! Form::number('domicilio[num_extExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[A-Za-z0-9-]{1,5}", 'title' => "Ingresa número exterior"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('numintExt', 'Número interior / Piso: *') !!}</strong>
-            {!! Form::text('domicilio[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt']) !!}
+            {!! Form::text('domicilio[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5', 'pattern' => "[A-Za-z0-9-]{1,5}",  'id' => 'numintExt']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('colonia_Ext', 'Colonia / Localidad: *') !!}</strong>
-            {!! Form::text('domicilio[colonia_Ext]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_Ext']) !!}
+            <strong>{!! Form::label('pais', 'País: *') !!}</strong>
+            {!! Form::text('domicilio[pais]',isset($domicilio) ? $domicilio->pais : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. México',  'id' => 'pais']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -284,15 +286,15 @@
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('pais', 'País: *') !!}</strong>
-            {!! Form::text('domicilio[pais]',isset($domicilio) ? $domicilio->pais : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. México',  'id' => 'pais']) !!}
+            <strong>{!! Form::label('colonia_Ext', 'Colonia / Localidad: *') !!}</strong>
+            {!! Form::text('domicilio[colonia_Ext]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_Ext']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('codigo_postalExt', 'Código postal: *') !!}</strong>
-            {!! Form::text('domicilio[codigo_postalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postalExt', 'pattern' => "[0-9]{5}", 'title' => "Ingresa código postal a 5 dígitos"]) !!}
+            {!! Form::text('domicilio[codigo_postalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 50000', 'maxlength'=>'5', 'pattern' => "[A-Za-z0-9]{5}", 'id' => 'codigo_postalExt', 'pattern' => "[A-Z\d]",  'title' => "Ingresa código postal a 5 dígitos"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -351,7 +353,8 @@
         $(".domicilio-MXBinmuebles").hide();
         $(".domicilio-EXBinmuebles").hide();
 
-
+        $('.fisica').hide();
+        $('.moral').hide();
 
         //HABILITAR CAJA DE TEXTO OTROS
         $('#tipo_inmueble_id').change(function () {
@@ -435,7 +438,6 @@
         //TIPO TRANSMISOR
         $('#tipo_transmisor_id').change(function () {
 
-            
             if ($(this).val() === '') {
                 $('.fisica').hide();
                 $('.moral').hide();
@@ -446,7 +448,7 @@
                 $('#rfcTransmisorF').removeAttr('required');
                 $('#nombreTransmisorF').removeAttr('pattern');
                 $('#rfcTransmisorF').removeAttr('pattern');
-                
+
                 $('#nombreTransmisorM').removeAttr('required');
                 $('#rfcTransmisorM').removeAttr('required');
                 $('#nombreTransmisorM').removeAttr('pattern');
@@ -470,12 +472,12 @@
             } else if (parseInt($(this).val()) === 2) {
                 $('.fisica').hide();
                 $('.moral').show();
-                
+
                 $('#nombreTransmisorF').removeAttr('required');
                 $('#rfcTransmisorF').removeAttr('required');
                 $('#nombreTransmisorF').removeAttr('pattern');
                 $('#rfcTransmisorF').removeAttr('pattern');
-                
+
 
                 $('#nombreTransmisorM').prop('required', true);
                 $('#rfcTransmisorM').prop('required', true);
@@ -490,7 +492,7 @@
                 $('.domicilio-EXBinmuebles').hide();
 
                 $('#calle').prop('required', true);
-                $('#exterior').prop('required', true);
+                $('#num_ext').prop('required', true);
 //                $('#interior').prop('required', true);
                 $('#colonia').prop('required', true);
                 $('#municipio').prop('required', true);
@@ -550,13 +552,13 @@
         });
 
 
-        @if(isset($bien))
-            $('#tipo_inmueble_id').change();
-            $("#titular_id").change();
-            $('#tipo_tercero_id').change();
-            $('#tipo_transmisor_id').change();
-            $('#ubicacion_inmueble_id').change();
-        
+        @if (isset($bien))
+        $('#tipo_inmueble_id').change();
+        $("#titular_id").change();
+        $('#tipo_tercero_id').change();
+        $('#tipo_transmisor_id').change();
+        $('#ubicacion_inmueble_id').change();
+
         @endif
     });
 //    $("#frm_BienesInmuebles").on("submit", function (e) {

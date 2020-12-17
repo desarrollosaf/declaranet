@@ -41,7 +41,8 @@ class CreateBienesinmuebles extends Migration
             $table->string('valor_adquisicion')->nullable();
             $table->unsignedBigInteger('valor_conforme_id')->nullable();
             $table->foreign('valor_conforme_id')->references('id')->on('valor_conforme_a_s');
-            $table->string('tipo_moneda')->nullable();
+            $table->unsignedBigInteger('tipo_moneda_id')->nullable();
+            $table->foreign('tipo_moneda_id')->references('id')->on('tipo_monedas');
             $table->date('fecha_adquisicion')->nullable();
             $table->string('datos_registro')->nullable();
             $table->unsignedBigInteger('ubicacion_inmueble_id')->nullable();
