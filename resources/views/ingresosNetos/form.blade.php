@@ -170,7 +170,7 @@
         <table>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.total_ingresos_declarante_pareja', '$') !!}</td>
-                <td align='left'>{!! Form::number('ingresoMensual[total_ingresos_declarante_pareja]',(isset($ingresoMensual->total_ingresos_declarante_pareja)) ? $ingresoMensual->total_ingresos_declarante_pareja : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000',  'id' => 'total_ingresos_declarante_pareja', 'required' => 'true', "readOnly"=> true]) !!}</td>
+                <td align='left'>{!! Form::number('ingresoMensual[total_ingresos_declarante_pareja]',(isset($ingresoMensual->total_ingresos_declarante_pareja)) ? $ingresoMensual->total_ingresos_declarante_pareja : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000',  'id' => 'total_ingresos_declarante_pareja', 'required' => 'true', "readOnly" => true]) !!}</td>
             </tr>
         </table>
     </div>
@@ -204,11 +204,11 @@
             var n6 = Number(neto["ingreso_mensual_neto_pareja"].value);
             var to = n1 + n2 + n3 + n4 + n5;
             var toDecl = n2 + n3 + n4 + n5;
-            var toDP = total + n6;
+            var toDP = to + n6;
             var total = to.toFixed(2);
             var totalDecl = toDecl.toFixed(2);
             var totalDP = toDP.toFixed(2);
-
+          
             if (!isNaN(total)) {
                 neto["ingreso_mensual_neto"].value = total;
             }

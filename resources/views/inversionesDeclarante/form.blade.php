@@ -25,12 +25,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('inversiones.nombre_del_tercero', 'Nombre del Tercero:', ['id' => 'labelter']) !!}</strong>
-        {!! Form::text('inversiones[nombre_del_tercero]',isset($inversiones) ? $inversiones->nombre_del_tercero : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'nombre_del_tercero']) !!}
+        {!! Form::text('inversiones[nombre_del_tercero]',isset($inversiones) ? $inversiones->nombre_del_tercero : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre_del_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('inversiones.rfc_tercero', 'RFC Tercero:') !!}</strong>
-        {!! Form::text('inversiones[rfc_tercero]',isset($inversiones) ? $inversiones->rfc_tercero : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'rfc_tercero']) !!}
+        {!! Form::text('inversiones[rfc_tercero]',isset($inversiones) ? $inversiones->rfc_tercero : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'rfc_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -42,12 +42,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('inversiones.institucion_razon_social', 'Institución o razón social:') !!}</strong>
-        {!! Form::text('inversiones[institucion_razon_social]',isset($inversiones) ? $inversiones->institucion_razon_social : null,['class'=>'form-control', 'placeholder'=>'p.ej.Desarrollo y Redes S.A de C.V.',  'id' => 'institucion_razon_social', 'required' => 'true']) !!}
+        {!! Form::text('inversiones[institucion_razon_social]',isset($inversiones) ? $inversiones->institucion_razon_social : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p.ej.Desarrollo y Redes S.A de C.V.',  'id' => 'institucion_razon_social', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="ubicacion_rfc">
         <strong> {!! Form::label('inversiones.rfc_titular', 'RFC:') !!}</strong>
-        {!! Form::text('inversiones[rfc_titular]',isset($inversiones) ? $inversiones->rfc_titular : null,['class'=>'form-control', 'placeholder'=>'Ingresa RFC',  'id' => 'rfc_titular']) !!}
+        {!! Form::text('inversiones[rfc_titular]',isset($inversiones) ? $inversiones->rfc_titular : null,['class'=>'form-control text-uppercase', 'placeholder'=>'Ingresa RFC',  'id' => 'rfc_titular']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
@@ -69,7 +69,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('inversiones.saldo_a_la_fecha', 'Saldo a la fecha de ingreso:') !!}</strong>
-        {!! Form::text('inversiones[saldo_a_la_fecha]',isset($inversiones) ? $inversiones->saldo_a_la_fecha : null,['class'=>'form-control', 'placeholder'=>'p.ej.$50000 Mxn',  'id' => 'saldo_a_la_fecha', 'required' => 'true']) !!}
+        {!! Form::number('inversiones[saldo_a_la_fecha]',isset($inversiones) ? $inversiones->saldo_a_la_fecha : null,['class'=>'form-control', 'placeholder'=>'p.ej.$50000 Mxn',  'id' => 'saldo_a_la_fecha', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -96,7 +96,6 @@
 
         $("#tipo_de_inversion").on('change', function (){
             var tipoInversion = $(this).val();
-            console.log(tipoInversion);
             $.ajax({
                 url: "{{asset('getDescripcionInversion')}}/" + tipoInversion,
                 type: 'get',
@@ -115,7 +114,6 @@
 
         $('#inputSelect').change(function () {
            var opt = $(this).val();
-           console.log(opt);
            if (opt=="3" || opt=="4" || opt=="6" || opt=="8" || opt=="10" || opt=="13" || opt=="15" || opt=="18" || opt=="19" || opt=="24") {
                 $('#mydiv').show();
             } else {
@@ -125,7 +123,6 @@
 
         $('#localizacion_cuenta').change(function () {
            var value = $(this).val();
-           console.log(value);
             if(value!="1"){
                 $('#ubicacion_rfc').hide();
                 $('#paises').show();

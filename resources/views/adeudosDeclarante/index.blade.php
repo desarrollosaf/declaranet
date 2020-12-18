@@ -6,10 +6,7 @@
                 <h3>ADEUDOS / PASIVOS</h3>
                 <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
             </div>
-
-
-
-
+            
             <div class="card-body">
                 @if(count($adeudos))
                     <div class="table-responsive-lg">
@@ -30,26 +27,26 @@
                                             <td>{{$adeudo->tipoAdeudo->valor}}<br>
                                         @else
                                             <td>{{$adeudo->especifique_adeudo}}<br>
-                                                @endif
-                                                <h8>
-                                                    <strong>Número de cuenta o contrato:</strong>{{$adeudo->numero_cuenta}}
-                                                    <br>
-                                                    <strong>Saldo insoluto:</strong>{{$adeudo->saldo_insoluto}}
-                                                </h8>
-                                            </td>
-                                            <td class="py-2">
-                                                {!! Form::open(['action' => ['AdeudosPasivosDeclaranteController@destroy', $adeudo->id], 'method'=>'DELETE']) !!}
-                                                <div style="display: inline-block;">
-                                                    <a href="{{route('adeudos.edit',[$adeudo])}}" class="btn btn-xs btn-warning">
-                                                        <i class="ion ion-edit"></i>
-                                                    </a>
-                                                    <button class="btn btn-xs btn-danger btn-borrar">
-                                                        <i class="ion ion-trash-a"></i>
-                                                    </button>
-                                                </div>
-                                                {!! Form::close() !!}
-                                            </td>
                                         @endif
+                                        <h8>
+                                            <strong>Número de cuenta o contrato:</strong>{{$adeudo->numero_cuenta}}
+                                            <br>
+                                            <strong>Saldo insoluto:</strong>{{$adeudo->saldo_insoluto}}
+                                        </h8>
+                                        </td>
+                                        <td class="py-2">
+                                            {!! Form::open(['action' => ['AdeudosPasivosDeclaranteController@destroy', $adeudo->id], 'method'=>'DELETE']) !!}
+                                            <div style="display: inline-block;">
+                                                <a href="{{route('adeudos.edit',[$adeudo])}}" class="btn btn-xs btn-warning">
+                                                    <i class="ion ion-edit"></i>
+                                                </a>
+                                                <button class="btn btn-xs btn-danger btn-borrar">
+                                                    <i class="ion ion-trash-a"></i>
+                                                </button>
+                                            </div>
+                                            {!! Form::close() !!}
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                             </tbody>
@@ -87,16 +84,6 @@
                         siguiente sección</a>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
 
     </div>
 @endsection
