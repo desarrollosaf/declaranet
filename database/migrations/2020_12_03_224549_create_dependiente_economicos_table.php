@@ -23,12 +23,12 @@ class CreateDependienteEconomicosTable extends Migration
             $table->unsignedBigInteger("relacion_transmisor_id");
             $table->foreign('relacion_transmisor_id')->references('id')->on('relacion_transmisores');
             $table->string("relacion_transmisor")->nullable();
-            $table->unsignedBigInteger('lugar_ubicacion_id');
+            $table->unsignedBigInteger('lugar_ubicacion_id')->nullable();
             $table->foreign('lugar_ubicacion_id')->references('id')->on('lugares_ubicacion');
             $table->string('curp');
             $table->unsignedBigInteger('respuesta_id');
             $table->foreign('respuesta_id')->references('id')->on('respuestas');
-            $table->unsignedBigInteger('lugar_residencia_id');
+            $table->unsignedBigInteger('lugar_residencia_id')->nullable();
             $table->foreign('lugar_residencia_id')->references('id')->on('lugar_donde_resides');
             $table->text('observaciones')->nullable();
             $table->softDeletes();

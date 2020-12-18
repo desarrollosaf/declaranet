@@ -74,29 +74,30 @@
     $("#habita-domicilio").on("change", function () {
         if ($(this).val() == "2") {
             $("#divLugarResidencia").show();
-            $("#residencia").prop("required",true);
+            $("#residencia").prop("required", true);
         } else {
             $("#divLugarResidencia").hide();
-            $("#residencia").prop("required",false);
+            $("#residencia").prop("required", false);
         }
+        $("#residencia").change();
     });
     $("#residencia").on("change", function () {
         console.log($(this).val());
         if ($(this).val() == "1") {
             $("#domicilio-mexico").show();
             $("#domicilio-extranjero").hide();
-            $(".nacional").prop("required",true);
-            $(".extranjero").prop("required",false);
+            $(".nacional").prop("required", true);
+            $(".extranjero").prop("required", false);
         } else if ($(this).val() == "2") {
             $("#domicilio-mexico").hide();
             $("#domicilio-extranjero").show();
-            $(".nacional").prop("required",false);
-            $(".extranjero").prop("required",true);
+            $(".nacional").prop("required", false);
+            $(".extranjero").prop("required", true);
         } else {
             $("#domicilio-mexico").hide();
             $("#domicilio-extranjero").hide();
-            $(".nacional").prop("required",false);
-            $(".extranjero").prop("required",false);
+            $(".nacional").prop("required", false);
+            $(".extranjero").prop("required", false);
         }
     });
 
@@ -105,24 +106,32 @@
             $(".PRIVADO").show();
             $(".AMBOS").show();
             $(".PÚBLICO").hide();
-            $(".publico").prop("required",false);
-            $(".privado").prop("required",true);
+            $(".publico").prop("required", false);
+            $(".privado").prop("required", true);
         } else if ($(this).val() == "1") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").show();
             $(".AMBOS").show();
-            $(".publico").prop("required",true);
-            $(".privado").prop("required",false);
+            $(".publico").prop("required", true);
+            $(".privado").prop("required", false);
+        } else if ($(this).val() == "4") {
+            $(".PRIVADO").hide();
+            $(".PÚBLICO").hide();
+            $(".publico").prop("required", false);
+            $(".privado").prop("required", false);
         } else if ($(this).val() == "") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").hide();
-             $(".publico").prop("required",false);
-            $(".privado").prop("required",false);
+            $(".publico").prop("required", false);
+            $(".privado").prop("required", false);
         }
     });
-    $('#salario,#salario_publico').bind('keyup paste', function(){
+    $('#salario,#salario_publico').bind('keyup paste', function () {
         this.value = this.value.replace(/[^0-9]/g, '');
     });
+//    $('#nombre').bind('keyup paste', function(){
+//        this.value = this.value.replace(/[^A-Z]/g, '');
+//    });
 
 
 //    $(".submitForm").on("click", function (e) {
@@ -145,9 +154,25 @@
             var nivel = $('#parentesco option:selected').html();
             if (nivel === "OTRO(ESPECIFIQUE)") {
                 $("#especifique-parentezco").prop("disabled", false);
+                $("#especifique-parentezco").prop("required", true);
             } else {
                 $("#especifique-parentezco").val("");
                 $("#especifique-parentezco").prop("disabled", true);
+                $("#especifique-parentezco").prop("required", false);
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $("#sector_pertenece").on("change", function () {
+            var nivel = $('#sector_pertenece option:selected').html();
+            if (nivel === "OTRO (ESPECIFIQUE)") {
+                $("#sector_especificar").prop("disabled", false);
+                $("#sector_especificar").prop("required", true);
+            } else {
+                $("#sector_especificar").val("");
+                $("#sector_especificar").prop("disabled", true);
+                $("#sector_especificar").prop("required", false);
             }
         });
     });
@@ -185,8 +210,17 @@
 //        }
 //        
 //    });
-    function validarDependiente(){
-        
-    }
+    $("#sector_pertenece").on("change", function () {
+        if ($(this).val() == 17) {
+
+        } else {
+
+        }
+    });
+
+    $("#curp").keyup(function () {
+        let curp = $(this).val();
+        $("#curp").val(curp.toString().toUpperCase());
+    });
 </script>
 @endsection

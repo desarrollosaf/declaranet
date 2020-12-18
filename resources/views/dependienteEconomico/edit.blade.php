@@ -63,11 +63,28 @@
 @endsection
 @section('scripts')
 <script>
-    $("#habita-domicilio").on("change", function () {
-        if ($(this).val() == "2") {
+
+
+    $(document).ready(function () {
+        if ($("#habita-domicilio").val() == "2") {
             $("#divLugarResidencia").show();
+            $("#residencia").prop("required",true);
         } else {
             $("#divLugarResidencia").hide();
+            $("#residencia").prop("required",false);
+        }
+        $("#residencia").change();
+        $("#sector").change();
+        $("#parentesco").change();
+    });
+    $("#habita-domicilio").on("change", function () {
+        $("#residencia").val("").change();
+        if ($(this).val() == "2") {
+            $("#divLugarResidencia").show();
+            $("#residencia").prop("required",true);
+        } else {
+            $("#divLugarResidencia").hide();
+            $("#residencia").prop("required",false);
         }
     });
     $("#residencia").on("change", function () {
@@ -75,12 +92,18 @@
         if ($(this).val() == "1") {
             $("#domicilio-mexico").show();
             $("#domicilio-extranjero").hide();
+            $(".nacional").prop("required",true);
+            $(".extranjero").prop("required",false);
         } else if ($(this).val() == "2") {
             $("#domicilio-mexico").hide();
             $("#domicilio-extranjero").show();
+            $(".nacional").prop("required",false);
+            $(".extranjero").prop("required",true);
         } else {
             $("#domicilio-mexico").hide();
             $("#domicilio-extranjero").hide();
+            $(".nacional").prop("required",false);
+            $(".extranjero").prop("required",false);
         }
     });
 
@@ -89,31 +112,23 @@
             $(".PRIVADO").show();
             $(".AMBOS").show();
             $(".PÚBLICO").hide();
+            $(".publico").prop("required",false);
+            $(".privado").prop("required",true);
         } else if ($(this).val() == "1") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").show();
             $(".AMBOS").show();
+            $(".publico").prop("required",true);
+            $(".privado").prop("required",false);
         } else if ($(this).val() == "") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").hide();
+             $(".publico").prop("required",false);
+            $(".privado").prop("required",false);
         }
     });
-
-
-    $(".submitForm").on("click", function (e) {
-        e.preventDefault();
-        let that = this;
-        var error = false;
-
-        if (error) {
-            Swal.fire({
-                title: 'Error',
-                text: 'llena todos los campos obligatorios',
-                icon: 'error'
-            });
-        } else {
-            $('#dependienteEconomico').submit();
-        }
+    $('#salario,#salario_publico').bind('keyup paste', function(){
+        this.value = this.value.replace(/[^0-9]/g, '');
     });
     $(document).ready(function () {
         $("#parentesco").on("change", function () {
@@ -145,12 +160,23 @@
             }
         });
     });
-    @if(isset($dependiente))
-        $("#habita-domicilio").change();
-        $("#parentesco").change();
-        $("#habita-domicilio").change();
-        $("#sector").change();
-        $("#residencia").change();
-    @endif
+//    $("#frmDependienteEconomico").on("submit",function(e){
+//        e.preventDefault();
+//        var validacion = validarDependiente();
+//        if(!validacion){
+//            alert("holi");
+////            $("#frmDependienteEconomico").submit();
+//        }else{
+//            Swal.fire({
+//                title: 'Error',
+//                text: 'llena todos los campos obligatorios',
+//                icon: 'error'
+//            });
+//        }
+//        
+//    });
+    function validarDependiente(){
+        
+    }
 </script>
 @endsection
