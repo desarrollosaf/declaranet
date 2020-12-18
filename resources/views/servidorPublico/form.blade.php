@@ -41,7 +41,7 @@
             <div class="form-group">
                 <div class="form-group">
                     <strong>  {!! Form::label('ingreso.fecha_conclusion', 'Fecha de conclusion') !!}</strong>
-                    {!! Form::date('ingreso[fecha_conclusion]',(isset($ingreso->fecha_conclusion)) ? $ingreso->fecha_conclusion : null,['class'=>'form-control text-uppercase', 'id' => 'fecha_conclusion']) !!}
+                    {!! Form::date('ingreso[fecha_conclusion]',(isset($ingreso->fecha_conclusion)) ? $ingreso->fecha_conclusion : null,['class'=>'form-control text-uppercase', 'id' => 'fecha_conclusion', 'max' => date("Y-m-d")]) !!}
                 </div>
             </div>
         </div>
@@ -291,6 +291,10 @@
         $(document).ready(function () {
             $(".si-fue-servidor").hide();
             $(".especifique-instrumento").hide();
+            let date = new Date();
+            let year = date.getFullYear() - 1;
+            let fecha = `${year}-12-31`;
+            $("#fecha_inicio").attr("max", fecha);
             // $(".cantidad").val("0.00");
             $("input[name='ingreso[fue_servidor_publico]']").change(function () {
                 const valor = $("input[name='ingreso[fue_servidor_publico]']:checked").val();
@@ -299,6 +303,9 @@
                     $("#fecha_inicio").prop("required", true);
                     $("#fecha_conclusion").prop("required", true);
                     $("#remuneracion_neta").prop("required", true);
+                    if ($("#fecha_inicio").val() === "") {
+                        $("#fecha_inicio").val("2019-12-31");
+                    }
                 } else {
                     $(".si-fue-servidor").hide();
                     $(".si-fue-servidor").find("input").val("");

@@ -454,6 +454,7 @@
                     $(".especifique-relacion").find("input").prop("required", false).val("");
                 }
             });
+
             @isset($prestamo)
             $("#tipo_bien").change();
             $("#tipoVehiculo_id").change();
