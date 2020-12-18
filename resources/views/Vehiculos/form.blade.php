@@ -262,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="crearF"  style="display: none;" class="all text-center">
+                <div id="crearF"  style="display: none;">
                     <div class="text-center">
                         <br>
                             {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
