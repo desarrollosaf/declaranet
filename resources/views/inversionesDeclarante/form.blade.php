@@ -23,14 +23,14 @@
         {!! Form::select('inversiones[tipo_de_tercero_id]', $tipoPersona, isset($inversiones) ? $inversiones->tipo_de_tercero_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control','id' => 'tipo_de_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-4"  id="mydivNT" style="display: none">
         <strong> {!! Form::label('inversiones.nombre_del_tercero', 'Nombre del Tercero:', ['id' => 'labelter']) !!}</strong>
-        {!! Form::text('inversiones[nombre_del_tercero]',isset($inversiones) ? $inversiones->nombre_del_tercero : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre_del_tercero']) !!}
+        {!! Form::text('inversiones[nombre_del_tercero]',isset($inversiones) ? $inversiones->nombre_del_tercero : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p.ej. Juan Robles',  'id' => 'nombre_del_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-4"  id="mydivRT" style="display: none">
         <strong>{!! Form::label('inversiones.rfc_tercero', 'RFC Tercero:') !!}</strong>
-        {!! Form::text('inversiones[rfc_tercero]',isset($inversiones) ? $inversiones->rfc_tercero : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'rfc_tercero']) !!}
+        {!! Form::text('inversiones[rfc_tercero]',isset($inversiones) ? $inversiones->rfc_tercero : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p.ej. XXXX010101',  'id' => 'rfc_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -59,7 +59,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('inversiones.numero_cuenta_poliza', 'Número de cuenta contrato o póliza:') !!}</strong>
-        {!! Form::text('inversiones[numero_cuenta_poliza]',isset($inversiones) ? $inversiones->numero_cuenta_poliza : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p.ej.01010101',  'id' => 'numero_cuenta_poliza', 'required' => 'true']) !!}
+        {!! Form::number('inversiones[numero_cuenta_poliza]',isset($inversiones) ? $inversiones->numero_cuenta_poliza : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p.ej.01010101',  'id' => 'numero_cuenta_poliza', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -79,13 +79,11 @@
         {!! Form::textarea('inversiones[aclaraciones_observaciones]',isset($inversiones) ? $inversiones->aclaraciones_observaciones : null,['class'=>'form-control alert-danger',  'id' => 'aclaraciones_observaciones']) !!}
     </div>
 </div>
-<div class="form-row">
-    <div class="col">
-        {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-    </div>
-    <div class="col">
-        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
-    </div>
+
+<div class="text-center">
+    <br>
+    {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+    {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}   
 </div>
 
 
@@ -116,8 +114,18 @@
            var opt = $(this).val();
            if (opt=="3" || opt=="4" || opt=="6" || opt=="8" || opt=="10" || opt=="13" || opt=="15" || opt=="18" || opt=="19" || opt=="24") {
                 $('#mydiv').show();
+                $("#tipo_de_tercero").prop("required", true)
+                $("#rfc_tercero").prop("required", true)
+                $("#nombre_del_tercero").prop("required", true)
+                $("#rfc_tercero").prop("required", true)
             } else {
                 $('#mydiv').hide();
+                $("#tipo_de_tercero").prop("required", false)
+                $("#nombre_del_tercero").prop("required", false)
+                $("#rfc_tercero").prop("required", false)
+                $("#tipo_de_tercero").val("");
+                $("#nombre_del_tercero").val("");
+                $("#rfc_tercero").val("");
             }
         });
 
@@ -126,9 +134,11 @@
             if(value!="1"){
                 $('#ubicacion_rfc').hide();
                 $('#paises').show();
+                $("#pais_cuenta").prop("required", true)
             }else{
                 $('#ubicacion_rfc').show();
                 $('#paises').hide();
+                $("#pais_cuenta").prop("required", false)
             }
         });
 
@@ -140,11 +150,25 @@
             var combo = document.getElementById("tipo_de_tercero");
             var selected = combo.options[combo.selectedIndex].value;
             if (selected > "1") {
+                $('#mydivNT').show();
+                $('#mydivRT').show();
+                $('#rfc_tercero').attr("pattern", '[A-Z]{3}[0-9]{9}');
+                $('#rfc_tercero').attr("title", 'Ingresa RFC a 12 dígitos');              
                 document.getElementById('labelter').innerText = 'Razón social del tercero:';
             } else {
+                $('#mydivNT').show();
+                $('#mydivRT').show();
+                $('#rfc_tercero').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}'); 
+                $('#rfc_tercero').attr("title", 'Ingresa RFC a 13 dígitos'); 
                 document.getElementById('labelter').innerText = 'Nombre del Tercero:';
             }
+            if(selected == ""){
+                $('#mydivNT').hide();
+                $('#mydivRT').hide();
+           }
         });
+
+       
 
         @isset($inversiones)
             $('#inputSelect').change();

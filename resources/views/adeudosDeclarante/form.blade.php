@@ -38,7 +38,7 @@
         {!! Form::text('adeudos[numero_cuenta]',isset($adeudos) ? $adeudos->numero_cuenta : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'p.ej. 01010101',  'id' => 'inst_educativa']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-4" id="date">
         <strong>{!! Form::label('adeudos.fecha_adquisicion', 'Fecha de adquisición del adeudo/pasivo:') !!}</strong>
         {!! Form::date('adeudos[fecha_adquisicion]', isset($adeudos) ? $adeudos->fecha_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'id' => 'fecha_adquisicion']) !!}
         <span class="text-danger" style="font-size:150%"></span>
@@ -101,15 +101,12 @@
         {!! Form::textarea('adeudos[aclaraciones_observaciones]',isset($adeudos) ? $adeudos->aclaraciones_observaciones : null,['class'=>'form-control text-uppercase  alert-danger']) !!}
     </div>
 </div>
-<div class="form-row">
-    <div class="col">
-        {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-    </div>
-    <div class="col">
-        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
-    </div>
-</div>
+<div class="text-center">
+    <br>
+    {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+    {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
 
+</div>
 
 
 @section('scripts')
@@ -125,7 +122,7 @@
                 $('#mydiv').hide();
             }
         });
-
+        
         $('#tipo_adeudo').change(function () {
            var value = $(this).val();
            console.log(value);
@@ -134,7 +131,18 @@
             } else {
                 $('#myEsp').hide();
             }
+
+        
         });
+
+        $('#date').change(function () {
+  
+            var fecha=$('#fecha_adquisicion').val();
+            console.log(fecha);
+        
+        });
+        
+      
 
         $('#codeudor').change(function () {
            var valcod = $(this).val();

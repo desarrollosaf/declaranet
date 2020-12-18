@@ -77,6 +77,11 @@
                     <strong>{!! Form::label('ingresoMensual.tipo_de_instrumento', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</strong></td>   
                 <td>{!! Form::select('ingresoMensual[tipo_de_instrumento]', $tipoInstrumento, isset($ingresoMensual) ? $ingresoMensual->tipo_de_instrumento : null,['placeholder' => 'SELECCIONE UNA OPCION','class'=>'form-control text-uppercase', 'id' => 'tipo_de_instrumento']) !!}</td>
             </tr>
+            <tr class="especifique-instrumento" style="display: none">
+                <td width='40%'>
+                    {!! Form::label('ingresoMensual.especifique_instrumento', 'Especifique:') !!}</td>
+                <td>{!! Form::text('ingresoMensual[especifique_instrumento]',(isset($ingresoMensual->especifique_instrumento)) ? $ingresoMensual->especifique_instrumento : null,['class'=>'form-control text-uppercase', 'id' => 'especifique_instrumento']) !!}</td>
+            </tr>
         </table>
     </div>
     <div class="col-md-2"></div>
@@ -219,7 +224,58 @@
                 neto["total_ingresos_declarante_pareja"].value = totalDP;
             }
     
-        }        
+        }
+
+        $("#tipo_de_instrumento").change(function () {
+                const valor = parseInt($(this).val());
+                if (valor === 7) {
+                    $(".especifique-instrumento").show();
+                    $("#especifique_instrumento").prop("required", true);
+                } else {
+                    $(".especifique-instrumento").hide();
+                    $("#especifique_instrumento").prop("required", false);
+                    $(".especifique-instrumento").find("input").val("");
+                }
+        });
+
+        $("#ingreso_por_actividad_ice").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#nombre_razon_social").prop("required", false);
+                    $("#tipo_de_negocio").prop("required", false);
+                    $("#nombre_razon_social").val("");
+                    $("#tipo_de_negocio").val("");
+                } else {
+                    $("#nombre_razon_social").prop("required", true)
+                    $("#tipo_de_negocio").prop("required", true)
+                }
+        }); 
+
+        $("#ingreso_por_actividad_financiera").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#tipo_de_instrumento").prop("required", false);
+                    $("#tipo_de_instrumento").val("");
+                } else {
+                    $("#tipo_de_instrumento").prop("required", true)
+                }
+        });
+
+        $("#ingreso_por_servicios_profesionales").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#tipo_de_servicio").prop("required", false);
+                    $("#tipo_de_servicio").val("");
+                } else {
+                    $("#tipo_de_servicio").prop("required", true)
+                }
+        }); 
+
+        $("#ingreso_otros").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#tipo_de_ingreso").prop("required", false);
+                    $("#tipo_de_ingreso").val("");
+                } else {
+                    $("#tipo_de_ingreso").prop("required", true)
+                }
+        });  
 
     </script>
     @endsection
