@@ -21,7 +21,7 @@ class Clientes extends Model
         return $this->belongsTo(tipoRelacion::class);
     }
 
-    public function sectoresC(){
+    public function sectores(){
         return $this->belongsTo(sector::class,'sectores_id');
     }
 
