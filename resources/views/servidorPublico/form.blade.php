@@ -183,7 +183,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.ingreso_por_enajenacion_bienes', '$') !!}</td>
-                    <td class="text-left">{!! Form::number('ingreso[ingreso_por_enajenacion_bienes]',(isset($ingreso->ingreso_por_servicios_profesionales)) ? $ingreso->ingreso_por_servicios_profesionales : null,['class'=>'form-control cantidad cantidad-otros',  'placeholder'=>'p. ej. $1000','id' => 'ingreso_por_enajenacion_bienes']) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[ingreso_por_enajenacion_bienes]',(isset($ingreso->ingreso_por_enajenacion_bienes)) ? $ingreso->ingreso_por_enajenacion_bienes : null,['class'=>'form-control cantidad cantidad-otros',  'placeholder'=>'p. ej. $1000','id' => 'ingreso_por_enajenacion_bienes']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -385,8 +385,10 @@
             @endif
             $("#ingreso_por_actividad_ice").keyup(function () {
                 if ($(this).val() === "") {
-                    $("#nombre_razon_social").prop("required", false)
-                    $("#tipo_de_negocio").prop("required", false)
+                    $("#nombre_razon_social").prop("required", false);
+                    $("#tipo_de_negocio").prop("required", false);
+                    $("#nombre_razon_social").val("");
+                    $("#tipo_de_negocio").val("");
                 } else {
                     $("#nombre_razon_social").prop("required", true)
                     $("#tipo_de_negocio").prop("required", true)
@@ -396,6 +398,7 @@
             $("#ingreso_por_actividad_financiera").keyup(function () {
                 if ($(this).val() === "") {
                     $("#tipo_de_instrumento_id").prop("required", false)
+                    $("#tipo_de_instrumento_id").val("");
                 } else {
                     $("#tipo_de_instrumento_id").prop("required", true)
                 }
@@ -404,6 +407,7 @@
             $("#ingreso_por_servicios_profesionales").keyup(function () {
                 if ($(this).val() === "") {
                     $("#tipo_de_servicio").prop("required", false)
+                    $("#tipo_de_servicio").val("");
                 } else {
                     $("#tipo_de_servicio").prop("required", true)
                 }
@@ -412,6 +416,7 @@
             $("#ingreso_por_enajenacion_bienes").keyup(function () {
                 if ($(this).val() === "") {
                     $("#tipo_de_bien_id").prop("required", false)
+                    $("#tipo_de_bien_id").val("");
                 } else {
                     $("#tipo_de_bien_id").prop("required", true)
                 }
@@ -420,6 +425,7 @@
             $("#ingreso_otros_no_considerados").keyup(function () {
                 if ($(this).val() === "") {
                     $("#tipo_de_ingreso_no_considerado").prop("required", false)
+                    $("#tipo_de_ingreso_no_considerado").val("");
                 } else {
                     $("#tipo_de_ingreso_no_considerado").prop("required", true)
                 }
