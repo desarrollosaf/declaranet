@@ -33,9 +33,10 @@ class CreateParticipacionEmpresasTable extends Migration
             $table->unsignedBigInteger('sector_productivo_id');
             $table->foreign('sector_productivo_id')->references('id')->on('sectores');
             $table->string('espec_sector')->nullable();
-            $table->string('entidad_federativa')->nullable();
             $table->unsignedBigInteger('pais_id')->nullable();
             $table->foreign('pais_id')->references('id')->on('paises');
+            $table->unsignedBigInteger('entidad_id')->nullable();
+            $table->foreign('entidad_id')->references('id')->on('entidades');
             $table->string('observaciones')->nullable();
             $table->softDeletes();
             $table->timestamps();

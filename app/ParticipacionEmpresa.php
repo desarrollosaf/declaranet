@@ -33,5 +33,7 @@ class ParticipacionEmpresa extends Model
         return $this->belongsTo(Pais::class);
     }
     
-    
+     public function Entidad() {
+        return $this->belongsTo(Entidad::class);
+    }
 }

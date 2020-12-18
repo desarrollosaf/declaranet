@@ -35,29 +35,26 @@ class ParticipacionEnEmpresasSociedadesYAsociacionesController extends Controlle
     {
         //COMBO TITULAR PARTICIPACION
         $selecttitularParticipacion = Arr::pluck(\App\titularBien::all(), "valor", "id");
-        array_unshift($selecttitularParticipacion, "Selecciona una opcion");
         
         //COMBO TIPO PARTICIPACION
         $selecttipoParticipacion = Arr::pluck(\App\tipoParticipacion::all(), "valor", "id");
-        array_unshift($selecttipoParticipacion, "Selecciona una opcion");
         
         //COMBO TIPO RESPUESTAS
         $selecttipoRespuesta = Arr::pluck(\App\Respuesta::all(), "respuesta", "id");
-        array_unshift($selecttipoRespuesta, "Selecciona una opcion");
         
         //COMBO LUGAR DONDE SE UBICA
         $selectubicacionParticipacion = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-        array_unshift($selectubicacionParticipacion, "Selecciona una opcion");
         
         //COMBO TIPO SECTOR
         $selectsectorProductivo= Arr::pluck(\App\sector::all(), "valor", "id");
-        array_unshift($selectsectorProductivo, "Selecciona una opcion");
         
         //COMBO PAIS
         $selectpais= Arr::pluck(\App\Pais::all(), "valor", "id");
-        array_unshift($selectpais, "Selecciona una opcion");
         
-        return view("ParticipacionEmpresas.create", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais'));
+        //COMBO PAIS
+        $selectEntidad= Arr::pluck(\App\Entidad::all(), "entidad", "id");
+        
+        return view("ParticipacionEmpresas.create", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais', 'selectEntidad'));
     }
 
     /**
@@ -107,31 +104,29 @@ class ParticipacionEnEmpresasSociedadesYAsociacionesController extends Controlle
     {
         //COMBO TITULAR PARTICIPACION
         $selecttitularParticipacion = Arr::pluck(\App\titularBien::all(), "valor", "id");
-        array_unshift($selecttitularParticipacion, "Selecciona una opcion");
         
         //COMBO TIPO PARTICIPACION
         $selecttipoParticipacion = Arr::pluck(\App\tipoParticipacion::all(), "valor", "id");
-        array_unshift($selecttipoParticipacion, "Selecciona una opcion");
         
         //COMBO TIPO RESPUESTAS
         $selecttipoRespuesta = Arr::pluck(\App\Respuesta::all(), "respuesta", "id");
-        array_unshift($selecttipoRespuesta, "Selecciona una opcion");
         
         //COMBO LUGAR DONDE SE UBICA
         $selectubicacionParticipacion = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-        array_unshift($selectubicacionParticipacion, "Selecciona una opcion");
         
         //COMBO TIPO SECTOR
         $selectsectorProductivo= Arr::pluck(\App\sector::all(), "valor", "id");
-        array_unshift($selectsectorProductivo, "Selecciona una opcion");
         
         //COMBO PAIS
         $selectpais= Arr::pluck(\App\Pais::all(), "valor", "id");
-        array_unshift($selectpais, "Selecciona una opcion");
+        
+        //COMBO PAIS
+        $selectEntidad= Arr::pluck(\App\Entidad::all(), "entidad", "id");
+        
         
         $empresas = \App\ParticipacionEmpresa::find($id);
         
-        return view("ParticipacionEmpresas.edit", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais', 'empresas'));
+        return view("ParticipacionEmpresas.edit", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais', 'empresas', 'selectEntidad'));
     }    
 
     /**

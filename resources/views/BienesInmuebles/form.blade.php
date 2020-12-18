@@ -311,6 +311,13 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <strong>{!! Form::label('texto', 'Todos los campos marcados con * son obligatorios. ') !!}</strong>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="row">
     <div class="col-md-12">
