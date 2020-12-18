@@ -52,27 +52,23 @@
                     </tbody>
                 </table>
                 <center>
-                    <strong>Si desea registrar algún Préstamo o Comodato por Terceros pulse: <a
-                            href="{{route('participacion_empresas.create')}}"
-                            class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                        apartado.</strong>
+                    <strong>Para adicionar información pulse: <a href="{{route('participacion_empresas.create')}}"class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                 </center>
             </div>
             @else
-            <span style="text-align: left !important;">El comodato es un préstamo de uso, en el que una de las partes entrega a otra gratuitamente algún bien mueble o inmueble, para que haga uso de ello, y esta tiene cargo de restituir el mismo bien después de terminado el uso.<br>
-                Deberá proporcionar la información de CADA UNO de los bienes en préstamo o comodato por terceros, que a la fecha de ingreso al cargo tenga el Declarante.</span>
+            <span style="text-align: left !important;">Deberá señalar la información de CADA UNA de las empresas, sociedades o asociaciones donde el Declarante, pareja y/o dependientes económicos, 
+                participan como socios, accionistas, comisarios, representantes, apoderados, colaboradores, beneficiarios u otros.</span>
             <br>
             <div class="alert alert-danger text-center" role="alert">
                 <label style="margin-top:10px;">
                     <strong>Para registrar información pulse: </strong><a href="{{route('participacion_empresas.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br><br>
-                    <strong>Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('participacion_empresas.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                    <strong>Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('participacion_empresas.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                 </label>
             </div>
 
 
 
             @endif
-
 
             <div class="text-center">
                 <br>
@@ -85,6 +81,47 @@
         </div>
 
 
+        @section('scripts')
+        <script>
+            $('.btn-borrar').on('click', function (e) {
+                let that = this;
+                console.log('boton clic');
+                e.preventDefault();
+                Swal.fire({
+                    title: '¿Está seguro?',
+                    text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $(that).closest('form').submit();
+                    }
+                });
+                return false;
+            });
+
+            $('.btn-ninguno').on('click', function (e) {
+                let that = this;
+                e.preventDefault();
+                Swal.fire({
+                    title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            text: 'No se registró información en este apartado. la información de CADA UNA de las empresas, sociedades o asociaciones donde el Declarante, pareja y/o dependientes económicos, \n\
+                                participan como socios, accionistas, comisarios, representantes, apoderados, colaboradores, beneficiarios u otros pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                            icon: 'warning',
+                            cancelButtonText: 'Aceptar'
+                        });
+                    }
+                });
+            });
+        </script>
+        @endsection
 
 
 
