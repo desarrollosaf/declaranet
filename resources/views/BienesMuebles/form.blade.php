@@ -217,10 +217,14 @@
                     $(".nombre-tercero").hide();
                     $("#nombre_tercero").val("");
                     $(".denominacion-razon").show();
+                    $("#nombre_tercero").prop("required", false);
+                    $("#denominacion_razon").prop("required", true);
                 } else {
                     $(".nombre-tercero").show();
                     $(".denominacion-razon").hide();
                     $("#denominacion_razon").val("");
+                    $("#nombre_tercero").prop("required", true);
+                    $("#denominacion_razon").prop("required", false);
                 }
             })
             $("#transmisor_propiedad").change(function () {

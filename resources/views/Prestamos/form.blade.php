@@ -127,13 +127,13 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <strong>{!! Form::label('especifique', 'Especifique:') !!}</strong>
-                    {!! Form::select('bienesinmuebles[tipo_inmueble_id]', $selecttipoInmueble, isset($bienesinmuebles->tipo_inmueble_id) ? $bienesinmuebles->tipo_inmueble_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_inmueble_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                    <strong>{!! Form::label('especifique', 'Tipo de inmueble:') !!}</strong>
+                    {!! Form::select('bienesinmuebles[tipo_inmueble_id]', $selecttipoInmueble, isset($bienesinmuebles->tipo_inmueble_id) ? $bienesinmuebles->tipo_inmueble_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_inmueble_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN', "pattern"=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}"]) !!}
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <strong>{!! Form::label('tipo_inmueble', ' Especifique: ') !!}</strong>
+                    <strong>{!! Form::label('tipo_inmueble', ' Especifique:') !!}</strong>
                     {!! Form::text('bienesinmuebles[tipo_inmueble]',isset($domicilio) ? $domicilio->tipo_inmueble : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'especifique-inmueble' ]) !!}
                 </div>
             </div>
@@ -152,12 +152,12 @@
                 </div>
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('exterior', 'Número exterior:') !!}</strong>
-                    {!! Form::number('domicilio[num_ext]',isset($domicilio->num_int) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior"]) !!}
+                    {!! Form::text('domicilio[num_ext]',isset($domicilio->num_int) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior" ,'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
-                    {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
+                    {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior','pattern' => '[A-Za-z0-9-]{1,8}']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
@@ -168,7 +168,7 @@
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilio.id', 'Entidad Federativa:') !!}</strong>
+                    <strong>{!! Form::label('domicilio.entidad_id', 'Entidad Federativa:') !!}</strong>
                     {!! Form::select('domicilio[entidad_id]', $selectEntidad,isset($domicilio->entidad_id) ? $domicilio->entidad_id : null,['class'=>'form-control tipo-titular', 'id' => 'entidad_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
@@ -181,7 +181,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('domicilio.codigo_postal', 'Código postal:') !!}</strong>
-                    {!! Form::text('domicilio[codigo_postal]',isset($domicilio->codigo_postal) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 50000',  'id' => 'cp']) !!}
+                    {!! Form::text('domicilio[codigo_postal]',isset($domicilio->codigo_postal) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 50000',  'id' => 'cp', 'pattern' => '[0-9]{5}']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
@@ -197,12 +197,12 @@
                 </div>
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('domicilioExt.numextExt', 'Número exterior:') !!}</strong>
-                    {!! Form::number('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
+                    {!! Form::number('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[A-Za-z0-9-]{1,8}", 'title' => "Ingresa número exterior"]) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso: ') !!}</strong>
-                    {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt']) !!}
+                    {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt', 'pattern' => "[A-Za-z0-9-]{1,8}"]) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
@@ -226,7 +226,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('domicilioExt.codigopostalExt', 'Código postal:') !!}</strong>
-                    {!! Form::text('domicilioExt[codigopostalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postalExt']) !!}
+                    {!! Form::text('domicilioExt[codigopostalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postalExt' , 'pattern' => '[A-za-z0-9]{5}']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
@@ -242,10 +242,10 @@
     </div>
     <div class="form-row">
         <div class="col">
-            {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light float-right'] )}}
+            <a class="btn btn-submit text-light float-center float-right btn-sm" href="{{route("adeudos.index")}}">Ir a la sección anterior</a>
         </div>
         <div class="col">
-            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-center'] )}}
+            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-center btn-sm'] )}}
         </div>
     </div>
 </div>

@@ -45,7 +45,7 @@
                         </table>
                         <center>
                             <strong>Si desea registrar algún Dato de Vehiculo pulse: <a
-                                    href="{{route('vehiculos.create')}}"
+                                    href="{{route('bienes_muebles.create')}}"
                                     class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
                                 apartado.</strong>
                         </center>

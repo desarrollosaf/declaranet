@@ -40,7 +40,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <div class="form-group">
-                    <strong>  {!! Form::label('ingreso.fecha_conclusion', 'Fecha de inicio') !!}</strong>
+                    <strong>  {!! Form::label('ingreso.fecha_conclusion', 'Fecha de conclusion') !!}</strong>
                     {!! Form::date('ingreso[fecha_conclusion]',(isset($ingreso->fecha_conclusion)) ? $ingreso->fecha_conclusion : null,['class'=>'form-control text-uppercase', 'id' => 'fecha_conclusion']) !!}
                 </div>
             </div>
@@ -64,7 +64,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.remuneracion_neta', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[remuneracion_neta]',(isset($ingreso->remuneracion_neta)) ? $ingreso->remuneracion_neta : null,['class'=>'form-control text-uppercase cantidad', 'placeholder'=>'p. ej. $1000', 'id' => 'remuneracion_neta']) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[remuneracion_neta]',(isset($ingreso->remuneracion_neta)) ? $ingreso->remuneracion_neta : null,['class'=>'form-control text-uppercase cantidad', 'placeholder'=>'p. ej. $1000', 'id' => 'remuneracion_neta']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -89,7 +89,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.ingreso_por_actividad_ice', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[ingreso_por_actividad_ice]',(isset($ingreso->ingreso_por_actividad_ice)) ? $ingreso->ingreso_por_actividad_ice : null,['class'=>'form-control text-uppercase cantidad cantidad-otros', 'placeholder'=>'p. ej. $1000', 'id' => 'ingreso_por_actividad_ice']) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[ingreso_por_actividad_ice]',(isset($ingreso->ingreso_por_actividad_ice)) ? $ingreso->ingreso_por_actividad_ice : null,['class'=>'form-control text-uppercase cantidad cantidad-otros', 'placeholder'=>'p. ej. $1000', 'id' => 'ingreso_por_actividad_ice']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -127,7 +127,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.ingreso_por_actividad_financiera', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[ingreso_por_actividad_financiera]',(isset($ingreso->ingreso_por_actividad_financiera)) ? $ingreso->ingreso_por_actividad_financiera : null,['class'=>'form-control text-uppercase cantidad cantidad-otros',  'placeholder'=>'p. ej. $1000','id' => 'ingreso_por_actividad_financiera']) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[ingreso_por_actividad_financiera]',(isset($ingreso->ingreso_por_actividad_financiera)) ? $ingreso->ingreso_por_actividad_financiera : null,['class'=>'form-control text-uppercase cantidad cantidad-otros',  'placeholder'=>'p. ej. $1000','id' => 'ingreso_por_actividad_financiera']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -158,7 +158,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.ingreso_por_servicios_profesionales', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[ingreso_por_servicios_profesionales]',(isset($ingreso->ingreso_por_servicios_profesionales)) ? $ingreso->ingreso_por_servicios_profesionales : null,['class'=>'form-control text-uppercase cantidad cantidad-otros','placeholder'=>'p. ej. $1000',  'id' => 'ingreso_por_servicios_profesionales']) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[ingreso_por_servicios_profesionales]',(isset($ingreso->ingreso_por_servicios_profesionales)) ? $ingreso->ingreso_por_servicios_profesionales : null,['class'=>'form-control text-uppercase cantidad cantidad-otros','placeholder'=>'p. ej. $1000',  'id' => 'ingreso_por_servicios_profesionales']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -183,7 +183,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.ingreso_por_enajenacion_bienes', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[ingreso_por_enajenacion_bienes]',(isset($ingreso->ingreso_por_servicios_profesionales)) ? $ingreso->ingreso_por_servicios_profesionales : null,['class'=>'form-control cantidad cantidad-otros',  'placeholder'=>'p. ej. $1000','id' => 'ingreso_por_enajenacion_bienes']) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[ingreso_por_enajenacion_bienes]',(isset($ingreso->ingreso_por_servicios_profesionales)) ? $ingreso->ingreso_por_servicios_profesionales : null,['class'=>'form-control cantidad cantidad-otros',  'placeholder'=>'p. ej. $1000','id' => 'ingreso_por_enajenacion_bienes']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -208,7 +208,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.ingreso_otros_no_considerados', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[ingreso_otros_no_considerados]',(isset($ingreso->ingreso_otros_no_considerados)) ? $ingreso->ingreso_otros_no_considerados : null,['class'=>'form-control cantidad cantidad-otros', 'placeholder'=>'p. ej. $1000', 'id' => 'ingreso_otros_no_considerados']) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[ingreso_otros_no_considerados]',(isset($ingreso->ingreso_otros_no_considerados)) ? $ingreso->ingreso_otros_no_considerados : null,['class'=>'form-control cantidad cantidad-otros', 'placeholder'=>'p. ej. $1000', 'id' => 'ingreso_otros_no_considerados']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -236,7 +236,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.otros_ingresos_total', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[otros_ingresos_total]',(isset($ingreso->otros_ingresos_total)) ? $ingreso->otros_ingresos_total : null,['class'=>'form-control text-uppercase cantidad',  'placeholder'=>'0', 'id' => 'otros_ingresos', "readOnly"=>true]) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[otros_ingresos_total]',(isset($ingreso->otros_ingresos_total)) ? $ingreso->otros_ingresos_total : null,['class'=>'form-control text-uppercase cantidad',  'placeholder'=>'0', 'id' => 'otros_ingresos', "readOnly"=>true]) !!}</td>
                 </tr>
             </table>
         </div>
@@ -247,7 +247,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.ingreso_neto', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[ingreso_neto]',(isset($ingreso->ingreso_neto)) ? $ingreso->ingreso_neto: null,['class'=>'form-control cantidad text-uppercase', 'placeholder'=>'0', 'id' => 'ingreso_neto', "readOnly"=> true]) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[ingreso_neto]',(isset($ingreso->ingreso_neto)) ? $ingreso->ingreso_neto: null,['class'=>'form-control cantidad text-uppercase', 'placeholder'=>'0', 'id' => 'ingreso_neto', "readOnly"=> true]) !!}</td>
                 </tr>
             </table>
         </div>
@@ -259,7 +259,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.ingreso_neto_pareja', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[ingreso_neto_pareja]',(isset($ingreso->ingreso_neto_pareja)) ? $ingreso->ingreso_neto_pareja : null,['class'=>'form-control cantidad text-uppercase', 'placeholder'=>'p. ej. $1000', 'id' => 'ingreso_neto_pareja']) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[ingreso_neto_pareja]',(isset($ingreso->ingreso_neto_pareja)) ? $ingreso->ingreso_neto_pareja : null,['class'=>'form-control cantidad text-uppercase', 'placeholder'=>'p. ej. $1000', 'id' => 'ingreso_neto_pareja']) !!}</td>
                 </tr>
             </table>
         </div>
@@ -272,7 +272,7 @@
             <table>
                 <tr>
                     <td class="text-right">{!! Form::label('ingreso.total_ingresos_declarante_pareja', '$') !!}</td>
-                    <td class="text-left">{!! Form::text('ingreso[total_ingresos_declarante_pareja]',(isset($ingreso->total_ingresos_declarante_pareja)) ? $ingreso->total_ingresos_declarante_pareja : null,['class'=>'form-control cantidad text-uppercase',  'placeholder'=>'0','id' => 'total_ingresos_declarante_pareja', "readOnly"=> true]) !!}</td>
+                    <td class="text-left">{!! Form::number('ingreso[total_ingresos_declarante_pareja]',(isset($ingreso->total_ingresos_declarante_pareja)) ? $ingreso->total_ingresos_declarante_pareja : null,['class'=>'form-control cantidad text-uppercase',  'placeholder'=>'0','id' => 'total_ingresos_declarante_pareja', "readOnly"=> true]) !!}</td>
                 </tr>
             </table>
         </div>

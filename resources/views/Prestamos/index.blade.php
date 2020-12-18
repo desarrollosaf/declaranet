@@ -2,15 +2,13 @@
 @section('content')
     <div class="container">
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
-        <div class="card-header bg-info  border-0 py-3 d-flex align-items-center"
-             style="background-color:#F1F1F1 !important;">
-            <div>
-                <h3>PRÉSTAMO O COMODATO POR TERCEROS</h3>
-                <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
+            <div class="card-header bg-info  border-0 py-3 d-flex align-items-center"
+                 style="background-color:#F1F1F1 !important;">
+                <div>
+                    <h3>PRÉSTAMO O COMODATO POR TERCEROS</h3>
+                    <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
+                </div>
             </div>
-        </div>
-
-
 
 
             <div class="card-body">
@@ -32,17 +30,27 @@
                                     @if($item->tipo_bien_id == 2)
                                         <td>
                                             <strong>Calle: </strong>{{$item->inmuebles->domicilio->calle}}<br>
-                                            <strong>Número interior: </strong>{{$item->inmuebles->domicilio->num_int}}<br>
-                                            <strong>Número exterior: </strong>{{$item->inmuebles->domicilio->num_ext}}<br>
-                                            <strong>Colonia / localidad: </strong>{{$item->inmuebles->domicilio->colonia}}<br>
+                                            <strong>Número interior: </strong>{{$item->inmuebles->domicilio->num_int}}
+                                            <br>
+                                            <strong>Número exterior: </strong>{{$item->inmuebles->domicilio->num_ext}}
+                                            <br>
+                                            <strong>Colonia /
+                                                localidad: </strong>{{$item->inmuebles->domicilio->colonia}}<br>
 
                                             @if($item->inmuebles->domicilio->entidad_id != null)
-                                                <strong>Entidad Federativa: </strong>{{$item->inmuebles->domicilio->entidad_domicilio->entidad}}<br>
-                                                <strong>Municipio / Alcaldia:</strong>{{$item->inmuebles->domicilio->municipio_domicilio->municipio}}<br>
+                                                <strong>Entidad
+                                                    Federativa: </strong>{{$item->inmuebles->domicilio->entidad_domicilio->entidad}}
+                                                <br>
+                                                <strong>Municipio /
+                                                    Alcaldia:</strong>{{$item->inmuebles->domicilio->municipio_domicilio->municipio}}
+                                                <br>
                                             @else
-                                                <strong>Pais: </strong>{{$item->inmuebles->domicilio->pais_domicilio->valor}}<br>
-                                                <strong>Estado / Provincia: </strong>{{$item->inmuebles->domicilio->entidad}}<br>
-                                                <strong>Colonia / localidad: </strong>{{$item->inmuebles->domicilio->colonia}}<br>
+                                                <strong>Pais: </strong>{{$item->inmuebles->domicilio->pais_domicilio->valor}}
+                                                <br>
+                                                <strong>Estado /
+                                                    Provincia: </strong>{{$item->inmuebles->domicilio->entidad}}<br>
+                                                <strong>Colonia /
+                                                    localidad: </strong>{{$item->inmuebles->domicilio->colonia}}<br>
 
                                             @endif
                                         </td>
@@ -60,7 +68,8 @@
                                     <td class="py-2">
                                         {!! Form::open(['action' => ['PrestamoOComodatoPorTercerosController@destroy', $item->id], 'method'=>'DELETE']) !!}
                                         <div style="display: inline-block;">
-                                            <button class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
+                                            <button
+                                                class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
                                         </div>
                                         {!! Form::close() !!}
                                     </td>
@@ -83,88 +92,45 @@ Deberá proporcionar la información de CADA UNO de los bienes en préstamo o co
                         <label style="margin-top:10px;">
                             <strong>Para registrar información pulse: </strong><a
                                 href="{{route('prestamos.create')}}"
-                                class="btn btn-sm btn-secondary ">Agregar</a><br>
-                            <strong>Si no tiene adeudos, seleccione <a href="{{route('prestamos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                                class="btn btn-sm btn-secondary btn-sm ">Agregar</a><br>
+                            <strong>Si no tiene adeudos, seleccione</strong> <a
+                                href="{{route('participacion_empresas.index')}}"
+                                class="btn btn-sm btn-secondary">Ninguno</a></strong>
                         </label>
                     </div>
-
-
-
                 @endif
 
 
                 <div class="text-center">
                     <br>
-                    <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                    <a href="{{route("adeudos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                         sección
                         anterior</a>
-                    <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
+                    <a href="{{route("participacion_empresas.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                         siguiente sección</a>
                 </div>
             </div>
 
 
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-@endsection
-@section('scripts')
-    <script>
-        $('.btn-borrar').on('click', function (e) {
-            let that = this;
-            e.preventDefault();
-            Swal.fire({
-                title: '¿Está seguro?',
-                text: 'Al oprimir el botón de aceptar se eliminará el registro',
-                icon: 'warning',
-                showCancelButton: true,
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $(that).closest('form').submit();
-                }
-            });
-        });
-    </script>
+        @endsection
+        @section('scripts')
+            <script>
+                $('.btn-borrar').on('click', function (e) {
+                    let that = this;
+                    e.preventDefault();
+                    Swal.fire({
+                        title: '¿Está seguro?',
+                        text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        cancelButtonText: 'Cancelar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $(that).closest('form').submit();
+                        }
+                    });
+                });
+            </script>
 @endsection
