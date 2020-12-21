@@ -38,20 +38,19 @@
         <div class="col-lg-4">
             <div class="form-group nombre-tercero">
                 <strong>{!! Form::label('bienesMuebles.nombre_tercero', 'Nombre del tercero:') !!}</strong>
-                {!! Form::text('bienesMuebles[nombre_tercero]', (isset($bienMueble->nombre_tercero)) ? $bienMueble->nombre_tercero : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'nombre_tercero', 'placeholder'=>"p. ej. Juan Robles Rosas"])!!}
+                {!! Form::text('bienesMuebles[nombre_tercero]', (isset($bienMueble->nombre_tercero)) ? $bienMueble->nombre_tercero : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'nombre_tercero', 'placeholder'=>"p. ej. Juan Robles Rosas", 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}"])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
             <div class="form-group denominacion-razon">
                 <strong>{!! Form::label('bienesMuebles.denominacion_razon', 'Denominación o razón social:') !!}</strong>
-                {!! Form::text('bienesMuebles[denominacion_razon]', (isset($bienMueble->denominacion_razon)) ? $bienMueble->denominacion_razon : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'denominacion_razon', 'placeholder'=>"p. ej. Desarrollo y Redes S.A DE C.V"])!!}
+                {!! Form::text('bienesMuebles[denominacion_razon]', (isset($bienMueble->denominacion_razon)) ? $bienMueble->denominacion_razon : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'denominacion_razon', 'placeholder'=>"p. ej. Desarrollo y Redes S.A DE C.V", 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}"])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.rfc_tercero', 'RFC:') !!}</strong>
-                {!! Form::text('bienesMuebles[rfc_tercero]', (isset($bienMueble->rfc_tercero)) ? $bienMueble->rfc_tercero : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'rfc-tercero', 'placeholder'=>"p. ej. xxxx010101"])!!}
-                <span class="text-danger" style="font-size:150%"></span>
+                {!! Form::text('bienesMuebles[rfc_tercero]', (isset($bienMueble->rfc_tercero)) ? $bienMueble->rfc_tercero : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'rfc-tercero'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -218,12 +217,17 @@
                     $(".denominacion-razon").show();
                     $("#nombre_tercero").prop("required", false);
                     $("#denominacion_razon").prop("required", true);
+                    $("#rfc-tercero").attr("pattern", '([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{3})');
+                    $("#rfc-tercero").attr("placeholder", "p. ej. XXX010101");
+
                 } else if (tipoTercero === 1) {
                     $(".nombre-tercero").show();
                     $(".denominacion-razon").hide();
                     $("#denominacion_razon").val("");
                     $("#nombre_tercero").prop("required", true);
                     $("#denominacion_razon").prop("required", false);
+                    $("#rfc-tercero").attr("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})');
+                    $("#rfc-tercero").attr("placeholder", "p. ej. XXXX010101");
                 }
             })
             $("#transmisor_propiedad").change(function () {
