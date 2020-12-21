@@ -86,7 +86,7 @@
     </div>
     <div class="form-group col-md-4" id="entidad" style="display: none">
         <strong> {!! Form::label('adeudos.entidad_federativa', 'Entidad federativa:') !!}</strong>
-        {!! Form::text('adeudos[entidad_federativa]',isset($adeudos) ? $adeudos->entidad_federativa : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'',  'id' => 'rfc_codeudor']) !!}
+        {!! Form::select('adeudos[entidad_federativa]', $entidades, isset($adeudos) ? $adeudos->entidad_federativa : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'SELECCIONE UNA OPCION',  'id' => 'entidades']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
@@ -173,9 +173,6 @@
             var nuevo = fecha.replace(/[-]/gi, '/');
             var dia_futuro =  new Date(nuevo);
             var hoy =  new Date();
-            console.log(hoy);
-            console.log(dia_futuro);
-
             if (hoy <= dia_futuro){ 
                 $("#modalDeclaracion").modal("show");
                 $("#fecha_adquisicion").val("");
@@ -221,8 +218,8 @@
                 document.getElementById('rfc_credito').innerText = 'RFC de la Institución o razón social:';
                 document.getElementById('nomC').placeholder = 'p.ej. Desarrollo y Redes S.A de C.V.';
                 document.getElementById('rfC').placeholder = 'p.ej.XXX010101';
-                $('#rfC').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}'); 
-                $('#rfC').attr("title", 'Ingresa RFC a 13 dígitos');
+                $('#rfC').attr("pattern", '[A-Z]{3}[0-9]{9}');
+                $('#rfC').attr("title", 'Ingresa RFC a 12 dígitos'); 
                 $("#nomC").prop("required", true)
                 $("#rfC").prop("required", true)
                 document.getElementById("nomC").disabled = false;
@@ -232,8 +229,8 @@
                 document.getElementById('rfc_credito').innerText = 'RFC del otorgante:';
                 document.getElementById('nomC').placeholder = 'p.ej. Juan Perez';
                 document.getElementById('rfC').placeholder = 'p.ej.XXXX010101';
-                $('#rfC').attr("pattern", '[A-Z]{3}[0-9]{9}');
-                $('#rfC').attr("title", 'Ingresa RFC a 12 dígitos'); 
+                $('#rfC').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}'); 
+                $('#rfC').attr("title", 'Ingresa RFC a 13 dígitos');                
                 $("#nomC").prop("required", true)
                 $("#rfC").prop("required", true)
                 document.getElementById("nomC").disabled = false;
@@ -254,17 +251,22 @@
 
         $('#localizacion_adeudo').change(function () {
            var loc = $(this).val();
-           console.log(loc);
            if (loc > "1") {
                 $('#paises').show();
                 $('#entidad').hide();
+                $("#pais_cuenta").prop("required", true)
+                $("#entidades").prop("required", false)
             } else {
                 $('#entidad').show();
                 $('#paises').hide();
+                $("#entidades").prop("required", true)
+                $("#pais_cuenta").prop("required", false)
             }
            if(loc == ""){
                 $('#entidad').hide();
                 $('#paises').hide();
+                $("#entidades").val("");
+                $("#pais_cuenta").val("");
            }
         });
 

@@ -29,7 +29,8 @@ class AdeudosPasivos extends Migration
             $table->string('numero_cuenta');
             $table->date('fecha_adquisicion');
             $table->string('monto_adeudo');
-            $table->string('tipo_moneda');
+            $table->unsignedBigInteger('tipo_moneda');
+            $table->foreign('tipo_moneda')->references('id')->on('tipo_monedas');
             $table->string('saldo_insoluto');
             $table->unsignedBigInteger('tipo_otorgante_id');
             $table->foreign('tipo_otorgante_id')->references('id')->on('tipo_persona');
@@ -37,7 +38,8 @@ class AdeudosPasivos extends Migration
             $table->string('rfc_otorgante')->nullable();
             $table->unsignedBigInteger('ubicacion_adeudo_id');
             $table->foreign('ubicacion_adeudo_id')->references('id')->on('lugares_ubicacion');
-            $table->string('entidad_federativa')->nullable();
+            $table->unsignedBigInteger('entidad_federativa')->nullable();
+            $table->foreign('entidad_federativa')->references('id')->on('entidades');
             $table->unsignedBigInteger('pais_id')->nullable();
             $table->foreign('pais_id')->references('id')->on('paises');
             $table->string('aclaraciones_observaciones')->nullable();
