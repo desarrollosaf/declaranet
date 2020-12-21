@@ -428,17 +428,6 @@
                 $(".terceros").hide();
                 $('#tipo_tercero_id').prop('required', false);
                 
-//                $('#nombre_razon_tercero_fisica').prop('required', false);
-//                $('#nombre_razon_tercero_fisica').prop('value', '');
-//                $('#rfc_tercero_fisica').prop('required', false);
-//                $('#rfc_tercero_fisica').prop('pattern', false);
-//                $('#rfc_tercero_fisica').prop('value', '');
-//
-//                $('#nombre_razon_tercero_moral').prop('required', false);
-//                $('#nombre_razon_tercero_moral').prop('value', '');
-//                $('#rfc_tercero_moral').prop('required', false);
-//                $('#rfc_tercero_moral').prop('pattern', false);
-//                $('#rfc_tercero_moral').prop('value', '');
                 
             } else if (value === 3 || value === 4 || value === 8 || value === 10 || value === 13 || value === 15 || value === 18 || value === 19 || value === 24) {
 //                alert('Terceros');
@@ -450,17 +439,6 @@
                 $(".terceros").hide();
                 $('#tipo_tercero_id').prop('required', false);
                 
-//                $('#nombre_razon_tercero_fisica').prop('required', false);
-//                $('#nombre_razon_tercero_fisica').prop('value', '');
-//                $('#rfc_tercero_fisica').prop('required', false);
-//                $('#rfc_tercero_fisica').prop('pattern', false);
-//                $('#rfc_tercero_fisica').prop('value', '');
-//
-//                $('#nombre_razon_tercero_moral').prop('required', false);
-//                $('#nombre_razon_tercero_moral').prop('value', '');
-//                $('#rfc_tercero_moral').prop('required', false);
-//                $('#rfc_tercero_moral').prop('pattern', false);
-//                $('#rfc_tercero_moral').prop('value', '');
             }
         });
 
@@ -519,8 +497,6 @@
                 $('.fisica').hide();
                 $('.moral').hide();
 
-//                $('#nombreTransmisorF').prop('required', false);
-//                $('#rfcTransmisorF').prop('required', false);
                 $('#nombreTransmisorF').removeAttr('required');
                 $('#rfcTransmisorF').removeAttr('required');
                 $('#nombreTransmisorF').removeAttr('pattern');
@@ -570,7 +546,6 @@
 
                 $('#calle').prop('required', true);
                 $('#num_ext').prop('required', true);
-//                $('#interior').prop('required', true);
                 $('#colonia').prop('required', true);
                 $('#municipio').prop('required', true);
                 $('#entidad').prop('required', true);
@@ -578,11 +553,10 @@
 
                 $('#calleExt').prop('required', false);
                 $('#num_extExt').prop('required', false);
-//                $('#numintExt').prop('required', false);
                 $('#colonia_Ext').prop('required', false);
                 $('#colonia_Ext').prop('required', false);
                 $('#pais').prop('required', false);
-//                $('#codigo_postalExt').prop('required', false);
+
                 $('#codigo_postalExt').removeAttr('required');
                 $('#codigo_postalExt').removeAttr('pattern');
                 
@@ -593,7 +567,6 @@
 
                 $('#calle').prop('required', false);
                 $('#exterior').prop('required', false);
-//                $('#interior').prop('required', false);
                 $('#colonia').prop('required', false);
                 $('#municipio').prop('required', false);
                 $('#entidad').prop('required', false);
@@ -601,7 +574,6 @@
 
                 $('#calleExt').prop('required', true);
                 $('#num_extExt').prop('required', true);
-//                $('#numintExt').prop('required', true);
                 $('#colonia_Ext').prop('required', true);
                 $('#colonia_Ext').prop('required', true);
                 $('#pais').prop('required', true);
@@ -614,7 +586,6 @@
 
                 $('#calle').prop('required', false);
                 $('#exterior').prop('required', false);
-//                $('#interior').prop('required', false);
                 $('#colonia').prop('required', false);
                 $('#municipio').prop('required', false);
                 $('#entidad').prop('required', false);
@@ -622,7 +593,6 @@
 
                 $('#calleExt').prop('required', false);
                 $('#num_extExt').prop('required', false);
-//                $('#numintExt').prop('required', false);
                 $('#colonia_Ext').prop('required', false);
                 $('#colonia_Ext').prop('required', false);
                 $('#pais').prop('required', false);
@@ -667,50 +637,6 @@
         @endif
     });
     
-//    $("#frm_BienesInmuebles").on("submit", function (e) {
-//        e.preventDefault();
-//        if (!validarFormulario()) {
-//            //$("#frm_BienesInmuebles").submit();
-//        } else {
-//            Swal.fire({
-//                title: 'Error',
-//                text: 'llena todos los campos obligatorios',
-//                icon: 'error'
-//            });
-//        }
-//    });
-
-//    function validarFormulario() {
-//        var error = false;
-//        $(".labelValidate").css("color", "");
-//        if ($("#tipo_inmueble_id").val() == "") {
-//            error = true;
-//            $("#tipo_inmueble_id").prev().children().css("color", "red");
-//        } else {
-//            if ($("#tipo_inmueble_id").val() == 9 && $("#tipo_inmueble").val() == "") {
-//                error = true;
-//                $("#tipo_inmueble").prev().children().css("color", "red");
-//            }
-//        }
-//
-//
-//        if ($("#titular_id").val() == "") {
-//            error = true;
-//            $("#titular_id").prev().children().css("color", "red");
-//        } else {
-//            var value = parseInt($("#titular_id").val());
-//            if ((value === 3 || value === 4 || value === 8 || value === 10 || value === 13 || value === 15 || value === 18 || value === 19 || value === 24) && $("#tipo_tercero_id").val() == "") {
-//                error = true;
-//                $("#tipo_tercero_id").prev().children().css("color", "red");
-//            }
-//        }
-//
-//
-////tipo_tercero_id
-//
-//
-//        return error;
-//    }
 
 </script>
 @endsection
