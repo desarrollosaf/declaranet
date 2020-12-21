@@ -63,7 +63,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <strong>{!! Form::label('monto_mensual', ' Monto mensual neto: ') !!}</strong>
-                    {!! Form::number('empresas[monto_mensual]',isset($empresas) ? $empresas->monto_mensual : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'p. ej. $1,000,000.00 MXn',  'id' => 'monto_mensual', 'disabled' => 'true' ]) !!}
+                    {!! Form::number('empresas[monto_mensual]',isset($empresas) ? $empresas->monto_mensual : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'p. ej. $1,000,000.00 MXn',  'id' => 'monto_mensual', 'min'=>'1', 'disabled' => 'true' ]) !!}
                 </div>
             </div>
             <div class="col-lg-4">

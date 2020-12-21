@@ -39,6 +39,7 @@ class CreateBienesinmuebles extends Migration
             $table->string('rfc_transmisor')->nullable();
             $table->unsignedBigInteger('relacion_transmisor_id')->nullable();
             $table->foreign('relacion_transmisor_id')->references('id')->on('relacion_transmisores');
+            $table->string('relacion_transmisor')->nullable();
             $table->string('valor_adquisicion')->nullable();
             $table->unsignedBigInteger('valor_conforme_id')->nullable();
             $table->foreign('valor_conforme_id')->references('id')->on('valor_conforme_a_s');

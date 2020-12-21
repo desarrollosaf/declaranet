@@ -6,19 +6,19 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <strong>{!! Form::label('tipo_inmueble_id', ' Tipo de inmueble: *', ['class' => 'labelValidate']) !!}</strong>
+                <strong>{!! Form::label('tipo_inmueble_id', ' Tipo de inmueble: *') !!}</strong>
                 {!! Form::select('bienesinmuebles[tipo_inmueble_id]', isset($selecttipoInmueble) ? $selecttipoInmueble : [], isset($bien) ? $bien->tipo_inmueble_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción' ,  'id' => 'tipo_inmueble_id', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4" id="combo_otro_Disabled">
             <div class="form-group">
-                <strong>{!! Form::label('tipo_inmueble', ' Especifique: ', ['class' => 'labelValidate']) !!}</strong>
+                <strong>{!! Form::label('tipo_inmueble', ' Especifique: ') !!}</strong>
                 {!! Form::text('bienesinmuebles[tipo_inmueble]',isset($bien) ? $bien->tipo_inmueble : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'tipo_inmueble', 'pattern' => '[A-Za-z]{0,300}', 'disabled' => 'true' ]) !!}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <strong>{!! Form::label('titular_id', ' Titular del inmueble: *', ['class' => 'labelValidate']) !!}</strong>
+                <strong>{!! Form::label('titular_id', ' Titular del inmueble: *') !!}</strong>
                 {!! Form::select('bienesinmuebles[titular_id]', isset($selecttitularInmueble) ? $selecttitularInmueble : [], isset($bien) ? $bien -> titular_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción' ,  'id' => 'titular_id', 'required' => 'true']) !!}
             </div>
         </div>
@@ -31,7 +31,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <strong>{!! Form::label('tipo_tercero_id', ' Tipo de tercero: ', ['class' => 'labelValidate']) !!}</strong>
+                <strong>{!! Form::label('tipo_tercero_id', ' Tipo de tercero: ') !!}</strong>
                 {!! Form::select('bienesinmuebles[tipo_tercero_id]', isset($selectRegimenFiscal) ? $selectRegimenFiscal : [], isset($bien) ? $bien->tipo_tercero_id : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción',  'id' => 'tipo_tercero_id']) !!}
             </div>
         </div>
@@ -51,6 +51,7 @@
 
         <div class="col-md-4 tercero_fisica">
             <div class="form-group ">
+                <!--YJZ-->
                 <strong>{!! Form::label('rfc_tercero_fisica', ' RFC: ') !!}</strong>
                 {!! Form::text('bienesinmuebles[rfc_tercero_fisica]', isset($bien) ? $bien->rfc_tercero : null, ['class'=>'form-control text-uppercase  tipo-titular', 'maxlength'=>'13', 'placeholder'=>'p. ej. XXXx010101X0X',  'id' => 'rfc_tercero_fisica', 'pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})', 'title' => 'El formato RFC es a 13 digitos' ]) !!}
             </div>
@@ -156,16 +157,17 @@
 
             </div>
         </div>
-        <div class="col-md-4">
+        <!--yjz-->
+        <div class="col-md-4" id="combo_otro_Disabled">
             <div class="form-group">
-                <strong>{!! Form::label('valor_adquisicion', ' Valor de adquisición: * ') !!}</strong>
-                {!! Form::number('bienesinmuebles[valor_adquisicion]', isset($bien) ? $bien->valor_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 100000.0 Mxn','min'=>'1', 'id' => 'valor_adquisicion','pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
+                <strong>{!! Form::label('relacion_transmisor', ' Especifique: ') !!}</strong>
+                {!! Form::text('bienesinmuebles[relacion_transmisor]',isset($bien) ? $bien->relacion_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'Relación transmisor',  'id' => 'relacion_transmisor', 'pattern' => '[A-Za-z]{0,300}', 'disabled' => 'true' ]) !!}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <strong>{!! Form::label('valor_conforme_id', ' El valor es conforme a: *') !!}</strong>
-                {!! Form::select('bienesinmuebles[valor_conforme_id]', isset($selectvalorConforme) ? $selectvalorConforme : [], isset($bien) ? $bien->valor_conforme_id : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'valor_conforme_id', 'required' => 'true']) !!}
+                <strong>{!! Form::label('valor_adquisicion', ' Valor de adquisición: * ') !!}</strong>
+                {!! Form::number('bienesinmuebles[valor_adquisicion]', isset($bien) ? $bien->valor_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 100000.0 Mxn','min'=>'1', 'id' => 'valor_adquisicion','pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
             </div>
         </div>
 
@@ -175,25 +177,39 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
+                <strong>{!! Form::label('valor_conforme_id', ' El valor es conforme a: *') !!}</strong>
+                {!! Form::select('bienesinmuebles[valor_conforme_id]', isset($selectvalorConforme) ? $selectvalorConforme : [], isset($bien) ? $bien->valor_conforme_id : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'valor_conforme_id', 'required' => 'true']) !!}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
                 <strong>{!! Form::label('tipo_moneda_id', ' Tipo de moneda: *') !!}</strong>
                 {!! Form::select('bienesinmuebles[tipo_moneda_id]', isset($selectMoneda) ? $selectMoneda : [], isset($bien) ? $bien->tipo_moneda_id : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_moneda_id', 'required' => 'true']) !!}
                 <!--{!! Form::text('bienesinmuebles[tipo_moneda]', isset($bien) ? $bien->tipo_moneda : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Peso mexicano', 'id' => 'tipo_moneda', 'required' => 'true']) !!}-->
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('fecha_adquisicion', ' Fecha de adquisición del inmueble: *') !!}</strong>
                 {!! Form::date('bienesinmuebles[fecha_adquisicion]', isset($bien) ? $bien->fecha_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'id' => 'fecha_adquisicion', 'required' => 'true', 'max'=>date("Y-m-d")]) !!}
             </div>
         </div>
-        <div class="col-md-4">
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+         <div class="col-md-4">
             <div class="form-group">
                 <strong style="line-height: 15px;">{!! Form::label('datos_registro', ' Datos del registro público de la propiedad, folio real u otro dato que permita su identificación: *') !!}</strong>
                 {!! Form::text('bienesinmuebles[datos_registro]', isset($bien) ? $bien->datos_registro : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 10101010', 'id' => 'datos_registro', 'required' => 'true']) !!}
             </div>
         </div>
-
+        <div class="col-md-8">
+            <div class="form-group">
+            </div>
+        </div>
     </div>
 </div>
 <hr>
@@ -375,9 +391,24 @@
             }
         });
 
+        //HABILITAR CAJA DE TEXTO OTROS
+        $('#relacion_transmisor_id').change(function () {
+//            alert('entra');
+            if (parseInt($(this).val()) === 20) {
+                $('#relacion_transmisor').prop('disabled', false);
+                $('#relacion_transmisor').prop('required', true);
+            } else {
+                $('#relacion_transmisor').prop('value', '');
+                $('#relacion_transmisor').prop('disabled', true);
+                $('#relacion_transmisor').prop('required', false);
+            }
+        });
+
 
         //CAMBIO DE COLOR TERCEROS
         $("#titular_id").change(function () {
+            console.log($(this).val());
+            //alert('entra');
             var tipoTitular = $(this).val();
             if (tipoTitular === "0") {
                 $(".tipo-titular").removeClass("alert-danger");
@@ -393,14 +424,43 @@
         $('#titular_id').change(function () {
             var value = parseInt($(this).val());
             if (value === 0) {
+//                alert('vacio');
                 $(".terceros").hide();
                 $('#tipo_tercero_id').prop('required', false);
+                
+//                $('#nombre_razon_tercero_fisica').prop('required', false);
+//                $('#nombre_razon_tercero_fisica').prop('value', '');
+//                $('#rfc_tercero_fisica').prop('required', false);
+//                $('#rfc_tercero_fisica').prop('pattern', false);
+//                $('#rfc_tercero_fisica').prop('value', '');
+//
+//                $('#nombre_razon_tercero_moral').prop('required', false);
+//                $('#nombre_razon_tercero_moral').prop('value', '');
+//                $('#rfc_tercero_moral').prop('required', false);
+//                $('#rfc_tercero_moral').prop('pattern', false);
+//                $('#rfc_tercero_moral').prop('value', '');
+                
             } else if (value === 3 || value === 4 || value === 8 || value === 10 || value === 13 || value === 15 || value === 18 || value === 19 || value === 24) {
+//                alert('Terceros');
                 $(".terceros").show();
                 $('#tipo_tercero_id').prop('required', true);
+                
             } else {
+//                alert('otros');
                 $(".terceros").hide();
                 $('#tipo_tercero_id').prop('required', false);
+                
+//                $('#nombre_razon_tercero_fisica').prop('required', false);
+//                $('#nombre_razon_tercero_fisica').prop('value', '');
+//                $('#rfc_tercero_fisica').prop('required', false);
+//                $('#rfc_tercero_fisica').prop('pattern', false);
+//                $('#rfc_tercero_fisica').prop('value', '');
+//
+//                $('#nombre_razon_tercero_moral').prop('required', false);
+//                $('#nombre_razon_tercero_moral').prop('value', '');
+//                $('#rfc_tercero_moral').prop('required', false);
+//                $('#rfc_tercero_moral').prop('pattern', false);
+//                $('#rfc_tercero_moral').prop('value', '');
             }
         });
 
@@ -408,34 +468,44 @@
         $('#tipo_tercero_id').change(function () {
             console.log($(this).val());
             if ($(this).val() === "") {
+//                alert('vacio');
                 $('.tercero_fisica').hide();
                 $('.tercero_moral').hide();
 
-                $('#nombre_razon_tercero_fisica').prop('required', false);
-                $('#rfc_tercero_fisica').prop('required', false);
+                $('#nombre_razon_tercero_fisica').removeAttr('required');
+                $('#rfc_tercero_fisica').removeAttr('required');
+                $('#rfc_tercero_fisica').removeAttr('pattern');
 
-                $('#nombre_razon_tercero_moral').prop('required', false);
-                $('#rfc_tercero_moral').prop('required', false);
+                $('#nombre_razon_tercero_moral').removeAttr('required');
+                $('#rfc_tercero_moral').removeAttr('required');
+                $('#rfc_tercero_moral').removeAttr('pattern');
 
+                
 
             } else if (parseInt($(this).val()) === 1) {
+//                alert('fisica');
                 $('.tercero_fisica').show();
                 $('.tercero_moral').hide();
-
+//YJZ
                 $('#nombre_razon_tercero_fisica').prop('required', true);
                 $('#rfc_tercero_fisica').prop('required', true);
 
-                $('#nombre_razon_tercero_moral').prop('required', false);
-                $('#rfc_tercero_moral').prop('required', false);
+                $('#nombre_razon_tercero_moral').removeAttr('required');
+                $('#rfc_tercero_moral').removeAttr('required');
+                $('#rfc_tercero_moral').removeAttr('pattern');
 
+                
 
             } else {
+//                alert('moral');
                 $('.tercero_fisica').hide();
                 $('.tercero_moral').show();
 
-                $('#nombre_razon_tercero_fisica').prop('required', false);
-                $('#rfc_tercero_fisica').prop('required', false);
+                $('#nombre_razon_tercero_fisica').removeAttr('required');
 
+                $('#rfc_tercero_fisica').removeAttr('required');
+                $('#rfc_tercero_fisica').removeAttr('pattern');
+                
                 $('#nombre_razon_tercero_moral').prop('required', true);
                 $('#rfc_tercero_moral').prop('required', true);
 
@@ -592,6 +662,7 @@
         $('#tipo_tercero_id').change();
         $('#tipo_transmisor_id').change();
         $('#ubicacion_inmueble_id').change();
+        $('#relacion_transmisor_id').change();        
 
         @endif
     });
