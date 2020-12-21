@@ -67,7 +67,7 @@
         <div class="col-lg-4">
             <div class="form-group nombre-razon">
                 <strong>{!! Form::label('bienesMuebles.nombre_transmisor', 'Nombre del transmisor: *') !!}</strong>
-                {!! Form::text('bienesMuebles[nombre_transmisor]', (isset($bienMueble->nombre_transmisor)) ? $bienMueble->nombre_transmisor : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'nombre_transmisor', 'placeholder'=>"p. ej. Juan Pérez.", "pattern"=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}"])!!}
+                {!! Form::text('bienesMuebles[nombre_transmisor]', (isset($bienMueble->nombre_transmisor)) ? $bienMueble->nombre_transmisor : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'nombre_transmisor', 'placeholder'=>"p. ej. Juan Pérez.", "pattern"=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}", 'disabled' => true])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
             <div class="form-group denominacion-rs-transmisor">
@@ -134,7 +134,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.fecha_adquisicion', 'Fecha de adquisición del mueble: *') !!}</strong>
-                {!! Form::date('bienesMuebles[fecha_adquisicion]', (isset($bienMueble->fecha_adquisicion)) ? $bienMueble->fecha_adquisicion : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'fecha_adquisicion'])!!}
+                {!! Form::date('bienesMuebles[fecha_adquisicion]', (isset($bienMueble->fecha_adquisicion)) ? $bienMueble->fecha_adquisicion : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'fecha_adquisicion', 'max' => date('Y-m-d')])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -169,7 +169,6 @@
             $(".tipo-tercero").hide();
             $(".especifique").hide();
             $(".denominacion-razon").hide();
-            $(".nombre-razon").hide();
             $(".denominacion-rs-transmisor").hide();
             $(".especifique-relacion-transmisor").hide();
             $("#titular_bien").change(function () {
@@ -219,7 +218,7 @@
                     $(".denominacion-razon").show();
                     $("#nombre_tercero").prop("required", false);
                     $("#denominacion_razon").prop("required", true);
-                } else {
+                } else if (tipoTercero === 1) {
                     $(".nombre-tercero").show();
                     $(".denominacion-razon").hide();
                     $("#denominacion_razon").val("");
@@ -240,6 +239,7 @@
                     $("#nombre_transmisor").val("");
                 } else {
                     $(".nombre-razon").show();
+                    $("#nombre_transmisor").prop("disabled", false);
                     $("#denominacion_rs_transmisor").val("");
                     $(".denominacion-rs-transmisor").hide();
                     $('#rfc-transmisor').attr("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})');

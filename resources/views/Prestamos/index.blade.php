@@ -93,9 +93,11 @@ Deberá proporcionar la información de CADA UNO de los bienes en préstamo o co
                             <strong>Para registrar información pulse: </strong><a
                                 href="{{route('prestamos.create')}}"
                                 class="btn btn-sm btn-secondary btn-sm ">Agregar</a><br>
-                            <strong>Si no tiene adeudos, seleccione</strong> <a
-                                href="{{route('participacion_empresas.index')}}"
-                                class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                            <div class="mt-2">
+                                <strong>Si no tiene adeudos, seleccione</strong> <a
+                                    href="{{route('participacion_empresas.index')}}"
+                                    class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                            </div>
                         </label>
                     </div>
                 @endif

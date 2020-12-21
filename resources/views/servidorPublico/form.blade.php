@@ -219,7 +219,7 @@
                     <td width='40%'>
                         &nbsp;&nbsp;&nbsp;<strong>{!! Form::label('ingreso.tipo_de_ingreso_no_considerado', 'Especificar tipo de ingreso:*') !!}</strong>
                     </td>
-                    <td>{!! Form::text('ingreso[tipo_de_ingreso_no_considerado]',(isset($ingreso->tipo_de_ingreso_no_considerado)) ? $ingreso->tipo_de_ingreso_no_considerado : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_ingreso_no_considerado']) !!}</td>
+                    <td>{!! Form::text('ingreso[tipo_de_ingreso_no_considerado]',(isset($ingreso->tipo_de_ingreso_no_considerado)) ? $ingreso->tipo_de_ingreso_no_considerado : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. VENTA DE GANADO.',  'id' => 'tipo_de_ingreso_no_considerado']) !!}</td>
                 </tr>
             </table>
         </div>

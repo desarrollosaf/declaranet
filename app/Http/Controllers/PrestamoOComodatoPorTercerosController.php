@@ -6,6 +6,7 @@ use App\Declaracion;
 use App\Entidad;
 use App\lugarDondeReside;
 use App\LugarUbicacion;
+use App\Municipio;
 use App\Pais;
 use App\PrestamoComodato;
 use App\RegimenFiscal;
@@ -130,48 +131,24 @@ class PrestamoOComodatoPorTercerosController extends Controller
      */
     public function edit($id)
     {
-        $tipoEna = TipoBienEnajenacionBienes::where('id', '!=', 1)->get();
-        $selectTipoBien = [];
-        $selectTipoBien[0] = "Selecciona una opción";
-        foreach ($tipoEna as $item) {
-            $selectTipoBien[$item->id] = $item->valor;
-        }
-//        $selectTipoBien = Arr::pluck(TipoBienEnajenacionBienes::where('id', '!=', 1)->get(), "valor", "id");
-//        array_unshift($selectTipoBien, "Selecciona una opción");
-
+        $selectTipoBien = Arr::pluck(TipoBienEnajenacionBienes::where('id', '!=', 1)->get(), "valor", "id");
         $vehiculo = Arr::pluck(tipoVehiculo::all(), "valor", "id");
-        array_unshift($vehiculo, "Selecciona una opción");
-
         $relacion = Arr::pluck(relacionTransmisor::all(), "valor", "id");
-        array_unshift($relacion, "Selecciona una opción");
-
         $registro = Arr::pluck(lugarDondeReside::where('id', '!=', '3')->get(), "valor", "id");
-        array_unshift($registro, "Selecciona una opción");
-
         $pais = Arr::pluck(Pais::all(), "valor", "id");
-        array_unshift($pais, "Selecciona una opción");
-
         $regimen = Arr::pluck(RegimenFiscal::all(), "valor", "id");
-        array_unshift($regimen, "Selecciona una opción");
-
         $selecttipoInmueble = Arr::pluck(TipoInmueble::all(), "valor", "id");
-        array_unshift($selecttipoInmueble, "Selecciona una opcion");
-
         $selectubicacionInmueble = Arr::pluck(LugarUbicacion::all(), "valor", "id");
-        array_unshift($selectubicacionInmueble, "Selecciona una opcion");
-
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
-        array_unshift($selectEntidad, "Selecciona una opcion");
         $prestamo = PrestamoComodato::find($id);
         $vehiculos = $prestamo->vehiculos;
         $bienesinmuebles = $prestamo->inmuebles;
-
         if ($vehiculos != null) {
             return view("Prestamos.edit", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad', 'prestamo', 'vehiculos'));
         } else {
             $domicilio = $prestamo->inmuebles->domicilio;
-            return view("Prestamos.edit", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad', 'prestamo', 'bienesinmuebles', 'domicilio'));
-
+            $selectMunicipio = Arr::pluck(Municipio::where("entidad_id", "=", $domicilio->entidad_id)->get(), "municipio", "id");
+            return view("Prestamos.edit", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad', 'prestamo', 'bienesinmuebles', 'domicilio', 'selectMunicipio'));
         }
 
     }

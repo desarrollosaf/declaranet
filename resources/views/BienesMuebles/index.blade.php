@@ -51,7 +51,8 @@
                         </center>
                     </div>
                 @else
-                    <p style="text-align : justify; !important;">Se consideran bienes muebles lo siguiente:
+                    <p style="text-align : justify; !important;"><strong>Se consideran bienes muebles lo
+                            siguiente:</strong>
                     <ol type=”A”>
                         <li>Menaje de casa (muebles y accesorios de casa)</li>
                         <li>Aparatos electrónicos y electrodomésticos (PC, tableta electrónica, teléfono celular,
@@ -66,23 +67,20 @@
                     cargo sean propiedad del Declarante, así como los de su pareja y/o dependientes económicos.
 
                     </p>
-                    <div class="alert alert-danger text-center" role="alert">
-                        <label style="margin-top:10px;">
-                            <strong>Para registrar información pulse: </strong><a
-                                href="{{route('bienes_muebles.create')}}"
-                                class="btn btn-sm btn-secondary ">Agregar</a><br>
-                            <strong>Si no tiene bienes muebles, seleccione <a href="{{route('vehiculos.index')}}"
-                                                                              class="btn btn-sm btn-secondary">Ninguno</a></strong>
-                        </label>
+                    <div class="alert alert-danger text-center btn-group-sm" role="alert">
+                        <div>
+                            <strong>Para registrar información pulse: </strong>
+                            <a href="{{route('bienes_muebles.create')}}"
+                               class="btn btn-sm btn-secondary text-light">Agregar</a>
+                        </div>
+                        <div class="mt-2">
+                            <strong>Sí no tiene bienes muebles, seleccione
+                                <a href="{{route('vehiculos.index')}}"
+                                   class="btn btn-sm btn-secondary text-light">Ninguno</a></strong>
+                        </div>
                     </div>
-
-
-
                 @endif
-
-
-                <div class="text-center">
-                    <br>
+                <div class="text-center mt-2">
                     <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
                         sección
                         anterior</a>
@@ -94,7 +92,7 @@
 
         @endsection
         @section('scripts')
-            <script>
+            <script type="text/javascript">
                 $('.btn-borrar').on('click', function (e) {
                     let that = this;
                     e.preventDefault();
