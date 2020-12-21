@@ -6,7 +6,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('exterior', 'Número exterior: *') !!}</strong>
-        {!! Form::number('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 102',  'id' => 'exterior','required' =>'true', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior"]) !!}
+        {!! Form::text('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 102',  'id' => 'exterior','required' =>'true', 'title' => "Ingresa número exterior"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -18,7 +18,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('colonia', 'Colonia / Localidad: *') !!}</strong>
-        {!! Form::text('domicilio[colonia]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia', 'required' => 'true']) !!}
+        {!! Form::text('domicilio[colonia]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -34,7 +34,7 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('colonia', 'Código postal:') !!}</strong>
+        <strong>{!! Form::label('codigo', 'Código postal:') !!}</strong>
         {!! Form::text('domicilio[codigo_postal]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'cp', 'pattern' => "[0-9]{5}", 'title' => "Ingresa código postal a 5 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
