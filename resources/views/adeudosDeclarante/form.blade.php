@@ -188,16 +188,16 @@
                 document.getElementById('labelcod').innerText = 'Denominación o razón social:';
                 document.getElementById('nombre_del_codeudor').placeholder = 'p.ej. Desarrollo y Redes S.A de C.V.';
                 document.getElementById('rfc_codeudor').placeholder = 'p.ej.XXX010101';
-                $('#rfc_codeudor').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}'); 
-                $('#rfc_codeudor').attr("title", 'Ingresa RFC a 13 dígitos');  
+                $('#rfc_codeudor').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{2}');
+                $('#rfc_codeudor').attr("title", 'Ingresa RFC a 12 dígitos'); 
                 document.getElementById("nombre_del_codeudor").disabled = false;
                 document.getElementById("rfc_codeudor").disabled = false;
             } else {
                 document.getElementById('labelcod').innerText = 'Nombre:';
                 document.getElementById('nombre_del_codeudor').placeholder = 'p.ej. Juan Perez';
                 document.getElementById('rfc_codeudor').placeholder = 'p.ej.XXXX010101';
-                $('#rfc_codeudor').attr("pattern", '[A-Z]{3}[0-9]{9}');
-                $('#rfc_codeudor').attr("title", 'Ingresa RFC a 12 dígitos'); 
+                $('#rfc_codeudor').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}'); 
+                $('#rfc_codeudor').attr("title", 'Ingresa RFC a 13 dígitos'); 
                 document.getElementById("nombre_del_codeudor").disabled = false;
                 document.getElementById("rfc_codeudor").disabled = false;
             }

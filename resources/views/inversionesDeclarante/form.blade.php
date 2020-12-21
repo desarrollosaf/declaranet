@@ -154,7 +154,7 @@
             if (selected > "1") {
                 $('#mydivNT').show();
                 $('#mydivRT').show();
-                $('#rfc_tercero').attr("pattern", '[A-Z]{3}[0-9]{9}');
+                $('#rfc_tercero').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{2}');
                 $('#rfc_tercero').attr("title", 'Ingresa RFC a 12 dígitos');              
                 document.getElementById('labelter').innerText = 'Razón social del tercero:';
             } else {
