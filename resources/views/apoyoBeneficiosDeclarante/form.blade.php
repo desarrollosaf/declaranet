@@ -46,7 +46,7 @@
     </div>
     <div class="form-group col-md-4" id="moneda" style="display: none">
         <strong>{!! Form::label('apoyo.tipo_de_moneda_id', 'Tipo de moneda:') !!}</strong>
-        {!! Form::select('apoyo[tipo_de_moneda_id]', $tipoMoneda, isset($apoyo) ? $apoyo->tipo_de_moneda_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_de_moneda_id', 'required' => 'true']) !!}
+        {!! Form::select('apoyo[tipo_de_moneda_id]', $tipoMoneda, isset($apoyo) ? $apoyo->tipo_de_moneda_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_de_moneda_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="esp" style="display: none">
@@ -93,8 +93,10 @@
            var opt = $(this).val();
            if(opt == "23"){
             document.getElementById("especifique_otro").disabled = false;
+            $("#especifique_otro").prop("required", true)
            }else{
             document.getElementById("especifique_otro").disabled = true;
+            $("#especifique_otro").prop("required", false)
            }
         });
 
@@ -102,8 +104,11 @@
             var value = $(this).val();
             if(value == "4"){
                 document.getElementById("especifique_apoyo").disabled = false;
+                $("#especifique_apoyo").prop("required", true)
             }else{
                 document.getElementById("especifique_apoyo").disabled = true;
+                $("#especifique_apoyo").prop("required", false)
+                $("#especifique_apoyo").val("");
             }
         });
 
@@ -114,10 +119,14 @@
                 $('#moneda').hide();
                 $('#esp').show();
                 $('#espRep').hide();
+                $("#especifique_especie").prop("required", true)
+                $("#tipo_de_moneda_id").prop("required", false)  
             }else{
                 $('#moneda').show();
                 $('#esp').hide();
                 $('#espRep').hide();
+                $("#tipo_de_moneda_id").prop("required", true)
+                $("#especifique_especie").prop("required", false)         
             }
             if(val == ""){
                 $('#moneda').hide();

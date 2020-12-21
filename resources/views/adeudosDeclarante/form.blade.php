@@ -1,97 +1,97 @@
 <div class="form-row">
     <div class="form-group col-md-4">
        <strong>{!! Form::label('adeudos.titular_adeudo_id', 'Titular del adeudo:') !!}</strong>
-        {!! Form::select('adeudos[titular_adeudo_id]', $tipoDeclarante, isset($adeudos) ? $adeudos->titular_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase ','id' => 'inputSelect', 'required' => 'true']) !!}
+        {!! Form::select('adeudos[titular_adeudo_id]', $tipoDeclarante, isset($adeudos) ? $adeudos->titular_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase color-tercero','id' => 'inputSelect', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.tipo_adeudo_id', ' Tipo de adeudo: ') !!}</strong>
-        {!! Form::select('adeudos[tipo_adeudo_id]', $tipoAdeudos, isset($adeudos) ? $adeudos->tipo_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase ','id' => 'tipo_adeudo', 'required' => 'true']) !!}
+        {!! Form::select('adeudos[tipo_adeudo_id]', $tipoAdeudos, isset($adeudos) ? $adeudos->tipo_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase color-tercero','id' => 'tipo_adeudo', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="myEsp" >
         <strong> {!! Form::label('adeudos.especifique_adeudo', 'Especifique:') !!}</strong>
-        {!! Form::text('adeudos[especifique_adeudo]',isset($adeudos) ? $adeudos->especifique_adeudo : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'p.ej. Tipo de Adeudo',  'id' => 'especifique_adeudo', 'disabled' => 'true']) !!}
+        {!! Form::text('adeudos[especifique_adeudo]',isset($adeudos) ? $adeudos->especifique_adeudo : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. Tipo de Adeudo',  'id' => 'especifique_adeudo', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row" id="mydiv" style="display: none">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('adeudos.codeudor_id', 'Codeudor:') !!}</strong>
-        {!! Form::select('adeudos[codeudor_id]', $tipoPersona, isset($adeudos) ? $adeudos->codeudor_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase ','id' => 'codeudor']) !!}
+        {!! Form::select('adeudos[codeudor_id]', $tipoPersona, isset($adeudos) ? $adeudos->codeudor_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase color-tercero','id' => 'codeudor']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.nombre_codeudor', 'Nombre del codeudor:', ['id' => 'labelcod']) !!}</strong>
-        {!! Form::text('adeudos[nombre_codeudor]',isset($adeudos) ? $adeudos->nombre_codeudor : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'',  'id' => 'nombre_del_codeudor', 'disabled' => 'true']) !!}
+        {!! Form::text('adeudos[nombre_codeudor]',isset($adeudos) ? $adeudos->nombre_codeudor : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'',  'id' => 'nombre_del_codeudor', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.rfc_codeudor', 'RFC:') !!}</strong>
-        {!! Form::text('adeudos[rfc_codeudor]',isset($adeudos) ? $adeudos->rfc_codeudor : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'',  'id' => 'rfc_codeudor', 'disabled' => 'true']) !!}
+        {!! Form::text('adeudos[rfc_codeudor]',isset($adeudos) ? $adeudos->rfc_codeudor : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'',  'id' => 'rfc_codeudor', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.numero_cuenta', 'Número de cuenta o contrato:') !!}</strong>
-        {!! Form::number('adeudos[numero_cuenta]',isset($adeudos) ? $adeudos->numero_cuenta : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'p.ej. 01010101',  'id' => 'inst_educativa', 'required' => 'true']) !!}
+        {!! Form::number('adeudos[numero_cuenta]',isset($adeudos) ? $adeudos->numero_cuenta : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. 01010101',  'id' => 'inst_educativa', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="date">
         <strong>{!! Form::label('adeudos.fecha_adquisicion', 'Fecha de adquisición del adeudo/pasivo:') !!}</strong>
-        {!! Form::date('adeudos[fecha_adquisicion]', isset($adeudos) ? $adeudos->fecha_adquisicion : null,['class'=>'form-control text-uppercase  tipo-titular', 'id' => 'fecha_adquisicion', 'required' => 'true']) !!}
+        {!! Form::date('adeudos[fecha_adquisicion]', isset($adeudos) ? $adeudos->fecha_adquisicion : null,['class'=>'form-control text-uppercase  color-tercero', 'id' => 'fecha_adquisicion', 'required' => 'true', 'max'=>date("Y-m-d")]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>  {!! Form::label('adeudos.monto_adeudo', 'Monto original del adeudo/pasivo:') !!}</strong>
-        {!! Form::number('adeudos[monto_adeudo]', isset($adeudos) ? $adeudos->monto_adeudo : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'carrera', 'required' => 'true']) !!}
+        {!! Form::number('adeudos[monto_adeudo]', isset($adeudos) ? $adeudos->monto_adeudo : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'carrera', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.tipo_moneda', 'Tipo de moneda:') !!}</strong>
-        {!! Form::select('adeudos[tipo_moneda]', $tipoMoneda, isset($adeudos) ? $adeudos->tipo_moneda : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'SELECCIONE UNA OPCION',  'id' => 'inst_educativa', 'required' => 'true']) !!}
+        {!! Form::select('adeudos[tipo_moneda]', $tipoMoneda, isset($adeudos) ? $adeudos->tipo_moneda : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'SELECCIONE UNA OPCION',  'id' => 'inst_educativa', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.saldo_insoluto', 'Saldo insoluto (a la fecha de ingreso):') !!}</strong>
-        {!! Form::number('adeudos[saldo_insoluto]', isset($adeudos) ? $adeudos->saldo_insoluto : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'inst_educativa', 'required' => 'true']) !!}
+        {!! Form::number('adeudos[saldo_insoluto]', isset($adeudos) ? $adeudos->saldo_insoluto : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'inst_educativa', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.tipo_otorgante_id', 'Otorgante del crédito:') !!}</strong>
-        {!! Form::select('adeudos[tipo_otorgante_id]', $tipoPersona, isset($adeudos) ? $adeudos->tipo_otorgante_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase ','id' => 'otorgante_credito', 'required' => 'true']) !!}
+        {!! Form::select('adeudos[tipo_otorgante_id]', $tipoPersona, isset($adeudos) ? $adeudos->tipo_otorgante_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase color-tercero','id' => 'otorgante_credito', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.nombre_otorgante', 'Nombre:', ['id' => 'nom_credito']) !!}</strong>
-        {!! Form::text('adeudos[nombre_otorgante]', isset($adeudos) ? $adeudos->nombre_otorgante : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'',  'id' => 'nomC', 'disabled' => 'true']) !!}
+        {!! Form::text('adeudos[nombre_otorgante]', isset($adeudos) ? $adeudos->nombre_otorgante : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'',  'id' => 'nomC', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.rfc_otorgante', 'RFC:', ['id' => 'rfc_credito']) !!}</strong>
-        {!! Form::text('adeudos[rfc_otorgante]', isset($adeudos) ? $adeudos->rfc_otorgante : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'',  'id' => 'rfC', 'disabled' => 'true']) !!}
+        {!! Form::text('adeudos[rfc_otorgante]', isset($adeudos) ? $adeudos->rfc_otorgante : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'',  'id' => 'rfC', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('adeudos.ubicacion_adeudo_id', 'Localización del adeudo:') !!}</strong>
-        {!! Form::select('adeudos[ubicacion_adeudo_id]', $lugarUbicacion, isset($adeudos) ? $adeudos->ubicacion_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase ','id' => 'localizacion_adeudo', 'required' => 'true']) !!}
+        {!! Form::select('adeudos[ubicacion_adeudo_id]', $lugarUbicacion, isset($adeudos) ? $adeudos->ubicacion_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase color-tercero','id' => 'localizacion_adeudo', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="entidad" style="display: none">
         <strong> {!! Form::label('adeudos.entidad_federativa', 'Entidad federativa:') !!}</strong>
-        {!! Form::select('adeudos[entidad_federativa]', $entidades, isset($adeudos) ? $adeudos->entidad_federativa : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'SELECCIONE UNA OPCION',  'id' => 'entidades']) !!}
+        {!! Form::select('adeudos[entidad_federativa]', $entidades, isset($adeudos) ? $adeudos->entidad_federativa : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'SELECCIONE UNA OPCION',  'id' => 'entidades']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
         <strong> {!! Form::label('adeudos.pais_id', 'País dónde se localiza:') !!}</strong>
-        {!! Form::select('adeudos[pais_id]',$paises, isset($adeudos) ? $adeudos->pais_id : null,['class'=>'form-control text-uppercase ', 'placeholder'=>'Seleccione una opcion','id' => 'pais_cuenta']) !!}
+        {!! Form::select('adeudos[pais_id]',$paises, isset($adeudos) ? $adeudos->pais_id : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'Seleccione una opcion','id' => 'pais_cuenta']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -133,12 +133,12 @@
 
         $('#inputSelect').change(function () {
            var opt = $(this).val();
-           console.log(opt);
            if (opt=="3" || opt=="4" || opt=="6" || opt=="8" || opt=="10" || opt=="13" || opt=="15" || opt=="18" || opt=="19" || opt=="24") {
                 $('#mydiv').show();
                 $("#codeudor").prop("required", true)
                 $("#nombre_del_codeudor").prop("required", true)
                 $("#rfc_codeudor").prop("required", true)
+                $(".color-tercero").addClass("alert-danger");
             } else {
                 $('#mydiv').hide();
                 $("#codeudor").prop("required", false)
@@ -147,12 +147,13 @@
                 $("#codeudor").val("");
                 $("#nombre_del_codeudor").val("");
                 $("#rfc_codeudor").val("");
+                $(".color-tercero").removeClass("alert-danger");
             }
         });
         
+
         $('#tipo_adeudo').change(function () {
-           var value = $(this).val();
-           console.log(value);    
+           var value = $(this).val();  
             if (value == "7") {
                document.getElementById("especifique_adeudo").disabled = false;
                $("#especifique_adeudo").prop("required", true)
@@ -183,7 +184,6 @@
     
         $('#codeudor').change(function () {
            var valcod = $(this).val();
-           console.log(valcod);
            if (valcod > "1") {
                 document.getElementById('labelcod').innerText = 'Denominación o razón social:';
                 document.getElementById('nombre_del_codeudor').placeholder = 'p.ej. Desarrollo y Redes S.A de C.V.';
@@ -212,7 +212,6 @@
 
         $('#otorgante_credito').change(function () {
            var oto = $(this).val();
-           console.log(oto);
            if (oto > "1") {
                 document.getElementById('nom_credito').innerText = 'Institución o razón social del otorgante:';
                 document.getElementById('rfc_credito').innerText = 'RFC de la Institución o razón social:';
