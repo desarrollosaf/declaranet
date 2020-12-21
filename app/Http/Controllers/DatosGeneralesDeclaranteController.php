@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\SituacionPersonal;
 use App\RegimenMatrimonial;
 use App\Pais;
+use App\Nacionalidad;
 use App\Declaracion;
 
 
@@ -53,7 +54,12 @@ class DatosGeneralesDeclaranteController extends Controller
         foreach($paisesAll as $item){
             $paises[$item->id] = $item->valor;
         }
-        return view('datosGeneralesDeclarante.create', compact('selectSituacionPersonal','selectRegimenMatrimonial','servidor','paises','declaracion'));
+        $nacionalidadesAll = Nacionalidad::all();
+        $nacionalidades = [];
+        foreach($nacionalidadesAll as $item){
+            $nacionalidades[$item->id] = $item->valor;
+        }
+        return view('datosGeneralesDeclarante.create', compact('selectSituacionPersonal','selectRegimenMatrimonial','servidor','paises','declaracion','nacionalidades'));
     }
 
     /**

@@ -25,7 +25,7 @@ class Declaracion extends Model {
         return $this->belongsTo(SituacionPersonal::class);
     }
 
-    public function regimen_matrimonial() {
+    public function regimenMatrimonial() {
         return $this->belongsTo(RegimenMatrimonial::class);
     }
 
