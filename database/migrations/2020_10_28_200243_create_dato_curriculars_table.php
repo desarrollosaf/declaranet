@@ -20,7 +20,7 @@ class CreateDatoCurricularsTable extends Migration
             $table->unsignedBigInteger("nivel_id")->nullable();
             $table->foreign("nivel_id")->references("id")->on("niveles");
             $table->string("institucion_educativa");
-            $table->string("carrera_area");
+            $table->string("carrera_area")->nullable();
             $table->unsignedBigInteger("estatus_id");
             $table->foreign("estatus_id")->references("id")->on("estatus");
             $table->unsignedBigInteger("documento_id")->nullable();
