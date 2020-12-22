@@ -15,7 +15,8 @@ class DatosCurricularesDeclaranteController extends Controller
 {
     private $request;
     public function __construct(Request $request){
-        //$this->middleware('CheckDeclaracion');
+        $this->middleware('auth');
+        $this->middleware('CheckDeclaracion');
         $this->request = $request;
     }
     /**
@@ -40,13 +41,9 @@ class DatosCurricularesDeclaranteController extends Controller
     public function create()
     {
         $nivelesSelect = Arr::pluck(nivel::all(), "valor","id");
-        array_unshift($nivelesSelect,"Selecciona una opcion");
         $estatusSelect = Arr::pluck(Estatus::all(), "valor","id");
-        array_unshift($estatusSelect,"Selecciona una opcion");
         $documentoSelect = Arr::pluck(DocumentoObtenido::all(), "valor","id");
-        array_unshift($documentoSelect,"Selecciona una opcion");
         $lugaresSelect = Arr::pluck(LugarUbicacion::all(), "valor","id");
-        array_unshift($lugaresSelect,"Selecciona una opcion");
         return view('datosCurricularesDeclarante.create', compact("nivelesSelect","estatusSelect","documentoSelect","lugaresSelect"));
     }
 
