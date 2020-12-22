@@ -15,6 +15,7 @@ class DomicilioDeclaranteController extends Controller
     private $request;
     public function __construct(Request $request) {
         $this->middleware("auth");
+        $this->middleware("CheckDeclaracion");
         $this->request = $request;
     }
     /**
@@ -54,7 +55,7 @@ class DomicilioDeclaranteController extends Controller
         $domicilio = $request->input("domicilio");
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
         $declarante->domicilio()->create($domicilio);
-        return redirect()->back();
+        return redirect()->route("domicilio_declarante.index");
     }
 
     /**
@@ -95,7 +96,7 @@ class DomicilioDeclaranteController extends Controller
         $domicilioRequest = $request->input("domicilio");
         $domicilio = Domicilio::find($id);
         $domicilio->update($domicilioRequest);
-        return redirect()->back();
+        return redirect()->route("domicilio_declarante.index");
     }
 
     /**
