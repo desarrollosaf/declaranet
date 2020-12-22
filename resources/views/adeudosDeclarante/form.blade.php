@@ -217,7 +217,7 @@
                 document.getElementById('rfc_credito').innerText = 'RFC de la Institución o razón social:';
                 document.getElementById('nomC').placeholder = 'p.ej. Desarrollo y Redes S.A de C.V.';
                 document.getElementById('rfC').placeholder = 'p.ej.XXX010101';
-                $('#rfC').attr("pattern", '[A-Z]{3}[0-9]{9}');
+                $('#rfC').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{2}');
                 $('#rfC').attr("title", 'Ingresa RFC a 12 dígitos'); 
                 $("#nomC").prop("required", true)
                 $("#rfC").prop("required", true)

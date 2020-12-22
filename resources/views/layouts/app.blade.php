@@ -622,7 +622,7 @@
                                                         decisiones de alguna de estas instituciones?</a>
                                                     <a href="{{route("apoyo_beneficio.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-briefcase mr-2"></i>Apoyo o beneficion
+                                                            class="ion ion-briefcase mr-2"></i>Apoyo o beneficio
                                                         públicos</a>
                                                     <a href="{{route("representacion.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i

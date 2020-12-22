@@ -46,7 +46,7 @@
     </div>
     <div class="form-group col-md-4" id="moneda" style="display: none">
         <strong>{!! Form::label('apoyo.tipo_de_moneda_id', 'Tipo de moneda:') !!}</strong>
-        {!! Form::select('apoyo[tipo_de_moneda_id]', $tipoMoneda, isset($apoyo) ? $apoyo->tipo_de_moneda_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_de_moneda_id']) !!}
+        {!! Form::select('apoyo[tipo_de_moneda_id]', $tipoMoneda, isset($apoyo) ? $apoyo->tipo_de_moneda_id : null,['class'=>'form-control text-uppercase', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_de_moneda_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="esp" style="display: none">
@@ -73,13 +73,11 @@
         {!! Form::textarea('apoyo[aclaraciones_observaciones]',isset($apoyo) ? $apoyo->aclaraciones_observaciones : null,['class'=>'form-control alert-danger',  'id' => 'aclaraciones_observaciones']) !!}
     </div>
 </div>
-<div class="form-row">
-    <div class="col">
+<div class="text-center">
+    <br>
         {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-    </div>
-    <div class="col">
-        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
-    </div>
+
+        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
 </div>
 
 

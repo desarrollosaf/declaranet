@@ -52,7 +52,7 @@
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
         <strong> {!! Form::label('inversiones.pais_ubicacion_cuenta_id', 'País dónde se localiza:') !!}</strong>
-        {!! Form::select('inversiones[pais_ubicacion_cuenta_id]',$paises, isset($inversiones) ? $inversiones->pais_ubicacion_cuenta_id : null,['class'=>'form-control color-tercero', 'placeholder'=>'Seleccione una opcion','id' => 'pais_cuenta']) !!}
+        {!! Form::select('inversiones[pais_ubicacion_cuenta_id]',$paises, isset($inversiones) ? $inversiones->pais_ubicacion_cuenta_id : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'Seleccione una opcion','id' => 'pais_cuenta']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -64,7 +64,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('inversiones.tipo_de_moneda_id', 'Tipo de moneda:') !!}</strong>
-        {!! Form::select('inversiones[tipo_de_moneda_id]',$tipoMoneda, isset($inversiones) ? $inversiones->tipo_de_moneda_id : null,['class'=>'form-control color-tercero', 'placeholder'=>'Seleccione una opcion','id' => 'tipo_de_moneda', 'required' => 'true']) !!}
+        {!! Form::select('inversiones[tipo_de_moneda_id]',$tipoMoneda, isset($inversiones) ? $inversiones->tipo_de_moneda_id : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'Seleccione una opcion','id' => 'tipo_de_moneda', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -101,7 +101,7 @@
                 success: function (response) {
                     console.log(response);
                     $("#descripcion_tipo_inversion").find('option').remove();
-                    $("#descripcion_tipo_inversion").append('<option value="">-- Selecciona tipo inversion</option>');
+                    $("#descripcion_tipo_inversion").append('<option value="">SELECCIONE UNA OPCION</option>');
                     $(response).each(function (i, v) { // indice, valor
                         $("#descripcion_tipo_inversion").append('<option value="' + v.id + '">' + v.valor + '</option>');
                     });

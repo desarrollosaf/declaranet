@@ -236,6 +236,12 @@
                     $("#especifique_instrumento").prop("required", false);
                     $(".especifique-instrumento").find("input").val("");
                 }
+
+                if ($(this).val() === "") {
+                    $("#ingreso_por_actividad_financiera").prop("required", false);
+                } else {
+                    $("#ingreso_por_actividad_financiera").prop("required", true)
+                }
         });
 
         $("#ingreso_por_actividad_ice").keyup(function () {
@@ -246,6 +252,16 @@
                     $("#tipo_de_negocio").val("");
                 } else {
                     $("#nombre_razon_social").prop("required", true)
+                    $("#tipo_de_negocio").prop("required", true)
+                }
+        });
+
+        $("#nombre_razon_social").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#ingreso_por_actividad_ice").prop("required", false)
+                    $("#tipo_de_negocio").prop("required", false)
+                } else {
+                    $("#ingreso_por_actividad_ice").prop("required", true)
                     $("#tipo_de_negocio").prop("required", true)
                 }
         }); 
@@ -259,6 +275,7 @@
                 }
         });
 
+      
         $("#ingreso_por_servicios_profesionales").keyup(function () {
                 if ($(this).val() === "") {
                     $("#tipo_de_servicio").prop("required", false);
@@ -266,7 +283,16 @@
                 } else {
                     $("#tipo_de_servicio").prop("required", true)
                 }
-        }); 
+        });
+
+        $("#tipo_de_servicio").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#ingreso_por_servicios_profesionales").prop("required", false);
+                    $("#ingreso_por_servicios_profesionales").val("");
+                } else {
+                    $("#ingreso_por_servicios_profesionales").prop("required", true)
+                }
+        });  
 
         $("#ingreso_otros").keyup(function () {
                 if ($(this).val() === "") {
@@ -275,7 +301,16 @@
                 } else {
                     $("#tipo_de_ingreso").prop("required", true)
                 }
-        });  
+        });
+
+        $("#tipo_de_ingreso").keyup(function () {
+                if ($(this).val() === "") {
+                    $("#ingreso_otros").prop("required", false);
+                    $("#ingreso_otros").val("");
+                } else {
+                    $("#ingreso_otros").prop("required", true)
+                }
+        });   
 
     </script>
     @endsection
