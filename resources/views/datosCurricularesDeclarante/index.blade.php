@@ -75,9 +75,7 @@
                             <strong>Para registrar información pulse: </strong><a
                                 href="{{route('datos_curriculares_declarante.create')}}"
                                 class="btn btn-sm btn-secondary">Agregar</a><br>
-                            <strong>Deberá seleccionar <a href="{{route('datos_curriculares_declarante.create')}}"
-                                                          class="btn btn-sm btn-secondary">Ninguno</a>si éste es su
-                                primer empleo.</strong>
+                            <strong>Deberá seleccionar <a href="{{route('datos_curriculares_declarante.create')}}" class="btn btn-sm btn-secondary">Ninguno</a>si éste es su primer empleo.</strong>
                         </label>
                     </div>
 
@@ -125,6 +123,24 @@
                 }
             });
             return false;
+        });
+        $('.btn-ninguno').on('click', function (e) {
+            let that = this;
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    Swal.fire({
+                        text: 'No se registró información en este apartado. Si desea registrar Experiencia Laboral del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        icon: 'warning',
+                        cancelButtonText: 'Aceptar'
+                    });
+                }
+            });
         });
     </script>
 @endsection
