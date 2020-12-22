@@ -15,10 +15,8 @@ class CreateVehiculos extends Migration
     {
         Schema::create('vehiculos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('declaracion_id');
             $table->bigInteger('vehiculosable_id')->nullable();
             $table->string('vehiculosable_type')->nullable();
-            $table->foreign('declaracion_id')->references('id')->on('declaraciones');
             $table->unsignedBigInteger('tipoVehiculo_id');
             $table->foreign('tipoVehiculo_id')->references('id')->on('tipo_vehiculos');
             $table->string('otroVehiculo')->nullable();

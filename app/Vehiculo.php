@@ -9,7 +9,7 @@ class Vehiculo extends Model
     protected $table = 'vehiculos';
     protected $guarded = ["id", "created_at", "updated_at", "deleted_at"];
 
-    public function experienciable()
+    public function vehiculable()
     {
         return $this->morphTo();
     }
