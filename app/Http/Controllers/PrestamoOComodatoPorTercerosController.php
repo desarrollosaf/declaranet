@@ -191,7 +191,7 @@ class PrestamoOComodatoPorTercerosController extends Controller
                 $domicilio['pais_id'] = null;
             }
             $bien = $prestamoComodato->inmuebles;
-            if ($bien->domicilio == null) {
+            if (!$bien->domicilio) {
                 $bien->domicilio()->create($domicilio);
             } else {
                 $bien->domicilio()->update($domicilio);

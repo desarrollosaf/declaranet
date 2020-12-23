@@ -126,7 +126,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.tipo_moneda_id', 'Tipo de moneda:') !!}</strong>
-                {!! Form::select('bienesMuebles[tipo_moneda_id]', $selectTipoMoneda, (isset($bienMueble->tipo_moneda_id)) ? $bienMueble->tipo_moneda_id : null,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_moneda','placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
+                {!! Form::select('bienesMuebles[tipo_moneda_id]', $selectTipoMoneda, (isset($bienMueble->tipo_moneda_id)) ? $bienMueble->tipo_moneda_id : 101,['class'=>'form-control text-uppercase tipo-dato', 'id' => 'tipo_moneda','placeholder' => 'SELECCIONA UNA OPCIÓN'])!!}
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>
@@ -165,14 +165,15 @@
         $(document).ready(function () {
             $(".card-body").find("input").prop("required", true);
             $(".card-body").find("select").prop("required", true);
+            $(".tipo-tercero").find("input").prop("required", false);
+            $(".tipo-tercero").find("select").prop("required", false);
             $(".tipo-tercero").hide();
             $(".especifique").hide();
             $(".denominacion-razon").hide();
             $(".denominacion-rs-transmisor").hide();
-            $(".especifique-relacion-transmisor").hide();
             $("#titular_bien").change(function () {
                 var tipoTitular = $(this).val();
-                if (tipoTitular !== "1") {
+                if (tipoTitular !== "1" && tipoTitular !== "") {
                     $(".tipo-dato").addClass("alert-danger");
                     if (tipoTitular === "6") {
                         $(".tipo-tercero").show();
@@ -257,11 +258,9 @@
             $("#relacion_transmisor").change(function () {
                 var relacionTransmisorMueble = parseInt($(this).val());
                 if (relacionTransmisorMueble === 20) {
-                    $(".especifique-relacion-transmisor").show();
-                    $("#especifique_relacion_transmisor").prop("required", true)
+                    $("#especifique_relacion_transmisor").prop("required", true).prop("readOnly", false);
                 } else {
-                    $(".especifique-relacion-transmisor").hide();
-                    $("#especifique_relacion_transmisor").prop("required", false)
+                    $("#especifique_relacion_transmisor").prop("required", false).prop("readOnly", true);
                     $("#especifique_relacion_transmisor").val('')
                 }
             });
