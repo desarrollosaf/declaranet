@@ -70,16 +70,13 @@ class PrestamoOComodatoPorTercerosController extends Controller
      */
     public function store(Request $request)
     {
-        $idDeclaracion = $request->session()->get("declaracion_id");
         $prestamComodatoData = $request->input("prestamo");
-        $prestamComodatoData["declaracion_id"] = $idDeclaracion;
+        $prestamComodatoData["declaracion_id"] = $this->request->session()->get("declaracion_id");
         $prestamoComodato = PrestamoComodato::create($prestamComodatoData);
         if ($prestamComodatoData["tipo_bien_id"] == 2) {
             $bienInmueble = $request->input("bienesinmuebles");
             $domicilio = $request->input("domicilio");
             $domicilioExt = $request->input("domicilioExt");
-            $bienInmueble["declaracion_id"] = $idDeclaracion;
-            $domicilio["declaracion_id"] = $idDeclaracion;
             $bien = $prestamoComodato->inmuebles()->create($bienInmueble);
             if (isset($bienInmueble["ubicacion_inmueble_id"]) && $bienInmueble["ubicacion_inmueble_id"] == 2) {
                 $domicilio['calle'] = $domicilioExt['calleExt'];
@@ -102,7 +99,6 @@ class PrestamoOComodatoPorTercerosController extends Controller
 
         } elseif ($prestamComodatoData["tipo_bien_id"] == 3) {
             $vehiculo = $request->input("vehiculos");
-            $vehiculo["declaracion_id"] = $idDeclaracion;
             if ($vehiculo['pais_id'] == 0) {
                 $vehiculo['pais_id'] = null;
             }
@@ -162,9 +158,7 @@ class PrestamoOComodatoPorTercerosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $idDeclaracion = $request->session()->get("declaracion_id");
         $prestamComodatoData = $request->input("prestamo");
-        $prestamComodatoData["declaracion_id"] = $idDeclaracion;
         $prestamoComodato = PrestamoComodato::find($id);
         $prestamoComodato->update($prestamComodatoData);
         if ($prestamComodatoData["tipo_bien_id"] == 2) {
@@ -174,8 +168,6 @@ class PrestamoOComodatoPorTercerosController extends Controller
             $bienInmueble = $request->input("bienesinmuebles");
             $domicilio = $request->input("domicilio");
             $domicilioExt = $request->input("domicilioExt");
-            $bienInmueble["declaracion_id"] = $idDeclaracion;
-            $domicilio["declaracion_id"] = $idDeclaracion;
             if ($prestamoComodato->inmuebles == null) {
                 $bien = $prestamoComodato->inmuebles()->create($bienInmueble);
             } else {
@@ -198,6 +190,7 @@ class PrestamoOComodatoPorTercerosController extends Controller
             if ($domicilio['pais_id'] == 0) {
                 $domicilio['pais_id'] = null;
             }
+            $bien = $prestamoComodato->inmuebles;
             if ($bien->domicilio == null) {
                 $bien->domicilio()->create($domicilio);
             } else {
@@ -210,7 +203,6 @@ class PrestamoOComodatoPorTercerosController extends Controller
                 $prestamoComodato->inmuebles->destroy($prestamoComodato->inmuebles->id);
             }
             $vehiculo = $request->input("vehiculos");
-            $vehiculo["declaracion_id"] = $idDeclaracion;
             if ($vehiculo['pais_id'] == 0) {
                 $vehiculo['pais_id'] = null;
             }

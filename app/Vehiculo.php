@@ -9,11 +9,6 @@ class Vehiculo extends Model
     protected $table = 'vehiculos';
     protected $guarded = ["id", "created_at", "updated_at", "deleted_at"];
 
-    public function vehiculable()
-    {
-        return $this->morphTo();
-    }
-
     public function relacion()
     {
         return $this->belongsTo(relacionTransmisor::class);
@@ -49,11 +44,6 @@ class Vehiculo extends Model
         return $this->belongsTo(tipoVehiculo::class, 'tipoVehiculo_id');
     }
 
-    public function vehiculosable()
-    {
-        return $this->morphTo();
-    }
-
     public function entidades()
     {
         return $this->belongsTo(Entidad::class, 'entidad_id');
@@ -62,6 +52,11 @@ class Vehiculo extends Model
     public function tipoMonedas()
     {
         return $this->belongsTo(tipoMoneda::class);
+    }
+
+    public function vehiculosable()
+    {
+        return $this->morphTo();
     }
 }
 

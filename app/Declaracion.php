@@ -54,7 +54,7 @@ class Declaracion extends Model {
     }
 
     public function vehiculos() {
-        return $this->hasMany(Vehiculo::class);
+        return $this->morphMany(Vehiculo::class,'vehiculosable');
     }
 
     public function BienesMuebles() {

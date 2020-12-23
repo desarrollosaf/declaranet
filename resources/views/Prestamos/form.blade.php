@@ -67,7 +67,7 @@
                 <div id="lugarRegistroEx" style="display: none;">
                     <div class="form-group">
                         <label class="control-label" for="NumDoc"><strong>País</strong>:</label>
-                        {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos) ? $vehiculos->pais_id : [],['class'=>'form-control', 'placeholder'=>'',  'id' => 'pais_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                        {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos->pais_id) ? $vehiculos->pais_id : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'pais_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                     </div>
                 </div>
             </div>
@@ -76,31 +76,31 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Dueño o titular:</strong>:</label>
-                    {!! Form::select('vehiculos[tipoDePersona]', $regimen, isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'id' => 'dueno_titular', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                    {!! Form::select('vehiculos[tipoDePersona]', $regimen, isset($vehiculos) ? $vehiculos->tipoDePersona : null,['class'=>'form-control', 'id' => 'dueno_titular', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4 vehiculo-dueno">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Nombre del dueño:</strong>:</label>
-                    {!! Form::text('vehiculos[v_nombreFisica]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'p. ej. Juan Pérez.','id' => 'v-dueno', 'readOnly' => true]) !!}
+                    {!! Form::text('vehiculos[v_nombreFisica]', isset($vehiculos) ? $vehiculos->v_nombreFisica : null,['class'=>'form-control', 'placeholder'=>'p. ej. Juan Pérez.','id' => 'v-dueno', 'readOnly' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4 vehiculo-titular">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Nombre del titular:</strong>:</label>
-                    {!! Form::text('vehiculos[v_nombreMoral]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'p. ej. Desarrollo y Redes S.A. de C.V.',   'id' => 'v-titular']) !!}
+                    {!! Form::text('vehiculos[v_nombreMoral]', isset($vehiculos) ? $vehiculos->v_nombreMoral : null,['class'=>'form-control', 'placeholder'=>'p. ej. Desarrollo y Redes S.A. de C.V.',   'id' => 'v-titular']) !!}
                 </div>
             </div>
             <div class="col-lg-4 fisica">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>RFC:</strong>:</label>
-                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-fisica', 'pattern' => '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})' , 'readOnly' => true]) !!}
+                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-fisica', 'pattern' => '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})' , 'readOnly' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4 moral">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>RFC:</strong>:</label>
-                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-moral', 'pattern' => '([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{3})']) !!}
+                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-moral', 'pattern' => '([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{3})']) !!}
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@
                             Relación con el dueño o el títular
                         </strong>
                     </label>
-                    {!! Form::select('vehiculos[relacion_dueno_titular_id]',$relacion, isset($vehiculos) ? $vehiculos->relacion_id : [],['class'=>'form-control', 'id' => 'relacion_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                    {!! Form::select('vehiculos[relacion_dueno_titular_id]',$relacion, isset($vehiculos) ? $vehiculos->relacion_dueno_titular_id : [],['class'=>'form-control', 'id' => 'relacion_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4 especifique-relacion">
@@ -235,8 +235,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <strong>{!! Form::label('observaciones', ' Aclaraciones/Observaciones: ') !!}</strong>
-                {!! Form::textarea('observaciones', isset($domicilio) ? $domicilio->observaciones : null, ['class'=>'form-control alert-danger', 'cols'=>'62', 'rows'=>'5', 'id' => 'observaciones']) !!}
+                <strong>{!! Form::label('prestamo.observaciones', ' Aclaraciones/Observaciones: ') !!}</strong>
+                {!! Form::textarea('prestamo[observaciones]', isset($prestamo) ? $prestamo->observaciones : null, ['class'=>'form-control alert-danger', 'cols'=>'62', 'rows'=>'5', 'id' => 'observaciones']) !!}
             </div>
         </div>
     </div>
@@ -307,13 +307,11 @@
                     $("#lugarRegistroMx").find("select").prop("required", true);
                     $("#lugarRegistroEx").find("select").prop("required", false);
 
-
-                } else {
+                } else if (valor === 2) {
                     $("#lugarRegistroMx").hide();
                     $("#lugarRegistroMx").find("select").val("");
                     $("#lugarRegistroMx").find("input").val("");
                     $("#lugarRegistroEx").show();
-                    $("#pais_id").val("");
                     $("#lugarRegistroMx").find("select").prop("required", false);
                     $("#lugarRegistroEx").find("select").prop("required", true);
                 }

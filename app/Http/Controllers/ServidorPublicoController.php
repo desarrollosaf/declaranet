@@ -66,11 +66,11 @@ class ServidorPublicoController extends Controller
         $fechaConclusion = new Carbon($data["fecha_conclusion"]);
         $data["fecha_conclusion"] = $fechaConclusion->format("Y-m-d");
         $data["declaracion_id"] = $request->session()->get('declaracion_id');
-        if ($data["tipo_de_bien_id"] == 0) {
+        if (!isset($data["tipo_de_bien_id"])) {
             $data["tipo_de_bien_id"] = null;
         }
 
-        if ($data["tipo_de_instrumento_id"] == 0) {
+        if (!isset($data["tipo_de_instrumento_id"])) {
             $data["tipo_de_instrumento_id"] = null;
         }
         FueServidorPublico::create($data);
@@ -118,11 +118,11 @@ class ServidorPublicoController extends Controller
         $fechaConclusion = new Carbon($data["fecha_conclusion"]);
         $data["fecha_conclusion"] = $fechaConclusion->format("Y-m-d");
         $data["declaracion_id"] = $request->session()->get('declaracion_id');
-        if ($data["tipo_de_bien_id"] == 0) {
+        if (!isset($data["tipo_de_bien_id"])) {
             $data["tipo_de_bien_id"] = null;
         }
 
-        if ($data["tipo_de_instrumento_id"] == 0) {
+        if (!isset($data["tipo_de_instrumento_id"])) {
             $data["tipo_de_instrumento_id"] = null;
         }
 
