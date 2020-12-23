@@ -42,6 +42,7 @@ Route::resource("/representacion", "RepresentacionController")->name('*', 'repre
 Route::resource("/clientes_principales", "ClientesPrincipalesController")->name('*', 'clientes_principales');
 Route::resource("/fideicomisos", "FideicomisosController")->name('*', 'fideicomisos');
 Route::resource("/participacion", "ParticipaDecisionController")->name('*', 'participacion');
+Route::resource("/MCG", "McgDeclaranteController")->name('*', 'MCG');
 Route::post("declaracion/iniciar", "DeclaranetController@IniciarDeclaracion");
 Route::post("declaracion/continuar", "DeclaranetController@ContinuarDeclaracion");
 Route::get("getMunicipiosDomicilio/{id}", "DomicilioDeclaranteController@getMunicipios");
