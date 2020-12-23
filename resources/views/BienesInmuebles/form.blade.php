@@ -7,7 +7,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('tipo_inmueble_id', ' Tipo de inmueble: *') !!}</strong>
-                {!! Form::select('bienesinmuebles[tipo_inmueble_id]', isset($selecttipoInmueble) ? $selecttipoInmueble : [], isset($bien) ? $bien->tipo_inmueble_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción' ,  'id' => 'tipo_inmueble_id', 'required' => 'true']) !!}
+                {!! Form::select('bienesinmuebles[tipo_inmueble_id]', isset($selecttipoInmueble) ? $selecttipoInmueble : [], isset($bien) ? $bien->tipo_inmueble_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción',  'id' => 'tipo_inmueble_id', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4" id="combo_otro_Disabled">
@@ -339,7 +339,7 @@
     <div class="col-md-12">
         <center>
             <br>
-            <a href="#" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+            <a href="{{route('bienes_inmuebles.index')}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
             <input type="submit" name="submit" class="btn btn-sm btn-submit text-light" value="Guardar e ir a la siguiente sección">
         </center>
     </div>
@@ -407,7 +407,7 @@
 
         //CAMBIO DE COLOR TERCEROS
         $("#titular_id").change(function () {
-            console.log($(this).val());
+            //onsole.log($(this).val());
             //alert('entra');
             var tipoTitular = $(this).val();
             if (tipoTitular === "0") {

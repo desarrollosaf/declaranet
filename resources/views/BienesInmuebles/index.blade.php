@@ -6,19 +6,16 @@
             <h3>BIENES INMUEBLES</h3>
             <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
         </div>
-
-
-
         <div class="card-body">
 
             @if(count($bienes))
             <div class="table-responsive-lg">
                 <table class="table table-active table-striped">
                     <thead class="badge-primary">
-                        <tr>
-                            <th> <center>Tipo de bien</center> </th>
-                    <th> <center>Titular</center> </th>
-                    <th> <center>Acciones</center> </th>
+                    <tr>
+                        <th> <center>Tipo de bien</center> </th>
+                        <th> <center>Titular</center> </th>
+                        <th> <center>Acciones</center> </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -66,11 +63,8 @@
 
             <div class="text-center">
                 <br>
-                <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                    sección
-                    anterior</a>
-                <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                    siguiente sección</a>
+                <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
             </div>
         </div>
     </div>

@@ -1,15 +1,15 @@
-@extends('layouts.app')
+x|@extends('layouts.app')
 @section('content')
-<div class="card">
-    <div class="card-header bg-info  border-0 py-3 d-flex align-items-center" style="background-color:#F1F1F1 !important;">
-        <div>
-            <h3 class="card-title mb-0">REPRESENTACIÓN</h3>
+<div class="container">
+    <div class="card mb-5 shadow-sm border-0 shadow-hover">
+        <div class="card-header">
+            <h3>REPRESENTACIÓN</h3>
             <br>
             <h6 class="card-subtitle">(Hasta los últimos dos años)</h6>
         </div>
-    </div>
+
     <div class="card-body">
-        @if($representacion != null)
+        @if(count($representacion))
 
         <table class="table table-bordered table-striped">
             <thead class="text-center text-light">
@@ -54,9 +54,9 @@
 
         <div class="alert alert-danger">
             <center>
-                Para registrar información pulse: <a class="btn btn-submit btn-sm text-light" href="{{route('representacion.create')}}">Agregar</a>
+                Para registrar información pulse: <a class="btn btn-sm btn-secondary" href="{{route('representacion.create')}}">Agregar</a>
                 <br><br>
-                Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a class="btn btn-submit btn-sm text-light" href="">Ninguno</a><br>
+                Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('representacion.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a><br>
             </center>
         </div>
     </div>
@@ -65,10 +65,11 @@
 
 
     <div class="text-center">
-        <a href="dsp_deSerPu_aInmAnt_ini.php" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
-        <a href="dsp_d_vehiculos_buscar.php" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+        <a href="{{route("apoyo_beneficio.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+        <a href="{{route("clientes_principales.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
     </div>
     <br>
+        </div>
 </div>
 
 
@@ -78,21 +79,40 @@
 @section('scripts')
 <script>
     $('.btn-borrar').on('click', function (e) {
-            let that = this;
-            console.log('boton clic');
-            e.preventDefault();
-            Swal.fire({
-                title: '¿Está seguro?',
-                text: 'Al oprimir el botón de aceptar se eliminará el registro',
-                icon: 'warning',
-                showCancelButton: true,
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed){
-                    $(that).closest('form').submit();
-                }
-            });            
-            return false;
+        let that = this;
+        console.log('boton clic');
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: 'Al oprimir el botón de aceptar se eliminará el registro',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $(that).closest('form').submit();
+            }
         });
+        return false;
+    });
+
+    $('.btn-ninguno').on('click', function (e) {
+        let that = this;
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    text: 'No se registró información en este apartado. Si desea registrar Representaciones pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                    icon: 'warning',
+                    cancelButtonText: 'Aceptar'
+                });
+            }
+        });
+    });
 </script>
 @endsection

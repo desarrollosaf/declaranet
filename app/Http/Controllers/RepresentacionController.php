@@ -13,6 +13,7 @@ class RepresentacionController extends Controller {
     public function __construct(Request $request) {
         $this->middleware("auth");
         $this->request = $request;
+        $this->middleware('CheckDeclaracion');
     }
 
     public function index() {
@@ -26,34 +27,30 @@ class RepresentacionController extends Controller {
 
         //COMBO TITULAR PARTICIPACION
         $selecttitularRepresentacion = Arr::pluck(\App\titularBien::all(), "valor", "id");
-        array_unshift($selecttitularRepresentacion, "Selecciona una opcion");
-
+        
         //COMBO TITULAR PARTICIPACION
         $selecttipoRepresentacion = Arr::pluck(\App\tipoRepresentacion::all(), "valor", "id");
-        array_unshift($selecttipoRepresentacion, "Selecciona una opcion");
-
+        
         //COMBO TITULAR PARTICIPACION
         $selectregimenRepresentante = Arr::pluck(\App\RegimenFiscal::all(), "valor", "id");
-        array_unshift($selectregimenRepresentante, "Selecciona una opcion");
-
+        
         //COMBO TITULAR PARTICIPACION
         $selecttipoRespuesta = Arr::pluck(\App\Respuesta::all(), "respuesta", "id");
-        array_unshift($selecttipoRespuesta, "Selecciona una opcion");
-
+        
         //COMBO TIPO SECTOR
         $selecttipoSector = Arr::pluck(\App\sector::all(), "valor", "id");
-        array_unshift($selecttipoSector, "Selecciona una opcion");
-
+        
         //COMBO UBICACION INMUEBLE
         $selectubicacionRepresentacion = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-        array_unshift($selectubicacionRepresentacion, "Selecciona una opcion");
-
+        
         //COMBO UBICACION INMUEBLE
         $selectpaises = Arr::pluck(\App\Pais::all(), "valor", "id");
-        array_unshift($selectpaises, "Selecciona una opcion");
+        
+        //COMBO UBICACION INMUEBLE
+        $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
+        
 
-
-        return view("Representacion.create", compact('selecttitularRepresentacion', 'selecttipoRepresentacion', 'selectregimenRepresentante', 'selecttipoRespuesta', 'selecttipoSector', 'selectubicacionRepresentacion', 'selectpaises'));
+        return view("Representacion.create", compact('selecttitularRepresentacion', 'selecttipoRepresentacion', 'selectregimenRepresentante', 'selecttipoRespuesta', 'selecttipoSector', 'selectubicacionRepresentacion', 'selectpaises', 'selectEntidad'));
     }
 
     /**
@@ -102,35 +99,32 @@ class RepresentacionController extends Controller {
     public function edit($id) {
         //COMBO TITULAR PARTICIPACION
         $selecttitularRepresentacion = Arr::pluck(\App\titularBien::all(), "valor", "id");
-        array_unshift($selecttitularRepresentacion, "Selecciona una opcion");
-
+        
         //COMBO TITULAR PARTICIPACION
         $selecttipoRepresentacion = Arr::pluck(\App\tipoRepresentacion::all(), "valor", "id");
-        array_unshift($selecttipoRepresentacion, "Selecciona una opcion");
-
+        
         //COMBO TITULAR PARTICIPACION
         $selectregimenRepresentante = Arr::pluck(\App\RegimenFiscal::all(), "valor", "id");
-        array_unshift($selectregimenRepresentante, "Selecciona una opcion");
-
+        
         //COMBO TITULAR PARTICIPACION
         $selecttipoRespuesta = Arr::pluck(\App\Respuesta::all(), "respuesta", "id");
-        array_unshift($selecttipoRespuesta, "Selecciona una opcion");
-
+        
         //COMBO TIPO SECTOR
         $selecttipoSector = Arr::pluck(\App\sector::all(), "valor", "id");
-        array_unshift($selecttipoSector, "Selecciona una opcion");
-
+        
         //COMBO UBICACION INMUEBLE
         $selectubicacionRepresentacion = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-        array_unshift($selectubicacionRepresentacion, "Selecciona una opcion");
-
+        
         //COMBO UBICACION INMUEBLE
         $selectpaises = Arr::pluck(\App\Pais::all(), "valor", "id");
-        array_unshift($selectpaises, "Selecciona una opcion");
+        
+        //COMBO UBICACION INMUEBLE
+        $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
+        
 
         $representacion = \App\Representacion::find($id);
 
-        return view("Representacion.edit", compact('selecttitularRepresentacion', 'selecttipoRepresentacion', 'selectregimenRepresentante', 'selecttipoRespuesta', 'selecttipoSector', 'selectubicacionRepresentacion', 'selectpaises', 'representacion'));
+        return view("Representacion.edit", compact('selecttitularRepresentacion', 'selecttipoRepresentacion', 'selectregimenRepresentante', 'selecttipoRespuesta', 'selecttipoSector', 'selectubicacionRepresentacion', 'selectpaises', 'selectEntidad', 'representacion'));
     }
 
     /**

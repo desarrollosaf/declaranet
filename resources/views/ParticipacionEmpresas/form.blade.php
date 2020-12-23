@@ -125,7 +125,7 @@
 
     <center>
         <br>
-        <a href="#" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+        <a href="{{route('participacion_empresas.index')}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
         <input type="submit" name="submit" class="btn btn-sm btn-submit text-light" value="Guardar e ir a la siguiente sección">
     </center>
 

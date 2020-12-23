@@ -30,13 +30,16 @@ class CreateRepresentacionsTable extends Migration
             $table->foreign('respuesta_id')->references('id')->on('respuestas');
             $table->text('monto_mensual')->nullable();
             $table->unsignedBigInteger('tipo_sector_id');
-            $table->foreign('tipo_sector_id')->references('id')->on('ambitos_sectores');
+            $table->foreign('tipo_sector_id')->references('id')->on('sectores');
             $table->string('especifique')->nullable();
             $table->unsignedBigInteger('lugar_ubica_id');
             $table->foreign('lugar_ubica_id')->references('id')->on('lugares_ubicacion');
             $table->string('entidad_federativa')->nullable();
+            $table->unsignedBigInteger('entidad_id')->nullable();
+            $table->foreign('entidad_id')->references('id')->on('entidades');
             $table->unsignedBigInteger('pais_id')->nullable();
             $table->foreign('pais_id')->references('id')->on('paises');
+            $table->string('observaciones')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

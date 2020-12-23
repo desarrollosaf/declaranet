@@ -37,4 +37,8 @@ class Representacion extends Model {
         return $this->belongsTo(Pais::class, 'pais_id');
     }
 
+    public function entidades() {
+        return $this->belongsTo(Entidad::class, 'entidad_id');
+    }
+
 }
