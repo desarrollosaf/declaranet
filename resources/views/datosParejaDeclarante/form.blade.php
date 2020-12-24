@@ -199,7 +199,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('actividadLaboral.salario_mensual_neto','Salario mensual neto: *') !!}</strong>
-            {!! Form::number('actividadLaboral[salario_mensual_neto]',isset($experienciaLaboral->salario_mensual_neto) ? $experienciaLaboral->salario_mensual_neto : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postalExt']) !!}
+            {!! Form::number('actividadLaboral[salario_mensual_neto]',isset($experienciaLaboral->salario_mensual_neto) ? $experienciaLaboral->salario_mensual_neto : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. $10,000 Mxn',  'id' => 'salario_mensual_neto']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -270,7 +270,11 @@
 
 @section('scripts')
     <script type="text/javascript">
+
         $(document).ready(function () {
+            @isset($experienciaLaboral)
+            let actual = {{$experienciaLaboral->ambito_sector_id}};
+            @endisset
             $(".form-control").addClass("alert-danger")
             $(".domicilio-MXBinmuebles").hide();
             $(".domicilio-EXBinmuebles").hide();
@@ -316,7 +320,7 @@
                     $('.domicilio-MXBinmuebles').find("select").prop("required", false);
                     $('.domicilio-EXBinmuebles').find("input").prop("required", true);
                     $('.domicilio-EXBinmuebles').find("select").prop("required", true);
-                } else {
+                } else if ($(this).val() !== "") {
                     $('.domicilio-MXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').hide();
                     $('.domicilio-EXBinmuebles').find("input").val("");
@@ -377,7 +381,11 @@
                     $("#lugar-reside").val("");
                     $(".lugar-reside").hide();
                     $(".lugar-reside").prop("required", false);
-                } else {
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", false);
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", false);
+                } else if (!isNaN(respuesta)) {
                     $(".lugar-reside").show();
                     $(".lugar-reside").prop("required", true);
                     $("#lugar-reside").change();
@@ -403,6 +411,13 @@
                     $(".sector-privado-otro").find("input").prop("required", true);
                     $(".sector-publico").find("select").prop("required", false);
                     $(".sector-publico").find("input").prop("required", false);
+                    @isset($experienciaLaboral)
+                    if (actual !== sector) {
+                        $(".sector-privado-otro").find("select").val("");
+                        $(".sector-privado-otro").find("input").val("");
+                        actual += 10;
+                    }
+                    @endisset
                 } else {
                     $(".sector-publico").find("select").prop("required", false);
                     $(".sector-publico").find("input").prop("required", false);
@@ -429,7 +444,7 @@
                     $("#especifique-sector").prop("required", false);
                 }
             });
-            $("#curp").keyup(function () {
+            $("#curp").blur(function () {
                 let curp = $(this).val();
                 $("#curp").val(curp.toString().toUpperCase());
             });

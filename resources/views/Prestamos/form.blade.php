@@ -10,13 +10,13 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Tipo de vehículo</strong></label>
+                    <label class="control-label" for="NumDoc"><strong>Tipo de vehículo: *</strong></label>
                     {!! Form::select('vehiculos[tipoVehiculo_id]', $vehiculo, isset($vehiculos) ? $vehiculos->tipoVehiculo_id : [],['class'=>'form-control alert-danger',  'id' => 'tipoVehiculo_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4 especifique-otro" id="combo_otro">
                 <div class="form-group">
-                    <label class="control-label" style="text-align:justify"><strong>Especifique</strong></label>
+                    <label class="control-label" style="text-align:justify"><strong>Especifique:</strong></label>
                     {!! Form::text('vehiculos[otroVehiculo]',isset($vehiculos) ? $vehiculos->otroVehiculo :null,['class'=>'form-control', 'placeholder'=>'P. ej. Otro',  'id' => 'otroVehiculo']) !!}
                 </div>
             </div>
@@ -24,19 +24,19 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Marca</strong>:</label>
+                    <label class="control-label" for="NumDoc"><strong>Marca: *</strong></label>
                     {!! Form::text('vehiculos[v_marca]', isset($vehiculos) ? $vehiculos->v_marca : null,['class'=>'form-control', 'placeholder'=>'P. ej. Renault',   'id' => 'v_marca', 'pattern'=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="ProcessNum"><strong>Modelo</strong>:</label>
+                    <label class="control-label" for="ProcessNum"><strong>Modelo: *</strong></label>
                     {!! Form::text('vehiculos[v_modelo]', isset($vehiculos) ? $vehiculos->v_modelo : null,['class'=>'form-control', 'placeholder'=>'P. ej. Clío',   'id' => 'v_modelo', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð0-9-.]{2,48}"]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="State"><strong>Año</strong>:</label>
+                    <label class="control-label" for="State"><strong>Año: *</strong></label>
                     {!! Form::number('vehiculos[v_ano]', isset($vehiculos) ? $vehiculos->v_ano : null,['class'=>'form-control', 'placeholder'=>'P. ej. 2006',   'id' => 'v_ano', 'max' => date('Y') + 1]) !!}
                 </div>
             </div>
@@ -45,14 +45,14 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Número de serie o
-                            registro</strong>:</label>
+                            registro: *</strong></label>
                     {!! Form::text('vehiculos[v_num_serie]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. 1HGCM82633A004352',   'id' => 'v_num_serie', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð0-9-.]{2,48}"]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="ProcessNum">¿<strong>Dónde se encuentra
-                            registrado?</strong></label>
+                    <label class="control-label" for="ProcessNum"><strong>¿Dónde se encuentra
+                            registrado?: *</strong></label>
                     {!! Form::select('vehiculos[lugar_registro]',$registro, isset($vehiculos) ? $vehiculos->lugar_registro : [],['class'=>'form-control', 'id' => 'lugar_registro', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
@@ -60,13 +60,13 @@
 
                 <div id="lugarRegistroMx" style="display: none;">
                     <div class="form-group">
-                        <label class="control-label" for="NumDoc"><strong>Entidad Federativa</strong>:</label>
+                        <label class="control-label" for="NumDoc"><strong>Entidad Federativa: *</strong></label>
                         {!! Form::select('vehiculos[entidades_id]', $selectEntidad, isset($vehiculos) ? $vehiculos->entidades_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN', 'id' => 'entidades_id']) !!}
                     </div>
                 </div>
                 <div id="lugarRegistroEx" style="display: none;">
                     <div class="form-group">
-                        <label class="control-label" for="NumDoc"><strong>País</strong>:</label>
+                        <label class="control-label" for="NumDoc"><strong>País: *</strong></label>
                         {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos->pais_id) ? $vehiculos->pais_id : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'pais_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                     </div>
                 </div>
@@ -75,31 +75,31 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Dueño o titular:</strong>:</label>
+                    <label class="control-label" for="NumDoc"><strong>Dueño o titular: *</strong></label>
                     {!! Form::select('vehiculos[tipoDePersona]', $regimen, isset($vehiculos) ? $vehiculos->tipoDePersona : null,['class'=>'form-control', 'id' => 'dueno_titular', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4 vehiculo-dueno">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Nombre del dueño:</strong>:</label>
+                    <label class="control-label" for="NumDoc"><strong>Nombre del dueño: *</strong></label>
                     {!! Form::text('vehiculos[v_nombreFisica]', isset($vehiculos) ? $vehiculos->v_nombreFisica : null,['class'=>'form-control', 'placeholder'=>'p. ej. Juan Pérez.','id' => 'v-dueno', 'readOnly' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4 vehiculo-titular">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Nombre del titular:</strong>:</label>
+                    <label class="control-label" for="NumDoc"><strong>Nombre del titular: *</strong></label>
                     {!! Form::text('vehiculos[v_nombreMoral]', isset($vehiculos) ? $vehiculos->v_nombreMoral : null,['class'=>'form-control', 'placeholder'=>'p. ej. Desarrollo y Redes S.A. de C.V.',   'id' => 'v-titular']) !!}
                 </div>
             </div>
             <div class="col-lg-4 fisica">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>RFC:</strong>:</label>
+                    <label class="control-label" for="NumDoc"><strong>RFC: *</strong></label>
                     {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-fisica', 'pattern' => '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})' , 'readOnly' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4 moral">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>RFC:</strong>:</label>
+                    <label class="control-label" for="NumDoc"><strong>RFC: *</strong></label>
                     {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-moral', 'pattern' => '([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{3})']) !!}
                 </div>
             </div>
@@ -109,7 +109,7 @@
                 <div class="form-group">
                     <label class="control-label" for="State" style="line-height : 15px !important;">
                         <strong>
-                            Relación con el dueño o el títular
+                            Relación con el dueño o el títular: *
                         </strong>
                     </label>
                     {!! Form::select('vehiculos[relacion_dueno_titular_id]',$relacion, isset($vehiculos) ? $vehiculos->relacion_dueno_titular_id : [],['class'=>'form-control', 'id' => 'relacion_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
@@ -117,7 +117,7 @@
             </div>
             <div class="col-lg-4 especifique-relacion">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Especifique:</strong>:</label>
+                    <label class="control-label" for="NumDoc"><strong>Especifique:</strong></label>
                     {!! Form::text('vehiculos[especifique_relacion_titular]', isset($vehiculos) ? $vehiculos->especifique_relacion_titular : null,['class'=>'form-control', 'placeholder'=>'P. ej. CONOCIDO',   'id' => 'especifique_relacion_titular']) !!}
                 </div>
             </div>
@@ -127,7 +127,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <strong>{!! Form::label('especifique', 'Tipo de inmueble:') !!}</strong>
+                    <strong>{!! Form::label('especifique', 'Tipo de inmueble: *') !!}</strong>
                     {!! Form::select('bienesinmuebles[tipo_inmueble_id]', $selecttipoInmueble, isset($bienesinmuebles->tipo_inmueble_id) ? $bienesinmuebles->tipo_inmueble_id : null,['class'=>'form-control tipo-titular',  'id' => 'tipo_inmueble_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN', "pattern"=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}"]) !!}
                 </div>
             </div>
@@ -138,7 +138,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <strong>{!! Form::label('ubicacion_inmueble_id', ' Ubicación del inmueble:') !!}</strong>
+                <strong>{!! Form::label('ubicacion_inmueble_id', ' Ubicación del inmueble: *') !!}</strong>
                 {!! Form::select('bienesinmuebles[ubicacion_inmueble_id]', isset($selectubicacionInmueble) ? $selectubicacionInmueble : [], isset($bienesinmuebles->ubicacion_inmueble_id) ? $bienesinmuebles->ubicacion_inmueble_id : null, ['class'=>'form-control tipo-titular lugar-inmueble',  'id' => 'lugar-inmueble', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
             </div>
         </div>
@@ -146,41 +146,41 @@
             <hr>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilio.calle', 'Calle:') !!}</strong>
+                    <strong>{!! Form::label('domicilio.calle', 'Calle: *') !!}</strong>
                     {!! Form::text('domicilio[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'nombre', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}", 'title' => "Ingresa la calle" ]) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('exterior', 'Número exterior:') !!}</strong>
+                    <strong>{!! Form::label('exterior', 'Número exterior: *') !!}</strong>
                     {!! Form::text('domicilio[num_ext]',isset($domicilio->num_int) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior" ,'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
+                    <strong>{!! Form::label('interior', 'Número interior / Piso: *') !!}</strong>
                     {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior','pattern' => '[A-Za-z0-9-]{1,8}']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilio.colonia', 'Colonia / Localidad:') !!}</strong>
+                    <strong>{!! Form::label('domicilio.colonia', 'Colonia / Localidad: *') !!}</strong>
                     {!! Form::text('domicilio[colonia]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilio.entidad_id', 'Entidad Federativa:') !!}</strong>
+                    <strong>{!! Form::label('domicilio.entidad_id', 'Entidad Federativa: *') !!}</strong>
                     {!! Form::select('domicilio[entidad_id]', $selectEntidad,isset($domicilio->entidad_id) ? $domicilio->entidad_id : null,['class'=>'form-control tipo-titular', 'id' => 'entidad_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilio.municipio_id', 'Municipio / Alcaldía:') !!}</strong>
+                    <strong>{!! Form::label('domicilio.municipio_id', 'Municipio / Alcaldía: *') !!}</strong>
                     {!! Form::select('domicilio[municipio_id]', isset($selectMunicipio) ? $selectMunicipio : [], isset($domicilio->municipio_id) ? $domicilio->municipio_id : null,['class'=>'form-control', 'id' => 'municipio_id']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilio.codigo_postal', 'Código postal:') !!}</strong>
+                    <strong>{!! Form::label('domicilio.codigo_postal', 'Código postal: *') !!}</strong>
                     {!! Form::text('domicilio[codigo_postal]',isset($domicilio->codigo_postal) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 50000',  'id' => 'cp', 'pattern' => '[0-9]{5}']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
@@ -191,41 +191,41 @@
             <hr>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilioExt.calleExt', 'Calle:') !!}</strong>
+                    <strong>{!! Form::label('domicilioExt.calleExt', 'Calle: *') !!}</strong>
                     {!! Form::text('domicilioExt[calleExt]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'nombre', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}", 'title' => "Ingresa la calle" ]) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilioExt.numextExt', 'Número exterior:') !!}</strong>
+                    <strong>{!! Form::label('domicilioExt.numextExt', 'Número exterior: *') !!}</strong>
                     {!! Form::text('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[A-Za-z0-9-]{1,8}", 'title' => "Ingresa número exterior"]) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso: ') !!}</strong>
+                    <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso: *') !!}</strong>
                     {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt', 'pattern' => "[A-Za-z0-9-]{1,8}"]) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilioExt.coloniaExt', 'Colonia / Localidad:') !!}</strong>
+                    <strong>{!! Form::label('domicilioExt.coloniaExt', 'Colonia / Localidad: *') !!}</strong>
                     {!! Form::text('domicilioExt[coloniaExt]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_Ext']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilio.pais_id', 'País:') !!}</strong>
+                    <strong>{!! Form::label('domicilio.pais_id', 'País: *') !!}</strong>
                     {!! Form::select('domicilio[pais_id]', $pais,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control tipo-titular',  'id' => 'pais', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilioExt.estadoprovincia', 'Estado / Provincia:') !!}</strong>
+                    <strong>{!! Form::label('domicilioExt.estadoprovincia', 'Estado / Provincia: *') !!}</strong>
                     {!! Form::text('domicilioExt[estadoprovincia]',isset($domicilio) ? $domicilio->entidad : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. México',  'id' => 'estado_provincia']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilioExt.codigopostalExt', 'Código postal:') !!}</strong>
+                    <strong>{!! Form::label('domicilioExt.codigopostalExt', 'Código postal: *') !!}</strong>
                     {!! Form::text('domicilioExt[codigopostalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postalExt' , 'pattern' => '[A-za-z0-9]{5}']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>

@@ -74,7 +74,7 @@ class DatosParejaController extends Controller
         $selectLugarReside = Arr::pluck(lugarDondeReside::all(), "valor", "id");
         $selectRespuesta = Arr::pluck(Respuesta::all(), "respuesta", "id");
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
-        $selectPais = Arr::pluck(Pais::all(), "valor", "id");
+        $selectPais = Arr::pluck(Pais::where("id", '=', 152)->get(), "valor", "id");
         $respuesta = Arr::pluck(Respuesta::all(), "respuesta", "id");
         return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector'));
     }
@@ -152,7 +152,7 @@ class DatosParejaController extends Controller
         $selectLugarReside = Arr::pluck(lugarDondeReside::all(), "valor", "id");
         $selectRespuesta = Arr::pluck(Respuesta::all(), "respuesta", "id");
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
-        $selectPais = Arr::pluck(Pais::all(), "valor", "id");
+        $selectPais = Arr::pluck(Pais::where("id", '!=', 152)->get(), "valor", "id");
         $respuesta = Arr::pluck(Respuesta::all(), "respuesta", "id");
         $pareja = DatosPareja::find($id);
         $domicilio = $pareja->domicilio;
@@ -211,10 +211,12 @@ class DatosParejaController extends Controller
             }
         } else {
             if ($pareja->domicilio != null) {
-                $pareja->domicilio()->destroy();
+                $pareja->domicilio->delete();
             }
         }
         if ($actividadLaboral["ambito_sector_id"] != 4) {
+            unset($actividadLaboral["salario_mensual_neto_publico"]);
+            unset($actividadLaboral["fecha_ingreso_publico"]);
             if ($pareja->experienciaLaboral == null) {
                 $pareja->experienciaLaboral()->create($actividadLaboral);
             } else {
