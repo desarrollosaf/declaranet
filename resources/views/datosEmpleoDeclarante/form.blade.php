@@ -117,21 +117,19 @@
     </div>
     <br>
 
-    <div id="edit" style="display: none;">
+    <div id="edit" style="display: none;" class="all text-center">
         <div class="form-row">
             <div class="col">
-                {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
+                {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
             </div>
         </div>
     </div>
-    <div id="crearF" style="display: none;">
-        <div class="form-row">
-            <div class="col">
-                {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-            </div>
-            <div class="col">
-                {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
-            </div>
+    <div id="crearF"  style="display: none;" class="all text-center">
+        <div class="text-center">
+            <br>
+            <a href="{{route("datos_curriculares_declarante.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
+            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
+
         </div>
     </div>
     <br>

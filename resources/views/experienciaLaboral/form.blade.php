@@ -9,16 +9,16 @@
 <div class="row">
     <div class="form-group col-md-4 PRIVADO">
         <strong>{!! Form::label('nombre_empresa', 'Nombre de la empresa, sociedad o asociación: *') !!} </strong>
-        {!! Form::text('experiencia[nombre_empresa]',isset($experiencia) ? $experiencia->nombre_empresa : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.','id' => 'nombre_empresa', 'required' => 'true']) !!}
+        {!! Form::text('experiencia[nombre_empresa]',isset($experiencia) ? $experiencia->nombre_empresa : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.','id' => 'nombre_empresa', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PÚBLICO">
         <strong>{!! Form::label('nivel_orden_gobierno_id', 'Nivel / Orden de Gobierno: *') !!}</strong>
-        {!! Form::select('experiencia[nivel_orden_gobierno_id]', $nivelOrdenGobierno,isset($experiencia) ? $experiencia->nivel_orden_gobierno_id : [],['class'=>'form-control text-uppercase','id' => 'nivel_orden_gobierno_id','placeholder' => 'Selecciona una opción', 'required' => 'true']) !!}
+        {!! Form::select('experiencia[nivel_orden_gobierno_id]', $nivelOrdenGobierno,isset($experiencia) ? $experiencia->nivel_orden_gobierno_id : [],['class'=>'form-control text-uppercase','id' => 'nivel_orden_gobierno_id','placeholder' => 'Selecciona una opción', 'required' => true]) !!}
     </div>
     <div class="form-group col-md-4 PRIVADO">
         <strong>{!! Form::label('celpersonal', 'RFC:  *') !!}</strong>
-        {!! Form::text('experiencia[rfc]',isset($experiencia) ? $experiencia->rfc : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. XXX01011001010.','id' => 'rfc', 'required' => true , 'maxlength'=>"13", 'pattern' => "([A-Z]{4}([0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
+        {!! Form::text('experiencia[rfc]',isset($experiencia) ? $experiencia->rfc : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. XXX01011001010.','id' => 'rfc', 'required' => true , 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{9})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PÚBLICO">
@@ -50,6 +50,13 @@
         {!! Form::select('experiencia[sector_id]',$sectores,isset($experiencia) ? $experiencia->sector_id : null, ['class'=>'form-control text-uppercase','id' => 'sector_id','placeholder' => 'Selecciona una opción', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
+
+    <div class="form-group col-md-4 PRIVADO">
+        <strong>{!! Form::label('celpersonal', 'Especifique sector al que pertenece: *') !!}</strong>
+        {!! Form::text('experiencia[especifique_otro_sector]',isset($experiencia) ? $experiencia->especifique_otro_sector : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. PETROLERO.','id' => 'especifique_otro_sector', 'required' => true, 'disabled' => true]) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+
     <div class="form-group col-md-4 PÚBLICO">
         <strong>{!! Form::label('celpersonal', 'Empleo, Cargo o Comisión:  *') !!}</strong>
         {!! Form::text('experiencia[cargo_comision]',isset($experiencia) ? $experiencia->cargo_comision : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. ANÁLISTA EN SISTEMAS.','id' => 'cargo_comision', 'required' => true]) !!}

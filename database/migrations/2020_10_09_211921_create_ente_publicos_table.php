@@ -14,6 +14,7 @@ class CreateEntePublicosTable extends Migration
     public function up()
     {
         Schema::create('ente_publicos', function (Blueprint $table) {
+            $table->id();
             $table->string("poder");
             $table->string("clave");
             $table->string("siglas");

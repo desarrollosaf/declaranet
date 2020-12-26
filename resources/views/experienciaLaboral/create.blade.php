@@ -141,54 +141,73 @@
     });
 
     $("#ambito_sector_id").on("change", function () {
+
         if ($(this).val() == "2") {
+            alert("2");
             $(".PRIVADO").show();
             $(".AMBOS").show();
             $(".PÚBLICO").hide();
+
             $("#nivel_orden_gobierno_id").prop("required", false);
             $("#ambito_publico_id").prop("required", false);
             $("#ente_publico").prop("required", false);
             $("#area_adscripcion").prop("required", false);
             $("#cargo_comision").prop("required", false);
-            $("#funcion_principal").prop("required", false);
+            $("#funcion_pricipal").prop("required", false);
+
+            $("#sector_id").on("change", function () {
+                if ($(this).val() == "17") {
+                    $("#especifique_otro_sector").prop("disabled", false);
+                }else{
+                    $("#especifique_otro_sector").prop("disabled", true);
+                }
+            });
+
+
 
             $("#nombre_empresa").val("");
             $("#rfc").val("");
             $("#area").val("");
             $("#puesto").val("");
             $("#sector_id").val("");
+            $("#especifique_otro_sector").val("");
         } else if($(this).val() == "1") {
+            alert("1");
             $(".PRIVADO").hide();
             $(".PÚBLICO").show();
             $(".AMBOS").show();
+
             $("#nombre_empresa").prop("required", false);
             $("#rfc").prop("required", false);
             $("#area").prop("required", false);
             $("#puesto").prop("required", false);
             $("#sector_id").prop("required", false);
+            $("#especifique_otro_sector").prop("required", false);
 
             $("#nivel_orden_gobierno_id").val("");
             $("#ambito_publico_id").val("");
             $("#ente_publico").val("");
             $("#area_adscripcion").val("");
             $("#cargo_comision").val("");
-            $("#funcion_principal").val("");
+            $("#funcion_pricipal").val("");
         }else if($(this).val() == "3"){
             $(".PRIVADO").show();
             $(".PÚBLICO").hide();
             $(".AMBOS").show();
+
             $("#nivel_orden_gobierno_id").prop("required", false);
             $("#ambito_publico_id").prop("required", false);
             $("#ente_publico").prop("required", false);
             $("#area_adscripcion").prop("required", false);
             $("#cargo_comision").prop("required", false);
-            $("#funcion_principal").prop("required", false);
+            $("#funcion_pricipal").prop("required", false);
 
             $("#nombre_empresa").val("");
             $("#rfc").val("");
             $("#area").val("");
             $("#puesto").val("");
             $("#sector_id").val("");
+            $("#especifique_otro_sector").val("");
         }else{
             $(".PRIVADO").hide();
             $(".PÚBLICO").hide();

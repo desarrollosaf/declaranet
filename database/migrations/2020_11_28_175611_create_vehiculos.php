@@ -36,6 +36,7 @@ class CreateVehiculos extends Migration
             $table->string('v_rfcMoral')->nullable();
             $table->unsignedBigInteger('relacion_id')->nullable();
             $table->foreign('relacion_id')->references('id')->on('relacion_transmisores');
+            $table->string('relacion_id_otro')->nullable();
             $table->string('v_marca')->nullable();
             $table->string('v_modelo')->nullable();
             $table->string('v_ano')->nullable();
