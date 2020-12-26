@@ -1,5 +1,4 @@
 <div class="card">
-
     <!-- Cuerpo del documento -->
     <div class="card-body">
         <div class="alert alert-danger" role="alert" style="line-height : 23px !important;">
@@ -153,6 +152,12 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
+                                <label class="control-label" for="NumDoc"><strong>Especifique otro tipod e relación del transmisor: *</strong></label>
+                                {!! Form::text('vehiculos[relacion_id_otro]', isset($vehiculos) ? $vehiculos->relacion_id_otro : null,['class'=>'form-control', 'placeholder'=>'P. ej. Conocido',   'id' => 'relacion_id_otro','required' => true, 'disabled' => true]) !!}
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Marca: *</strong></label>
                                 {!! Form::text('vehiculos[v_marca]', isset($vehiculos) ? $vehiculos->v_marca : null,['class'=>'form-control', 'placeholder'=>'P. ej. Renault',   'id' => 'v_marca','required' => true]) !!}
                             </div>
@@ -163,18 +168,18 @@
                                 {!! Form::text('vehiculos[v_modelo]', isset($vehiculos) ? $vehiculos->v_modelo : null,['class'=>'form-control', 'placeholder'=>'P. ej. Clío',   'id' => 'v_modelo','required' => true]) !!}
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label class="control-label" for="State"><strong>Año: *</strong></label>
-                                {!! Form::text('vehiculos[v_ano]', isset($vehiculos) ? $vehiculos->v_ano : null,['class'=>'form-control', 'placeholder'=>'P. ej. 2006',   'id' => 'v_ano','required' => true, 'pattern' => "[0-9]{4}",'title' => "Ingresa el año a 4 dígitos", 'size'=>"4", 'maxlength'=>"4"]) !!}
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 <!-- SEPTIMA fila  -->
                 <div class="container">
                     <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="control-label" for="State"><strong>Año: *</strong></label>
+                                {!! Form::text('vehiculos[v_ano]', isset($vehiculos) ? $vehiculos->v_ano : null,['class'=>'form-control', 'placeholder'=>'P. ej. 2006',   'id' => 'v_ano','required' => true, 'pattern' => "[0-9]{4}",'title' => "Ingresa el año a 4 dígitos", 'size'=>"4", 'maxlength'=>"4"]) !!}
+                            </div>
+                        </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Número de serie o registro: *</strong></label>
@@ -187,6 +192,11 @@
                                 {!! Form::select('vehiculos[lugar_registro]',$registro, isset($vehiculos) ? $vehiculos->lugar_registro : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'lugar_registro' ,'required' => true]) !!}
                             </div>
                         </div>
+
+                    </div>
+
+                    <!-- SEPTIMA fila  -->
+                    <div class="row">
                         <div class="col-lg-4">
 
                             <div id="lugarRegistroMx" style="display: block;">
@@ -202,10 +212,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- SEPTIMA fila  -->
-                    <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Forma de adquisición: *</strong></label>
@@ -218,15 +224,16 @@
                                 {!! Form::select('vehiculos[pago_id]',$pago, isset($vehiculos) ? $vehiculos->pago_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'pago_id','required' => true]) !!}
                             </div>
                         </div>
+
+                    </div>
+                    <!-- SEPTIMA fila  -->
+                    <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="State"><strong>Valor de adquisición del vehículo: *</strong></label>
                                 {!! Form::text('vehiculos[v_valor]', isset($vehiculos) ? $vehiculos->v_valor : null,['class'=>'form-control', 'placeholder'=>'P. ej. 100000.00 Mxn',   'id' => 'v_valor','required' => true, 'pattern' => "[0-9]{1,8}",'title' => "Ingresa el valor en dígitos", 'size'=>"8", 'maxlength'=>"8"]) !!}
                             </div>
                         </div>
-                    </div>
-                    <!-- SEPTIMA fila  -->
-                    <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Tipo de moneda: *</strong></label>
@@ -265,14 +272,13 @@
                 <div id="crearF"  style="display: none;">
                     <div class="text-center">
                         <br>
-                            {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+                        <a href="{{route("vehiculos.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
                             {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
                     </div>
                 </div>
                 <br>
             </div>
         </div>
-
 
         @section('scripts')
             <script type="text/javascript">
@@ -353,7 +359,6 @@
                         $("#difDec").find("select").prop("class", "form-control alert-danger");
                         $("#difDec").find("input").prop("class", "form-control alert-danger");
                         $("#submit").prop("class", "btn btn-secondary");
-
                     } else {
                         $("#difDec").find("select").prop("class", "form-control");
                         $("#difDec").find("input").prop("class", "form-control");
@@ -413,12 +418,25 @@
                         $("#bieniTerceroRfcF").prop("required", false);
                     }
                 });
+
+                $("#relacion_id").on("change", function () {
+                    var relacion_id = document.getElementById("relacion_id").value
+                    if (relacion_id == "20") {
+                        $("#relacion_id_otro").prop("disabled", false);
+                    } else {
+                        $("#relacion_id_otro").prop("disabled", true);
+                        $("#relacion_id_otro").prop("required", false);
+                        $("#relacion_id_otro").val("");
+                    }
+                });
+
                 if ($("#accion").val() == "editar") {
                     $("#tipoDePersona").change();
                     $("#tipoVehiculo_id").change();
                     $("#lugar_registro").change();
                     $("#titular_id").change();
                     $("#tipoPersonaTercero").change();
+                    $("#relacion_id").change();
                     document.getElementById("edit").style.display = "block";
                 } else {
                     document.getElementById("crearF").style.display = "block";
