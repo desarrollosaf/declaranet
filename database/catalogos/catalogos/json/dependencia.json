@@ -1,0 +1,36 @@
+[   
+    {
+        "C_presupDep":"20000",
+        "Nombre":"Secretaría de Asuntos Parlamentarios"
+    },
+    {
+        "C_presupDep":"30000",
+        "Nombre":"Órgano Superior de Fiscalización"
+    },
+    {
+        "C_presupDep":"40000",
+        "Nombre":"Secretaría de Administración y Finanzas"
+    },
+    {
+        "C_presupDep":"50000",
+        "Nombre":"Dirección General de Comunicación Social"
+    },
+    {
+        "C_presupDep":"60000",
+        "Nombre":"Contraloría"
+    },
+    {
+        "C_presupDep":"70000",
+        "Nombre":"Instituto de Estudios Legislativos"
+    },
+    {
+        "C_presupDep":"80000",
+        "Nombre":"U. de Información"
+    },
+    {
+        "C_presupDep":"10000",
+        "Nombre":"Legislatura"
+    }
+   
+]
+    

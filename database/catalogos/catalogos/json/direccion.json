@@ -1,0 +1,334 @@
+[
+
+    {
+        "C_presupDir":"20000",
+        "Nombre":"SECRETARIA DE ASUNTOS PARLAMENTARIOS",
+        "id_Dependencia":"1"
+    },
+    {
+        "C_presupDir":"20020",
+        "Nombre":"COORD DE PROCESO LEGISLATIVO",
+        "id_Dependencia":"1"
+    },
+    {
+        "C_presupDir":"20030",
+        "Nombre":"COORD DE REGISTRO PARLAMENTARIO",
+        "id_Dependencia":"1"
+    },
+    {
+        "C_presupDir":"30000",
+        "Nombre":"ORGANO SUPERIOR DE FISCALIZACION",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"30010",
+        "Nombre":"SECRETARIA TECNICA (OSFEM)",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"30020",
+        "Nombre":"COORDINACION DE EVALUACION Y SEGUIMIENTO",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"30030",
+        "Nombre":"COORD DE CONTROL Y AUDITORIA INTERNA",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"30040",
+        "Nombre":"COORD DE APOYO ADMINISTRATIVO",
+        "id_Dependencia":"2"
+    },
+    {
+
+        "C_presupDir":"31000",
+        "Nombre":"AUDITORIA ESP FINANCIERA OBRA E INVESTIG",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"31010",
+        "Nombre":"DIR DE AUDITORIA FINANCIERA",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"31020",
+        "Nombre":"DIR DE AUDITORIA DE OBRA",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"32000",
+        "Nombre":"AUDITORIA ESP INF MENS PLANEACION E INV",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"32010",
+        "Nombre":"DIR DE FISCALIZACION E INTEGR CUENTA PUB",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"32020",
+        "Nombre":"DIR DE PLANEACION Y CONTROL",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"33000",
+        "Nombre":"AUDITORIA ESP DE INVESTIGACION",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"33010",
+        "Nombre":"DIR DE AUDITORIA DE DESEMPEÑO A DES SOC",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"33020",
+        "Nombre":"DIR DE AUDITORIA DE DESEMPEÑO GOB DES EC",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"33030",
+        "Nombre":"DIR DE AUDITORIA DE DESEMPEÑO MUNICIPAL",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"36000",
+        "Nombre":"UNIDAD DE ASUNTOS JURIDICOS",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"36010",
+        "Nombre":"DIR DE JURIDICO CONSULTIVO",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"36020",
+        "Nombre":"DIR SUBSTANCIACION",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"35000",
+        "Nombre":"UNIDAD DE SOLVENTACIONES",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"34010",
+        "Nombre":"DIR DE INVESTIGACION",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"40000",
+        "Nombre":"SECRETARIA DE ADMINISTRACION Y FINANZAS",
+        "id_Dependencia":"3"
+    },
+    {
+
+        "C_presupDir":"41000",
+        "Nombre":"SECRETARIA TECNICA (SAYF)",
+        "id_Dependencia":"3"
+    },
+    {
+        "C_presupDir":"43000",
+        "Nombre":"COORD DE NORMATIVIDAD Y DESARROLLO ADMVO",
+        "id_Dependencia":"3"
+    },
+    {
+        "C_presupDir":"45000",
+        "Nombre":"DIRECCION DE ADMON Y DESARROLLO DE PERSO",
+        "id_Dependencia":"3"
+    },
+    {
+        "C_presupDir":"46000",
+        "Nombre":"DIRECCION DE RECURSOS MATERIALES",
+        "id_Dependencia":"3"
+    },
+    {
+        "C_presupDir":"47000",
+        "Nombre":"DIRECCION DE FINANZAS",
+        "id_Dependencia":"3"
+    },
+    {
+        "C_presupDir":"42000",
+        "Nombre":"UNIDAD DE INFORM PLAN PROGR Y EV (UIPPE)",
+        "id_Dependencia":"3"
+    },
+    {
+        "C_presupDir":"48000",
+        "Nombre":"DIRECCION DE INFORMATICA",
+        "id_Dependencia":"3"
+    },
+    {
+        "C_presupDir":"50000",
+        "Nombre":"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+        "id_Dependencia":"4"
+    },
+    {
+        "C_presupDir":"50010",
+        "Nombre":"SECRETARIA TECNICA (DGCS)",
+        "id_Dependencia":"4"
+    },
+    {
+        "C_presupDir":"50020",
+        "Nombre":"SUBDIR DE INFORMACION",
+        "id_Dependencia":"4"
+    },
+    {
+        "C_presupDir":"50030",
+        "Nombre":"SUBDIR DE ANALISIS Y EVALUACION",
+        "id_Dependencia":"4"
+    },
+    {
+        "C_presupDir":"50040",
+        "Nombre":"SUBDIR DE DIFUSION Y VINCULACION",
+        "id_Dependencia":"4"
+    },
+    {
+        "C_presupDir":"50050",
+        "Nombre":"SUBDIR DE IMAGEN INSTITUCIONAL",
+        "id_Dependencia":"4"
+    },
+    {
+        "C_presupDir":"50060",
+        "Nombre":"COORD ADMINISTRATIVA (DGCS)",
+        "id_Dependencia":"4"
+    },
+    {
+        "C_presupDir":"60000",
+        "Nombre":"CONTRALORIA",
+        "id_Dependencia":"5"
+    },
+    {
+        "C_presupDir":"60010",
+        "Nombre":"SECRETARIA TECNICA (CPLEM)",
+        "id_Dependencia":"5"
+    },
+    {
+        "C_presupDir":"60020",
+        "Nombre":"DIRECCION DE RESPONSABILIDADES ADMINISTR",
+        "id_Dependencia":"5"
+    },
+    {
+        "C_presupDir":"60030",
+        "Nombre":"DIRECCION DE SITUACION PATRIMONIAL",
+        "id_Dependencia":"5"
+    },
+    {
+        "C_presupDir":"60040",
+        "Nombre":"DIRECCION DE AUDITORIA INTERNA",
+        "id_Dependencia":"5"
+    },
+    {
+        "C_presupDir":"60050",
+        "Nombre":"DIRECCION DE VINCULACION MUNICIPAL",
+        "id_Dependencia":"5"
+    },
+    {
+        "C_presupDir":"60060",
+        "Nombre":"COORD ADMINISTRATIVA (CPLEM)",
+        "id_Dependencia":"5"
+    },
+    {
+        "C_presupDir":"70000",
+        "Nombre":"INSTITUTO DE ESTUDIOS LEGISLATIVOS",
+        "id_Dependencia":"6"
+    },
+    {
+        "C_presupDir":"80000",
+        "Nombre":"UNIDAD DE INFORMACION",
+        "id_Dependencia":"7"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"UNIDAD DE IGUALDAD DE GENERO Y ERRADICACION DE LA VIOLENCIA",
+        "id_Dependencia":"3"
+    },
+    {
+        "C_presupDir":"0",
+        "Nombre":"UNIDAD DE ASISTENCIA SOCIAL",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"GRUPO PARLAMENTARIO DEL P.R.I",
+        "id_Dependencia":"8"},
+    {
+        "C_presupDir":"10000",
+        "Nombre":"GRUPO PARLAMENTARIO DEL P.A.N",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"GRUPO PARLAMENTARIO DEL P.R.D",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"GRUPO PARLAMENTARIO DEL P.V.E.M",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"GRUPO PARLAMENTARIO DEL P. T.",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"GRUPO PARLAMENTARIO DEL P.M.C",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"GRUPO PARLAMENTARIO DEL P.M.R.N",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"GRUPO PARLAMENTARIO DEL P.R.S",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"2000",
+        "Nombre":"OFICIALIA DE PARTES",
+        "id_Dependencia":"1"
+    },
+    {
+        "C_presupDir":"33000",
+        "Nombre":"AUDITORIA ESP DESEMPE&Ntilde;O E INVESTIGACION",
+        "id_Dependencia":"2"
+    },
+    {
+        "C_presupDir":"100000",
+        "Nombre":"GRUPO PARLAMENTARIO DEL P.E.S",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"20013",
+        "Nombre":"BIBLIOTECA LEGISLATIVA \"DR. JOSÉ MARÍA LUIS MORA\"",
+        "id_Dependencia":"1"
+    },
+    {
+        "C_presupDir":"40011",
+        "Nombre":"SECRETARíA PARTICULAR (SAF)",
+        "id_Dependencia":"3"
+    },
+    {
+        "C_presupDir":"20040",
+        "Nombre":"COORDINACION JURIDICA",
+        "id_Dependencia":"1"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"DIPUTADOS INDEPENDIENTES (DSP)",
+        "id_Dependencia":"8"
+    },
+    {
+        "C_presupDir":"10000",
+        "Nombre":"COORD DE INVESTIGACION\r\n",
+        "id_Dependencia":"8"
+    }
+
+
+]
+
+    
+
