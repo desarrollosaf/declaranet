@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use App\TipoMovimientoMCG;
 
 class McgDeclaranteController extends Controller
 {
@@ -32,7 +34,8 @@ class McgDeclaranteController extends Controller
      */
     public function create()
     {
-       return view("McgDeclaranet.create");
+      $tipoMovMcg = Arr::pluck(\App\TipoMovimientoMCG::all(), "valor","id");
+       return view("McgDeclaranet.create", compact('tipoMovMcg'));
     }
 
     /**

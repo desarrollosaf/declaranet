@@ -23,12 +23,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.nombre_codeudor', 'Nombre del codeudor:', ['id' => 'labelcod']) !!}</strong>
-        {!! Form::text('adeudos[nombre_codeudor]',isset($adeudos) ? $adeudos->nombre_codeudor : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'',  'id' => 'nombre_del_codeudor', 'disabled' => 'true']) !!}
+        {!! Form::text('adeudos[nombre_codeudor]',isset($adeudos) ? $adeudos->nombre_codeudor : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p. ej. Juan Pérez.',  'id' => 'nombre_del_codeudor', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.rfc_codeudor', 'RFC:') !!}</strong>
-        {!! Form::text('adeudos[rfc_codeudor]',isset($adeudos) ? $adeudos->rfc_codeudor : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'',  'id' => 'rfc_codeudor', 'disabled' => 'true']) !!}
+        {!! Form::text('adeudos[rfc_codeudor]',isset($adeudos) ? $adeudos->rfc_codeudor : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej.XXXX010101',  'id' => 'rfc_codeudor', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -69,12 +69,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.nombre_otorgante', 'Nombre:', ['id' => 'nom_credito']) !!}</strong>
-        {!! Form::text('adeudos[nombre_otorgante]', isset($adeudos) ? $adeudos->nombre_otorgante : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'',  'id' => 'nomC', 'disabled' => 'true']) !!}
+        {!! Form::text('adeudos[nombre_otorgante]', isset($adeudos) ? $adeudos->nombre_otorgante : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p. ej. Juan Pérez.',  'id' => 'nomC', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.rfc_otorgante', 'RFC:', ['id' => 'rfc_credito']) !!}</strong>
-        {!! Form::text('adeudos[rfc_otorgante]', isset($adeudos) ? $adeudos->rfc_otorgante : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'',  'id' => 'rfC', 'disabled' => 'true']) !!}
+        {!! Form::text('adeudos[rfc_otorgante]', isset($adeudos) ? $adeudos->rfc_otorgante : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p. ej. XXXX010101',  'id' => 'rfC', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -202,8 +202,8 @@
                 document.getElementById("rfc_codeudor").disabled = false;
             }
            if(valcod == ""){
-                document.getElementById('nombre_del_codeudor').placeholder = '';
-                document.getElementById('rfc_codeudor').placeholder = '';
+                document.getElementById('nombre_del_codeudor').placeholder = 'p. ej. Juan Pérez.';
+                document.getElementById('rfc_codeudor').placeholder = 'p. ej. XXXX010101';
                 document.getElementById("nombre_del_codeudor").disabled = true;
                 document.getElementById("rfc_codeudor").disabled = true;
             }
@@ -238,8 +238,8 @@
            if(oto == ""){
                 document.getElementById('nom_credito').innerText = 'Nombre:';
                 document.getElementById('rfc_credito').innerText = 'RFC:';
-                document.getElementById('nomC').placeholder = '';
-                document.getElementById('rfC').placeholder = '';
+                document.getElementById('nomC').placeholder = 'p. ej. Juan Pérez.';
+                document.getElementById('rfC').placeholder = 'p. ej. XXXX010101';
                 $("#nomC").prop("required", false)
                 $("#rfC").prop("required", false)
                 document.getElementById("nomC").disabled = true;

@@ -37,7 +37,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong style="line-height : 15px;"> {!! Form::label('inversiones.ubicacion_inversion_id', '¿Dónde se localiza la inversión, cuenta bancaria y otro tipo de valores/activos?:') !!}</strong>
-        {!! Form::select('inversiones[ubicacion_inversion_id]', $ubicacionInversion, isset($inversiones) ? $inversiones->ubicacion_inversion_id : null,['class'=>'form-control color-tercero','id' => 'localizacion_cuenta', 'required' => 'true']) !!}
+        {!! Form::select('inversiones[ubicacion_inversion_id]', $ubicacionInversion, isset($inversiones) ? $inversiones->ubicacion_inversion_id : null,['class'=>'form-control color-tercero', 'placeholder'=>'SELECCIONA UNA OPCION', 'id' => 'localizacion_cuenta', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -47,7 +47,7 @@
     </div>
     <div class="form-group col-md-4" id="ubicacion_rfc">
         <strong> {!! Form::label('inversiones.rfc_titular', 'RFC:') !!}</strong>
-        {!! Form::text('inversiones[rfc_titular]',isset($inversiones) ? $inversiones->rfc_titular : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'Ingresa RFC',  'id' => 'rfc_titular']) !!}
+        {!! Form::text('inversiones[rfc_titular]',isset($inversiones) ? $inversiones->rfc_titular : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'Ingresa RFC',  'id' => 'rfc_titular', "readOnly"=> true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
@@ -141,6 +141,15 @@
                 $('#ubicacion_rfc').show();
                 $('#paises').hide();
                 $("#pais_cuenta").prop("required", false)
+                document.getElementById("rfc_titular").readOnly = false;
+                $("#pais_cuenta").val("");
+            }
+            if(value == ""){
+                $("#pais_cuenta").val("");
+                $('#ubicacion_rfc').show();
+                $('#paises').hide();
+                $("#pais_cuenta").prop("required", false)
+                document.getElementById("rfc_titular").readOnly = true;
             }
         });
 

@@ -5,7 +5,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('tipo_inmueble_id', 'Tipo de Movimiento: *') !!}</strong>
-                {!! Form::select('bienesinmuebles[tipo_inmueble_id]', isset($selecttipoInmueble) ? $selecttipoInmueble : [], isset($bien) ? $bien->tipo_inmueble_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción',  'id' => 'tipo_inmueble_id', 'required' => 'true']) !!}
+                {!! Form::select('bienesinmuebles[tipo_inmueble_id]', $tipoMovMcg, isset($inversiones) ? $inversiones->tipo_de_inversion_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción',  'id' => 'tipo_inmueble_id', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">

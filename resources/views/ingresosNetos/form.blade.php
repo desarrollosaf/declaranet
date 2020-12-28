@@ -182,14 +182,14 @@
     <div class="form-group col-md-12">
         <hr>
         <strong>{!! Form::label('Aclaraciones / Observaciones:') !!}</strong>
-        {!! Form::textarea('ingresoMensual[aclaraciones_observaciones]',(isset($ingresoMensual->aclaraciones_observaciones)) ? $ingresoMensual->aclaraciones_observaciones : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. $1000',  'id' => 'aclaraciones_observaciones']) !!}
+        {!! Form::textarea('ingresoMensual[aclaraciones_observaciones]',(isset($ingresoMensual->aclaraciones_observaciones)) ? $ingresoMensual->aclaraciones_observaciones : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'aclaraciones_observaciones']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="col-md-12">
         <center>
-           
-            {{ Form::button('Ir a la sección anterior', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
-            
+            <a href="{{route("datos_dependiente_declarante.index")}}" class="btn btn-submit btn-sm text-light">Ir a la sección
+                anterior</a>
+             
             {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}       
         </center>
     </div>
