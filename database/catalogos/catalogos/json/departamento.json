@@ -11,7 +11,7 @@
         "C_presupDepto":"10000",
         "Nombre":"BIBLIOTECA LEGISLATIVA DR J MA LUIS MORA",
         "id_Dependencia":"1",
-        "id_Direccion":"62",
+        "id_Direccion":"61",
         "c_presup":"0"
     },
     {
@@ -534,7 +534,7 @@
         "C_presupDepto":"10000",
         "Nombre":"DIPUTADOS INDEPENDIENTES (DSP)",
         "id_Dependencia":"8",
-        "id_Direccion":"67",
+        "id_Direccion":"64",
         "c_presup":"0"},
     {
         "C_presupDepto":"10000",
@@ -806,7 +806,7 @@
         "C_presupDepto":"20000",
         "Nombre":"OFICIALIA DE PARTES",
         "id_Dependencia":"1",
-        "id_Direccion":"66",
+        "id_Direccion":"58",
         "c_presup":"0"
     },
     {
@@ -967,7 +967,7 @@
         "C_presupDepto":"100000",
         "Nombre":"GRUPO PARLAMENTARIO DEL P. E. S.",
         "id_Dependencia":"8",
-        "id_Direccion":"61",
+        "id_Direccion":"60",
         "c_presup":"0"
     },
     {
@@ -988,7 +988,7 @@
         "C_presupDepto":"40011",
         "Nombre":"SECRETARIA PARTICULAR (SAF)",
         "id_Dependencia":"3",
-        "id_Direccion":"63",
+        "id_Direccion":"62",
         "c_presup":"0"
     },
     {
@@ -1016,7 +1016,7 @@
         "C_presupDepto":"33001",
         "Nombre":"AUDITORIA ESP DESEMPE&Ntilde;O E INVESTIGACION",
         "id_Dependencia":"2",
-        "id_Direccion":"65",
+        "id_Direccion":"59",
         "c_presup":"0"
     },
     {
@@ -1037,7 +1037,7 @@
         "C_presupDepto":"10000",
         "Nombre":"COORD DE INVESTIGACION\r\n",
         "id_Dependencia":"8",
-        "id_Direccion":"68",
+        "id_Direccion":"65",
         "c_presup":"10000"
     }
   
