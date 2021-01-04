@@ -8,6 +8,7 @@ use App\TipoMovimientoMCG;
 use App\tipoDependencia;
 use App\tipoDireccion;
 use App\tipoDepartamento;
+use App\Respuesta;
 
 class McgDeclaranteController extends Controller
 {
@@ -41,7 +42,8 @@ class McgDeclaranteController extends Controller
        $tipoDependencia = Arr::pluck(\App\tipoDependencia::all(), "nombre","id");
        $tipoDireccion = Arr::pluck(\App\tipoDireccion::all(), "nombre","id");
        $tipoDepartamento = Arr::pluck(\App\tipoDepartamento::all(), "nombre","id");
-       return view("McgDeclaranet.create", compact('tipoMovMcg', 'tipoDependencia', 'tipoDireccion', 'tipoDepartamento'));
+       $respuestas = Arr::pluck(\App\Respuesta::all(), "respuesta","id");
+       return view("McgDeclaranet.create", compact('tipoMovMcg', 'tipoDependencia', 'tipoDireccion', 'tipoDepartamento', 'respuestas'));
     }
 
     /**
