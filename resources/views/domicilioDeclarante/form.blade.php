@@ -11,7 +11,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
-        {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 5',  'id' => 'interior']) !!}
+        {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 5','placeholder'=>'SELECCIONE UNA OPCIÓN','id' => 'interior']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -23,12 +23,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('entidad', 'Entidad federativa: *') !!}</strong>
-        {!! Form::select('domicilio[entidad_id]', $selectEntidad, isset($domicilio) ? $domicilio->entidad_id : null,['class'=>'form-control',  'id' => 'entidad_id', 'required' => 'true']) !!}
+        {!! Form::select('domicilio[entidad_id]', $selectEntidad, isset($domicilio) ? $domicilio->entidad_id : null,['class'=>'form-control','placeholder'=>'SELECCIONE UNA OPCIÓN', 'id' => 'entidad_id', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('municipio', 'Municipio / Alcaldía: *') !!}</strong>
-        {!! Form::select('domicilio[municipio_id]', isset($domicilio) ? $selectMunicipio : [], isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control', 'id' => 'municipio_id', 'required' => 'true']) !!}
+        {!! Form::select('domicilio[municipio_id]', isset($domicilio) ? $selectMunicipio : [], isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control','placeholder'=>'SELECCIONE UNA OPCIÓN', 'id' => 'municipio_id', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>

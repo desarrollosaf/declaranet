@@ -198,7 +198,7 @@
     <div class="form-row">
         <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('salario', 'Salario mensual neto: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('privado[salario_mensual_neto]', isset($dato_laboral) ? $dato_laboral->salario_mensual_neto : null,['class'=>'form-control alert-danger text-uppercase privado', 'placeholder'=>'p.ej. $10,000 Mxn',  'id' => 'salario']) !!}
+            {!! Form::text('privado[salario_mensual_neto]', isset($dato_laboral) ? $dato_laboral->salario_mensual_neto : null,['class'=>'form-control alert-danger text-uppercase privado', 'placeholder'=>'P.EJ. $10,000 MXN',  'id' => 'salario']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4 PRIVADO">
@@ -239,7 +239,7 @@
         </div>
         <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('funcion', 'Especifique función principal: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('publico[funcion_pricipal]', isset($dato_laboral) ? $dato_laboral->funcion_pricipal : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'',  'id' => 'funcion']) !!}
+            {!! Form::text('publico[funcion_pricipal]', isset($dato_laboral) ? $dato_laboral->funcion_pricipal : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'p. ej. Analista de sistemas',  'id' => 'funcion']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>

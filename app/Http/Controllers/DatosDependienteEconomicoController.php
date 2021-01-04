@@ -55,7 +55,6 @@ class DatosDependienteEconomicoController extends Controller
         }
         $sector = ambitoSector::all();
         $selectSector = [];
-        $selectSector[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($sector as $item){
             $selectSector[$item->id] = $item->valor;
         }

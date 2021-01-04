@@ -64,11 +64,11 @@
         <strong>
             {!! Form::label('declaracion.situacion_personal_id', 'Estado civil / Situación personal: *') !!}
         </strong>
-        {!! Form::select('declaracion[situacion_personal_id]', $selectSituacionPersonal, $declaracion->situacion_personal_id, ['class'=>'form-control alert-danger', 'id' => 'situcion']) !!}
+        {!! Form::select('declaracion[situacion_personal_id]', $selectSituacionPersonal, $declaracion->situacion_personal_id, ['class'=>'form-control alert-danger','placeholder'=>'SELECCIONE UNA OPCIÓN','id' => 'situcion']) !!}
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.regimen_matrimonial_id', 'Régimen matrimonial: *') !!}</strong>
-        {!! Form::select('declaracion[regimen_matrimonial_id]', $selectRegimenMatrimonial, $declaracion->regimen_matrimonial_id, ['class'=>'form-control alert-danger', 'id' => 'regimen_matrimonial_id', 'required' => 'true']) !!}
+        {!! Form::select('declaracion[regimen_matrimonial_id]', $selectRegimenMatrimonial, $declaracion->regimen_matrimonial_id, ['class'=>'form-control alert-danger', 'id' => 'regimen_matrimonial_id','placeholder'=>'SELECCIONE UNA OPCIÓN', 'required' => 'true']) !!}
         
     </div>
     <div class="form-group col-md-4 ">
