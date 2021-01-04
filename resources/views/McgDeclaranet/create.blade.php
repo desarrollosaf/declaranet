@@ -15,7 +15,7 @@
           </div>
       </div>
         <div class="card-body">
-          {!! Form::open(['route'=>'MCG.store', 'method'=>'POST', 'files' => true, 'role' => 'form','id' => 'frmIngresosNetos']) !!}
+          {!! Form::open(['route'=>'MCG.store', 'method'=>'POST', 'files' => true, 'role' => 'form','id' => 'frmServidorPublico']) !!}
              @include('McgDeclaranet.form')
           {!! Form::close() !!}
         </div>
