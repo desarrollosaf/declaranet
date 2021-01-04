@@ -51,5 +51,7 @@ Route::post("declaracion/continuar", "DeclaranetController@ContinuarDeclaracion"
 Route::get("getMunicipiosDomicilio/{id}", "DomicilioDeclaranteController@getMunicipios");
 Route::get("getAsentamientosDomicilio/{id}", "DomicilioDeclaranteController@getAsentamientos");
 Route::get("getDescripcionInversion/{id}", "InversionesDeclaranteController@getDescripcion");
+Route::get("getDependencia/{id}", "McgDeclaranteController@getDependencia");
+Route::get("getDireccion/{id}", "McgDeclaranteController@getDireccion");
 
 
