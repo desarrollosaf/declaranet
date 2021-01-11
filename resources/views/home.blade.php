@@ -95,7 +95,7 @@ function iniciarDeclaracion(tipo_movimiento_id){
                     _token:"{{ csrf_token() }}"
                 },
                 success:function(data){
-                    window.location.href = "{{route('datos_declarante.create')}}";
+                    window.location.href = "{{route('index.index')}}";
                 }
             });
         }
