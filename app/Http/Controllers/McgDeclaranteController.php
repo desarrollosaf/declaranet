@@ -8,7 +8,10 @@ use App\TipoMovimientoMCG;
 use App\tipoDependencia;
 use App\tipoDireccion;
 use App\tipoDepartamento;
+use App\ServidorPublico;
 use App\Respuesta;
+
+
 
 class McgDeclaranteController extends Controller
 {
@@ -54,7 +57,24 @@ class McgDeclaranteController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $servidor = $this->request->input("servidor");
+        $declaracion = $this->request->input("declaracion");
+        $empleo = $this->request->input("empleo");
+        //$inversionesDeclarante['declaracion_id']=$this->request->session()->get('declaracion_id');
+        //dd($servidor);
+        //dd($declaracion);
+        //dd($empleo);
+        
+        $servidor = ServidorPublico::create($servidor);
+        $declaracion = Declaracion::create([
+            "servidor_publico_id" =>  $servidor->id,
+            "tipo_movimiento_id" => 1,
+            "fecha_declaracion" => $declaracion->fecha_movimiento,
+            "estatus_declaracion_id" => 1
+        ]);
+        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+
+        return redirect()->route("MCG.index");
     }
 
     /**

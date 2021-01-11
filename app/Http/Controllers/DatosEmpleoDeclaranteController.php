@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Declaracion;
 use App\sector;
 use Illuminate\Http\Request;
-use App\NivelOrdenGobierno;
+use App\Nivelordengobierno;
 use App\ambitoPublico;
 use App\sectores;
 use App\DatoEmpleoDeclarante;
@@ -39,7 +39,7 @@ class DatosEmpleoDeclaranteController extends Controller
     {
         $declaracion = Declaracion::find($this->request->session()->get("declaracion_id"));
 
-        $nivel_orden = NivelOrdenGobierno::all();
+        $nivel_orden = Nivelordengobierno::all();
         $nivel = [];
         $nivel[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($nivel_orden as $item){
