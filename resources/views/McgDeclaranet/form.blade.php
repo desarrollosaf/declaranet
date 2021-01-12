@@ -78,7 +78,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('empleo.tipo_dependencia', 'Adscripción:') !!}</strong>
-                {!! Form::select('empl[tipo_dependencia]', $tipoDependencia, isset($servidor) ? $servidor->tipo_dependencia : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_dependencia', 'required' => 'true']) !!}
+                {!! Form::select('empleo[tipo_dependencia]', $tipoDependencia, isset($servidor) ? $servidor->tipo_dependencia : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_dependencia', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
