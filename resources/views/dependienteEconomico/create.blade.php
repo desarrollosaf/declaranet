@@ -188,7 +188,7 @@
             success: function (response) {
                 console.log(response);
                 $("#municipio_id").find('option').remove();
-                $("#municipio_id").append('<option value="">-- Selecciona un municipio</option>');
+                $("#municipio_id").append('<option value="">Selecciona un municipio</option>');
                 $(response).each(function (i, v) { // indice, valor
                     $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
                 });

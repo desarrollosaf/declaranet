@@ -66,8 +66,8 @@
             </div>
             <br>
             <center>
-            <a href="" class="btn btn-submit text-light">Ir a la sección anterior</a>
-            <a href="" class="btn btn-submit text-light">Ir a la siguiente sección</a>
+            <a href="{{route("datos_pareja_declarante.create")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
+            <a href="{{route("ingreso_neto.index")}}" class="btn btn-submit text-light">Ir a la siguiente sección</a>
             </center>
         </div>
     </div>

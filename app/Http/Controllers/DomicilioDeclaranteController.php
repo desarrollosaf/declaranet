@@ -55,7 +55,7 @@ class DomicilioDeclaranteController extends Controller
         $domicilio = $request->input("domicilio");
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
         $declarante->domicilio()->create($domicilio);
-        return redirect()->route("domicilio_declarante.index");
+        return redirect()->route("datos_curriculares_declarante.index");
     }
 
     /**
@@ -96,7 +96,7 @@ class DomicilioDeclaranteController extends Controller
         $domicilioRequest = $request->input("domicilio");
         $domicilio = Domicilio::find($id);
         $domicilio->update($domicilioRequest);
-        return redirect()->route("domicilio_declarante.index");
+        return redirect()->route("datos_curriculares_declarante.index");
     }
 
     /**

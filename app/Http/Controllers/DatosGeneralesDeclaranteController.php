@@ -16,6 +16,7 @@ class DatosGeneralesDeclaranteController extends Controller
     private $request;
     public function __construct(Request $request) {
         $this->middleware("auth");
+        $this->middleware('CheckDeclaracion');
         $this->request = $request;
     }
     /**
@@ -83,7 +84,7 @@ class DatosGeneralesDeclaranteController extends Controller
 //        ]);
 
         $declaracionResponse = $declaracion->update($request->declaracion);
-        return redirect()->back()->with('success', 'Se registraron los datos del servidor');
+        return redirect()->route("domicilio_declarante.index");
     }
 
     /**

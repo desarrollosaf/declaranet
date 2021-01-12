@@ -11,12 +11,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.apellidop', 'Primer apellido: *') !!}</strong>
-        {!! Form::text('declaracion.[apellidop]',$servidor->primer_apellido,['class'=>'form-control', 'placeholder'=>'',  'id' => 'apellidop', 'readonly' => true]) !!}
+        {!! Form::text('declaracion.[apellidop]',$servidor->primer_apellido,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'apellidop', 'readonly' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.apellidom', 'Segundo apellido:') !!}</strong>
-        {!! Form::text('declaracion.[apellidom]',$servidor->segundo_apellido,['class'=>'form-control', 'placeholder'=>'',  'id' => 'apellidom','readonly' => true]) !!}
+        {!! Form::text('declaracion.[apellidom]',$servidor->segundo_apellido,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'apellidom','readonly' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -80,7 +80,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.pais_id', 'País de nacimiento: *') !!}</strong>
-        {!! Form::select('declaracion[pais_id]', $paises, $declaracion->pais_id, ['class'=>'form-control alert-danger' , 'placeholder'=>'SELECCIONA UNA OPCIÓN']) !!}
+        {!! Form::select('declaracion[pais_id]', $paises, $declaracion->pais_id, ['class'=>'form-control text-uppercase','form-control alert-danger' ,  'required' => 'true','placeholder'=>'SELECCIONA UNA OPCIÓN']) !!}
     </div>
 
     <div class="form-group col-md-4">
@@ -104,7 +104,8 @@
 @section("scripts")
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#regimen_matrimonial_id").change()
+            $("#regimen_matrimonial_id").change();
+            $("#regimen_matrimonial_id").prop("disabled", true);
         });
         $("#regimen_matrimonial_id").on("change",function(){
             if(parseInt($(this).val()) == 3){
@@ -112,10 +113,21 @@
             } else {
                 $("#regimen_especificar").prop("disabled", true);
             }
+            $("#regimen_especificar").val("");
         });
         $("#curp").keyup(function () {
             let curp = $(this).val();
             $("#curp").val(curp.toString().toUpperCase());
         });
+        $("#situcion").on("change",function(){
+            if(parseInt($(this).val()) == 2){
+                $("#regimen_matrimonial_id").prop("disabled", false);
+                $("#regimen_matrimonial_id").val("");
+            } else {
+                $("#regimen_matrimonial_id").prop("disabled", true);
+                $("#regimen_matrimonial_id").val("");
+            }
+            $("#regimen_matrimonial_id").change();
+        })
     </script>
 @endsection

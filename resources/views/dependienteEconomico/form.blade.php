@@ -53,7 +53,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('habita-domicilio', '¿Habita en el domicilio del Declarante?:',["style" => "font-weight: bold;"]) !!}
-            {!! Form::select('declarante[respuesta_id]', $respuestas, isset($dependiente) ? $dependiente->respuesta_id : null,['class'=>'form-control alert-danger', 'placeholder' => '-Selecciona una opción', 'id' => 'habita-domicilio','required' => true]) !!}
+            {!! Form::select('declarante[respuesta_id]', $respuestas, isset($dependiente) ? $dependiente->respuesta_id : null,['class'=>'form-control alert-danger  text-uppercase', 'placeholder' => 'selecciona una opción', 'id' => 'habita-domicilio','required' => true]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
 
@@ -70,7 +70,7 @@
     <div class="form-row">
         <div class="form-group col-md-4 ">
             {!! Form::label('calle-nacional', 'Calle: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('nacional[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control alert-danger nacional', 'placeholder'=>'P.EJ.AV.INDEPENDENCIA',  'id' => 'calle-nacional']) !!}
+            {!! Form::text('nacional[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control alert-danger nacional text-uppercase', 'placeholder'=>'P.EJ.AV.INDEPENDENCIA',  'id' => 'calle-nacional']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-2">
@@ -80,19 +80,19 @@
         </div>
         <div class="form-group col-md-2">
             {!! Form::label('interior-nacional', 'Núm. Interior: ',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('nacional[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger ', 'placeholder'=>'P.EJ. 1',  'id' => 'interior-nacional']) !!}
+            {!! Form::text('nacional[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P.EJ. 1',  'id' => 'interior-nacional']) !!}
             <span class="text-danger" style="font-size:150%"></span>
-        </div>
+        </div> 
         <div class="form-group col-md-4">
             {!! Form::label('entidad_id', 'Entidad federativa: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::select('nacional[entidad_id]',$entidades ,isset($domicilio) ? $domicilio->entidad_id : null,['class'=>'form-control alert-danger nacional', 'placeholder' => '-Selecciona una opción' , 'id' => 'entidad_id']) !!}
+            {!! Form::select('nacional[entidad_id]',$entidades ,isset($domicilio) ? $domicilio->entidad_id : null,['class'=>'form-control alert-danger nacional text-uppercase', 'placeholder' => 'Selecciona una opción' , 'id' => 'entidad_id']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('municipio', 'Municipio / Alcaldía: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::select('nacional[municipio_id]',isset($domicilio) ? $municipios : [],isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control alert-danger nacional',  'id' => 'municipio_id']) !!}
+            {!! Form::select('nacional[municipio_id]',isset($domicilio) ? $municipios : [],isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control alert-danger nacional text-uppercase',  'id' => 'municipio_id']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -113,34 +113,34 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('calle-extranjero', 'Calle: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('extranjero[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control alert-danger extranjero', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'calle-extranjero']) !!}
+            {!! Form::text('extranjero[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control alert-danger extranjero text-uppercase', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'calle-extranjero']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-2">
             {!! Form::label('exterior-extranjero', 'Núm. Exterior: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('extranjero[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control alert-danger extranjero', 'placeholder'=>'p. ej. 101',  'id' => 'exterior-extranjero']) !!}
+            {!! Form::text('extranjero[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control alert-danger extranjero text-uppercase', 'placeholder'=>'p. ej. 101',  'id' => 'exterior-extranjero']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-2">
             {!! Form::label('interior-extranjero', 'Núm. Interior: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('extranjero[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger extranjero', 'placeholder'=>'p. ej. 1',  'id' => 'interior-extranjero']) !!}
+            {!! Form::text('extranjero[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger extranjero text-uppercase', 'placeholder'=>'p. ej. 1',  'id' => 'interior-extranjero']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('ciudad-extranjero', 'Ciudad / Localidad: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('extranjero[colonia]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control alert-danger extranjero', 'placeholder'=>'p. ej. Toluca',  'id' => 'ciudad-extranjero']) !!}
+            {!! Form::text('extranjero[colonia]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control alert-danger extranjero text-uppercase', 'placeholder'=>'p. ej. Toluca',  'id' => 'ciudad-extranjero']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('pais', 'País: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::select('extranjero[pais_id]',$paises,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control alert-danger extranjero', 'id' => 'pais']) !!}
+            {!! Form::select('extranjero[pais_id]',$paises,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control alert-danger extranjero text-uppercase', 'id' => 'pais']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('municipio', 'Estado / Provincia:/ :',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('extranjero[entidad]',isset($domicilio) ? $domicilio->entidad : null,['class'=>'form-control alert-danger', 'placeholder'=>'p. ej. México',  'id' => 'municipio']) !!}
+            {!! Form::text('extranjero[entidad]',isset($domicilio) ? $domicilio->entidad : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. México',  'id' => 'municipio']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -156,7 +156,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         {!! Form::label('sector', 'Sector laboral:',["style" => "font-weight: bold;"]) !!}
-        {!! Form::select('laboral[ambito_sector_id]', $selectSector, isset($dato_laboral) ? $dato_laboral->ambito_sector_id : null ,['class'=>'form-control alert-danger laboral','placeholder' => '-Selecciona una opción',  'id' => 'sector','required' => true]) !!}
+        {!! Form::select('laboral[ambito_sector_id]', $selectSector, isset($dato_laboral) ? $dato_laboral->ambito_sector_id : null ,['class'=>'form-control alert-danger laboral text-uppercase','placeholder' => 'Selecciona una opción',  'id' => 'sector','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -212,41 +212,41 @@
     <div class="form-row">
         <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('nivel', 'Nivel / Orden de gobierno: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::select('publico[nivel_orden_gobierno_id]',$nivel, isset($dato_laboral) ? $dato_laboral->nivel_orden_gobierno_id : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'-Selecciona una opción',  'id' => 'nivel']) !!}
+            {!! Form::select('publico[nivel_orden_gobierno_id]',$nivel, isset($dato_laboral) ? $dato_laboral->nivel_orden_gobierno_id : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'Selecciona una opción',  'id' => 'nivel']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('ambito', 'Ámbito público: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::select('publico[ambito_publico_id]',$ambito, isset($dato_laboral) ? $dato_laboral->ambito_publico_id : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'-Selecciona una opción',  'id' => 'ambito']) !!}
+            {!! Form::select('publico[ambito_publico_id]',$ambito, isset($dato_laboral) ? $dato_laboral->ambito_publico_id : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'Selecciona una opción',  'id' => 'ambito']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('ente', 'Nombre del Ente Público: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('publico[ente_publico]', isset($dato_laboral) ? $dato_laboral->ente_publico : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'',  'id' => 'ente']) !!}
+            {!! Form::text('publico[ente_publico]', isset($dato_laboral) ? $dato_laboral->ente_publico : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'P.EJ.Desarrollo S.A de C.V',  'id' => 'ente']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('area', 'Área de adscripción: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('publico[area_adscripcion]', isset($dato_laboral) ? $dato_laboral->area_adscripcion : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'',  'id' => 'area']) !!}
+            {!! Form::text('publico[area_adscripcion]', isset($dato_laboral) ? $dato_laboral->area_adscripcion : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>' P.EJ.Desarrollo y actualización ',  'id' => 'area']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('cargo', 'Empleo cargo o comisión: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('publico[cargo_comision]', isset($dato_laboral) ? $dato_laboral->cargo_comision : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'',  'id' => 'cargo']) !!}
+            {!! Form::text('publico[cargo_comision]', isset($dato_laboral) ? $dato_laboral->cargo_comision : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>' P.EJ.Analista en sistemas',  'id' => 'cargo']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('funcion', 'Especifique función principal: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('publico[funcion_pricipal]', isset($dato_laboral) ? $dato_laboral->funcion_pricipal : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'p. ej. Analista de sistemas',  'id' => 'funcion']) !!}
+            {!! Form::text('publico[funcion_pricipal]', isset($dato_laboral) ? $dato_laboral->funcion_pricipal : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'P.EJ. Analista de sistemas',  'id' => 'funcion']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4 PÚBLICO">
             {!! Form::label('funcion', 'Salario mensual neto: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('publico[salario_mensual_neto]', isset($dato_laboral) ? $dato_laboral->salario_mensual_neto : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'',  'id' => 'salario_publico']) !!}
+            {!! Form::text('publico[salario_mensual_neto]', isset($dato_laboral) ? $dato_laboral->salario_mensual_neto : null,['class'=>'form-control alert-danger text-uppercase publico', 'placeholder'=>'P.EJ. $10,000 MXN',  'id' => 'salario_publico']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4 PÚBLICO">

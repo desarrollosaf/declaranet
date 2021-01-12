@@ -23,12 +23,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('entidad', 'Entidad federativa: *') !!}</strong>
-        {!! Form::select('domicilio[entidad_id]', $selectEntidad, isset($domicilio) ? $domicilio->entidad_id : null,['class'=>'form-control','placeholder'=>'SELECCIONE UNA OPCIÓN', 'id' => 'entidad_id', 'required' => 'true']) !!}
+        {!! Form::select('domicilio[entidad_id]', $selectEntidad, isset($domicilio) ? $domicilio->entidad_id : null,['class'=>'form-control text-uppercase','placeholder'=>'SELECCIONE UNA OPCIÓN', 'id' => 'entidad_id', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('municipio', 'Municipio / Alcaldía: *') !!}</strong>
-        {!! Form::select('domicilio[municipio_id]', isset($domicilio) ? $selectMunicipio : [], isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control','placeholder'=>'SELECCIONE UNA OPCIÓN', 'id' => 'municipio_id', 'required' => 'true']) !!}
+        {!! Form::select('domicilio[municipio_id]', isset($domicilio) ? $selectMunicipio : [], isset($domicilio) ? $domicilio->municipio_id : null,['class'=>'form-control text-uppercase','placeholder'=>'SELECCIONE UNA OPCIÓN', 'id' => 'municipio_id', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -57,7 +57,7 @@
             success: function (response) {
                 console.log(response);
                 $("#municipio_id").find('option').remove();
-                $("#municipio_id").append('<option value="">-- Selecciona un municipio</option>');
+                $("#municipio_id").append('<option value="">Selecciona un municipio</option>');
                 $(response).each(function (i, v) { // indice, valor
                     $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
                 });

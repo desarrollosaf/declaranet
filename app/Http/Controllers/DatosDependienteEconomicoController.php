@@ -99,7 +99,7 @@ class DatosDependienteEconomicoController extends Controller
         }else if($laboral["ambito_sector_id"] == 2){
             $laboral = $declarante->dato_laboral()->create($privado);
         }
-        return redirect()->route('datos_dependiente_declarante.index');
+        return redirect()->route('ingreso_neto.index');
     }
 
     /**
@@ -203,7 +203,7 @@ class DatosDependienteEconomicoController extends Controller
         }else{
             $laboral = $dependiente->dato_laboral()->create($privado);
         }
-        return redirect()->route('datos_dependiente_declarante.index');
+        return redirect()->route('ingreso_neto.index');
     }
 
     /**
