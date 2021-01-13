@@ -70,8 +70,8 @@ class McgDeclaranteController extends Controller
             "fecha_declaracion" => $declaracion["fecha_movimiento"],
             "estatus_declaracion_id" => 1
         ]);
-        
-        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+
+        //$declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $empleo['declaracion_id']=$this->request->session()->get('declaracion_id');
         EmpleoServidor::create($empleo);
 
@@ -97,7 +97,18 @@ class McgDeclaranteController extends Controller
      */
     public function edit($id)
     {
+        $tipoMovMcg = Arr::pluck(\App\TipoMovimientoMCG::all(), "valor","id");
+        $tipoDependencia = Arr::pluck(\App\tipoDependencia::all(), "nombre","id");
+        $tipoDireccion = Arr::pluck(\App\tipoDireccion::all(), "nombre","id");
+        $tipoDepartamento = Arr::pluck(\App\tipoDepartamento::all(), "nombre","id");
+        $respuestas = Arr::pluck(\App\Respuesta::all(), "respuesta","id");
+        $servidor = ServidorPublico::find($id);
+        $empleo = EmpleoServidor::find($id);
+        $declaracion = Declaracion::find($id);
 
+
+        //return view("inversionesDeclarante.edit",\compact("inversiones","id"));
+        return view("McgDeclaranet.edit", compact('tipoMovMcg', 'tipoDependencia', 'tipoDireccion', 'tipoDepartamento', 'respuestas', 'servidor', 'empleo', 'declaracion'));
        
     }
 
@@ -110,7 +121,20 @@ class McgDeclaranteController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $servidorRequest = $request->input("servidor");
+        $declaracionRequest = $request->input("declaracion");
+        $empleoRequest = $request->input("empleo");
+
+        $servidores = ServidorPublico::find($id);
+        $declaraciones = Declaracion::find($id);
+        $empleos = EmpleoServidor::find($id);
         
+        $servidores->update($servidorRequest);
+        $declaraciones->update($declaracionRequest);
+        $empleos->update($empleoRequest);
+        
+
+        return redirect()->route("MCG.index");
     }
 
     /**

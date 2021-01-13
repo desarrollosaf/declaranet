@@ -2,14 +2,14 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <strong>{!! Form::label('declaracion.tipo_movimiento', 'Tipo de Movimiento: *') !!}</strong>
-                {!! Form::select('declaracion[tipo_movimiento]', $tipoMovMcg, isset($servidor) ? $servidor->tipo_movimiento : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción',  'id' => 'tipo_movimiento', 'required' => 'true']) !!}
+                <strong>{!! Form::label('declaracion.tipo_movimiento_id', 'Tipo de Movimiento: *') !!}</strong>
+                {!! Form::select('declaracion[tipo_movimiento_id]', $tipoMovMcg, isset($declaracion) ? $declaracion->tipo_movimiento_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción',  'id' => 'tipo_movimiento', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <strong>{!! Form::label('declaracion.fecha_movimiento', 'Fecha movimiento: *') !!}</strong>
-                {!! Form::date('declaracion[fecha_movimiento]', isset($servidor) ? $servidor->fecha_movimiento : null,['class'=>'form-control text-uppercase  tipo-titular', 'id' => 'fecha_movimiento', 'required' => 'true']) !!}
+                <strong>{!! Form::label('declaracion.fecha_declaracion', 'Fecha movimiento: *') !!}</strong>
+                {!! Form::date('declaracion[fecha_declaracion]', isset($declaracion) ? $declaracion->fecha_declaracion : null,['class'=>'form-control text-uppercase  tipo-titular', 'id' => 'fecha_movimiento', 'required' => 'true']) !!}
             </div>
         </div>
     </div>
@@ -60,14 +60,14 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong style="line-height: 15px;">{!! Form::label('empleo.cargo', 'Nombre del empleo, cargo o comisión:') !!}</strong>
-                {!! Form::text('empleo[cargo]',isset($servidor) ? $servidor->cargo : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Abogado dictaminador',  'id' => 'cargo', 'required' => 'true']) !!}
+                {!! Form::text('empleo[cargo]',isset($empleo) ? $empleo->cargo : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Abogado dictaminador',  'id' => 'cargo', 'required' => 'true']) !!}
 
             </div>
         </div>
         <div class="col-md-4" id="combo_otro_Disabled">
             <div class="form-group">
                 <strong>{!! Form::label('empleo.nivel_cargo', 'Nivel del empleo, cargo o comisión:') !!}</strong>
-                {!! Form::text('empleo[nivel_cargo]',isset($servidor) ? $servidor->nivel_cargo : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 25-3', 'title' => 'El formato debe ser XX-X',  'id' => 'nivel_cargo', 'pattern' => '[0-9]{2}[-]{1}[0-9]{1}', 'required' => 'true']) !!}
+                {!! Form::text('empleo[nivel_cargo]',isset($empleo) ? $empleo->nivel_cargo : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 25-3', 'title' => 'El formato debe ser XX-X',  'id' => 'nivel_cargo', 'pattern' => '[0-9]{2}[-]{1}[0-9]{1}', 'required' => 'true']) !!}
             </div>
         </div>
 
@@ -78,19 +78,19 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('empleo.tipo_dependencia', 'Adscripción:') !!}</strong>
-                {!! Form::select('empleo[tipo_dependencia]', $tipoDependencia, isset($servidor) ? $servidor->tipo_dependencia : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_dependencia', 'required' => 'true']) !!}
+                {!! Form::select('empleo[tipo_dependencia]', $tipoDependencia, isset($empleo) ? $empleo->tipo_dependencia : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_dependencia', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('empleo.tipo_direccion', 'Dirección:') !!}</strong>
-                {!! Form::select('empleo[tipo_direccion]', $tipoDireccion, isset($servidor) ? $servidor->tipo_direccion : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_direccion', 'required' => 'true']) !!}
+                {!! Form::select('empleo[tipo_direccion]', $tipoDireccion, isset($empleo) ? $empleo->tipo_direccion : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_direccion', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('empleo.tipo_departamento', 'Departamento:') !!}</strong>
-                {!! Form::select('empleo[tipo_departamento]', $tipoDepartamento, isset($servidor) ? $servidor->tipo_departamento : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_departamento', 'required' => 'true']) !!}
+                {!! Form::select('empleo[tipo_departamento]', $tipoDepartamento, isset($empleo) ? $empleo->tipo_departamento : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'tipo_departamento', 'required' => 'true']) !!}
             </div>
         </div>
 
@@ -101,7 +101,7 @@
     <div class="row">
         <div class="col-md-4">
             <strong>{!! Form::label('empleo.honorarios', '¿Está contratado por honorarios?') !!}</strong>
-            {!! Form::select('empleo[honorarios]', $respuestas, isset($servidor) ? $servidor->honorarios : null, ['class'=>'form-control text-uppercase  tipo-titular',  'placeholder' => 'Selecciona una opción', 'id' => 'honorarios', 'required' => 'true']) !!}
+            {!! Form::select('empleo[honorarios]', $respuestas, isset($empleo) ? $empleo->honorarios : null, ['class'=>'form-control text-uppercase  tipo-titular',  'placeholder' => 'Selecciona una opción', 'id' => 'honorarios', 'required' => 'true']) !!}
         </div>
         <div class="col-md-8">
             <div class="form-group">
