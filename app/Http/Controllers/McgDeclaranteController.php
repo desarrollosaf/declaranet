@@ -67,7 +67,7 @@ class McgDeclaranteController extends Controller
         $declaracion = Declaracion::create([
             "servidor_publico_id" =>  $servidor->id,
             "tipo_movimiento_id" => 1,
-            "fecha_declaracion" => $declaracion["fecha_movimiento"],
+            "fecha_declaracion" => $declaracion["fecha_declaracion"],
             "estatus_declaracion_id" => 1
         ]);
 
