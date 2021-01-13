@@ -11,6 +11,7 @@ use App\tipoDepartamento;
 use App\ServidorPublico;
 use App\Respuesta;
 use App\Declaracion;
+use App\EmpleoServidor;
 
 
 
@@ -69,7 +70,10 @@ class McgDeclaranteController extends Controller
             "fecha_declaracion" => $declaracion["fecha_movimiento"],
             "estatus_declaracion_id" => 1
         ]);
+        
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $empleo['declaracion_id']=$this->request->session()->get('declaracion_id');
+        EmpleoServidor::create($empleo);
 
         return redirect()->route("MCG.index");
     }
