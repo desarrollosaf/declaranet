@@ -161,7 +161,7 @@
         <div class="col-md-4" id="combo_otro_Disabled">
             <div class="form-group">
                 <strong>{!! Form::label('relacion_transmisor', ' Especifique: ') !!}</strong>
-                {!! Form::text('bienesinmuebles[relacion_transmisor]',isset($bien) ? $bien->relacion_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'Relación transmisor',  'id' => 'relacion_transmisor', 'pattern' => '[A-Za-z]{0,300}', 'disabled' => 'true' ]) !!}
+                {!! Form::text('bienesinmuebles[relacion_transmisor]',isset($bien) ? $bien->relacion_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'CONCUÑO',  'id' => 'relacion_transmisor', 'pattern' => '[A-Za-z]{0,300}', 'disabled' => 'true' ]) !!}
             </div>
         </div>
         <div class="col-md-4">
@@ -291,9 +291,9 @@
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('pais', 'País: *') !!}</strong>
-            {!! Form::text('domicilio[pais]',isset($domicilio) ? $domicilio->pais : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. México',  'id' => 'pais']) !!}
+          <div class="form-group col-md-4">
+            {!! Form::label('pais', 'País: *',["style" => "font-weight: bold;"]) !!}
+            {!! Form::select('domicilio[pais_id]',$selectPais,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control alert-danger extranjero text-uppercase','placeholder'=>'seleccione un pais', 'id' => 'pais']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -310,7 +310,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('codigo_postalExt', 'Código postal: *') !!}</strong>
-            {!! Form::text('domicilio[codigo_postalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 50000', 'maxlength'=>'5', 'pattern' => "[A-Za-z0-9]{5}", 'id' => 'codigo_postalExt', 'pattern' => "[A-Z\d]",  'title' => "Ingresa código postal a 5 dígitos"]) !!}
+            {!! Form::text('domicilio[codigo_postalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 50000', 'maxlength'=>'5', 'pattern' => "[A-Za-z0-9]{5}", 'id' => 'codigo_postalExt','title' => "Ingresa código postal a 5 dígitos"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -549,6 +549,8 @@
                 $('#colonia').prop('required', true);
                 $('#municipio').prop('required', true);
                 $('#entidad').prop('required', true);
+                $('#municipio_id').prop('required', true);
+                $('#entidad_id').prop('required', true);
                 $('#codigo_postal').prop('required', true);
 
                 $('#calleExt').prop('required', false);
@@ -567,9 +569,12 @@
 
                 $('#calle').prop('required', false);
                 $('#exterior').prop('required', false);
+                $('#num_ext').prop('required', false);
                 $('#colonia').prop('required', false);
                 $('#municipio').prop('required', false);
                 $('#entidad').prop('required', false);
+                $('#municipio_id').prop('required', false);
+                $('#entidad_id').prop('required', false);
                 $('#codigo_postal').prop('required', false);
 
                 $('#calleExt').prop('required', true);
@@ -585,10 +590,13 @@
                 $('.domicilio-EXBinmuebles').hide();
 
                 $('#calle').prop('required', false);
+                $('#num_ext').prop('required', false);
                 $('#exterior').prop('required', false);
                 $('#colonia').prop('required', false);
                 $('#municipio').prop('required', false);
                 $('#entidad').prop('required', false);
+                $('#municipio_id').prop('required', false);
+                $('#entidad_id').prop('required', false);
                 $('#codigo_postal').prop('required', false);
 
                 $('#calleExt').prop('required', false);
@@ -623,6 +631,9 @@
                     });
                 }
             });
+        });
+        $("#rfcTransmisorF,#rfc_tercero_moral,#rfc_tercero_fisica").on("keydown",function(){
+            $(this).val($(this).val().toUpperCase());
         });
 
 

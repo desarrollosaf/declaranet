@@ -64,9 +64,12 @@ class BienesInmueblesController extends Controller {
         
         //COMBO MUNICIPIO
         $selectMunicipio = Arr::pluck(\App\Municipio::all(), "municipio", "id");
+        
+        
+        $selectPais = Arr::pluck(\App\Pais::all(),'valor',"id");
        
 
-        return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMunicipio', 'selectMoneda'));
+        return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal','selectPais', 'selectEntidad', 'selectMunicipio', 'selectMoneda'));
     
         
     }
@@ -124,10 +127,10 @@ class BienesInmueblesController extends Controller {
             $domicilio['calle'] = $domicilio['calleExt'];
             $domicilio['num_ext'] = $domicilio['num_extExt'];
             $domicilio['num_int'] = $domicilio['numintExt'];
-            $domicilio['colonia'] = $domicilio['coloniaExt'];
+            $domicilio['colonia'] = $domicilio['colonia_Ext'];
             $domicilio['entidad'] = $domicilio['entidadExt'];
-            $domicilio['pais'] = $domicilio['pais'];
-            $domicilio['codigo_postal'] = $domicilio['codigopostalExt'];
+            $domicilio['pais_id'] = $domicilio['pais_id'];
+            $domicilio['codigo_postal'] = $domicilio['codigo_postalExt'];
         }
 
         //dd($bien);
@@ -190,10 +193,12 @@ class BienesInmueblesController extends Controller {
         $selectMunicipio = Arr::pluck(\App\Municipio::all(), "municipio", "id");
 
         
+         $selectPais = Arr::pluck(\App\Pais::all(),'valor',"id");
+        
         $bien = \App\BienInmueble::find($id);
         $domicilio = $bien->domicilio;
 //        dd($bien->domicilio);
-        return view("BienesInmuebles.edit", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMoneda', 'selectMunicipio', 'bien', 'domicilio'));
+        return view("BienesInmuebles.edit", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMoneda', 'selectMunicipio', 'bien','selectPais', 'domicilio'));
     
         
     }
