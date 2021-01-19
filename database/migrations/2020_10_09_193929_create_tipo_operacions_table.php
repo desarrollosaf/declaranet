@@ -13,7 +13,7 @@ class CreateTipoOperacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_operacions', function (Blueprint $table) {
+        Schema::create('tipo_operaciones', function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->string("clave");
             $table->string("valor");
@@ -23,7 +23,7 @@ class CreateTipoOperacionsTable extends Migration
         $path = base_path("database/catalogos/catalogos/json/s1/tipoOperacion.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_inmueble){
-            DB::table("tipo_operacions")->insert([
+            DB::table("tipo_operaciones")->insert([
                 "clave" => $tipo_inmueble->clave,
                 "valor" => $tipo_inmueble->valor
             ]);
@@ -37,6 +37,6 @@ class CreateTipoOperacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_operacions');
+        Schema::dropIfExists('tipo_operaciones');
     }
 }

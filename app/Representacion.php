@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Representacion extends Model {
 
-    protected $table = "representacions";
+    protected $table = "representaciones";
     protected $guarded = ["id", "created_at", "updated_at", "deleted_at"];
 
     public function tipotitularParticipaciones() {

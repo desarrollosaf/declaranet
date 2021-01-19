@@ -13,14 +13,14 @@ class CreateRepresentacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('representacions', function (Blueprint $table) {
+        Schema::create('representaciones', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('declaracion_id');
             $table->foreign('declaracion_id')->references('id')->on('declaraciones');
             $table->unsignedBigInteger('titular_id');
             $table->foreign('titular_id')->references('id')->on('titular_bienes');
             $table->unsignedBigInteger('tipo_representacion_id');
-            $table->foreign('tipo_representacion_id')->references('id')->on('tipo_representacions');
+            $table->foreign('tipo_representacion_id')->references('id')->on('tipo_representaciones');
             $table->date('fecha_representacion')->nullable();
             $table->unsignedBigInteger('regimen_representante_id');
             $table->foreign('regimen_representante_id')->references('id')->on('regimen_fiscal');
@@ -52,6 +52,6 @@ class CreateRepresentacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('representacions');
+        Schema::dropIfExists('representaciones');
     }
 }
