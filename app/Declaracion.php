@@ -112,5 +112,9 @@ class Declaracion extends Model {
     public function donativos(){
         return $this->hasMany(Donativo::class);
     }
+    
+    public function intereses(){
+        return $this->hasMany(InteresesPersonal::class);
+    }
 
 }
