@@ -1,0 +1,63 @@
+[
+    {
+        "valor": "PADRE"
+    },
+    {
+        "valor": "MADRE"
+    },
+    {
+        "valor": "HIJO"
+    },
+    {
+        "valor": "ABUELO"
+    },
+    {
+        "valor": "HERMANOS"
+    },
+    {
+        "valor": "NIETO"
+    },
+    {
+        "valor": "DEPENDIENTES ENONÓMICOS"
+    },
+    {
+        "valor": "PADRE DEL CÓNYUGUE"
+    },
+    {
+        "valor": "MADRE DEL CÓNYUGUE"
+    },
+    {
+        "valor": "HIJO DEL CÓNYUGUE"
+    },
+    {
+        "valor": "ABUELO (A) DEL CÓNYUGUE"
+    },
+    {
+        "valor": "HERMANO (A) DEL CÓNYUGUE"
+    },
+    {
+        "valor": "NIETO (A) DEL CÓNYUGUE"
+    },
+    {
+        "valor": "NUERA"
+    },
+    {
+        "valor": "YERNO"
+    },
+    {
+        "valor": "ADOPTANTE"
+    },
+    {
+        "valor": "ADOPTADO"
+    },
+    {
+        "valor": "CÓNYUGUE"
+    },
+    {
+        "valor": "CONCUBINA O CONCUBINARIO"
+    },
+    {
+        "valor": "FUNDACIONES U ORGANIZACIONES NO LUCRATIVAS DE LAS QUE FORMA PARTE EL DECLARANTE"
+    }
+]
+
