@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Donativo;
 
 class Declaracion extends Model {
 
@@ -106,6 +107,14 @@ class Declaracion extends Model {
     }
     public function bienes_inmuebles(){
         return $this->morphMany(BienInmueble::class, 'inmuebleable');
+    }
+
+    public function donativos(){
+        return $this->hasMany(Donativo::class);
+    }
+    
+    public function intereses(){
+        return $this->hasMany(InteresesPersonal::class);
     }
 
 }

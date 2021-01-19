@@ -54,5 +54,8 @@ Route::get("getDescripcionInversion/{id}", "InversionesDeclaranteController@getD
 Route::resource("/index", "IndexController")->name('*', "index");
 Route::get("getDependencia/{id}", "McgDeclaranteController@getDependencia");
 Route::get("getDireccion/{id}", "McgDeclaranteController@getDireccion");
+Route::resource("/donativos", "DonativosController")->name('*', 'donativos');
+Route::resource("/intereses_personales", "InteresesController")->name('*', 'intereses_personales');
+
 
 
