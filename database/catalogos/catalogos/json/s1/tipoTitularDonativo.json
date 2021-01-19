@@ -1,63 +1,83 @@
 [
     {
-        "valor": "PADRE"
+        "valor": "PADRE",
+        "grado": "1"
     },
     {
-        "valor": "MADRE"
+        "valor": "MADRE",
+        "grado": "1"
     },
     {
-        "valor": "HIJO"
+        "valor": "HIJO",
+        "grado": "1"
     },
     {
-        "valor": "ABUELO"
+        "valor": "ABUELO",
+        "grado": "1"
     },
     {
-        "valor": "HERMANOS"
+        "valor": "HERMANOS",
+        "grado": "1"
     },
     {
-        "valor": "NIETO"
+        "valor": "NIETO",
+        "grado": "1"
     },
     {
-        "valor": "DEPENDIENTES ENONÓMICOS"
+        "valor": "DEPENDIENTES ENONÓMICOS",
+        "grado": "1"
     },
     {
-        "valor": "PADRE DEL CÓNYUGUE"
+        "valor": "PADRE DEL CÓNYUGUE",
+        "grado": "2"
     },
     {
-        "valor": "MADRE DEL CÓNYUGUE"
+        "valor": "MADRE DEL CÓNYUGUE",
+        "grado": "2"
     },
     {
-        "valor": "HIJO DEL CÓNYUGUE"
+        "valor": "HIJO DEL CÓNYUGUE",
+        "grado": "2"
     },
     {
-        "valor": "ABUELO (A) DEL CÓNYUGUE"
+        "valor": "ABUELO (A) DEL CÓNYUGUE",
+        "grado": "2"
     },
     {
-        "valor": "HERMANO (A) DEL CÓNYUGUE"
+        "valor": "HERMANO (A) DEL CÓNYUGUE",
+        "grado": "2"
     },
     {
-        "valor": "NIETO (A) DEL CÓNYUGUE"
+        "valor": "NIETO (A) DEL CÓNYUGUE",
+        "grado": "2"
     },
     {
-        "valor": "NUERA"
+        "valor": "NUERA",
+        "grado": "2"
     },
     {
-        "valor": "YERNO"
+        "valor": "YERNO",
+        "grado": "2"
     },
     {
-        "valor": "ADOPTANTE"
+        "valor": "ADOPTANTE",
+        "grado": "3"
     },
     {
-        "valor": "ADOPTADO"
+        "valor": "ADOPTADO",
+        "grado": "3"
     },
     {
-        "valor": "CÓNYUGUE"
+        "valor": "CÓNYUGUE",
+        "grado": "3"
     },
     {
-        "valor": "CONCUBINA O CONCUBINARIO"
+        "valor": "CONCUBINA O CONCUBINARIO",
+        "grado": "3"
     },
     {
-        "valor": "FUNDACIONES U ORGANIZACIONES NO LUCRATIVAS DE LAS QUE FORMA PARTE EL DECLARANTE"
+        "valor": "FUNDACIONES U ORGANIZACIONES NO LUCRATIVAS DE LAS QUE FORMA PARTE EL DECLARANTE",
+        "grado": "4"
     }
 ]
 
