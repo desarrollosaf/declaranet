@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\IngresoNeto;
 use App\tipoInstrumento;
+use App\tipoOperacion;
 use Illuminate\Support\Arr;
 
 class IngresoNetoDeclaranteController extends Controller

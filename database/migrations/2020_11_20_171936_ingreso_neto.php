@@ -20,7 +20,7 @@ class IngresoNeto extends Migration
             $table->unsignedBigInteger("tipo_operacion_id")->nullable();
             $table->foreign("tipo_operacion_id")->references('id')->on("tipo_operaciones");
             $table->double('ingreso_mensual_publico');
-            $table->double('ingreso_por_actividad_ice')->nullable();;
+            $table->double('ingreso_por_actividad_ice')->nullable();
             $table->string('nombre_razon_social')->nullable();
             $table->string('tipo_de_negocio')->nullable();
             $table->double('ingreso_por_actividad_financiera')->nullable();
