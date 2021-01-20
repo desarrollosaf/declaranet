@@ -17,6 +17,8 @@ class AdeudosPasivos extends Migration
             $table->id();
             $table->unsignedBigInteger('declaracion_id');
             $table->foreign('declaracion_id')->references('id')->on('declaraciones');
+            $table->unsignedBigInteger("tipo_operacion_id")->nullable();
+            $table->foreign("tipo_operacion_id")->references('id')->on("tipo_operaciones");
             $table->unsignedBigInteger('titular_adeudo_id');
             $table->foreign('titular_adeudo_id')->references('id')->on('titular_inversiones');
             $table->unsignedBigInteger('tipo_adeudo_id');

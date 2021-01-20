@@ -17,6 +17,8 @@ class IngresoNeto extends Migration
             $table->id();
             $table->unsignedBigInteger('declaracion_id');
             $table->foreign('declaracion_id')->references('id')->on('declaraciones');
+            $table->unsignedBigInteger("tipo_operacion_id")->nullable();
+            $table->foreign("tipo_operacion_id")->references('id')->on("tipo_operaciones");
             $table->double('ingreso_mensual_publico');
             $table->double('ingreso_por_actividad_ice')->nullable();;
             $table->string('nombre_razon_social')->nullable();

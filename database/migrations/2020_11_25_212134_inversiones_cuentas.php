@@ -17,6 +17,8 @@ class InversionesCuentas extends Migration
             $table->id();
             $table->unsignedBigInteger('declaracion_id');
             $table->foreign('declaracion_id')->references('id')->on('declaraciones');
+            $table->unsignedBigInteger("tipo_operacion_id")->nullable();
+            $table->foreign("tipo_operacion_id")->references('id')->on("tipo_operaciones");
             $table->unsignedBigInteger('tipo_de_inversion_id');
             $table->foreign('tipo_de_inversion_id')->references('id')->on('tipo_inversiones');
             $table->unsignedBigInteger('descripcion_tipo_inversion_id');
