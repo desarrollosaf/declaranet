@@ -4,15 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDonativosTable extends Migration
-{
+class CreateDonativosTable extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('donativos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('declaracion_id');
@@ -30,6 +29,7 @@ class CreateDonativosTable extends Migration
             $table->double("monto_donativo")->nullable();
             $table->unsignedBigInteger('tipo_mondeda_id');
             $table->foreign('tipo_mondeda_id')->references('id')->on('tipo_monedas');
+            $table->string("observaciones", 500)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -40,8 +40,8 @@ class CreateDonativosTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('donativos');
     }
+
 }

@@ -20,8 +20,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
-class DatosParejaController extends Controller
-{
+class DatosParejaController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
@@ -29,19 +29,25 @@ class DatosParejaController extends Controller
      */
     private $request;
 
-    public function __construct(Request $request)
-    {
+    public function __construct(Request $request) {
         $this->middleware("auth");
         $this->request = $request;
     }
 
-    public function index()
-    {
+    public function index() {
         $declarante = Declaracion::find($this->request->session()->get("declaracion_id"));
-        if ($declarante->pareja) {
-            return redirect()->route("datos_pareja_declarante.edit", $declarante->pareja->id);
+        if ($declarante->tipo_movimiento_id == 1) {
+            if ($declarante->pareja) {
+                return redirect()->route("datos_pareja_declarante.edit", $declarante->pareja->id);
+            } else {
+                return redirect()->route("datos_pareja_declarante.create");
+            }
         } else {
-            return redirect()->route("datos_pareja_declarante.create");
+            if ($declarante->pareja) {
+                return redirect()->route("datos_pareja_declarante.edit", $declarante->pareja->id);
+            }
+            $ultimaDeclaracion = Declaracion::where("id","!=",$this->request->session()->get("declaracion_id"))->get();
+            dd($ultimaDeclaracion->last()->pareja);
         }
     }
 
@@ -50,8 +56,7 @@ class DatosParejaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         $declarante = Declaracion::find($this->request->session()->get("declaracion_id"));
         if ($declarante->pareja) {
             return redirect()->route("datos_pareja_declarante.edit", $declarante->pareja->id);
@@ -85,8 +90,7 @@ class DatosParejaController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $datosPareja = $this->request->input("datosPareja");
         $domicilio = $request->input("domicilio");
         $domicilioExt = $request->input("domicilioExt");
@@ -128,8 +132,7 @@ class DatosParejaController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -139,8 +142,7 @@ class DatosParejaController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         $selectRelacioDeclarante = Arr::pluck(relacionConDeclarante::all(), 'valor', 'id');
         $selectCiudadano = Arr::pluck(extranjero::all(), 'valor', 'id');
         $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor', 'id');
@@ -163,7 +165,6 @@ class DatosParejaController extends Controller
         }
         $experienciaLaboral = $pareja->experienciaLaboral;
         return view('datosParejaDeclarante.edit', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'pareja', 'domicilio', 'experienciaLaboral', 'selectMunicipio'));
-
     }
 
     /**
@@ -173,8 +174,7 @@ class DatosParejaController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $datosPareja = $request->input("datosPareja");
         $domicilio = $request->input("domicilio");
         $domicilioExt = $request->input("domicilioExt");
@@ -236,8 +236,8 @@ class DatosParejaController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }
