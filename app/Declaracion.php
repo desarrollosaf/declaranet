@@ -74,6 +74,10 @@ class Declaracion extends Model {
         return $this->hasMany(ApoyoBeneficio::class);
     }
 
+    public function DependienteEconomicos() {
+        return $this->hasMany(DependienteEconomico::class);
+    }
+
     public function participacion_empresas() {
         return $this->hasMany(ParticipacionEmpresa::class);
     }
@@ -112,9 +116,25 @@ class Declaracion extends Model {
     public function donativos(){
         return $this->hasMany(Donativo::class);
     }
-    
+
     public function intereses(){
         return $this->hasMany(InteresesPersonal::class);
+    }
+
+    public function ingresos() {
+        return $this->hasOne(IngresoNeto::class);
+    }
+
+    public function cambioDependencias() {
+        return $this->hasOne(CambioDependencia::class);
+    }
+
+    public function CambioDomicilios() {
+        return $this->hasOne(CambioDomicilio::class);
+    }
+
+    public function CambioDatosEncargos() {
+        return $this->hasOne(CambioDatosEncargo::class);
     }
 
 }

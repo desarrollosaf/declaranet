@@ -45,6 +45,7 @@ Route::resource("/participacion", "ParticipaDecisionController")->name('*', 'par
 Route::resource("/cambio_dependencia", "CambioDependenciaController")->name('*', 'cambio_dependencia');
 Route::resource("/cambio_domicilio", "CambioDomicilioController")->name('*', 'cambio_domicilio');
 Route::resource("/cambio_datos_encargo", "CambioDatosEncargoController")->name('*', 'cambio_datos_encargo');
+Route::resource("/cambio_entrega", "CambioEntregaController")->name('*', 'cambio_entrega');
 Route::resource("/MCG", "McgDeclaranteController")->name('*', 'MCG');
 Route::post("declaracion/iniciar", "DeclaranetController@IniciarDeclaracion");
 Route::post("declaracion/continuar", "DeclaranetController@ContinuarDeclaracion");

@@ -11,7 +11,7 @@ class FueServidorPublico extends Model
 
     public function TipoInstrumento()
     {
-        $this->belongsTo(tipoInstrumento::class);
+        $this->belongsTo(tipoInstrumento::class, 'tipo_de_instrumento_id');
     }
 
     public function TipoBien()

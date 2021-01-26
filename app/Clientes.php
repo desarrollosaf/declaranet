@@ -14,7 +14,7 @@ class Clientes extends Model
     }
 
     public function Respuesta(){
-        return $this->belongsTo(Respuesta::class);
+        return $this->belongsTo(Respuesta::class,'respuestas_id');
     }
 
     public function tipoRelaciones(){
@@ -26,7 +26,7 @@ class Clientes extends Model
     }
 
     public function lugarDondeReside(){
-        return $this->belongsTo(lugarDondeReside::class);
+        return $this->belongsTo(lugarDondeReside::class, 'lugar_donde_resides_id');
     }
 
     public function Pais(){

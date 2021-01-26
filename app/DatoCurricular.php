@@ -13,9 +13,13 @@ class DatoCurricular extends Model
         return $this->morphTo();
     }
     public function nivel(){
-        return $this->belongsTo(Nivel::class);
+        return $this->belongsTo(nivel::class,'nivel_id');
     }
     public function estatus(){
         return $this->belongsTo(Estatus::class);
+    }
+
+    public function documento(){
+        return $this->belongsTo(documentoObtenido::class);
     }
 }

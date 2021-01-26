@@ -24,6 +24,6 @@ class PrestamoComodato extends Model
 
     public function tipoBien()
     {
-        return $this->belongsTo(TipoBienEnajenacionBienes::class);
+        return $this->belongsTo(TipoBienEnajenacionBienes::class, 'tipo_bien_id');
     }
 }

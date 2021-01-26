@@ -28,4 +28,8 @@ class BeneficioPrivado extends Model
     public function tipoMonedas(){
         return $this->belongsTo(tipoMoneda::class);
     }
+
+    public function RegimenFiscal(){
+        return $this->belongsTo(RegimenFiscal::class, 'tipo_beneficio_id');
+    }
 }

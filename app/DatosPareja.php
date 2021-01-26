@@ -10,15 +10,15 @@ class DatosPareja extends Model
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
 
     public function relacionDeclarante(){
-        return $this->belongsTo(relacionConDeclarante::class);
+        return $this->belongsTo(relacionConDeclarante::class,'relacion_id');
     }
 
     public function ciudadanoExtranjero(){
-        return $this->belongsTo(extranjero::class);
+        return $this->belongsTo(extranjero::class, 'ciudadano_id');
     }
 
     public function lugarReside(){
-        return $this->belongsTo(lugarDondeReside::class);
+        return $this->belongsTo(lugarDondeReside::class, 'lugar_reside_id');
     }
 
     public function domicilio(){

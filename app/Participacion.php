@@ -17,7 +17,7 @@ class Participacion extends Model
     }
 
     public function LugarUbicaciones(){
-        return $this->belongsTo(LugarUbicacion::class);
+        return $this->belongsTo(LugarUbicacion::class,'lugares_ubicacion_id');
     }
 
     public function Paises(){

@@ -9,6 +9,13 @@ class Vehiculo extends Model
     protected $table = 'vehiculos';
     protected $guarded = ["id", "created_at", "updated_at", "deleted_at"];
 
+
+
+    public function Titulares()
+    {
+        return $this->belongsTo(Titular::class, 'titular_id');
+    }
+
     public function relacion()
     {
         return $this->belongsTo(relacionTransmisor::class);
@@ -16,7 +23,7 @@ class Vehiculo extends Model
 
     public function registro()
     {
-        return $this->belongsTo(lugarDondeReside::class);
+        return $this->belongsTo(lugarDondeReside::class,'lugar_registro');
     }
 
     public function tipoAdquisicion()
@@ -36,7 +43,7 @@ class Vehiculo extends Model
 
     public function regimen()
     {
-        return $this->belongsTo(RegimenFiscal::class);
+        return $this->belongsTo(RegimenFiscal::class, 'tipoDePersona');
     }
 
     public function tipo_vehiculo()
@@ -46,7 +53,7 @@ class Vehiculo extends Model
 
     public function entidades()
     {
-        return $this->belongsTo(Entidad::class, 'entidad_id');
+        return $this->belongsTo(Entidad::class, 'entidades_id');
     }
 
     public function tipoMonedas()
@@ -57,6 +64,11 @@ class Vehiculo extends Model
     public function vehiculosable()
     {
         return $this->morphTo();
+    }
+
+    public function tipoTitularD()
+    {
+        return $this->belongsTo(regimenFiscal::class, 'relacion_dueno_titular_id');
     }
 }
 

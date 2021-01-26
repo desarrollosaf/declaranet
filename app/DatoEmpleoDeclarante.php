@@ -19,10 +19,10 @@ class DatoEmpleoDeclarante extends Model
     }
 
     public function entidades(){
-        return $this->belongsTo(Entidad::class);
+        return $this->belongsTo(Entidad::class,'entidad_federativa_id');
     }
 
     public function municipios(){
-        return $this->belongsTo(Municipio::class);
+        return $this->belongsTo(Municipio::class, 'municipio_id');
     }
 }

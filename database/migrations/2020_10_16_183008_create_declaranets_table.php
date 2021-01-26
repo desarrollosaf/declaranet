@@ -26,7 +26,7 @@ class CreateDeclaranetsTable extends Migration
             $table->unsignedBigInteger("situacion_personal_id")->nullable();
             $table->foreign("situacion_personal_id")->references("id")->on("situaciones_personales");
             $table->unsignedBigInteger("regimen_matrimonial_id")->nullable();
-            $table->foreign("regimen_matrimonial_id")->references("id")->on("situaciones_personales");
+            $table->foreign("regimen_matrimonial_id")->references("id")->on("regimen_matrimoniales");
             $table->boolean("honorarios")->nullable();
             $table->unsignedBigInteger("pais_id")->nullable();
             $table->foreign("pais_id")->references("id")->on("paises");
