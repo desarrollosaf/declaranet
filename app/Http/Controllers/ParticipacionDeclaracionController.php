@@ -25,6 +25,11 @@ class ParticipacionDeclaracionController extends Controller
      */
     public function create()
     {
+        $parentesco = \App\RelacionTransmisor::all();
+        $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
+        foreach ($parentesco as $item){
+            $selectParentesco[$item->id] = $item->valor;
+        }
         return view("participaciones.create");
     }
 
