@@ -21,8 +21,8 @@ class CreateServidorPublicosTable extends Migration
             $table->string("curp")->nullable();
             $table->string("rfc")->nullable();
             $table->string("homoclave")->nullable();
-            $table->string("cargo");
-            $table->string("nivel_cargo");
+            $table->string("cargo")->nullable();
+            $table->string("nivel_cargo")->nullable();
             $table->unsignedBigInteger("tipo_dependencia");
             $table->foreign("tipo_dependencia")->references("id")->on("tipo_dependencia");
             $table->unsignedBigInteger("tipo_direccion");
