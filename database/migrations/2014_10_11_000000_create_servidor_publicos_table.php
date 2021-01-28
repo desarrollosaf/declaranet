@@ -23,13 +23,13 @@ class CreateServidorPublicosTable extends Migration
             $table->string("homoclave")->nullable();
             $table->string("cargo")->nullable();
             $table->string("nivel_cargo")->nullable();
-            $table->unsignedBigInteger("tipo_dependencia");
+            $table->unsignedBigInteger("tipo_dependencia")->nullable();
             $table->foreign("tipo_dependencia")->references("id")->on("tipo_dependencia");
-            $table->unsignedBigInteger("tipo_direccion");
+            $table->unsignedBigInteger("tipo_direccion")->nullable();
             $table->foreign("tipo_direccion")->references("id")->on("tipo_direccion");
-            $table->unsignedBigInteger("tipo_departamento");
+            $table->unsignedBigInteger("tipo_departamento")->nullable();
             $table->foreign("tipo_departamento")->references("id")->on("tipo_departamento");
-            $table->unsignedBigInteger("honorarios");
+            $table->unsignedBigInteger("honorarios")->nullable();
             $table->foreign("honorarios")->references("id")->on("honorario");
             $table->string("c_institucional")->nullable();
             $table->string("c_personal")->nullable();
