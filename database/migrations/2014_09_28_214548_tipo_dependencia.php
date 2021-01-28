@@ -13,7 +13,7 @@ class TipoDependencia extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_dependencia', function (Blueprint $table) {
+        Schema::connection("mysql2")->create('tipo_dependencia', function (Blueprint $table) {
             $table->id();
             $table->string("c_presupDep");
             $table->string("nombre");
@@ -23,7 +23,7 @@ class TipoDependencia extends Migration
         $path = base_path("database/catalogos/catalogos/json/dependencia.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_dependencia){
-            DB::table("tipo_dependencia")->insert([
+            DB::connection("mysql2")->table("tipo_dependencia")->insert([
                 "c_presupDep" => $tipo_dependencia->C_presupDep,
                 "nombre" => $tipo_dependencia->Nombre
             ]);

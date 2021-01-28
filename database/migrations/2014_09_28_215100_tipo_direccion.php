@@ -13,7 +13,7 @@ class TipoDireccion extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_direccion', function (Blueprint $table) {
+        Schema::connection("mysql2")->create('tipo_direccion', function (Blueprint $table) {
             $table->id();
             $table->string("c_presupDir");
             $table->string("nombre");
@@ -25,7 +25,7 @@ class TipoDireccion extends Migration
         $path = base_path("database/catalogos/catalogos/json/direccion.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_direccion){
-            DB::table("tipo_direccion")->insert([
+            DB::connection("mysql2")->table("tipo_direccion")->insert([
                 "c_presupDir" => $tipo_direccion->C_presupDir,
                 "nombre" => $tipo_direccion->Nombre,
                 "id_Dependencia" => $tipo_direccion->id_Dependencia

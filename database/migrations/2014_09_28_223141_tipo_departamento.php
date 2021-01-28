@@ -13,7 +13,7 @@ class TipoDepartamento extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_departamento', function (Blueprint $table) {
+        Schema::connection("mysql2")->create('tipo_departamento', function (Blueprint $table) {
             $table->id();
             $table->string("c_presupDepto");
             $table->string("nombre");
@@ -28,7 +28,7 @@ class TipoDepartamento extends Migration
         $path = base_path("database/catalogos/catalogos/json/departamento.json");
         $json = json_decode(file_get_contents($path));
         foreach($json as $tipo_departamento){
-            DB::table("tipo_departamento")->insert([
+            DB::connection("mysql2")->table("tipo_departamento")->insert([
                 "c_presupDepto" => $tipo_departamento->C_presupDepto,
                 "nombre" => $tipo_departamento->Nombre,
                 "id_Dependencia" => $tipo_departamento->id_Dependencia,

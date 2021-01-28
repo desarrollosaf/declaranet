@@ -21,6 +21,16 @@ class CreateServidorPublicosTable extends Migration
             $table->string("curp")->nullable();
             $table->string("rfc")->nullable();
             $table->string("homoclave")->nullable();
+            $table->string("cargo");
+            $table->string("nivel_cargo");
+            $table->unsignedBigInteger("tipo_dependencia");
+            $table->foreign("tipo_dependencia")->references("id")->on("tipo_dependencia");
+            $table->unsignedBigInteger("tipo_direccion");
+            $table->foreign("tipo_direccion")->references("id")->on("tipo_direccion");
+            $table->unsignedBigInteger("tipo_departamento");
+            $table->foreign("tipo_departamento")->references("id")->on("tipo_departamento");
+            $table->unsignedBigInteger("honorarios");
+            $table->foreign("honorarios")->references("id")->on("honorario");
             $table->string("c_institucional")->nullable();
             $table->string("c_personal")->nullable();
             $table->integer("telefono_casa")->nullable();
