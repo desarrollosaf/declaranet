@@ -35,7 +35,7 @@ class BienesMueblesController extends Controller
     {
         $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $bienesMuebles = $declaracion->BienesMuebles;
-        return view("Bienesmuebles.index", compact("bienesMuebles"));
+        return view("bienesmuebles.index", compact("bienesMuebles"));
     }
 
     /**
