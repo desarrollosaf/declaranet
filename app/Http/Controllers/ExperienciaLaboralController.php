@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\NivelOrdenGobierno;
-use App\AmbitoPublico;
+use App\ambitoPublico;
 use App\Sector;
 use App\LugarUbicacion;
 use App\ExperienciaLaboral;
@@ -41,7 +41,7 @@ class ExperienciaLaboralController extends Controller
     public function create()
     {
 
-        $ambitoSector = AmbitoSector::all();
+        $ambitoSector = ambitoSector::all();
         $ambitos_sectores= [];
         //$ambitos_sectores[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($ambitoSector as $item){
@@ -94,7 +94,7 @@ class ExperienciaLaboralController extends Controller
     public function edit($id)
     {
         $experiencia = ExperienciaLaboral::find($id);
-        $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor','id');
+        $ambitos_sectores = Arr::pluck(\App\ambitoSector::all(), 'valor','id');
         $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
