@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\nivel;
 use App\estatus;
-use App\DocumentoObtenido;
+use App\documentoObtenido;
 use App\LugarUbicacion;
 use App\Declaracion;
 use App\DatoCurricular;
