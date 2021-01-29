@@ -32,7 +32,7 @@ class CreateClientesTable extends Migration
             $table->unsignedBigInteger('sectores_id')->nullable();
             $table->foreign('sectores_id')->references('id')->on('sectores');
             $table->string('sector_especifique')->nullable();
-            $table->string('monto_beneficio')->nullable();
+            $table->integer('monto_beneficio')->nullable();
             $table->unsignedBigInteger('lugar_donde_resides_id')->nullable();
             $table->foreign('lugar_donde_resides_id')->references('id')->on('lugar_donde_resides');
             $table->unsignedBigInteger('entidades_id')->nullable();

@@ -26,9 +26,9 @@ class CreateBienesinmuebles extends Migration
             $table->foreign('tipo_tercero_id')->references('id')->on('regimen_fiscal');
             $table->string('nombre_razon_tercero')->nullable();
             $table->string('rfc_tercero')->nullable();
-            $table->string('porcentaje_propiedad')->nullable();
-            $table->string('superficie_terreno')->nullable();
-            $table->string('superficie_construccion')->nullable();
+            $table->integer('porcentaje_propiedad')->nullable();
+            $table->integer('superficie_terreno')->nullable();
+            $table->integer('superficie_construccion')->nullable();
             $table->unsignedBigInteger('forma_adquisicion_id')->nullable();
             $table->foreign('forma_adquisicion_id')->references('id')->on('forma_adquisiciones');
             $table->unsignedBigInteger('forma_pago_id')->nullable();
@@ -40,7 +40,7 @@ class CreateBienesinmuebles extends Migration
             $table->unsignedBigInteger('relacion_transmisor_id')->nullable();
             $table->foreign('relacion_transmisor_id')->references('id')->on('relacion_transmisores');
             $table->string('relacion_transmisor')->nullable();
-            $table->string('valor_adquisicion')->nullable();
+            $table->integer('valor_adquisicion')->nullable();
             $table->unsignedBigInteger('valor_conforme_id')->nullable();
             $table->foreign('valor_conforme_id')->references('id')->on('valor_conforme_a_s');
             $table->unsignedBigInteger('tipo_moneda_id')->nullable();

@@ -34,7 +34,7 @@ class ApoyoBeneficio extends Migration
             $table->string('especifique_especie')->nullable();
             $table->unsignedBigInteger('tipo_de_moneda_id')->nullable();
             $table->foreign('tipo_de_moneda_id')->references('id')->on('tipo_monedas');
-            $table->double('monto_mensual');
+            $table->integer('monto_mensual');
             $table->string('aclaraciones_observaciones')->nullable();
             $table->softDeletes();
             $table->timestamps();

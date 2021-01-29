@@ -30,10 +30,10 @@ class AdeudosPasivos extends Migration
             $table->string('rfc_codeudor')->nullable();
             $table->string('numero_cuenta');
             $table->date('fecha_adquisicion');
-            $table->string('monto_adeudo');
+            $table->integer('monto_adeudo');
             $table->unsignedBigInteger('tipo_moneda');
             $table->foreign('tipo_moneda')->references('id')->on('tipo_monedas');
-            $table->string('saldo_insoluto');
+            $table->integer('saldo_insoluto');
             $table->unsignedBigInteger('tipo_otorgante_id');
             $table->foreign('tipo_otorgante_id')->references('id')->on('tipo_persona');
             $table->string('nombre_otorgante')->nullable();
