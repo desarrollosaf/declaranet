@@ -73,7 +73,9 @@ class BeneficiosPrivadosController extends Controller
         foreach ($tipoMoneda as $item){
             $moneda[$item->id] = $item->valor;
         }
-        return view("beneficiosPrivados.create", compact("tipoBeneficio","beneficiarios", "sectoProductivo", "otorgante", "formaRecepcion",'moneda'));
+
+        $tipoOperacion = "AGREGAR";
+        return view("beneficiosPrivados.create", compact("tipoBeneficio","beneficiarios", "sectoProductivo", "otorgante", "formaRecepcion",'moneda','tipoOperacion'));
 
     }
 
@@ -117,7 +119,8 @@ class BeneficiosPrivadosController extends Controller
         $otorgante = Arr::pluck(RegimenFiscal::all(),'valor','id');
         $formaRecepcion = Arr::pluck(formaRecepcion::all(), 'valor','id');
         $moneda = Arr::pluck(tipoMoneda::all(), 'valor','id');
-        return view("beneficiosPrivados.edit", compact('beneficio', 'beneficiarios','sectoProductivo','otorgante','formaRecepcion','tipoBeneficio','moneda'));
+        $tipoOperacion = "AGREGAR";
+        return view("beneficiosPrivados.edit", compact('beneficio', 'beneficiarios','sectoProductivo','otorgante','formaRecepcion','tipoBeneficio','moneda','tipoOperacion'));
 
     }
 

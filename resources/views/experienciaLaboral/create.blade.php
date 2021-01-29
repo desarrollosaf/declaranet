@@ -130,7 +130,8 @@
             </div>
         </div>
     </div>
-    <input type="hidden" id="accion" value="crear">
+    <input type="hidden" id="accion" value="editar">
+    <input type="hidden" id="tipoOperacion" value="AGREGAR">
 @endsection
 @section('scripts')
 <script>
@@ -163,8 +164,6 @@
                 }
             });
 
-
-
             $("#nombre_empresa").val("");
             $("#rfc").val("");
             $("#area").val("");
@@ -172,7 +171,6 @@
             $("#sector_id").val("");
             $("#especifique_otro_sector").val("");
         } else if($(this).val() == "1") {
-            alert("1");
             $(".PRIVADO").hide();
             $(".PÚBLICO").show();
             $(".AMBOS").show();

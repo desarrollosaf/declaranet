@@ -57,6 +57,7 @@ class CreateFideicomisosTable extends Migration
             $table->unsignedBigInteger('paises_id')->nullable();
             $table->foreign('paises_id')->references('id')->on('paises');
             $table->string('aclaraciones')->nullable();
+            $table->string("tipoOperacion")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

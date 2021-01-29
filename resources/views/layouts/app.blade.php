@@ -152,7 +152,6 @@
 
     .navbar-nav > li > a, .submenu-box ul li a {
         color: white !important;
-        text-transform: capitalize;
         font-size: 14px;
         padding: 10px 10px 10px 20px !important;
         display: block;

@@ -37,8 +37,11 @@
                                                 educativa: </strong>{{$curricular->institucion_educativa}}<br>
                                             <strong>Carrera o área de
                                                 conocimiento: </strong>{{$curricular->carrera_area}}<br>
+                                            @if($curricular->documento_id == null)
                                             <strong>Documento obtenido: </strong>{{$curricular->estatus->valor}}
-
+                                            @else
+                                            <strong>Documento obtenido: </strong>{{$curricular->documento->valor}}
+                                            @endif
 
                                         </center>
                                     </td>
@@ -75,7 +78,7 @@
                             <strong>Para registrar información pulse: </strong><a
                                 href="{{route('datos_curriculares_declarante.create')}}"
                                 class="btn btn-sm btn-secondary">Agregar</a><br>
-                            <strong>Deberá seleccionar <a href="{{route('datos_curriculares_declarante.create')}}" class="btn btn-sm btn-secondary">Ninguno</a>si éste es su primer empleo.</strong>
+                            <strong>Deberá seleccionar <a href="" class="btn btn-sm btn-secondary">Ninguno</a>si no cuenta con información curricular.</strong>
                         </label>
                     </div>
 

@@ -40,6 +40,7 @@ class CreateDatoEmpleoDeclarantesTable extends Migration
             $table->foreign('entidad_federativa_id')->references('id')->on('entidades');
             $table->string('codigo_postal')->nullable();
             $table->string('aclaraciones')->nullable();
+            $table->string("tipoOperacion")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

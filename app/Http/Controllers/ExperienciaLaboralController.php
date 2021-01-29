@@ -29,6 +29,7 @@ class ExperienciaLaboralController extends Controller
     {
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $experiencias = $declaracion->experiencias_laborales;
+
         return view("experienciaLaboral.index", compact('experiencias'));
     }
 
@@ -51,7 +52,8 @@ class ExperienciaLaboralController extends Controller
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
-        return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores'));
+        $tipoOperacion = "AGREGAR";
+        return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','tipoOperacion'));
     }
 
     /**
@@ -97,8 +99,8 @@ class ExperienciaLaboralController extends Controller
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
-//        dd($experiencia);
-        return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_sectores'));
+        $tipoOperacion = "AGREGAR";
+        return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_sectores','tipoOperacion'));
     }
 
     /**

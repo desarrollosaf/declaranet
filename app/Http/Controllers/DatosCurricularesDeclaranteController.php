@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\nivel;
-use App\Estatus;
+use App\estatus;
 use App\DocumentoObtenido;
 use App\LugarUbicacion;
 use App\Declaracion;
@@ -58,7 +58,7 @@ class DatosCurricularesDeclaranteController extends Controller
         $curriculares = $request->input("curriculares");
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
         $declarante->datos_curriculares()->create($curriculares);
-        return redirect()->back();
+        return redirect()->route("datos_curriculares_declarante.index");
     }
 
     /**

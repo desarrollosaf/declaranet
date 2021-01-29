@@ -261,6 +261,7 @@
 
                     </div>
                 </div>
+            {!! Form::hidden('vehiculos[tipoOperacion]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipoOperacion']) !!}
                 <!-- Botones  -->
                 <div id="edit" style="display: none;" class="all text-center">
                     <div class="form-row">
