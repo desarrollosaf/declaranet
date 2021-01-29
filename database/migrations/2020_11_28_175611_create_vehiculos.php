@@ -39,7 +39,7 @@ class CreateVehiculos extends Migration
             $table->string('relacion_id_otro')->nullable();
             $table->string('v_marca')->nullable();
             $table->string('v_modelo')->nullable();
-            $table->string('v_ano')->nullable();
+            $table->integer('v_ano')->nullable();
             $table->string('v_num_serie')->nullable();
             $table->unsignedBigInteger('lugar_registro');
             $table->foreign('lugar_registro')->references('id')->on('lugar_donde_resides');
@@ -51,7 +51,7 @@ class CreateVehiculos extends Migration
             $table->foreign('tipo_adquisicion_id')->references('id')->on('forma_adquisiciones');
             $table->unsignedBigInteger('pago_id')->nullable();
             $table->foreign('pago_id')->references('id')->on('forma_pagos');
-            $table->string('v_valor')->nullable();
+            $table->integer('v_valor')->nullable();
             $table->unsignedBigInteger('tipo_monedas_id')->nullable();
             $table->foreign('tipo_monedas_id')->references('id')->on('tipo_monedas');
             $table->date('v_fecha')->nullable();

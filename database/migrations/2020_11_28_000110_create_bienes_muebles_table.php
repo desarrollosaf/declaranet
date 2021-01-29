@@ -40,7 +40,7 @@ class CreateBienesMueblesTable extends Migration
             $table->foreign('forma_adquisicion_id')->references('id')->on('forma_adquisiciones');
             $table->unsignedBigInteger('forma_pago_id');
             $table->foreign('forma_pago_id')->references('id')->on('forma_pagos');
-            $table->string('valor_adquisicion')->nullable();
+            $table->integer('valor_adquisicion')->nullable();
             $table->unsignedBigInteger('tipo_moneda_id');
             $table->foreign('tipo_moneda_id')->references('id')->on('tipo_monedas');
             $table->date("fecha_adquisicion")->nullable();

@@ -28,7 +28,7 @@ class CreateRepresentacionsTable extends Migration
             $table->string('rfc_representante')->nullable();
             $table->unsignedBigInteger('respuesta_id');
             $table->foreign('respuesta_id')->references('id')->on('respuestas');
-            $table->text('monto_mensual')->nullable();
+            $table->integer('monto_mensual')->nullable();
             $table->unsignedBigInteger('tipo_sector_id');
             $table->foreign('tipo_sector_id')->references('id')->on('sectores');
             $table->string('especifique')->nullable();

@@ -21,13 +21,13 @@ class CreateParticipacionEmpresasTable extends Migration
             $table->foreign('titular_operacion_id')->references('id')->on('titular_bienes');
             $table->string('nombre_empresa')->nullable();
             $table->string('rfc_empresa')->nullable();
-            $table->string('porcentaje')->nullable();
+            $table->integer('porcentaje')->nullable();
             $table->unsignedBigInteger('tipo_participacion_id');
             $table->foreign('tipo_participacion_id')->references('id')->on('tipo_participacions');
             $table->string('participacion_otro')->nullable();
             $table->unsignedBigInteger('tipo_respuesta_id');
             $table->foreign('tipo_respuesta_id')->references('id')->on('respuestas');
-            $table->string('monto_mensual')->nullable();
+            $table->integer('monto_mensual')->nullable();
             $table->unsignedBigInteger('part_ubicacion_id');
             $table->foreign('part_ubicacion_id')->references('id')->on('lugares_ubicacion');
             $table->unsignedBigInteger('sector_productivo_id');

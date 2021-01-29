@@ -27,7 +27,7 @@ class CreateParticipacionsTable extends Migration
             $table->text('puesto_rol')->nullable();
             $table->date('fecha_inicio')->nullable();
             $table->text('remuneracion')->nullable();
-            $table->text('monto_mensual')->nullable();
+            $table->integer('monto_mensual')->nullable();
             $table->unsignedBigInteger('lugares_ubicacion_id')->nullable();
             $table->foreign('lugares_ubicacion_id')->references('id')->on('lugares_ubicacion');
             $table->unsignedBigInteger('entidades_id')->nullable();
