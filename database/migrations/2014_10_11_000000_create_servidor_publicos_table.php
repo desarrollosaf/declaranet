@@ -21,6 +21,7 @@ class CreateServidorPublicosTable extends Migration
             $table->string("curp")->nullable();
             $table->string("rfc")->nullable();
             $table->string("homoclave")->nullable();
+            $table->date("fecha_inicio");
             $table->string("cargo");
             $table->string("nivel_cargo");
             $table->unsignedBigInteger("tipo_dependencia");
