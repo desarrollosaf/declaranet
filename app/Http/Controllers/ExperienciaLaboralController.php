@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Nivelordengobierno;
 use App\ambitoPublico;
-use App\Sector;
+use App\sector;
 use App\LugarUbicacion;
 use App\ExperienciaLaboral;
 use App\Declaracion;
@@ -50,7 +50,7 @@ class ExperienciaLaboralController extends Controller
 
         $nivelOrdenGobierno = Arr::pluck(Nivelordengobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
-        $sectores = Arr::pluck(Sector::all(), "valor","id");
+        $sectores = Arr::pluck(sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
         $tipoOperacion = "AGREGAR";
         return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','tipoOperacion'));
@@ -97,7 +97,7 @@ class ExperienciaLaboralController extends Controller
         $ambitos_sectores = Arr::pluck(\App\ambitoSector::all(), 'valor','id');
         $nivelOrdenGobierno = Arr::pluck(Nivelordengobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
-        $sectores = Arr::pluck(Sector::all(), "valor","id");
+        $sectores = Arr::pluck(sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
         $tipoOperacion = "AGREGAR";
         return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_sectores','tipoOperacion'));
