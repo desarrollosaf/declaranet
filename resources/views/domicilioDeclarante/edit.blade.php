@@ -35,14 +35,10 @@
                 {!! Form::model($domicilio, ['route' => ['domicilio_declarante.update', $domicilio->id], 'method' => 'put'] ) !!}
                 @include('domicilioDeclarante.form')
                 @include('domicilioDeclarante.observaciones')
-                <div class="form-row">
-                    <div class="col">
-                        <a class='btn btn-submit text-light' href="{{route("datos_declarante.create")}}">Ir a la sección anterior</a>
-                    </div>
-                    <div class="col">
-                        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light float-right'] )}}
-                    </div>
-                </div>
+                    <center>
+                                            <a class='btn btn-submit text-light' href="{{route("datos_declarante.create")}}">Ir a la sección anterior</a>                       
+                                            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
+                    </center>
                 {!! Form::close() !!}
             </div>
         </div>

@@ -1,11 +1,5 @@
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('Tipo moviemiento', 'Tipo moviemiento: *') !!}</strong>
-        {!! Form::select('movimiento[entidad_id]', $selectEntidad, isset($domicilio) ? $domicilio->entidad_id : null,['class'=>'form-control text-uppercase','placeholder'=>'SELECCIONE UNA OPCIÓN', 'id' => 'entidad_id', 'required' => 'true']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-
-    <div class="form-group col-md-4">
         <strong>{!! Form::label('calle', 'Calle: *') !!}</strong>
         {!! Form::text('domicilio[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'nombre', 'required' => 'true', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}", 'title' => "Ingresa la calle" ]) !!}
         <span class="text-danger" style="font-size:150%"></span>
@@ -17,7 +11,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
-        {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 5','placeholder'=>'SELECCIONE UNA OPCIÓN','id' => 'interior']) !!}
+        {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ.5','id' => 'interior']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
