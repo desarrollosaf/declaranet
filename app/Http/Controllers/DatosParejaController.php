@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\ambitoPublico;
 use App\ambitoSector;
 use App\DatosPareja;
 use App\Declaracion;
@@ -11,7 +10,6 @@ use App\extranjero;
 use App\lugarDondeReside;
 use App\LugarUbicacion;
 use App\Municipio;
-use App\Nivelordengobierno;
 use App\Pais;
 use App\relacionConDeclarante;
 use App\Respuesta;
