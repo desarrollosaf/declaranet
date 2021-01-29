@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\AmbitoSector;
+use App\ambitoSector;
 use App\extranjero;
 use App\lugarDondeReside;
 use App\parentescoRelacion;
@@ -36,7 +36,7 @@ class DatosDependienteEconomicoController extends Controller
     public function create()
     {
         $parentesco = \App\RelacionTransmisor::all();
-       
+
         $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($parentesco as $item){
             $selectParentesco[$item->id] = $item->valor;
@@ -122,7 +122,7 @@ class DatosDependienteEconomicoController extends Controller
     public function edit($id)
     {
         $parentesco = parentescoRelacion::all();
-       
+
         $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($parentesco as $item){
             $selectParentesco[$item->id] = $item->valor;
@@ -152,7 +152,7 @@ class DatosDependienteEconomicoController extends Controller
         array_unshift($sectores,"Selecciona una opcion");
         $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
         $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
-        
+
         $dependiente = \App\DependienteEconomico::find($id);
         $domicilio = $dependiente->domicilio;
         $municipios = array();
