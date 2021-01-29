@@ -13,7 +13,7 @@ class ExperienciaLaboral extends Model
         return $this->morphTo();
     }
     public function ambito_sectores(){
-        return $this->belongsTo(AmbitoSector::class,'ambito_sector_id');
+        return $this->belongsTo(ambitoSector::class,'ambito_sector_id');
     }
 
     public function sectores(){

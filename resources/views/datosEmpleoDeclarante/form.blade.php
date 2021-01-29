@@ -2,41 +2,41 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('nivel', 'Nivel / Orden de gobierno:') !!}</strong>
-            {!! Form::select('datos_empleo_declarante[nivel_gobierno_id]',$nivel,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->nivel_gobierno_id :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nivel_gobierno_id', 'disabled' => 'disabled']) !!}
+            {!! Form::select('datos_empleo_declarante[nivel_gobierno_id]',$nivel,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->nivel_gobierno_id :null,['class'=>'form-control text-uppercase',  'id' => 'nivel_gobierno_id', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('ambito', 'Ámbito público:') !!}</strong>
-            {!! Form::select('datos_empleo_declarante[ambito_publico_id]',$ambito,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->ambito_publico_id :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'ambito_publico_id', 'disabled' => 'disabled']) !!}
+            {!! Form::select('datos_empleo_declarante[ambito_publico_id]',$ambito,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->ambito_publico_id:null,['class'=>'form-control text-uppercase',  'id' => 'ambito_publico_id', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('entepublico', 'Nombre del Ente Público:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[nombre_ente_publico]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->nombre_ente_publico :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre_ente_publico', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[nombre_ente_publico]',$nombre_entre,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre_ente_publico', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('adscripcion', 'Área de adscripción:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[area_adscripcion]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->area_adscripcion :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'area_adscripcion', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[area_adscripcion]',$servidor->tipo_dependencia,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'area_adscripcion', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('empleo', 'Empleo, cargo o comisión:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[empleo_cargo]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->empleo_cargo :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'empleo_cargo', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[empleo_cargo]',$servidor->cargo,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'empleo_cargo', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('honorarios', '¿Está contratado por honorarios?:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[honorarios]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->honorarios :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'honorarios', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[honorarios]',$servidor->honorarios,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'honorarios', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('nivelempleo', 'Nivel del empleo, cargo o comisión:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[nivel_empleo]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->nivel_empleo :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nivel_empleo', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[nivel_empleo]',$servidor->nivel_cargo,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nivel_empleo', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -116,6 +116,7 @@
         </div>
     </div>
     <br>
+    {!! Form::hidden('datos_empleo_declarante[tipoOperacion]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipoOperacion']) !!}
 
     <div id="edit" style="display: none;" class="all text-center">
         <div class="form-row">

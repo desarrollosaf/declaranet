@@ -50,14 +50,14 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.telefono_casa', 'Número telefónico de casa: ') !!}</strong>
-        {!! Form::text('declaracion[telefono_casa]',$declaracion->telefono_casa,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 7225555555',  'id' => 'telcasa' , 'pattern'=>'[0-9]{10}']) !!}
+        {!! Form::text('declaracion[telefono_casa]',$declaracion->telefono_casa,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 7225555555',  'id' => 'telcasa' , 'pattern'=>'[0-9]{10}', 'size'=>'10', 'maxlength'=>'10']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.telefono_personal', 'Número de celular personal: *') !!}</strong>
-        {!! Form::text('declaracion[telefono_personal]',$declaracion->telefono_personal,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. 7225555555',  'id' => 'celpersonal','required' => true , 'pattern'=>'[0-9]{10}']) !!}
+        {!! Form::text('declaracion[telefono_personal]',$declaracion->telefono_personal,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. 7225555555',  'id' => 'celpersonal','required' => true , 'pattern'=>'[0-9]{10}', 'size'=>'10', 'maxlength'=>'10']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -69,7 +69,7 @@
     <div class="form-group col-md-4">
         <strong>{!! Form::label('declaracion.regimen_matrimonial_id', 'Régimen matrimonial: *') !!}</strong>
         {!! Form::select('declaracion[regimen_matrimonial_id]', $selectRegimenMatrimonial, $declaracion->regimen_matrimonial_id, ['class'=>'form-control alert-danger', 'id' => 'regimen_matrimonial_id','placeholder'=>'SELECCIONE UNA OPCIÓN', 'required' => 'true']) !!}
-        
+
     </div>
     <div class="form-group col-md-4 ">
             {!! Form::label('especificar', 'Especifique: *',["style" => "font-weight: bold;"]) !!}

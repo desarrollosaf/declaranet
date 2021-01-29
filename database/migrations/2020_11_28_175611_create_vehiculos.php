@@ -64,6 +64,7 @@ class CreateVehiculos extends Migration
             $table->foreign('relacion_dueno_titular_id')->references('id')->on('relacion_transmisores');
             $table->string('especifique_relacion_titular')->nullable();
             $table->string('v_aclaraciones')->nullable();
+            $table->string("tipoOperacion")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

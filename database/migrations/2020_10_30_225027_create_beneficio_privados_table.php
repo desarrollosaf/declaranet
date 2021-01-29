@@ -38,6 +38,7 @@ class CreateBeneficioPrivadosTable extends Migration
             $table->string('especie')->nullable();
             $table->string('monto_mensual')->nullable();
             $table->string('aclaraciones')->nullable();
+            $table->string("tipoOperacion")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

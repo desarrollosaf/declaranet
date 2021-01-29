@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\nivel;
-use App\Estatus;
-use App\DocumentoObtenido;
+use App\estatus;
+use App\documentoObtenido;
 use App\LugarUbicacion;
 use App\Declaracion;
 use App\DatoCurricular;
@@ -41,8 +41,8 @@ class DatosCurricularesDeclaranteController extends Controller
     public function create()
     {
         $nivelesSelect = Arr::pluck(nivel::all(), "valor","id");
-        $estatusSelect = Arr::pluck(Estatus::all(), "valor","id");
-        $documentoSelect = Arr::pluck(DocumentoObtenido::all(), "valor","id");
+        $estatusSelect = Arr::pluck(estatus::all(), "valor","id");
+        $documentoSelect = Arr::pluck(documentoObtenido::all(), "valor","id");
         $lugaresSelect = Arr::pluck(LugarUbicacion::all(), "valor","id");
         return view('datosCurricularesDeclarante.create', compact("nivelesSelect","estatusSelect","documentoSelect","lugaresSelect"));
     }
@@ -58,7 +58,7 @@ class DatosCurricularesDeclaranteController extends Controller
         $curriculares = $request->input("curriculares");
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
         $declarante->datos_curriculares()->create($curriculares);
-        return redirect()->back();
+        return redirect()->route("datos_curriculares_declarante.index");
     }
 
     /**
@@ -82,9 +82,9 @@ class DatosCurricularesDeclaranteController extends Controller
     {
         $nivelesSelect = Arr::pluck(nivel::all(), "valor","id");
         array_unshift($nivelesSelect,"Selecciona una opcion");
-        $estatusSelect = Arr::pluck(Estatus::all(), "valor","id");
+        $estatusSelect = Arr::pluck(estatus::all(), "valor","id");
         array_unshift($estatusSelect,"Selecciona una opcion");
-        $documentoSelect = Arr::pluck(DocumentoObtenido::all(), "valor","id");
+        $documentoSelect = Arr::pluck(documentoObtenido::all(), "valor","id");
         array_unshift($documentoSelect,"Selecciona una opcion");
         $lugaresSelect = Arr::pluck(LugarUbicacion::all(), "valor","id");
         array_unshift($lugaresSelect,"Selecciona una opcion");

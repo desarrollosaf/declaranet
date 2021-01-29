@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\NivelOrdenGobierno;
-use App\AmbitoPublico;
-use App\Sector;
+use App\Nivelordengobierno;
+use App\ambitoPublico;
+use App\sector;
 use App\LugarUbicacion;
 use App\ExperienciaLaboral;
 use App\Declaracion;
 use Illuminate\Support\Arr;
 use Carbon\Carbon;
-use App\AmbitoSector;
+use App\ambitoSector;
 
 class ExperienciaLaboralController extends Controller
 {
@@ -29,6 +29,7 @@ class ExperienciaLaboralController extends Controller
     {
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $experiencias = $declaracion->experiencias_laborales;
+
         return view("experienciaLaboral.index", compact('experiencias'));
     }
 
@@ -40,18 +41,19 @@ class ExperienciaLaboralController extends Controller
     public function create()
     {
 
-        $ambitoSector = AmbitoSector::all();
+        $ambitoSector = ambitoSector::all();
         $ambitos_sectores= [];
         //$ambitos_sectores[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($ambitoSector as $item){
             $ambitos_sectores[$item->id] = $item->valor;
         }
 
-        $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
+        $nivelOrdenGobierno = Arr::pluck(Nivelordengobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
-        $sectores = Arr::pluck(Sector::all(), "valor","id");
+        $sectores = Arr::pluck(sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
-        return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores'));
+        $tipoOperacion = "AGREGAR";
+        return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','tipoOperacion'));
     }
 
     /**
@@ -92,13 +94,13 @@ class ExperienciaLaboralController extends Controller
     public function edit($id)
     {
         $experiencia = ExperienciaLaboral::find($id);
-        $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor','id');
-        $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
+        $ambitos_sectores = Arr::pluck(\App\ambitoSector::all(), 'valor','id');
+        $nivelOrdenGobierno = Arr::pluck(Nivelordengobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
-        $sectores = Arr::pluck(Sector::all(), "valor","id");
+        $sectores = Arr::pluck(sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
-//        dd($experiencia);
-        return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_sectores'));
+        $tipoOperacion = "AGREGAR";
+        return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_sectores','tipoOperacion'));
     }
 
     /**

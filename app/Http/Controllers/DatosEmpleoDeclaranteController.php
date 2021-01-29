@@ -39,19 +39,13 @@ class DatosEmpleoDeclaranteController extends Controller
     {
         $declaracion = Declaracion::find($this->request->session()->get("declaracion_id"));
 
-        $nivel_orden = Nivelordengobierno::all();
+        $nivelo = Nivelordengobierno::find(2);
         $nivel = [];
-        $nivel[""] = "SELECCIONA UNA OPCIÓN";
-        foreach ($nivel_orden as $item){
-            $nivel[$item->id] = $item->valor;
-        }
+            $nivel[2] = $nivelo->valor;
 
-        $ambito_publico = ambitoPublico::all();
+        $ambito_publico = ambitoPublico::find(2);
         $ambito = [];
-        $ambito[""] = "SELECCIONA UNA OPCIÓN";
-        foreach ($ambito_publico as $item){
-            $ambito[$item->id] = $item->valor;
-        }
+        $ambito[2] = $ambito_publico->valor;
 
         $sectores = sector::all();
         $sector= [];
@@ -66,9 +60,13 @@ class DatosEmpleoDeclaranteController extends Controller
         foreach ($Entidades as $item){
             $entidad[$item->id] = $item->entidad;
         }
+        $tipoOperacion = "AGREGAR";
 
+        $servidor = auth()->user()->servidor_publico;
 
-        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector", "declaracion",'entidad'));
+        $nombre_entre = "PODER LEGISLATIVO";
+
+        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector", "declaracion",'entidad','tipoOperacion','servidor','nombre_entre'));
     }
 
     /**
@@ -110,7 +108,10 @@ class DatosEmpleoDeclaranteController extends Controller
         $sector = Arr::pluck(sector::all(), 'valor','id');
         $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
         $selectMunicipio = Arr::pluck(Municipio::where("entidad_id",$DatoEmpleoDeclarante->entidad_federativa_id)->get(), "municipio","id");
-        return view("datosEmpleoDeclarante.edit", compact( 'DatoEmpleoDeclarante','nivel','ambito','sector','entidad','selectMunicipio'));
+        $tipoOperacion = "AGREGAR";
+        $nombre_entre = "PODER LEGISLATIVO";
+        $servidor = auth()->user()->servidor_publico;
+        return view("datosEmpleoDeclarante.edit", compact( 'DatoEmpleoDeclarante','nivel','ambito','sector','entidad','selectMunicipio','tipoOperacion','nombre_entre','servidor'));
 
     }
 

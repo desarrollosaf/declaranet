@@ -152,7 +152,6 @@
 
     .navbar-nav > li > a, .submenu-box ul li a {
         color: white !important;
-        text-transform: capitalize;
         font-size: 14px;
         padding: 10px 10px 10px 20px !important;
         display: block;
@@ -624,9 +623,9 @@
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-briefcase mr-2"></i>Apoyo o beneficio
                                                         públicos</a>
-                                                    <a href="{{route("representacion.index")}}"
+                                               <!--     <a href="{{route("representacion.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-briefcase mr-2"></i>Representación</a>
+                                                            class="ion ion-briefcase mr-2"></i>Representación</a> -->
                                                     <a href="{{route("clientes_principales.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-person-stalker mr-2"></i>Clientes principales</a>

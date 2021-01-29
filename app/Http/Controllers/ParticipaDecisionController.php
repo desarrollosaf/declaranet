@@ -72,7 +72,9 @@ class ParticipaDecisionController extends Controller
             $entidad[$item->id] = $item->entidad;
         }
 
-        return view("ParticipaDecision.create", compact('participacion','institucion','remuneracion','lugar','pais','entidad'));
+        $tipoOperacion = "AGREGAR";
+
+        return view("ParticipaDecision.create", compact('participacion','institucion','remuneracion','lugar','pais','entidad','tipoOperacion'));
     }
 
     /**
@@ -118,7 +120,8 @@ class ParticipaDecisionController extends Controller
         $remuneracion["1"] = "SÍ";
         $remuneracion["2"] = "NO";
         $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
-        return view("ParticipaDecision.edit", compact( 'participaciones','participacion','institucion','lugar','pais','remuneracion','entidad'));
+        $tipoOperacion = "AGREGAR";
+        return view("ParticipaDecision.edit", compact( 'participaciones','participacion','institucion','lugar','pais','remuneracion','entidad','tipoOperacion'));
     }
 
     /**

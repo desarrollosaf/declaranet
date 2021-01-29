@@ -43,7 +43,9 @@ class CreateExperienciaLaboralsTable extends Migration
             $table->string("especifique_otro_sector")->nullable();
             $table->integer("salario_mensual_neto")->nullable();
             $table->unsignedBigInteger("respuesta_proveedor_id")->nullable();
-            $table->foreign("respuesta_proveedor_id")->references("id")->on("respuestas");            $table->timestamps();
+            $table->foreign("respuesta_proveedor_id")->references("id")->on("respuestas");
+            $table->string("tipoOperacion")->nullable();
+            $table->timestamps();
             $table->softDeletes();
         });
     }

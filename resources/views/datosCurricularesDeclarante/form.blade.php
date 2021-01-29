@@ -38,7 +38,7 @@
 
     <div class="form-group col-md-4">
         <strong> {!! Form::label('curriculares[lugar_ubicacion_id]', 'Lugar donde se ubica: *',['class' => 'validar']) !!}</strong>
-        {!! Form::select('curriculares[lugar_ubicacion_id]',$lugaresSelect, isset($curricular) ? $curricular->lugar_ubicacion_id : null,['class'=>'form-control text-uppercase','placeholder' => '- SELECCIONA UNA OPCIÓN' , 'id' => 'lugar_ubicacion_id']) !!}
+        {!! Form::select('curriculares[lugar_ubicacion_id]',$lugaresSelect, isset($curricular) ? $curricular->lugar_ubicacion_id : null,['class'=>'form-control text-uppercase','placeholder' => '- SELECCIONA UNA OPCIÓN' , 'id' => 'lugar_ubicacion_id','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>

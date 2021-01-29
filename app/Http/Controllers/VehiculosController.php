@@ -100,8 +100,9 @@ class VehiculosController extends Controller
         foreach ($tipoMoneda as $item) {
             $moneda[$item->id] = $item->valor;
         }
+        $tipoOperacion = "AGREGAR";
 
-        return view("Vehiculos.create", compact('vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda'));
+        return view("Vehiculos.create", compact('vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda','tipoOperacion'));
     }
 
     /**
@@ -148,8 +149,8 @@ class VehiculosController extends Controller
         $titular = Arr::pluck(Titular::all(), "valor", "id");
         $entidad = Arr::pluck(Entidad::all(), "entidad", "id");
         $moneda = Arr::pluck(tipoMoneda::all(), "valor", "id");
-
-        return view("Vehiculos.edit", compact('vehiculos', 'vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda'));
+        $tipoOperacion = "AGREGAR";
+        return view("Vehiculos.edit", compact('vehiculos', 'vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda','tipoOperacion'));
     }
 
     /**

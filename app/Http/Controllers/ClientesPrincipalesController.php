@@ -72,9 +72,8 @@ class ClientesPrincipalesController extends Controller
         foreach ($Entidad as $item){
             $entidad[$item->id] = $item->entidad;
         }
-
-
-        return view("Clientes.create",compact("selectRespuestas",'titular','regimen','sector','lugar','Pais','entidad'));
+        $tipoOperacion = "AGREGAR";
+        return view("Clientes.create",compact("selectRespuestas",'titular','regimen','sector','lugar','Pais','entidad','tipoOperacion'));
     }
 
     /**
@@ -118,8 +117,8 @@ class ClientesPrincipalesController extends Controller
         $lugar = Arr::pluck(lugarDondeReside::all(), 'valor','id');
         $Pais = Arr::pluck(Pais::all(), 'valor','id');
         $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
-
-        return view("Clientes.edit", compact('clientes','selectRespuestas','titular','regimen','sector','lugar','Pais','entidad'));
+        $tipoOperacion = "AGREGAR";
+        return view("Clientes.edit", compact('clientes','selectRespuestas','titular','regimen','sector','lugar','Pais','entidad','tipoOperacion'));
 
     }
 

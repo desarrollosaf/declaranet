@@ -35,6 +35,7 @@ class CreateParticipacionsTable extends Migration
             $table->unsignedBigInteger('paises_id')->nullable();
             $table->foreign('paises_id')->references('id')->on('paises');
             $table->text('aclaraciones')->nullable();
+            $table->string("tipoOperacion")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

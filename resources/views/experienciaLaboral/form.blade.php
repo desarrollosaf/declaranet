@@ -92,6 +92,8 @@
     </div>
 </div>
 
+{!! Form::hidden('experiencia[tipoOperacion]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipoOperacion']) !!}
+
 <div id="edit" style="display: none;" class="all text-center">
     <div class="form-row">
         <div class="col">

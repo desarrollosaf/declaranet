@@ -95,7 +95,9 @@ class FideicomisosController extends Controller
 
         $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
 
-        return view("Fideicomisos.create",compact('participacion','tipoPfideicomiso','tipoPersonaFideicomiso','sector','lugar','pais', 'fideicomiso','tipoPersonaFideicomisoD','entidad'));
+        $tipoOperacion = "AGREGAR";
+
+        return view("Fideicomisos.create",compact('participacion','tipoPfideicomiso','tipoPersonaFideicomiso','sector','lugar','pais', 'fideicomiso','tipoPersonaFideicomisoD','entidad','tipoOperacion'));
 
     }
 
@@ -142,8 +144,8 @@ class FideicomisosController extends Controller
         $fideicomiso = Arr::pluck(tipoFideicomiso::all(), 'valor','id');
         $tipoPersonaFideicomisoD = Arr::pluck(tipoPersonaFideicomiso::all(), 'tipo_persona_fideicomiso','id');
         $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
-
-        return view("Fideicomisos.edit", compact( 'fideicomisos','participacion','tipoPfideicomiso','tipoPersonaFideicomiso','sector','lugar','pais','fideicomiso','tipoPersonaFideicomisoD','entidad'));
+        $tipoOperacion = "AGREGAR";
+        return view("Fideicomisos.edit", compact( 'fideicomisos','participacion','tipoPfideicomiso','tipoPersonaFideicomiso','sector','lugar','pais','fideicomiso','tipoPersonaFideicomisoD','entidad','tipoOperacion'));
     }
 
     /**
