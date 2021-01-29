@@ -41,8 +41,8 @@ class DatosCurricularesDeclaranteController extends Controller
     public function create()
     {
         $nivelesSelect = Arr::pluck(nivel::all(), "valor","id");
-        $estatusSelect = Arr::pluck(Estatus::all(), "valor","id");
-        $documentoSelect = Arr::pluck(DocumentoObtenido::all(), "valor","id");
+        $estatusSelect = Arr::pluck(estatus::all(), "valor","id");
+        $documentoSelect = Arr::pluck(documentoObtenido::all(), "valor","id");
         $lugaresSelect = Arr::pluck(LugarUbicacion::all(), "valor","id");
         return view('datosCurricularesDeclarante.create', compact("nivelesSelect","estatusSelect","documentoSelect","lugaresSelect"));
     }
