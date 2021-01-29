@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\NivelOrdenGobierno;
+use App\Nivelordengobierno;
 use App\ambitoPublico;
 use App\Sector;
 use App\LugarUbicacion;
@@ -48,7 +48,7 @@ class ExperienciaLaboralController extends Controller
             $ambitos_sectores[$item->id] = $item->valor;
         }
 
-        $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
+        $nivelOrdenGobierno = Arr::pluck(Nivelordengobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
@@ -95,7 +95,7 @@ class ExperienciaLaboralController extends Controller
     {
         $experiencia = ExperienciaLaboral::find($id);
         $ambitos_sectores = Arr::pluck(\App\ambitoSector::all(), 'valor','id');
-        $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(),'valor','id');
+        $nivelOrdenGobierno = Arr::pluck(Nivelordengobierno::all(),'valor','id');
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(Sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
