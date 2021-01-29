@@ -68,7 +68,7 @@ class DatosParejaController extends Controller {
         foreach ($ciudadanoExtranjero as $item) {
             $selectCiudadano[$item->id] = $item->valor;
         }
-        $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor', 'id');
+        $ambitos_sectores = Arr::pluck(\App\ambitoSector::all(), 'valor', 'id');
         $nivelOrdenGobierno = Arr::pluck(\App\Nivelordengobierno::all(), 'valor', 'id');
         $ambito = Arr::pluck(\App\ambitoPublico::all(), "valor", "id");
         $sectores = Arr::pluck(ambitoSector::all(), "valor", "id");
@@ -143,7 +143,7 @@ class DatosParejaController extends Controller {
     public function edit($id) {
         $selectRelacioDeclarante = Arr::pluck(relacionConDeclarante::all(), 'valor', 'id');
         $selectCiudadano = Arr::pluck(extranjero::all(), 'valor', 'id');
-        $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor', 'id');
+        $ambitos_sectores = Arr::pluck(\App\ambitoSector::all(), 'valor', 'id');
         $nivelOrdenGobierno = Arr::pluck(\App\Nivelordengobierno::all(), 'valor', 'id');
         $ambito = Arr::pluck(\App\ambitoPublico::all(), "valor", "id");
         $sectores = Arr::pluck(ambitoSector::all(), "valor", "id");
