@@ -82,9 +82,9 @@ class DatosCurricularesDeclaranteController extends Controller
     {
         $nivelesSelect = Arr::pluck(nivel::all(), "valor","id");
         array_unshift($nivelesSelect,"Selecciona una opcion");
-        $estatusSelect = Arr::pluck(Estatus::all(), "valor","id");
+        $estatusSelect = Arr::pluck(estatus::all(), "valor","id");
         array_unshift($estatusSelect,"Selecciona una opcion");
-        $documentoSelect = Arr::pluck(DocumentoObtenido::all(), "valor","id");
+        $documentoSelect = Arr::pluck(documentoObtenido::all(), "valor","id");
         array_unshift($documentoSelect,"Selecciona una opcion");
         $lugaresSelect = Arr::pluck(LugarUbicacion::all(), "valor","id");
         array_unshift($lugaresSelect,"Selecciona una opcion");
