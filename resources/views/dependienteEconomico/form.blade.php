@@ -24,7 +24,7 @@
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('rfc', 'RFC:',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('declarante[rfc]',isset($dependiente) ? $dependiente->rfc : null,['class'=>'form-control alert-danger', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc','pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})']) !!}
+            {!! Form::text('declarante[rfc]',isset($dependiente) ? $dependiente->rfc : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc','pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -36,7 +36,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('especifique', 'Especifique:',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('declarante[relacion_transmisor]',isset($dependiente) ? $dependiente->relacion_transmisor : null,['class'=>'form-control alert-danger', 'placeholder'=>'p. ej. Parentezco',  'id' => 'especifique-parentezco' , 'disabled' => true]) !!}
+            {!! Form::text('declarante[relacion_transmisor]',isset($dependiente) ? $dependiente->relacion_transmisor : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Parentezco',  'id' => 'especifique-parentezco' , 'disabled' => true]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -203,7 +203,7 @@
         </div>
         <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('proveedor', '¿Es proveedor o contratista del gobierno?:',["style" => "font-weight: bold;"]) !!}
-            {!! Form::checkbox('privado[proveedor_gobierno]', 'value', isset($dato_laboral) ? $dato_laboral->proveedor_gobierno : null) !!}
+            {!! Form::checkbox('privado[proveedor_gobierno]', true, isset($dato_laboral) ? $dato_laboral->proveedor_gobierno : null) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ambitoSector;
+use App\AmbitoSector;
 use App\extranjero;
 use App\lugarDondeReside;
 use App\parentescoRelacion;
@@ -36,7 +36,7 @@ class DatosDependienteEconomicoController extends Controller
     public function create()
     {
         $parentesco = \App\RelacionTransmisor::all();
-
+       
         $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($parentesco as $item){
             $selectParentesco[$item->id] = $item->valor;
@@ -62,7 +62,7 @@ class DatosDependienteEconomicoController extends Controller
         $entidades = Arr::pluck(\App\Entidad::all(),'entidad',"id");
         $paises = Arr::pluck(\App\Pais::all(),'valor',"id");
         array_unshift($paises,"Selecciona una opcion");
-        $sectores = Arr::pluck(\App\sector::all(),'valor',"id");
+        $sectores = Arr::pluck(\App\Sector::all(),'valor',"id");
         array_unshift($sectores,"Selecciona una opcion");
         $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
         $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
@@ -122,7 +122,7 @@ class DatosDependienteEconomicoController extends Controller
     public function edit($id)
     {
         $parentesco = parentescoRelacion::all();
-
+       
         $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($parentesco as $item){
             $selectParentesco[$item->id] = $item->valor;
@@ -148,11 +148,11 @@ class DatosDependienteEconomicoController extends Controller
         $entidades = Arr::pluck(\App\Entidad::all(),'entidad',"id");
         $paises = Arr::pluck(\App\Pais::all(),'valor',"id");
         array_unshift($paises,"Selecciona una opcion");
-        $sectores = Arr::pluck(\App\sector::all(),'valor',"id");
+        $sectores = Arr::pluck(\App\Sector::all(),'valor',"id");
         array_unshift($sectores,"Selecciona una opcion");
         $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
         $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
-
+        
         $dependiente = \App\DependienteEconomico::find($id);
         $domicilio = $dependiente->domicilio;
         $municipios = array();
@@ -186,16 +186,23 @@ class DatosDependienteEconomicoController extends Controller
 //        dump($extranjero);
 //        dump($laboral);
 //        dump($publico);
-//        dd($privado);
+        if(isset($privado["proveedor_gobierno"]) && $privado["proveedor_gobierno"] == "1"){
+            $privado["proveedor_gobierno"] = true;
+        }else{
+            $privado["proveedor_gobierno"] = false;
+            
+        }
         $dependiente  = \App\DependienteEconomico::find($id);
         $dependiente->update($dependienteRequest);
         $privado["ambito_sector_id"] = $laboral["ambito_sector_id"];
         $publico["ambito_sector_id"] = $laboral["ambito_sector_id"];
         $dependiente->domicilio()->delete();
-        if($dependiente["lugar_residencia_id"] == 1){
-            $dependiente->domicilio()->create($nacional);
-        }else{
-            $dependiente->domicilio()->create($extranjero);
+        if($dependienteRequest["respuesta_id"] != 1){
+            if($dependiente["lugar_residencia_id"] == 1){
+                $dependiente->domicilio()->create($nacional);
+            }else{
+                $dependiente->domicilio()->create($extranjero);
+            }
         }
         $dependiente->dato_laboral()->delete();
         if($laboral["ambito_sector_id"] == 1){
