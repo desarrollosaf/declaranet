@@ -623,9 +623,9 @@
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-briefcase mr-2"></i>Apoyo o beneficio
                                                         públicos</a>
-                                               <!--     <a href="{{route("representacion.index")}}"
+                                                    <a href="{{route("representacion.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-briefcase mr-2"></i>Representación</a> -->
+                                                            class="ion ion-briefcase mr-2"></i>Representación</a>
                                                     <a href="{{route("clientes_principales.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-person-stalker mr-2"></i>Clientes principales</a>
@@ -635,6 +635,19 @@
                                                     <a href="{{route("fideicomisos.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-cash mr-2"></i>Fideicomisos</a>
+                                                    <a href="{{route("donativos.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                            class="ion ion-cash mr-2"></i>Donativos</a>
+                                                    <a href="{{route("intereses_personales.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                            class="ion ion-android-person mr-2"></i>Intereses personales</a>
+                                                    <a href="{{route("participaciones.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                            class="ion ion-android-people mr-2"></i>Participaciones</a>
+                                                    <a href="{{route("viajes.index")}}"
+                                                       class="nav-tabs nav-link text-light ml-4 mr-3"><i
+                                                            class="ion ion-plane mr-2"></i>Viajes</a>
+
                                                 </div>
                                             </ul>
                                         </div>
