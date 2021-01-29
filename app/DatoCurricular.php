@@ -16,7 +16,7 @@ class DatoCurricular extends Model
         return $this->belongsTo(nivel::class,'nivel_id');
     }
     public function estatus(){
-        return $this->belongsTo(Estatus::class);
+        return $this->belongsTo(estatus::class);
     }
 
     public function documento(){
