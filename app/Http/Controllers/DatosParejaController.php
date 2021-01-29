@@ -144,8 +144,8 @@ class DatosParejaController extends Controller {
         $selectRelacioDeclarante = Arr::pluck(relacionConDeclarante::all(), 'valor', 'id');
         $selectCiudadano = Arr::pluck(extranjero::all(), 'valor', 'id');
         $ambitos_sectores = Arr::pluck(\App\AmbitoSector::all(), 'valor', 'id');
-        $nivelOrdenGobierno = Arr::pluck(NivelOrdenGobierno::all(), 'valor', 'id');
-        $ambito = Arr::pluck(AmbitoPublico::all(), "valor", "id");
+        $nivelOrdenGobierno = Arr::pluck(\App\Nivelordengobierno::all(), 'valor', 'id');
+        $ambito = Arr::pluck(\App\ambitoPublico::all(), "valor", "id");
         $sectores = Arr::pluck(ambitoSector::all(), "valor", "id");
         $sector = Arr::pluck(sector::all(), "valor", "id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor", "id");
