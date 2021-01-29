@@ -11,7 +11,7 @@ use App\ExperienciaLaboral;
 use App\Declaracion;
 use Illuminate\Support\Arr;
 use Carbon\Carbon;
-use App\AmbitoSector;
+use App\ambitoSector;
 
 class ExperienciaLaboralController extends Controller
 {
