@@ -136,5 +136,8 @@ class Declaracion extends Model {
     public function CambioDatosEncargos() {
         return $this->hasOne(CambioDatosEncargo::class);
     }
+    public function participaciones(){
+        return $this->hasMany(ParticipacionDeclaracion::Class);
+    }
 
 }

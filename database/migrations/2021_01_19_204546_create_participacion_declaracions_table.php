@@ -42,6 +42,8 @@ class CreateParticipacionDeclaracionsTable extends Migration
             $table->string("rfc_pariente")->nullable();
             $table->unsignedBigInteger("participacion_id");
             $table->foreign("participacion_id")->references("id")->on("tipo_titular_donativos");
+            $table->unsignedBigInteger("institucion_participacion_id");
+            $table->foreign("institucion_participacion_id")->references("id")->on("tipo_instituciones");
             $table->text("observaciones")->nullable();
             $table->timestamps();
         });
