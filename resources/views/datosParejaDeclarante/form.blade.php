@@ -10,7 +10,7 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('datosPareja.segundo_apellido', 'Segundo apellido: *') !!}</strong>
+        <strong>{!! Form::label('datosPareja.segundo_apellido', 'Segundo apellido: ') !!}</strong>
         {!! Form::text('datosPareja[segundo_apellido]',(isset($pareja->segundo_apellido)) ? $pareja->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'apellidom', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -23,7 +23,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.rfc_pareja', 'RFC: *') !!}</strong>
-        {!! Form::text('datosPareja[rfc_pareja]',(isset($pareja->rfc_pareja)) ? $pareja->rfc_pareja : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc', 'required' => true, 'pattern' => '([A-Z]{4}[0-9]{6}[A-Z0-9]{3})']) !!}
+        {!! Form::text('datosPareja[rfc_pareja]',(isset($pareja->rfc_pareja)) ? $pareja->rfc_pareja : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc_pareja', 'required' => true, 'pattern' => '([A-Z]{4}[0-9]{6}[A-Z0-9]{3})']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -135,7 +135,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilio.pais_id', 'País: *') !!}</strong>
-            {!! Form::select('domicilio[pais_id]', $selectPais,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control tipo-titular text-uppercase',  'id' => 'pais', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
+            {!! Form::text('domicilioExt[pais]',isset($domicilio) ? $domicilio->pais : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Estados Unidos',  'id' => 'pais']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -160,6 +160,11 @@
         {!! Form::select('actividadLaboral[ambito_sector_id]', $sectores,isset($experienciaLaboral->ambito_sector_id) ? $experienciaLaboral->ambito_sector_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'ambito-sector', 'placeholder' => "SELECCIONA UNA OPCIÓN", "required" => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
+    <div class="form-group col-md-4 sector-privado-otro">
+            <strong>{!! Form::label('actividadLaboral.ambito_sector_id', 'Tipo de empleador :  *') !!}</strong>
+            {!! Form::select('actividadLaboral[regimen_fiscal_id]', $regimenFiscal,isset($experienciaLaboral->regimen_fiscal_id) ? $experienciaLaboral->regimen_fiscal_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'regimen_fiscal_id', 'placeholder' => "SELECCIONA UNA OPCIÓN", "required" => true]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+    </div>
 </div>
 <div class="sector-privado-otro">
     <div class="form-row">
@@ -175,7 +180,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('actividadLaboral.rfc', 'RFC: *') !!}</strong>
-            {!! Form::text('actividadLaboral[rfc]',isset($experienciaLaboral->rfc) ? $experienciaLaboral->rfc : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. XXX0101001010',  'id' => 'codigo_postalExt', 'pattern' => '([A-Z]{3}[0-9]{9})']) !!}
+            {!! Form::text('actividadLaboral[rfc]',isset($experienciaLaboral->rfc) ? $experienciaLaboral->rfc : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. XXX0101001010',  'id' => 'rfc','pattern' => '([A-Z]{3}[0-9]{9})']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -402,6 +407,8 @@
                     $(".sector-publico").find("input").prop("required", true);
                     $(".sector-privado-otro").find("select").val("");
                     $(".sector-privado-otro").find("input").val("");
+                    $(".regimen_fiscal_id").prop("required", false);
+
                 } else if (sector === 2 || sector === 3) {
                     $(".sector-privado-otro").show();
                     $(".sector-publico").hide();
@@ -411,6 +418,15 @@
                     $(".sector-privado-otro").find("input").prop("required", true);
                     $(".sector-publico").find("select").prop("required", false);
                     $(".sector-publico").find("input").prop("required", false);
+
+                    $("#regimen_fiscal_id").on("change", function () {
+                        var regimen_fiscal_id = document.getElementById("regimen_fiscal_id").value;
+                        if (regimen_fiscal_id == "1") {
+                            $("#rfc").prop("required", false)
+                        }else{
+                            $("#rfc").prop("required", true)
+                        }
+                    });
                     @isset($experienciaLaboral)
                     if (actual !== sector) {
                         $(".sector-privado-otro").find("select").val("");

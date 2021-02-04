@@ -12,26 +12,26 @@
         </div>
         <div class="collapse" id="collapseExample">
             <div class="card-body">
-                Este apartado solo lo llenaran las personas servidoras públicas que tengan participación en un fideicomiso, ya sea en el carácter de fideicomitente, fiduciario, fideicomisario o dentro del consejo técnico. Deberá reportar hasta los últimos dos años.
+                <p align="justify">Este apartado solo lo llenarán las personas servidoras públicas que tengan participación en un fideicomiso, ya sea en el carácter de fideicomitente, fiduciario, fideicomisario o dentro del consejo técnico. Deberá reportar hasta los últimos dos años.</p>
                 <ol>
-                    <li><strong>Titular de la participación.</strong> Elegir quien es el participante en el fideicomiso, el Declarante, Pareja o dependiente económico.</li>
-                    <li><strong>Tipo de fideicomiso.</strong> Seleccionar si es público, privado o mixto.</li>
-                    <li><strong>Tipo de participación.</strong> Seleccionar su participación como fideicomitente, fiduciario, fideicomisario o dentro del Comité Técnico.</li>
-                    <li><strong>Tipo de persona del fideicomiso.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre o razón social del fideicomiso.</strong> Proporcionar nombre completo.</li>
-                    <li><strong>RFC del fideicomiso.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomiso.</li>
-                    <li><strong>Fideicomitente.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre o razón social del fideicomitente.</strong> Proporcionar nombre completo.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomitente.</li>
-                    <li><strong>Tipo de personal del fiduciario.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fiduciario.</li>
-                    <li><strong>Fideicomisario.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre o razón social del fideicomisario.</strong> Proporcionar nombre completo.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomisario.</li>
-                    <li><strong>Sector productivo al que pertenece.</strong> Seleccionar alguno de la lista desplegable.</li>
-                    <li><strong>¿Dónde se localiza el fideicomiso?</strong> Seleccionar en México o en el extranjero.</li>
+                    <li><p align="justify"><strong>Titular de la participación.</strong> Elegir quién es el participante en el fideicomiso, el Declarante, Pareja o dependiente económico.</p></li>
+                    <li><p align="justify"><strong>Tipo de fideicomiso.</strong> Seleccionar si es público, privado o mixto.</p></li>
+                    <li><p align="justify"><strong>Tipo de participación.</strong> Seleccionar su participación como fideicomitente, fiduciario, fideicomisario o dentro del Comité Técnico.</p></li>
+                    <li><p align="justify"><strong>Tipo de persona del fideicomiso.</strong> Seleccionar si es persona física o persona moral.</p></li>
+                    <li><p align="justify"><strong>Nombre o razón social del fideicomiso.</strong> Proporcionar nombre completo.</p></li>
+                    <li><p align="justify"><strong>RFC del fideicomiso.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomiso.</p></li>
+                    <li><p align="justify"><strong>Fideicomitente.</strong> Seleccionar si es persona física o persona moral.</p></li>
+                    <li><p align="justify"><strong>Nombre o razón social del fideicomitente.</strong> Proporcionar nombre completo.</p></li>
+                    <li><p align="justify"><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomitente.</p></li>
+                    <li><p align="justify"><strong>Tipo de personal del fiduciario.</strong> Seleccionar si es persona física o persona moral.</p></li>
+                    <li><p align="justify"><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fiduciario.</p></li>
+                    <li><p align="justify"><strong>Fideicomisario.</strong> Seleccionar si es persona física o persona moral.</p></li>
+                    <li><p align="justify"><strong>Nombre o razón social del fideicomisario.</strong> Proporcionar nombre completo.</p></li>
+                    <li><p align="justify"><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomisario.</p></li>
+                    <li><p align="justify"><strong>Sector productivo al que pertenece.</strong> Seleccionar alguno de la lista desplegable.</p></li>
+                    <li><p align="justify"><strong>¿Dónde se localiza el fideicomiso?</strong> Seleccionar en México o en el extranjero.</p></li>
                 </ol>
-                <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
+                <p align="justify"><strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.</p>
             </div>
         </div>
         <div class="card-body">

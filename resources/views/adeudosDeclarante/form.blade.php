@@ -1,11 +1,11 @@
 <div class="form-row">
     <div class="form-group col-md-4">
-       <strong>{!! Form::label('adeudos.titular_adeudo_id', 'Titular del adeudo:') !!}</strong>
+       <strong>{!! Form::label('adeudos.titular_adeudo_id', 'Titular del adeudo: *') !!}</strong>
         {!! Form::select('adeudos[titular_adeudo_id]', $tipoDeclarante, isset($adeudos) ? $adeudos->titular_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase color-tercero','id' => 'inputSelect', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('adeudos.tipo_adeudo_id', ' Tipo de adeudo: ') !!}</strong>
+        <strong> {!! Form::label('adeudos.tipo_adeudo_id', ' Tipo de adeudo: *') !!}</strong>
         {!! Form::select('adeudos[tipo_adeudo_id]', $tipoAdeudos, isset($adeudos) ? $adeudos->tipo_adeudo_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase color-tercero','id' => 'tipo_adeudo', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -34,36 +34,36 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('adeudos.numero_cuenta', 'Número de cuenta o contrato:') !!}</strong>
+        <strong> {!! Form::label('adeudos.numero_cuenta', 'Número de cuenta o contrato: *') !!}</strong>
         {!! Form::number('adeudos[numero_cuenta]',isset($adeudos) ? $adeudos->numero_cuenta : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. 01010101',  'id' => 'inst_educativa', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="date">
-        <strong>{!! Form::label('adeudos.fecha_adquisicion', 'Fecha de adquisición del adeudo/pasivo:') !!}</strong>
+        <strong>{!! Form::label('adeudos.fecha_adquisicion', 'Fecha de adquisición del adeudo/pasivo: *') !!}</strong>
         {!! Form::date('adeudos[fecha_adquisicion]', isset($adeudos) ? $adeudos->fecha_adquisicion : null,['class'=>'form-control text-uppercase  color-tercero', 'id' => 'fecha_adquisicion', 'required' => 'true', 'max'=>date("Y-m-d")]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>  {!! Form::label('adeudos.monto_adeudo', 'Monto original del adeudo/pasivo:') !!}</strong>
+        <strong>  {!! Form::label('adeudos.monto_adeudo', 'Monto original del adeudo/pasivo: *') !!}</strong>
         {!! Form::number('adeudos[monto_adeudo]', isset($adeudos) ? $adeudos->monto_adeudo : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'carrera', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('adeudos.tipo_moneda', 'Tipo de moneda:') !!}</strong>
+        <strong> {!! Form::label('adeudos.tipo_moneda', 'Tipo de moneda: *') !!}</strong>
         {!! Form::select('adeudos[tipo_moneda]', $tipoMoneda, isset($adeudos) ? $adeudos->tipo_moneda : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'SELECCIONE UNA OPCION',  'id' => 'inst_educativa', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('adeudos.saldo_insoluto', 'Saldo insoluto (a la fecha de ingreso):') !!}</strong>
+        <strong> {!! Form::label('adeudos.saldo_insoluto', 'Saldo insoluto (a la fecha de ingreso): *') !!}</strong>
         {!! Form::number('adeudos[saldo_insoluto]', isset($adeudos) ? $adeudos->saldo_insoluto : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'inst_educativa', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('adeudos.tipo_otorgante_id', 'Otorgante del crédito:') !!}</strong>
+        <strong> {!! Form::label('adeudos.tipo_otorgante_id', 'Otorgante del crédito: *') !!}</strong>
         {!! Form::select('adeudos[tipo_otorgante_id]', $tipoPersona, isset($adeudos) ? $adeudos->tipo_otorgante_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control text-uppercase color-tercero','id' => 'otorgante_credito', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -150,10 +150,10 @@
                 $(".color-tercero").removeClass("alert-danger");
             }
         });
-        
+
 
         $('#tipo_adeudo').change(function () {
-           var value = $(this).val();  
+           var value = $(this).val();
             if (value == "7") {
                document.getElementById("especifique_adeudo").disabled = false;
                $("#especifique_adeudo").prop("required", true)
@@ -165,23 +165,23 @@
                 document.getElementById("especifique_adeudo").disabled = true;
             }
 
-        
+
         });
 
         $('#date').change(function () {
-  
-            var fecha = $('#fecha_adquisicion').val();    
+
+            var fecha = $('#fecha_adquisicion').val();
             var nuevo = fecha.replace(/[-]/gi, '/');
             var dia_futuro =  new Date(nuevo);
             var hoy =  new Date();
-            if (hoy <= dia_futuro){ 
+            if (hoy <= dia_futuro){
                 $("#modalDeclaracion").modal("show");
                 $("#fecha_adquisicion").val("");
             }
-    
+
         });
-        
-    
+
+
         $('#codeudor').change(function () {
            var valcod = $(this).val();
            if (valcod > "1") {
@@ -189,15 +189,15 @@
                 document.getElementById('nombre_del_codeudor').placeholder = 'p.ej. Desarrollo y Redes S.A de C.V.';
                 document.getElementById('rfc_codeudor').placeholder = 'p.ej.XXX010101';
                 $('#rfc_codeudor').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{2}');
-                $('#rfc_codeudor').attr("title", 'Ingresa RFC a 12 dígitos'); 
+                $('#rfc_codeudor').attr("title", 'Ingresa RFC a 12 dígitos');
                 document.getElementById("nombre_del_codeudor").disabled = false;
                 document.getElementById("rfc_codeudor").disabled = false;
             } else {
                 document.getElementById('labelcod').innerText = 'Nombre:';
                 document.getElementById('nombre_del_codeudor').placeholder = 'p.ej. Juan Perez';
                 document.getElementById('rfc_codeudor').placeholder = 'p.ej.XXXX010101';
-                $('#rfc_codeudor').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}'); 
-                $('#rfc_codeudor').attr("title", 'Ingresa RFC a 13 dígitos'); 
+                $('#rfc_codeudor').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}');
+                $('#rfc_codeudor').attr("title", 'Ingresa RFC a 13 dígitos');
                 document.getElementById("nombre_del_codeudor").disabled = false;
                 document.getElementById("rfc_codeudor").disabled = false;
             }
@@ -218,7 +218,7 @@
                 document.getElementById('nomC').placeholder = 'p.ej. Desarrollo y Redes S.A de C.V.';
                 document.getElementById('rfC').placeholder = 'p.ej.XXX010101';
                 $('#rfC').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{2}');
-                $('#rfC').attr("title", 'Ingresa RFC a 12 dígitos'); 
+                $('#rfC').attr("title", 'Ingresa RFC a 12 dígitos');
                 $("#nomC").prop("required", true)
                 $("#rfC").prop("required", true)
                 document.getElementById("nomC").disabled = false;
@@ -228,8 +228,8 @@
                 document.getElementById('rfc_credito').innerText = 'RFC del otorgante:';
                 document.getElementById('nomC').placeholder = 'p.ej. Juan Perez';
                 document.getElementById('rfC').placeholder = 'p.ej.XXXX010101';
-                $('#rfC').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}'); 
-                $('#rfC').attr("title", 'Ingresa RFC a 13 dígitos');                
+                $('#rfC').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}');
+                $('#rfC').attr("title", 'Ingresa RFC a 13 dígitos');
                 $("#nomC").prop("required", true)
                 $("#rfC").prop("required", true)
                 document.getElementById("nomC").disabled = false;

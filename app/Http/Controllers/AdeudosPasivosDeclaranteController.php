@@ -39,7 +39,12 @@ class AdeudosPasivosDeclaranteController extends Controller
         $tipoDeclarante = Arr::pluck(\App\titularInversion::all(), "valor","id");
         $tipoAdeudos = Arr::pluck(\App\tipoAdeudo::all(), "valor","id");
         $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
-        $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
+
+        $tipoMonedaOtros = tipoMoneda::where("clave","!=","MXN")->orderBy("valor","asc")->get();
+        $tipoMonedaMexico = tipoMoneda::whereClave("MXN")->get();
+        $tipoMonedas = $tipoMonedaMexico->merge($tipoMonedaOtros);
+        $tipoMoneda = Arr::pluck($tipoMonedas,"valor","id");
+
         $lugarUbicacion = Arr::pluck(\App\LugarUbicacion::all(), "valor","id");
         $entidades = Arr::pluck(\App\Entidad::all(), "entidad","id");
         $paises = Arr::pluck(\App\Pais::all(), "valor","id");

@@ -86,11 +86,11 @@ class FideicomisosController extends Controller
             $fideicomiso[$item->id] = $item->valor;
         }
 
-        $tipoPersonaFideicomisos = tipoPersonaFideicomiso::all();
+        $tipoPersonaFideicomisos = RegimenFiscal::all();
         $tipoPersonaFideicomisoD = [];
         $tipoPersonaFideicomisoD[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($tipoPersonaFideicomisos as $item){
-            $tipoPersonaFideicomisoD[$item->id] = $item->tipo_persona_fideicomiso;
+            $tipoPersonaFideicomisoD[$item->id] = $item->valor;
         }
 
         $entidad = Arr::pluck(Entidad::all(), 'entidad','id');

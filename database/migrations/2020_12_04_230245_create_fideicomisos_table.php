@@ -54,8 +54,7 @@ class CreateFideicomisosTable extends Migration
             $table->foreign('lugares_ubicacion_id')->references('id')->on('lugares_ubicacion');
             $table->unsignedBigInteger('entidades_id')->nullable();
             $table->foreign('entidades_id')->references('id')->on('entidades');
-            $table->unsignedBigInteger('paises_id')->nullable();
-            $table->foreign('paises_id')->references('id')->on('paises');
+            $table->string("pais")->nullable();
             $table->string('aclaraciones')->nullable();
             $table->string("tipoOperacion")->nullable();
             $table->softDeletes();

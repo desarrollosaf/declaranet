@@ -83,7 +83,7 @@
                         </center>
                     </div>
                 @else
-                    Cuando el Declarante, pareja y/o dependientes económicos sea propietario de alguna empresa, negocio o actividad lucrativa, deberá señalar a sus clientes principales, siempre y cuando el beneficio o ganancia directa supere mensualmente 250 Unidades de Medida y Actualización (UMA), refiriéndose al valor diario de ésta.
+                    Cuando el Declarante, pareja y/o dependientes económicos sea propietario de alguna empresa, negocio o actividad lucrativa, deberá señalar a sus clientes principales, siempre y cuando el beneficio o ganancia directa supere mensualmente 250 Unidades de Medida y Actualización (UMA), refiriéndose al valor diario de ésta la cual consta de 22,405(veinti dos mil cuatroscientos cinco).
 
                     <div class="alert alert-danger text-center" role="alert">
                         <label style="margin-top:10px;">

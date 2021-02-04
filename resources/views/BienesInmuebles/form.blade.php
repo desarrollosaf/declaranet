@@ -293,7 +293,7 @@
     <div class="form-row">
           <div class="form-group col-md-4">
             {!! Form::label('pais', 'País: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::select('domicilio[pais_id]',$selectPais,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control alert-danger extranjero text-uppercase','placeholder'=>'seleccione un pais', 'id' => 'pais']) !!}
+            {!! Form::text('domicilio[pais]',isset($domicilio) ? $domicilio->pais: null,['class'=>'form-control alert-danger extranjero text-uppercase','placeholder'=>'p. ej. Estados Unidos', 'id' => 'pais']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -427,18 +427,18 @@
 //                alert('vacio');
                 $(".terceros").hide();
                 $('#tipo_tercero_id').prop('required', false);
-                
-                
+
+
             } else if (value === 3 || value === 4 || value === 8 || value === 10 || value === 13 || value === 15 || value === 18 || value === 19 || value === 24) {
 //                alert('Terceros');
                 $(".terceros").show();
                 $('#tipo_tercero_id').prop('required', true);
-                
+
             } else {
 //                alert('otros');
                 $(".terceros").hide();
                 $('#tipo_tercero_id').prop('required', false);
-                
+
             }
         });
 
@@ -458,7 +458,7 @@
                 $('#rfc_tercero_moral').removeAttr('required');
                 $('#rfc_tercero_moral').removeAttr('pattern');
 
-                
+
 
             } else if (parseInt($(this).val()) === 1) {
 //                alert('fisica');
@@ -472,7 +472,7 @@
                 $('#rfc_tercero_moral').removeAttr('required');
                 $('#rfc_tercero_moral').removeAttr('pattern');
 
-                
+
 
             } else {
 //                alert('moral');
@@ -483,7 +483,7 @@
 
                 $('#rfc_tercero_fisica').removeAttr('required');
                 $('#rfc_tercero_fisica').removeAttr('pattern');
-                
+
                 $('#nombre_razon_tercero_moral').prop('required', true);
                 $('#rfc_tercero_moral').prop('required', true);
 
@@ -515,7 +515,7 @@
                 $('.moral').hide();
 
                 $('#nombreTransmisorF').prop('required', true);
-                $('#rfcTransmisorF').prop('required', true);
+                $('#rfcTransmisorF').prop('required', false);
 
                 $('#nombreTransmisorM').removeAttr('required');
                 $('#rfcTransmisorM').removeAttr('required');
@@ -561,7 +561,7 @@
 
                 $('#codigo_postalExt').removeAttr('required');
                 $('#codigo_postalExt').removeAttr('pattern');
-                
+
 
             } else if (parseInt($(this).val()) === 2) {
                 $('.domicilio-MXBinmuebles').hide();
@@ -605,14 +605,14 @@
                 $('#colonia_Ext').prop('required', false);
                 $('#pais').prop('required', false);
                 $('#codigo_postalExt').prop('required', false);
-                
+
                 $('#codigo_postalExt').removeAttr('required');
                 $('#codigo_postalExt').removeAttr('pattern');
-                
+
             }
         });
-        
-        
+
+
         $("#entidad_id").on('change', function () {
             var idEntidad = $(this).val();
             if (parseInt(idEntidad) === 15) {
@@ -643,11 +643,11 @@
         $('#tipo_tercero_id').change();
         $('#tipo_transmisor_id').change();
         $('#ubicacion_inmueble_id').change();
-        $('#relacion_transmisor_id').change();        
+        $('#relacion_transmisor_id').change();
 
         @endif
     });
-    
+
 
 </script>
 @endsection

@@ -11,6 +11,10 @@
     "clave": "BCH",
     "valor": "BACHILLERATO"
   },
+    {
+        "clave": "BCHT",
+        "valor": "BACHILLERATO TECNOLOGICO"
+    },
   {
     "clave": "CTC",
     "valor": "CARRERA TÉCNICA O COMERCIAL"
@@ -30,5 +34,9 @@
   {
     "clave": "DOC",
     "valor": "DOCTORADO"
-  }
+  },
+    {
+    "clave": "POST",
+    "valor": "POSGRADO"
+}
 ]

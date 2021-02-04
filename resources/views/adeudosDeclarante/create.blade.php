@@ -14,26 +14,26 @@
         <div class="collapse" id="collapseAdeudos">
             <div class="card card-body">
                 <ol>
-                    <li><strong>Titular del adeudo.</strong> Seleccionar alguna de las opciones del catálogo desplegable. En caso de señalar codeudor deberá indicar el nombre del tercero o terceros.</li>
-                    <li><strong>Tipo de adeudo.</strong> Seleccionar cualquiera de las siguientes opciones: crédito hipotecario, crédito automotriz, crédito personal, tarjeta de crédito bancaria, tarjeta de crédito departamental y préstamo personal, otros.<br>
+                    <li><p align="justify"><strong>Titular del adeudo.</strong> Seleccionar alguna de las opciones del catálogo desplegable. En caso de señalar codeudor deberá indicar el nombre del tercero o terceros.</p></li>
+                    <li><p align="justify"><strong>Tipo de adeudo.</strong> Seleccionar cualquiera de las siguientes opciones: crédito hipotecario, crédito automotriz, crédito personal, tarjeta de crédito bancaria, tarjeta de crédito departamental y préstamo personal, otros.<br>
                         Se entenderá por crédito personal, aquel obtenido ante una institución de crédito o bancaria.<br>
-                        Se entenderá por préstamo personal, aquel obtenido a través de un familiar, amigo y/o conocido del Declarante.
+                            Se entenderá por préstamo personal, aquel obtenido a través de un familiar, amigo y/o conocido del Declarante.</p>
                     </li>
-                    <li><strong>Codeudor.</strong> En caso de ser codeudor con un tercero, seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre del codeudor.</strong> En caso de señalar codeudor, escribir el nombre, así como apellidos completos sin abreviaturas y sin acentos ni signos especiales. Si se trata de persona moral deberá proporcionar la denominación o razón social de la institución tal y como se encuentra en el documento con el que se acredita la adquisición.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos.</li>
-                    <li><strong>Número de cuenta o contrato.</strong> Señalar el número de contrato, cuenta o cualquier dato que permita su identificación, en caso de préstamo personal se indicará no aplica.</li>
-                    <li><strong>Fecha de adquisición del adeudo/pasivo.</strong> Indicar la fecha en que adquirió el adeudo.</li>
-                    <li><strong>Monto original del adeudo/pasivo.</strong> Es necesario capturar cantidades sin comas, sin puntos, sin centavos y sin ceros a la izquierda. El monto a reportar será el inicial al adeudo.</li>
-                    <li><strong>Tipo de moneda.</strong> Seleccionar la moneda relativa al adeudo.</li>
-                    <li><strong>Saldo insoluto.</strong> Es necesario capturar cantidades sin comas, sin puntos, sin centavos y sin ceros a la izquierda.</li>
-                    <li><strong>Otorgante del crédito.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre, Institución o razón social (si aplica).</strong> Señalar el nombre de la institución donde contrajo la deuda.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos.</li>
-                    <li><strong>Dónde se localiza el adeudo.</strong> Indicar si se encuentra en México o en el extranjero, debiendo señalar el país donde se localiza.</li>
+                    <li><p align="justify"><strong>Codeudor.</strong> En caso de ser codeudor con un tercero, seleccionar si es persona física o persona moral.</p></li>
+                    <li><p align="justify"><strong>Nombre del codeudor.</strong> En caso de señalar codeudor, escribir el nombre, así como apellidos completos sin abreviaturas y sin acentos ni signos especiales. Si se trata de persona moral deberá proporcionar la denominación o razón social de la institución tal y como se encuentra en el documento con el que se acredita la adquisición.</p></li>
+                    <li><p align="justify"><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos.</p></li>
+                    <li><p align="justify"><strong>Número de cuenta o contrato.</strong> Señalar el número de contrato, cuenta o cualquier dato que permita su identificación, en caso de préstamo personal se indicará no aplica.</p></li>
+                    <li><p align="justify"><strong>Fecha de adquisición del adeudo/pasivo.</strong> Indicar la fecha en que adquirió el adeudo.</p></li>
+                    <li><p align="justify"><strong>Monto original del adeudo/pasivo.</strong> Es necesario capturar cantidades sin comas, sin puntos, sin centavos y sin ceros a la izquierda. El monto a reportar será el inicial al adeudo.</p></li>
+                    <li><p align="justify"><strong>Tipo de moneda.</strong> Seleccionar la moneda relativa al adeudo.</p></li>
+                    <li><p align="justify"><strong>Saldo insoluto.</strong> Es necesario capturar cantidades sin comas, sin puntos, sin centavos y sin ceros a la izquierda.</p></li>
+                    <li><p align="justify"><strong>Otorgante del crédito.</strong> Seleccionar si es persona física o persona moral.</p></li>
+                    <li><p align="justify"><strong>Nombre, Institución o razón social (si aplica).</strong> Señalar el nombre de la institución donde contrajo la deuda.</p></li>
+                    <li><p align="justify"><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos.</p></li>
+                    <li><p align="justify"><strong>Dónde se localiza el adeudo.</strong> Indicar si se encuentra en México o en el extranjero, debiendo señalar el país donde se localiza.</p></li>
                 </ol>
 
-                <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
+                <p align="justify"><strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.</p>
 
           </div>
       </div>

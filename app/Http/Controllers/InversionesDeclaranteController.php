@@ -26,7 +26,7 @@ class InversionesDeclaranteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $inversiones = $declaracion->inversiones_cuentas;
         //dd($inversiones[0]->tipoInversion);
@@ -45,7 +45,12 @@ class InversionesDeclaranteController extends Controller
         $tipoInversion = Arr::pluck(\App\tipoInversion::all(), "valor","id");
         $subTipoInversion = Arr::pluck(\App\subTipoInversion::all(), "valor","id");
         $paises = Arr::pluck(\App\Pais::all(), "valor","id");
-        $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
+
+        $tipoMonedaOtros = tipoMoneda::where("clave","!=","MXN")->orderBy("valor","asc")->get();
+        $tipoMonedaMexico = tipoMoneda::whereClave("MXN")->get();
+        $tipoMonedas = $tipoMonedaMexico->merge($tipoMonedaOtros);
+        $tipoMoneda = Arr::pluck($tipoMonedas,"valor","id");
+
         $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
         $ubicacionInversion = Arr::pluck(\App\ubicacionInversion::all(), "valor","id");
         return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion'));
@@ -122,7 +127,7 @@ class InversionesDeclaranteController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $inversionesDeclarante = InversionesDeclarante::find($id);
         $inversionesDeclarante->delete();
         return redirect()->route("inversiones.index");

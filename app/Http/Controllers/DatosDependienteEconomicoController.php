@@ -6,6 +6,7 @@ use App\AmbitoSector;
 use App\extranjero;
 use App\lugarDondeReside;
 use App\parentescoRelacion;
+use App\Respuesta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
@@ -36,7 +37,7 @@ class DatosDependienteEconomicoController extends Controller
     public function create()
     {
         $parentesco = \App\RelacionTransmisor::all();
-       
+
         $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($parentesco as $item){
             $selectParentesco[$item->id] = $item->valor;
@@ -66,8 +67,9 @@ class DatosDependienteEconomicoController extends Controller
         array_unshift($sectores,"Selecciona una opcion");
         $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
         $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
+        $contratista_gobierno = Arr::pluck(Respuesta::all(), "respuesta", "id");
 
-        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito'));
+        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','contratista_gobierno'));
     }
 
     /**
@@ -122,7 +124,7 @@ class DatosDependienteEconomicoController extends Controller
     public function edit($id)
     {
         $parentesco = parentescoRelacion::all();
-       
+
         $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($parentesco as $item){
             $selectParentesco[$item->id] = $item->valor;
@@ -152,7 +154,7 @@ class DatosDependienteEconomicoController extends Controller
         array_unshift($sectores,"Selecciona una opcion");
         $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
         $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
-        
+
         $dependiente = \App\DependienteEconomico::find($id);
         $domicilio = $dependiente->domicilio;
         $municipios = array();
@@ -161,9 +163,10 @@ class DatosDependienteEconomicoController extends Controller
                 $municipios = Arr::pluck(\App\Municipio::where("entidad_id",$domicilio->entidad_id)->get(),'municipio','id');
             }
         }
+        $contratista_gobierno = Arr::pluck(Respuesta::all(), "respuesta", "id");
         $dato_laboral = $dependiente->dato_laboral;
 
-        return view('dependienteEconomico.edit', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','dependiente','domicilio','dato_laboral','municipios'));
+        return view('dependienteEconomico.edit', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','dependiente','domicilio','dato_laboral','municipios','contratista_gobierno'));
     }
 
     /**
@@ -190,7 +193,7 @@ class DatosDependienteEconomicoController extends Controller
             $privado["proveedor_gobierno"] = true;
         }else{
             $privado["proveedor_gobierno"] = false;
-            
+
         }
         $dependiente  = \App\DependienteEconomico::find($id);
         $dependiente->update($dependienteRequest);

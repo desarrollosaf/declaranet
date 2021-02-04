@@ -120,7 +120,7 @@
         <br>
         <div class="col-md-1"></div>
         <div class="col-md-9">
-            <span style="font-weight: bold;">II.2 Por actividad financiera (rendimientos o ganancias:</span><br>
+            <span style="font-weight: bold;">II.2 Por actividad financiera (rendimientos o ganancias):</span><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<label>(Después de impuestos).</label>
         </div>
         <div class="col-md-2">
@@ -151,7 +151,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-9">
             <span
-                style="font-weight: bold;">II.3 Por servicios profesionales, consejos, consultorias y/o asesorias:</span><br>
+                style="font-weight: bold;">II.3 Por servicios profesionales, consejos, consultorías y/o asesorías:</span><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<label>(Después de impuestos).</label>
         </div>
         <div class="col-md-2">

@@ -55,7 +55,7 @@
         $(document).ready(function(){
             $("#nivel_id").on("change", function(){
                 var nivel = $('#nivel_id option:selected').html();
-                if(nivel == "PRIMARIA" || nivel == "SECUNDARIA"){
+                if(nivel == "PRIMARIA" || nivel == "SECUNDARIA"|| nivel == "BACHILLERATO"){
                     $("#carrera_area").prop("disabled", true);
                     $("#carrera_area").removeAttr("required");
                     $("#carrera_area").val("");

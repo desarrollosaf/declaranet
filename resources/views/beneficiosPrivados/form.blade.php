@@ -166,6 +166,8 @@
                 $("#rfc_otorganteM").val("");
                 $( "#razon_social_otorgante" ).prop( "required", false );
                 $( "#rfc_otorganteM" ).prop( "required", false );
+                $( "#rfc_otorgante" ).prop( "required", false );
+
             }else{
 
                 $( "#razon_social_otorgante" ).prop( "disabled", false );

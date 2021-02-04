@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\tipoMoneda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
 class BienesInmueblesController extends Controller {
-    
+
     private $request;
     public function __construct(Request $request) {
         $this->request = $request;
@@ -30,48 +31,52 @@ class BienesInmueblesController extends Controller {
     public function create() {
         //COMBO TIPO INMUEBLE
         $selecttipoInmueble = Arr::pluck(\App\TipoInmueble::all(), "valor", "id");
-        
+
         //COMBO TITULAR INMUEBLE
         $selecttitularInmueble = Arr::pluck(\App\Titular::all(), "valor", "id");
-       
+
 
         //COMBO FORMA ADQUISICIÓN
         $selectformaAdquisicion = Arr::pluck(\App\formaAdquisicion::all(), "valor", "id");
-       
+
         //COMBO FORMA DE PAGO
         $selectformaPago = Arr::pluck(\App\FormasPagos::all(), "valor", "id");
-       
+
         //COMBO RELACION TRANSMISOR
         $selectRelacionTransmisor = Arr::pluck(\App\relacionTransmisor::all(), "valor", "id");
-       
+
         //COMBO VALOR CONFORME A
         $selectvalorConforme = Arr::pluck(\App\valorConformeA::all(), "valor", "id");
-       
+
         //COMBO UBICACION INMUEBLE
         $selectubicacionInmueble = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-       
+
         //COMBO REGIMEN FISCAL
         $selectRegimenFiscal = Arr::pluck(\App\regimenFiscal::all(), "valor", "id");
-       
+
         //COMBO ENTIDAD
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
-        
+
         //COMBO TIPO MONEDA
-        $selectMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor", "id");
-       
+
+        $tipoMonedaOtros = tipoMoneda::where("clave","!=","MXN")->orderBy("valor","asc")->get();
+        $tipoMonedaMexico = tipoMoneda::whereClave("MXN")->get();
+        $tipoMoneda = $tipoMonedaMexico->merge($tipoMonedaOtros);
+        $selectMoneda = Arr::pluck($tipoMoneda,"valor","id");
+
         //COMBO ENTIDAD
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
-        
+
         //COMBO MUNICIPIO
         $selectMunicipio = Arr::pluck(\App\Municipio::all(), "municipio", "id");
-        
-        
+
+
         $selectPais = Arr::pluck(\App\Pais::all(),'valor',"id");
-       
+
 
         return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal','selectPais', 'selectEntidad', 'selectMunicipio', 'selectMoneda'));
-    
-        
+
+
     }
 
     /**
@@ -129,7 +134,7 @@ class BienesInmueblesController extends Controller {
             $domicilio['num_int'] = $domicilio['numintExt'];
             $domicilio['colonia'] = $domicilio['colonia_Ext'];
             $domicilio['entidad'] = $domicilio['entidadExt'];
-            $domicilio['pais_id'] = $domicilio['pais_id'];
+            $domicilio['pais'] = $domicilio['pais'];
             $domicilio['codigo_postal'] = $domicilio['codigo_postalExt'];
         }
 
@@ -161,46 +166,46 @@ class BienesInmueblesController extends Controller {
     public function edit($id) {
        //COMBO TIPO INMUEBLE
         $selecttipoInmueble = Arr::pluck(\App\TipoInmueble::all(), "valor", "id");
-        
+
         //COMBO TITULAR INMUEBLE
         $selecttitularInmueble = Arr::pluck(\App\Titular::all(), "valor", "id");
-        
+
         //COMBO FORMA ADQUISICIÓN
         $selectformaAdquisicion = Arr::pluck(\App\formaAdquisicion::all(), "valor", "id");
-        
+
         //COMBO FORMA DE PAGO
         $selectformaPago = Arr::pluck(\App\FormasPagos::all(), "valor", "id");
-        
+
         //COMBO RELACION TRANSMISOR
         $selectRelacionTransmisor = Arr::pluck(\App\relacionTransmisor::all(), "valor", "id");
-        
+
         //COMBO VALOR CONFORME A
         $selectvalorConforme = Arr::pluck(\App\valorConformeA::all(), "valor", "id");
-        
+
         //COMBO UBICACION INMUEBLE
         $selectubicacionInmueble = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-        
+
         //COMBO REGIMEN FISCAL
         $selectRegimenFiscal = Arr::pluck(\App\regimenFiscal::all(), "valor", "id");
-        
+
         //COMBO ENTIDAD
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
 
         //COMBO TIPO MONEDA
         $selectMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor", "id");
-               
+
         //COMBO MUNICIPIO
         $selectMunicipio = Arr::pluck(\App\Municipio::all(), "municipio", "id");
 
-        
+
          $selectPais = Arr::pluck(\App\Pais::all(),'valor',"id");
-        
+
         $bien = \App\BienInmueble::find($id);
         $domicilio = $bien->domicilio;
 //        dd($bien->domicilio);
         return view("BienesInmuebles.edit", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMoneda', 'selectMunicipio', 'bien','selectPais', 'domicilio'));
-    
-        
+
+
     }
 
     /**
@@ -212,7 +217,7 @@ class BienesInmueblesController extends Controller {
      */
     public function update(Request $request, $id) {
         $bienrow = \App\BienInmueble::find($id);
-        
+
         $bien = $request->input('bienesinmuebles');
         //TIPO TERCERO
         if ($bien['tipo_tercero_id'] == 1) {
@@ -264,16 +269,16 @@ class BienesInmueblesController extends Controller {
             $domicilioB['pais'] = $domicilio['pais'];
             $domicilioB['codigo_postal'] = $domicilio['codigopostalExt'];
         }
-        
-        
+
+
         //dd($bien);
-        $bienrow->update($bien);   
-        $bienrow->domicilio()->update($domicilioB);    
-        
+        $bienrow->update($bien);
+        $bienrow->domicilio()->update($domicilioB);
+
         return redirect()->route('bienes_inmuebles.index');
-        
-        
-        
+
+
+
     }
 
     /**

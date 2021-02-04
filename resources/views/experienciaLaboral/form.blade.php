@@ -6,6 +6,14 @@
         {!! Form::select('experiencia[ambito_sector_id]', $ambitos_sectores, isset($experiencia) ? $experiencia->ambito_sector_id : [],['class'=>'form-control text-uppercase','id' => 'ambito_sector_id', 'placeholder' => 'Selecciona una opción', 'required' => true]) !!}
     </div>
 </div>
+<div class="row" >
+    <div class="col-md-5 PRIVADO">
+        <strong> {!! Form::label('experiencia[regimen_fiscal_id]', 'Tipo de empleador: *') !!}</strong>
+    </div>
+    <div class="form-group col-md-5 PRIVADO">
+        {!! Form::select('experiencia[regimen_fiscal_id]', $regimenFiscal, isset($experiencia) ? $experiencia->regimen_fiscal_id : [],['class'=>'form-control text-uppercase','id' => 'regimen_fiscal_id', 'placeholder' => 'Selecciona una opción', 'required' => true]) !!}
+    </div>
+</div>
 <div class="row">
     <div class="form-group col-md-4 PRIVADO">
         <strong>{!! Form::label('nombre_empresa', 'Nombre de la empresa, sociedad o asociación: *') !!} </strong>
@@ -17,7 +25,7 @@
         {!! Form::select('experiencia[nivel_orden_gobierno_id]', $nivelOrdenGobierno,isset($experiencia) ? $experiencia->nivel_orden_gobierno_id : [],['class'=>'form-control text-uppercase','id' => 'nivel_orden_gobierno_id','placeholder' => 'Selecciona una opción', 'required' => true]) !!}
     </div>
     <div class="form-group col-md-4 PRIVADO">
-        <strong>{!! Form::label('celpersonal', 'RFC:  *') !!}</strong>
+        <strong>{!! Form::label('celpersonal', 'RFC:  ') !!}</strong>
         {!! Form::text('experiencia[rfc]',isset($experiencia) ? $experiencia->rfc : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. XXX01011001010.','id' => 'rfc', 'required' => true , 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{9})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>

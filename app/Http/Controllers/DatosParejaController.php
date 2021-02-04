@@ -11,6 +11,7 @@ use App\lugarDondeReside;
 use App\LugarUbicacion;
 use App\Municipio;
 use App\Pais;
+use App\regimenFiscal;
 use App\relacionConDeclarante;
 use App\Respuesta;
 use App\sector;
@@ -79,7 +80,8 @@ class DatosParejaController extends Controller {
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
         $selectPais = Arr::pluck(Pais::where("id", '=', 152)->get(), "valor", "id");
         $respuesta = Arr::pluck(Respuesta::all(), "respuesta", "id");
-        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector'));
+        $regimenFiscal = Arr::pluck(regimenFiscal::all(), "valor", "id");
+        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector','regimenFiscal'));
     }
 
     /**
@@ -98,6 +100,7 @@ class DatosParejaController extends Controller {
             $domicilio['num_ext'] = $domicilioExt['numextExt'];
             $domicilio['num_int'] = $domicilioExt['numintExt'];
             $domicilio['colonia'] = $domicilioExt['coloniaExt'];
+            $domicilio['pais'] = $domicilioExt['pais'];
             $domicilio['entidad'] = $domicilioExt['estadoprovincia'];
             $domicilio['codigo_postal'] = $domicilioExt['codigopostalExt'];
         }
@@ -154,6 +157,7 @@ class DatosParejaController extends Controller {
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
         $selectPais = Arr::pluck(Pais::where("id", '!=', 152)->get(), "valor", "id");
         $respuesta = Arr::pluck(Respuesta::all(), "respuesta", "id");
+        $regimenFiscal = Arr::pluck(regimenFiscal::all(), "valor", "id");
         $pareja = DatosPareja::find($id);
         $domicilio = $pareja->domicilio;
         if ($domicilio != null) {
@@ -162,7 +166,7 @@ class DatosParejaController extends Controller {
             $selectMunicipio = [];
         }
         $experienciaLaboral = $pareja->experienciaLaboral;
-        return view('datosParejaDeclarante.edit', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'pareja', 'domicilio', 'experienciaLaboral', 'selectMunicipio'));
+        return view('datosParejaDeclarante.edit', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'pareja', 'domicilio', 'experienciaLaboral', 'selectMunicipio','regimenFiscal'));
     }
 
     /**

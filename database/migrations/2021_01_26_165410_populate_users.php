@@ -24,8 +24,13 @@ class PopulateUsers extends Migration
                 "segundo_apellido" => null,
                 "rfc" => rand(),
                 "curp" => rand(),
-                "homoclave" => rand()
+                "homoclave" => rand(),
+                "fecha_inicio" => now(),
+                "cargo" => "desarrollo",
+                "nivel_cargo" => "1",
+                "tipo_dependencia" => "1"
             ]);
+
             $servidor = DB::connection("mysql2")->table("servidores_publicos")->where("nombre","Desarrollo")->first();
             $user = DB::connection("mysql2")->table("users")->insert([
                 'name' => "Desarrollo",
@@ -37,6 +42,7 @@ class PopulateUsers extends Migration
             ]);
             dump($servidor->nombre);
         }
+
     }
 
     /**

@@ -201,7 +201,7 @@
             <div class="col-lg-4" id="ex" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>País donde se localiza:</strong></label>
-                    {!! Form::select('fideicomisos[paises_id]', $pais, isset($fideicomisos) ? $fideicomisos->paises_id : [],['class'=>'form-control',  'id' => 'paises_id', 'required' => true]) !!}
+                    {!! Form::text('fideicomisos[pais]', isset($fideicomisos) ? $fideicomisos->pais : null,['class'=>'form-control',  'id' => 'pais', 'required' => true, 'placeholder'=>'P. EJ. Estados Unidos']) !!}
                 </div>
             </div>
         </div>
@@ -256,10 +256,11 @@
                 $("#nombre_persona_moral").val("");
                 $("#nombre_persona_moral").prop("required",false);
                 $("#rfc_persona_moral").val("");
+                $("#rfc_persona_fisica").prop("required",false);
                 $("#rfc_persona_moral").prop("required",false);
-
                 $("#nombre_persona_fisica").prop("disabled",false);
                 $("#rfc_persona_fisica").prop("disabled",false);
+
             }else if(tipo_persona_fideicomiso == '2'){
                 document.getElementById('fisica_fideicomisoN').style.display="none";
                 document.getElementById('fisica_fideicomisoR').style.display="none";
@@ -380,6 +381,7 @@
                 $("#nombre_fideicomitente_moral").prop("required",false);
                 $("#rfc_fideicomitente_moral").val("");
                 $("#rfc_fideicomitente_moral").prop("required",false);
+
 
                 $("#nombre_fideicomitente_fisica").prop("disabled",false);
                 $("#rfc_fideicomitente_fisica").prop("disabled",false);

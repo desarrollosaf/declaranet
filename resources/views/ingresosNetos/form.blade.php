@@ -15,7 +15,7 @@
         </table>
     </div>
     <div class="col-md-12">
-        <span style="font-weight: bold; color:#640223;">II. OTROS INGRESOS DEL DECLARANTE (SUMA DEL II.1 AL II.4 </span>
+        <span style="font-weight: bold; color:#640223;">II. OTROS INGRESOS DEL DECLARANTE (SUMA DEL II.1 AL II.4) </span>
     </div>
     <br>
     <br>
@@ -58,7 +58,7 @@
     <br>
     <div class="col-md-1"></div>
     <div class="col-md-9">
-        <span style="font-weight: bold;">II.2 Por actividad financiera (rendimientos o ganancias:</span><br>
+        <span style="font-weight: bold;">II.2 Por actividad financiera (rendimientos o ganancias):</span><br>
         <label>(Después de impuestos).</label>
     </div>
     <div class="col-md-2">
@@ -74,7 +74,7 @@
         <table style="width: 100%;">
             <tr>,
                 <td width='40%'>
-                    <strong>{!! Form::label('ingresoMensual.tipo_de_instrumento', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</strong></td>   
+                    <strong>{!! Form::label('ingresoMensual.tipo_de_instrumento', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</strong></td>
                 <td>{!! Form::select('ingresoMensual[tipo_de_instrumento]', $tipoInstrumento, isset($ingresoMensual) ? $ingresoMensual->tipo_de_instrumento : null,['placeholder' => 'SELECCIONE UNA OPCION','class'=>'form-control text-uppercase', 'id' => 'tipo_de_instrumento']) !!}</td>
             </tr>
             <tr class="especifique-instrumento" style="display: none">
@@ -87,7 +87,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-1"></div>
     <div class="col-md-9">
-        <span style="font-weight: bold;">II.3 Por servicios profesionales, consejos, consultorias y/o asesorias:</span><br>
+        <span style="font-weight: bold;">II.3 Por servicios profesionales, consejos, consultorías y/o asesorías:</span><br>
         <label>(Después de impuestos).</label>
     </div>
     <div class="col-md-2">
@@ -145,12 +145,12 @@
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_neto', '$') !!}</td>
                 <td align='left'>{!! Form::number('ingresoMensual[ingreso_mensual_neto]',(isset($ingresoMensual->ingreso_mensual_neto)) ? $ingresoMensual->ingreso_mensual_neto: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_neto', 'required' => 'true', "readOnly"=> true, 'value' => '30']) !!}</td>
-                
+
             </tr>
             <tr>
                 <td align='right'>{!! Form::label('ingresoMensual.ingreso_mensual_suma', '$') !!}</td>
                 <td align='left'>{!! Form::number('ingresoMensual[ingreso_mensual_suma]',(isset($ingresoMensual->ingreso_mensual_suma)) ? $ingresoMensual->ingreso_mensual_suma: null,['class'=>'form-control text-uppercase',  'placeholder'=>'P. ej. $1000', 'id' => 'ingreso_mensual_suma', 'required' => 'true', "readOnly"=> true]) !!}</td>
-                
+
             </tr>
         </table>
     </div>
@@ -189,8 +189,8 @@
         <center>
             <a href="{{route("datos_dependiente_declarante.index")}}" class="btn btn-submit btn-sm text-light">Ir a la sección
                 anterior</a>
-             
-            {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}       
+
+            {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
         </center>
     </div>
 
@@ -198,9 +198,9 @@
     @section('scripts')
     <script type="text/javascript">
         function sumar(){
-            
+
             neto = document.forms["frmIngresosNetos"].elements;
-            
+
             var n1 = Number(neto["ingreso_mensual_publico"].value);
             var n2 = Number(neto["ingreso_por_actividad_ice"].value);
             var n3 = Number(neto["ingreso_por_actividad_financiera"].value);
@@ -213,7 +213,7 @@
             var total = to.toFixed(2);
             var totalDecl = toDecl.toFixed(2);
             var totalDP = toDP.toFixed(2);
-          
+
             if (!isNaN(total)) {
                 neto["ingreso_mensual_neto"].value = total;
             }
@@ -223,7 +223,7 @@
             if (!isNaN(totalDP)) {
                 neto["total_ingresos_declarante_pareja"].value = totalDP;
             }
-    
+
         }
 
         $("#tipo_de_instrumento").change(function () {
@@ -264,7 +264,7 @@
                     $("#ingreso_por_actividad_ice").prop("required", true)
                     $("#tipo_de_negocio").prop("required", true)
                 }
-        }); 
+        });
 
         $("#ingreso_por_actividad_financiera").keyup(function () {
                 if ($(this).val() === "") {
@@ -275,7 +275,7 @@
                 }
         });
 
-      
+
         $("#ingreso_por_servicios_profesionales").keyup(function () {
                 if ($(this).val() === "") {
                     $("#tipo_de_servicio").prop("required", false);
@@ -292,7 +292,7 @@
                 } else {
                     $("#ingreso_por_servicios_profesionales").prop("required", true)
                 }
-        });  
+        });
 
         $("#ingreso_otros").keyup(function () {
                 if ($(this).val() === "") {
@@ -310,9 +310,8 @@
                 } else {
                     $("#ingreso_otros").prop("required", true)
                 }
-        });   
+        });
 
     </script>
     @endsection
-    
-    
+

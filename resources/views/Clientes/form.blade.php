@@ -32,7 +32,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC:</strong></label>
-                    {!! Form::text('clientes[rfc]', isset($clientes) ? $clientes->rfc : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAX010101010',   'id' => 'rfc', 'pattern' => "([A-Z]{3}[0-9]{9})", 'title' => "Ingresa RFC a 12 dígitos" ,'required'=>true, 'maxlength'=>'12','size'=>'12']) !!}
+                    {!! Form::text('clientes[rfc]', isset($clientes) ? $clientes->rfc : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAX010101010',   'id' => 'rfc','required'=>true]) !!}
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
             <div class="col-lg-4" id="ex" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>País donde se localiza:</strong></label>
-                    {!! Form::select('clientes[paises_id]', $Pais, isset($clientes) ? $clientes->paises_id : [],['class'=>'form-control',  'id' => 'paises_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                    {!! Form::text('clientes[pais]', isset($clientes) ? $clientes->pais :null,['class'=>'form-control',  'id' => 'pais','required'=>true, 'placeholder' => 'P. EJ. Estados Unidos']) !!}
                 </div>
             </div>
         </div>
@@ -244,8 +244,10 @@
 
                 $("#nombre_cliente_moral").prop("required",false);
                 $("#rfc_cliente_moral").prop("required",false);
+                $("#rfc_cliente").prop("required",false);
                 $("#nombre_cliente_moral").val("");
                 $("#rfc_cliente_moral").val("");
+
             }else if(regimen_fiscal_id == '2'){
                 document.getElementById("fisicaN").style.display="none";
                 document.getElementById("fisicaR").style.display="none";

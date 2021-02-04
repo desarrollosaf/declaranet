@@ -45,6 +45,8 @@ class CreateExperienciaLaboralsTable extends Migration
             $table->unsignedBigInteger("respuesta_proveedor_id")->nullable();
             $table->foreign("respuesta_proveedor_id")->references("id")->on("respuestas");
             $table->string("tipoOperacion")->nullable();
+            $table->unsignedBigInteger("regimen_fiscal_id")->nullable();
+            $table->foreign("regimen_fiscal_id")->references("id")->on("regimen_fiscal");
             $table->timestamps();
             $table->softDeletes();
         });

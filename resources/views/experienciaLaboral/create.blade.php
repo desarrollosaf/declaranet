@@ -117,6 +117,7 @@
                                 </ol>
                             </li>
                         </ul>
+
                         Aclaraciones/observaciones. En este espacio el Declarante podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
                     </ol>
 
@@ -144,7 +145,7 @@
     $("#ambito_sector_id").on("change", function () {
 
         if ($(this).val() == "2") {
-            alert("2");
+            //alert("2");
             $(".PRIVADO").show();
             $(".AMBOS").show();
             $(".PÚBLICO").hide();
@@ -155,6 +156,16 @@
             $("#area_adscripcion").prop("required", false);
             $("#cargo_comision").prop("required", false);
             $("#funcion_pricipal").prop("required", false);
+         //   $("#rfc").prop("required", false)
+
+            $("#regimen_fiscal_id").on("change", function () {
+                if ($(this).val() == "1") {
+                    $("#rfc").prop("required", false)
+                }else{
+                    $("#rfc").prop("required", true)
+                }
+            });
+
 
             $("#sector_id").on("change", function () {
                 if ($(this).val() == "17") {
@@ -232,7 +243,7 @@
         }
     });
 
-    $("#fecha_egreso").on("change", function () {
+    $("#fecha_egreso").on("blur", function () {
         var fecha = document.getElementById("fecha_egreso").value;
         var fecha2 = document.getElementById("fecha_ingreso").value;
 

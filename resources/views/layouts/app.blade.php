@@ -576,7 +576,7 @@
                                                             class="ion ion-cash mr-2"></i>Bienes inmuebles</a>
                                                     <a href="{{route('vehiculos.index')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-cash mr-2"></i>Vehiculos</a>
+                                                            class="ion ion-cash mr-2"></i>Vehículos</a>
                                                     <a href="{{route('bienes_muebles.index')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-cash mr-2"></i>Bienes Muebles</a>
@@ -588,7 +588,7 @@
                                                             class="ion ion-cash mr-2"></i>Adeudos / Pasivos</a>
                                                     <a href="{{route('prestamos.index')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-cash mr-2"></i>Prestamo o comodato a terceros</a>
+                                                            class="ion ion-cash mr-2"></i>Préstamo o comodato a terceros</a>
                                                 </div>
                                             </ul>
                                         </div>

@@ -66,40 +66,40 @@ class VehiculosController extends Controller
         }
 
         $FormasPagos = FormasPagos::all();
-        $pago[""] = [];
+        $pago = [];
         foreach ($FormasPagos as $item) {
             $pago[$item->id] = $item->valor;
         }
 
         $Paises = Pais::all();
-        $pais[""] = [];
+        $pais = [];
         foreach ($Paises as $item) {
             $pais[$item->id] = $item->valor;
         }
 
         $RegimenFiscal = RegimenFiscal::all();
-        $regimen[""] = [];
+        $regimen = [];
         foreach ($RegimenFiscal as $item) {
             $regimen[$item->id] = $item->valor;
         }
 
         $titular_inmueble = Titular::all();
-        $titular[""] = [];
+        $titular = [];
         foreach ($titular_inmueble as $item) {
             $titular[$item->id] = $item->valor;
         }
 
         $entidades = Entidad::all();
-        $entidad[""] = [];
+        $entidad = [];
         foreach ($entidades as $item) {
             $entidad[$item->id] = $item->entidad;
         }
 
-        $tipoMoneda = tipoMoneda::all();
-        $moneda[""] = [];
-        foreach ($tipoMoneda as $item) {
-            $moneda[$item->id] = $item->valor;
-        }
+        $tipoMonedaOtros = tipoMoneda::where("clave","!=","MXN")->orderBy("valor","asc")->get();
+        $tipoMonedaMexico = tipoMoneda::whereClave("MXN")->get();
+        $tipoMoneda = $tipoMonedaMexico->merge($tipoMonedaOtros);
+        $moneda = Arr::pluck($tipoMoneda,"valor","id");
+
         $tipoOperacion = "AGREGAR";
 
         return view("Vehiculos.create", compact('vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda','tipoOperacion'));

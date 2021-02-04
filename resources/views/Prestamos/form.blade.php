@@ -67,7 +67,7 @@
                 <div id="lugarRegistroEx" style="display: none;">
                     <div class="form-group">
                         <label class="control-label" for="NumDoc"><strong>País: *</strong></label>
-                        {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos->pais_id) ? $vehiculos->pais_id : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'pais_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                        {!! Form::text('vehiculos[pais]', isset($vehiculos->pais) ? $vehiculos->pais : null,['class'=>'form-control', 'placeholder'=>'',  'id' => 'pais', 'placeholder' => 'Estados Unidos']) !!}
                     </div>
                 </div>
             </div>
@@ -214,7 +214,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <strong>{!! Form::label('domicilio.pais_id', 'País: *') !!}</strong>
-                    {!! Form::select('domicilio[pais_id]', $pais,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control tipo-titular',  'id' => 'pais', 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                    {!! Form::text('domicilio[pais]', isset($domicilio) ? $domicilio->pais : null,['class'=>'form-control tipo-titular',  'id' => 'pais', 'placeholder' => 'Estados Unidos']) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
@@ -326,7 +326,7 @@
                     $(".moral").hide();
                     $(".moral").find("text").val("");
                     $(".fisica").show();
-                    $(".fisica").find("input").prop("required", true).prop("readonly", false);
+                    $(".fisica").find("input").prop("required", false).prop("readonly", false);
                     $(".vehiculo-dueno").find("input").prop("required", true).prop("readonly", false);
                     $(".vehiculo-titular").find("input").prop("required", false);
                     $(".moral").find("input").prop("required", false);

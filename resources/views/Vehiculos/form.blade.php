@@ -14,7 +14,7 @@
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="control-label" for="NumDoc"><strong>Tipo de vehículo: *</strong></label>
-                        {!! Form::select('vehiculos[tipoVehiculo_id]', $vehiculo, isset($vehiculos) ? $vehiculos->tipoVehiculo_id : [],['class'=>'form-control',  'id' => 'tipoVehiculo_id', 'required' => true, 'placeholder' => 'SELECCIONA UNA OPCION']) !!}
+                        {!! Form::select('vehiculos[tipoVehiculo_id]', $vehiculo, isset($vehiculos) ? $vehiculos->tipoVehiculo_id : [],['class'=>'form-control',  'id' => 'tipoVehiculo_id', 'required' => true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                     </div>
                 </div>
 
@@ -27,7 +27,7 @@
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="control-label" for="ProcessNum"><strong>Titular del vehículo: *</strong></label>
-                        {!! Form::select('vehiculos[titular_id]', $titular, isset($vehiculos) ? $vehiculos->titular_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'titular_id', 'required' => true]) !!}
+                        {!! Form::select('vehiculos[titular_id]', $titular, isset($vehiculos) ? $vehiculos->titular_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'titular_id', 'required' => true]) !!}
 
                     </div>
 
@@ -46,7 +46,7 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label class="control-label" for="NumDoc"><strong>Tipo de Tercero: *</strong></label>
-                                    {!! Form::select('vehiculos[tipoPersonaTercero]', $regimen, isset($vehiculos) ? $vehiculos->tipoPersonaTercero : [],['class'=>'form-control',  'id' => 'tipoPersonaTercero', 'placeholder' => 'SELECCIONA UNA OPCION', 'required' => true]) !!}
+                                    {!! Form::select('vehiculos[tipoPersonaTercero]', $regimen, isset($vehiculos) ? $vehiculos->tipoPersonaTercero : [],['class'=>'form-control',  'id' => 'tipoPersonaTercero', 'placeholder' => 'SELECCIONA UNA OPCIÓN', 'required' => true]) !!}
                                 </div>
                             </div>
 
@@ -104,7 +104,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="ProcessNum"><strong>Tipo de transmisor: *</strong></label>
-                                {!! Form::select('vehiculos[tipoDePersona]', $regimen, isset($vehiculos) ? $vehiculos->tipoDePersona : [],['class'=>'form-control',  'id' => 'tipoDePersona', 'placeholder' => 'SELECCIONA UNA OPCION', 'required' => true]) !!}
+                                {!! Form::select('vehiculos[tipoDePersona]', $regimen, isset($vehiculos) ? $vehiculos->tipoDePersona : [],['class'=>'form-control',  'id' => 'tipoDePersona', 'placeholder' => 'SELECCIONA UNA OPCIÓN', 'required' => true]) !!}
                             </div>
                         </div>
                     </div>
@@ -128,8 +128,8 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <div id="terceroFisicaTra" style="display: block;">
-                                    <label class="control-label" for="ProcessNum"><strong>RFC: * </strong></label>
-                                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. XAXX010101XAXAXA01',   'id' => 'v_rfcFisica', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'disabled' => "disabled", 'required' => true  ]) !!}
+                                    <label class="control-label" for="ProcessNum"><strong>RFC: </strong></label>
+                                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. XAXX010101XAXAXA01',   'id' => 'v_rfcFisica', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'disabled' => "disabled" ]) !!}
                                 </div>
                                 <div id="terceroMoralTra" style="display: none;">
                                     <label class="control-label" for="ProcessNum"><strong>RFC: * </strong></label>
@@ -141,7 +141,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="State" style="line-height : 15px !important;"><strong>Relación del transmisor del vehículo con el titular: *</strong></label>
-                                {!! Form::select('vehiculos[relacion_id]',$relacion, isset($vehiculos) ? $vehiculos->relacion_id : [],['class'=>'form-control',  'id' => 'relacion_id', 'placeholder' => 'SELECCIONA UNA OPCION','required' => true]) !!}
+                                {!! Form::select('vehiculos[relacion_id]',$relacion, isset($vehiculos) ? $vehiculos->relacion_id : [],['class'=>'form-control',  'id' => 'relacion_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN','required' => true]) !!}
                             </div>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="control-label" for="NumDoc"><strong>Especifique otro tipod e relación del transmisor: *</strong></label>
+                                <label class="control-label" for="NumDoc"><strong>Especifique otro tipo de relación del transmisor: *</strong></label>
                                 {!! Form::text('vehiculos[relacion_id_otro]', isset($vehiculos) ? $vehiculos->relacion_id_otro : null,['class'=>'form-control', 'placeholder'=>'P. ej. Conocido',   'id' => 'relacion_id_otro','required' => true, 'disabled' => true]) !!}
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="ProcessNum">¿<strong>Dónde se encuentra registrado?: *</strong></label>
-                                {!! Form::select('vehiculos[lugar_registro]',$registro, isset($vehiculos) ? $vehiculos->lugar_registro : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'lugar_registro' ,'required' => true]) !!}
+                                {!! Form::select('vehiculos[lugar_registro]',$registro, isset($vehiculos) ? $vehiculos->lugar_registro : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'lugar_registro' ,'required' => true]) !!}
                             </div>
                         </div>
 
@@ -202,26 +202,26 @@
                             <div id="lugarRegistroMx" style="display: block;">
                                 <div class="form-group">
                                     <label class="control-label" for="NumDoc"><strong>Entidad Federativa: *</strong></label>
-                                    {!! Form::select('vehiculos[entidades_id]',$entidad, isset($vehiculos) ? $vehiculos->entidades_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'entidades_id','required' => true]) !!}
+                                    {!! Form::select('vehiculos[entidades_id]',$entidad, isset($vehiculos) ? $vehiculos->entidades_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'entidades_id','required' => true]) !!}
                                 </div>
                             </div>
                             <div id="lugarRegistroEx" style="display: none;">
                                 <div class="form-group">
                                     <label class="control-label" for="NumDoc"><strong>País: *</strong></label>
-                                    {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos) ? $vehiculos->pais_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'pais_id','required' => true]) !!}
+                                    {!! Form::select('vehiculos[pais_id]',$pais, isset($vehiculos) ? $vehiculos->pais_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'pais_id','required' => true]) !!}
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Forma de adquisición: *</strong></label>
-                                {!! Form::select('vehiculos[tipo_adquisicion_id]',$tipoAdquisicion, isset($vehiculos) ? $vehiculos->tipo_adquisicion_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'tipo_adquisicion_id','required' => true]) !!}
+                                {!! Form::select('vehiculos[tipo_adquisicion_id]',$tipoAdquisicion, isset($vehiculos) ? $vehiculos->tipo_adquisicion_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'tipo_adquisicion_id','required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="ProcessNum"><strong>Forma de pago: *</strong></label>
-                                {!! Form::select('vehiculos[pago_id]',$pago, isset($vehiculos) ? $vehiculos->pago_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'pago_id','required' => true]) !!}
+                                {!! Form::select('vehiculos[pago_id]',$pago, isset($vehiculos) ? $vehiculos->pago_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'pago_id','required' => true]) !!}
                             </div>
                         </div>
 
@@ -237,7 +237,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Tipo de moneda: *</strong></label>
-                                {!! Form::select('vehiculos[tipo_monedas_id]',$moneda, isset($vehiculos) ? $vehiculos->tipo_monedas_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCION',  'id' => 'tipo_monedas_id','required' => true]) !!}
+                                {!! Form::select('vehiculos[tipo_monedas_id]',$moneda, isset($vehiculos) ? $vehiculos->tipo_monedas_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'tipo_monedas_id','required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">

@@ -82,7 +82,7 @@
             {!! Form::label('interior-nacional', 'Núm. Interior: ',["style" => "font-weight: bold;"]) !!}
             {!! Form::text('nacional[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P.EJ. 1',  'id' => 'interior-nacional']) !!}
             <span class="text-danger" style="font-size:150%"></span>
-        </div> 
+        </div>
         <div class="form-group col-md-4">
             {!! Form::label('entidad_id', 'Entidad federativa: *',["style" => "font-weight: bold;"]) !!}
             {!! Form::select('nacional[entidad_id]',$entidades ,isset($domicilio) ? $domicilio->entidad_id : null,['class'=>'form-control alert-danger nacional text-uppercase', 'placeholder' => 'Selecciona una opción' , 'id' => 'entidad_id']) !!}
@@ -135,7 +135,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             {!! Form::label('pais', 'País: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::select('extranjero[pais_id]',$paises,isset($domicilio) ? $domicilio->pais_id : null,['class'=>'form-control alert-danger extranjero text-uppercase', 'id' => 'pais']) !!}
+            {!! Form::text('extranjero[pais]', isset($domicilio) ? $domicilio->pais : null,['class'=>'form-control alert-danger extranjero text-uppercase', 'id' => 'pais','placeholder' => 'p. ej. Estados Unidos']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -203,8 +203,11 @@
         </div>
         <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('proveedor', '¿Es proveedor o contratista del gobierno?:',["style" => "font-weight: bold;"]) !!}
-            {!! Form::checkbox('privado[proveedor_gobierno]', true, isset($dato_laboral) ? $dato_laboral->proveedor_gobierno : null) !!}
-            <span class="text-danger" style="font-size:150%"></span>
+            {!! Form::select('privado[proveedor_gobierno]',$contratista_gobierno, isset($dato_laboral) ? $dato_laboral->proveedor_gobierno : null,['class'=>'form-control alert-danger text-uppercase privado','id' => 'sector_pertenece','placeholder' => 'SELECCIONE UNA OPCIÓN']) !!}
+
+            <!-- {!! Form::checkbox('privado[proveedor_gobierno]', true, isset($dato_laboral) ? $dato_laboral->proveedor_gobierno : null) !!} -->
+
+                <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
 </div>

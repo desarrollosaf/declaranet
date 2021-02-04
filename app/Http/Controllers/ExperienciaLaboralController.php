@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\regimenFiscal;
 use Illuminate\Http\Request;
 use App\Nivelordengobierno;
 use App\ambitoPublico;
@@ -52,8 +53,9 @@ class ExperienciaLaboralController extends Controller
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
+        $regimenFiscal = Arr::pluck(regimenFiscal::all(), "valor","id");
         $tipoOperacion = "AGREGAR";
-        return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','tipoOperacion'));
+        return view("experienciaLaboral.create", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','ambitos_sectores','tipoOperacion','regimenFiscal'));
     }
 
     /**
@@ -99,8 +101,9 @@ class ExperienciaLaboralController extends Controller
         $ambito = Arr::pluck(AmbitoPublico::all(), "valor","id");
         $sectores = Arr::pluck(sector::all(), "valor","id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor","id");
+        $regimenFiscal = Arr::pluck(regimenFiscal::all(), "valor","id");
         $tipoOperacion = "AGREGAR";
-        return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_sectores','tipoOperacion'));
+        return view("experienciaLaboral.edit", compact('nivelOrdenGobierno','ambito','sectores','ubicacion','experiencia','ambitos_sectores','tipoOperacion','regimenFiscal'));
     }
 
     /**

@@ -68,11 +68,10 @@ class BeneficiosPrivadosController extends Controller
             $formaRecepcion[$item->id] = $item->valor;
         }
 
-        $tipoMoneda = tipoMoneda::all();
-        $moneda = [];
-        foreach ($tipoMoneda as $item){
-            $moneda[$item->id] = $item->valor;
-        }
+        $tipoMonedaOtros = tipoMoneda::where("clave","!=","MXN")->orderBy("valor","asc")->get();
+        $tipoMonedaMexico = tipoMoneda::whereClave("MXN")->get();
+        $tipoMonedas = $tipoMonedaMexico->merge($tipoMonedaOtros);
+        $moneda = Arr::pluck($tipoMonedas,"valor","id");
 
         $tipoOperacion = "AGREGAR";
         return view("beneficiosPrivados.create", compact("tipoBeneficio","beneficiarios", "sectoProductivo", "otorgante", "formaRecepcion",'moneda','tipoOperacion'));

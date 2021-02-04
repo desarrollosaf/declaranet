@@ -94,7 +94,7 @@
                     </div>
                     <div id="ex" style="display: none;">
                         <label class="form-check-label" for="inlineCheckbox1"> <strong>País donde se localiza: </strong></label>
-                        {!! Form::select('participaciones[paises_id]', $pais, isset($participaciones) ? $participaciones->paises_id : [],['class'=>'form-control',  'id' => 'paises_id', 'required' => true]) !!}
+                        {!! Form::text('participaciones[pais]', isset($participaciones) ? $participaciones->pais : null,['class'=>'form-control',  'id' => 'pais','placeholder'=>'p. ej. Estados Unidos', 'required' => true]) !!}
                     </div>
                 </div>
             </div>

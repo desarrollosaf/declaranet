@@ -26,5 +26,9 @@
   {
     "clave": "STC",
     "valor": "SENTENCIA"
-  }
+  },
+    {
+        "clave": "REJU",
+        "valor": "REMATE JUDICIAL"
+    }
 ]

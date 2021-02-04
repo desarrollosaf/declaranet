@@ -242,6 +242,7 @@
                     $("#denominacion_rs_transmisor").prop("required", true);
                     $("#nombre_transmisor").prop("required", false);
                     $("#nombre_transmisor").val("");
+                    $('#rfc-transmisor').prop("required", true)
                 } else {
                     $(".nombre-razon").show();
                     $("#nombre_transmisor").prop("disabled", false);
@@ -252,6 +253,7 @@
                     $("#denominacion_rs_transmisor").prop("required", false)
                     $("#nombre_transmisor").prop("required", true)
                     $("#denominacion_rs_transmisor").val("");
+                    $('#rfc-transmisor').prop("required", false)
                 }
             });
 

@@ -43,7 +43,11 @@ class ApoyoBeneficioController extends Controller
         $nivelGobierno = Arr::pluck(\App\Nivelordengobierno::all(), "valor","id");
         $tipoApoyo = Arr::pluck(\App\tipoApoyo::all(), "valor","id");
         $formaRecepcion = Arr::pluck(\App\formaRecepcion::all(), "valor","id");
-        $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
+
+        $tipoMonedaOtros = tipoMoneda::where("clave","!=","MXN")->orderBy("valor","asc")->get();
+        $tipoMonedaMexico = tipoMoneda::whereClave("MXN")->get();
+        $tipoMonedas = $tipoMonedaMexico->merge($tipoMonedaOtros);
+        $tipoMoneda = Arr::pluck($tipoMonedas,"valor","id");
         return view("apoyoBeneficiosDeclarante.create", compact('parentesco', 'nivelGobierno', 'tipoApoyo', 'formaRecepcion', 'tipoMoneda'));
     }
 

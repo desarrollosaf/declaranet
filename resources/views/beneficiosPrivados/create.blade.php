@@ -15,18 +15,18 @@
             <div class="collapse" id="collapseDatosEmpleo" style="">
                 <div class="card-body">
                     <ol>
-                        <li><strong>Tipo de Beneficio.</strong> Seleccionar del listado el tipo de beneficio sorteo, concurso, donación u otro (especifique).</li>
-                        <li><strong>Beneficiario.</strong> Son las personas que reciben el apoyo o beneficio privado. De las opciones del catálogo indicar quien o quienes son los beneficiarios, señalar las veces que sean necesarias.</li>
-                        <li><strong>Sector productivo al que pertenece.</strong> Seleccionar alguno de la lista desplegable.</li>
-                        <li><strong>Otorgante.</strong> Seleccionar si es persona física o moral.</li>
-                        <li><strong>Nombre o razón social del otorgante.</strong> Proporcionar el nombre o razón social completos de quien otorga el beneficio.</li>
-                        <li><strong>RFC. </strong>En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del otorgante del beneficio.</li>
-                        <li><strong>Forma de recepción del beneficio.</strong> Señalar si el apoyo recibido es monetario o en especie.</li>
-                        <li><strong>Especifique el beneficio.</strong> En caso de haber seleccionado en especie deberá describir en que consiste el beneficio.</li>
-                        <li><strong>Tipo de moneda.</strong> En caso de haber seleccionado monetario, deberá seleccionar el tipo de moneda en que se recibe el beneficio.</li>
-                        <li><strong>Monto mensual aproximado del beneficio.</strong> Es necesario capturar cantidades sin comas, sin puntos, sin centavos y sin ceros a la izquierda. </li>
+                        <li><p align="justify"><strong>Tipo de Beneficio.</strong> Seleccionar del listado el tipo de beneficio sorteo, concurso, donación u otro (especifique).</p></li>
+                        <li><p align="justify"><strong>Beneficiario.</strong> Son las personas que reciben el apoyo o beneficio privado. De las opciones del catálogo indicar quien o quienes son los beneficiarios, señalar las veces que sean necesarias.</p></li>
+                        <li><p align="justify"><strong>Sector productivo al que pertenece.</strong> Seleccionar alguno de la lista desplegable.</p></li>
+                        <li><p align="justify"><strong>Otorgante.</strong> Seleccionar si es persona física o moral.</p></li>
+                        <li><p align="justify"><strong>Nombre o razón social del otorgante.</strong> Proporcionar el nombre o razón social completos de quien otorga el beneficio.</p></li>
+                        <li><p align="justify"><strong>RFC. </strong>En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del otorgante del beneficio.</p></li>
+                        <li><p align="justify"><strong>Forma de recepción del beneficio.</strong> Señalar si el apoyo recibido es monetario o en especie.</p></li>
+                        <li><p align="justify"><strong>Especifique el beneficio.</strong> En caso de haber seleccionado en especie deberá describir en que consiste el beneficio.</p></li>
+                        <li><p align="justify"><strong>Tipo de moneda.</strong> En caso de haber seleccionado monetario, deberá seleccionar el tipo de moneda en que se recibe el beneficio.</p></li>
+                        <li><p align="justify"><strong>Monto mensual aproximado del beneficio.</strong> Es necesario capturar cantidades sin comas, sin puntos, sin centavos y sin ceros a la izquierda. </p></li>
                     </ol>
-                    <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
+                    <p align="justify"><strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.</p>
                 </div>
             </div>
             <div class="card-body">

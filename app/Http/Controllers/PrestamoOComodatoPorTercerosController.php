@@ -92,15 +92,15 @@ class PrestamoOComodatoPorTercerosController extends Controller
             if (isset($domicilio['municipio_id']) && $domicilio['municipio_id'] == 0) {
                 $domicilio['municipio_id'] = null;
             }
-            if ($domicilio['pais_id'] == 0) {
-                $domicilio['pais_id'] = null;
+            if ($domicilio['pais'] == '') {
+                $domicilio['pais'] = null;
             }
             $bien->domicilio()->create($domicilio);
 
         } elseif ($prestamComodatoData["tipo_bien_id"] == 3) {
             $vehiculo = $request->input("vehiculos");
-            if ($vehiculo['pais_id'] == 0) {
-                $vehiculo['pais_id'] = null;
+            if ($vehiculo['pais'] == '') {
+                $vehiculo['pais'] = null;
             }
             $prestamoComodato->vehiculos()->create($vehiculo);
         }
@@ -187,8 +187,8 @@ class PrestamoOComodatoPorTercerosController extends Controller
             if (isset($domicilio['municipio_id']) && $domicilio['municipio_id'] == 0) {
                 $domicilio['municipio_id'] = null;
             }
-            if ($domicilio['pais_id'] == 0) {
-                $domicilio['pais_id'] = null;
+            if ($domicilio['pais'] == '') {
+                $domicilio['pais'] = null;
             }
             $bien = $prestamoComodato->inmuebles;
             if (!$bien->domicilio) {
@@ -203,8 +203,8 @@ class PrestamoOComodatoPorTercerosController extends Controller
                 $prestamoComodato->inmuebles->destroy($prestamoComodato->inmuebles->id);
             }
             $vehiculo = $request->input("vehiculos");
-            if ($vehiculo['pais_id'] == 0) {
-                $vehiculo['pais_id'] = null;
+            if ($vehiculo['pais'] == '') {
+                $vehiculo['pais'] = null;
             }
             if ($prestamoComodato->vehiculos == null) {
                 $prestamoComodato->vehiculos()->create($vehiculo);
