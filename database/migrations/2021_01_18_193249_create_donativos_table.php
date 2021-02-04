@@ -30,6 +30,8 @@ class CreateDonativosTable extends Migration {
             $table->unsignedBigInteger('tipo_mondeda_id');
             $table->foreign('tipo_mondeda_id')->references('id')->on('tipo_monedas');
             $table->string("observaciones", 500)->nullable();
+            $table->unsignedBigInteger('tipo_operacion_id')->default(1);
+            $table->foreign('tipo_operacion_id')->references('id')->on('tipo_operaciones');
             $table->softDeletes();
             $table->timestamps();
         });

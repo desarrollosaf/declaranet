@@ -39,6 +39,8 @@ class CreateFueServidorPublicosTable extends Migration
             $table->integer("ingreso_neto_pareja")->nullable();
             $table->integer("total_ingresos_declarante_pareja")->nullable();
             $table->string("observaciones", 240)->nullable();
+            $table->unsignedBigInteger('tipo_operacion_id')->default(1);
+            $table->foreign('tipo_operacion_id')->references('id')->on('tipo_operaciones');
             $table->softDeletes();
             $table->timestamps();
         });

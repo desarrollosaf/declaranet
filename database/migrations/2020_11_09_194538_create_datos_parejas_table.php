@@ -34,6 +34,8 @@ class CreateDatosParejasTable extends Migration
             $table->unsignedBigInteger("lugar_reside_id")->nullable();
             $table->foreign("lugar_reside_id")->references("id")->on("lugar_donde_resides");
             $table->string("observaciones")->nullable();
+            $table->unsignedBigInteger('tipo_operacion_id')->default(1);
+            $table->foreign('tipo_operacion_id')->references('id')->on('tipo_operaciones');
             $table->timestamps();
         });
     }

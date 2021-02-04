@@ -20,6 +20,8 @@ class CreatePrestamoComodatosTable extends Migration
             $table->unsignedBigInteger('tipo_bien_id');
             $table->foreign('tipo_bien_id')->references('id')->on('tipo_bien_enajenacion_bienes');
             $table->longText('observaciones')->nullable();
+            $table->unsignedBigInteger('tipo_operacion_id')->default(1);
+            $table->foreign('tipo_operacion_id')->references('id')->on('tipo_operaciones');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -28,6 +28,8 @@ class CreateInteresesPersonalsTable extends Migration
             $table->foreign('respuestas_id')->references('id')->on('respuestas');
             $table->string("curp")->nullable();
             $table->string("observaciones", 500)->nullable();
+            $table->unsignedBigInteger('tipo_operacion_id')->default(1);
+            $table->foreign('tipo_operacion_id')->references('id')->on('tipo_operaciones');
             $table->timestamps();
             $table->softDeletes();
         });
