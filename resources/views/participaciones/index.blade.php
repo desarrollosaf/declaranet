@@ -30,7 +30,7 @@
                             <center>
                                 <strong>Para adicionar información pulse <a class="btn btn-sm btn-secondary" href="{{route('participaciones.create')}}">Agregar</a></strong>
                                 <br><br>
-                                <strong>Si no tiene participaciones, seleccione  <a href="{{route('fideicomisos.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                                <strong>Si no tiene participaciones, seleccione  <a href="{{route('participaciones.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                             </center>
                         </div>
                     </div>
@@ -39,8 +39,8 @@
                 <div class="col-md-12">
                     <div class="text-center">
                         <br>
-                        <a href="{{route("fideicomisos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
-                        <a href="{{route("fideicomisos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+                        <a href="{{route("participaciones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                        <a href="{{route("participaciones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                     </div>
                 </div>
             </div>
