@@ -6,6 +6,12 @@
       "valor":"FAMILIAR"
   },
   {
+      "valor":"TURISTICO"
+  },
+  {
+      "valor":"ACADEMICO"
+  },
+  {
       "valor":"OTRO"
   }
 ]

@@ -3,19 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Viajes;
+use App\nombrePariente;
+use App\primerApellido;
+use App\segundoApellido;
+use App\cumpleañosPariente;
+use App\rfcPariente;
 use App\parentescoRelacion;
 use App\tipoResponsable;
 use App\nombreTercero;
 use App\tipoTercero;
 use App\RegimenFiscal;
 use App\rfcTercero;
-use App\montoViaje;
+use App\ambitoTercero;
 use App\lugarViaje;
 use App\extranjero;
 use App\motivoViaje;
 use App\MotivoViajes;
 use App\otroEspecifique;
+use App\montoViaje;
+use App\razonSocialTercero;
+use App\nivelGobierno;
 use App\tipoMoneda;
+use App\nombreEntePublico;
+use App\nombreAdscripcion;
+use App\empleoCargo;
+use App\especifiqueAmbito;
+use App\sectorProductivo;
 
 use Illuminate\Support\Arr;
 
@@ -39,16 +52,29 @@ class ViajesController extends Controller
      */
     public function create()
     {
+        $nombrePariente = Arr::pluck(ParentescoRelacion::all(), "valor", "id");
+        $primerApellido = Arr::pluck(ParentescoRelacion::all(), "valor", "id");
+        $segundoApellido = Arr::pluck(ParentescoRelacion::all(), "valor", "id");
         $tipoResponsable = Arr::pluck(parentescoRelacion::all(), "valor", "id");
+        $cumpleañosPariente = Arr::pluck(parentescoRelacion::all(), "valor", "id");
+        $rfcPariente = Arr::pluck(parentescoRelacion::all(), "valor", "id");
         $nombreTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
         $tipoTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
         $rfcTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
-        $montoViaje = Arr::pluck(RegimenFiscal::all(), "valor", "id");
+        $ambitoTercero = Arr::pluck(\App\ambitoSector::all(), "valor", "id");
         $lugarViaje = Arr::pluck(extranjero::all(), "valor", "id");
         $motivoViaje = Arr::pluck(MotivoViajes::all(), "valor", "id");
         $otroEspecifique = Arr::pluck(MotivoViajes::all(), "valor", "id");
+        $montoViaje = Arr::pluck(MotivoViajes::all(), "valor", "id");
         $tipoMoneda = Arr::pluck(tipoMoneda::all(), "valor", "id");
-        return view("viajes.create", compact("tipoResponsable", "nombreTercero", "tipoTercero", "rfcTercero", "montoViaje", "lugarViaje", "motivoViaje", "otroEspecifique", "tipoMoneda"));
+        $razonSocialTercero = Arr::pluck(tipoMoneda::all(), "valor", "id");
+        $nivelGobierno = Arr::pluck(\App\Nivelordengobierno::all(), "valor", "id");
+        $nombreEntePublico = Arr::pluck(\App\EntePublico::all(), "valor", "id");
+        $nombreAdscripcion = Arr::pluck(MotivoViajes::all(), "valor", "id");
+        $empleoCargo = Arr::pluck(MotivoViajes::all(), "valor", "id");
+        $especifiqueAmbito = Arr::pluck(MotivoViajes::all(), "valor", "id");
+        $sectorProductivo = Arr::pluck(\App\sector::all(), "valor", "id");
+        return view("viajes.create", compact("tipoResponsable", "nombreTercero", "tipoTercero", "rfcTercero", "montoViaje", "lugarViaje", "motivoViaje", "otroEspecifique", "tipoMoneda", "nombrePariente", "primerApellido", "segundoApellido", "cumpleañosPariente", "rfcPariente", "ambitoTercero", "razonSocialTercero", "nivelGobierno", "nombreEntePublico", "nombreAdscripcion", "empleoCargo", "especifiqueAmbito", "sectorProductivo"));
     }
 
     /**
@@ -59,7 +85,10 @@ class ViajesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $viaje = $requesr->input("viajes");
+        $declaracion = \App\Declaracion::find($request->session()->get("declaracion_id"));
+        $declaracion->viajes($viaje);
+        return redirect()->route("viajes.index");
     }
 
     /**
