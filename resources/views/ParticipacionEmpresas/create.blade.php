@@ -4,7 +4,7 @@
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
             <div class="float-left">
-                <h4>PARTICIPACIÓN EN EMPRESAS, SOCIEDADES O ASOCIACIONES</h4>
+                <h4>PARTICIPACIÓN ECONÓMICA O FINANCIERA EN EMPRESAS, SOCIEDADES Y ASOCIACIONES, DEL DECLARANTE, CONCUBINA, CONCUBINARIO, FAMILIARES CONSANGUÍNEOS HASTA EL CUARTO GRADO, POR AFINIDAD O CIVIL Y/O DEPENDIENTES ECONÓMICOS</h4>
                 <h6 class="card-subtitle">(HASTA LOS ÚLTIMOS DOS AÑOS)</h6>
             </div>
             <div class="float-right">

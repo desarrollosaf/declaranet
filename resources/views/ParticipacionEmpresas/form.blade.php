@@ -1,6 +1,6 @@
 <div class="card-body">
     <div class="alert alert-danger" role="alert" style="line-height : 25px !important;">
-        Todos los datos de la participación en empresas, sociedades o asociaciones de la pareja o dependientes económicos no serán públicos.
+        Todos los datos de la participación en empresas, sociedadeS, asociación civil, organizaciones, consejos y consultorías del declarante, cónyuge, concubina, concubinario, familiares consanguíneos hasta el cuarto grado por afinidad o civil y/o dependientes económicos, no serán públicos.
     </div>
     <hr>
     <!-- Primera fila  -->
@@ -14,7 +14,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <strong style="line-height : 15px;">{!! Form::label('nombre_empresa', ' Nombre de la empresa, sociedad o asociación: * ') !!}</strong>
+                    <strong style="line-height : 15px;">{!! Form::label('nombre_empresa', ' Nombre de la empresa, sociedad, asociación civil, organizaciones, consejos y consultorías: * ') !!}</strong>
                     {!! Form::text('empresas[nombre_empresa]',isset($empresas) ? $empresas->nombre_empresa : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'p. ej. Consultora S.A. de C.V.',  'id' => 'nombre_empresa', 'required' => 'true']) !!}
                 </div>
             </div>
@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <strong style="line-height : 15px;">{!! Form::label('porcentaje', ' Porcentaje de participación de acuerdo a escrituras: * ') !!}</strong>
+                    <strong style="line-height : 15px;">{!! Form::label('porcentaje', ' Porcentaje de participación de acuerdo a escrituras, en el capital, partes sociales, servicios profesionales o de bienes muebles o inmuebles: * ') !!}</strong>
                     {!! Form::number('empresas[porcentaje]',isset($empresas) ? $empresas->porcentaje : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'p. ej. 10%',  'id' => 'porcentaje', 'maxlength'=>'3', 'min'=>'1', 'max'=>'100', 'pattern' => '[0-9]{0,3}', 'required' => 'true']) !!}
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <div id="dom_mex">
                         <strong>{!! Form::label('entidad_id', ' Entidad Federativa: ') !!}</strong>
                         {!! Form::select('empresas[entidad_id]', isset($selectEntidad) ? $selectEntidad : [], isset($empresas) ? $empresas->entidad_id : null,['class'=>'form-control text-uppercase tipo-titular',  'id' => 'entidad_id', 'placeholder'=>'Selecciona una opción',]) !!}
-                    
+
                     </div>
                     <!-- EX  -->
                     <div id="dom_ext" >
