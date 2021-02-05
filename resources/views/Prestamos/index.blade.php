@@ -56,10 +56,10 @@
                                         </td>
                                     @else
                                         <td class="py-2">
-                                            <strong>Marcas: </strong>{{$item->v_marca}}<br>
-                                            <strong>Modelo: </strong>{{$item->v_modelo}}<br>
-                                            <strong>Año: </strong>{{$item->v_ano}}<br>
-                                            <strong>Número de serie: </strong>{{$item->v_num_serie}}<br>
+                                            <strong>Marcas: </strong>{{$item->vehiculos->v_marca}}<br>
+                                            <strong>Modelo: </strong>{{$item->vehiculos->v_modelo}}<br>
+                                            <strong>Año: </strong>{{$item->vehiculos->v_ano}}<br>
+                                            <strong>Número de serie: </strong>{{$item->vehiculos->v_num_serie}}<br>
                                         </td>
 
                                     @endif
