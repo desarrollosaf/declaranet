@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\sector;
 use App\ambitoSector;
 use App\extranjero;
 use App\lugarDondeReside;
@@ -63,7 +63,7 @@ class DatosDependienteEconomicoController extends Controller
         $entidades = Arr::pluck(\App\Entidad::all(),'entidad',"id");
         $paises = Arr::pluck(\App\Pais::all(),'valor',"id");
         array_unshift($paises,"Selecciona una opcion");
-        $sectores = Arr::pluck(\App\sector::all(),'valor',"id");
+        $sectores = Arr::pluck(sector::all(),'valor',"id");
         array_unshift($sectores,"Selecciona una opcion");
         $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
         $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
@@ -150,7 +150,7 @@ class DatosDependienteEconomicoController extends Controller
         $entidades = Arr::pluck(\App\Entidad::all(),'entidad',"id");
         $paises = Arr::pluck(\App\Pais::all(),'valor',"id");
         array_unshift($paises,"Selecciona una opcion");
-        $sectores = Arr::pluck(\App\sector::all(),'valor',"id");
+        $sectores = Arr::pluck(sector::all(),'valor',"id");
         array_unshift($sectores,"Selecciona una opcion");
         $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
         $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
