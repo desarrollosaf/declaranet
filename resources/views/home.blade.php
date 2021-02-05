@@ -6,11 +6,6 @@
                 <div class="float-left">
                     <h1>Mis declaraciones</h1>
                 </div>
-                <div class="float-right">
-                    <button type="button" id="btnDeclaraciones" class="btn btn-submit float-left text-light">
-                        Nueva declaracion
-                    </button>
-                </div>
             </div>
             <div class="card-body">
                 <table class="table table-hover table-striped table-bordered" style="border-collapse: collapse;">
