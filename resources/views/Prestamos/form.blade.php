@@ -263,6 +263,7 @@
             $("#tipo_bien").change(function () {
                 const tipo = parseInt($(this).val());
                 if (tipo === 3) {
+                    //vehiculos
                     $(".vehiculo").show();
                     $(".domicilio-MXBinmuebles").hide();
                     $(".domicilio-EXBinmuebles").hide();
@@ -273,9 +274,29 @@
                     $(".vehiculo").find("input").prop("required", true);
                     $(".inmueble").find("select").prop("required", false);
                     $(".inmueble").find("input").prop("required", false);
-                    $("interior").prop("required", false);
-                    $("numintExt").prop("required", false);
+                    $("#interior").prop("required", false);
+                    $("#numintExt").prop("required", false);
+
+                    $("#tipo_inmueble_id").prop("required", false);
+                    $("#lugar-inmueble").prop("required", false);
+
+                    $("#nombre").prop("required", false);
+                    $("#exterior").prop("required", false);
+                    $("#interior").prop("required", false);
+                    $("#colonia").prop("required", false);
+                    $("#entidad_id").prop("required", false);
+                    $("#municipio_id").prop("required", false);
+                    $("#cp").prop("required", false);
+                    $("#especifique-inmueble").prop("required", false);
+                    $("#num_extExt").prop("required", false);
+                    $("#numintExt").prop("required", false);
+                    $("#colonia_Ext").prop("required", false);
+                    $("#pais").prop("required", false);
+                    $("#estado_provincia").prop("required", false);
+                    $("#codigo_postalExt").prop("required", false);
+
                 } else if (tipo === 2) {
+                    //inmueble
                     $(".vehiculo").hide();
                     $(".vehiculo").find("select").val("");
                     $(".vehiculo").find("input").val("");
