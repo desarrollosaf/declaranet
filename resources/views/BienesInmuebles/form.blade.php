@@ -74,7 +74,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong style="line-height: 15px;">{!! Form::label('porcentaje_propiedad', ' Porcentaje de propiedad del Declarante conforme a escrituración o contrato: * ') !!}</strong>
-                {!! Form::number('bienesinmuebles[porcentaje_propiedad]', isset($bien) ? $bien->porcentaje_propiedad : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 10%',  'id' => 'porcentaje_propiedad', 'maxlength'=>'3', 'min'=>'1', 'max'=>'100', 'pattern' => '[0-9]{0,3}', 'required' => 'true']) !!}
+                {!! Form::text('bienesinmuebles[porcentaje_propiedad]', isset($bien) ? $bien->porcentaje_propiedad : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 10%',  'id' => 'porcentaje_propiedad', 'maxlength'=>'3', 'min'=>'1', 'max'=>'100', 'pattern' => '[0-9]{0,7}', 'required' => 'true']) !!}
             </div>
         </div>
         <div class="col-md-4">
@@ -93,7 +93,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 adquisicion" >
             <strong>{!! Form::label('forma_adquisicion_id', ' Forma de adquisición: *') !!}</strong>
             {!! Form::select('bienesinmuebles[forma_adquisicion_id]', isset($selectformaAdquisicion) ? $selectformaAdquisicion : [], isset($bien) ? $bien->forma_adquisicion_id : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'forma_adquisicion_id', 'required' => 'true']) !!}
         </div>
@@ -127,7 +127,7 @@
         <div class="col-md-4 fisica">
             <div class="form-group">
                 <strong>{!! Form::label('rfcTransmisorF', ' RFC del transmisor: * ') !!}</strong>
-                {!! Form::text('bienesinmuebles[rfcTransmisorF]', isset($bien) ? $bien->rfc_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. XXXX010101XXX', 'maxlength'=>'13', 'id' => 'rfcTransmisorF', 'pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})','title' => 'El formato RFC es a 13 digitos']) !!}
+                {!! Form::text('bienesinmuebles[rfcTransmisorF]', isset($bien) ? $bien->rfc_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. XXXX010101XXX', 'maxlength'=>'13', 'id' => 'rfcTransmisorF', 'pattern'=>'([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})','title' => 'El formato RFC es a 10 o 13 dígitos']) !!}
             </div>
         </div>
 
@@ -140,7 +140,7 @@
         <div class="col-md-4 moral">
             <div class="form-group">
                 <strong>{!! Form::label('rfcTransmisorM', ' RFC del transmisor: *') !!}</strong>
-                {!! Form::text('bienesinmuebles[rfcTransmisorM]', isset($bien) ? $bien->rfc_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. XXXX010101XX', 'maxlength'=>'12', 'id' => 'rfcTransmisorM', 'pattern'=>'([A-ZÑ&]{3}\d{6}[A-Z\d]{3})','title' => 'El formato RFC es a 12 digitos']) !!}
+                {!! Form::text('bienesinmuebles[rfcTransmisorM]', isset($bien) ? $bien->rfc_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. XXX010101XXX', 'maxlength'=>'12', 'id' => 'rfcTransmisorM', 'pattern'=>'([A-Z]{3}[0-9]{6}[A-Z0-9]{3})','title' => 'El formato RFC es a 12 digitos']) !!}
             </div>
         </div>
 
@@ -239,7 +239,7 @@
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('num_int', 'Número interior / Piso: *') !!}</strong>
+            <strong>{!! Form::label('num_int', 'Número interior / Piso: ') !!}</strong>
             {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5', 'pattern' => "[A-Za-z0-9-]{1,5}", 'id' => 'interior']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
@@ -285,7 +285,7 @@
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('numintExt', 'Número interior / Piso: *') !!}</strong>
+            <strong>{!! Form::label('numintExt', 'Número interior / Piso: ') !!}</strong>
             {!! Form::text('domicilio[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5', 'pattern' => "[A-Za-z0-9-]{1,5}",  'id' => 'numintExt']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
@@ -378,6 +378,8 @@
 
         $('.fisica').hide();
         $('.moral').hide();
+
+
 
         //HABILITAR CAJA DE TEXTO OTROS
         $('#tipo_inmueble_id').change(function () {
@@ -515,7 +517,7 @@
                 $('.moral').hide();
 
                 $('#nombreTransmisorF').prop('required', true);
-                $('#rfcTransmisorF').prop('required', false);
+                $('#rfcTransmisorF').prop('required', true);
 
                 $('#nombreTransmisorM').removeAttr('required');
                 $('#rfcTransmisorM').removeAttr('required');
@@ -644,8 +646,21 @@
         $('#tipo_transmisor_id').change();
         $('#ubicacion_inmueble_id').change();
         $('#relacion_transmisor_id').change();
-
+        $('#forma_adquisicion_id').change();
         @endif
+    });
+    $('#forma_adquisicion_id').change(function () {
+        var forma_adquisicion_id = document.getElementById('forma_adquisicion_id').value;
+
+        if(forma_adquisicion_id == 3 || forma_adquisicion_id == 4 || forma_adquisicion_id == 5){
+            $('#forma_pago_id').prop('required', false);
+            $('#forma_pago_id').prop('disabled', true);
+            $('#valor_adquisicion').prop('required', false);
+            $('#valor_adquisicion').prop('disabled', true);
+            $('#tipo_moneda_id').prop('required', false);
+            $('#tipo_moneda_id').prop('disabled', true);
+        }
+
     });
 
 

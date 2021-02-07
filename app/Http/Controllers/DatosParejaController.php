@@ -95,6 +95,7 @@ class DatosParejaController extends Controller {
         $domicilio = $request->input("domicilio");
         $domicilioExt = $request->input("domicilioExt");
         $actividadLaboral = $request->input("actividadLaboral");
+
         if (isset($datosPareja["lugar_reside_id"]) && $datosPareja["lugar_reside_id"] == 2) {
             $domicilio['calle'] = $domicilioExt['calleExt'];
             $domicilio['num_ext'] = $domicilioExt['numextExt'];
@@ -165,7 +166,11 @@ class DatosParejaController extends Controller {
         } else {
             $selectMunicipio = [];
         }
+
+
         $experienciaLaboral = $pareja->experienciaLaboral;
+
+
         return view('datosParejaDeclarante.edit', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'pareja', 'domicilio', 'experienciaLaboral', 'selectMunicipio','regimenFiscal'));
     }
 
@@ -181,6 +186,7 @@ class DatosParejaController extends Controller {
         $domicilio = $request->input("domicilio");
         $domicilioExt = $request->input("domicilioExt");
         $actividadLaboral = $request->input("actividadLaboral");
+
         if ($datosPareja["lugar_reside_id"] != 1) {
             $domicilio['calle'] = $domicilioExt['calleExt'];
             $domicilio['num_ext'] = $domicilioExt['numextExt'];
@@ -229,7 +235,7 @@ class DatosParejaController extends Controller {
                 $pareja->experienciaLaboral()->delete();
             }
         }
-        return redirect()->route("datos_dependiente_declarante.create");
+        return redirect()->route("datos_dependiente_declarante.index");
     }
 
     /**

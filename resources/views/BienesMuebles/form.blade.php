@@ -248,8 +248,8 @@
                     $("#nombre_transmisor").prop("disabled", false);
                     $("#denominacion_rs_transmisor").val("");
                     $(".denominacion-rs-transmisor").hide();
-                    $('#rfc-transmisor').attr("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})');
-                    $('#rfc-transmisor').attr("placeholder", "p. ej. XXXX010101");
+                    $('#rfc-transmisor').attr("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{0,3})');
+                    $('#rfc-transmisor').attr("placeholder", "p. ej. XXXX010101XAX");
                     $("#denominacion_rs_transmisor").prop("required", false)
                     $("#nombre_transmisor").prop("required", true)
                     $("#denominacion_rs_transmisor").val("");
@@ -266,12 +266,26 @@
                     $("#especifique_relacion_transmisor").val('')
                 }
             });
+
+            $('#forma_adquisicion').change(function () {
+                var forma_adquisicion_id = document.getElementById('forma_adquisicion').value;
+                if(forma_adquisicion_id == 3 || forma_adquisicion_id == 4 || forma_adquisicion_id == 5){
+                    $('#forma_pago').prop('required', false);
+                    $('#forma_pago').prop('disabled', true);
+                    $('#valor_adquisicion').prop('required', false);
+                    $('#valor_adquisicion').prop('disabled', true);
+                    $('#tipo_moneda').prop('required', false);
+                    $('#tipo_moneda').prop('disabled', true);
+                }
+            });
+
             @isset($bienMueble)
             $("#titular_bien").change();
             $("#tipo_bien").change();
             $("#tipo_tercero").change();
             $("#transmisor_propiedad").change();
             $("#relacion_transmisor").change();
+            $("#forma_adquisicion").change();
             @endisset
         });
 

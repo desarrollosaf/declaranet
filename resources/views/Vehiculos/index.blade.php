@@ -33,8 +33,10 @@
                                         <td>
                                             <center>
                                                 <strong>Forma de adquisición:</strong> {{$vehiculo->tipoAdquisicion->valor}} <br>
-                                                <strong>Forma de pago:</strong> {{$vehiculo->pago->valor}} <br>
-                                                <strong>Valor de aquisición:</strong> {{$vehiculo->v_valor}}
+                                                <strong>Forma de pago:</strong>@if($vehiculo->pago_id == null)NO APLICA
+                                                @else{{$vehiculo->pago->valor}} @endif<br>
+                                                <strong>Valor de aquisición:</strong>@if($vehiculo->pago_id == null)NO APLICA
+                                                @else{{$vehiculo->v_valor}} @endif<br>
                                             </center>
                                         </td>
                                         <td class="all text-center">

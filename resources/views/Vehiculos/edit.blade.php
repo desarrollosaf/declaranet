@@ -14,26 +14,32 @@
             </div>
             <div class="collapse" id="collapseDatosEmpleo" style="">
                 <div class="card-body">
-                    Este apartado solo lo llenaran las personas servidoras públicas que tengan participación en un fideicomiso, ya sea en el carácter de fideicomitente, fiduciario, fideicomisario o dentro del consejo técnico. Deberá reportar hasta los últimos dos años.
+                    <p align="justify">Para la declaración de inicio reportar la situación de los vehículos a la fecha de ingreso al empleo, cargo o comisión.<br>
+                        Para la declaración de modificación reportar la situación de los vehículos del año inmediato anterior.<br>
+                        Para la declaración de conclusión reportar la situación de los vehículos a la fecha de conclusión del empleo, cargo o comisión.<br>
+                    </p>
                     <ol>
-                        <li><strong>Titular de la participación.</strong> Elegir quien es el participante en el fideicomiso, el Declarante, Pareja o dependiente económico.</li>
-                        <li><strong>Tipo de fideicomiso.</strong> Seleccionar si es público, privado o mixto.</li>
-                        <li><strong>Tipo de participación.</strong> Seleccionar su participación como fideicomitente, fiduciario, fideicomisario o dentro del Comité Técnico.</li>
-                        <li><strong>Tipo de persona del fideicomiso.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>Nombre o razón social del fideicomiso.</strong> Proporcionar nombre completo.</li>
-                        <li><strong>RFC del fideicomiso.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomiso.</li>
-                        <li><strong>Fideicomitente.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>Nombre o razón social del fideicomitente.</strong> Proporcionar nombre completo.</li>
-                        <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomitente.</li>
-                        <li><strong>Tipo de personal del fiduciario.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fiduciario.</li>
-                        <li><strong>Fideicomisario.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>Nombre o razón social del fideicomisario.</strong> Proporcionar nombre completo.</li>
-                        <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomisario.</li>
-                        <li><strong>Sector productivo al que pertenece.</strong> Seleccionar alguno de la lista desplegable.</li>
-                        <li><strong>¿Dónde se localiza el fideicomiso?</strong> Seleccionar en México o en el extranjero.</li>
+                        <li><p align="justify"> <strong>Tipo de vehículo.</strong> Seleccionar el tipo de vehículo del listado desplegable: automóvil/motocicleta, aeronave, barco/yate, otro, especifique.</p></li>
+                        <li><p align="justify"><strong>Titular del vehículo.</strong> Seleccionar alguna de las opciones del catálogo desplegable.</p></li>
+                        <li><p align="justify"><strong>Tipo de tercero.</strong> En caso de copropiedad con un tercero, seleccionar si es persona física o persona moral.</p></li>
+                        <li><p align="justify"><strong>Nombre del tercero.</strong> En caso de copropiedad, escribir el nombre o nombres completos, así como apellidos completos sin abreviaturas y sin acentos ni signos especiales. Si se trata de persona moral deberá proporcionar la denominación o razón social de la institución tal y como se encuentra en el documento con el que se acredita la adquisición.</p></li>
+                        <li><p align="justify"><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos.</p></li>
+                        <li><p align="justify"><strong>Tipo de transmisor de la propiedad.</strong> Seleccionar si es persona física o persona moral.</p></li>
+                        <li><p align="justify"><strong>Nombre o razón social del transmisor.</strong> Escribir el nombre o nombres completos, así como apellidos completos sin abreviaturas y sin acentos ni signos especiales. Si se trata de persona moral deberá proporcionar la denominación o razón social de la institución tal y como se encuentra en el documento con el que se acredita la adquisición.</p></li>
+                        <li><p align="justify"><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos.</p></li>
+                        <li><p align="justify"><strong>Relación del transmisor del vehículo con el titular.</strong> Elegir del catálogo qué relación tiene el titular del vehículo con el transmisor.</p></li>
+                        <li><p align="justify"><strong>Marca.</strong> Señalar la marca del vehículo.</p></li>
+                        <li><p align="justify"><strong>Modelo.</strong> Señalar el modelo del vehículo, de acuerdo a la marca. (Ejemplo; marca Renault, modelo Clío).</p></li>
+                        <li><p align="justify"><strong>Año.</strong> Indicar el año del vehículo.</p></li>
+                        <li><p align="justify"><strong>Número de serie o registro.</strong> Proporcionar el número de serie o registro que aparece en la factura y/o en su caso, tarjeta de circulación.</p></li>
+                        <li><p align="justify"><strong>Donde se encuentra registrado.</strong> Indicar si se encuentra registrado en México o en el extranjero. Señalando la entidad federativa o país según corresponda.</p></li>
+                        <li><p align="justify"><strong>Forma de adquisición.</strong> Seleccionar alguna de las opciones del catálogo.</p></li>
+                        <li><p align="justify"><strong>Forma de pago.</strong> Seleccionar la forma en que realizó el pago para adquirir el vehículo, en caso de que no haya pagado por el mismo, indicará no aplica.</p></li>
+                        <li><p align="justify"><strong>Valor de adquisición del vehículo.</strong> Proporcionar el monto de adquisición, conforme al documento con el que se acredita la propiedad.</p></li>
+                        <li><p align="justify"><strong>Tipo de moneda.</strong> Seleccionar la moneda relativa al valor de adquisición.</p></li>
+                        <li><p align="justify"><strong>Fecha de adquisición del vehículo.</strong> Señalar la fecha de adquisición del vehículo, conforme al documento con el que se acredita la propiedad.</p></li>
                     </ol>
-                    <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
+                    <p align="justify"><strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.<br><br></p>
                 </div>
             </div>
             <div class="card-body">

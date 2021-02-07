@@ -23,7 +23,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.rfc_pareja', 'RFC: *') !!}</strong>
-        {!! Form::text('datosPareja[rfc_pareja]',(isset($pareja->rfc_pareja)) ? $pareja->rfc_pareja : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc_pareja', 'required' => true, 'pattern' => '([A-Z]{4}[0-9]{6}[A-Z0-9]{3})']) !!}
+        {!! Form::text('datosPareja[rfc_pareja]',(isset($pareja->rfc_pareja)) ? $pareja->rfc_pareja : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc_pareja', 'required' => true, 'pattern' => '([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -72,12 +72,12 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('exterior', 'Número exterior:  *') !!}</strong>
-            {!! Form::text('domicilio[num_ext]',isset($domicilio->num_int) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior", 'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
+            {!! Form::text('domicilio[num_ext]',isset($domicilio->num_int) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior", 'pattern' => '[A-Za-z0-9-]{0,8}']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('interior', 'Número interior / Piso:  * ') !!}</strong>
-            {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase num-int', 'placeholder'=>'p. ej. 5',  'id' => 'interior', 'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
+            <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
+            {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase num-int', 'placeholder'=>'p. ej. 5',  'id' => 'interior','pattern' => '[A-Za-z0-9-]{0,8}']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -118,12 +118,12 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('domicilioExt.numextExt', 'Número exterior:  *') !!}</strong>
-            {!! Form::text('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase num-int', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'pattern' => "[0-9]{1-5}", 'title' => "Ingresa número exterior", 'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
+            {!! Form::text('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase num-int', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'title' => "Ingresa número exterior", 'pattern' => '[A-Za-z0-9-]{0,8}']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso:  * ') !!}</strong>
-            {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt', 'pattern' => '[A-Za-z0-9-]{1,8}']) !!}
+            <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso:   ') !!}</strong>
+            {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt', 'pattern' => '[A-Za-z0-9-]{0,8}']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -169,7 +169,12 @@
 <div class="sector-privado-otro">
     <div class="form-row">
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('actividadLaboral.nombre_empresa', 'Nombre de la empresa, sociedad o asociación: *') !!}</strong>
+            <div id="empleador_fisica">
+                <strong>{!! Form::label('empleador_fisica', 'Nombre del empleador: *') !!} </strong>
+            </div>
+            <div id="empleador_moral" style="display: none;">
+                <strong>{!! Form::label('empleador_moral', 'Nombre de la empresa, sociedad o asociación: *') !!} </strong>
+            </div>
             {!! Form::text('actividadLaboral[nombre_empresa]',isset($experienciaLaboral->nombre_empresa) ? $experienciaLaboral->nombre_empresa : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V',  'id' => 'codigo_postalExt']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
@@ -179,8 +184,13 @@
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('actividadLaboral.rfc', 'RFC: *') !!}</strong>
-            {!! Form::text('actividadLaboral[rfc]',isset($experienciaLaboral->rfc) ? $experienciaLaboral->rfc : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. XXX0101001010',  'id' => 'rfc','pattern' => '([A-Z]{3}[0-9]{9})']) !!}
+            <div id="empleador_fisica_RFC">
+                <strong>{!! Form::label('empleador_fisica', 'RFC: ') !!} </strong>
+            </div>
+            <div id="empleador_moral_RFC" style="display: none;">
+                <strong>{!! Form::label('empleador_moral', 'RFC: *') !!} </strong>
+            </div>
+            {!! Form::text('actividadLaboral[rfc]',isset($experienciaLaboral->rfc) ? $experienciaLaboral->rfc : null,['class'=>'form-control tipo-titular text-uppercase',  'id' => 'rfc']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
@@ -421,12 +431,29 @@
 
                     $("#regimen_fiscal_id").on("change", function () {
                         var regimen_fiscal_id = document.getElementById("regimen_fiscal_id").value;
-                        if (regimen_fiscal_id == "1") {
-                            $("#rfc").prop("required", false)
+                        if(regimen_fiscal_id == 1){
+                            document.getElementById("empleador_fisica").style.display = "block";
+                            document.getElementById("empleador_moral").style.display = "none";
+                            document.getElementById("empleador_fisica_RFC").style.display = "block";
+                            document.getElementById("empleador_moral_RFC").style.display = "none";
+                            $("#rfc").prop("required", false);
+                            $("#rfc").prop("maxlength", '13');
+                            $("#rfc").prop("pattern", '([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})');
+                            $("#rfc").prop("title", 'Ingresa RFC a 10 o 13 dígitos');
+                            $("#rfc").prop("placeholder", 'p. ej. XAXA010101X0A');
                         }else{
-                            $("#rfc").prop("required", true)
+                            document.getElementById("empleador_fisica").style.display = "none";
+                            document.getElementById("empleador_moral").style.display = "block";
+                            document.getElementById("empleador_fisica_RFC").style.display = "none";
+                            document.getElementById("empleador_moral_RFC").style.display = "block";
+                            $("#rfc").prop("required", true);
+                            $("#rfc").prop("maxlength", '12');
+                            $("#rfc").prop("pattern", '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})');
+                            $("#rfc").prop("title", 'Ingresa RFC a 12 dígitos');
+                            $("#rfc").prop("placeholder", 'p. ej. XAX010101X0A');
                         }
                     });
+
                     @isset($experienciaLaboral)
                     if (actual !== sector) {
                         $(".sector-privado-otro").find("select").val("");
@@ -475,5 +502,7 @@
             @endif
             @endisset
         });
+
+
     </script>
 @endsection

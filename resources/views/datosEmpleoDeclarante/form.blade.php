@@ -79,8 +79,8 @@
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
-            <strong>{!! Form::label('numinterior', 'Número interior / Piso: *') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[numero_interior_piso]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->numero_interior_piso :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 02',  'id' => 'numero_interior_piso', 'required' => 'true']) !!}
+            <strong>{!! Form::label('numinterior', 'Número interior / Piso: ') !!}</strong>
+            {!! Form::text('datos_empleo_declarante[numero_interior_piso]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->numero_interior_piso :null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. 02',  'id' => 'numero_interior_piso']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>

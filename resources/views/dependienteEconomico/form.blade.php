@@ -24,7 +24,7 @@
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('rfc', 'RFC:',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('declarante[rfc]',isset($dependiente) ? $dependiente->rfc : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc','pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})']) !!}
+            {!! Form::text('declarante[rfc]',isset($dependiente) ? $dependiente->rfc : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc','pattern'=>'([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -159,18 +159,35 @@
         {!! Form::select('laboral[ambito_sector_id]', $selectSector, isset($dato_laboral) ? $dato_laboral->ambito_sector_id : null ,['class'=>'form-control alert-danger laboral text-uppercase','placeholder' => 'Selecciona una opción',  'id' => 'sector','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
+
+    <div class="form-group col-md-4 PRIVADO" >
+        {!! Form::label('empleador', 'Tipo de empleador:',["style" => "font-weight: bold;"]) !!}
+        {!! Form::select('laboral[regimen_fiscal_id]', $regimenFiscal, isset($dato_laboral) ? $dato_laboral->regimen_fiscal_id : null ,['class'=>'form-control alert-danger laboral text-uppercase','placeholder' => 'Selecciona una opción',  'id' => 'regimen_fiscal_id','required' => true]) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
 </div>
 <div class="actividad-privada">
     <div class="form-row">
         <div class="form-group col-md-4 PRIVADO">
-            {!! Form::label('empresa', 'Nombre de la empresa, sociedad o asociación: *',["style" => "font-weight: bold;"]) !!}
+            <div id="empleador_fisica">
+                <strong>{!! Form::label('empleador_fisica', 'Nombre del empleador: *') !!} </strong>
+            </div>
+            <div id="empleador_moral" style="display: none;">
+                <strong>{!! Form::label('empleador_moral', 'Nombre de la empresa, sociedad o asociación: *') !!} </strong>
+            </div>
             {!! Form::text('privado[nombre_empresa]', isset($dato_laboral) ? $dato_laboral->nombre_empresa : null,['class'=>'form-control alert-danger text-uppercase privado', 'placeholder'=>'p. ej. Desarrollo S.A de C.V',  'id' => 'empresa']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4 PRIVADO">
-            {!! Form::label('rfcpriv', 'RFC: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('privado[rfc]', isset($dato_laboral) ? $dato_laboral->rfc : null,['class'=>'form-control alert-danger text-uppercase privado', 'placeholder'=>'p. ej. XXX0101001010',  'id' => 'rfcpriv','pattern' => "([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})"]) !!}
+            <div id="empleador_fisica_RFC">
+                <strong>{!! Form::label('empleador_fisica', 'RFC: ') !!} </strong>
+            </div>
+            <div id="empleador_moral_RFC" style="display: none;">
+                <strong>{!! Form::label('empleador_moral', 'RFC: *') !!} </strong>
+            </div>
+            {!! Form::text('privado[rfc]', isset($dato_laboral) ? $dato_laboral->rfc : null,['class'=>'form-control alert-danger text-uppercase privado',  'id' => 'rfcpriv']) !!}
             <span class="text-danger" style="font-size:150%"></span>
+
         </div>
         <div class="form-group col-md-4 PRIVADO">
             {!! Form::label('rfc', 'Empleo o cargo: *',["style" => "font-weight: bold;"]) !!}

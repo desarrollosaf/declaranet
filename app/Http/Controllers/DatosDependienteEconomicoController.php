@@ -9,6 +9,7 @@ use App\parentescoRelacion;
 use App\Respuesta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use App\regimenFiscal;
 
 class DatosDependienteEconomicoController extends Controller
 {
@@ -68,8 +69,9 @@ class DatosDependienteEconomicoController extends Controller
         $nivel = Arr::pluck(\App\Nivelordengobierno::all(),'valor',"id");
         $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
         $contratista_gobierno = Arr::pluck(Respuesta::all(), "respuesta", "id");
+        $regimenFiscal = Arr::pluck(regimenFiscal::all(), "valor","id");
 
-        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','contratista_gobierno'));
+        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','contratista_gobierno','regimenFiscal'));
     }
 
     /**
@@ -101,7 +103,7 @@ class DatosDependienteEconomicoController extends Controller
         }else if($laboral["ambito_sector_id"] == 2){
             $laboral = $declarante->dato_laboral()->create($privado);
         }
-        return redirect()->route('ingreso_neto.index');
+        return redirect()->route('datos_dependiente_declarante.index');
     }
 
     /**
@@ -165,8 +167,9 @@ class DatosDependienteEconomicoController extends Controller
         }
         $contratista_gobierno = Arr::pluck(Respuesta::all(), "respuesta", "id");
         $dato_laboral = $dependiente->dato_laboral;
+        $regimenFiscal = Arr::pluck(regimenFiscal::all(), "valor","id");
 
-        return view('dependienteEconomico.edit', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','dependiente','domicilio','dato_laboral','municipios','contratista_gobierno'));
+        return view('dependienteEconomico.edit', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','dependiente','domicilio','dato_laboral','municipios','contratista_gobierno','regimenFiscal'));
     }
 
     /**
@@ -213,7 +216,7 @@ class DatosDependienteEconomicoController extends Controller
         }else{
             $laboral = $dependiente->dato_laboral()->create($privado);
         }
-        return redirect()->route('ingreso_neto.index');
+        return redirect()->route('datos_dependiente_declarante.index');
     }
 
     /**

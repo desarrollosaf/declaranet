@@ -62,8 +62,6 @@
 @endsection
 @section('scripts')
 <script>
-
-
     $(document).ready(function () {
         $(".PRIVADO").hide();
         $(".PÚBLICO").hide();
@@ -114,6 +112,7 @@
             $(".AMBOS").show();
             $(".publico").prop("required", true);
             $(".privado").prop("required", false);
+            $("#regimen_fiscal_id").prop("required", false);
         } else if ($(this).val() == "4") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").hide();
@@ -129,26 +128,7 @@
     $('#salario,#salario_publico').bind('keyup paste', function () {
         this.value = this.value.replace(/[^0-9]/g, '');
     });
-//    $('#nombre').bind('keyup paste', function(){
-//        this.value = this.value.replace(/[^A-Z]/g, '');
-//    });
 
-
-//    $(".submitForm").on("click", function (e) {
-//        e.preventDefault();
-//        let that = this;
-//        var error = false;
-//
-//        if (error) {
-//            Swal.fire({
-//                title: 'Error',
-//                text: 'llena todos los campos obligatorios',
-//                icon: 'error'
-//            });
-//        } else {
-//            $('#dependienteEconomico').submit();
-//        }
-//    });
     $(document).ready(function () {
         $("#parentesco").on("change", function () {
             var nivel = $('#parentesco option:selected').html();
@@ -178,9 +158,6 @@
     });
     $("#entidad_id").on('change', function () {
         var idEntidad = $(this).val();
-//        if (parseInt(idEntidad) === 15) {
-//            $(".foraneo").hide();
-//        }
         $.ajax({
             url: "{{asset('getMunicipiosDomicilio')}}/" + idEntidad,
             type: 'get',
@@ -195,21 +172,7 @@
             }
         });
     });
-//    $("#frmDependienteEconomico").on("submit",function(e){
-//        e.preventDefault();
-//        var validacion = validarDependiente();
-//        if(!validacion){
-//            alert("holi");
-////            $("#frmDependienteEconomico").submit();
-//        }else{
-//            Swal.fire({
-//                title: 'Error',
-//                text: 'llena todos los campos obligatorios',
-//                icon: 'error'
-//            });
-//        }
-//
-//    });
+
     $("#sector_pertenece").on("change", function () {
         if ($(this).val() == 17) {
 
@@ -221,6 +184,31 @@
     $("#curp").keyup(function () {
         let curp = $(this).val();
         $("#curp").val(curp.toString().toUpperCase());
+    });
+
+    $("#regimen_fiscal_id").on("change", function () {
+        var regimen_fiscal_id = document.getElementById("regimen_fiscal_id").value;
+        if(regimen_fiscal_id == 1){
+            document.getElementById("empleador_fisica").style.display = "block";
+            document.getElementById("empleador_moral").style.display = "none";
+            document.getElementById("empleador_fisica_RFC").style.display = "block";
+            document.getElementById("empleador_moral_RFC").style.display = "none";
+            $("#rfcpriv").prop("required", false);
+            $("#rfcpriv").prop("maxlength", '13');
+            $("#rfcpriv").prop("pattern", '([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})');
+            $("#rfcpriv").prop("title", 'Ingresa RFC a 10 o 13 dígitos');
+            $("#rfcpriv").prop("placeholder", 'p. ej. XAXA010101X0A');
+        }else{
+            document.getElementById("empleador_fisica").style.display = "none";
+            document.getElementById("empleador_moral").style.display = "block";
+            document.getElementById("empleador_fisica_RFC").style.display = "none";
+            document.getElementById("empleador_moral_RFC").style.display = "block";
+            $("#rfcpriv").prop("required", true);
+            $("#rfcpriv").prop("maxlength", '12');
+            $("#rfcpriv").prop("pattern", '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})');
+            $("#rfcpriv").prop("title", 'Ingresa RFC a 12 dígitos');
+            $("#rfcpriv").prop("placeholder", 'p. ej. XAX010101X0A');
+        }
     });
 </script>
 @endsection

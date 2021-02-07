@@ -54,7 +54,7 @@
                     <p style="text-align : justify; !important;"><strong>Se consideran bienes muebles lo
                             siguiente:</strong>
                     <ol type=”A”>
-                        <li>Menaje de casa (muebles y accesorios de casa).<br> El cual será declarado solamente si es mayor a 1200 UMAS que nos da la cantidad de 17544(diesiciete mil quinientos cuarenta y cuartro)</li>
+                        <li>Menaje de casa (muebles y accesorios de casa).<br> El cual será declarado solamente si es mayor a 1200 UMAS que nos da la cantidad de $107,544.00 MxN.(Ciento siete mil quinientos cuarenta y cuatro pesos mexicanos)</li>
                         <li>Aparatos electrónicos y electrodomésticos (PC, tableta electrónica, teléfono celular,
                             televisión, refrigerador, lavadora, etc.)
                         </li>

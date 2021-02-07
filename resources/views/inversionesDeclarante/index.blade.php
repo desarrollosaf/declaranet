@@ -15,8 +15,7 @@
                                 <th scope="col">Tipo de inversión</th>
                                 <th scope="col">Titular</th>
                                 <th scope="col">Información Adicional</th>
-                                <th scope="col">Eliminar</th>
-                                <th scope="col">Editar</th>
+                                <th scope="col">Acciones</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -26,20 +25,17 @@
                                         <td>{{$inversion->tipoInversion->valor}}</td>
                                         <td>{{$inversion->nombreTitular->valor}}</td>
                                         <td>
-                                            <h8><strong>Monto original:</strong>{{$inversion->saldo_a_la_fecha}}<br><strong>Saldo insoluto:</strong> 5</h8>
+                                            <h8><strong>Monto original:</strong>{{$inversion->saldo_a_la_fecha}}</h8>
                                         </td>
                                         <td>
                                             {!! Form::open(['action' => ['InversionesDeclaranteController@destroy', $inversion->id], 'method'=>'DELETE']) !!}
-                                            <button class="btn btn-danger ion ion- btn-borrar">
-                                                <i class="ion ion-android-delete"></i>
-                                            </button>
+                                            <div style="display: inline-block;">
+                                                <a href="{{route("inversiones.edit",$inversion->id)}}" type="button" class="btn btn-warning ion ion-"><i class="ion ion-edit"></i></a>
+                                                <button class="btn btn-danger ion ion- btn-borrar"><i class="ion ion-android-delete"></i></button>
+                                            </div>
                                             {!! Form::close() !!}
-                                        </td>
-                                        <td>
-                                            <a href="{{route("inversiones.edit",$inversion->id)}}" type="button"
-                                               class="btn btn-warning ion ion-">
-                                                <i class="ion ion-edit"></i>
-                                            </a>
+
+                                            </div>
                                         </td>
                                     @endif
                                 </tr>

@@ -10,8 +10,42 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="myEsp" >
+        <strong> {!! Form::label('adeudos.especifique_adeudo', 'Plazo en meses: *') !!}</strong>
+        {!! Form::text('adeudos[plazo]',isset($adeudos) ? $adeudos->plazo : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. 3 meses',  'id' => 'plazo', 'required' => true]) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-4" id="myEsp" >
         <strong> {!! Form::label('adeudos.especifique_adeudo', 'Especifique:') !!}</strong>
         {!! Form::text('adeudos[especifique_adeudo]',isset($adeudos) ? $adeudos->especifique_adeudo : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. Tipo de Adeudo',  'id' => 'especifique_adeudo', 'disabled' => 'true']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4">
+        <strong> {!! Form::label('adeudos.numero_cuenta', 'Número de cuenta o contrato: *') !!}</strong>
+        {!! Form::number('adeudos[numero_cuenta]',isset($adeudos) ? $adeudos->numero_cuenta : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. 01010101',  'id' => 'inst_educativa', 'required' => 'true']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4" id="date">
+        <strong>{!! Form::label('adeudos.fecha_adquisicion', 'Fecha de adquisición del adeudo/pasivo: *') !!}</strong>
+        {!! Form::date('adeudos[fecha_adquisicion]', isset($adeudos) ? $adeudos->fecha_adquisicion : null,['class'=>'form-control text-uppercase  color-tercero', 'id' => 'fecha_adquisicion', 'required' => 'true', 'max'=>date("Y-m-d")]) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <strong>  {!! Form::label('adeudos.monto_adeudo', 'Monto original del adeudo/pasivo: *') !!}</strong>
+        {!! Form::number('adeudos[monto_adeudo]', isset($adeudos) ? $adeudos->monto_adeudo : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'carrera', 'required' => 'true']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4">
+        <strong> {!! Form::label('adeudos.tipo_moneda', 'Tipo de moneda: *') !!}</strong>
+        {!! Form::select('adeudos[tipo_moneda]', $tipoMoneda, isset($adeudos) ? $adeudos->tipo_moneda : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'SELECCIONE UNA OPCION',  'id' => 'inst_educativa', 'required' => 'true']) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4">
+        <strong> {!! Form::label('adeudos.saldo_insoluto', 'Saldo insoluto (a la fecha de ingreso): *') !!}</strong>
+        {!! Form::number('adeudos[saldo_insoluto]', isset($adeudos) ? $adeudos->saldo_insoluto : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'inst_educativa', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -32,35 +66,7 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
-<div class="form-row">
-    <div class="form-group col-md-4">
-        <strong> {!! Form::label('adeudos.numero_cuenta', 'Número de cuenta o contrato: *') !!}</strong>
-        {!! Form::number('adeudos[numero_cuenta]',isset($adeudos) ? $adeudos->numero_cuenta : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. 01010101',  'id' => 'inst_educativa', 'required' => 'true']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4" id="date">
-        <strong>{!! Form::label('adeudos.fecha_adquisicion', 'Fecha de adquisición del adeudo/pasivo: *') !!}</strong>
-        {!! Form::date('adeudos[fecha_adquisicion]', isset($adeudos) ? $adeudos->fecha_adquisicion : null,['class'=>'form-control text-uppercase  color-tercero', 'id' => 'fecha_adquisicion', 'required' => 'true', 'max'=>date("Y-m-d")]) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4">
-        <strong>  {!! Form::label('adeudos.monto_adeudo', 'Monto original del adeudo/pasivo: *') !!}</strong>
-        {!! Form::number('adeudos[monto_adeudo]', isset($adeudos) ? $adeudos->monto_adeudo : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'carrera', 'required' => 'true']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-4">
-        <strong> {!! Form::label('adeudos.tipo_moneda', 'Tipo de moneda: *') !!}</strong>
-        {!! Form::select('adeudos[tipo_moneda]', $tipoMoneda, isset($adeudos) ? $adeudos->tipo_moneda : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'SELECCIONE UNA OPCION',  'id' => 'inst_educativa', 'required' => 'true']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4">
-        <strong> {!! Form::label('adeudos.saldo_insoluto', 'Saldo insoluto (a la fecha de ingreso): *') !!}</strong>
-        {!! Form::number('adeudos[saldo_insoluto]', isset($adeudos) ? $adeudos->saldo_insoluto : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. $1000.00 Mxn',  'id' => 'inst_educativa', 'required' => 'true']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-</div>
+
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('adeudos.tipo_otorgante_id', 'Otorgante del crédito: *') !!}</strong>
@@ -216,8 +222,8 @@
                 document.getElementById('nom_credito').innerText = 'Institución o razón social del otorgante:';
                 document.getElementById('rfc_credito').innerText = 'RFC de la Institución o razón social:';
                 document.getElementById('nomC').placeholder = 'p.ej. Desarrollo y Redes S.A de C.V.';
-                document.getElementById('rfC').placeholder = 'p.ej.XXX010101';
-                $('#rfC').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{2}');
+                document.getElementById('rfC').placeholder = 'p.ej.XXX010101XAX';
+                $('#rfC').attr("pattern", '[A-Z]{3}[0-9]{6}[A-Z0-9]{3}');
                 $('#rfC').attr("title", 'Ingresa RFC a 12 dígitos');
                 $("#nomC").prop("required", true)
                 $("#rfC").prop("required", true)
@@ -227,11 +233,11 @@
                 document.getElementById('nom_credito').innerText = 'Nombre del otorgante:';
                 document.getElementById('rfc_credito').innerText = 'RFC del otorgante:';
                 document.getElementById('nomC').placeholder = 'p.ej. Juan Perez';
-                document.getElementById('rfC').placeholder = 'p.ej.XXXX010101';
-                $('#rfC').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{3}');
-                $('#rfC').attr("title", 'Ingresa RFC a 13 dígitos');
+                document.getElementById('rfC').placeholder = 'p.ej.XXXX010101XAX';
+                $('#rfC').attr("pattern", '[A-Z]{4}[0-9]{6}[A-Z0-9]{0,3}');
+                $('#rfC').attr("title", 'Ingresa RFC a 10 o 13 dígitos');
                 $("#nomC").prop("required", true)
-                $("#rfC").prop("required", true)
+                $("#rfC").prop("required", false)
                 document.getElementById("nomC").disabled = false;
                 document.getElementById("rfC").disabled = false;
             }

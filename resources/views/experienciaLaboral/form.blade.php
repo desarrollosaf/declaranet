@@ -15,8 +15,13 @@
     </div>
 </div>
 <div class="row">
-    <div class="form-group col-md-4 PRIVADO">
-        <strong>{!! Form::label('nombre_empresa', 'Nombre de la empresa, sociedad o asociación: *') !!} </strong>
+    <div class="form-group col-md-4  PRIVADO">
+        <div id="empleador_fisica">
+        <strong>{!! Form::label('empleador_fisica', 'Nombre del empleador: *') !!} </strong>
+        </div>
+        <div id="empleador_moral" style="display: none;">
+        <strong>{!! Form::label('empleador_moral', 'Nombre de la empresa, sociedad o asociación: *') !!} </strong>
+        </div>
         {!! Form::text('experiencia[nombre_empresa]',isset($experiencia) ? $experiencia->nombre_empresa : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.','id' => 'nombre_empresa', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -25,8 +30,13 @@
         {!! Form::select('experiencia[nivel_orden_gobierno_id]', $nivelOrdenGobierno,isset($experiencia) ? $experiencia->nivel_orden_gobierno_id : [],['class'=>'form-control text-uppercase','id' => 'nivel_orden_gobierno_id','placeholder' => 'Selecciona una opción', 'required' => true]) !!}
     </div>
     <div class="form-group col-md-4 PRIVADO">
-        <strong>{!! Form::label('celpersonal', 'RFC:  ') !!}</strong>
-        {!! Form::text('experiencia[rfc]',isset($experiencia) ? $experiencia->rfc : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. XXX01011001010.','id' => 'rfc', 'required' => true , 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{9})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
+        <div id="empleador_fisica_RFC">
+            <strong>{!! Form::label('empleador_fisica', 'RFC: ') !!} </strong>
+        </div>
+        <div id="empleador_moral_RFC" style="display: none;">
+            <strong>{!! Form::label('empleador_moral', 'RFC: *') !!} </strong>
+        </div>
+        {!! Form::text('experiencia[rfc]',isset($experiencia) ? $experiencia->rfc : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. XXX01011001010.','id' => 'rfc']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 PÚBLICO">
@@ -118,4 +128,3 @@
     </div>
     </div>
 </div>
-

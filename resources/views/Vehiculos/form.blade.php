@@ -129,11 +129,11 @@
                             <div class="form-group">
                                 <div id="terceroFisicaTra" style="display: block;">
                                     <label class="control-label" for="ProcessNum"><strong>RFC: </strong></label>
-                                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. XAXX010101XAXAXA01',   'id' => 'v_rfcFisica', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'disabled' => "disabled" ]) !!}
+                                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'v_rfcFisica', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 10 o 13 dígitos", 'disabled' => "disabled" ]) !!}
                                 </div>
                                 <div id="terceroMoralTra" style="display: none;">
                                     <label class="control-label" for="ProcessNum"><strong>RFC: * </strong></label>
-                                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. XXX010101X0X',   'id' => 'v_rfcMoral', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
+                                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control alert-danger', 'placeholder'=>'P. ej. XXX010101X0X',   'id' => 'v_rfcMoral', 'maxlength'=>"12", 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                                 </div>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>Número de serie o registro: *</strong></label>
-                                {!! Form::text('vehiculos[v_num_serie]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. 1HGCM82633A004352',   'id' => 'v_num_serie' ,'required' => true]) !!}
+                                {!! Form::text('vehiculos[v_num_serie]', isset($vehiculos) ? $vehiculos->v_num_serie : null,['class'=>'form-control', 'placeholder'=>'P. ej. 1HGCM82633A004352',   'id' => 'v_num_serie' ,'required' => true, 'maxlength' => '17']) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -438,6 +438,7 @@
                     $("#titular_id").change();
                     $("#tipoPersonaTercero").change();
                     $("#relacion_id").change();
+                    $("#tipo_adquisicion_id").change();
                     document.getElementById("edit").style.display = "block";
                 } else {
                     document.getElementById("crearF").style.display = "block";
@@ -462,6 +463,17 @@
                     });
                 });
 
+                $('#tipo_adquisicion_id').change(function () {
+                    var tipo_adquisicion_id = document.getElementById('tipo_adquisicion_id').value;
+                    if(tipo_adquisicion_id == 3 || tipo_adquisicion_id == 4 || tipo_adquisicion_id == 5){
+                        $('#pago_id').prop('required', false);
+                        $('#pago_id').prop('disabled', true);
+                        $('#v_valor').prop('required', false);
+                        $('#v_valor').prop('disabled', true);
+                        $('#tipo_monedas_id').prop('required', false);
+                        $('#tipo_monedas_id').prop('disabled', true);
+                    }
+                });
 
 
             </script>

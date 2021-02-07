@@ -38,6 +38,9 @@ class CreateDependientesTable extends Migration
             $table->string('entidad_federativa')->nullable();
             $table->string('codigo_postal')->nullable();
             $table->string('aclaraciones')->nullable();
+            $table->unsignedBigInteger('regimen_fiscal_id')->nullable();
+            $table->foreign('regimen_fiscal_id')->references('id')->on('regimen_fiscal');
+
             $table->softDeletes();
             $table->timestamps();
         });

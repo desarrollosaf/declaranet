@@ -94,13 +94,13 @@
             <div class="col-lg-4 fisica">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>RFC: *</strong></label>
-                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-fisica', 'pattern' => '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})' , 'readOnly' => true]) !!}
+                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101XAX',   'id' => 'v-rfc-dueno-fisica', 'pattern' => '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{0,3})' , 'maxlengh' =>'13', 'readOnly' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4 moral">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>RFC: *</strong></label>
-                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXXX010101',   'id' => 'v-rfc-dueno-moral', 'pattern' => '([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{3})']) !!}
+                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control', 'placeholder'=>'P. ej. XXX010101XAX',   'id' => 'v-rfc-dueno-moral', 'pattern' => '([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{3})', 'maxlengh' =>'12']) !!}
                 </div>
             </div>
         </div>
@@ -156,8 +156,8 @@
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('interior', 'Número interior / Piso: *') !!}</strong>
-                    {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior','pattern' => '[A-Za-z0-9-]{1,8}']) !!}
+                    <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
+                    {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior','pattern' => '[A-Za-z0-9-]{1,8}', 'required' => false]) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
@@ -201,8 +201,8 @@
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso: *') !!}</strong>
-                    {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt', 'pattern' => "[A-Za-z0-9-]{1,8}"]) !!}
+                    <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso: ') !!}</strong>
+                    {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt', 'pattern' => "[A-Za-z0-9-]{1,8}", 'required' => false]) !!}
                     <span class="text-danger" style="font-size:150%"></span>
                 </div>
             </div>
@@ -273,7 +273,8 @@
                     $(".vehiculo").find("input").prop("required", true);
                     $(".inmueble").find("select").prop("required", false);
                     $(".inmueble").find("input").prop("required", false);
-
+                    $("interior").prop("required", false);
+                    $("numintExt").prop("required", false);
                 } else if (tipo === 2) {
                     $(".vehiculo").hide();
                     $(".vehiculo").find("select").val("");
@@ -283,6 +284,8 @@
                     $(".vehiculo").find("select").prop("required", false);
                     $(".vehiculo").find("input").prop("required", false);
                     $(".inmueble").show();
+                    $("interior").prop("required", false);
+                    $("numintExt").prop("required", false);
                 }
             });
             $("#tipoVehiculo_id").change(function () {
@@ -330,6 +333,10 @@
                     $(".vehiculo-dueno").find("input").prop("required", true).prop("readonly", false);
                     $(".vehiculo-titular").find("input").prop("required", false);
                     $(".moral").find("input").prop("required", false);
+                    $("#v_rfcFisica").prop("required", false);
+                    $("#v_rfcMoral").prop("required", false);
+                    $("#v_nombreFisica").prop("required", true);
+                    $("#v_nombreMoral").prop("required", false);
                 } else if (!isNaN(valor)) {
                     $(".vehiculo-dueno").hide();
                     $(".vehiculo-titular").show();
@@ -341,6 +348,10 @@
                     $(".moral").find("input").prop("required", true);
                     $(".fisica").find("input").prop("required", false);
                     $(".vehiculo-dueno").find("input").prop("required", false);
+                    $("#v_rfcFisica").prop("required", false);
+                    $("#v_rfcMoral").prop("required", true);
+                    $("#v_nombreFisica").prop("required", false);
+                    $("#v_nombreMoral").prop("required", true);
                 }
             });
             $('#lugar-inmueble').change(function () {

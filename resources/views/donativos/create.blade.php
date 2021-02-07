@@ -12,26 +12,18 @@
             </div>
             <div class="collapse" id="collapseExample">
                 <div class="card-body">
-                    Este apartado solo lo llenaran las personas servidoras públicas que tengan participación en un fideicomiso, ya sea en el carácter de fideicomitente, fiduciario, fideicomisario o dentro del consejo técnico. Deberá reportar hasta los últimos dos años.
+                <p align="justify">Deberá declarar los donativos realizados o recibidos por el declarante, cónyuge, concubina, concubinario, familiares hasta en segundo grado y/o dependientes económicos, así como los que hubieran realizado a fundaciones u organizaciones no lucrativas de las que forma parte el declarante
+                    Se entiende por donación: Acto libre, por el cual una persona entrega de manera gratuita un bien de su propiedad o una suma de dinero a favor de un familiar, amigo, organizaciones o cualquier otra persona física o moral.<br>
+                    Se entiende como familiares consanguíneos hasta el segundo grado, por consanguinidad, a los siguientes: padre, madre, hijo, abuelos, hermanos y nietos.<br>
+                </p>
                     <ol>
-                        <li><strong>Titular de la participación.</strong> Elegir quien es el participante en el fideicomiso, el Declarante, Pareja o dependiente económico.</li>
-                        <li><strong>Tipo de fideicomiso.</strong> Seleccionar si es público, privado o mixto.</li>
-                        <li><strong>Tipo de participación.</strong> Seleccionar su participación como fideicomitente, fiduciario, fideicomisario o dentro del Comité Técnico.</li>
-                        <li><strong>Tipo de persona del fideicomiso.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>Nombre o razón social del fideicomiso.</strong> Proporcionar nombre completo.</li>
-                        <li><strong>RFC del fideicomiso.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomiso.</li>
-                        <li><strong>Fideicomitente.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>Nombre o razón social del fideicomitente.</strong> Proporcionar nombre completo.</li>
-                        <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomitente.</li>
-                        <li><strong>Tipo de personal del fiduciario.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fiduciario.</li>
-                        <li><strong>Fideicomisario.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>Nombre o razón social del fideicomisario.</strong> Proporcionar nombre completo.</li>
-                        <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomisario.</li>
-                        <li><strong>Sector productivo al que pertenece.</strong> Seleccionar alguno de la lista desplegable.</li>
-                        <li><strong>¿Dónde se localiza el fideicomiso?</strong> Seleccionar en México o en el extranjero.</li>
+                        <li><p align="justify">Deberá declarar los donativos <strong>realizados</strong> por el declarante, cónyuge, concubina, concubinario, familiares hasta en segundo grado y/o dependientes económicos, así como los que hubieran realizado a fundaciones u organizaciones no lucrativas de las que forma parte el declarante.</p></li>
+                        <li><p align="justify">Deberá declarar los donativos que fueron <strong>recibidos</strong> por el declarante, cónyuge, concubina, concubinario, familiares hasta en segundo grado y/o dependientes económicos.</p></li>
+                        <li><p align="justify">Debe declarar si el donativo realizado o recibido fue monetario, en especie o de otro tipo, en caso de elegir otro, deberá especificar.</p></li>
+                        <li><p align="justify">En su caso, deberá declarar la cantidad y tipo de moneda en que se realizó la donación por el declarante, cónyuge, concubina, concubinario, familiares hasta en segundo grado y/o dependientes económicos, así como los que hubieran realizado a fundaciones u organizaciones no lucrativas de las que forma parte el declarante.</p></li>
+                        <li><p align="justify">En su caso, deberá declarar la cantidad y tipo de moneda en que se recibió por el declarante, cónyuge, concubina, concubinario, familiares hasta en segundo grado y/o dependientes económicos. </p></li>
                     </ol>
-                    <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
+                    <p align="justify"><strong>Aclaraciones/observaciones.</strong> En este espacio el Declarante podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.</p>
                 </div>
             </div>
             <div class="card-body">

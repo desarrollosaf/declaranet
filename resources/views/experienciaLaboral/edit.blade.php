@@ -37,6 +37,28 @@
                 }
             });
 
+            $("#regimen_fiscal_id").on("change", function () {
+                var regimen_fiscal_id = document.getElementById("regimen_fiscal_id").value;
+                if(regimen_fiscal_id == 1){
+                    document.getElementById("empleador_fisica").style.display = "block";
+                    document.getElementById("empleador_moral").style.display = "none";
+                    document.getElementById("empleador_fisica_RFC").style.display = "block";
+                    document.getElementById("empleador_moral_RFC").style.display = "none";
+                    $("#rfc").prop("required", false);
+                    $("#rfc").prop("maxlength", '13');
+                    $("#rfc").prop("pattern", '([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})');
+                    $("#rfc").prop("title", 'Ingresa RFC a 10 o 13 dígitos');
+                }else{
+                    document.getElementById("empleador_fisica").style.display = "none";
+                    document.getElementById("empleador_moral").style.display = "block";
+                    document.getElementById("empleador_fisica_RFC").style.display = "none";
+                    document.getElementById("empleador_moral_RFC").style.display = "block";
+                    $("#rfc").prop("required", true);
+                    $("#rfc").prop("maxlength", '12');
+                    $("#rfc").prop("pattern", '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})');
+                    $("#rfc").prop("title", 'Ingresa RFC a 12 dígitos');
+                }
+            });
             $("#nivel_orden_gobierno_id").val("");
             $("#ambito_publico_id").val("");
             $("#ente_publico").val("");
@@ -51,18 +73,22 @@
             $(".AMBOS").show();
 
             $("#nombre_empresa").prop("required", false);
-            $("#rfc").prop("required", false);
+            $("#rfca").prop("required", false);
+            $("#rfcb").prop("required", false);
             $("#area").prop("required", false);
             $("#puesto").prop("required", false);
             $("#sector_id").prop("required", false);
             $("#especifique_otro_sector").prop("required", false);
+            $("#regimen_fiscal_id").prop("required", false);
 
             $("#nombre_empresa").val("");
-            $("#rfc").val("");
+            $("#rfca").val("");
+            $("#rfcb").val("");
             $("#area").val("");
             $("#puesto").val("");
             $("#sector_id").val("");
             $("#especifique_otro_sector").val("");
+            $("#regimen_fiscal_id").val("");
 
         }else if($(this).val() == "3"){
             $(".PRIVADO").show();
