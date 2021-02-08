@@ -17,7 +17,7 @@ class CreateParticipacionEmpresasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('declaracion_id');
             $table->foreign('declaracion_id')->references('id')->on('declaraciones');
-            $table->unsignedBigInteger('titular_operacion_id');
+            $table->unsignedBigInteger('titular_operacion_id')->nullable();
             $table->foreign('titular_operacion_id')->references('id')->on('titular_bienes');
             $table->string('nombre_empresa')->nullable();
             $table->string('rfc_empresa')->nullable();
@@ -38,6 +38,13 @@ class CreateParticipacionEmpresasTable extends Migration
             $table->unsignedBigInteger('entidad_id')->nullable();
             $table->foreign('entidad_id')->references('id')->on('entidades');
             $table->string('observaciones')->nullable();
+            $table->unsignedBigInteger('relacion_transmisores_id')->nullable();
+            $table->foreign('relacion_transmisores_id')->references('id')->on('relacion_transmisores');
+            $table->unsignedBigInteger('tipo_sociedad_id')->nullable();
+            $table->foreign('tipo_sociedad_id')->references('id')->on('tipo_sociedad');
+            $table->string("especifique_sociedad")->nullable();
+            $table->unsignedBigInteger('tipo_modalidad_id')->nullable();
+            $table->foreign('tipo_modalidad_id')->references('id')->on('tipo_modalidad');
             $table->softDeletes();
             $table->timestamps();
         });

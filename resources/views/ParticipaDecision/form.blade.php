@@ -41,7 +41,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"> <strong>RFC: </strong></label>
-                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control', 'placeholder'=>'P. ej. XAX010101010',  'id' => 'rfc', 'pattern' => "([A-Z]{3}[0-9]{9})", 'required' => true,  'maxlength'=>"12", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
+                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control', 'placeholder'=>'P. ej. XAX010101XAX',  'id' => 'rfc', 'pattern' => "([A-Z]{3}[0-9]{9}[A-Z0-9]{3})", 'required' => true,  'maxlength'=>"12", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
                 </div>
             </div>
             <div class="col-lg-4">

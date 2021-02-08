@@ -56,7 +56,7 @@
             <div class="col-lg-4" id="fisicaR" style="display: block;">
                 <div class="form-group">
                         <label class="control-label" for="State"><strong>RFC:</strong></label>
-                        {!! Form::text('clientes[rfc_cliente]', isset($clientes) ? $clientes->rfc_cliente : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_cliente', 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos",'required'=>true, 'maxlength'=>'13','size'=>'13', 'disabled'=>true]) !!}
+                        {!! Form::text('clientes[rfc_cliente]', isset($clientes) ? $clientes->rfc_cliente : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_cliente', 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})", 'title' => "Ingresa RFC a 10 o 13 dígitos",'required'=>true, 'maxlength'=>'13','size'=>'13', 'disabled'=>true, 'title' => 'El formato de RFC es de 10 a 13 dígitos']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="moralN" style="display: none;">
@@ -68,7 +68,7 @@
             <div class="col-lg-4" id="moralR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC:</strong></label>
-                    {!! Form::text('clientes[rfc_cliente_moral]', isset($clientes) ? $clientes->rfc_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XA',   'id' => 'rfc_cliente_moral', 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos",'required'=>true, 'maxlength'=>'12','size'=>'12']) !!}
+                    {!! Form::text('clientes[rfc_cliente_moral]', isset($clientes) ? $clientes->rfc_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAX010101XAX',   'id' => 'rfc_cliente_moral', 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos",'required'=>true, 'maxlength'=>'12','size'=>'12']) !!}
                 </div>
             </div>
         </div>

@@ -39,7 +39,7 @@
             <div class="col-lg-4" id="fisica_fideicomisoR">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC de la persona fisica:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_persona_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_persona_fisica', 'disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'required' => true]) !!}
+                    {!! Form::text('fideicomisos[rfc_persona_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_persona_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_persona_fisica', 'disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})", 'title' => "Ingresa RFC a 10 o 13 dígitos", 'required' => true]) !!}
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
             <div class="col-lg-4" id="moral_fideicomisoR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC de la persona moral:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_persona_moral]', isset($fideicomisos) ? $fideicomisos->rfc_persona_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_persona_moral', 'disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
+                    {!! Form::text('fideicomisos[rfc_persona_moral]', isset($fideicomisos) ? $fideicomisos->rfc_persona_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_persona_moral', 'disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
             <div class="col-lg-4" id="fisica_FideicomitenteR">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomitente:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomitente_fisica', 'disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'required' => true]) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomitente_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomitente_fisica', 'disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})", 'title' => "Ingresa RFC a 10 o 13 dígitos", 'required' => true]) !!}
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
             <div class="col-lg-4" id="moral_FideicomitenteR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomitente:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomitente_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomitente_moral', 'disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomitente_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomitente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomitente_moral', 'disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
             <div class="col-lg-4" id="fisica_FiduciarioR">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fiduciario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fiduciario_fisica','disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'required' => true]) !!}
+                    {!! Form::text('fideicomisos[rfc_fiduciario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fiduciario_fisica','disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})", 'title' => "Ingresa RFC a 10 o 13 dígitos", 'required' => true]) !!}
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
             <div class="col-lg-4" id="moral_FiduciarioR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fiduciario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fiduciario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fiduciario_moral','disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
+                    {!! Form::text('fideicomisos[rfc_fiduciario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fiduciario_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fiduciario_moral','disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@
             <div class="col-lg-4" id="fisica_FideicomisarioR">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomisario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomisario_fisica', 'disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos", 'required' => true]) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomisario_fisica]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_fisica : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomisario_fisica', 'disabled'=>true, 'size'=>'13', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})", 'title' => "Ingresa RFC a 10 o 13 dígitos", 'required' => true]) !!}
                 </div>
             </div>
 
@@ -160,7 +160,7 @@
             <div class="col-lg-4" id="moral_FideicomisarioR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC del fideicomisario:</strong></label>
-                    {!! Form::text('fideicomisos[rfc_fideicomisario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_fideicomisario_moral', 'disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
+                    {!! Form::text('fideicomisos[rfc_fideicomisario_moral]', isset($fideicomisos) ? $fideicomisos->rfc_fideicomisario_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAX010101XAX',   'id' => 'rfc_fideicomisario_moral', 'disabled'=>true, 'size'=>'12', 'maxlength'=>"12", 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <strong>{!! Form::label('titular_operacion_id', ' Titular de la participación: * ') !!}</strong>
-                    {!! Form::select('empresas[titular_operacion_id]', isset($selecttitularParticipacion) ? $selecttitularParticipacion : [], isset($empresas) ? $empresas->titular_operacion_id : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'titular_operacion_id', 'required' => 'true']) !!}
+                    {!! Form::select('empresas[relacion_transmisores_id]', isset($RelacionTransmisor) ? $RelacionTransmisor : [], isset($empresas) ? $empresas->relacion_transmisores_id : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'relacion_transmisores_id', 'required' => 'true']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -21,7 +21,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <strong>{!! Form::label('rfc_empresa', ' RFC: * ') !!}</strong>
-                    {!! Form::text('empresas[rfc_empresa]',isset($empresas) ? $empresas->rfc_empresa : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'P. EJ. XAX010101010',  'id' => 'rfc_empresa', 'maxlength'=>'12', 'pattern'=>'([A-ZÑ&]{3}\d{6}[A-Z\d]{3})', 'required' => 'true']) !!}
+                    {!! Form::text('empresas[rfc_empresa]',isset($empresas) ? $empresas->rfc_empresa : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'P. EJ. XAX010101010',  'id' => 'rfc_empresa', 'maxlength'=>'12', 'pattern'=>'([A-Z]{3}[0-9]{6}[A-Z0-9]{3})', 'required' => 'true', 'title' => 'El formato de RFC es a 12 dígitos']) !!}
                 </div>
             </div>
         </div>
@@ -49,10 +49,32 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <strong>{!! Form::label('tipo_sociedad_id', ' Tipo de sociedad: * ') !!}</strong>
+                    {!! Form::select('empresas[tipo_sociedad_id]', isset($tipoSociedad) ? $tipoSociedad : [], isset($empresas) ? $empresas->tipo_sociedad_id : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'Selecciona una opción', 'id' => 'tipo_sociedad_id', 'required' => 'true' ]) !!}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <strong>{!! Form::label('tipo_respuesta_id', 'Especifique sociedad: * ') !!}</strong>
+                    {!! Form::text('empresas[especifique_sociedad]', isset($empresas) ? $empresas->especifique_sociedad : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'p. ej. ', 'id' => 'especifique_sociedad', 'required' => 'true' ]) !!}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <strong>{!! Form::label('tipo_modalidad_id', ' Modalidad de la participación: * ') !!}</strong>
+                    {!! Form::select('empresas[tipo_modalidad_id]', isset($tipoModalidad) ? $tipoModalidad : [], isset($empresas) ? $empresas->tipo_modalidad_id : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'Selecciona una opción', 'id' => 'tipo_modalidad_id', 'required' => 'true' ]) !!}
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Tercer fila  -->
     <div class="container">
         <div class="row">
-
             <div class="col-lg-4">
                 <div class="form-group">
                     <strong>{!! Form::label('tipo_respuesta_id', ' ¿Recibe remuneración por su participación?* ') !!}</strong>

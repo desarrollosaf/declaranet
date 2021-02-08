@@ -1,0 +1,42 @@
+[
+  {
+    "clave": "MERC",
+    "valor": "MERCANTIL"
+  },
+  {
+    "clave": "ANON",
+    "valor": "ANÓNIMA"
+  },
+  {
+    "clave": "RELI",
+    "valor": "RESPONSABILIDAD LIMITADA"
+  },
+    {
+        "clave": "ORCI",
+        "valor": "ORGANIZACIÓN CIVIL"
+    },
+    {
+        "clave": "ASCI",
+        "valor": "ASOCIACIÓN CIVIL"
+    },
+    {
+        "clave": "DECO",
+        "valor": "DIRECCIONES Y CONSEJOS DE ADMINISTRACIÓN"
+    },
+    {
+        "clave": "PAAC",
+        "valor": "PARTICIPACIÓN ACCIONARIA EN SOCIEDADES"
+    },
+    {
+        "clave": "PRES",
+        "valor": "PRÉSTAMOS"
+    },
+    {
+        "clave": "CRED",
+        "valor": "CRÉDITOS"
+    },
+    {
+    "clave": "OBFI",
+    "valor": "OBLIGACIONES FINANCIERAS"
+}
+]

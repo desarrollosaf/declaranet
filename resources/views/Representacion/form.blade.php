@@ -4,7 +4,7 @@
         <strong> Todos los datos de representación de la pareja o dependientes económicos no serán públicos</strong>
     </div>
 
-    <!-- Primera fila  --> 
+    <!-- Primera fila  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <!-- Segunda fila  --> 
+    <!-- Segunda fila  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -45,7 +45,7 @@
             <div class="col-lg-4 rfc-representanteF">
                 <div class="form-group">
                     <strong>{!! Form::label('rfc_representanteFisica', ' RFC: ') !!}</strong>
-                    {!! Form::text('representacion[rfc_representanteFisica]',isset($representacion) ? $representacion->rfc_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. XXXX010101', 'pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})', 'id' => 'rfc_representanteFisica', 'title' => 'El formato RFC es a 13 digitos']) !!}
+                    {!! Form::text('representacion[rfc_representanteFisica]',isset($representacion) ? $representacion->rfc_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. XXXX010101XAX', 'pattern'=>'([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})', 'id' => 'rfc_representanteFisica', 'title' => 'El formato RFC es a 10 o 13 dígitos']) !!}
                 </div>
             </div>
 
@@ -53,20 +53,20 @@
             <div class="col-lg-4 nombre-representanteM">
                 <div class="form-group">
                     <strong>{!! Form::label('nombre_representanteMoral', ' Razón social del representante/representado: ') !!}</strong>
-                    {!! Form::text('representacion[nombre_representanteMoral]',isset($representacion) ? $representacion->nombre_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. Juan Pérez.',  'id' => 'nombre_representanteMoral']) !!}    
+                    {!! Form::text('representacion[nombre_representanteMoral]',isset($representacion) ? $representacion->nombre_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. Juan Pérez.',  'id' => 'nombre_representanteMoral']) !!}
                 </div>
             </div>
 
             <div class="col-lg-4 rfc-representanteM">
                 <div class="form-group">
                     <strong>{!! Form::label('rfc_representanteMoral', ' RFC: ') !!}</strong>
-                    {!! Form::text('representacion[rfc_representanteMoral]',isset($representacion) ? $representacion->rfc_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. XXX010101', 'pattern'=>'([A-ZÑ&]{3}\d{6}[A-Z\d]{3})',  'id' => 'rfc_representanteMoral', 'title' => 'El formato RFC es a 12 digitos']) !!}
+                    {!! Form::text('representacion[rfc_representanteMoral]',isset($representacion) ? $representacion->rfc_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. XXX010101XXX', 'pattern'=>'([A-Z]{3}[0-9]{6}[A-Z0-9]{3})',  'id' => 'rfc_representanteMoral', 'title' => 'El formato RFC es a 12 dígitos']) !!}
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Tercer fila  --> 
+    <!-- Tercer fila  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -92,7 +92,7 @@
         </div>
     </div>
 
-    <!-- Quinta fila  --> 
+    <!-- Quinta fila  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-4" id="otro_Disabled">
@@ -109,12 +109,12 @@
 
             <div class="col-lg-4">
                 <div class="form-group">
-                    <!-- MX  --> 
+                    <!-- MX  -->
                     <div id="dom_mex" style="display: none;">
                         <strong>{!! Form::label('entidad_id', ' Entidad federativa: ') !!}</strong>
                         {!! Form::select('representacion[entidad_id]', isset($selectEntidad) ? $selectEntidad : [], isset($representacion) ? $representacion -> entidad_id : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder' => 'Selecciona una opción', 'id' => 'entidad_id']) !!}
                     </div>
-                    <!-- EX  --> 
+                    <!-- EX  -->
                     <div id="dom_ext" style="display: none;">
                         <strong>{!! Form::label('pais_id', ' País donde se localiza: ') !!}</strong>
                         {!! Form::select('representacion[pais_id]', isset($selectpaises) ? $selectpaises : [], isset($representacion) ? $representacion -> pais_id : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder' => 'Selecciona una opción', 'id' => 'pais_id']) !!}
@@ -124,7 +124,7 @@
         </div>
     </div>
 
-    <!-- Sexta fila  --> 
+    <!-- Sexta fila  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -136,7 +136,7 @@
         </div>
     </div>
 
-    <!-- Botones  --> 
+    <!-- Botones  -->
     <div class="row">
         <div class="col-md-12">
             <center>
@@ -153,10 +153,10 @@
 
 @section('scripts')
 <script>
-    
+
     $("#dom_mex").hide();
     $("#dom_ext").hide();
-    
+
     $('.nombre-representanteM').hide();
     $('.rfc-representanteM').hide();
 
@@ -238,27 +238,27 @@
         }
     });
 
-    
+
     //HABILITAR CAJA DE TEXTO OTROS RECIBE REMUNERACIÓN
     $('#lugar_ubica_id').change(function () {
         if ($(this).val() === '') {
             $("#dom_mex").hide();
             $('#entidad_id').removeAttr('required');
-            
+
             $("#dom_ext").hide();
             $('#pais_id').removeAttr('required');
-            
+
         } else if (parseInt($(this).val()) === 1) {
             $("#dom_mex").show();
             $('#entidad_id').prop('required', true);
-            
+
             $("#dom_ext").hide();
             $('#pais_id').removeAttr('required');
-            
+
         } else {
             $("#dom_mex").hide();
             $('#entidad_id').removeAttr('required');
-            
+
             $("#dom_ext").show();
             $('#pais_id').prop('required', true);
         }

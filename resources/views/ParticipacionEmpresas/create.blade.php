@@ -12,22 +12,28 @@
             </div>
         </div>
         <div class="collapse" id="collapseExample">
-            <div class="card-body">
+            <p class="card-body">
                 <ol class="ayuda">
+                    <p align="justify">Artículo 45 de la ley de responsabilidades administrativas del Estado de México y municipios. <br>
+                    <strong>Fracción II</strong><BR>
+                    II. Participación económica o financiera del declarante, concubina, concubinario, familiares consanguíneos hasta el cuarto grado por afinidad o civil y/o dependientes económicos a la fecha de conclusión. <br>
+                            a) <strong>Tiop de participación o contrato:</strong> porcentaje de participación en el capital, partes sociales, servicios profesionales o de bienes muebles o inmuebles<br>
+                            b) <strong>Tipo de sociedad:</strong> mercantil, anónima o de responsabilidad límitada, organización civil, asociación civil, en direcciones y consejos de administración; participación accionaria en sociedades; préstamos, créditos y obligaciones financieras.</p>
                     <ol>
-                        <li><strong>Titular de la participación</strong>. Señalar quien tiene participación en la empresa sociedad o asociación.</li>
-                        <li><strong>Nombre de la empresa, sociedad o asociación.</strong> Señalar el nombre o razón social completo de la empresa, sociedad o asociación, tal y como aparece en el documento legal en el que participe.</li>
-                        <li><strong>RFC.</strong> Proporcionar los 12 dígitos del registro de la empresa, sociedad o asociación en la cual participa.</li>
-                        <li><strong>Porcentaje de participación de acuerdo a escritura.</strong> Indicar el porcentaje de participación en la empresa, sociedad o asociación.</li>
-                        <li><strong>Tipo de participación. </strong>Seleccionar de la lista desplegable una de las siguientes opciones: socio, accionista, comisario, representante, apoderado, colaborador, beneficiario u otro, especifique.</li>
-                        <li><strong>¿Recibe remuneración por su participación?</strong> Señalar sí o no.</li>
-                        <li><strong>Monto mensual neto.</strong> Especificar el monto mensual neto, sin centavos, que percibe por su participación.</li>
-                        <li><strong>Lugar donde se ubica.</strong> Indicar si se encuentra en México, debiendo señalar entidad federativa o en el extranjero, debiendo señalar el país donde se localiza.</li>
-                        <li><strong>Sector productivo al que pertenece.</strong> Elegir el sector al que pertenece la empresa, sociedad o asociación. En caso de señalar otro, especifique.</li>
+                        <li><p align="justify"><strong>Titular de la participación</strong>. Señalar quien tiene participación en la empresa sociedad o asociación.</p></li>
+                        <li><p align="justify"><strong>Nombre de la empresa, sociedad o asociación.</strong> Señalar el nombre o razón social completo de la empresa, sociedad o asociación, tal y como aparece en el documento legal en el que participe.</p></li>
+                        <li><p align="justify"><strong>RFC.</strong> Proporcionar los 12 dígitos del registro de la empresa, sociedad o asociación en la cual participa.</p></li>
+                        <li><p align="justify"><strong>Porcentaje de participación de acuerdo a escritura.</strong> Indicar el porcentaje de participación en la empresa, sociedad o asociación.</p></li>
+                        <li><p align="justify"><strong>Tipo de participación. </strong>Seleccionar de la lista desplegable una de las siguientes opciones: socio, accionista, comisario, representante, apoderado, colaborador, beneficiario u otro, especifique.</p></li>
+                        <li><p align="justify"><strong>¿Recibe remuneración por su participación?</strong> Señalar sí o no.</p></li>
+                        <li><p align="justify"><strong>Monto mensual neto.</strong> Especificar el monto mensual neto, sin centavos, que percibe por su participación.</p></li>
+                        <li><p align="justify"><strong>Lugar donde se ubica.</strong> Indicar si se encuentra en México, debiendo señalar entidad federativa o en el extranjero, debiendo señalar el país donde se localiza.</p></li>
+                        <li><p align="justify"><strong>Sector productivo al que pertenece.</strong> Elegir el sector al que pertenece la empresa, sociedad o asociación. En caso de señalar otro, especifique.</p></li>
                     </ol>
                 </ol>
-                <strong>Aclaraciones/observaciones.</strong>
+                <p align="justify"><strong>Aclaraciones/observaciones.</strong>
                 <div>En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado</div>
+            </p>
             </div>
         </div>
         <div class="card-body">

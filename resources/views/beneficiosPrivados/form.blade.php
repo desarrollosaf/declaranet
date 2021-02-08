@@ -47,7 +47,7 @@
     </div>
     <div class="form-group col-md-4" id="fisicaR">
         <strong> {!! Form::label('rfc', 'RFC:') !!}</strong>
-        {!! Form::text('beneficio_privado[rfc_otorgante]',isset($beneficio) ? $beneficio->rfc_otorgante :null,['class'=>'form-control', 'placeholder'=>'P. EJ. XXXX010101XXX',  'id' => 'rfc_otorgante', 'disabled'=>'disabled', 'required' => true, 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 13 dígitos"]) !!}
+        {!! Form::text('beneficio_privado[rfc_otorgante]',isset($beneficio) ? $beneficio->rfc_otorgante :null,['class'=>'form-control', 'placeholder'=>'P. EJ. XXXX010101XXX',  'id' => 'rfc_otorgante', 'disabled'=>'disabled', 'required' => true, 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})", 'title' => "Ingresa RFC a 10 O 13 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 
@@ -58,7 +58,7 @@
     </div>
     <div class="form-group col-md-4" id="moralRfc" style="display: none;">
         <strong>  {!! Form::label('rfc_otorganteM', 'RFC:') !!}</strong>
-        {!! Form::text('beneficio_privado[rfc_otorganteM]',isset($beneficio) ? $beneficio->rfc_otorganteM :null,['class'=>'form-control', 'placeholder'=>'P. EJ. XXXX010101XX',  'id' => 'rfc_otorganteM', 'required' => true, 'maxlength'=>"12", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{2})", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
+        {!! Form::text('beneficio_privado[rfc_otorganteM]',isset($beneficio) ? $beneficio->rfc_otorganteM :null,['class'=>'form-control', 'placeholder'=>'P. EJ. XXX010101XXX',  'id' => 'rfc_otorganteM', 'required' => true, 'maxlength'=>"12", 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>

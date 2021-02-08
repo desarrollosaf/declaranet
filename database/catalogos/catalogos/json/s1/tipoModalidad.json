@@ -1,0 +1,18 @@
+[
+  {
+    "clave": "CAPI",
+    "valor": "CAPITAL"
+  },
+  {
+    "clave": "PASO",
+    "valor": "PARTES SOCIALES"
+  },
+  {
+    "clave": "SEPR",
+    "valor": "SERVICIOS PROFESIONALES"
+  },
+    {
+        "clave": "BIIM",
+        "valor": "BIENES MUEBLES O INMUEBLES"
+    }
+]

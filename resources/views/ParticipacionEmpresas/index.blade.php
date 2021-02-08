@@ -5,7 +5,7 @@
         <div class="card-header bg-info  border-0 py-3 d-flex align-items-center" style="background-color:#F1F1F1 !important;">
             <div>
 
-                <h4>PARTICIPACIÓN EN EMPRESAS, SOCIEDADES O ASOCIACIONES</h4>
+                <h4>PARTICIPACIÓN ECONÓMICA O FINANCIERA EN EMPRESAS, SOCIEDADES Y ASOCIACIONES, DEL DECLARANTE, CONCUBINA, CONCUBINARIO, FAMILIARES CONSANGUÍNEOS HASTA EL CUARTO GRADO, POR AFINIDAD O CIVIL Y/O DEPENDDIENTES ECONÓMICOS</h4>
                 <h6 class="card-subtitle">(HASTA LOS ÚLTIMOS DOS AÑOS)</h6>
 
             </div>
@@ -56,7 +56,7 @@
                 </center>
             </div>
             @else
-            <span style="text-align: left !important;">Deberá señalar la información de CADA UNA de las empresas, sociedades o asociaciones donde el Declarante, pareja y/o dependientes económicos, 
+            <span style="text-align: left !important;">Deberá señalar la información de CADA UNA de las empresas, sociedades o asociaciones donde el Declarante, pareja y/o dependientes económicos,
                 participan como socios, accionistas, comisarios, representantes, apoderados, colaboradores, beneficiarios u otros.</span>
             <br>
             <div class="alert alert-danger text-center" role="alert">
