@@ -29,7 +29,8 @@ use App\nombreAdscripcion;
 use App\empleoCargo;
 use App\especifiqueAmbito;
 use App\sectorProductivo;
-
+use App\especifiquesector;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
 class ViajesController extends Controller
@@ -41,8 +42,8 @@ class ViajesController extends Controller
      */
     public function index()
     {
-       // $viajes = Viajes::all();    **MIGRACION**
-        //return view("viajes.index", compact("viajes"));
+       $viajes = Viajes::all();
+       return view("viajes.index", compact("viajes"));
     }
 
     /**
@@ -61,7 +62,7 @@ class ViajesController extends Controller
         $nombreTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
         $tipoTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
         $rfcTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
-        $ambitoTercero = Arr::pluck(\App\ambitoSector::all(), "valor", "id");
+        $ambitoTercero = Arr::pluck(\App\ambitoSector::where("id","!=",4)->get(), "valor", "id");
         $lugarViaje = Arr::pluck(extranjero::all(), "valor", "id");
         $motivoViaje = Arr::pluck(MotivoViajes::all(), "valor", "id");
         $otroEspecifique = Arr::pluck(MotivoViajes::all(), "valor", "id");
@@ -85,9 +86,10 @@ class ViajesController extends Controller
      */
     public function store(Request $request)
     {
-        $viaje = $requesr->input("viajes");
+        $viaje = $request->input("viajes");
         $declaracion = \App\Declaracion::find($request->session()->get("declaracion_id"));
-        $declaracion->viajes($viaje);
+        dd($declaracion);
+        $declaracion->viajes()->create($viaje);
         return redirect()->route("viajes.index");
     }
 
