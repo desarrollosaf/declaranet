@@ -19,12 +19,12 @@ class DeclaranetController extends Controller
      */
     public function IniciarDeclaracion()
     {
-        $declaracion = Declaracion::create([
+        /*$declaracion = Declaracion::create([
             "servidor_publico_id" => auth()->user()->servidor_publico_id,
             "tipo_movimiento_id" => $this->request->tipo_movimiento_id,
             "fecha_declaracion" => now(),
             "estatus_declaracion_id" => 1
-        ]);
+        ]);*/
         $this->request->session()->put("declaracion_id",$declaracion->id);
 
         return $declaracion;
