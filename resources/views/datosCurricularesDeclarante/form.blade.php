@@ -3,7 +3,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('curriculares[nivel_id]', 'Nivel: *',['class' => 'validar']) !!}</strong>
-        {!! Form::select('curriculares[nivel_id]',$nivelesSelect, isset($curricular) ? $curricular->nivel_id : null ,['class'=>'form-control text-uppercase','placeholder' => '- SELECCIONA UNA OPCIÓN' ,'id' => 'nivel_id','required' => true]) !!}
+        {!! Form::select('curriculares[nivel_id]',$nivelesSelect, isset($curricular) ? $curricular->nivel_id : null ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'nivel_id','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -20,12 +20,12 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong> {!! Form::label('curriculares[estatus_id]', 'Estatus: *',['class' => 'validar']) !!}</strong>
-        {!! Form::select('curriculares[estatus_id]',$estatusSelect, isset($curricular) ? $curricular->estatus_id : null,['class'=>'form-control text-uppercase','placeholder' => '- SELECCIONA UNA OPCIÓN' ,'id' => 'estatus_id','required' => true]) !!}
+        {!! Form::select('curriculares[estatus_id]',$estatusSelect, isset($curricular) ? $curricular->estatus_id : null,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'estatus_id','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('curriculares[documento_id]', 'Documento obtenido: *',['class' => 'validar']) !!}</strong>
-        {!! Form::select('curriculares[documento_id]',$documentoSelect, isset($curricular) ? $curricular->documento_id : null,['class'=>'form-control text-uppercase','placeholder' => '- SELECCIONA UNA OPCIÓN' , 'id' => 'documento_id']) !!}
+        {!! Form::select('curriculares[documento_id]',$documentoSelect, isset($curricular) ? $curricular->documento_id : null,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' , 'id' => 'documento_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -38,7 +38,7 @@
 
     <div class="form-group col-md-4">
         <strong> {!! Form::label('curriculares[lugar_ubicacion_id]', 'Lugar donde se ubica: *',['class' => 'validar']) !!}</strong>
-        {!! Form::select('curriculares[lugar_ubicacion_id]',$lugaresSelect, isset($curricular) ? $curricular->lugar_ubicacion_id : null,['class'=>'form-control text-uppercase','placeholder' => '- SELECCIONA UNA OPCIÓN' , 'id' => 'lugar_ubicacion_id','required' => true]) !!}
+        {!! Form::select('curriculares[lugar_ubicacion_id]',$lugaresSelect, isset($curricular) ? $curricular->lugar_ubicacion_id : null,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' , 'id' => 'lugar_ubicacion_id','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
