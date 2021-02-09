@@ -69,7 +69,7 @@
         $("#domicilio-mexico").hide();
         $("#domicilio-extranjero").hide();
     });
-    $("#habita-domicilio").on("change", function () {
+    $("#habita-domicilio").on("onblur", function () {
         if ($(this).val() == "2") {
             $("#divLugarResidencia").show();
             $("#residencia").prop("required", true);
@@ -99,7 +99,7 @@
         }
     });
 
-    $("#sector").on("change", function () {
+    $("#sector").on("onblur", function () {
         if ($(this).val() == "2" || $(this).val() == "3") {
             $(".PRIVADO").show();
             $(".AMBOS").show();
