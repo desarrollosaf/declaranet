@@ -64,7 +64,7 @@
         </div>
     </div>
 </div>
-<div id="domicilio-mexico">
+<div id="domicilio-mexico" style="display: none;">
     <hr>
     <h4>DOMICILIO DEL DEPENDIENTE ECONÓMICO</h4>
     <div class="form-row">
@@ -107,7 +107,7 @@
         </div>
     </div>
 </div>
-<div id="domicilio-extranjero">
+<div id="domicilio-extranjero" style="display: none;">
     <hr>
     <h4>DOMICILIO DEL DEPENDIENTE ECONÓMICO</h4>
     <div class="form-row">

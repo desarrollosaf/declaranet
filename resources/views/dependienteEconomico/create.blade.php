@@ -81,7 +81,7 @@
         }
         $("#residencia").change();
     });
-    $("#residencia").on("change", function () {
+    $("#residencia").on("click", function () {
         console.log($(this).val());
         if ($(this).val() == "1") {
             $("#domicilio-mexico").show();
