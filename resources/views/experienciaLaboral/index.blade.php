@@ -13,9 +13,9 @@
                             <table class="table table-active table-striped">
                                 <thead class="badge-primary">
                                 <tr>
-                                    <th> <center>Nivel</center> </th>
-                                    <th> <center>Información adicional</center> </th>
-                                    <th> <center>Acciones</center> </th>
+                                    <th> <center>NIVEL</center> </th>
+                                    <th> <center>INFORMACIÓN ADICIONAL</center> </th>
+                                    <th> <center>ACCIONES</center> </th>
                                 </tr>
                                 </thead>
                                 <tbody>
