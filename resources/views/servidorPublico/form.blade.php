@@ -231,6 +231,7 @@
         </div>
         <div class="col-md-10">
             <span style="font-weight: bold; color:#640223;">A.INGRESO NETO DEL DECLARANTE RECIBIDO DURANTE EL AÑO INMEDIATO ANTERIOR:</span><br>
+            <label>(Suma del I y II)</label>
         </div>
         <div class="col-md-2">
             <table>
@@ -241,7 +242,7 @@
             </table>
         </div>
         <div class="col-md-10">
-            <label>(Suma del I y II)</label>
+
         </div>
         <div class="col-md-2">
             <table>
@@ -252,7 +253,7 @@
             </table>
         </div>
         <div class="col-md-10">
-            <span style="font-weight: bold; color:#640223;">B.INGRESO NETO DE LA PAREJA Y/O DEPENDIENTES ECONÓMICOS RECIBIDO DURANTE EL AÑO INMEDIATO ANTERIOR:</span>
+            <span style="font-weight: bold; color:#640223;">B.INGRESO NETO DE LA PAREJA Y/O DEPENDIENTES ECONÓMICOS RECIBIDO DURANTE EL AÑO INMEDIATO ANTERIOR:</span><br>
             <label>(Después de impuestos).</label><br>
         </div>
         <div class="col-md-2">
