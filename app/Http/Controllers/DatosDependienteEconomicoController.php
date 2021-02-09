@@ -102,6 +102,8 @@ class DatosDependienteEconomicoController extends Controller
             $laboral = $declarante->dato_laboral()->create($publico);
         }else if($laboral["ambito_sector_id"] == 2){
             $laboral = $declarante->dato_laboral()->create($privado);
+        }else if($laboral["ambito_sector_id"] == 4){
+            $laboral = $declarante->dato_laboral()->create($privado);
         }
         return redirect()->route('datos_dependiente_declarante.index');
     }

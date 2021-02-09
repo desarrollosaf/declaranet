@@ -84,7 +84,11 @@
             $("#residencia").prop("required",true);
         } else {
             $("#divLugarResidencia").hide();
-            $("#residencia").prop("required",false);
+            $("#residencia").prop("required", false);
+            $("#domicilio-mexico").hide();
+            $("#domicilio-extranjero").hide();
+            $(".nacional").prop("required", false);
+            $(".extranjero").prop("required", false);
         }
     });
     $("#residencia").on("change", function () {
