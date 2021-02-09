@@ -11,19 +11,19 @@
                 <table class="table table-hover table-striped table-bordered" style="border-collapse: collapse;">
                     <thead style="background-color: #682244;" class="text-light">
                         <tr>
-                            <td>Tipo de declaración</td>
-                            <td>Fecha</td>
-                            <td>Estatus</td>
-                            <td>Acciones</td>
+                            <td align="center">TIPO DE DECLARACIÓN</td>
+                            <td align="center">FECHA</td>
+                            <td align="center">ESTATUS</td>
+                            <td align="center">ACCIONES</td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style="text-transform: uppercase;">
                         @foreach($declaraciones as $declaracion)
                         <tr>
-                            <td>{{$declaracion->tipo_movimiento->tipo_movimiento}}</td>
-                            <td>{{$declaracion->fecha_declaracion}}</td>
-                            <td>{{$declaracion->estatus_declaracion->estatus}}</td>
-                            <td><button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal" onclick="ContinuarDeclaracion({{$declaracion->id}})">Continuar</button></td>
+                            <td align="center">{{$declaracion->tipo_movimiento->tipo_movimiento}}</td>
+                            <td align="center">{{$declaracion->fecha_declaracion}}</td>
+                            <td align="center">{{$declaracion->estatus_declaracion->estatus}}</td>
+                            <td align="center"><button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal" onclick="ContinuarDeclaracion({{$declaracion->id}})">IR</button></td>
                         </tr>
                         @endforeach
                     </tbody>

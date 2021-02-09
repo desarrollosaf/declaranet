@@ -17,7 +17,7 @@
                     <p align="justify">Artículo 45 de la ley de responsabilidades administrativas del Estado de México y municipios. <br>
                     <strong>Fracción II</strong><BR>
                     II. Participación económica o financiera del declarante, concubina, concubinario, familiares consanguíneos hasta el cuarto grado por afinidad o civil y/o dependientes económicos a la fecha de conclusión. <br>
-                            a) <strong>Tiop de participación o contrato:</strong> porcentaje de participación en el capital, partes sociales, servicios profesionales o de bienes muebles o inmuebles<br>
+                            a) <strong>Tipo de participación o contrato:</strong> porcentaje de participación en el capital, partes sociales, servicios profesionales o de bienes muebles o inmuebles<br>
                             b) <strong>Tipo de sociedad:</strong> mercantil, anónima o de responsabilidad límitada, organización civil, asociación civil, en direcciones y consejos de administración; participación accionaria en sociedades; préstamos, créditos y obligaciones financieras.</p>
                     <ol>
                         <li><p align="justify"><strong>Titular de la participación</strong>. Señalar quien tiene participación en la empresa sociedad o asociación.</p></li>
