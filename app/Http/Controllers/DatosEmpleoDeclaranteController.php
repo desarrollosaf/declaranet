@@ -168,9 +168,9 @@ class DatosEmpleoDeclaranteController extends Controller
         }else{
             $dependencia = '';
         }
-
         $fechaInicio = $servidor->fecha_inicio;
-        return view("datosEmpleoDeclarante.edit", compact( 'DatoEmpleoDeclarante','nivel','ambito','sector','entidad','selectMunicipio','tipoOperacion','nombre_entre','servidor','honorarios','dependencia'));
+        dd($dependencia);
+        return view("datosEmpleoDeclarante.edit", compact( 'DatoEmpleoDeclarante','nivel','ambito','sector','entidad','selectMunicipio','tipoOperacion','nombre_entre','servidor','honorarios','dependencia','fechaInicio'));
 
     }
 
