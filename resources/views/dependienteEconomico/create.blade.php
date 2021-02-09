@@ -118,11 +118,13 @@
             $(".PÚBLICO").hide();
             $(".publico").prop("required", false);
             $(".privado").prop("required", false);
+            $("#regimen_fiscal_id").prop("required", false);
         } else if ($(this).val() == "") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").hide();
             $(".publico").prop("required", false);
             $(".privado").prop("required", false);
+            $("#regimen_fiscal_id").prop("required", false);
         }
     });
     $('#salario,#salario_publico').bind('keyup paste', function () {
