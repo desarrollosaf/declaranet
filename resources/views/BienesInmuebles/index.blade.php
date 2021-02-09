@@ -50,14 +50,12 @@
             <span style="text-align: left !important;">Deberá proporcionar la información de CADA UNO de los bienes inmuebles, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como los de su pareja y/o dependientes económicos.</span>
             <br>
             <div class="alert alert-danger text-center" role="alert">
-                <label style="margin-top:10px;">
                     <div>
                         <strong>Para registrar información pulse: </strong><a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary text-light">Agregar</a><br>
                     </div>
-                    <div>
+                    <div class="mt-2">
                         <strong>Si no tiene bienes inmuebles, seleccione <a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary text-light">Ninguno</a></strong>
                     </div>
-                </label>
             </div>
 
 
