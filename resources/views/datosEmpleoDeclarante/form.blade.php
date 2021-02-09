@@ -46,7 +46,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('fecha', 'Fecha de toma de posesión del empleo, cargo o comisión:') !!}</strong>
-            {!! Form::date('datos_empleo_declarante[fecha_posecion_empleo]',isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->fecha_posecion_empleo :null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'fecha_posecion_empleo', 'disabled' => 'disabled']) !!}
+            {!! Form::date('datos_empleo_declarante[fecha_posecion_empleo]',$fechaInicio,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'fecha_posecion_empleo', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>

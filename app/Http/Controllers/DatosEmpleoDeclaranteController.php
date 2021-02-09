@@ -90,9 +90,13 @@ class DatosEmpleoDeclaranteController extends Controller
             $dependencia = 'U. de Información';
         }else if($adscripcion == 8){
             $dependencia = 'Legislatura';
+        }else{
+            $dependencia = '';
         }
 
-        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector", "declaracion",'entidad','tipoOperacion','servidor','nombre_entre','honorarios','dependencia'));
+        $fechaInicio = $servidor->fecha_inicio;
+
+        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector", "declaracion",'entidad','tipoOperacion','servidor','nombre_entre','honorarios','dependencia','fechaInicio'));
     }
 
     /**
