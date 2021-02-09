@@ -72,7 +72,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-9">
         <table style="width: 100%;">
-            <tr>,
+            <tr>
                 <td width='40%'>
                     <strong>{!! Form::label('ingresoMensual.tipo_de_instrumento', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</strong></td>
                 <td>{!! Form::select('ingresoMensual[tipo_de_instrumento]', $tipoInstrumento, isset($ingresoMensual) ? $ingresoMensual->tipo_de_instrumento : null,['placeholder' => 'SELECCIONE UNA OPCION','class'=>'form-control text-uppercase', 'id' => 'tipo_de_instrumento']) !!}</td>
