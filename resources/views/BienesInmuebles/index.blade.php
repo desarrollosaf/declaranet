@@ -51,8 +51,8 @@
             <br>
             <div class="alert alert-danger text-center" role="alert">
                 <label style="margin-top:10px;">
-                    <strong>Para registrar información pulse: </strong><a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
-                    <strong>Si no tiene bienes inmuebles, seleccione <a href="{{route('bienes_inmuebles.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                    <strong>Para registrar información pulse: </strong><a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary text-light">Agregar</a><br>
+                    <strong>Si no tiene bienes inmuebles, seleccione <a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary text-light">Ninguno</a></strong>
                 </label>
             </div>
 
