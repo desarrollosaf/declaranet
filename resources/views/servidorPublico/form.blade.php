@@ -284,7 +284,7 @@
     <div class="text-center">
         <a href="{{route("ingreso_neto.index")}}" class="btn btn-submit btn-sm text-light">Ir a la sección
             anterior</a>
-        {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
+        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
     </div>
 </div>
 @section("scripts")
