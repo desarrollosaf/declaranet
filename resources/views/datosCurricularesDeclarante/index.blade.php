@@ -15,17 +15,17 @@
                             <thead class="badge-primary">
                             <tr>
                                 <th>
-                                    <center>Nivel</center>
+                                    <center>NIVEL</center>
                                 </th>
                                 <th>
-                                    <center>Institucion</center>
+                                    <center>INSTITUCIÓN</center>
                                 </th>
                                 <th>
-                                    <center>Acciones</center>
+                                    <center>ACCIONES</center>
                                 </th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody style="text-transform: uppercase;">
                             @foreach($curriculares as $curricular)
                                 <tr>
                                     <td>
@@ -33,14 +33,12 @@
                                     </td>
                                     <td>
                                         <center>
-                                            <strong>Institución
-                                                educativa: </strong>{{$curricular->institucion_educativa}}<br>
-                                            <strong>Carrera o área de
-                                                conocimiento: </strong>{{$curricular->carrera_area}}<br>
+                                            <strong>INSTITUCIÓN EDUCATIVA: </strong>{{$curricular->institucion_educativa}}<br>
+                                            <strong>CARRERA O ÁREA DE CONOCIMIENTO: </strong>{{$curricular->carrera_area}}<br>
                                             @if($curricular->documento_id == null)
-                                            <strong>Documento obtenido: </strong>{{$curricular->estatus->valor}}
+                                            <strong>DOCUMENTO OBTENIDO: </strong>{{$curricular->estatus->valor}}
                                             @else
-                                            <strong>Documento obtenido: </strong>{{$curricular->documento->valor}}
+                                            <strong>DOCUMENTO OBTENIDO: </strong>{{$curricular->documento->valor}}
                                             @endif
 
                                         </center>
