@@ -19,7 +19,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('adscripcion', 'Área de adscripción:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[area_adscripcion]',$servidor->tipo_dependencia,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'area_adscripcion', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[area_adscripcion]',$dependencia,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'area_adscripcion', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -29,7 +29,7 @@
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('honorarios', '¿Está contratado por honorarios?:') !!}</strong>
-            {!! Form::text('datos_empleo_declarante[honorarios]',$servidor->honorarios,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'honorarios', 'disabled' => 'disabled']) !!}
+            {!! Form::text('datos_empleo_declarante[honorarios]',$honorarios,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'honorarios', 'disabled' => 'disabled']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>

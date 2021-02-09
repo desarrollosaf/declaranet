@@ -66,7 +66,33 @@ class DatosEmpleoDeclaranteController extends Controller
 
         $nombre_entre = "PODER LEGISLATIVO";
 
-        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector", "declaracion",'entidad','tipoOperacion','servidor','nombre_entre'));
+        $honorarios = $servidor->honorarios;
+        if ($honorarios == 1){
+            $honorarios = 'SÍ';
+        }else{
+            $honorarios = 'NO';
+        }
+
+        $adscripcion = $servidor->tipo_dependencia;
+        if($adscripcion == 1){
+            $dependencia = 'Secretaría de Asuntos Parlamentarios';
+        }else if($adscripcion == 2){
+            $dependencia = 'Órgano Superior de Fiscalización';
+        }else if($adscripcion == 3){
+            $dependencia = 'Secretaría de Administración y Finanzas';
+        }else if($adscripcion == 4){
+            $dependencia = 'Dirección General de Comunicación Social';
+        }else if($adscripcion == 5){
+            $dependencia = 'Contraloría';
+        }else if($adscripcion == 6){
+            $dependencia = 'Instituto de Estudios Legislativos';
+        }else if($adscripcion == 7){
+            $dependencia = 'U. de Información';
+        }else if($adscripcion == 8){
+            $dependencia = 'Legislatura';
+        }
+
+        return view('datosEmpleoDeclarante.create', compact("nivel", "ambito" , "sector", "declaracion",'entidad','tipoOperacion','servidor','nombre_entre','honorarios','dependencia'));
     }
 
     /**
