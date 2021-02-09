@@ -230,17 +230,17 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('calle', 'Calle: *') !!}</strong>
-            {!! Form::text('domicilio[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'calle', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}", 'title' => "Ingresa la calle" ]) !!}
+            {!! Form::text('domicilio[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'calle']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('num_ext', 'Número exterior: *') !!}</strong>
-            {!! Form::text('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_ext', 'pattern' => "[A-Za-z0-9-]{1,5}", 'title' => "Ingresa número exterior"]) !!}
+            {!! Form::text('domicilio[num_ext]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p.ej. 102',  'id' => 'num_ext']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
             <strong>{!! Form::label('num_int', 'Número interior / Piso: ') !!}</strong>
-            {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5', 'pattern' => "[A-Za-z0-9-]{1,5}", 'id' => 'interior']) !!}
+            {!! Form::text('domicilio[num_int]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 5',  'id' => 'interior']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
