@@ -76,6 +76,8 @@
         } else {
             $("#divLugarResidencia").hide();
             $("#residencia").prop("required", false);
+            $("#domicilio-mexico").hide();
+            $("#domicilio-extranjero").hide();
         }
         $("#residencia").change();
     });
@@ -99,7 +101,7 @@
         }
     });
 
-    $("#sector").on("change", function () {
+    $("#sector").on("click", function () {
         if ($(this).val() == "2" || $(this).val() == "3") {
             $(".PRIVADO").show();
             $(".AMBOS").show();
@@ -116,12 +118,14 @@
         } else if ($(this).val() == "4") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").hide();
+            $(".AMBOS").hide();
             $(".publico").prop("required", false);
             $(".privado").prop("required", false);
             $("#regimen_fiscal_id").prop("required", false);
         } else if ($(this).val() == "") {
             $(".PRIVADO").hide();
             $(".PÚBLICO").hide();
+            $(".AMBOS").hide();
             $(".publico").prop("required", false);
             $(".privado").prop("required", false);
             $("#regimen_fiscal_id").prop("required", false);
