@@ -659,6 +659,13 @@
             $('#valor_adquisicion').prop('disabled', true);
             $('#tipo_moneda_id').prop('required', false);
             $('#tipo_moneda_id').prop('disabled', true);
+        }else{
+            $('#forma_pago_id').prop('required', true);
+            $('#forma_pago_id').prop('disabled', false);
+            $('#valor_adquisicion').prop('required', true);
+            $('#valor_adquisicion').prop('disabled', false);
+            $('#tipo_moneda_id').prop('required', true);
+            $('#tipo_moneda_id').prop('disabled', false);
         }
 
     });
