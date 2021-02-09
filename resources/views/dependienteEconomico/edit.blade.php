@@ -74,7 +74,7 @@
             $("#residencia").prop("required",false);
         }
         $("#residencia").change();
-        $("#sector").change();
+        $("#sector").click();
         $("#parentesco").change();
     });
     $("#habita-domicilio").on("change", function () {
