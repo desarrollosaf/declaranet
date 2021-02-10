@@ -12,10 +12,9 @@
                         <table class="table table-active table-striped">
                             <thead class="badge-primary">
                             <tr class="text-center">
-                                <th scope="col">Tipo de inversión</th>
-                                <th scope="col">Titular</th>
-                                <th scope="col">Información Adicional</th>
-                                <th scope="col">Acciones</th>
+                                <th scope="col">TIPO DE INVERSIÓN</th>
+                                <th scope="col">INFORMACIÓN ADICIONAL</th>
+                                <th scope="col">ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -23,9 +22,9 @@
                                 <tr class="text-center">
                                     @if($inversiones!= null)
                                         <td>{{$inversion->tipoInversion->valor}}</td>
-                                        <td>{{$inversion->nombreTitular->valor}}</td>
                                         <td>
-                                            <h8><strong>Monto original:</strong>{{$inversion->saldo_a_la_fecha}}</h8>
+                                            <h8><strong>TITULAR:</strong>{{$inversion->nombreTitular->valor}}</h8>
+                                            <h8><strong>MONTO ORIGINAL:</strong>{{$inversion->saldo_a_la_fecha}}</h8>
                                         </td>
                                         <td>
                                             {!! Form::open(['action' => ['InversionesDeclaranteController@destroy', $inversion->id], 'method'=>'DELETE']) !!}
