@@ -478,6 +478,10 @@
                         $('#tipo_monedas_id').prop('value', '');
                         $('#v_valor').prop('value', '');
                         $('#pago_id').prop('value', '');
+
+                        $("#tipo_monedas_id").val("");
+                        $("#v_valor").val("");
+                        $("#pago_id").val("");
                     }else{
                         $('#pago_id').prop('required', true);
                         $('#pago_id').prop('disabled', false);
