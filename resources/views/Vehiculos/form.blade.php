@@ -464,6 +464,7 @@
                 });
 
                 $('#tipo_adquisicion_id').change(function () {
+                    alert("aqui");
                     var tipo_adquisicion_id = document.getElementById('tipo_adquisicion_id').value;
                     if(tipo_adquisicion_id == 3 || tipo_adquisicion_id == 4 || tipo_adquisicion_id == 5){
                         $('#pago_id').prop('required', false);
@@ -472,6 +473,9 @@
                         $('#v_valor').prop('disabled', true);
                         $('#tipo_monedas_id').prop('required', false);
                         $('#tipo_monedas_id').prop('disabled', true);
+                        $("#tipo_monedas_id").val("");
+                        $("#v_valor").val("");
+                        $("#pago_id").val("");
                     }else{
                         $('#pago_id').prop('required', true);
                         $('#pago_id').prop('disabled', false);
@@ -479,9 +483,6 @@
                         $('#v_valor').prop('disabled', false);
                         $('#tipo_monedas_id').prop('required', true);
                         $('#tipo_monedas_id').prop('disabled', false);
-                        $("#tipo_monedas_id").val("");
-                        $("#v_valor").val("");
-                        $("#pago_id").val("");
                     }
                 });
 
