@@ -59,10 +59,12 @@
                     <span style="text-align: left !important;">Deberá proporcionar la información de CADA UNO de los adeudos o pasivos, que a la fecha de ingreso al cargo tenga el Declarante, así como los de su pareja y/o dependientes económicos</span>
                     <br>
                     <div class="alert alert-danger text-center" role="alert">
-                        <label style="margin-top:10px;">
-                            <strong>Para registrar información pulse: </strong><a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
-                            <strong>Si no tiene adeudos, seleccione <a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
-                        </label>
+                        <div>
+                            <strong>Para registrar información de Adeudos pulse: </strong><a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
+                        </div>
+                        <div class="mt-2">
+                            <strong>Si no tiene Adeudos, seleccione <a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                        </div>
                     </div>
 
 

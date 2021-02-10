@@ -50,7 +50,7 @@
                     <br>
                     <div class="alert alert-danger text-center" role="alert">
                         <div>
-                            <strong>Para registrar información de Inversiones pulse: </strong><a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br><br>
+                            <strong>Para registrar información de Inversiones pulse: </strong><a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
                         </div>
                         <div class="mt-2">
                             <strong>Si no tiene inversiones, cuentas bancarias u otro tipo de valores, seleccione <a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
