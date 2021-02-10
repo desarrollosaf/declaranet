@@ -3,7 +3,7 @@
 <div class="container">
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
-            <h1>DATOS DEL DEPENDIENTE ECONÓMICO</h1>
+            <h3>DATOS DEL DEPENDIENTE ECONÓMICO</h3>
             <div class="float-right">
                 <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
             </div>

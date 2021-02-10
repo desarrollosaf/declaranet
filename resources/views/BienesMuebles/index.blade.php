@@ -12,10 +12,9 @@
                         <table class="table table-active table-striped text-uppercase">
                             <thead class="badge-primary">
                             <tr>
-                                <th scope="col">Titular bien</th>
-                                <th scope="col">Descripción</th>
-                                <th scope="col">Editar</th>
-                                <th scope="col">Eliminar</th>
+                                <th scope="col" align="center">TITULAR BIEN</th>
+                                <th scope="col" align="center">DESCRIPCIÓN</th>
+                                <th scope="col" align="center">ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -28,10 +27,8 @@
                                         <td>{{$item->especifique}}</td>
                                     @endif
                                     <td>
-                                        <a href="{{route("bienes_muebles.edit",$item->id)}}" type="button"
-                                           class="btn btn-warning btn-sm ion ion-edit"></a>
-                                    </td>
-                                    <td>
+                                        <a href="{{route("bienes_muebles.edit",$item->id)}}" type="button" class="btn btn-warning btn-sm ion ion-edit"></a>
+
                                         {!! Form::open(['action' => ['BienesMueblesController@destroy', $item->id], 'method'=>'DELETE']) !!}
                                         <div style="display: inline-block;">
                                             <button
@@ -69,14 +66,10 @@
                     </p>
                     <div class="alert alert-danger text-center btn-group-sm" role="alert">
                         <div>
-                            <strong>Para registrar información pulse: </strong>
-                            <a href="{{route('bienes_muebles.create')}}"
-                               class="btn btn-sm btn-secondary text-light">Agregar</a>
+                            <strong>Para registrar información pulse: </strong><a href="{{route('bienes_muebles.create')}}" class="btn btn-sm btn-secondary text-light">Agregar</a>
                         </div>
                         <div class="mt-2">
-                            <strong>Sí no tiene bienes muebles, seleccione
-                                <a href="{{route('vehiculos.index')}}"
-                                   class="btn btn-sm btn-secondary text-light">Ninguno</a></strong>
+                            <strong>Sí no tiene bienes muebles, seleccione<a href="{{route('vehiculos.index')}}" class="btn btn-sm btn-secondary text-light">Ninguno</a></strong>
                         </div>
                     </div>
                 @endif
