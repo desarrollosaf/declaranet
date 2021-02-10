@@ -36,6 +36,7 @@ class CreateParticipacionsTable extends Migration
             $table->foreign('paises_id')->references('id')->on('paises');
             $table->text('aclaraciones')->nullable();
             $table->string("tipoOperacion")->nullable();
+            $table->string("pais")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

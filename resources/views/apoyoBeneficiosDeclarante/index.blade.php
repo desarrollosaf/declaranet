@@ -25,11 +25,10 @@
                                     <table class="table table-active table-striped">
                                         <thead class="badge-primary">
                                         <tr class="text-center">
-                                            <th scope="col">Beneficiario</th>
-                                            <th scope="col">Nombre del programa</th>
-                                            <th scope="col">Información Adicional</th>
-                                            <th scope="col">Eliminar</th>
-                                            <th scope="col">Editar</th>
+                                            <th scope="col">BENEFICIARIOS</th>
+                                            <th scope="col">NOMBRE DEL PROGRAMA</th>
+                                            <th scope="col">INFORMACIÓN ADICIONAL</th>
+                                            <th scope="col">ACCIONES</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -54,17 +53,11 @@
                                                     </td>
                                                     <td>
                                                         {!! Form::open(['action' => ['ApoyoBeneficioController@destroy', $apoyo->id], 'method'=>'DELETE']) !!}
-                                                        <button class="btn btn-danger ion ion- btn-borrar">
-                                                            <i class="ion ion-android-delete"></i>
-                                                        </button>
+                                                        <div style="display: inline-block;">
+                                                            <a href="{{route("apoyo_beneficio.edit",$apoyo->id)}}" type="button" class="btn btn-warning ion ion-"><i class="ion ion-edit"></i></a>
+                                                            <button class="btn btn-xs btn-danger btn-borrar"><i class="ion ion-trash-a btn-borrar"></i></button>
+                                                        </div>
                                                         {!! Form::close() !!}
-
-                                                    </td>
-                                                    <td>
-                                                        <a href="{{route("apoyo_beneficio.edit",$apoyo->id)}}" type="button"
-                                                           class="btn btn-warning ion ion-">
-                                                            <i class="ion ion-edit"></i>
-                                                        </a>
                                                     </td>
                                                 @endif
                                             </tr>
