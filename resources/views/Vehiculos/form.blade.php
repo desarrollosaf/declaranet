@@ -463,7 +463,7 @@
                     });
                 });
 
-                $('#tipo_adquisicion_id').click(function () {
+                $('#tipo_adquisicion_id').change(function () {
                 //    alert("aw");
                     var tipo_adquisicion_id = document.getElementById('tipo_adquisicion_id').value;
                     if(tipo_adquisicion_id == '3' || tipo_adquisicion_id == '4' || tipo_adquisicion_id == '5'){
@@ -473,9 +473,10 @@
                         $('#v_valor').prop('disabled', true);
                         $('#tipo_monedas_id').prop('required', false);
                         $('#tipo_monedas_id').prop('disabled', true);
-                        $("#tipo_monedas_id").val("");
-                        $("#v_valor").val("");
-                        $("#pago_id").val("");
+
+                        $('#tipo_monedas_id').prop('value', '');
+                        $('#v_valor').prop('value', '');
+                        $('#pago_id').prop('value', '');
                     }else{
                         $('#pago_id').prop('required', true);
                         $('#pago_id').prop('disabled', false);
