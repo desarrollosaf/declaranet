@@ -180,6 +180,7 @@
 
     //TIPO TRANSMISOR
     $('#regimen_representante_id').change(function () {
+        alert("entra");
         if ($(this).val() === "") {
 
             $('.nombre-representanteF').show();
