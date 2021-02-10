@@ -67,7 +67,7 @@
                         <br>
                         <div class="alert alert-danger text-center" role="alert">
                             <label style="margin-top:10px;">
-                                <strong>Para registrar información pulse: </strong><a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
+                                <strong>Para registrar información pulse: </strong><a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br><br>
                                 <strong>Si no tiene vehículos, seleccione <a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                             </label>
                         </div>
