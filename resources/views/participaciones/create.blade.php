@@ -38,3 +38,21 @@
     </div>
     <input type="hidden" id="accion" value="crear">
 @endsection
+@section('scripts')
+<script>
+    $("#tipo_titular_donativo_id").on("change",function(){
+        if($(this).val() != ""){
+            if(parseInt($("#tipo_titular_donativo_id option:selected ").data("grado")) <= 2){
+                $("#institucion_cuarto").hide();
+                $("#institucion_segundo").show();
+            }else{
+                $("#institucion_cuarto").show();
+                $("#institucion_segundo").hide();
+            }
+        }else{
+            $("#institucion_cuarto").hide();
+            $("#institucion_segundo").hide();
+        }
+    });
+</script>
+@endsection

@@ -37,7 +37,7 @@ class ParticipacionDeclaracionController extends Controller
      */
     public function create()
     {
-        $tipo_titular = Arr::pluck(TipoTitularDonativo::all(), "valor", "id");
+        $tipo_titular = TipoTitularDonativo::all();
         $tipo_institucion = Arr::pluck(tipoInstitucion::all(), "valor", "id");
         $tipo_participacion = Arr::pluck(tipoParticipacion::all(), "valor", "id");
         $tipo_organizacion = Arr::pluck(TipoOrganizacionComunitaria::all(), "nombre", "id");
