@@ -39,10 +39,7 @@
                             </tbody>
                         </table>
                         <center>
-                            <strong>Si desea registrar algún Dato de Vehiculo pulse: <a
-                                    href="{{route('bienes_muebles.create')}}"
-                                    class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                                apartado.</strong>
+                            <strong>Si desea registrar Bienes Muebles pulse: <a href="{{route('bienes_muebles.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                         </center>
                     </div>
                 @else
