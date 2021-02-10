@@ -14,7 +14,7 @@
                             <thead class="badge-primary">
                             <tr class="text-center">
                                 <th scope="col">TITULAR DEL ADEUDO</th>
-                                <th scope="col">TIPO DE ADEUDO</th>
+                                <th scope="col">INFORMACIÓN ADICIONAL</th>
                                 <th scope="col">ACCIONES</th>
                             </tr>
                             </thead>
@@ -24,7 +24,7 @@
                                     @if($adeudo!= null)
                                         <td>{{$adeudo->titularAdeudo->valor}}</td>
                                         @if($adeudo->tipoAdeudo->id != 7)
-                                            <td>{{$adeudo->tipoAdeudo->valor}}<br>
+                                            <td><strong>Tipo de adeudo: </strong>{{$adeudo->tipoAdeudo->valor}}<br>
                                         @else
                                             <td>{{$adeudo->especifique_adeudo}}<br>
                                         @endif
