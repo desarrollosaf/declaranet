@@ -27,7 +27,7 @@
                         @foreach($empresas as $empresa)
                         <tr class="text-center">
                             <th scope="col" width="20%">{{$empresa->nombre_empresa}}</th>
-                            <th scope="col" width="20%">{{$empresa->tipotitularParticipaciones->valor}}</th>
+                            <th scope="col" width="20%">{{$empresa->RelacionTransmisor->valor}}</th>
                             <th scope="col" width="40%">
                     <center>
                         <strong>Tipo de participación: </strong> {{$empresa->tipoParticipacion->valor}} <br>
