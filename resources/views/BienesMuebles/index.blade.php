@@ -26,13 +26,11 @@
                                     @else
                                         <td>{{$item->especifique}}</td>
                                     @endif
-                                    <td>
-                                        <a href="{{route("bienes_muebles.edit",$item->id)}}" type="button" class="btn btn-warning btn-sm ion ion-edit"></a>
-
+                                    <td class="all">
                                         {!! Form::open(['action' => ['BienesMueblesController@destroy', $item->id], 'method'=>'DELETE']) !!}
                                         <div style="display: inline-block;">
-                                            <button
-                                                class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
+                                            <a href="{{route("bienes_muebles.edit",$item->id)}}" type="button" class="btn btn-warning btn-sm ion ion-edit"></a>
+                                            <button class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"><i class="ion ion-trash-a btn-borrar"></i></button>
                                         </div>
                                         {!! Form::close() !!}
                                     </td>
