@@ -464,7 +464,7 @@
                 });
 
                 $('#tipo_adquisicion_id').click(function () {
-                    alert("aw");
+                //    alert("aw");
                     var tipo_adquisicion_id = document.getElementById('tipo_adquisicion_id').value;
                     if(tipo_adquisicion_id == 3 || tipo_adquisicion_id == 4 || tipo_adquisicion_id == 5){
                         $('#pago_id').prop('required', false);
