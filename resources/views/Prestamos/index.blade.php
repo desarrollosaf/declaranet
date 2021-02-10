@@ -17,10 +17,9 @@
                         <table class="table table-active table-striped">
                             <thead class="badge-primary">
                             <tr class="text-center">
-                                <th scope="col" width="20%">Tipo de bien</th>
-                                <th scope="col" width="60%">Información Adicional</th>
-                                <th scope="col" width="10%">Editar</th>
-                                <th scope="col" width="10%">Eliminar</th>
+                                <th scope="col" width="20%">TIPO DE BIEN</th>
+                                <th scope="col" width="60%">INFORMACIÓN ADICIONAL</th>
+                                <th scope="col" width="10%">ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -68,8 +67,8 @@
                                     <td class="py-2">
                                         {!! Form::open(['action' => ['PrestamoOComodatoPorTercerosController@destroy', $item->id], 'method'=>'DELETE']) !!}
                                         <div style="display: inline-block;">
-                                            <button
-                                                class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
+                                            <a href="{{route("prestamos.edit",$item->id)}}" class="btn btn-warning btn-sm ion ion-edit"></a></a>
+                                            <button class="btn btn-xs btn-danger btn-borrar"><i class="ion ion-trash-a btn-borrar"></i></button>
                                         </div>
                                         {!! Form::close() !!}
                                     </td>

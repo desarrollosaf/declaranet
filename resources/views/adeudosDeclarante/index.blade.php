@@ -31,7 +31,7 @@
                                         <h8>
                                             <strong>Número de cuenta o contrato:</strong>{{$adeudo->numero_cuenta}}
                                             <br>
-                                            <strong>Saldo insoluto: $</strong>{{$adeudo->saldo_insoluto}}
+                                            <strong>Saldo insoluto: </strong>${{$adeudo->saldo_insoluto}}
                                         </h8>
                                         </td>
                                         <td class="py-2">
