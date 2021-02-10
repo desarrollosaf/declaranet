@@ -23,7 +23,7 @@
                                     @if($inversiones!= null)
                                         <td>{{$inversion->tipoInversion->valor}}</td>
                                         <td>
-                                            <h8><strong>TITULAR:</strong>{{$inversion->nombreTitular->valor}}</h8>
+                                            <h8><strong>TITULAR:</strong>{{$inversion->nombreTitular->valor}}</h8><br>
                                             <h8><strong>MONTO ORIGINAL:</strong>{{$inversion->saldo_a_la_fecha}}</h8>
                                         </td>
                                         <td>
@@ -42,14 +42,14 @@
                             </tbody>
                         </table>
                         <center>
-                            <strong>Si desea registrar algún Inversion, Cuentas Bancarias y Otro tipo de valores/activos pulse: <a
+                            <strong><justify>Si desea registrar algún Inversion, Cuentas Bancarias y Otro tipo de valores/activos pulse: <a
                                     href="{{route('inversiones.create')}}"
                                     class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                                apartado.</strong>
+                                apartado.</strong></justify>
                         </center>
                     </div>
                 @else
-                    <span style="text-align: left !important;">Deberá proporcionar la información de CADA UNA de las inversiones, cuentas bancarias y otro tipo de valores, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como las de su pareja y/o dependientes económicos.</span>
+                    <span style="text-align: justify !important;">Deberá proporcionar la información de CADA UNA de las inversiones, cuentas bancarias y otro tipo de valores, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como las de su pareja y/o dependientes económicos.</span>
                     <br>
                     <div class="alert alert-danger text-center" role="alert">
                         <label style="margin-top:10px;">
