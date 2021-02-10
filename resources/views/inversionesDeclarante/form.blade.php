@@ -1,17 +1,17 @@
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('inversiones.tipo_de_inversion_id', 'Tipo de inversión / activo:') !!}</strong>
+        <strong>{!! Form::label('inversiones.tipo_de_inversion_id', 'Tipo de inversión / activo: *') !!}</strong>
         {!! Form::select('inversiones[tipo_de_inversion_id]', $tipoInversion, isset($inversiones) ? $inversiones->tipo_de_inversion_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control color-tercero','id' => 'tipo_de_inversion', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('inversiones.descripcion_tipo_inversion_id', 'Fondo de inversión:') !!}</strong>
+        <strong>{!! Form::label('inversiones.descripcion_tipo_inversion_id', 'Fondo de inversión: *') !!}</strong>
         {!! Form::select('inversiones[descripcion_tipo_inversion_id]', $subTipoInversion, isset($inversiones) ? $inversiones->descripcion_tipo_inversion_id : null,['placeholder' => 'SELECCIONE UNA OPCION','class'=>'form-control color-tercero', 'id' => 'descripcion_tipo_inversion', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 
     <div class="form-group col-md-4">
-        <strong style="line-height : 15px;"> {!! Form::label('inversiones.titular_inversion_id', 'Titular de la inversión, cuenta bancaria y otros tipo de valores:') !!}</strong>
+        <strong style="line-height : 15px;"> {!! Form::label('inversiones.titular_inversion_id', 'Titular de la inversión, cuenta bancaria y otros tipo de valores: *') !!}</strong>
         {!! Form::select('inversiones[titular_inversion_id]', $tipoDeclarante, isset($inversiones) ? $inversiones->titular_inversion_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control color-tercero','id' => 'inputSelect', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -19,56 +19,56 @@
 
 <div class="form-row" id="mydiv" style="display: none">
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('inversiones.tipo_de_tercero_id', 'Tipo de Tercero:') !!}</strong>
+        <strong> {!! Form::label('inversiones.tipo_de_tercero_id', 'Tipo de Tercero: *') !!}</strong>
         {!! Form::select('inversiones[tipo_de_tercero_id]', $tipoPersona, isset($inversiones) ? $inversiones->tipo_de_tercero_id : null,['placeholder' => 'SELECCIONE UNA OPCION', 'class'=>'form-control color-tercero','id' => 'tipo_de_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4"  id="mydivNT" style="display: none">
-        <strong> {!! Form::label('inversiones.nombre_del_tercero', 'Nombre del Tercero:', ['id' => 'labelter']) !!}</strong>
+        <strong> {!! Form::label('inversiones.nombre_del_tercero', 'Nombre del Tercero: *', ['id' => 'labelter']) !!}</strong>
         {!! Form::text('inversiones[nombre_del_tercero]',isset($inversiones) ? $inversiones->nombre_del_tercero : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. Juan Robles',  'id' => 'nombre_del_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4"  id="mydivRT" style="display: none">
-        <strong>{!! Form::label('inversiones.rfc_tercero', 'RFC Tercero:') !!}</strong>
+        <strong>{!! Form::label('inversiones.rfc_tercero', 'RFC Tercero: *') !!}</strong>
         {!! Form::text('inversiones[rfc_tercero]',isset($inversiones) ? $inversiones->rfc_tercero : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. XXXX010101',  'id' => 'rfc_tercero']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong style="line-height : 15px;"> {!! Form::label('inversiones.ubicacion_inversion_id', '¿Dónde se localiza la inversión, cuenta bancaria y otro tipo de valores/activos?:') !!}</strong>
+        <strong style="line-height : 15px;"> {!! Form::label('inversiones.ubicacion_inversion_id', '¿Dónde se localiza la inversión, cuenta bancaria y otro tipo de valores/activos?: *') !!}</strong>
         {!! Form::select('inversiones[ubicacion_inversion_id]', $ubicacionInversion, isset($inversiones) ? $inversiones->ubicacion_inversion_id : null,['class'=>'form-control color-tercero', 'placeholder'=>'SELECCIONA UNA OPCION', 'id' => 'localizacion_cuenta', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('inversiones.institucion_razon_social', 'Institución o razón social:') !!}</strong>
+        <strong> {!! Form::label('inversiones.institucion_razon_social', 'Institución o razón social: *' ) !!}</strong>
         {!! Form::text('inversiones[institucion_razon_social]',isset($inversiones) ? $inversiones->institucion_razon_social : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej.Desarrollo y Redes S.A de C.V.',  'id' => 'institucion_razon_social', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="ubicacion_rfc">
-        <strong> {!! Form::label('inversiones.rfc_titular', 'RFC:') !!}</strong>
+        <strong> {!! Form::label('inversiones.rfc_titular', 'RFC: *') !!}</strong>
         {!! Form::text('inversiones[rfc_titular]',isset($inversiones) ? $inversiones->rfc_titular : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'Ingresa RFC',  'id' => 'rfc_titular', "pattern" => '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})',  "readOnly"=> true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
-        <strong> {!! Form::label('inversiones.pais_ubicacion_cuenta_id', 'País dónde se localiza:') !!}</strong>
+        <strong> {!! Form::label('inversiones.pais_ubicacion_cuenta_id', 'País dónde se localiza: *') !!}</strong>
         {!! Form::select('inversiones[pais_ubicacion_cuenta_id]',$paises, isset($inversiones) ? $inversiones->pais_ubicacion_cuenta_id : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'Seleccione una opcion','id' => 'pais_cuenta']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('inversiones.numero_cuenta_poliza', 'Número de cuenta contrato o póliza:') !!}</strong>
+        <strong>{!! Form::label('inversiones.numero_cuenta_poliza', 'Número de cuenta contrato o póliza: *') !!}</strong>
         {!! Form::number('inversiones[numero_cuenta_poliza]',isset($inversiones) ? $inversiones->numero_cuenta_poliza : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej.01010101',  'id' => 'numero_cuenta_poliza', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('inversiones.tipo_de_moneda_id', 'Tipo de moneda:') !!}</strong>
+        <strong>{!! Form::label('inversiones.tipo_de_moneda_id', 'Tipo de moneda: *') !!}</strong>
         {!! Form::select('inversiones[tipo_de_moneda_id]',$tipoMoneda, isset($inversiones) ? $inversiones->tipo_de_moneda_id : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'Seleccione una opcion','id' => 'tipo_de_moneda', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('inversiones.saldo_a_la_fecha', 'Saldo a la fecha de ingreso:') !!}</strong>
+        <strong> {!! Form::label('inversiones.saldo_a_la_fecha', 'Saldo a la fecha de ingreso: *') !!}</strong>
         {!! Form::number('inversiones[saldo_a_la_fecha]',isset($inversiones) ? $inversiones->saldo_a_la_fecha : null,['class'=>'form-control color-tercero', 'placeholder'=>'p.ej.$50000 Mxn',  'id' => 'saldo_a_la_fecha', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>

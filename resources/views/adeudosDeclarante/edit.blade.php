@@ -3,8 +3,8 @@
     <div class="container">
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
-                <h1>ADEUDOS / PASIVOS</h1>
-                <h6>(A la fecha de ingreso)</h6>
+                <h3>ADEUDOS / PASIVOS</h3>
+                <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
             </div>
             <div class="card-body">
                 <div class="alert alert-danger" role="alert">
@@ -17,7 +17,7 @@
                 {!! Form::open(['route'=>['adeudos.update', $adeudos->id], 'method'=>'PUT', 'files' => true, 'role' => 'form', 'id' => '']) !!}
                     @include('adeudosDeclarante.form')
                 {!! Form::close() !!}
-                
+
             </div>
         </div>
     </div>

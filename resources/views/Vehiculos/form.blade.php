@@ -283,6 +283,15 @@
 
         @section('scripts')
             <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#tipoDePersona").change();
+                    $("#tipoVehiculo_id").change();
+                    $("#lugar_registro").change();
+                    $("#titular_id").change();
+                    $("#tipoPersonaTercero").change();
+                    $("#relacion_id").change();
+                    $("#tipo_adquisicion_id").change();
+                });
                 $("#tipoVehiculo_id").on("change", function () {
                     var tipoVehiculo_id = document.getElementById("tipoVehiculo_id").value
                     if (tipoVehiculo_id == 4) {
@@ -466,18 +475,14 @@
                 $('#tipo_adquisicion_id').change(function () {
                 //    alert("aw");
                     var tipo_adquisicion_id = document.getElementById('tipo_adquisicion_id').value;
-                    alert(tipo_adquisicion_id);
-                    if(tipo_adquisicion_id == '3' || tipo_adquisicion_id == '4' || tipo_adquisicion_id == '5'){
+                 //   alert(tipo_adquisicion_id);
+                    if(tipo_adquisicion_id == 3 || tipo_adquisicion_id == 4 || tipo_adquisicion_id == 5){
                         $('#pago_id').prop('required', false);
                         $('#pago_id').prop('disabled', true);
                         $('#v_valor').prop('required', false);
                         $('#v_valor').prop('disabled', true);
                         $('#tipo_monedas_id').prop('required', false);
                         $('#tipo_monedas_id').prop('disabled', true);
-
-                        $('#tipo_monedas_id').prop('value', '');
-                        $('#v_valor').prop('value', '');
-                        $('#pago_id').prop('value', '');
 
                         $("#tipo_monedas_id").val("");
                         $("#v_valor").val("");

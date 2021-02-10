@@ -17,24 +17,24 @@
                 <table class="table table-active table-striped">
                     <thead class="badge-primary">
                         <tr class="text-center">
-                            <th scope="col" width="20%">Nombre de la empresa</th>
-                            <th scope="col" width="20%">Titular</th>
-                            <th scope="col" width="40%">Información adicional</th>
-                            <th scope="col" width="20%">Acciones</th>
+                            <th scope="col" width="20%">NOMBRE DE LA EMPRESA</th>
+                            <th scope="col" width="20%">TITULAR</th>
+                            <th scope="col" width="40%">INFORMACIÓN ADICIONAL</th>
+                            <th scope="col" width="20%">ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($empresas as $empresa)
                         <tr class="text-center">
-                            <th scope="col" width="20%">{{$empresa->nombre_empresa}}</th>
-                            <th scope="col" width="20%">{{$empresa->tipotitularParticipaciones->valor}}</th>
-                            <th scope="col" width="40%">
+                            <td scope="col" width="20%">{{$empresa->nombre_empresa}}</td>
+                            <td scope="col" width="20%">{{$empresa->RelacionTransmisor->valor}}</td>
+                            <td scope="col" width="40%">
                     <center>
                         <strong>Tipo de participación: </strong> {{$empresa->tipoParticipacion->valor}} <br>
                         <strong>Sector: </strong> {{$empresa->tipoSector->valor}} <br>
                         <strong>Lugar donde se ubica: </strong> {{$empresa->lugarUbica->valor}}
                     </center>
-                    </th>
+                    </td>
                     <td class="all">
                         {!! Form::open(['action' => ['ParticipacionEnEmpresasSociedadesYAsociacionesController@destroy', $empresa->id], 'method'=>'DELETE']) !!}
                         <div style="display: inline-block;">
@@ -52,7 +52,7 @@
                     </tbody>
                 </table>
                 <center>
-                    <strong>Para adicionar información pulse: <a href="{{route('participacion_empresas.create')}}"class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
+                    <strong>Para adicionar información de Participación en Empresas pulse: <a href="{{route('participacion_empresas.create')}}"class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                 </center>
             </div>
             @else
@@ -60,23 +60,20 @@
                 participan como socios, accionistas, comisarios, representantes, apoderados, colaboradores, beneficiarios u otros.</span>
             <br>
             <div class="alert alert-danger text-center" role="alert">
-                <label style="margin-top:10px;">
-                    <strong>Para registrar información pulse: </strong><a href="{{route('participacion_empresas.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br><br>
-                    <strong>Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('participacion_empresas.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
-                </label>
+                    <div>
+                        <strong>Para registrar información de Paticipación en Empresas pulse: </strong><a href="{{route('participacion_empresas.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
+                    </div>
+                    <div class="mt-2">
+                        <strong>Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('participacion_empresas.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                    </div>
             </div>
 
 
-
             @endif
-
             <div class="text-center">
                 <br>
-                <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                    sección
-                    anterior</a>
-                <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                    siguiente sección</a>
+                <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
             </div>
         </div>
 

@@ -1,68 +1,68 @@
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('apoyo.titular_apoyo_id', 'Titular del apoyo o beneficio:') !!}</strong>
+        <strong>{!! Form::label('apoyo.titular_apoyo_id', 'Titular del apoyo o beneficio: *') !!}</strong>
         {!! Form::select('apoyo[titular_apoyo_id]', $parentesco, isset($apoyo) ? $apoyo->titular_apoyo_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'titular_apoyo', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('apoyo.especifique_titular', 'Especifique otro:') !!}</strong>
+        <strong>{!! Form::label('apoyo.especifique_titular', 'Especifique otro: *') !!}</strong>
         {!! Form::text('apoyo[especifique_titular]',isset($apoyo) ? $apoyo->especifique_titular : null,['class'=>'form-control', 'placeholder'=>'p.ej.Concuño',  'id' => 'especifique_otro', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('apoyo.nombre_programa', 'Nombre del programa:') !!}</strong>
+        <strong> {!! Form::label('apoyo.nombre_programa', 'Nombre del programa: *') !!}</strong>
         {!! Form::text('apoyo[nombre_programa]',isset($apoyo) ? $apoyo->nombre_programa : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p.ej.Pensión para Adultos Mayores',  'id' => 'nombre_programa', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('apoyo.nombre_institucion', 'Institución que otorga el apoyo:') !!}</strong>
+        <strong> {!! Form::label('apoyo.nombre_institucion', 'Institución que otorga el apoyo: *') !!}</strong>
         {!! Form::text('apoyo[nombre_institucion]',isset($apoyo) ? $apoyo->nombre_institucion : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p.ej.SEDESOL',  'id' => 'nombre_institucion', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('apoyo.nivel_orden_gobierno_id', 'Nivel u orden de Gobierno:') !!}</strong>
+        <strong> {!! Form::label('apoyo.nivel_orden_gobierno_id', 'Nivel u orden de Gobierno: *') !!}</strong>
         {!! Form::select('apoyo[nivel_orden_gobierno_id]', $nivelGobierno, isset($apoyo) ? $apoyo->nivel_orden_gobierno_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'nivel_orden_gobierno_id', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="tipo_apoyo_id">
-        <strong> {!! Form::label('apoyo.tipo_apoyo_id', 'Tipo de apoyo:') !!}</strong>
+        <strong> {!! Form::label('apoyo.tipo_apoyo_id', 'Tipo de apoyo: *') !!}</strong>
         {!! Form::select('apoyo[tipo_apoyo_id]', $tipoApoyo, isset($apoyo) ? $apoyo->tipo_apoyo_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_apoyo', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong> {!! Form::label('apoyo.especifique_apoyo', 'Especifique otro:') !!}</strong>
+        <strong> {!! Form::label('apoyo.especifique_apoyo', 'Especifique otro: *') !!}</strong>
         {!! Form::text('apoyo[especifique_apoyo]',isset($apoyo) ? $apoyo->especifique_apoyo : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p.ej.Donación',  'id' => 'especifique_apoyo', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('apoyo.forma_recepcion_id', 'Forma de recepción del beneficio:') !!}</strong>
+        <strong>{!! Form::label('apoyo.forma_recepcion_id', 'Forma de recepción del beneficio: *') !!}</strong>
         {!! Form::select('apoyo[forma_recepcion_id]', $formaRecepcion, isset($apoyo) ? $apoyo->forma_recepcion_id : null,['class'=>'form-control', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'forma_recepcion', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="moneda" style="display: none">
-        <strong>{!! Form::label('apoyo.tipo_de_moneda_id', 'Tipo de moneda:') !!}</strong>
+        <strong>{!! Form::label('apoyo.tipo_de_moneda_id', 'Tipo de moneda: *') !!}</strong>
         {!! Form::select('apoyo[tipo_de_moneda_id]', $tipoMoneda, isset($apoyo) ? $apoyo->tipo_de_moneda_id : null,['class'=>'form-control text-uppercase', 'placeholder'=>'SELECCIONE UNA OPCION','id' => 'tipo_de_moneda_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="esp" style="display: none">
-        <strong>{!! Form::label('apoyo.especifique_especie', 'Especifique especie:') !!}</strong>
+        <strong>{!! Form::label('apoyo.especifique_especie', 'Especifique especie: *') !!}</strong>
         {!! Form::text('apoyo[especifique_especie]',isset($apoyo) ? $apoyo->especifique_especie : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p.ej.Cheque',  'id' => 'especifique_especie']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="espRep" >
-        <strong>{!! Form::label('apoyo.saldo_a_la_fecha', 'Especifique forma de recepción') !!}</strong>
+        <strong>{!! Form::label('apoyo.saldo_a_la_fecha', 'Especifique forma de recepción *') !!}</strong>
         {!! Form::text('apoyo[saldo_a_la_fecha]',isset($apoyo) ? $apoyo->saldo_a_la_fecha : null,['class'=>'form-control', 'placeholder'=>'p.ej.Cheque',  'id' => 'saldo_a_la_fecha', 'disabled' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('apoyo.monto_mensual', 'Monto mensual aproximado del beneficio') !!}</strong>
+        <strong>{!! Form::label('apoyo.monto_mensual', 'Monto mensual aproximado del beneficio: *') !!}</strong>
         {!! Form::number('apoyo[monto_mensual]',isset($apoyo) ? $apoyo->monto_mensual : null,['class'=>'form-control', 'placeholder'=>'p.ej.$10,000 Mxn',  'id' => 'monto_mensual', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -118,13 +118,13 @@
                 $('#esp').show();
                 $('#espRep').hide();
                 $("#especifique_especie").prop("required", true)
-                $("#tipo_de_moneda_id").prop("required", false)  
+                $("#tipo_de_moneda_id").prop("required", false)
             }else{
                 $('#moneda').show();
                 $('#esp').hide();
                 $('#espRep').hide();
                 $("#tipo_de_moneda_id").prop("required", true)
-                $("#especifique_especie").prop("required", false)         
+                $("#especifique_especie").prop("required", false)
             }
             if(val == ""){
                 $('#moneda').hide();

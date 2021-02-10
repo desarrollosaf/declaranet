@@ -27,28 +27,28 @@ class RepresentacionController extends Controller {
 
         //COMBO TITULAR PARTICIPACION
         $selecttitularRepresentacion = Arr::pluck(\App\titularBien::all(), "valor", "id");
-        
+
         //COMBO TITULAR PARTICIPACION
         $selecttipoRepresentacion = Arr::pluck(\App\tipoRepresentacion::all(), "valor", "id");
-        
+
         //COMBO TITULAR PARTICIPACION
         $selectregimenRepresentante = Arr::pluck(\App\RegimenFiscal::all(), "valor", "id");
-        
+
         //COMBO TITULAR PARTICIPACION
         $selecttipoRespuesta = Arr::pluck(\App\Respuesta::all(), "respuesta", "id");
-        
+
         //COMBO TIPO SECTOR
         $selecttipoSector = Arr::pluck(\App\sector::all(), "valor", "id");
-        
+
         //COMBO UBICACION INMUEBLE
         $selectubicacionRepresentacion = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-        
+
         //COMBO UBICACION INMUEBLE
         $selectpaises = Arr::pluck(\App\Pais::all(), "valor", "id");
-        
+
         //COMBO UBICACION INMUEBLE
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
-        
+
 
         return view("Representacion.create", compact('selecttitularRepresentacion', 'selecttipoRepresentacion', 'selectregimenRepresentante', 'selecttipoRespuesta', 'selecttipoSector', 'selectubicacionRepresentacion', 'selectpaises', 'selectEntidad'));
     }
@@ -76,7 +76,7 @@ class RepresentacionController extends Controller {
         }
 
         //dd($repre);
-        $part_emp = \App\representacion::create($repre);
+        $part_emp = \App\Representacion::create($repre);
         return redirect()->route('representacion.index');
     }
 
@@ -99,28 +99,28 @@ class RepresentacionController extends Controller {
     public function edit($id) {
         //COMBO TITULAR PARTICIPACION
         $selecttitularRepresentacion = Arr::pluck(\App\titularBien::all(), "valor", "id");
-        
+
         //COMBO TITULAR PARTICIPACION
         $selecttipoRepresentacion = Arr::pluck(\App\tipoRepresentacion::all(), "valor", "id");
-        
+
         //COMBO TITULAR PARTICIPACION
         $selectregimenRepresentante = Arr::pluck(\App\RegimenFiscal::all(), "valor", "id");
-        
+
         //COMBO TITULAR PARTICIPACION
         $selecttipoRespuesta = Arr::pluck(\App\Respuesta::all(), "respuesta", "id");
-        
+
         //COMBO TIPO SECTOR
         $selecttipoSector = Arr::pluck(\App\sector::all(), "valor", "id");
-        
+
         //COMBO UBICACION INMUEBLE
         $selectubicacionRepresentacion = Arr::pluck(\App\LugarUbicacion::all(), "valor", "id");
-        
+
         //COMBO UBICACION INMUEBLE
         $selectpaises = Arr::pluck(\App\Pais::all(), "valor", "id");
-        
+
         //COMBO UBICACION INMUEBLE
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
-        
+
 
         $representacion = \App\Representacion::find($id);
 

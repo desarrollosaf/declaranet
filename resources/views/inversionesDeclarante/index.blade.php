@@ -12,10 +12,9 @@
                         <table class="table table-active table-striped">
                             <thead class="badge-primary">
                             <tr class="text-center">
-                                <th scope="col">Tipo de inversión</th>
-                                <th scope="col">Titular</th>
-                                <th scope="col">Información Adicional</th>
-                                <th scope="col">Acciones</th>
+                                <th scope="col">TIPO DE INVERSIÓN</th>
+                                <th scope="col">INFORMACIÓN ADICIONAL</th>
+                                <th scope="col">ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -23,9 +22,9 @@
                                 <tr class="text-center">
                                     @if($inversiones!= null)
                                         <td>{{$inversion->tipoInversion->valor}}</td>
-                                        <td>{{$inversion->nombreTitular->valor}}</td>
                                         <td>
-                                            <h8><strong>Monto original:</strong>{{$inversion->saldo_a_la_fecha}}</h8>
+                                            <h8><strong>TITULAR:</strong>{{$inversion->nombreTitular->valor}}</h8><br>
+                                            <h8><strong>MONTO ORIGINAL:</strong>{{$inversion->saldo_a_la_fecha}}</h8>
                                         </td>
                                         <td>
                                             {!! Form::open(['action' => ['InversionesDeclaranteController@destroy', $inversion->id], 'method'=>'DELETE']) !!}
@@ -43,22 +42,19 @@
                             </tbody>
                         </table>
                         <center>
-                            <strong>Si desea registrar algún Inversion, Cuentas Bancarias y Otro tipo de valores/activos pulse: <a
-                                    href="{{route('inversiones.create')}}"
-                                    class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                                apartado.</strong>
+                            <strong><justify>Si desea registrar algún Inversion, Cuentas Bancarias y Otro tipo de valores/activos pulse: <a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong></justify>
                         </center>
                     </div>
                 @else
-                    <span style="text-align: left !important;">Deberá proporcionar la información de CADA UNA de las inversiones, cuentas bancarias y otro tipo de valores, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como las de su pareja y/o dependientes económicos.</span>
+                    <span style="text-align: justify !important;">Deberá proporcionar la información de CADA UNA de las inversiones, cuentas bancarias y otro tipo de valores, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como las de su pareja y/o dependientes económicos.</span>
                     <br>
                     <div class="alert alert-danger text-center" role="alert">
-                        <label style="margin-top:10px;">
-                            <strong>Para registrar información pulse: </strong><a
-                                href="{{route('inversiones.create')}}"
-                                class="btn btn-sm btn-secondary ">Agregar</a><br>
+                        <div>
+                            <strong>Para registrar información de Inversiones pulse: </strong><a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
+                        </div>
+                        <div class="mt-2">
                             <strong>Si no tiene inversiones, cuentas bancarias u otro tipo de valores, seleccione <a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
-                        </label>
+                        </div>
                     </div>
 
 
@@ -68,11 +64,8 @@
 
                 <div class="text-center">
                     <br>
-                    <a href="{{route("bienes_muebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        sección
-                        anterior</a>
-                    <a href="{{route("adeudos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        siguiente sección</a>
+                    <a href="{{route("bienes_muebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                    <a href="{{route("adeudos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                 </div>
             </div>
 

@@ -3,8 +3,8 @@
     <div class="container">
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
-                <h1>APOYO O BENEFICIO DECLARANTE</h1>
-                <h6>(Hasta los últimos dos años)</h6>
+                <h4>APOYOS O BENEFICIOS PÚBLICOS</h4>
+                <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
             </div>
             <div class="card-body">
                 {!! Form::open(['route'=>['apoyo_beneficio.update', $apoyo->id], 'method'=>'PUT', 'files' => true, 'role' => 'form', 'id' => '']) !!}
