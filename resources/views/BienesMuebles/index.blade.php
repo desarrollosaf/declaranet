@@ -20,13 +20,13 @@
                             <tbody>
                             @foreach($bienesMuebles as $item)
                                 <tr>
-                                    <td>{{$item->TitularBien->valor}}</td>
+                                    <td align="center">{{$item->TitularBien->valor}}</td>
                                     @if($item->descripcion_bien)
-                                        <td>{{$item->descripcion_bien}}</td>
+                                        <td align="center">{{$item->descripcion_bien}}</td>
                                     @else
-                                        <td>{{$item->especifique}}</td>
+                                        <td align="center">{{$item->especifique}}</td>
                                     @endif
-                                    <td class="all">
+                                    <td class="all" align="center">
                                         {!! Form::open(['action' => ['BienesMueblesController@destroy', $item->id], 'method'=>'DELETE']) !!}
                                         <div style="display: inline-block;">
                                             <a href="{{route("bienes_muebles.edit",$item->id)}}" type="button" class="btn btn-warning btn-sm ion ion-edit"></a>
