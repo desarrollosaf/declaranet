@@ -54,7 +54,7 @@
                                                     <td>
                                                         {!! Form::open(['action' => ['ApoyoBeneficioController@destroy', $apoyo->id], 'method'=>'DELETE']) !!}
                                                         <div style="display: inline-block;">
-                                                            <a href="{{route("apoyo_beneficio.edit",$apoyo->id)}}" type="button" class="btn btn-warning ion ion-"><i class="ion ion-edit"></i></a>
+                                                            <a href="{{route("apoyo_beneficio.edit",$apoyo->id)}}" type="button" class="btn btn-xs btn-warning"><i class="ion ion-edit"></i></a>
                                                             <button class="btn btn-xs btn-danger btn-borrar"><i class="ion ion-trash-a btn-borrar"></i></button>
                                                         </div>
                                                         {!! Form::close() !!}
