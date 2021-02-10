@@ -166,13 +166,15 @@
                 $("#entidades_id").prop("disabled", false);
                 document.getElementById("mx").style.display="block";
                 document.getElementById("ex").style.display="none";
-                $("#paises_id").prop("required", false);
-                $("#paises_id").val("");
+                $("#pais").prop("required", false);
+                $("#pais").val("");
+                $("#entidades_id").prop("required", true);
             }else{
                 document.getElementById("mx").style.display="none";
                 document.getElementById("ex").style.display="block";
                 $("#entidades_id").prop("required", false);
                 $("#entidades_id").val("");
+                $("#pais").prop("required", true);
             }
         });
 
