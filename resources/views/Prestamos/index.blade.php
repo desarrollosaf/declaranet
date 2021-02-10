@@ -62,8 +62,6 @@
                                         </td>
 
                                     @endif
-                                    <td class="py-2"><a href="{{route("prestamos.edit",$item->id)}}"
-                                                        class="btn btn-warning btn-sm ion ion-edit"></a></td>
                                     <td class="py-2">
                                         {!! Form::open(['action' => ['PrestamoOComodatoPorTercerosController@destroy', $item->id], 'method'=>'DELETE']) !!}
                                         <div style="display: inline-block;">
