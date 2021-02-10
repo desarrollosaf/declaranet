@@ -76,9 +76,7 @@
                                 <br>Deberá señalar la información de CADA UNO de los apoyos o beneficios públicos recibidos por el Declarante, pareja y/o dependientes económicos.
                                 <div class="alert alert-danger text-center" role="alert">
                                     <label style="margin-top:10px;">
-                                        <strong>Para registrar información pulse: </strong><a
-                                            href="{{route('apoyo_beneficio.create')}}"
-                                            class="btn btn-sm btn-secondary ">Agregar</a><br>
+                                        <strong>Para registrar información pulse: </strong><a href="{{route('apoyo_beneficio.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
                                         <strong>Si no tiene apoyos o beneficios públicos, seleccione <a href="{{route('prestamos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                                     </label>
                                 </div>
