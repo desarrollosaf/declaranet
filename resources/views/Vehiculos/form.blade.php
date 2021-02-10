@@ -283,6 +283,15 @@
 
         @section('scripts')
             <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#tipoDePersona").change();
+                    $("#tipoVehiculo_id").change();
+                    $("#lugar_registro").change();
+                    $("#titular_id").change();
+                    $("#tipoPersonaTercero").change();
+                    $("#relacion_id").change();
+                    $("#tipo_adquisicion_id").change();
+                });
                 $("#tipoVehiculo_id").on("change", function () {
                     var tipoVehiculo_id = document.getElementById("tipoVehiculo_id").value
                     if (tipoVehiculo_id == 4) {
@@ -467,7 +476,7 @@
                 //    alert("aw");
                     var tipo_adquisicion_id = document.getElementById('tipo_adquisicion_id').value;
                     alert(tipo_adquisicion_id);
-                    if(tipo_adquisicion_id == '3' || tipo_adquisicion_id == '4' || tipo_adquisicion_id == '5'){
+                    if(tipo_adquisicion_id == 3 || tipo_adquisicion_id == 4 || tipo_adquisicion_id == 5){
                         $('#pago_id').prop('required', false);
                         $('#pago_id').prop('disabled', true);
                         $('#v_valor').prop('required', false);
