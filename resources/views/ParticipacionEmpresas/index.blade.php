@@ -26,15 +26,15 @@
                     <tbody>
                         @foreach($empresas as $empresa)
                         <tr class="text-center">
-                            <th scope="col" width="20%">{{$empresa->nombre_empresa}}</th>
-                            <th scope="col" width="20%">{{$empresa->RelacionTransmisor->valor}}</th>
-                            <th scope="col" width="40%">
+                            <td scope="col" width="20%">{{$empresa->nombre_empresa}}</td>
+                            <td scope="col" width="20%">{{$empresa->RelacionTransmisor->valor}}</td>
+                            <td scope="col" width="40%">
                     <center>
                         <strong>Tipo de participación: </strong> {{$empresa->tipoParticipacion->valor}} <br>
                         <strong>Sector: </strong> {{$empresa->tipoSector->valor}} <br>
                         <strong>Lugar donde se ubica: </strong> {{$empresa->lugarUbica->valor}}
                     </center>
-                    </th>
+                    </td>
                     <td class="all">
                         {!! Form::open(['action' => ['ParticipacionEnEmpresasSociedadesYAsociacionesController@destroy', $empresa->id], 'method'=>'DELETE']) !!}
                         <div style="display: inline-block;">
