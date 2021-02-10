@@ -254,7 +254,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <strong>ACLARACIONES/OBSERVACIONES: *</strong></label>
+                                <strong>ACLARACIONES/OBSERVACIONES: </strong></label>
                                 {!! Form::textarea('vehiculos[v_aclaraciones]', isset($vehiculos) ? $vehiculos->v_aclaraciones : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'v_aclaraciones']) !!}
                             </div>
                         </div>
@@ -472,6 +472,13 @@
                         $('#v_valor').prop('disabled', true);
                         $('#tipo_monedas_id').prop('required', false);
                         $('#tipo_monedas_id').prop('disabled', true);
+                    }else{
+                        $('#pago_id').prop('required', true);
+                        $('#pago_id').prop('disabled', false);
+                        $('#v_valor').prop('required', true);
+                        $('#v_valor').prop('disabled', false);
+                        $('#tipo_monedas_id').prop('required', true);
+                        $('#tipo_monedas_id').prop('disabled', false);
                     }
                 });
 
