@@ -6,16 +6,16 @@
                 <h3>ADEUDOS / PASIVOS</h3>
                 <h6 class="card-subtitle">(A LA FECHA DE INGRESO)</h6>
             </div>
-            
+
             <div class="card-body">
                 @if(count($adeudos))
                     <div class="table-responsive-lg">
                         <table class="table table-active table-striped">
                             <thead class="badge-primary">
                             <tr class="text-center">
-                                <th scope="col">Titular del adeudo:</th>
-                                <th scope="col">Tipo de adeudo:</th>
-                                <th scope="col">Acciones</th>
+                                <th scope="col">TITULAR DEL ADEUDO</th>
+                                <th scope="col">TIPO DE ADEUDO</th>
+                                <th scope="col">ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -52,10 +52,7 @@
                             </tbody>
                         </table>
                         <center>
-                            <strong>Si desea registrar algún Adeudo/Pasivo pulse: <a
-                                    href="{{route('adeudos.create')}}"
-                                    class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                                apartado.</strong>
+                            <strong>Si desea registrar algún Adeudo/Pasivo pulse: <a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                         </center>
                     </div>
                 @else
@@ -63,9 +60,7 @@
                     <br>
                     <div class="alert alert-danger text-center" role="alert">
                         <label style="margin-top:10px;">
-                            <strong>Para registrar información pulse: </strong><a
-                                href="{{route('adeudos.create')}}"
-                                class="btn btn-sm btn-secondary ">Agregar</a><br>
+                            <strong>Para registrar información pulse: </strong><a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
                             <strong>Si no tiene adeudos, seleccione <a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                         </label>
                     </div>

@@ -42,22 +42,19 @@
                             </tbody>
                         </table>
                         <center>
-                            <strong><justify>Si desea registrar algún Inversion, Cuentas Bancarias y Otro tipo de valores/activos pulse: <a
-                                    href="{{route('inversiones.create')}}"
-                                    class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                                apartado.</strong></justify>
+                            <strong><justify>Si desea registrar algún Inversion, Cuentas Bancarias y Otro tipo de valores/activos pulse: <a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong></justify>
                         </center>
                     </div>
                 @else
                     <span style="text-align: justify !important;">Deberá proporcionar la información de CADA UNA de las inversiones, cuentas bancarias y otro tipo de valores, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como las de su pareja y/o dependientes económicos.</span>
                     <br>
                     <div class="alert alert-danger text-center" role="alert">
-                        <label style="margin-top:10px;">
-                            <strong>Para registrar información pulse: </strong><a
-                                href="{{route('inversiones.create')}}"
-                                class="btn btn-sm btn-secondary ">Agregar</a><br>
+                        <div>
+                            <strong>Para registrar información de Inversiones pulse: </strong><a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
+                        </div>
+                        <div class="mt-2">
                             <strong>Si no tiene inversiones, cuentas bancarias u otro tipo de valores, seleccione <a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
-                        </label>
+                        </div>
                     </div>
 
 
@@ -67,11 +64,8 @@
 
                 <div class="text-center">
                     <br>
-                    <a href="{{route("bienes_muebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        sección
-                        anterior</a>
-                    <a href="{{route("adeudos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        siguiente sección</a>
+                    <a href="{{route("bienes_muebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                    <a href="{{route("adeudos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                 </div>
             </div>
 
