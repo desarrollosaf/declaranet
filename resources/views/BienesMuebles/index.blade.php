@@ -12,21 +12,21 @@
                         <table class="table table-active table-striped text-uppercase">
                             <thead class="badge-primary">
                             <tr>
-                                <th align="center">TITULAR BIEN</th>
-                                <th align="center">DESCRIPCIÓN</th>
-                                <th align="center">ACCIONES</th>
+                                <th scope="col" align="center">TITULAR BIEN</th>
+                                <th scope="col" align="center">DESCRIPCIÓN</th>
+                                <th scope="col" align="center">ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($bienesMuebles as $item)
                                 <tr>
-                                    <td align="center">{{$item->TitularBien->valor}}</td>
+                                    <td >{{$item->TitularBien->valor}}</td>
                                     @if($item->descripcion_bien)
-                                        <td align="center">{{$item->descripcion_bien}}</td>
+                                        <td >{{$item->descripcion_bien}}</td>
                                     @else
-                                        <td align="center">{{$item->especifique}}</td>
+                                        <td >{{$item->especifique}}</td>
                                     @endif
-                                    <td class="all" align="center">
+                                    <td class="all">
                                         {!! Form::open(['action' => ['BienesMueblesController@destroy', $item->id], 'method'=>'DELETE']) !!}
                                         <div style="display: inline-block;">
                                             <a href="{{route("bienes_muebles.edit",$item->id)}}" type="button" class="btn btn-warning btn-sm ion ion-edit"></a>
