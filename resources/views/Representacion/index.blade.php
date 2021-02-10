@@ -60,10 +60,10 @@ x|@extends('layouts.app')
 
             <div class="alert alert-danger text-center" role="alert">
             <div>
-                Para registrar información de Representación pulse: <a class="btn btn-sm btn-secondary" href="{{route('representacion.create')}}">Agregar</a>
+                <strong>Para registrar información de Representación pulse: <a class="btn btn-sm btn-secondary" href="{{route('representacion.create')}}">Agregar</a></strong>
             </div>
             <div class="mt-2">
-                Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('representacion.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a><br>
+                <strong>Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('representacion.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a><br></strong>
             </div>
         </div>
     </div>
