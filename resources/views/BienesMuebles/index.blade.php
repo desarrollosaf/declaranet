@@ -12,9 +12,9 @@
                         <table class="table table-active table-striped text-uppercase">
                             <thead class="badge-primary">
                             <tr>
-                                <td align="center">TITULAR BIEN</th>
-                                <td align="center">DESCRIPCIÓN</th>
-                                <td align="center">ACCIONES</th>
+                                <th align="center">TITULAR BIEN</th>
+                                <th align="center">DESCRIPCIÓN</th>
+                                <th align="center">ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
