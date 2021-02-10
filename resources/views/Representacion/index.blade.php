@@ -8,7 +8,13 @@ x|@extends('layouts.app')
             <h6 class="card-subtitle">(Hasta los últimos dos años)</h6>
         </div>
 
-    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card">
+
+                    </div>
+                    <div class="card-body">
         @if(count($representacion))
 
         <table class="table table-bordered table-striped">
