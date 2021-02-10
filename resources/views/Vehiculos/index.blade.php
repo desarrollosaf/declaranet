@@ -66,10 +66,8 @@
                     <span style="text-align: justify !important;"><strong>Deberá proporcionar la información de CADA UNO de los vehículos, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como los de su pareja y/o dependientes económicos.</strong></span>
                         <br>
                         <div class="alert alert-danger text-center" role="alert">
-                            <label style="margin-top:10px;">
-                                <strong>Para registrar información pulse: </strong><a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br><br>
-                                <strong>Si no tiene vehículos, seleccione <a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
-                            </label>
+                                Para registrar información pulse: <a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
+                                Si no tiene vehículos, seleccione <a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a>
                         </div>
                     @endif
 
