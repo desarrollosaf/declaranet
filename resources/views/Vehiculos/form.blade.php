@@ -479,6 +479,29 @@
                         $('#v_valor').prop('disabled', false);
                         $('#tipo_monedas_id').prop('required', true);
                         $('#tipo_monedas_id').prop('disabled', false);
+                        $("#tipo_monedas_id").val("");
+                        $("#v_valor").val("");
+                        $("#pago_id").val("");
+                    }
+                });
+
+
+                $("#v_fecha").on("blur", function () {
+                    var fecha = document.getElementById("v_fecha").value;
+                    var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth() + 1;
+                    var yyyy = today.getFullYear();
+                    if (dd < 10) {
+                        dd = '0' + dd;
+                    }
+                    if (mm < 10) {
+                        mm = '0' + mm;
+                    }
+                    today = yyyy + '-' + mm + '-' + dd;
+                    if (fecha > today) {
+                        alert("La fecha es mayor a la fecha de registro, favor de comprobar");
+                        var fechaB = document.getElementById("v_fecha").value = '00/00/0000';
                     }
                 });
 
