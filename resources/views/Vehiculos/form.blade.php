@@ -484,10 +484,6 @@
                         $('#tipo_monedas_id').prop('required', false);
                         $('#tipo_monedas_id').prop('disabled', true);
 
-                        $('#tipo_monedas_id').prop('value', '');
-                        $('#v_valor').prop('value', '');
-                        $('#pago_id').prop('value', '');
-
                         $("#tipo_monedas_id").val("");
                         $("#v_valor").val("");
                         $("#pago_id").val("");

@@ -276,6 +276,17 @@
                     $('#valor_adquisicion').prop('disabled', true);
                     $('#tipo_moneda').prop('required', false);
                     $('#tipo_moneda').prop('disabled', true);
+
+                    $("#tipo_monedas_id").val("");
+                    $("#valor_adquisicion").val("");
+                    $("#tipo_moneda").val("");
+                }else{
+                    $('#forma_pago').prop('required', true);
+                    $('#forma_pago').prop('disabled', false);
+                    $('#valor_adquisicion').prop('required', true);
+                    $('#valor_adquisicion').prop('disabled', false);
+                    $('#tipo_moneda').prop('required', true);
+                    $('#tipo_moneda').prop('disabled', false);
                 }
             });
 
