@@ -466,8 +466,7 @@
                 $('#tipo_adquisicion_id').click(function () {
                 //    alert("aw");
                     var tipo_adquisicion_id = document.getElementById('tipo_adquisicion_id').value;
-                    alert(tipo_adquisicion_id);
-                    if(tipo_adquisicion_id == 3 || tipo_adquisicion_id == 4 || tipo_adquisicion_id == 5){
+                    if(tipo_adquisicion_id == '3' || tipo_adquisicion_id == '4' || tipo_adquisicion_id == '5'){
                         $('#pago_id').prop('required', false);
                         $('#pago_id').prop('disabled', true);
                         $('#v_valor').prop('required', false);
