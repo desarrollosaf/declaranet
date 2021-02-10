@@ -651,7 +651,7 @@
     });
     $('#forma_adquisicion_id').change(function () {
         var forma_adquisicion_id = document.getElementById('forma_adquisicion_id').value;
-
+alert(forma_adquisicion_id);
         if(forma_adquisicion_id == 3 || forma_adquisicion_id == 4 || forma_adquisicion_id == 5){
             $('#forma_pago_id').prop('required', false);
             $('#forma_pago_id').prop('disabled', true);
