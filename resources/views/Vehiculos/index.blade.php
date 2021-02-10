@@ -13,10 +13,10 @@
                             <table class="table table-active table-striped">
                                 <thead class="badge-primary">
                                 <tr class="text-center">
-                                    <th scope="col" width="20%">Tipo Vehículo</th>
-                                    <th scope="col" width="20%">Titular</th>
-                                    <th scope="col" width="40%">Información adicional</th>
-                                    <th scope="col" width="20%">Acciones</th></tr>
+                                    <th scope="col" width="20%">TIPO VEHÚCILO</th>
+                                    <th scope="col" width="20%">TITULAR</th>
+                                    <th scope="col" width="40%">INFORMACIÓN ADICIONAL</th>
+                                    <th scope="col" width="20%">ACCIONES</th></tr>
 
 
                                 </tr>
@@ -32,10 +32,10 @@
                                         </td>
                                         <td>
                                             <center>
-                                                <strong>Forma de adquisición:</strong> {{$vehiculo->tipoAdquisicion->valor}} <br>
-                                                <strong>Forma de pago:</strong>@if($vehiculo->pago_id == null)NO APLICA
+                                                <strong>FORMA DE AQUISICIÓN:</strong> {{$vehiculo->tipoAdquisicion->valor}} <br>
+                                                <strong>FORMA DE PAGO:</strong>@if($vehiculo->pago_id == null)NO APLICA
                                                 @else{{$vehiculo->pago->valor}} @endif<br>
-                                                <strong>Valor de aquisición:</strong>@if($vehiculo->pago_id == null)NO APLICA
+                                                <strong>VALOR DE ADQUISICIÓN:</strong>@if($vehiculo->pago_id == null)NO APLICA
                                                 @else{{$vehiculo->v_valor}} @endif<br>
                                             </center>
                                         </td>
@@ -63,13 +63,11 @@
                             </center>
                         </div>
                     @else
-                    <span style="text-align: left !important;"><strong>Deberá proporcionar la información de CADA UNO de los vehículos, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como los de su pareja y/o dependientes económicos.</strong></span>
+                    <span style="text-align: justify !important;"><strong>Deberá proporcionar la información de CADA UNO de los vehículos, que a la fecha de ingreso al cargo sean propiedad del Declarante, así como los de su pareja y/o dependientes económicos.</strong></span>
                         <br>
                         <div class="alert alert-danger text-center" role="alert">
                             <label style="margin-top:10px;">
-                                <strong>Para registrar información pulse: </strong><a
-                                    href="{{route('vehiculos.create')}}"
-                                    class="btn btn-sm btn-secondary ">Agregar</a><br><br>
+                                <strong>Para registrar información pulse: </strong><a href="{{route('vehiculos.create')}}" class="btn btn-ninguno btn-secondary">Agregar</a><br>
                                 <strong>Si no tiene vehículos, seleccione <a href="{{route('vehiculos.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                             </label>
                         </div>
