@@ -277,9 +277,9 @@
                     $('#tipo_moneda').prop('required', false);
                     $('#tipo_moneda').prop('disabled', true);
 
-                    $("#tipo_monedas_id").val("");
-                    $("#valor_adquisicion").val("");
                     $("#tipo_moneda").val("");
+                    $("#valor_adquisicion").val("");
+                    $("#forma_pago").val("");
                 }else{
                     $('#forma_pago').prop('required', true);
                     $('#forma_pago').prop('disabled', false);
