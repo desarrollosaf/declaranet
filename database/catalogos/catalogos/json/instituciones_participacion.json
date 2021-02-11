@@ -1,17 +1,42 @@
 [
   {
-    "valor": "Direcciones y consejos de administración"
+    "valor": "Direcciones y consejos de administración",
+    "grado": 4
   },
   {
-    "valor": "Participación accionaria en sociedades"
+    "valor": "Participación accionaria en sociedades",
+    "grado": 4
   },
   {
-    "valor": "Préstamos"
+    "valor": "Préstamos",
+    "grado": 4
   },
   {
-    "valor": "Créditos"
+    "valor": "Créditos",
+    "grado": 4
   },
   {
-    "valor": "Obligaciones financieras"
+    "valor": "Obligaciones financieras",
+    "grado": 4
+  },
+  {
+    "valor": "Asociaciones",
+    "grado": 2
+  },
+  {
+    "valor": "Organizaciones y asociaciones civiles",
+    "grado": 4
+  },
+  {
+    "valor": "Consejos",
+    "grado": 2
+  },
+  {
+    "valor": "Créditos",
+    "grado": 2
+  },
+  {
+    "valor": "Consultorías",
+    "grado": 2
   }
 ]

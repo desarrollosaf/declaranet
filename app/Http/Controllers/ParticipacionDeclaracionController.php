@@ -26,8 +26,9 @@ class ParticipacionDeclaracionController extends Controller
      */
     public function index()
     {
-        $participaciones = [];
-        return view("participaciones.index", compact("participaciones"));
+        $declaracion = Declaracion::find($request->session()->get("declaracion_id"));
+        $participaciones = $declaracion->participaciones;
+        return view("participaciones.index", compact("participaciones","participaciones"));
     }
 
     /**
@@ -43,7 +44,8 @@ class ParticipacionDeclaracionController extends Controller
         $tipo_organizacion = Arr::pluck(TipoOrganizacionComunitaria::all(), "nombre", "id");
         $tipo_colaboracion = Arr::pluck(TipoColaboracion::all(), "tipo_colaboracion", "id");
         $tipo_titular_segundo = Arr::pluck(TipoTitularDonativo::where("grado","<=",2)->get(), "valor", "id");
-        return view("participaciones.create", compact('tipo_titular','tipo_institucion','tipo_participacion','tipo_organizacion','tipo_colaboracion','tipo_titular_segundo'));
+        $partcicipa_institucion = Arr::pluck(\App\InstitucionParticipacion::all(), "nombre", "id");
+        return view("participaciones.create", compact('tipo_titular','tipo_institucion','tipo_participacion','tipo_organizacion','tipo_colaboracion','tipo_titular_segundo','partcicipa_institucion'));
     }
 
     /**
@@ -57,9 +59,9 @@ class ParticipacionDeclaracionController extends Controller
         $participacion = $request->input("participacion");
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
         $declarante->participaciones()->create($participacion);
-        return redirect()->back();
+         return redirect()->route("viajes.index");
     }
-
+ 
     /**
      * Display the specified resource.
      *

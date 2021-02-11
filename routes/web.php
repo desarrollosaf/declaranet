@@ -59,3 +59,5 @@ Route::resource("/donativos", "DonativosController")->name('*', 'donativos');
 Route::resource("/intereses_personales", "InteresesController")->name('*', 'intereses_personales');
 Route::resource("/viajes", "ViajesController")->name('*', 'viajes');
 Route::resource("participaciones", "ParticipacionDeclaracionController")->name("*",'participaciones');
+Route::resource("instituciones", "InstitucionController")->name("*",'instituciones');
+Route::get("/instituciones/obtener_grado/{grado}","InstitucionController@ObtenerGrado");

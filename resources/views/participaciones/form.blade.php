@@ -26,7 +26,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('participacion[participaciones economicas]', 'Participaciones economicas:*') !!}</strong>
-        <select class="form-control text-uppercase" id="tipo_titular_donativo_id" name="tipo_titular_donativo_id">
+        <select class="form-control text-uppercase" id="tipo_titular_donativo_id" name="participacion[tipo_titular_donativo_id]">
             <option value="" data-grado="">Selecciona una opción</option>
             @foreach($tipo_titular as $value)
             <option value="{{$value->id}}" data-grado="{{$value->grado}}">{{$value->valor}}</option>
@@ -34,14 +34,9 @@
         </select>
         <span class="text-danger" style="font-size:150%"></span>
     </div>
-    <div class="form-group col-md-4" id="institucion_cuarto">
+    <div class="form-group col-md-4">
        <strong>{!! Form::label('participacion[Institicion en la que participa ]', 'Institicion en la que participa:*') !!}</strong>
-        {!! Form::select('participacion[tipo_institucion_id]',isset($tipo_institucion) ? $tipo_institucion : [],isset($participacion) ? $participacion->tipo_institucion_id : null,['class'=>'form-control text-uppercase', 'placeholder'=>'Selecciona una opción','required' => true]) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4" id="institucion_segundo">
-        <strong>{!! Form::label('participacion[Institución]', 'Institución:*') !!}</strong>
-        {!! Form::select('participacion[institucion_participacion_id]',isset($tipo_institucion) ? $tipo_institucion : [],isset($participacion) ? $participacion->institucion_participacion_id : null,['class'=>'form-control text-uppercase', 'placeholder'=>'Selecciona una opción','required' => true]) !!}
+        {!! Form::select('participacion[institucion_participacion_id]',[],isset($participacion) ? $participacion->institucion_participacion_id : null,['class'=>'form-control text-uppercase', 'placeholder'=>'Selecciona una opción','required' => true, 'id' => 'institucion_participacion_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -67,5 +62,6 @@
     <div class="form-group col-md-12">
         <strong>{!! Form::label('inversiones.aclaraciones_observaciones', 'Aclaraciones / Observaciones:') !!}</strong>
         {!! Form::textarea('participacion[observaciones]',isset($participacion) ? $participacion->observaciones : null,['class'=>'form-control alert-danger',  'id' => 'aclaraciones_observaciones']) !!}
+        
     </div>
 </div>

@@ -17,8 +17,14 @@
                             <th scope="col" width="20%">Eliminar</th>
                         </thead>
                         <tbody>
-                          
-                          <tr><tr>
+                          @foreach($participaciones as $participacion)
+                          <tr>
+                              <td>{{$participacion->nombre}} {{$participacion->primer_apellido}} {{$participacion->segundo_apellido}}</td>
+                              <td>{{$participacion->rfc}}}</td>
+                              <td>{{$participacion->fecha_nacimiento}}}</td>
+                              <td>{{$participacion->fecha_nacimiento}}}</td>
+                          </tr>
+                          @endforeach
                         </tbody>
                     </table>
                     <center>

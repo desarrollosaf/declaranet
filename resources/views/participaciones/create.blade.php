@@ -40,18 +40,27 @@
 @endsection
 @section('scripts')
 <script>
+    $(document).ready(function(){
+        $("#tipo_titular_donativo_id").change();
+    });
     $("#tipo_titular_donativo_id").on("change",function(){
         if($(this).val() != ""){
-            if(parseInt($("#tipo_titular_donativo_id option:selected ").data("grado")) <= 2){
-                $("#institucion_cuarto").hide();
-                $("#institucion_segundo").show();
-            }else{
-                $("#institucion_cuarto").show();
-                $("#institucion_segundo").hide();
-            }
+            $.ajax({
+                url:"/instituciones/obtener_grado/"+$("#tipo_titular_donativo_id option:selected").data("grado"),
+                type:"GET",
+                async:true,
+                success:function(data){
+                    console.log(data);
+                    var html = "";
+                    html += "<option value=''>Selecciona una opción</option>";
+                    $.each(data,function(index,element){
+                        html += "<option value='"+element.id+"'>"+element.nombre+"</option>";
+                    });
+                    $("#institucion_participacion_id").html(html);
+                }
+            });
         }else{
-            $("#institucion_cuarto").hide();
-            $("#institucion_segundo").hide();
+            $("#institucion_participacion_id").html("<option value=''>Selecciona una opción</option>");
         }
     });
 </script>
