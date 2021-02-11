@@ -58,7 +58,7 @@ x|@extends('layouts.app')
 
         @else
 
-            <div class="alert alert-danger text-center" role="alert">
+        <div class="alert alert-danger text-center" role="alert">
             <div>
                 <strong>Para registrar información de Representación pulse: <a class="btn btn-sm btn-secondary" href="{{route('representacion.create')}}">Agregar</a></strong>
             </div>

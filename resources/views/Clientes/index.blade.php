@@ -7,11 +7,6 @@
                 <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
 
             </div>
-
-
-
-
-
             <div class="card-body">
                 @if(count($clientes))
                     <div class="table-responsive-lg">
@@ -44,12 +39,8 @@
                                     <td class="all">
                                         {!! Form::open(['action' => ['ClientesPrincipalesController@destroy', $cliente->id], 'method'=>'DELETE']) !!}
                                         <div style="display: inline-block;">
-                                            <a href="{{route('clientes_principales.edit',[$cliente])}}" class="btn btn-xs btn-warning">
-                                                <i class="ion ion-edit"></i>
-                                            </a>
-                                            <button class="btn btn-xs btn-danger btn-borrar">
-                                                <i class="ion ion-trash-a btn-borrar"></i>
-                                            </button>
+                                            <a href="{{route('clientes_principales.edit',[$cliente])}}" class="btn btn-xs btn-warning"><i class="ion ion-edit"></i></a>
+                                            <button class="btn btn-xs btn-danger btn-borrar"><i class="ion ion-trash-a btn-borrar"></i></button>
                                         </div>
                                         {!! Form::close() !!}
                                     </td>
@@ -63,12 +54,9 @@
                                         <td class="all">
                                             {!! Form::open(['action' => ['ClientesPrincipalesController@destroy', $cliente->id], 'method'=>'DELETE']) !!}
                                             <div style="display: inline-block;">
-                                                <a href="{{route('clientes_principales.edit',[$cliente])}}" class="btn btn-xs btn-warning">
-                                                    <i class="ion ion-edit"></i>
-                                                </a>
-                                                <button class="btn btn-xs btn-danger btn-borrar">
-                                                    <i class="ion ion-trash-a btn-borrar"></i>
-                                                </button>
+                                                <a href="{{route('clientes_principales.edit',[$cliente])}}" class="btn btn-xs btn-warning"><i class="ion ion-edit"></i></a>
+                                                <button class="btn btn-xs btn-danger btn-borrar"><i class="ion ion-trash-a btn-borrar"></i></button>
+
                                             </div>
                                             {!! Form::close() !!}
                                         </td>
@@ -78,18 +66,18 @@
                             </tbody>
                         </table>
                         <center>
-                            <strong>Para adicionar información pulse: <a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                                apartado.</strong>
+                            <strong>Para adicionar información pulse: <a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                         </center>
                     </div>
                 @else
                     Cuando el Declarante, pareja y/o dependientes económicos sea propietario de alguna empresa, negocio o actividad lucrativa, deberá señalar a sus clientes principales, siempre y cuando el beneficio o ganancia directa supere mensualmente 250 Unidades de Medida y Actualización (UMA), refiriéndose al valor diario de ésta la cual consta de 22,405(veinti dos mil cuatroscientos cinco).
-
                     <div class="alert alert-danger text-center" role="alert">
-                        <label style="margin-top:10px;">
-                            <strong>Para registrar información pulse: </strong><a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br><br>
+                        <div>
+                            <strong>Para registrar información pulse: </strong><a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
+                        </div>
+                        <div class="mt-2">
                             <strong>Si no tiene clientes principales, seleccione<a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-ninguno btn-secondary">Ninguno</a></strong>
-                        </label>
+                        </div>
                     </div>
 
 
