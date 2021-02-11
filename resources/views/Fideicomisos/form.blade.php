@@ -63,7 +63,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Fideicomitente: *</strong></label>
-                    {!! Form::select('fideicomisos[tipo_persona_fideicomitente]', $tipoPersonaFideicomisoD, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomitente : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomitente', 'required' => true]) !!}
+                    {!! Form::select('fideicomisos[tipo_persona_fideicomitente]', $tipoPersonaFideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomitente : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomitente', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_FideicomitenteN">
@@ -135,7 +135,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Fideicomisario: *</strong></label>
-                    {!! Form::select('fideicomisos[tipo_persona_fideicomisario]', $tipoPersonaFideicomisoD, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomisario : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomisario', 'required' => true]) !!}
+                    {!! Form::select('fideicomisos[tipo_persona_fideicomisario]', $tipoPersonaFideicomiso, isset($fideicomisos) ? $fideicomisos->tipo_persona_fideicomisario : [],['class'=>'form-control',  'id' => 'tipo_persona_fideicomisario', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisica_FideicomisarioN">
