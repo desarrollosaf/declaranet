@@ -17,7 +17,7 @@ class CreateViajesTable extends Migration
             $table->id();
             $table->string("nombre_pariente");
             $table->string("primer_apellido");
-            $table->string("segundo_apellido");
+            $table->string("segundo_apellido")->nullable();
             $table->date("cumpleaños_pariente");
             $table->string("rfc_pariente");
             $table->bigInteger("tipo_responsable_id");

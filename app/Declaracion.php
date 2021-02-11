@@ -139,5 +139,7 @@ class Declaracion extends Model {
     public function participaciones(){
         return $this->hasMany(ParticipacionDeclaracion::Class);
     }
-
+    public function viajes(){
+        return $this->hasMany(Viajes::Class);
+    }
 }
