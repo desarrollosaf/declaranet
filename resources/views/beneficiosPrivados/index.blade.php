@@ -3,21 +3,9 @@
 <div class="container">
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
-
             <h4>BENEFICIOS PRIVADOS</h4>
             <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
-
         </div>
-
-
-
-
-
-
-
-
-
-
         <div class="card-body">
             @if(count($beneficios))
                 <div class="table-responsive-lg">
@@ -45,12 +33,8 @@
                                 <td class="all">
                                     {!! Form::open(['action' => ['BeneficiosPrivadosController@destroy', $beneficio->id], 'method'=>'DELETE']) !!}
                                     <div style="display: inline-block;">
-                                        <a href="{{route('beneficios_privados.edit',[$beneficio])}}" class="btn btn-xs btn-warning">
-                                            <i class="ion ion-edit"></i>
-                                        </a>
-                                        <button class="btn btn-xs btn-danger btn-borrar">
-                                            <i class="ion ion-trash-a btn-borrar"></i>
-                                        </button>
+                                        <a href="{{route('beneficios_privados.edit',[$beneficio])}}" class="btn btn-xs btn-warning"><i class="ion ion-edit"></i></a>
+                                        <button class="btn btn-xs btn-danger btn-borrar"><i class="ion ion-trash-a btn-borrar"></i></button>
                                     </div>
                                     {!! Form::close() !!}
                                 </td>
@@ -59,22 +43,19 @@
                         </tbody>
                     </table>
                     <center>
-                        <strong>Para adicionar información pulse: <a
-                                href="{{route('beneficios_privados.create')}}"
-                                class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                            apartado.</strong>
+                        <strong>Para adicionar información pulse: <a href="{{route('beneficios_privados.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                     </center>
                 </div>
             @else
                 Es la contribución monetaria o en especie que otorga una persona física o moral con recursos privados, al Declarante, pareja y/o dependientes económicos.
                 <br>Deberá señalar la información de CADA BENEFICIO PRIVADO recibido por el Declarante, pareja y/o dependientes económicos.
                 <div class="alert alert-danger text-center" role="alert">
-                    <label style="margin-top:10px;">
-                        <strong>Para registrar información pulse: </strong><a
-                            href="{{route('beneficios_privados.create')}}"
-                            class="btn btn-sm btn-secondary ">Agregar</a><br><br>
+                    <div>
+                        <strong>Para registrar información de beneficios privados pulse: </strong><a href="{{route('beneficios_privados.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br><br>
+                    </div>
+                    <div class="mt-2">
                         <strong>Si no recibe beneficios privados, seleccione <a href="{{route('beneficios_privados.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
-                    </label>
+                    </div>
                 </div>
 
 
