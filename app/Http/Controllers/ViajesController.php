@@ -88,7 +88,6 @@ class ViajesController extends Controller
     {
         $viaje = $request->input("viajes");
         $declaracion = \App\Declaracion::find($request->session()->get("declaracion_id"));
-        dd($declaracion);
         $declaracion->viajes()->create($viaje);
         return redirect()->route("viajes.index");
     }

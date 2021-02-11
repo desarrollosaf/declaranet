@@ -10,7 +10,7 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('segundoApellido', 'Segundo apellido : *') !!}</strong>
+        <strong>{!! Form::label('segundoApellido', 'Segundo apellido : ') !!}</strong>
         {!! Form::text("viajes[segundo_apellido]", (isset($viajes->tipo_donativos_id)) ? $donativo->tipo_donativos_id : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'segundoApellido']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -155,6 +155,7 @@
         $('#publico').hide();
         $('#sector-productivo').hide();
         $(".form-control").prop("required", true);
+        $("#segundoApellido").prop("required", false);
         $("#tipoResponsable").change(function () {
             let val = parseInt($(this).val());
             if (val == 23) {
@@ -166,7 +167,7 @@
         $("#tipoTercero").change(function () {
             let val = parseInt($(this).val());
             if (val == 1) {
-                $("#rfc").prop("readOnly", false).prop("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})').attr("placeholder", "p. ej. XAXX010101XXX").val("");
+                $("#rfc").prop("readOnly", false).prop("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{0}{3})').attr("placeholder", "p. ej. XAXX010101XXX").val("");
                 $("#nombre-tercero").show().find("input").prop("readOnly", false).prop("required", true);
                 $("#razon-social").hide().find("input").prop("required", false).val("");
             } else {

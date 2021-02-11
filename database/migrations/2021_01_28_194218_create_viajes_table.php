@@ -40,9 +40,10 @@ class CreateViajesTable extends Migration
             $table->Integer("monto_viaje");
             $table->bigInteger("tipo_moneda_id");
             $table->string("observaciones_viajes")->nullable();
+            $table->unsignedBigInteger("declaracion_id");
+            $table->foreign("declaracion_id")->references("id")->on("declaraciones");
             $table->unsignedBigInteger('tipo_operacion_id')->default(1);
             $table->foreign('tipo_operacion_id')->references('id')->on('tipo_operaciones');
-            
             $table->softDeletes();
             $table->timestamps();
         });

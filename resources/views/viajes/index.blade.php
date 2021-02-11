@@ -48,7 +48,7 @@
                             <center>
                                 <strong>Para adicionar información pulse <a class="btn btn-sm btn-secondary" href="{{route('viajes.create')}}">Agregar</a></strong>
                                 <br><br>
-                                <strong>Si no tiene donaciones, seleccione  <a href="{{route('fideicomisos.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                                <strong>Si no tiene viajes, seleccione  <a href="{{route('fideicomisos.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                             </center>
                         </div>
                     </div>
