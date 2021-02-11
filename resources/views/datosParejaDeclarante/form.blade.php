@@ -1,133 +1,508 @@
-<div class="alert alert-danger" role="alert" style="line-height : 23px !important;">
-    Los datos de terceros, siempre y cuando sean personas físicas, y los datos resaltados,
-    no serán públicos.
-</div>
-<hr>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.nombre', 'Nombre (s): *') !!}</strong>
-        {!! Form::text('declaracion.[nombre]',$servidor->nombre,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'nombre', 'readonly' => true,'pattern'=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
+        <strong>{!! Form::label('datosPareja.nombre', 'Nombre (s): *') !!}</strong>
+        {!! Form::text('datosPareja[nombre]',(isset($pareja->nombre)) ? $pareja->nombre : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Carlos',  'id' => 'nombre', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}", 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.apellidop', 'Primer apellido: *') !!}</strong>
-        {!! Form::text('declaracion.[apellidop]',$servidor->primer_apellido,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'apellidop', 'readonly' => true]) !!}
+        <strong>{!! Form::label('datosPareja.apellidop', 'Primer apellido: *') !!}</strong>
+        {!! Form::text('datosPareja[primer_apellido]',(isset($pareja->primer_apellido)) ? $pareja->primer_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'apellidop','required' => true, 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.apellidom', 'Segundo apellido:') !!}</strong>
-        {!! Form::text('declaracion.[apellidom]',$servidor->segundo_apellido,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'apellidom','readonly' => true]) !!}
+        <strong>{!! Form::label('datosPareja.segundo_apellido', 'Segundo apellido: ') !!}</strong>
+        {!! Form::text('datosPareja[segundo_apellido]',(isset($pareja->segundo_apellido)) ? $pareja->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'apellidom', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.curp', 'CURP:') !!}</strong>
-        {!! Form::text('declaracion.[curp]',$servidor->curp,['class'=>'form-control alert-danger text-uppercase',  'id' => 'curp', 'readonly' => true,'pattern'=>"([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)"]) !!}
+        <strong>{!! Form::label('datosPareja.fecha_nacimiento', 'Fecha de nacimiento: *') !!}</strong>
+        {!! Form::date('datosPareja[fecha_nacimiento]',(isset($pareja->fecha_nacimiento)) ? $pareja->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'fechanacimiento', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.rfc', 'RFC:') !!}</strong>
-        {!! Form::text('declaracion[rfc]',$servidor->rfc,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'rfc','readonly' => true,'pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})']) !!}
+        <strong>{!! Form::label('datosPareja.rfc_pareja', 'RFC: *') !!}</strong>
+        {!! Form::text('datosPareja[rfc_pareja]',(isset($pareja->rfc_pareja)) ? $pareja->rfc_pareja : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc_pareja', 'required' => true, 'pattern' => '([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.homoclave', 'Homoclave:') !!}</strong>
-        {!! Form::text('declaracion[homoclave]',$servidor->homoclave,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'homoclave' , 'readonly' => true,'pattern'=>'[A-Za-z0-9]{3}']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-4">
-        <strong>{!! Form::label('correo_institucional', 'Correo institucional:') !!}</strong>
-        {!! Form::email('declaracion[correo_institucional]',$declaracion->correo_institucional,['class'=>'form-control', 'placeholder'=>'P. EJ. carlosperez@cddiputados.gob.mx',  'id' => 'c_institucional']) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.correo_personal', 'Correo personal: *') !!}</strong>
-        {!! Form::email('declaracion[correo_personal]',$declaracion->correo_personal,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. carlosperez@hotmail.com',  'id' => 'cpersonal','required' => true]) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.telefono_casa', 'Número telefónico de casa: ') !!}</strong>
-        {!! Form::text('declaracion[telefono_casa]',$declaracion->telefono_casa,['class'=>'form-control alert-danger', 'placeholder'=>'P. EJ. 7225555555',  'id' => 'telcasa' , 'pattern'=>'[0-9]{10}', 'size'=>'10', 'maxlength'=>'10']) !!}
+        <strong>{!! Form::label('datosPareja.relacion_id', ' Relación con el Declarante: *') !!}</strong>
+        {!! Form::select('datosPareja[relacion_id]', $selectRelacioDeclarante, (isset($pareja->relacion_id)) ? $pareja->relacion_id : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'relacion', 'required' => true, 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.telefono_personal', 'Número de celular personal: *') !!}</strong>
-        {!! Form::text('declaracion[telefono_personal]',$declaracion->telefono_personal,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. 7225555555',  'id' => 'celpersonal','required' => true , 'pattern'=>'[0-9]{10}', 'size'=>'10', 'maxlength'=>'10']) !!}
+        <strong>{!! Form::label('datosPareja.ciudadano_id', '¿Es ciudadano extranjero?: *') !!}</strong>
+        {!! Form::select('datosPareja[ciudadano_id]', $selectCiudadano, (isset($pareja->ciudadano_id)) ? $pareja->ciudadano_id : null,['class'=>'form-control text-uppercase',  'id' => 'tipo-ciudadano', 'required' => true, 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>
-            {!! Form::label('declaracion.situacion_personal_id', 'Estado civil / Situación personal: *') !!}
-        </strong>
-        {!! Form::select('declaracion[situacion_personal_id]', $selectSituacionPersonal, $declaracion->situacion_personal_id, ['class'=>'form-control alert-danger','required' => 'true','placeholder'=>'SELECCIONE UNA OPCIÓN','id' => 'situcion']) !!}
+        <strong>{!! Form::label('datosPareja.curp', 'CURP: *') !!}</strong>
+        {!! Form::text('datosPareja[curp]',(isset($pareja->curp)) ? $pareja->curp : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XAXAXA01',  'id' => 'curp', 'required' => true, "disabled" => true, 'pattern' => "([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)"]) !!}
+        <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.regimen_matrimonial_id', 'Régimen matrimonial: *') !!}</strong>
-        {!! Form::select('declaracion[regimen_matrimonial_id]', $selectRegimenMatrimonial, $declaracion->regimen_matrimonial_id, ['class'=>'form-control alert-danger', 'required' => 'true', 'id' => 'regimen_matrimonial_id','placeholder'=>'SELECCIONE UNA OPCIÓN']) !!}
-
+        <strong>{!! Form::label('datosPareja.respuesta_dependiente_id', '¿Es dependiente económico?: *') !!}</strong>
+        {!! Form::select('datosPareja[respuesta_dependiente_id]',$selectRespuesta, (isset($pareja->respuesta_dependiente_id)) ? $pareja->respuesta_dependiente_id : null,['class'=>'form-control alert-danger text-uppercase', 'id' => 'dependiente','required' => true, 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
+        <span class="text-danger" style="font-size:150%"></span>
     </div>
-    <div class="form-group col-md-4 ">
-            {!! Form::label('especificar', 'Especifique: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('declaracion[regimen_matrimonial]', isset($declaracion) ? $declaracion->regimen_matrimonial : null,['class'=>'form-control alert-danger text-uppercase ', 'placeholder'=>'p. ej. concuño', 'required' => true, 'id' => 'regimen_especificar']) !!}
+</div>
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <strong>{!! Form::label('datosPareja.respuesta_domicilio_id', '¿Habita en el domicilio del Declarante?: *') !!}</strong>
+        {!! Form::select('datosPareja[respuesta_domicilio_id]', $selectRespuesta, (isset($pareja->respuesta_domicilio_id)) ? $pareja->respuesta_domicilio_id : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'habita-domicilio', 'required' => true, 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4 lugar-reside">
+        <strong>{!! Form::label('datosPareja.lugar_reside_id', 'Lugar donde reside:  *') !!}</strong>
+        {!! Form::select('datosPareja[lugar_reside_id]',$selectLugarReside,(isset($pareja->lugar_reside_id)) ? $pareja->lugar_reside_id : null,['class'=>'form-control alert-danger lugar-reside-change text-uppercase',  'id' => 'lugar-reside', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
+        <span class="text-danger" style="font-size:150%"></span>
+    </div>
+</div>
+<div class="domicilio-MXBinmuebles">
+    <hr>
+    <h5> DOMICILIO DE LA PAREJA </h5>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilio.calle', 'Calle:  *') !!}</strong>
+            {!! Form::text('domicilio[calle]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'nombre', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}", 'title' => "Ingresa la calle" ]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('exterior', 'Número exterior:  *') !!}</strong>
+            {!! Form::text('domicilio[num_ext]',isset($domicilio->num_int) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. 102',  'id' => 'exterior', 'title' => "Ingresa número exterior", 'pattern' => '[A-Za-z0-9-]{0,8}']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('interior', 'Número interior / Piso: ') !!}</strong>
+            {!! Form::text('domicilio[num_int]',isset($domicilio->num_int) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase num-int', 'placeholder'=>'p. ej. 5',  'id' => 'interior','pattern' => '[A-Za-z0-9-]{0,8}']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilio.colonia', 'Colonia / Localidad:  *') !!}</strong>
+            {!! Form::text('domicilio[colonia]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilio.id', 'Entidad Federativa:  *') !!}</strong>
+            {!! Form::select('domicilio[entidad_id]', $selectEntidad,isset($domicilio->entidad_id) ? $domicilio->entidad_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'entidad_id', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilio.municipio_id', 'Municipio / Alcaldía:  *') !!}</strong>
+            {!! Form::select('domicilio[municipio_id]', isset($selectMunicipio) ? $selectMunicipio : [], isset($domicilio->municipio_id) ? $domicilio->municipio_id : null,['class'=>'form-control text-uppercase', 'id' => 'municipio_id']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilio.codigo_postal', 'Código postal:  *') !!}</strong>
+            {!! Form::text('domicilio[codigo_postal]',isset($domicilio->codigo_postal) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'cp', 'pattern' =>"[0-9]{5}"]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
 </div>
+
+<div class="domicilio-EXBinmuebles">
+    <hr>
+    <h5> DOMICILIO DE LA PAREJA </h5>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilioExt.calleExt', 'Calle:  *') !!}</strong>
+            {!! Form::text('domicilioExt[calleExt]',isset($domicilio) ? $domicilio->calle : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Av. Independencia',  'id' => 'nombre', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}", 'title' => "Ingresa la calle" ]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilioExt.numextExt', 'Número exterior:  *') !!}</strong>
+            {!! Form::text('domicilioExt[numextExt]',isset($domicilio) ? $domicilio->num_ext : null,['class'=>'form-control tipo-titular text-uppercase num-int', 'placeholder'=>'p.ej. 102',  'id' => 'num_extExt', 'title' => "Ingresa número exterior", 'pattern' => '[A-Za-z0-9-]{0,8}']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilioExt.numintExt', 'Número interior / Piso:   ') !!}</strong>
+            {!! Form::text('domicilioExt[numintExt]',isset($domicilio) ? $domicilio->num_int : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 5',  'id' => 'numintExt', 'pattern' => '[A-Za-z0-9-]{0,8}']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilioExt.coloniaExt', 'Colonia / Localidad: *') !!}</strong>
+            {!! Form::text('domicilioExt[coloniaExt]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Centro',  'id' => 'colonia_Ext']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilio.pais_id', 'País: *') !!}</strong>
+            {!! Form::text('domicilioExt[pais]',isset($domicilio) ? $domicilio->pais : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Estados Unidos',  'id' => 'pais']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilioExt.estadoprovincia', 'Estado / Provincia: *') !!}</strong>
+            {!! Form::text('domicilioExt[estadoprovincia]',isset($domicilio) ? $domicilio->entidad : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. México',  'id' => 'estado_provincia']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('domicilioExt.codigopostalExt', 'Código postal: *') !!}</strong>
+            {!! Form::text('domicilioExt[codigopostalExt]',isset($domicilio) ? $domicilio->codigo_postal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. 50000',  'id' => 'codigo_postalExt', 'pattern' => '[A-za-z0-9]{5}']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+</div>
+<hr>
+<h5> ACTIVIDAD LABORAL DE LA PAREJA </h5>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.pais_id', 'País de nacimiento: *') !!}</strong>
-        {!! Form::select('declaracion[pais_id]', $paises, $declaracion->pais_id, ['class'=>'form-control text-uppercase','form-control alert-danger' ,  'required' => 'true','placeholder'=>'SELECCIONA UNA OPCIÓN']) !!}
-    </div>
-
-    <div class="form-group col-md-4">
-        <strong>{!! Form::label('declaracion.nacionalidades_id', 'Nacionalidad: *') !!}</strong>
-         {!! Form::select('declaracion[nacionalidad_id]', $nacionalidades, $declaracion->nacionalidad_id, ['class'=>'form-control alert-danger','placeholder'=>'SELECCIONE UNA OPCIÓN', 'id' => 'nacionalidades', 'required' => 'true']) !!}
+        <strong>{!! Form::label('actividadLaboral.ambito_sector_id', 'Ámbito / Sector :  *') !!}</strong>
+        {!! Form::select('actividadLaboral[ambito_sector_id]', $sectores,isset($experienciaLaboral->ambito_sector_id) ? $experienciaLaboral->ambito_sector_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'ambito-sector', 'placeholder' => "SELECCIONA UNA OPCIÓN", "required" => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
+    </div>
+    <div class="form-group col-md-4 sector-privado-otro">
+            <strong>{!! Form::label('actividadLaboral.ambito_sector_id', 'Tipo de empleador :  *') !!}</strong>
+            {!! Form::select('actividadLaboral[regimen_fiscal_id]', $regimenFiscal,isset($experienciaLaboral->regimen_fiscal_id) ? $experienciaLaboral->regimen_fiscal_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'regimen_fiscal_id', 'placeholder' => "SELECCIONA UNA OPCIÓN", "required" => true]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+    </div>
+</div>
+<div class="sector-privado-otro">
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <div id="empleador_fisica">
+                <strong>{!! Form::label('empleador_fisica', 'Nombre del empleador: *') !!} </strong>
+            </div>
+            <div id="empleador_moral" style="display: none;">
+                <strong>{!! Form::label('empleador_moral', 'Nombre de la empresa, sociedad o asociación: *') !!} </strong>
+            </div>
+            {!! Form::text('actividadLaboral[nombre_empresa]',isset($experienciaLaboral->nombre_empresa) ? $experienciaLaboral->nombre_empresa : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V',  'id' => 'codigo_postalExt']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('actividadLaboral.puesto', 'Puesto: *') !!}</strong>
+            {!! Form::text('actividadLaboral[puesto]',isset($experienciaLaboral->puesto) ? $experienciaLaboral->puesto : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. Análista de Sistemas',  'id' => 'codigo_postalExt']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <div id="empleador_fisica_RFC">
+                <strong>{!! Form::label('empleador_fisica', 'RFC: ') !!} </strong>
+            </div>
+            <div id="empleador_moral_RFC" style="display: none;">
+                <strong>{!! Form::label('empleador_moral', 'RFC: *') !!} </strong>
+            </div>
+            {!! Form::text('actividadLaboral[rfc]',isset($experienciaLaboral->rfc) ? $experienciaLaboral->rfc : null,['class'=>'form-control tipo-titular text-uppercase',  'id' => 'rfc']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('actividadLaboral.fecha_ingreso', 'Fecha de ingreso al empleo: *') !!}</strong>
+            {!! Form::date('actividadLaboral[fecha_ingreso]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control tipo-titular text-uppercase fecha',  'id' => 'codigo_postalExt', ]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('actividadLaboral.sector_id','Sector al que pertenece: *') !!}</strong>
+            {!! Form::select('actividadLaboral[sector_id]', $sector, isset($experienciaLaboral->sector_id) ? $experienciaLaboral->sector_id : null,['class'=>'form-control text-uppercase', 'id' => 'sector-privado', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4 especifique-sector">
+            <strong>{!! Form::label('actividadLaboral.especifique_otro_sector', 'Especifique otro sector: *') !!}</strong>
+            {!! Form::text('actividadLaboral[especifique_otro_sector]',isset($experienciaLaboral->especifique_otro_sector) ? $experienciaLaboral->codigo_postal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Sector petrolero',  'id' => 'especifique-sector']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('actividadLaboral.salario_mensual_neto','Salario mensual neto: *') !!}</strong>
+            {!! Form::number('actividadLaboral[salario_mensual_neto]',isset($experienciaLaboral->salario_mensual_neto) ? $experienciaLaboral->salario_mensual_neto : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. $10,000 Mxn',  'id' => 'salario_mensual_neto']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('actividadLaboral.respuesta_proveedor_id','¿Es proveedor o contratista de gobierno? *') !!}</strong>
+            {!! Form::select('actividadLaboral[respuesta_proveedor_id]', $respuesta, isset($experienciaLaboral->respuesta_proveedor_id) ? $experienciaLaboral->respuesta_proveedor_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+</div>
+<div class="sector-publico">
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('nivel_orden_gobierno_id', 'Nivel / Orden de Gobierno: * ') !!}</strong>
+            {!! Form::select('actividadLaboral[nivel_orden_gobierno_id]', $nivelOrdenGobierno,isset($experienciaLaboral->nivel_orden_gobierno_id) ? $experienciaLaboral->nivel_orden_gobierno_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('ambito_publico_id', 'Ámbito Público: *') !!}</strong>
+            {!! Form::select('actividadLaboral[ambito_publico_id]', $ambito, isset($experienciaLaboral->ambito_publico_id) ? $experienciaLaboral->ambito_publico_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('ente_publico', 'Nombre del Ente Público: *') !!}</strong>
+            {!! Form::text('actividadLaboral[ente_publico]',isset($experienciaLaboral->ente_publico) ? $experienciaLaboral->ente_publico : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Desarrollo de Sistemas S.A de C.V',  'id' => 'codigo_postalExt', 'title' => "Ingresa código postal a 5 dígitos"]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('area_adscripcion', 'Área de adscripción: *') !!}</strong>
+            {!! Form::text('actividadLaboral[area_adscripcion]',isset($experienciaLaboral->area_adscripcion) ? $experienciaLaboral->area_adscripcion : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Desarrollo de Tecnología',  'id' => 'codigo_postalExt', 'title' => "Ingresa código postal a 5 dígitos"]) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('Empleo, cargo o comisión: *') !!}</strong>
+            {!! Form::text('actividadLaboral[cargo_comision]',isset($experienciaLaboral->cargo_comision) ? $experienciaLaboral->cargo_comision : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Analista de sistemas',  'id' => 'empleo']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('funcion_pricipal', 'Especifique función principal: *') !!}</strong>
+            {!! Form::text('actividadLaboral[funcion_pricipal]',isset($experienciaLaboral->funcion_pricipal) ? $experienciaLaboral->funcion_pricipal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Desarrollo de sistemas de información',  'id' => 'funcio']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('actividadLaboral.salario_mensual_neto_publico', 'Salario mensual neto: *') !!}</strong>
+            {!! Form::number('actividadLaboral[salario_mensual_neto_publico]',isset($experienciaLaboral->salario_mensual_neto) ? $experienciaLaboral->salario_mensual_neto : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. $10,000 Mxn',  'id' => 'salario']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <strong>{!! Form::label('fecha_ingreso_publico', 'Fecha de ingreso al empleo: *') !!}</strong>
+            {!! Form::date('actividadLaboral[fecha_ingreso_publico]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control tipo-titular text-uppercase fecha', 'id' => 'codigo_postalExt']) !!}
+            <span class="text-danger" style="font-size:150%"></span>
+        </div>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-12">
-        <strong>{!! Form::label('declaracion.observaciones', 'Aclaraciones / Observaciones:') !!}</strong>
-        {!! Form::textarea('declaracion[observaciones]', $declaracion->observaciones, ['class'=>'form-control alert-danger']) !!}
+        <strong>{!! Form::label('datosPareja.observaciones', 'Aclaraciones / Observaciones:  *') !!}</strong>
+        {!! Form::textarea('datosPareja[observaciones]', isset($pareja->observaciones) ? $pareja->observaciones : null, ['class'=>'form-control alert-danger  text-uppercase']) !!}
     </div>
 </div>
-<label><strong>Todos los campos marcados con * son  obligatorios.</strong> </label>
-<div class="form-row text-center">
-    <div class="col">
-        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
-    </div>
+<div class="text-center">
+    {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+    {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light', 'id' => 'datos-pareja-submit'] )}}
 </div>
-@section("scripts")
+
+@section('scripts')
     <script type="text/javascript">
-        $(document).ready(function(){
-            $("#regimen_matrimonial_id").change();
-            $("#regimen_matrimonial_id").prop("disabled", true);
-        });
-        $("#regimen_matrimonial_id").on("change",function(){
-            if(parseInt($(this).val()) == 3){
-                $("#regimen_especificar").prop("disabled", false);
+
+        $(document).ready(function () {
+            @isset($experienciaLaboral)
+            let actual = {{$experienciaLaboral->ambito_sector_id}};
+            @endisset
+            $(".form-control").addClass("alert-danger")
+            $(".domicilio-MXBinmuebles").hide();
+            $(".domicilio-EXBinmuebles").hide();
+            $(".sector-privado-otro").hide();
+            $(".sector-publico").hide();
+            $(".lugar-reside").hide();
+            $(".especifique-sector").hide();
+            $(".num-int").prop("required", false);
+            let date = new Date();
+            let day = date.getDate() - 1;
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let fecha;
+            if (month < 10) {
+                fecha = `${year}-0${month}-${day}`;
             } else {
-                $("#regimen_especificar").prop("disabled", true);
+                fecha = `${year}-${month}-${day}`;
             }
-            $("#regimen_especificar").val("");
+            $(".fecha").attr("max", fecha)
+            $("#tipo-ciudadano").change(function () {
+                const valor = parseInt($(this).val());
+                if (valor === 1) {
+                    $("#curp").prop("disabled", false);
+                } else {
+                    $("#curp").prop("disabled", true);
+                }
+            });
+
+            $('#lugar-reside').change(function () {
+                if (parseInt($(this).val()) === 1) {
+                    $('.domicilio-MXBinmuebles').show();
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", true);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", true);
+                    $('.domicilio-EXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", false);
+
+                } else if (parseInt($(this).val()) === 2) {
+                    $('.domicilio-MXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').show();
+                    $('#municipio_id').find("option").remove();
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", true);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", true);
+                } else if ($(this).val() !== "") {
+                    $('.domicilio-MXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').find("input").val("");
+                    $('.domicilio-EXBinmuebles').find("select").val("");
+                    $('.domicilio-MXBinmuebles').find("input").val("");
+                    $('.domicilio-MXBinmuebles').find("select").val("");
+                    $('#municipio_id').find("option").remove();
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", false);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", false);
+                }
+            });
+            $('.lugar-reside-change').change(function () {
+                if (parseInt($(this).val()) === 1) {
+                    $('.domicilio-EXBinmuebles').find("input").val("");
+                    $('.domicilio-EXBinmuebles').find("select").val("");
+                } else if (parseInt($(this).val()) === 2) {
+                    $('.domicilio-MXBinmuebles').find("input").val("");
+                    $('.domicilio-MXBinmuebles').find("select").val("");
+                } else {
+                    $('.domicilio-MXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').find("input").val("");
+                    $('.domicilio-EXBinmuebles').find("select").val("");
+                    $('.domicilio-MXBinmuebles').find("input").val("");
+                    $('.domicilio-MXBinmuebles').find("select").val("");
+                }
+            });
+            $("#entidad_id").on('change', function () {
+                var idEntidad = $(this).val();
+                if (parseInt(idEntidad) === 15) {
+                    $(".foraneo").hide();
+                }
+                $.ajax({
+                    url: "{{asset('getMunicipiosDomicilio')}}/" + idEntidad,
+                    type: 'get',
+                    dataType: 'json',
+                    success: function (response) {
+                        console.log(response);
+                        $("#municipio_id").find('option').remove();
+                        $("#municipio_id").append('<option value="">SELECCIONA UNA OPCIÓN</option>');
+                        $(response).each(function (i, v) { // indice, valor
+                            $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
+                        });
+                    }
+                });
+            });
+            $("#habita-domicilio").change(function () {
+                const respuesta = parseInt($(this).val());
+                if (respuesta !== 2) {
+                    $('.domicilio-MXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').hide();
+                    $('.domicilio-EXBinmuebles').find("input").val("");
+                    $('.domicilio-EXBinmuebles').find("select").val("");
+                    $('.domicilio-MXBinmuebles').find("input").val("");
+                    $('.domicilio-MXBinmuebles').find("select").val("");
+                    $("#lugar-reside").val("");
+                    $(".lugar-reside").hide();
+                    $(".lugar-reside").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-EXBinmuebles').find("select").prop("required", false);
+                    $('.domicilio-MXBinmuebles').find("input").prop("required", false);
+                    $('.domicilio-MXBinmuebles').find("select").prop("required", false);
+                } else if (!isNaN(respuesta)) {
+                    $(".lugar-reside").show();
+                    $(".lugar-reside").prop("required", true);
+                    $("#lugar-reside").change();
+                }
+            });
+            $("#ambito-sector").change(function () {
+                const sector = parseInt($(this).val());
+                if (sector === 1) {
+                    $(".sector-privado-otro").hide();
+                    $(".sector-privado-otro").find("select").prop("required", false);
+                    $(".sector-privado-otro").find("input").prop("required", false);
+                    $(".sector-publico").show();
+                    $(".sector-publico").find("select").prop("required", true);
+                    $(".sector-publico").find("input").prop("required", true);
+                    $(".sector-privado-otro").find("select").val("");
+                    $(".sector-privado-otro").find("input").val("");
+                    $(".regimen_fiscal_id").prop("required", false);
+
+                } else if (sector === 2 || sector === 3) {
+                    $(".sector-privado-otro").show();
+                    $(".sector-publico").hide();
+                    $(".sector-publico").find("input").val("");
+                    $(".sector-publico").find("select").val("");
+                    $(".sector-privado-otro").find("select").prop("required", true);
+                    $(".sector-privado-otro").find("input").prop("required", true);
+                    $(".sector-publico").find("select").prop("required", false);
+                    $(".sector-publico").find("input").prop("required", false);
+
+                    $("#regimen_fiscal_id").on("change", function () {
+                        var regimen_fiscal_id = document.getElementById("regimen_fiscal_id").value;
+                        if(regimen_fiscal_id == 1){
+                            document.getElementById("empleador_fisica").style.display = "block";
+                            document.getElementById("empleador_moral").style.display = "none";
+                            document.getElementById("empleador_fisica_RFC").style.display = "block";
+                            document.getElementById("empleador_moral_RFC").style.display = "none";
+                            $("#rfc").prop("required", false);
+                            $("#rfc").prop("maxlength", '13');
+                            $("#rfc").prop("pattern", '([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})');
+                            $("#rfc").prop("title", 'Ingresa RFC a 10 o 13 dígitos');
+                            $("#rfc").prop("placeholder", 'p. ej. XAXA010101X0A');
+                        }else{
+                            document.getElementById("empleador_fisica").style.display = "none";
+                            document.getElementById("empleador_moral").style.display = "block";
+                            document.getElementById("empleador_fisica_RFC").style.display = "none";
+                            document.getElementById("empleador_moral_RFC").style.display = "block";
+                            $("#rfc").prop("required", true);
+                            $("#rfc").prop("maxlength", '12');
+                            $("#rfc").prop("pattern", '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})');
+                            $("#rfc").prop("title", 'Ingresa RFC a 12 dígitos');
+                            $("#rfc").prop("placeholder", 'p. ej. XAX010101X0A');
+                        }
+                    });
+
+                    @isset($experienciaLaboral)
+                    if (actual !== sector) {
+                        $(".sector-privado-otro").find("select").val("");
+                        $(".sector-privado-otro").find("input").val("");
+                        actual += 10;
+                    }
+                    @endisset
+                } else {
+                    $(".sector-publico").find("select").prop("required", false);
+                    $(".sector-publico").find("input").prop("required", false);
+                    $(".sector-publico").hide();
+                    $(".sector-publico").find("input").val("");
+                    $(".sector-publico").find("select").val("");
+                    $(".sector-privado-otro").find("select").val("");
+                    $(".sector-privado-otro").find("input").val("");
+                    $(".sector-privado-otro").hide();
+                    $(".sector-privado-otro").find("select").prop("required", false);
+                    $(".sector-privado-otro").find("input").prop("required", false);
+                    $(".sector-privado-otro").find("select").val("");
+                    $(".sector-privado-otro").find("input").val("");
+                }
+            });
+            $("#sector-privado").change(function () {
+                const sector = parseInt($(this).val());
+                if (sector === 17) {
+                    $(".especifique-sector").show();
+                    $("#especifique-sector").prop("required", true);
+                } else {
+                    $(".especifique-sector").hide();
+                    $("#especifique-sector").val("");
+                    $("#especifique-sector").prop("required", false);
+                }
+            });
+            $("#curp").blur(function () {
+                let curp = $(this).val();
+                $("#curp").val(curp.toString().toUpperCase());
+            });
+            @isset($pareja)
+            $("#tipo-ciudadano").change();
+            $('#lugar-reside').change();
+            $("#habita-domicilio").change();
+            $("#ambito-sector").change();
+            $("#sector-privado").change();
+            @if($experienciaLaboral == null)
+            $("#ambito-sector").val("4");
+            @endif
+            @endisset
         });
-        $("#curp").keyup(function () {
-            let curp = $(this).val();
-            $("#curp").val(curp.toString().toUpperCase());
-        });
-        $("#situcion").on("change",function(){
-            if(parseInt($(this).val()) == 2){
-                $("#regimen_matrimonial_id").prop("disabled", false);
-                $("#regimen_matrimonial_id").val("");
-            } else {
-                $("#regimen_matrimonial_id").prop("disabled", true);
-                $("#regimen_matrimonial_id").val("");
-            }
-            $("#regimen_matrimonial_id").change();
-        })
+
+
     </script>
 @endsection
