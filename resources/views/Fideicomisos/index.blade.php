@@ -12,10 +12,10 @@
             <table class="table table-bordered table-striped">
                 <thead class="text-center text-light">
                 <tr>
-                    <th scope="col" width="20%">Titular de la participación</th>
-                    <th scope="col" width="20%">Tipo de fideicomiso</th>
-                    <th scope="col" width="40%">Información adicional</th>
-                    <th scope="col" width="20%">Acciones</th></tr>
+                    <th scope="col" width="20%">TITULAR DE LA PARTICIPACIÓN</th>
+                    <th scope="col" width="20%">TIPO DE FIDEICOMISO</th>
+                    <th scope="col" width="40%">INFORMACIÓN ADICIONAL</th>
+                    <th scope="col" width="20%">ACCIONES</th></tr>
                 </thead>
                 <tbody class="text-center">
                     @foreach($fideicomisos as $fideicomiso)
@@ -37,12 +37,8 @@
                             <td class="all">
                                 {!! Form::open(['action' => ['FideicomisosController@destroy', $fideicomiso->id], 'method'=>'DELETE']) !!}
                                 <div style="display: inline-block;">
-                                    <a href="{{route('fideicomisos.edit',[$fideicomiso])}}" class="btn btn-xs btn-warning">
-                                        <i class="ion ion-edit"></i>
-                                    </a>
-                                    <button class="btn btn-xs btn-danger btn-borrar">
-                                        <i class="ion ion-trash-a btn-borrar"></i>
-                                    </button>
+                                    <a href="{{route('fideicomisos.edit',[$fideicomiso])}}" class="btn btn-xs btn-warning"><i class="ion ion-edit"></i></a>
+                                    <button class="btn btn-xs btn-danger btn-borrar"><i class="ion ion-trash-a btn-borrar"></i></button>
                                 </div>
                                 {!! Form::close() !!}
                             </td>
@@ -55,12 +51,11 @@
                 </center>
             @else
                 <div class="alert alert-danger text-center" role="alert">
-                    <div class="col-md-12">
-                        <center>
-                            <strong>Para adicionar información pulse <a class="btn btn-sm btn-secondary" href="{{route('fideicomisos.create')}}">Agregar</a></strong>
-                            <br><br>
-                            <strong>Si no tiene fideicomisos, seleccione  <a href="{{route('fideicomisos.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
-                        </center>
+                    <div>
+                        <strong>Para adicionar información de fideicomisos pulse <a class="btn btn-sm btn-secondary" href="{{route('fideicomisos.create')}}">Agregar</a></strong>
+                    </div>
+                    <div class="mt-2">
+                        <strong>Si no tiene fideicomisos, seleccione  <a href="{{route('fideicomisos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                     </div>
                 </div>
             @endif
