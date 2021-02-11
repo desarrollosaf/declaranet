@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                  <strong>¿Realiza alguna actividad lucrativa independiente al empleo, cargo o comisión?:</strong>
+                  <strong>¿Realiza alguna actividad lucrativa independiente al empleo, cargo o comisión?: *</strong>
             </div>
             <div class="col-lg-4">
                 {!! Form::select('clientes[respuestas_id]', $selectRespuestas, isset($clientes) ? $clientes->respuestas_id : [],['class'=>'form-control',  'id' => 'respuestas_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
@@ -19,19 +19,19 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Títular de la actividad lucrativa:</strong></label>
+                    <label class="control-label" for="NumDoc"><strong>Títular de la actividad lucrativa: *</strong></label>
                     {!! Form::select('clientes[tipo_relaciones_id]', $titular, isset($clientes) ? $clientes->tipo_relaciones_id : [],['class'=>'form-control',  'id' => 'tipo_relaciones_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="ProcessNum"><strong style="line-height : 15px;">Nombre de la empresa o del servicio que proporciona:</strong></label>
+                    <label class="control-label" for="ProcessNum"><strong style="line-height : 15px;">Nombre de la empresa o del servicio que proporciona: *</strong></label>
                     {!! Form::text('clientes[nombre_empresa]', isset($clientes) ? $clientes->nombre_empresa : null,['class'=>'form-control', 'placeholder'=>'P. EJ. MAE S.A. de C.V.',   'id' => 'nombre_empresa','required'=>true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="State"><strong>RFC:</strong></label>
+                    <label class="control-label" for="State"><strong>RFC: *</strong></label>
                     {!! Form::text('clientes[rfc]', isset($clientes) ? $clientes->rfc : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAX010101010',   'id' => 'rfc','required'=>true]) !!}
                 </div>
             </div>
@@ -42,32 +42,32 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Tipo de cliente principal:</strong></label>
+                    <label class="control-label" for="NumDoc"><strong>Tipo de cliente principal: *</strong></label>
                     {!! Form::select('clientes[regimen_fiscal_id]', $regimen, isset($clientes) ? $clientes->regimen_fiscal_id : [],['class'=>'form-control',  'id' => 'regimen_fiscal_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
 
             <div class="col-lg-4" id="fisicaN" style="display: block;">
                 <div class="form-group">
-                        <label class="control-label" for="ProcessNum"><strong>Nombre del cliente principal:</strong></label>
+                        <label class="control-label" for="ProcessNum"><strong>Nombre del cliente principal: *</strong></label>
                         {!! Form::text('clientes[nombre_cliente]', isset($clientes) ? $clientes->nombre_cliente : null,['class'=>'form-control', 'placeholder'=>'P. EJ. JUAN PÉREZ',   'id' => 'nombre_cliente','required'=>true, 'disabled'=>true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisicaR" style="display: block;">
                 <div class="form-group">
-                        <label class="control-label" for="State"><strong>RFC:</strong></label>
+                        <label class="control-label" for="State"><strong>RFC: *</strong></label>
                         {!! Form::text('clientes[rfc_cliente]', isset($clientes) ? $clientes->rfc_cliente : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_cliente', 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})", 'title' => "Ingresa RFC a 10 o 13 dígitos",'required'=>true, 'maxlength'=>'13','size'=>'13', 'disabled'=>true, 'title' => 'El formato de RFC es de 10 a 13 dígitos']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="moralN" style="display: none;">
                 <div class="form-group">
-                    <label class="control-label" for="ProcessNum"><strong>Razón social del cliente principal:</strong></label>
+                    <label class="control-label" for="ProcessNum"><strong>Razón social del cliente principal: *</strong></label>
                     {!! Form::text('clientes[nombre_cliente_moral]', isset($clientes) ? $clientes->nombre_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. DESARROLLO S.A. de C.V.',   'id' => 'nombre_cliente_moral','required'=>true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="moralR" style="display: none;">
                 <div class="form-group">
-                    <label class="control-label" for="State"><strong>RFC:</strong></label>
+                    <label class="control-label" for="State"><strong>RFC: *</strong></label>
                     {!! Form::text('clientes[rfc_cliente_moral]', isset($clientes) ? $clientes->rfc_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAX010101XAX',   'id' => 'rfc_cliente_moral', 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos",'required'=>true, 'maxlength'=>'12','size'=>'12']) !!}
                 </div>
             </div>
@@ -78,13 +78,13 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Sector productivo al que pertenece:</strong></label>
+                    <label class="control-label" for="NumDoc"><strong>Sector productivo al que pertenece: *</strong></label>
                     {!! Form::select('clientes[sectores_id]', $sector, isset($clientes) ? $clientes->sectores_id : [],['class'=>'form-control',  'id' => 'sectores_id', 'placeholder' => 'SELECCIONA UNA OPCIÓN','required'=>true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="ProcessNum"><strong>Especifique:</strong></label>
+                    <label class="control-label" for="ProcessNum"><strong>Especifique: *</strong></label>
                     {!! Form::text('clientes[sector_especifique]', isset($clientes) ? $clientes->sector_especifique : null,['class'=>'form-control', 'placeholder'=>'P. EJ. SECTOR PETROLERO',   'id' => 'sector_especifique', 'disabled' => 'disabled' ,'required'=>true]) !!}
                 </div>
             </div>
@@ -95,25 +95,25 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="ProcessNum"><strong>Monto aproximado del beneficio o ganancia mensual que obtiene del cliente principal:</strong></label>
+                    <label class="control-label" for="ProcessNum"><strong>Monto aproximado del beneficio o ganancia mensual que obtiene del cliente principal: *</strong></label>
                     {!! Form::text('clientes[monto_beneficio]', isset($clientes) ? $clientes->monto_beneficio : null,['class'=>'form-control', 'placeholder'=>'P. EJ. 10,000 MxN',   'id' => 'monto_beneficio','required'=>true, 'pattern' => "([0-9]{1,8})", 'title' => "Ingresa ganancias mensuales en dígitos",'maxlength'=>'8', 'size' => '8']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Lugar donde se ubica:</strong></label>
+                    <label class="control-label" for="NumDoc"><strong>Lugar donde se ubica: *</strong></label>
                     {!! Form::select('clientes[lugar_donde_resides_id]', $lugar, isset($clientes) ? $clientes->lugar_donde_resides_id : [],['class'=>'form-control',  'id' => 'lugar_donde_resides_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="mx">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>Entidad federativa:</strong></label>
+                    <label class="control-label" for="NumDoc"><strong>Entidad federativa: *</strong></label>
                     {!! Form::select('clientes[entidades_id]', $entidad, isset($clientes) ? $clientes->entidades_id : [],['class'=>'form-control',  'id' => 'entidades_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="ex" style="display: none;">
                 <div class="form-group">
-                    <label class="control-label" for="NumDoc"><strong>País donde se localiza:</strong></label>
+                    <label class="control-label" for="NumDoc"><strong>País donde se localiza: *</strong></label>
                     {!! Form::text('clientes[pais]', isset($clientes) ? $clientes->pais :null,['class'=>'form-control',  'id' => 'pais','required'=>true, 'placeholder' => 'P. EJ. Estados Unidos']) !!}
                 </div>
             </div>
@@ -124,7 +124,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="form-group">
-                    <strong>Aclaraciones/Observaciones</strong>:</label>
+                    <strong>Aclaraciones / Observaciones</strong>:</label>
                     {!! Form::textarea('clientes[aclaraciones]', isset($clientes) ? $clientes->aclaraciones : null,['class'=>'form-control alert-danger',  'id' => 'aclaraciones']) !!}
                 </div>
             </div>
