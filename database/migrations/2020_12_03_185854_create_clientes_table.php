@@ -41,6 +41,7 @@ class CreateClientesTable extends Migration
             $table->foreign('paises_id')->references('id')->on('paises');
             $table->string('aclaraciones')->nullable();
             $table->string("tipoOperacion")->nullable();
+            $table->string("pais")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
