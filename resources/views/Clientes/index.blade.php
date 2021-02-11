@@ -31,9 +31,9 @@
                                     </td>
                                     <td>
                                         <center>
-                                            <strong>NOMBRE DEL CLIENTE:{{strtoupper($cliente->nombre_cliente)}} {{strtoupper($cliente->nombre_cliente_moral)}}</strong>  <br>
-                                            <strong>SECTOR:{{strtoupper($cliente->sectores->valor)}}</strong> <br>
-                                            <strong>MONTO APROXIMADO:{{strtoupper($cliente->monto_beneficio)}}</strong>
+                                            <strong>NOMBRE DEL CLIENTE: </strong> {{strtoupper($cliente->nombre_cliente)}} {{strtoupper($cliente->nombre_cliente_moral)}} <br>
+                                            <strong>SECTOR: </strong>{{strtoupper($cliente->sectores->valor)}} <br>
+                                            <strong>MONTO APROXIMADO:</strong>{{strtoupper($cliente->monto_beneficio)}}
                                         </center>
                                     </td>
                                     <td class="all">

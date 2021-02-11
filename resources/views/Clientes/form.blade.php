@@ -177,7 +177,7 @@
                 $("#monto_beneficio").prop("required",true);
                 $("#lugar_donde_resides_id").prop("required",true);
                 $("#entidades_id").prop("required",true);
-                $("#paises_id").prop("required",true);
+                $("#pais").prop("required",true);
             }else{
                 document.getElementById("si").style.display="none";
                 $("#tipo_relaciones_id").val("");
@@ -195,7 +195,7 @@
                 $("#monto_beneficio").val("");
                 $("#lugar_donde_resides_id").val("");
                 $("#entidades_id").val("");
-                $("#paises_id").val("");
+                $("#pais").val("");
 
                 $("#tipo_relaciones_id").prop("required",false);
                 $("#nombre_empresa").prop("required",false);
@@ -212,7 +212,7 @@
                 $("#monto_beneficio").prop("required",false);
                 $("#lugar_donde_resides_id").prop("required",false);
                 $("#entidades_id").prop("required",false);
-                $("#paises_id").prop("required",false);
+                $("#pais").prop("required",false);
             }
         });
 
@@ -289,12 +289,12 @@
                 document.getElementById("mx").style.display="block";
                 document.getElementById("ex").style.display="none";
                 $("#entidades_id").prop("disabled", false);
-                $("#paises_id").prop("required", false);
-                $("#paises_id").val("");
+                $("#pais").prop("required", false);
+                $("#pais").val("");
             }else if(lugar_donde_resides_id == '2'){
                 document.getElementById("mx").style.display="none";
                 document.getElementById("ex").style.display="block";
-                $("#paises_id").prop("disabled", false);
+                $("#pais").prop("disabled", false);
                 $("#entidades_id").prop("required", false);
                 $("#entidades_id").val("");
             }else{
@@ -302,8 +302,8 @@
                 document.getElementById("ex").style.display="none";
                 $("#entidades_id").prop("disabled", true);
                 $("#entidades_id").prop("required", false)
-                $("#paises_id").prop("required", false);
-                $("#paises_id").val("");
+                $("#pais").prop("required", false);
+                $("#pais").val("");
                 $("#entidades_id").val("");
             }
         });
