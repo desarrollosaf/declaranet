@@ -51,10 +51,10 @@
                 <br>Deberá señalar la información de CADA BENEFICIO PRIVADO recibido por el Declarante, pareja y/o dependientes económicos.
                 <div class="alert alert-danger text-center" role="alert">
                     <div>
-                        <strong>Para registrar información de beneficios privados pulse: </strong><a href="{{route('beneficios_privados.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br><br>
+                        <strong>Para registrar información de beneficios privados pulse: </strong><a href="{{route('beneficios_privados.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
                     </div>
                     <div class="mt-2">
-                        <strong>Si no recibe beneficios privados, seleccione <a href="{{route('beneficios_privados.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                        <strong>Si no recibe beneficios privados, seleccione <a href="{{route('beneficios_privados.create')}}" class="btn btn-sm btn-secondary ">Ninguno</a></strong>
                     </div>
                 </div>
 
