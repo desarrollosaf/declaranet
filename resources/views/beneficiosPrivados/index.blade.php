@@ -21,8 +21,8 @@
                         <tbody>
                         @foreach($beneficios as $beneficio)
                             <tr>
-                                <td>{{$beneficio->tipoBeneficio->valor}}</td>
-                                <td>{{$beneficio->beneficiariosP->valor}}</td>
+                                <td align="center">{{$beneficio->tipoBeneficio->valor}}</td>
+                                <td align="center">{{$beneficio->beneficiariosP->valor}}</td>
                                 <td>
                                     <center>
                                         <strong>SECTOR: </strong> {{strtoupper($beneficio->sectoresP->valor)}} <br>
