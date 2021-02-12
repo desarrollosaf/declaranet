@@ -74,12 +74,8 @@
                         <br>
                         <div class="alert alert-danger text-center" role="alert">
                             <label style="margin-top:10px;">
-                                <strong>Para registrar información pulse: </strong><a
-                                    href="{{route('experiencia_laboral.create')}}"
-                                    class="btn btn-sm btn-secondary">Agregar</a><br>
-                                <strong>Deberá seleccionar <a href="{{route('experiencia_laboral.create')}}"
-                                                              class="btn btn-ninguno btn-secondary">Ninguno</a>si éste es su
-                                    primer empleo.</strong>
+                                <strong>Para registrar información pulse: </strong><a href="{{route('experiencia_laboral.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
+                                <strong>Deberá seleccionar <a href="{{route('experiencia_laboral.create')}}" class="btn btn-sm btn-secondary">Ninguno</a>si éste es su primer empleo.</strong>
                             </label>
                         </div>
 

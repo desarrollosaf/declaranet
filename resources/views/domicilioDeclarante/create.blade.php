@@ -27,7 +27,7 @@
                   <li><p align="justify"><strong>Aclaraciones/observaciones.</strong> En este espacio el Declarante podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado. </p></li>
                   </ol>
 
-                <p align="justify"><strong>Aclaraciones/observaciones. </strong>En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.</p>
+                <p align="justify"><strong>Aclaraciones / Observaciones. </strong>En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.</p>
             </div>
         </div>
             </div>

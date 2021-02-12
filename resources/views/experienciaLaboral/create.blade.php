@@ -155,8 +155,7 @@
                 $("#area_adscripcion").prop("required", false);
                 $("#cargo_comision").prop("required", false);
                 $("#funcion_pricipal").prop("required", false);
-                //   $("#rfc").prop("required", false)
-
+                $("#regimen_fiscal_id").prop("required", true);
 
                 $("#regimen_fiscal_id").on("change", function () {
                     var regimen_fiscal_id = document.getElementById("regimen_fiscal_id").value;
@@ -228,6 +227,7 @@
                 $("#area_adscripcion").prop("required", false);
                 $("#cargo_comision").prop("required", false);
                 $("#funcion_pricipal").prop("required", false);
+                $("#regimen_fiscal_id").prop("required", true);
 
                 $("#nombre_empresa").val("");
                 $("#rfc").val("");
@@ -239,6 +239,23 @@
                 $(".PRIVADO").hide();
                 $(".PÚBLICO").hide();
                 $(".AMBOS").hide();
+                $("#regimen_fiscal_id").prop("required", false);
+
+                $("#nombre_empresa").prop("required", false);
+                $("#rfca").prop("required", false);
+                $("#rfcb").prop("required", false);
+                $("#area").prop("required", false);
+                $("#puesto").prop("required", false);
+                $("#sector_id").prop("required", false);
+                $("#especifique_otro_sector").prop("required", false);
+                $("#regimen_fiscal_id").prop("required", false);
+
+                $("#nivel_orden_gobierno_id").prop("required", false);
+                $("#ambito_publico_id").prop("required", false);
+                $("#ente_publico").prop("required", false);
+                $("#area_adscripcion").prop("required", false);
+                $("#cargo_comision").prop("required", false);
+                $("#funcion_pricipal").prop("required", false);
             }
         });
 

@@ -45,7 +45,7 @@
 
 <div class="form-row">
     <div class="form-group col-md-12">
-        <strong>{!! Form::label('curriculares[observaciones]', 'Aclaraciones / Observaciones: *') !!}</strong>
+        <strong>{!! Form::label('curriculares[observaciones]', 'Aclaraciones / Observaciones: ') !!}</strong>
         {!! Form::textarea('curriculares[observaciones]', isset($curricular) ? $curricular->observaciones : null, ['class'=>'form-control alert-danger text-uppercase', 'id' => 'observaciones']) !!}
         <strong><label class="requerido">&nbsp;Todos los campos marcados con * son obligatorios. </label></strong>
     </div>

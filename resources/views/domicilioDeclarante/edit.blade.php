@@ -27,7 +27,7 @@
                         <li><p align="justify"><strong>País de nacimiento.</strong> De la lista desplegable, el Declarante deberá elegir el país donde nació. </p></li>
                         <li><p align="justify"><strong>Nacionalidad. </strong>De la lista desplegable, el Declarante deberá elegir su nacionalidad. </p></li>
                         <li><p align="justify"><strong>¿Te desempeñaste como servidor público el año inmediato anterior?</strong> Elegir sí o no. (Solo en declaración de modificación). </p></li>
-                        <li><p align="justify"><strong>Aclaraciones/observaciones.</strong> En este espacio el Declarante podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado. </p></li>
+                        <li><p align="justify"><strong>Aclaraciones / Observaciones.</strong> En este espacio el Declarante podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado. </p></li>
                     </ol>
                 </div>
             </div>

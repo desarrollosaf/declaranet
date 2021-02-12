@@ -50,7 +50,7 @@
                     </ol>
                 </li>
             </ol>
-            <strong>Aclaraciones/observaciones. </strong>En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
+            <strong>Aclaraciones / Observaciones. </strong>En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
         </div>
     </div>
     <div class="card-body">
