@@ -144,6 +144,7 @@
         $("#ambito_sector_id").on("change", function () {
             var ambitoSector = document.getElementById("ambito_sector_id").value;
             alert(ambitoSector);
+            alert("ss");
             if (ambitoSector == "2") {
                 //alert("2");
                 $(".PRIVADO").show();
