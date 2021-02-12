@@ -235,7 +235,7 @@
                 $("#puesto").val("");
                 $("#sector_id").val("");
                 $("#especifique_otro_sector").val("");
-            }else{
+            }else if(ambitoSector == "4"){
                 $(".PRIVADO").hide();
                 $(".PÚBLICO").hide();
                 $(".AMBOS").hide();
@@ -255,6 +255,9 @@
                 $("#ente_publico").prop("required", false);
                 $("#area_adscripcion").prop("required", false);
                 $("#cargo_comision").prop("required", false);
+                $("#fecha_ingreso").prop("required", false);
+                $("#fecha_egreso").prop("required", false);
+                $("#lugares_ubicacion_id").prop("required", false);
                 $("#funcion_pricipal").prop("required", false);
             }
         });
