@@ -338,7 +338,6 @@
 <div class="row">
     <div class="col-md-12">
         <center>
-            <br>
             <a href="{{route('bienes_inmuebles.index')}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
             <input type="submit" name="submit" class="btn btn-sm btn-submit text-light" value="Guardar e ir a la siguiente sección">
         </center>
