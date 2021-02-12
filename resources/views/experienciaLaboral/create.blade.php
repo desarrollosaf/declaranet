@@ -166,7 +166,7 @@
                         document.getElementById("empleador_moral_RFC").style.display = "none";
                         $("#rfc").prop("required", false);
                         $("#rfc").prop("maxlength", '13');
-                        $("#rfc").prop("pattern", '([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})');
+                        $("#rfc").prop("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{0,3})');
                         $("#rfc").prop("title", 'Ingresa RFC a 10 o 13 dígitos');
                     }else{
                         document.getElementById("empleador_fisica").style.display = "none";
@@ -175,7 +175,7 @@
                         document.getElementById("empleador_moral_RFC").style.display = "block";
                         $("#rfc").prop("required", true);
                         $("#rfc").prop("maxlength", '12');
-                        $("#rfc").prop("pattern", '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})');
+                        $("#rfc").prop("pattern", '([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{0,3})');
                         $("#rfc").prop("title", 'Ingresa RFC a 12 dígitos');
                     }
                 });
@@ -260,9 +260,9 @@
                 $("#lugares_ubicacion_id").prop("required", false);
                 $("#funcion_pricipal").prop("required", false);
 
-                $("#fecha_ingreso").prop("value", "");
-                $("#fecha_egreso").prop("value", "");
-                $("#lugares_ubicacion_id").prop("value", "");
+                $("#fecha_ingreso").val("");
+                $("#fecha_egreso").val("");
+                $("#lugares_ubicacion_id").val("");
 
             }
         });

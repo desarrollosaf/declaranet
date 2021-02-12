@@ -112,19 +112,9 @@
 
 {!! Form::hidden('experiencia[tipoOperacion]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipoOperacion']) !!}
 
-<div id="edit" style="display: none;" class="all text-center">
-    <div class="form-row">
-        <div class="col">
-            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
-        </div>
-    </div>
-</div>
-<div id="crearF"  style="display: none;" class="all text-center">
-    <div class="text-center">
+
+<div class="all text-center">
         <br>
         <a href="{{route("experiencia_laboral.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
-            {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
-
-    </div>
-    </div>
+        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
 </div>

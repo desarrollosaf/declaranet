@@ -63,14 +63,11 @@
                                 </tbody>
                             </table>
                             <center>
-                                <strong>Si desea registrar Experiencia Laboral pulse: <a
-                                        href="{{route('experiencia_laboral.create')}}"
-                                        class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                                    apartado.</strong>
+                                <strong>Si desea registrar Experiencia Laboral pulse: <a href="{{route('experiencia_laboral.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                             </center>
                         </div>
                     @else
-                        <span style="text-align: left !important;">Deberá proporcionar la información correspondiente a los cinco empleos, cargos o comisiones que haya tenido (en caso de que cuente con ellos).</span>
+                        <span>Deberá proporcionar la información correspondiente a los cinco empleos, cargos o comisiones que haya tenido (en caso de que cuente con ellos).</span>
                         <br>
                         <div class="alert alert-danger text-center" role="alert">
                             <label style="margin-top:10px;">

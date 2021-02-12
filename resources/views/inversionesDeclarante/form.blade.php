@@ -47,7 +47,7 @@
     </div>
     <div class="form-group col-md-4" id="ubicacion_rfc">
         <strong> {!! Form::label('inversiones.rfc_titular', 'RFC: *') !!}</strong>
-        {!! Form::text('inversiones[rfc_titular]',isset($inversiones) ? $inversiones->rfc_titular : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'Ingresa RFC',  'id' => 'rfc_titular', "pattern" => '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})',  "readOnly"=> true]) !!}
+        {!! Form::text('inversiones[rfc_titular]',isset($inversiones) ? $inversiones->rfc_titular : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. XXXX010101',  'id' => 'rfc_titular', "pattern" => '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})',  "readOnly"=> true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
@@ -82,7 +82,7 @@
 
 <div class="text-center">
     <br>
-    {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+    <a href="{{route("bienes_muebles.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
     {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
 </div>
 
