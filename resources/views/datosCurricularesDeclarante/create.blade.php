@@ -29,13 +29,10 @@
             <div class="card-body">
                 {!! Form::open(['route'=>'datos_curriculares_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosCurricularesDeclarante']) !!}
                     @include('datosCurricularesDeclarante.form')
-                    <div class="form-row text-center">
-<!--                        <center>-->
-                        <div class="col">
-                            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-submit text-light btnGuardar'] )}}
-                        </div>
-                        <!--</center>-->
-                    </div>
+                <center>
+                    <a class='btn btn-submit text-light' href="{{route("datos_curriculares_declarante.create")}}">Ir a la sección anterior</a>
+                    {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
+                </center>
                 {!! Form::close() !!}
             </div>
         </div>
