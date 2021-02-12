@@ -309,8 +309,10 @@
                 if ($(this).val() === "") {
                     $("#tipo_de_ingreso").prop("required", false);
                     $("#tipo_de_ingreso").val("");
+                    $("#tipo_de_ingreso").prop("disabled", true);
                 } else {
-                    $("#tipo_de_ingreso").prop("required", true)
+                    $("#tipo_de_ingreso").prop("required", true);
+                    $("#tipo_de_ingreso").prop("disabled", false);
                 }
         });
 

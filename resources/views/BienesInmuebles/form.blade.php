@@ -161,7 +161,7 @@
         <div class="col-md-4" id="combo_otro_Disabled">
             <div class="form-group">
                 <strong>{!! Form::label('relacion_transmisor', ' Especifique: ') !!}</strong>
-                {!! Form::text('bienesinmuebles[relacion_transmisor]',isset($bien) ? $bien->relacion_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'P. EJ. CUÑADO',  'id' => 'relacion_transmisor', 'pattern' => '[A-Za-z]{0,300}', 'disabled' => 'true' ]) !!}
+                {!! Form::text('bienesinmuebles[relacion_transmisor]',isset($bien) ? $bien->relacion_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'P. EJ. CUÑADO',  'id' => 'relacion_transmisor',  'disabled' => 'true' ]) !!}
             </div>
         </div>
         <div class="col-md-4">
