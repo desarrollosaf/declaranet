@@ -116,7 +116,7 @@
                             </li>
                         </ul>
 
-                        <p align="justify"><strong> Aclaraciones/observaciones.</strong> En este espacio el Declarante podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.</p>
+                        <p align="justify"><strong> Aclaraciones / Observaciones.</strong> En este espacio el Declarante podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.</p>
                     </ol>
 
                     <DIV></DIV>
@@ -143,8 +143,6 @@
 
         $("#ambito_sector_id").on("change", function () {
             var ambitoSector = document.getElementById("ambito_sector_id").value;
-            alert(ambitoSector);
-            alert("ss");
             if (ambitoSector == "2") {
                 //alert("2");
                 $(".PRIVADO").show();
