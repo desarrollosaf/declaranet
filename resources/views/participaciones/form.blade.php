@@ -16,12 +16,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('participacion[fecha de nacimiento]', 'Fecha de nacimiento:*') !!}</strong>
-       {!! Form::date('declarante[fecha_nacimiento]',isset($dependiente) ? $dependiente->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'nacimiento','required' => true,'max' => date('Y-m-d')]) !!}
+       {!! Form::date('participacion[fecha_nacimiento]',isset($dependiente) ? $dependiente->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'nacimiento','required' => true,'max' => date('Y-m-d')]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('participacion[RFC]', 'RFC:*') !!}</strong>
-        {!! Form::text('participacion[rfc]',isset($participacion) ? $participacion->RFC : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc','required' => true,'pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})']) !!}
+        {!! Form::text('participacion[rfc]',isset($participacion) ? $participacion->rfc : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfc','required' => true,'pattern'=>'([A-ZÑ&]{4}\d{6}[A-Z\d]{3})']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -29,7 +29,15 @@
         <select class="form-control text-uppercase" id="tipo_titular_donativo_id" name="participacion[tipo_titular_donativo_id]">
             <option value="" data-grado="">Selecciona una opción</option>
             @foreach($tipo_titular as $value)
+            @if(isset($participacion))
+                @if($value->id == $participacion->tipo_titular_donativo_id)
+                <option value="{{$value->id}}" data-grado="{{$value->grado}}" selected="selected">{{$value->valor}}</option>
+                @else
+                <option value="{{$value->id}}" data-grado="{{$value->grado}}">{{$value->valor}}</option>
+                @endif
+            @else
             <option value="{{$value->id}}" data-grado="{{$value->grado}}">{{$value->valor}}</option>
+            @endif
             @endforeach
         </select>
         <span class="text-danger" style="font-size:150%"></span>
@@ -46,7 +54,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('participacion[Frecuencia anual  ]', 'Frecuencia anual:*') !!}</strong>
-        {!! Form::text('participacion[frecuencia_anual]',isset($participacion) ? $participacion->Frecuencia_anual: null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.EJ.12',  'id' => 'nombre','required' => true]) !!}
+        {!! Form::text('participacion[frecuencia_anual]',isset($participacion) ? $participacion->frecuencia_anual: null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.EJ.12',  'id' => 'nombre','required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -62,6 +70,5 @@
     <div class="form-group col-md-12">
         <strong>{!! Form::label('inversiones.aclaraciones_observaciones', 'Aclaraciones / Observaciones:') !!}</strong>
         {!! Form::textarea('participacion[observaciones]',isset($participacion) ? $participacion->observaciones : null,['class'=>'form-control alert-danger',  'id' => 'aclaraciones_observaciones']) !!}
-        
     </div>
 </div>

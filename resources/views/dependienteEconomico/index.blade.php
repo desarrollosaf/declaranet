@@ -85,7 +85,7 @@ $("#btnNinguno").on("click",function(){
     }).then((result) => {
         if (result.isConfirmed){
             Swal.fire({
-                text: 'No se registró información en este apartado. Si desea registrar Datos Curriculares del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                text: 'No se registró información en este apartado. Si desea registrar Datos del Dependiente Económico pulse: Agregar, de lo contrario vaya al siguiente apartado.',
                 icon: 'warning',
                 cancelButtonText: 'Aceptar'
             });

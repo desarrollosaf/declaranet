@@ -26,7 +26,7 @@ class ParticipacionDeclaracionController extends Controller
      */
     public function index()
     {
-        $declaracion = Declaracion::find($request->session()->get("declaracion_id"));
+        $declaracion = Declaracion::find($this->request->session()->get("declaracion_id"));
         $participaciones = $declaracion->participaciones;
         return view("participaciones.index", compact("participaciones","participaciones"));
     }
@@ -79,9 +79,17 @@ class ParticipacionDeclaracionController extends Controller
      * @param  \App\ParticipacionDeclaracion  $participacionDeclaracion
      * @return \Illuminate\Http\Response
      */
-    public function edit(ParticipacionDeclaracion $participacionDeclaracion)
+    public function edit($id)
     {
-        //
+        $participacion = ParticipacionDeclaracion::find($id);
+        $tipo_titular = TipoTitularDonativo::all();
+        $tipo_institucion = Arr::pluck(tipoInstitucion::all(), "valor", "id");
+        $tipo_participacion = Arr::pluck(tipoParticipacion::all(), "valor", "id");
+        $tipo_organizacion = Arr::pluck(TipoOrganizacionComunitaria::all(), "nombre", "id");
+        $tipo_colaboracion = Arr::pluck(TipoColaboracion::all(), "tipo_colaboracion", "id");
+        $tipo_titular_segundo = Arr::pluck(TipoTitularDonativo::where("grado","<=",2)->get(), "valor", "id");
+        $partcicipa_institucion = Arr::pluck(\App\InstitucionParticipacion::all(), "nombre", "id");
+        return view("participaciones.edit", compact('participacion','tipo_titular','tipo_institucion','tipo_participacion','tipo_organizacion','tipo_colaboracion','tipo_titular_segundo','partcicipa_institucion'));
     }
 
     /**
@@ -91,9 +99,12 @@ class ParticipacionDeclaracionController extends Controller
      * @param  \App\ParticipacionDeclaracion  $participacionDeclaracion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ParticipacionDeclaracion $participacionDeclaracion)
+    public function update(Request $request, $id)
     {
-        //
+        $part = ParticipacionDeclaracion::find($id);
+        $participacion = $request->input("participacion");
+        $part->update($participacion);
+     return redirect()->route("viajes.index");
     }
 
     /**
@@ -102,8 +113,9 @@ class ParticipacionDeclaracionController extends Controller
      * @param  \App\ParticipacionDeclaracion  $participacionDeclaracion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ParticipacionDeclaracion $participacionDeclaracion)
+    public function destroy($id)
     {
-        //
+        $part = ParticipacionDeclaracion::find($id)->delete();
+        return redirect()->route("participaciones.index");
     }
 }

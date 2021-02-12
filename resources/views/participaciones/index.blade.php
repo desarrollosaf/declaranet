@@ -11,18 +11,32 @@
                     <table class="table table-bordered table-striped">
                         <thead class="text-light">
                         <tr>
-                            <th scope="col" width="20%">Descripción</th>
-                            <th scope="col" width="20%">Monto</th>
-                            <th scope="col" width="20%">Editar</th>
-                            <th scope="col" width="20%">Eliminar</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">RFC</th>
+                            <th scope="col">FECHA DE NACIMIENTO</th>
+                            <th scope="col">PARTCICIPACION ECONOMICA</th>
+                            <th scope="col">INSTITUCIÓN</th>
+                            <th scope="col">F/A</th>
+                            <th scope="col">ACCIONES</th>
                         </thead>
                         <tbody>
                           @foreach($participaciones as $participacion)
                           <tr>
                               <td>{{$participacion->nombre}} {{$participacion->primer_apellido}} {{$participacion->segundo_apellido}}</td>
-                              <td>{{$participacion->rfc}}}</td>
-                              <td>{{$participacion->fecha_nacimiento}}}</td>
-                              <td>{{$participacion->fecha_nacimiento}}}</td>
+                              <td>{{$participacion->rfc}}</td>
+                              <td>{{$participacion->fecha_nacimiento}}</td>
+                              <td>{{$participacion->participacion_economica->valor}}</td>
+                              <td>{{$participacion->institucion->nombre}}</td>
+                              <td>{{$participacion->frecuencia_anual}}</td>
+                              <td>
+                                  <a href="{{route("participaciones.edit",$participacion->id)}}" type="button" class="btn btn-warning btn-sm ion ion-edit"></a>
+                                  {!! Form::open(['action' => ['ParticipacionDeclaracionController@destroy', $participacion->id], 'method'=>'DELETE']) !!}
+                                  <div style="display: inline-block;">
+                                      <button
+                                          class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
+                                  </div>
+                                  {!! Form::close() !!}
+                              </td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -36,7 +50,7 @@
                             <center>
                                 <strong>Para adicionar información pulse <a class="btn btn-sm btn-secondary" href="{{route('participaciones.create')}}">Agregar</a></strong>
                                 <br><br>
-                                <strong>Si no tiene participaciones, seleccione  <a href="{{route('participaciones.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                                <strong>Si no tiene participaciones, seleccione  <button id="btnNinguno" class="btn btn-ninguno btn-secondary">Ninguno</button></strong>
                             </center>
                         </div>
                     </div>
@@ -45,11 +59,50 @@
                 <div class="col-md-12">
                     <div class="text-center">
                         <br>
-                        <a href="{{route("participaciones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
-                        <a href="{{route("participaciones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+                        <a href="{{route("intereses_personales.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                        <a href="{{route("viajes.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+<script>
+$("#btnNinguno").on("click",function(){
+    Swal.fire({
+        text: '¿Esta seguro que no desea solicitar la información solicitada en este apartado?',
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed){
+            Swal.fire({
+                text: 'No se registró información en este apartado. Si desea registrar Participaciones pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                icon: 'warning',
+                cancelButtonText: 'Aceptar'
+            });
+        }
+    });
+});
+$('.btn-borrar').on('click', function (e) {
+    let that = this;
+    console.log('boton clic');
+    e.preventDefault();
+    Swal.fire({
+        title: '¿Está seguro?',
+        text: 'Al oprimir el botón de aceptar se eliminará el registro',
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $(that).closest('form').submit();
+        }
+    });
+    return false;
+});
+
+
+</script>
 @endsection
