@@ -187,8 +187,7 @@
     </div>
     <div class="col-md-12">
         <center>
-            <a href="{{route("datos_dependiente_declarante.index")}}" class="btn btn-submit btn-sm text-light">Ir a la sección
-                anterior</a>
+            <a href="{{route("datos_dependiente_declarante.index")}}" class="btn btn-submit btn-sm text-light">Guardar e Ir a la sección anterior</a>
 
             {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
         </center>
