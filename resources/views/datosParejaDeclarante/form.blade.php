@@ -279,7 +279,7 @@
     </div>
 </div>
 <div class="text-center">
-    {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+    <a class='btn btn-submit text-light' href="{{route("experiencia_laboral.index")}}">Ir a la sección anterior</a>
     {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light', 'id' => 'datos-pareja-submit'] )}}
 </div>
 

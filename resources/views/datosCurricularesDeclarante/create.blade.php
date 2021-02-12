@@ -30,7 +30,7 @@
                 {!! Form::open(['route'=>'datos_curriculares_declarante.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => 'datosCurricularesDeclarante']) !!}
                     @include('datosCurricularesDeclarante.form')
                 <center>
-                    <a class='btn btn-submit text-light' href="{{route("datos_curriculares_declarante.create")}}">Ir a la sección anterior</a>
+                    <a class='btn btn-submit text-light' href="{{route("datos_curriculares_declarante.index")}}">Ir a la sección anterior</a>
                     {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
                 </center>
                 {!! Form::close() !!}

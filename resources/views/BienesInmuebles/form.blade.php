@@ -86,7 +86,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <strong>{!! Form::label('superficie_construccion', ' Superficie de construcción: * ') !!}</strong>
-                {!! Form::number('bienesinmuebles[superficie_construccion]', isset($bien) ? $bien->superficie_construccion : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m', 'min'=>'1', 'id' => 'superficie_construccion', 'pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
+                {!! Form::number('bienesinmuebles[superficie_construccion]', isset($bien) ? $bien->superficie_construccion : null, ['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. 30m', 'min'=>'0', 'id' => 'superficie_construccion', 'pattern' => '[0-9]{0,50}', 'required' => 'true']) !!}
             </div>
         </div>
     </div>
