@@ -40,6 +40,13 @@
     </div>
 </div>
 
+<div class="form-row">
+    <div class="text-center">
+        <a class='btn btn-submit text-light' href="{{route("datos_declarante.create")}}">Ir a la sección anterior</a>
+        {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
+    </div>
+</div>
+
 @section('scripts')
 <script type="text/javascript">
     $(document).ready(function () {

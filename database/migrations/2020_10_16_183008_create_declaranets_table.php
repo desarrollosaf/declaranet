@@ -31,6 +31,7 @@ class CreateDeclaranetsTable extends Migration
             $table->unsignedBigInteger("pais_id")->nullable();
             $table->foreign("pais_id")->references("id")->on("paises");
             $table->string("nacionalidad")->nullable();
+            $table->string("regimen_especificar")->nullable();
             $table->string("observaciones")->nullable();
             $table->unsignedBigInteger("estatus_declaracion_id");
             $table->foreign("estatus_declaracion_id")->references("id")->on("estatus_declaraciones");

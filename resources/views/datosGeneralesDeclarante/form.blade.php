@@ -73,7 +73,7 @@
     </div>
     <div class="form-group col-md-4 ">
             {!! Form::label('especificar', 'Especifique: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('declaracion[regimen_matrimonial]', isset($declaracion) ? $declaracion->regimen_matrimonial : null,['class'=>'form-control alert-danger text-uppercase ', 'placeholder'=>'p. ej. concuño', 'required' => true, 'id' => 'regimen_especificar']) !!}
+            {!! Form::text('declaracion[regimen_especificar]', isset($declaracion) ? $declaracion->regimen_especificar : null,['class'=>'form-control alert-danger text-uppercase ', 'placeholder'=>'p. ej. concuño', 'required' => true, 'id' => 'regimen_especificar']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
 </div>

@@ -259,6 +259,11 @@
                 $("#fecha_egreso").prop("required", false);
                 $("#lugares_ubicacion_id").prop("required", false);
                 $("#funcion_pricipal").prop("required", false);
+
+                $("#fecha_ingreso").prop("value", "");
+                $("#fecha_egreso").prop("value", "");
+                $("#lugares_ubicacion_id").prop("value", "");
+
             }
         });
 
