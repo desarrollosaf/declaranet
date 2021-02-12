@@ -103,8 +103,8 @@
         <table style="width: 100%;">
             <tr>
                 <td width='40%'>
-                    <strong>{!! Form::label('ingresoMensual.tipo_de_servicio', 'Tipo de servicio prestado:*') !!}<strong></td>
-                <td>{!! Form::text('ingresoMensual[tipo_de_servicio]',(isset($ingresoMensual->tipo_de_servicio)) ? $ingresoMensual->tipo_de_servicio : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_servicio', 'disabled' => true) !!}</td>
+                    <strong>{!! Form::label('ingresoMensual.tipo_de_servicio', 'Tipo de servicio prestado: *') !!}<strong></td>
+                <td>{!! Form::text('ingresoMensual[tipo_de_servicio]',(isset($ingresoMensual->tipo_de_servicio)) ? $ingresoMensual->tipo_de_servicio : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_servicio', 'disabled' => true]) !!}</td>
             </tr>
         </table>
     </div>
