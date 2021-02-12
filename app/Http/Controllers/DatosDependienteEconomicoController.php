@@ -127,7 +127,7 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function edit($id)
     {
-        $parentesco = RelacionTransmisor::all();
+        $parentesco = \App\RelacionTransmisor::all();
 
         $selectParentesco[""] = "SELECCIONA UNA OPCIÓN";
         foreach ($parentesco as $item){
