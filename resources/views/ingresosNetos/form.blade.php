@@ -39,7 +39,7 @@
             <tr>
                 <td width='40%'>
                     <strong>{!! Form::label('ingresoMensual.nombre_razon_social', 'Nombre o razón social:') !!}<strong></td>
-                <td>{!! Form::text('ingresoMensual[nombre_razon_social]',(isset($ingresoMensual->nombre_razon_social)) ? $ingresoMensual->nombre_razon_social : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.',  'id' => 'nombre_razon_social']) !!}</td>
+                <td>{!! Form::text('ingresoMensual[nombre_razon_social]',(isset($ingresoMensual->nombre_razon_social)) ? $ingresoMensual->nombre_razon_social : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V.',  'id' => 'nombre_razon_social', 'disabled' => true]) !!}</td>
             </tr>
         </table>
     </div>
@@ -50,7 +50,7 @@
             <tr>
                 <td width='40%'>
                     <strong>{!! Form::label('ingresoMensual.tipo_de_negocio', 'Tipo de negocio:') !!}</strong></td>
-                <td>{!! Form::text('ingresoMensual[tipo_de_negocio]',(isset($ingresoMensual->tipo_de_negocio)) ? $ingresoMensual->tipo_de_negocio : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo y comercialización de sistemas.',  'id' => 'tipo_de_negocio']) !!}</td>
+                <td>{!! Form::text('ingresoMensual[tipo_de_negocio]',(isset($ingresoMensual->tipo_de_negocio)) ? $ingresoMensual->tipo_de_negocio : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Desarrollo y comercialización de sistemas.',  'id' => 'tipo_de_negocio', 'disabled' => true]) !!}</td>
             </tr>
         </table>
     </div>
@@ -75,7 +75,7 @@
             <tr>
                 <td width='40%'>
                     <strong>{!! Form::label('ingresoMensual.tipo_de_instrumento', 'Tipo de instrumento que generó el rendimiento o ganancia:') !!}</strong></td>
-                <td>{!! Form::select('ingresoMensual[tipo_de_instrumento]', $tipoInstrumento, isset($ingresoMensual) ? $ingresoMensual->tipo_de_instrumento : null,['placeholder' => 'SELECCIONE UNA OPCION','class'=>'form-control text-uppercase', 'id' => 'tipo_de_instrumento']) !!}</td>
+                <td>{!! Form::select('ingresoMensual[tipo_de_instrumento]', $tipoInstrumento, isset($ingresoMensual) ? $ingresoMensual->tipo_de_instrumento : null,['placeholder' => 'SELECCIONE UNA OPCION','class'=>'form-control text-uppercase', 'id' => 'tipo_de_instrumento', 'disabled' => true]) !!}</td>
             </tr>
             <tr class="especifique-instrumento" style="display: none">
                 <td width='40%'>
@@ -104,7 +104,7 @@
             <tr>
                 <td width='40%'>
                     <strong>{!! Form::label('ingresoMensual.tipo_de_servicio', 'Tipo de servicio prestado:*') !!}<strong></td>
-                <td>{!! Form::text('ingresoMensual[tipo_de_servicio]',(isset($ingresoMensual->tipo_de_servicio)) ? $ingresoMensual->tipo_de_servicio : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_servicio']) !!}</td>
+                <td>{!! Form::text('ingresoMensual[tipo_de_servicio]',(isset($ingresoMensual->tipo_de_servicio)) ? $ingresoMensual->tipo_de_servicio : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_servicio', 'disabled' => true) !!}</td>
             </tr>
         </table>
     </div>
@@ -128,7 +128,7 @@
             <tr>
                 <td width='40%'>
                     <strong>{!! Form::label('ingresoMensual.tipo_de_ingreso', 'Especificar tipo de ingreso:*') !!}</strong></td>
-                <td>{!! Form::text('ingresoMensual[tipo_de_ingreso]',(isset($ingresoMensual->tipo_de_ingreso)) ? $ingresoMensual->tipo_de_ingreso : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_ingreso']) !!}</td>
+                <td>{!! Form::text('ingresoMensual[tipo_de_ingreso]',(isset($ingresoMensual->tipo_de_ingreso)) ? $ingresoMensual->tipo_de_ingreso : null,['class'=>'form-control text-uppercase', 'placeholder'=>'p. ej. Horas clase.',  'id' => 'tipo_de_ingreso', 'disabled' => true]) !!}</td>
             </tr>
         </table>
     </div>
@@ -249,19 +249,27 @@
                     $("#tipo_de_negocio").prop("required", false);
                     $("#nombre_razon_social").val("");
                     $("#tipo_de_negocio").val("");
+                    $("#nombre_razon_social").prop("disabled", true);
+                    $("#tipo_de_negocio").prop("disabled", true);
                 } else {
-                    $("#nombre_razon_social").prop("required", true)
-                    $("#tipo_de_negocio").prop("required", true)
+                    $("#nombre_razon_social").prop("required", true);
+                    $("#tipo_de_negocio").prop("required", true) ;
+                    $("#nombre_razon_social").prop("disabled", false);
+                    $("#tipo_de_negocio").prop("disabled", false);
                 }
         });
 
         $("#nombre_razon_social").keyup(function () {
                 if ($(this).val() === "") {
-                    $("#ingreso_por_actividad_ice").prop("required", false)
-                    $("#tipo_de_negocio").prop("required", false)
+                    $("#ingreso_por_actividad_ice").prop("required", false);
+                    $("#tipo_de_negocio").prop("required", false);
+                    $("#ingreso_por_actividad_ice").prop("disabled", true);
+                    $("#tipo_de_negocio").prop("disabled", true);
                 } else {
-                    $("#ingreso_por_actividad_ice").prop("required", true)
-                    $("#tipo_de_negocio").prop("required", true)
+                    $("#ingreso_por_actividad_ice").prop("required", true);
+                    $("#tipo_de_negocio").prop("required", true) ;
+                    $("#ingreso_por_actividad_ice").prop("disabled", false);
+                    $("#tipo_de_negocio").prop("disabled", false);
                 }
         });
 
@@ -269,8 +277,10 @@
                 if ($(this).val() === "") {
                     $("#tipo_de_instrumento").prop("required", false);
                     $("#tipo_de_instrumento").val("");
+                    $("#tipo_de_instrumento").prop("disabled", true);
                 } else {
-                    $("#tipo_de_instrumento").prop("required", true)
+                    $("#tipo_de_instrumento").prop("required", true);
+                    $("#tipo_de_instrumento").prop("disabled", false);
                 }
         });
 
@@ -279,8 +289,10 @@
                 if ($(this).val() === "") {
                     $("#tipo_de_servicio").prop("required", false);
                     $("#tipo_de_servicio").val("");
+                    $("#tipo_de_servicio").prop("disabled", true);
                 } else {
-                    $("#tipo_de_servicio").prop("required", true)
+                    $("#tipo_de_servicio").prop("required", true);
+                    $("#tipo_de_servicio").prop("disabled", false);
                 }
         });
 

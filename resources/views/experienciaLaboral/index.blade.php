@@ -67,7 +67,7 @@
                             </center>
                         </div>
                     @else
-                        <span>Deberá proporcionar la información correspondiente a los cinco empleos, cargos o comisiones que haya tenido (en caso de que cuente con ellos).</span>
+                        <span style="text-align: justify !important;">Deberá proporcionar la información correspondiente a los cinco empleos, cargos o comisiones que haya tenido (en caso de que cuente con ellos).</span>
                         <br>
                         <div class="alert alert-danger text-center" role="alert">
                             <label style="margin-top:10px;">
