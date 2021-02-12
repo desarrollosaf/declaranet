@@ -248,7 +248,7 @@
                 $("#puesto").prop("required", false);
                 $("#sector_id").prop("required", false);
                 $("#especifique_otro_sector").prop("required", false);
-                $("#regimen_fiscal_id").prop("required", false);
+
 
                 $("#nivel_orden_gobierno_id").prop("required", false);
                 $("#ambito_publico_id").prop("required", false);
