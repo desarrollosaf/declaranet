@@ -13,7 +13,7 @@
         <div class="col-md-4" id="combo_otro_Disabled">
             <div class="form-group">
                 <strong>{!! Form::label('tipo_inmueble', ' Especifique: ') !!}</strong>
-                {!! Form::text('bienesinmuebles[tipo_inmueble]',isset($bien) ? $bien->tipo_inmueble : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'tipo_inmueble', 'pattern' => '[A-Za-z]{0,300}', 'disabled' => 'true' ]) !!}
+                {!! Form::text('bienesinmuebles[tipo_inmueble]',isset($bien) ? $bien->tipo_inmueble : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'p. ej. Hacienda',  'id' => 'tipo_inmueble',  'disabled' => 'true' ]) !!}
             </div>
         </div>
         <div class="col-md-4">
@@ -161,7 +161,7 @@
         <div class="col-md-4" id="combo_otro_Disabled">
             <div class="form-group">
                 <strong>{!! Form::label('relacion_transmisor', ' Especifique: ') !!}</strong>
-                {!! Form::text('bienesinmuebles[relacion_transmisor]',isset($bien) ? $bien->relacion_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'CONCUÑO',  'id' => 'relacion_transmisor', 'pattern' => '[A-Za-z]{0,300}', 'disabled' => 'true' ]) !!}
+                {!! Form::text('bienesinmuebles[relacion_transmisor]',isset($bien) ? $bien->relacion_transmisor : null,['class'=>'form-control text-uppercase  tipo-titular', 'placeholder'=>'P. EJ. CUÑADO',  'id' => 'relacion_transmisor', 'pattern' => '[A-Za-z]{0,300}', 'disabled' => 'true' ]) !!}
             </div>
         </div>
         <div class="col-md-4">

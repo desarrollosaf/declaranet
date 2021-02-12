@@ -41,6 +41,7 @@ class CreateVehiculos extends Migration
             $table->string('v_modelo')->nullable();
             $table->integer('v_ano')->nullable();
             $table->string('v_num_serie')->nullable();
+            $table->string('pais')->nullable();
             $table->unsignedBigInteger('lugar_registro');
             $table->foreign('lugar_registro')->references('id')->on('lugar_donde_resides');
             $table->unsignedBigInteger('entidades_id')->nullable();
