@@ -44,24 +44,18 @@
                     </tbody>
                 </table>
                 <center>
-                    <strong>Si desea registrar Experiencia Laboral pulse: <a
-                            href="{{route('datos_dependiente_declarante.create')}}"
-                            class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente
-                        apartado.</strong>
+                    <strong>Si desea registrar Experiencia Laboral pulse: <a href="{{route('datos_dependiente_declarante.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                 </center>
                 @else
                 <p class="text-justify">Deberá proporcionar la información de CADA UNA de las personas, familiares o no, cuya manutención dependa principalmente de los ingresos del Declarante.</p>
-                <div class="alert alert-danger text-center" role="alert">
-                    Para registrar información pulse:
-                    <a href="{{route("datos_dependiente_declarante.create")}}" type="button" class="btn btn-sm btn-secondary">
-                        Agregar
-                    </a>
-                    <br>
-                    Sí no tiene dependientes económicos, seleccione
-                    <button type="button" class="btn btn-sm btn-secondary" id="btnNinguno">
-                        Ninguno
-                    </button>
-                </div>
+                                   <div class="alert alert-danger text-center" role="alert">
+                        <div>
+                            <strong> Para registrar información  de dependientes económicos pulse:</strong><a href="{{route("datos_dependiente_declarante.create")}}" type="button" class="btn btn-sm btn-secondary">Agregar</a>
+                        </div>
+                        <div class="mt-2">
+                            <strong>Sí no tiene dependientes económicos, seleccione</strong><a href="{{route("ingreso_neto.index")}}" type="button" class="btn btn-sm btn-secondary">Ninguno</a>
+                        </div>
+                    </div>
                 @endif
             </div>
             <br>

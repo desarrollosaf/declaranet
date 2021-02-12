@@ -54,22 +54,16 @@
                         <strong>Para registrar información de beneficios privados pulse: </strong><a href="{{route('beneficios_privados.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
                     </div>
                     <div class="mt-2">
-                        <strong>Si no recibe beneficios privados, seleccione <a href="{{route('beneficios_privados.create')}}" class="btn btn-sm btn-secondary ">Ninguno</a></strong>
+                        <strong>Si no recibe beneficios privados, seleccione <a href="{{route('fideicomisos.index')}}" class="btn btn-sm btn-secondary ">Ninguno</a></strong>
                     </div>
                 </div>
 
-
-
             @endif
-
 
             <div class="text-center">
                 <br>
-                <a href="{{route("clientes_principales.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                    sección
-                    anterior</a>
-                <a href="{{route("fideicomisos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                    siguiente sección</a>
+                <a href="{{route("clientes_principales.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                <a href="{{route("fideicomisos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
             </div>
         </div>
     </div>

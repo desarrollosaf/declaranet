@@ -129,11 +129,11 @@
                             <div class="form-group">
                                 <div id="terceroFisicaTra" style="display: block;">
                                     <label class="control-label" for="ProcessNum"><strong>RFC: </strong></label>
-                                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'v_rfcFisica', 'maxlength'=>"13", 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 10 o 13 dígitos", 'disabled' => "disabled" ]) !!}
+                                    {!! Form::text('vehiculos[v_rfcFisica]', isset($vehiculos) ? $vehiculos->v_rfcFisica : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. ej. XAXA010101XAX',   'id' => 'v_rfcFisica', 'maxlength'=>"13", 'pattern' => "([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})", 'title' => "Ingresa RFC a 10 o 13 dígitos", 'disabled' => "disabled" ]) !!}
                                 </div>
                                 <div id="terceroMoralTra" style="display: none;">
                                     <label class="control-label" for="ProcessNum"><strong>RFC: * </strong></label>
-                                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. ej. XXX010101X0X',   'id' => 'v_rfcMoral', 'maxlength'=>"12", 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
+                                    {!! Form::text('vehiculos[v_rfcMoral]', isset($vehiculos) ? $vehiculos->v_rfcMoral : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. ej. XXX010101X0X',   'id' => 'v_rfcMoral', 'maxlength'=>"12", 'pattern' => "([A-Za-z]{3}[0-9]{6}[A-Za-z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos", 'required' => true]) !!}
                                 </div>
                             </div>
                         </div>

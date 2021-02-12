@@ -77,7 +77,7 @@
                                 <div class="alert alert-danger text-center" role="alert">
                                     <label style="margin-top:10px;">
                                         <strong>Para registrar información pulse: </strong><a href="{{route('apoyo_beneficio.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
-                                        <strong>Si no tiene apoyos o beneficios públicos, seleccione <a href="{{route('prestamos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                                        <strong>Si no tiene apoyos o beneficios públicos, seleccione <a href="{{route('representacion.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                                     </label>
                                 </div>
 
@@ -88,11 +88,8 @@
 
                             <div class="text-center">
                                 <br>
-                                <a href="{{route("participacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                                    sección
-                                    anterior</a>
-                                <a href="{{route("representacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                                    siguiente sección</a>
+                                <a href="{{route("participacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                                <a href="{{route("representacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                             </div>
                         </div>
 

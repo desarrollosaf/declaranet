@@ -74,10 +74,8 @@
 
                         <div class="alert alert-danger text-center" role="alert">
                             <label style="margin-top:10px;">
-                                <strong>Para registrar información pulse: </strong><a
-                                    href="{{route('participacion.create')}}"
-                                    class="btn btn-sm btn-secondary ">Agregar</a><br>
-                                <strong>Si no participa en la toma de decisiones de insituciiones <a href="{{route('participacion.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                                <strong>Para registrar información pulse: </strong><a href="{{route('participacion.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
+                                <strong>Si no participa en la toma de decisiones de insituciiones <a href="{{route('apoyo_beneficio.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                             </label>
                         </div>
                     @endif

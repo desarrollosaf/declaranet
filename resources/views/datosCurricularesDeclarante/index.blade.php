@@ -76,7 +76,7 @@
                             <strong>Para registrar información pulse: </strong><a
                                 href="{{route('datos_curriculares_declarante.create')}}"
                                 class="btn btn-sm btn-secondary">Agregar</a><br>
-                            <strong>Deberá seleccionar <a href="" class="btn btn-sm btn-secondary">Ninguno</a>si no cuenta con información curricular.</strong>
+                            <strong>Deberá seleccionar <a href=""{{route('datos_empleo_declarante.index')}}"" class="btn btn-sm btn-secondary">Ninguno</a>si no cuenta con información curricular.</strong>
                         </label>
                     </div>
 

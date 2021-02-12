@@ -70,7 +70,7 @@
                                 <strong>Para registrar información de vehículos pulse: </strong><a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
                             </div>
                             <div class="mt-2">
-                                <strong>Si no tiene vehículos, seleccione </strong><a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a>
+                                <strong>Si no tiene vehículos, seleccione </strong><a href="{{route('bienes_muebles.index')}}" class="btn btn-sm btn-secondary">Ninguno</a>
                             </div>
                         </div>
                     @endif
@@ -78,11 +78,8 @@
 
                 <div class="text-center">
                     <br>
-                    <a href="{{route("bienes_inmuebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        sección
-                        anterior</a>
-                    <a href="{{route("bienes_muebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        siguiente sección</a>
+                    <a href="{{route("bienes_inmuebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                    <a href="{{route("bienes_muebles.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                 </div>
             </div>
         </div>

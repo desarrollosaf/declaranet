@@ -64,12 +64,12 @@
                             <strong>Para registrar información de bienes muebles pulse: </strong><a href="{{route('bienes_muebles.create')}}" class="btn btn-sm btn-secondary text-light">Agregar</a>
                         </div>
                         <div class="mt-2">
-                            <strong>Sí no tiene bienes muebles, seleccione<a href="{{route('vehiculos.index')}}" class="btn btn-sm btn-secondary text-light">Ninguno</a></strong>
+                            <strong>Sí no tiene bienes muebles, seleccione<a href="{{route('inversiones.index')}}" class="btn btn-sm btn-secondary text-light">Ninguno</a></strong>
                         </div>
                     </div>
                 @endif
                 <div class="text-center mt-2">
-                    <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                    <a href="{{route("vehiculos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
                     <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                 </div>
             </div>

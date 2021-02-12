@@ -55,7 +55,7 @@
                         <strong>Para adicionar información de fideicomisos pulse <a class="btn btn-sm btn-secondary" href="{{route('fideicomisos.create')}}">Agregar</a></strong>
                     </div>
                     <div class="mt-2">
-                        <strong>Si no tiene fideicomisos, seleccione  <a href="{{route('fideicomisos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                        <strong>Si no tiene fideicomisos, seleccione  <a href="{{route('donativos.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                     </div>
                 </div>
             @endif
@@ -64,7 +64,7 @@
                     <div class="text-center">
                         <br>
                         <a href="{{route("beneficios_privados.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
-                        <a href="{{route("fideicomisos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+                        <a href="{{route("donativos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                     </div>
                 </div>
             </div>

@@ -73,10 +73,10 @@
                     Cuando el Declarante, pareja y/o dependientes económicos sea propietario de alguna empresa, negocio o actividad lucrativa, deberá señalar a sus clientes principales, siempre y cuando el beneficio o ganancia directa supere mensualmente 250 Unidades de Medida y Actualización (UMA), refiriéndose al valor diario de ésta la cual consta de 22,405(veinti dos mil cuatroscientos cinco).
                     <div class="alert alert-danger text-center" role="alert">
                         <div>
-                            <strong>Para registrar información pulse: </strong><a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
+                            <strong>Para registrar información  de clientes principales pulse: </strong><a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
                         </div>
                         <div class="mt-2">
-                            <strong>Si no tiene clientes principales, seleccione<a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-ninguno btn-secondary">Ninguno</a></strong>
+                            <strong>Si no tiene clientes principales, seleccione<a href="{{route('beneficios_privados.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                         </div>
                     </div>
 

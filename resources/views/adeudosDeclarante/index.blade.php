@@ -63,7 +63,7 @@
                             <strong>Para registrar información de Adeudos pulse: </strong><a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
                         </div>
                         <div class="mt-2">
-                            <strong>Si no tiene Adeudos, seleccione <a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                            <strong>Si no tiene Adeudos, seleccione <a href="{{route('prestamos.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                         </div>
                     </div>
 
@@ -74,11 +74,8 @@
 
                 <div class="text-center">
                     <br>
-                    <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        sección
-                        anterior</a>
-                    <a href="{{route("prestamos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la
-                        siguiente sección</a>
+                    <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                    <a href="{{route("prestamos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                 </div>
             </div>
 

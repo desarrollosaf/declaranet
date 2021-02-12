@@ -46,9 +46,9 @@
                     <div class="alert alert-danger text-center" role="alert">
                         <div class="col-md-12">
                             <center>
-                                <strong>Para adicionar información pulse <a class="btn btn-sm btn-secondary" href="{{route('donativos.create')}}">Agregar</a></strong>
+                                <strong>Para adicionar información de donativos pulse: <a class="btn btn-sm btn-secondary" href="{{route('donativos.create')}}">Agregar</a></strong>
                                 <br><br>
-                                <strong>Si no tiene donaciones, seleccione  <a href="{{route('fideicomisos.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                                <strong>Si no tiene donativos, seleccione  <a href="{{route('intereses_personales.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                             </center>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                     <div class="text-center">
                         <br>
                         <a href="{{route("fideicomisos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
-                        <a href="{{route("fideicomisos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+                        <a href="{{route("intereses_personales.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                     </div>
                 </div>
             </div>

@@ -48,9 +48,9 @@
                     <div class="alert alert-danger text-center" role="alert">
                         <div class="col-md-12">
                             <center>
-                                <strong>Para adicionar información pulse <a class="btn btn-sm btn-secondary" href="{{route('participaciones.create')}}">Agregar</a></strong>
+                                <strong>Para adicionar información de participaciones pulse: <a class="btn btn-sm btn-secondary" href="{{route('participaciones.create')}}">Agregar</a></strong>
                                 <br><br>
-                                <strong>Si no tiene participaciones, seleccione  <button id="btnNinguno" class="btn btn-ninguno btn-secondary">Ninguno</button></strong>
+                                <strong>Si no tiene participaciones, seleccione  <a href="{{route('viajes.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
                             </center>
                         </div>
                     </div>
