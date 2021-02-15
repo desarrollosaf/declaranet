@@ -202,7 +202,7 @@
                             <div id="lugarRegistroMx" style="display: block;">
                                 <div class="form-group">
                                     <label class="control-label" for="NumDoc"><strong>ENTIDAD FEDERATIVA: *</strong></label>
-                                    {!! Form::select('vehiculos[entidades_id]',$entidad, isset($vehiculos) ? $vehiculos->entidades_id : [],['class'=>'form-control', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'entidades_id','required' => true]) !!}
+                                    {!! Form::select('vehiculos[entidades_id]',$entidad, isset($vehiculos) ? $vehiculos->entidades_id : [],['class'=>'form-control text-uppercase', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'entidades_id','required' => true]) !!}
                                 </div>
                             </div>
                             <div id="lugarRegistroEx" style="display: none;">
