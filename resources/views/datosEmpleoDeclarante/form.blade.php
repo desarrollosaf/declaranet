@@ -140,7 +140,7 @@
 
         $("#entidad_federativa_id").on('change', function () {
             alert("entra");
-            var idEntidad = $(this).val();
+            var idEntidad =document.getElementById("entidad_federativa_id").val;
             alert('funcion '+idEntidad);
 
             if (parseInt(idEntidad) === 15) {
