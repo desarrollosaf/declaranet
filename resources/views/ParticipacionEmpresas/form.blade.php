@@ -1,5 +1,5 @@
 <div class="card-body">
-    <div class="alert alert-danger" role="alert" style="line-height : 25px !important;">
+    <div class="alert alert-danger" role="alert">
         Todos los datos de la participación en empresas, sociedadeS, asociación civil, organizaciones, consejos y consultorías del declarante, cónyuge, concubina, concubinario, familiares consanguíneos hasta el cuarto grado por afinidad o civil y/o dependientes económicos, no serán públicos.
     </div>
     <hr>
