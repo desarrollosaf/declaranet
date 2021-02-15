@@ -139,6 +139,7 @@
         }
 
         $("#entidad_id").on('change', function () {
+            alert("entr FUNCION");
             var idEntidad = $(this).val();
             if (parseInt(idEntidad) === 15) {
                 $(".foraneo").hide();
