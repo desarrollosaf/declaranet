@@ -87,7 +87,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('entidad', 'Entidad Federativa: *') !!}</strong>
-            {!! Form::select('datos_empleo_declarante[entidad_federativa_id]',$entidad,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->entidad_federativa_id :null,['class'=>'form-control text-uppercase',  'id' => 'entidad_federativa_id',  'required' => 'true']) !!}
+            {!! Form::select('datos_empleo_declarante[entidad_federativa_id]',$entidad,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->entidad_federativa_id :null,['class'=>'form-control text-uppercase',  'id' => 'entidad_id',  'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -138,11 +138,8 @@
             document.getElementById("crearF").style.display="block";
         }
 
-        $("#entidad_federativa_id").on('change', function () {
-            alert("entra");
-            var idEntidad =document.getElementById("entidad_federativa_id").val;
-            alert('funcion '+idEntidad);
-
+        $("#entidad_id").on('change', function () {
+            var idEntidad = $(this).val();
             if (parseInt(idEntidad) === 15) {
                 $(".foraneo").hide();
             }
@@ -153,7 +150,7 @@
                 success: function (response) {
                     console.log(response);
                     $("#municipio_id").find('option').remove();
-                    $("#municipio_id").append('<option value="">SELECCIONE UNA OPCIÓN</option>');
+                    $("#municipio_id").append('<option value="">Selecciona un municipio</option>');
                     $(response).each(function (i, v) { // indice, valor
                         $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
                     });
