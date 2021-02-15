@@ -463,16 +463,16 @@
         $("#tipo_relaciones_id").on("change",function(){
             var tipo_relaciones_id = document.getElementById("tipo_relaciones_id").value
             if(tipo_relaciones_id == '1') {
-                $("#color").find("select").prop("class","form-control");
-                $("#color").find("input").prop("class","form-control");
+                $("#color").find("select").prop("class","form-control text-uppercase");
+                $("#color").find("input").prop("class","form-control text-uppercase");
                 $("#tipo_persona_fideicomitente").on("change", function () {
                     var tipo_persona_fideicomitente = document.getElementById("tipo_persona_fideicomitente").value
                     if (tipo_persona_fideicomitente == '1') {
                         $("#nombre_fideicomitente_fisica").prop("class", "form-control alert-danger text-uppercase");
                         $("#rfc_fideicomitente_fisica").prop("class", "form-control alert-danger text-uppercase");
                     }else{
-                        $("#nombre_fideicomitente_fisica").prop("class", "form-control");
-                        $("#rfc_fideicomitente_fisica").prop("class", "form-control");
+                        $("#nombre_fideicomitente_fisica").prop("class", "form-control text-uppercase");
+                        $("#rfc_fideicomitente_fisica").prop("class", "form-control text-uppercase");
                     }
                 });
                 $("#tipo_persona_fiduciario").on("change", function () {
