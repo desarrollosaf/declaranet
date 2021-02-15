@@ -139,12 +139,12 @@
         }
 
         $("#entidad_federativa_id").on('change', function () {
-            var idEntidad = $(this).val();
+            var entidad_federativa_id = $(this).val();
             if (parseInt(idEntidad) === 15) {
                 $(".foraneo").hide();
             }
             $.ajax({
-                url: "{{asset('getMunicipiosDomicilio')}}/" + idEntidad,
+                url: "{{asset('getMunicipiosDomicilio')}}/" + entidad_federativa_id,
                 type: 'get',
                 dataType: 'json',
                 success: function (response) {
