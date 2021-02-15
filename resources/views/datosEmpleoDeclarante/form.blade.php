@@ -142,6 +142,7 @@
             alert("entra");
             var idEntidad = $(this).val();
             alert(idEntidad);
+
             if (parseInt(idEntidad) === 15) {
                 $(".foraneo").hide();
             }
