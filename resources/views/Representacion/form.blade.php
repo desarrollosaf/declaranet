@@ -38,7 +38,7 @@
             <div class="col-lg-4 nombre-representanteF">
                 <div class="form-group">
                     <strong>{!! Form::label('nombre_representanteFisica', ' Nombre del representante / representado: *') !!}</strong>
-                    {!! Form::text('representacion[nombre_representanteFisica]',isset($representacion) ? $representacion->nombre_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. Juan Pérez.',  'id' => 'nombre_representanteFisica']) !!}
+                    {!! Form::text('representacion[nombre_representanteFisica]',isset($representacion) ? $representacion->nombre_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. Juan Pérez.',  'id' => 'nombre_representanteFisica', 'required' => true]) !!}
                 </div>
             </div>
 
