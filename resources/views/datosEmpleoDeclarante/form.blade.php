@@ -137,8 +137,7 @@
         }else if ($("#accion").val() == "crear"){
             document.getElementById("crearF").style.display="block";
         }
-
-        $("#entidad_id").on('change', function () {
+        $("#entidad_id").on('click', function () {
             alert("entr FUNCION");
             var idEntidad = $(this).val();
             if (parseInt(idEntidad) === 15) {
