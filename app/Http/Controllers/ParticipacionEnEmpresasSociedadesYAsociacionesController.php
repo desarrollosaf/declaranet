@@ -137,7 +137,9 @@ class ParticipacionEnEmpresasSociedadesYAsociacionesController extends Controlle
 
         $tipoModalidad= Arr::pluck(\App\tipoModalidad::all(), "valor", "id");
 
-        return view("ParticipacionEmpresas.edit", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais', 'selectEntidad','RelacionTransmisor','tipoModalidad','tipoSociedad'));
+        $empresa = \App\ParticipacionEmpresa::find($id);
+
+        return view("ParticipacionEmpresas.edit", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais', 'selectEntidad','RelacionTransmisor','tipoModalidad','tipoSociedad','empresa'));
     }
 
     /**
