@@ -1,4 +1,3 @@
-<div class="card-body">
     <div class="alert alert-danger" role="alert">
         Todos los datos de la participación en empresas, sociedadeS, asociación civil, organizaciones, consejos y consultorías del declarante, cónyuge, concubina, concubinario, familiares consanguíneos hasta el cuarto grado por afinidad o civil y/o dependientes económicos, no serán públicos.
     </div>
@@ -150,7 +149,7 @@
         <a href="{{route('participacion_empresas.index')}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
         <input type="submit" name="submit" class="btn btn-sm btn-submit text-light" value="Guardar e ir a la siguiente sección">
     </center>
-</div>
+
 
 @section('scripts')
 <script>

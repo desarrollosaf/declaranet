@@ -35,7 +35,6 @@
                 <div>En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado</div>
             </p>
             </div>
-        </div>
         <div class="card-body">
             {!! Form::open(['route'=>'participacion_empresas.store', 'method'=>'POST',  'role' => 'form', 'id' => 'frm_ParticipacionEmpresas']) !!}
             @include('ParticipacionEmpresas.form')
