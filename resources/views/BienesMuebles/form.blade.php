@@ -144,6 +144,7 @@
             <div class="form-group">
                 <strong>{!! Form::label('bienesMuebles.aclaraciones', 'Aclaraciones/Observaciones:') !!}</strong>
                 {!! Form::textarea('bienesMuebles[aclaraciones]', (isset($bienMueble->aclaraciones)) ? $bienMueble->aclaraciones : null,['class'=>'form-control text-uppercase alert-danger', 'id' => 'aclaraciones'])!!}
+                <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
                 <span class="text-danger" style="font-size:150%"></span>
             </div>
         </div>

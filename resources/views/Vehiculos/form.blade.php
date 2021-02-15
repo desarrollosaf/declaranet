@@ -256,6 +256,7 @@
                             <div class="form-group">
                                 <strong>ACLARACIONES/OBSERVACIONES: </strong></label>
                                 {!! Form::textarea('vehiculos[v_aclaraciones]', isset($vehiculos) ? $vehiculos->v_aclaraciones : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'v_aclaraciones']) !!}
+                                <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
                             </div>
                         </div>
 

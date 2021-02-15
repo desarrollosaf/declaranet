@@ -131,6 +131,7 @@
                 <div class="form-group">
                     <strong>{!! Form::label('observaciones', ' Aclaraciones/Observaciones: ') !!}</strong>
                     {!! Form::textarea('representacion[observaciones]',isset($representacion) ? $representacion->observaciones : null,['class'=>'form-control text-uppercase titular-repre', 'id' => 'observaciones']) !!}
+                    <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
                 </div>
             </div>
         </div>

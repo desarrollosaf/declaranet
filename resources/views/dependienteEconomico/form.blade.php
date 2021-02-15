@@ -281,6 +281,7 @@
     <div class="form-group col-md-12">
         {!! Form::label('observaciones', 'Aclaraciones / Observaciones:',["style" => "font-weight: bold;"]) !!}
         {!! Form::textarea('declarante[observaciones]', isset($dependiente) ? $dependiente->observaciones : null, ['class'=>'form-control alert-danger']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
             <div class="form-row text-center">

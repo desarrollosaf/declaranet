@@ -71,6 +71,7 @@
     <div class="form-group col-md-12">
         <strong>{!! Form::label('apoyo.aclaraciones_observaciones', 'Aclaraciones / Observaciones:') !!}</strong>
         {!! Form::textarea('apoyo[aclaraciones_observaciones]',isset($apoyo) ? $apoyo->aclaraciones_observaciones : null,['class'=>'form-control alert-danger',  'id' => 'aclaraciones_observaciones']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
 <div class="text-center">

@@ -183,6 +183,7 @@
         <hr>
         <strong>{!! Form::label('Aclaraciones / Observaciones:') !!}</strong>
         {!! Form::textarea('ingresoMensual[aclaraciones_observaciones]',(isset($ingresoMensual->aclaraciones_observaciones)) ? $ingresoMensual->aclaraciones_observaciones : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'aclaraciones_observaciones']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="col-md-12">

@@ -90,6 +90,7 @@
     <div class="form-group col-md-12">
         <strong>  {!! Form::label('aclaraciones', 'Aclaraciones / Observaciones:') !!}</strong>
         {!! Form::textarea('beneficio_privado[aclaraciones]',isset($beneficio) ? $beneficio->aclaraciones :null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'aclaraciones']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>

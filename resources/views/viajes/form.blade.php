@@ -92,7 +92,7 @@
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>
-    <div class="form-row">  
+    <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('empleoCargo', 'Empleo, cargo o comisión : *') !!}</strong>
             {!! Form::text("viajes[empleo_cargo]", (isset($viajes->tipo_donativos_id)) ? $donativo->tipo_donativos_id : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. ANALISTA DE SISTEMAS',  'id' => 'empleoCargo']) !!}
@@ -128,7 +128,7 @@
         <strong>{!! Form::label('otroEspecifique', 'Especifique : *') !!}</strong>
         {!! Form::text("viajes[especifique_otro_motivo]", (isset($viajes->tipo_donativos_id)) ? $donativo->tipo_donativos_id : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'ESPECIFIQUE',  'id' => 'otroEspecifiqueViaje', 'readOnly']) !!}
         <span class="text-danger" style="font-size:150%"></span>
-    </div>  
+    </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
@@ -146,6 +146,7 @@
     <div class="form-group col-md-12">
         <strong>{!! Form::label('declaracion.observaciones', 'Aclaraciones / Observaciones:') !!}</strong>
         {!! Form::textarea('viajes[observaciones_viajes]', (isset($viajes->tipo_donativos_id)) ? $donativo->tipo_donativos_id : null, ['class'=>'form-control alert-danger', 'id' => 'aclaraciones']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
 @section('scripts')

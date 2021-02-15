@@ -53,6 +53,7 @@
     <div class="form-group col-md-12">
         <strong>{!! Form::label('donativos.observaciones', 'Aclaraciones / Observaciones:  *') !!}</strong>
         {!! Form::textarea('donativos[observaciones]', isset($donativo->observaciones) ? $donativo->observaciones : null, ['class'=>'form-control alert-danger  text-uppercase']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
 @section("scripts")

@@ -277,13 +277,13 @@
                 </tr>
             </table>
         </div>
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
 
 <div class="col-md-12">
     <div class="text-center">
-        <a href="{{route("ingreso_neto.index")}}" class="btn btn-submit btn-sm text-light">Ir a la sección
-            anterior</a>
+        <a href="{{route("ingreso_neto.index")}}" class="btn btn-submit btn-sm text-light">Ir a la sección anterior</a>
         {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
     </div>
 </div>

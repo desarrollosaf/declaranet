@@ -10,7 +10,7 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 especifique-dependientes">
-        <strong>{!! Form::label('intereses.especifique_dependiente', 'Segundo Apellido: *') !!}</strong>
+        <strong>{!! Form::label('intereses.especifique_dependiente', 'Segundo Apellido: ') !!}</strong>
         {!! Form::text('intereses[segundo_apellido]', (isset($intereses->segundo_apellido)) ? $intereses->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -96,8 +96,9 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-12">
-        <strong>{!! Form::label('intereses.observaciones', 'Aclaraciones / Observaciones:  *') !!}</strong>
+        <strong>{!! Form::label('intereses.observaciones', 'Aclaraciones / Observaciones:  ') !!}</strong>
         {!! Form::textarea('intereses[observaciones]', isset($intereses->observaciones) ? $intereses->observaciones : null, ['class'=>'form-control alert-danger  text-uppercase']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
 @section("scripts")

@@ -109,7 +109,7 @@
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"> <strong>Aclaraciones / Observaciones:</strong></label>
                     {!! Form::textarea('participaciones[aclaraciones]',isset($participaciones) ? $participaciones->aclaraciones :null,['class'=>'form-control alert-danger', 'placeholder'=>'',  'id' => 'aclaraciones']) !!}
-
+                    <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
                 </div>
             </div>
         </div>

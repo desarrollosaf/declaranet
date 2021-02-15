@@ -276,8 +276,10 @@
     <div class="form-group col-md-12">
         <strong>{!! Form::label('datosPareja.observaciones', 'Aclaraciones / Observaciones:  *') !!}</strong>
         {!! Form::textarea('datosPareja[observaciones]', isset($pareja->observaciones) ? $pareja->observaciones : null, ['class'=>'form-control alert-danger  text-uppercase']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
+
 <div class="text-center">
     <a class='btn btn-submit text-light' href="{{route("experiencia_laboral.index")}}">Ir a la sección anterior</a>
     {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light', 'id' => 'datos-pareja-submit'] )}}

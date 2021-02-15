@@ -237,6 +237,7 @@
             <div class="form-group">
                 <strong>{!! Form::label('prestamo.observaciones', ' Aclaraciones/Observaciones: ') !!}</strong>
                 {!! Form::textarea('prestamo[observaciones]', isset($prestamo) ? $prestamo->observaciones : null, ['class'=>'form-control alert-danger', 'cols'=>'62', 'rows'=>'5', 'id' => 'observaciones']) !!}
+                <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
             </div>
         </div>
     </div>
