@@ -87,7 +87,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <strong>{!! Form::label('entidad', 'Entidad Federativa: *') !!}</strong>
-            {!! Form::select('datos_empleo_declarante[entidad_federativa_id]',$entidad,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->entidad_federativa_id :null,['class'=>'form-control text-uppercase',  'id' => 'entidad_id',  'required' => 'true']) !!}
+            {!! Form::select('datos_empleo_declarante[entidad_federativa_id]',$entidad,isset($DatoEmpleoDeclarante) ? $DatoEmpleoDeclarante->entidad_federativa_id :null,['class'=>'form-control text-uppercase',  'id' => 'entidad_federativa_id',  'required' => 'true']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
@@ -137,7 +137,7 @@
         }else if ($("#accion").val() == "crear"){
             document.getElementById("crearF").style.display="block";
         }
-        $("#entidad_id").on('click', function () {
+        $("#entidad_federativa_id").on('change', function () {
             alert("entr FUNCION");
             var idEntidad = $(this).val();
             if (parseInt(idEntidad) === 15) {
