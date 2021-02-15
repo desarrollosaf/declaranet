@@ -48,13 +48,9 @@
 @endsection
 @section('scripts')
     <script type="text/javascript">
-        if($("#accion").val() == "editar"){
-            document.getElementById("edit").style.display="block";
-        }else if ($("#accion").val() == "crear"){
-            document.getElementById("crearF").style.display="block";
-        }
         $("#entidad_federativa_id").on('change', function () {
-            alert("entr FUNCION");
+            console.log("hola");
+            //alert("entr FUNCION");
             var idEntidad = $(this).val();
             if (parseInt(idEntidad) === 15) {
                 $(".foraneo").hide();
