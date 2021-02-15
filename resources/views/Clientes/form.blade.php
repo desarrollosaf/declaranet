@@ -32,7 +32,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC: *</strong></label>
-                    {!! Form::text('clientes[rfc]', isset($clientes) ? $clientes->rfc : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAX010101010',   'id' => 'rfc','required'=>true]) !!}
+                    {!! Form::text('clientes[rfc]', isset($clientes) ? $clientes->rfc : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. XAX010101010',   'id' => 'rfc','required'=>true, 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
                 </div>
             </div>
         </div>
@@ -108,7 +108,7 @@
             <div class="col-lg-4" id="mx">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>Entidad federativa: *</strong></label>
-                    {!! Form::select('clientes[entidades_id]', $entidad, isset($clientes) ? $clientes->entidades_id : [],['class'=>'form-control',  'id' => 'entidades_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                    {!! Form::select('clientes[entidades_id]', $entidad, isset($clientes) ? $clientes->entidades_id : [],['class'=>'form-control text-uppercase',  'id' => 'entidades_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="ex" style="display: none;">

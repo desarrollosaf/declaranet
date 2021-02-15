@@ -7,7 +7,6 @@
         </div>
 
         <hr>
-
         <!-- Primera fila  -->
         <div class="container">
             <div class="row">
@@ -159,7 +158,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label" for="NumDoc"><strong>MARCA: *</strong></label>
-                                {!! Form::text('vehiculos[v_marca]', isset($vehiculos) ? $vehiculos->v_marca : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. Renault',   'id' => 'v_marca','required' => true]) !!}
+                                {!! Form::text('vehiculos[v_marca]', isset($vehiculos) ? $vehiculos->v_marca : null,['class'=>'form-control text-uppercase holi', 'placeholder'=>'P. ej. Renault',   'id' => 'v_marca','required' => true]) !!}
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -202,7 +201,7 @@
                             <div id="lugarRegistroMx" style="display: block;">
                                 <div class="form-group">
                                     <label class="control-label" for="NumDoc"><strong>ENTIDAD FEDERATIVA: *</strong></label>
-                                    {!! Form::select('vehiculos[entidades_id]',$entidad, isset($vehiculos) ? $vehiculos->entidades_id : [],[ 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'entidades_id','required' => true]) !!}
+                                    {!! Form::select('vehiculos[entidades_id]',$entidad, isset($vehiculos) ? $vehiculos->entidades_id : [],['class'=>'form-control text-uppercase', 'placeholder' => 'SELECCIONA UNA OPCIÓN',  'id' => 'entidades_id','required' => true]) !!}
                                 </div>
                             </div>
                             <div id="lugarRegistroEx" style="display: none;">
@@ -367,19 +366,19 @@
                 $("#titular_id").on("change", function () {
                     var dsp_D_titular = document.getElementById("titular_id").value
                     if (dsp_D_titular != 1) {
-                        $("#difDec").find("select").prop("class", "form-control alert-danger");
-                        $("#difDec").find("input").prop("class", "form-control alert-danger");
+                        $("#difDec").find("select").prop("class", "form-control text-uppercase alert-danger");
+                        $("#difDec").find("input").prop("class", "form-control text-uppercase alert-danger");
                         $("#submit").prop("class", "btn btn-secondary");
                     } else {
-                        $("#difDec").find("select").prop("class", "form-control");
-                        $("#difDec").find("input").prop("class", "form-control");
+                        $("#difDec").find("select").prop("class", "form-control text-uppercase");
+                        $("#difDec").find("input").prop("class", "form-control text-uppercase");
                         $("#submit").prop("class", "btn btn-secondary");
                         $("#tipoDePersona").on("change", function () {
                             var tipoDePersona = document.getElementById("tipoDePersona").value
                             if (tipoDePersona == 1) {
-                                $("#v_nombreFisica").prop("class", "form-control alert-danger");
-                                $("#v_rfcFisica").prop("class", "form-control alert-danger");
-                                $("#relacion_id").prop("class", "form-control alert-danger");
+                                $("#v_nombreFisica").prop("class", "form-control text-uppercase alert-danger");
+                                $("#v_rfcFisica").prop("class", "form-control text-uppercase alert-danger");
+                                $("#relacion_id").prop("class", "form-control text-uppercase alert-danger");
                                 $("#submit").prop("class", "btn btn-secondary");
                             }
                         });

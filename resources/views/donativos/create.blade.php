@@ -31,8 +31,7 @@
                 {!! Form::open(['route'=>'donativos.store', 'method'=>'POST', 'role' => 'form','id' => 'frmDonativos']) !!}
                 @include('donativos.form')
                 <div class="text-center">
-                    <a class='btn btn-submit text-light' href="{{route("datos_declarante.create")}}">Ir a la sección anterior</a>
-
+                    <a class='btn btn-submit text-light' href="{{route("donativos.index")}}">Ir a la sección anterior</a>
                     {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
                 </div>
                 {!! Form::close() !!}

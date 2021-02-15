@@ -71,7 +71,7 @@
     </div>
     <div class="form-group col-md-4" id="moneda">
         <strong>  {!! Form::label('tipo_moneda', 'Tipo de moneda: *') !!}</strong>
-        {!! Form::select('beneficio_privado[tipo_monedas_id]',$moneda, isset($beneficio) ? $beneficio->tipo_monedas_id : [],['class'=>'form-control', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'tipo_monedas_id', 'required' => true]) !!}
+        {!! Form::select('beneficio_privado[tipo_monedas_id]',$moneda, isset($beneficio) ? $beneficio->tipo_monedas_id : [],['class'=>'form-control text-uppercase', 'placeholder'=>'SELECCIONA UNA OPCIÓN',  'id' => 'tipo_monedas_id', 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="Tespecie" style="display: none;">
@@ -107,8 +107,7 @@
 <div id="crearF"  style="display: none;" class="all text-center">
     <div class="text-center">
         <br>
-            <a href="{{route("beneficios_privados.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
-
+            <a href="{{route("apoyo_beneficio.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
             {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
         </div>
     </div>

@@ -77,7 +77,7 @@
                                 <div class="alert alert-danger text-center" role="alert">
                                     <label style="margin-top:10px;">
                                         <strong>Para registrar información pulse: </strong><a href="{{route('apoyo_beneficio.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
-                                        <strong>Si no tiene apoyos o beneficios públicos, seleccione <a href="{{route('representacion.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                                        <strong>Si no tiene apoyos o beneficios públicos, seleccione <a href="{{route('representacion.index')}}" class="btn btn-ninguno  btn-sm btn-secondary">Ninguno</a></strong>
                                     </label>
                                 </div>
                             @endif

@@ -169,7 +169,7 @@
         $("#tipoTercero").change(function () {
             let val = parseInt($(this).val());
             if (val == 1) {
-                $("#rfc").prop("readOnly", false).prop("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{0}{3})').attr("placeholder", "p. ej. XAXX010101XXX").val("");
+                $("#rfc").prop("readOnly", false).prop("pattern", '([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{0-3})').attr("placeholder", "p. ej. XAXX010101XXX").val("");
                 $("#nombre-tercero").show().find("input").prop("readOnly", false).prop("required", true);
                 $("#razon-social").hide().find("input").prop("required", false).val("");
             } else {

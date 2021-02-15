@@ -41,7 +41,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"> <strong>RFC: *</strong></label>
-                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control', 'placeholder'=>'P. ej. XAX010101XAX',  'id' => 'rfc', 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'required' => true,  'maxlength'=>"12", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
+                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. XAX010101XAX',  'id' => 'rfc', 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'required' => true,  'maxlength'=>"12", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -90,7 +90,7 @@
                 <div class="form-group">
                     <div id="mx">
                         <label class="form-check-label" for="inlineCheckbox1"> <strong>Entidad federativa: *</strong></label>
-                        {!! Form::select('participaciones[entidades_id]', $entidad, isset($participaciones) ? $participaciones->entidades_id : [],['class'=>'form-control',  'id' => 'entidades_id','placeholder' => 'SELECCIONA UNA OPCIÓN', 'required' => true]) !!}
+                        {!! Form::select('participaciones[entidades_id]', $entidad, isset($participaciones) ? $participaciones->entidades_id : [],['class'=>'form-control text-uppercase',  'id' => 'entidades_id','placeholder' => 'SELECCIONA UNA OPCIÓN', 'required' => true]) !!}
                     </div>
                     <div id="ex" style="display: none;">
                         <label class="form-check-label" for="inlineCheckbox1"> <strong>País donde se localiza: *</strong></label>
@@ -128,7 +128,7 @@
     <div id="crearF" style="display: none;" class="all text-center">
         <div class="text-center">
             <br>
-                {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
+                <a href="{{route("participacion.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
                 {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
             </div>
         </div>
