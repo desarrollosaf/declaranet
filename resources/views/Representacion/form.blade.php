@@ -53,7 +53,7 @@
             <div class="col-lg-4 nombre-representanteM">
                 <div class="form-group">
                     <strong>{!! Form::label('nombre_representanteMoral', ' Razón social del representante/representado: *') !!}</strong>
-                    {!! Form::text('representacion[nombre_representanteMoral]',isset($representacion) ? $representacion->nombre_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. Juan Pérez.',  'id' => 'nombre_representanteMoral']) !!}
+                    {!! Form::text('representacion[nombre_representanteMoral]',isset($representacion) ? $representacion->nombre_representante : null,['class'=>'form-control text-uppercase titular-repre', 'placeholder'=>'p. ej. Juan Pérez.',  'id' => 'nombre_representanteMoral', 'required' =>true]) !!}
                 </div>
             </div>
 
