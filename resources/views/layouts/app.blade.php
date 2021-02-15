@@ -610,7 +610,7 @@
                                                 <div class="menu list-group-flush">
                                                     <a href="{{route("participacion_empresas.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-person mr-2"></i>Participación en empresas, sociedades o asociaciones</a>
+                                                            class="ion ion-person mr-2"></i>Participación económica o financiera en empresas</a>
                                                     <a href="{{route("participacion.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-ribbon-a mr-2"></i>¿Participa en la toma de decisiones de alguna de estas instituciones?</a>
