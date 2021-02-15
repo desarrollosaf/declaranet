@@ -47,8 +47,8 @@
                         <div class="col-md-12">
                             <center>
                                 <strong>Para adicionar información de viajes pulse: <a class="btn btn-sm btn-secondary" href="{{route('viajes.create')}}">Agregar</a></strong>
-                                <br><br>
-                                <strong>Si no tiene viajes, seleccione  <a href="{{route('viajes.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                                <br>
+                                <strong>Si no tiene viajes, seleccione  <a href="{{route('viajes.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                             </center>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
             }).then((result) => {
                 if (result.isConfirmed){
                     Swal.fire({
-                        text: 'No se registró información en este apartado. Si desea registrar Fideicomisos del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        text: 'No se registró información en este apartado. Si desea registrar Viajes del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
                         icon: 'warning',
                         cancelButtonText: 'Aceptar'
                     });

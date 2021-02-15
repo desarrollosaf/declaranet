@@ -76,7 +76,7 @@
                             <strong>Para registrar información  de clientes principales pulse: </strong><a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
                         </div>
                         <div class="mt-2">
-                            <strong>Si no tiene clientes principales, seleccione<a href="{{route('beneficios_privados.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                            <strong>Si no tiene clientes principales, seleccione<a href="{{route('beneficios_privados.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                         </div>
                     </div>
 

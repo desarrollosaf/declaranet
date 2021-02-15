@@ -50,7 +50,7 @@
                             <center>
                                 <strong>Para adicionar información de participaciones pulse: <a class="btn btn-sm btn-secondary" href="{{route('participaciones.create')}}">Agregar</a></strong>
                                 <br><br>
-                                <strong>Si no tiene participaciones, seleccione  <a href="{{route('viajes.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                                <strong>Si no tiene participaciones, seleccione  <a href="{{route('viajes.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                             </center>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
 @endsection
 @section('scripts')
 <script>
-$("#btnNinguno").on("click",function(){
+$("#btn-ninguno").on("click",function(){
     Swal.fire({
         text: '¿Esta seguro que no desea solicitar la información solicitada en este apartado?',
         icon: 'warning',

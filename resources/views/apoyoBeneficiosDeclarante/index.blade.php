@@ -77,14 +77,10 @@
                                 <div class="alert alert-danger text-center" role="alert">
                                     <label style="margin-top:10px;">
                                         <strong>Para registrar información pulse: </strong><a href="{{route('apoyo_beneficio.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
-                                        <strong>Si no tiene apoyos o beneficios públicos, seleccione <a href="{{route('representacion.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                                        <strong>Si no tiene apoyos o beneficios públicos, seleccione <a href="{{route('representacion.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                                     </label>
                                 </div>
-
-
-
                             @endif
-
 
                             <div class="text-center">
                                 <br>
@@ -92,50 +88,6 @@
                                 <a href="{{route("representacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 @endsection
 
@@ -158,6 +110,24 @@
                 }
             });
             return false;
+    });
+    $('.btn-ninguno').on('click', function (e) {
+        let that = this;
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed){
+                Swal.fire({
+                    text: 'No se registró información en este apartado. Si desea registrar apoyos o beneficios públicos pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                    icon: 'warning',
+                    cancelButtonText: 'Aceptar'
+                });
+            }
+        });
     });
 </script>
 @endsection

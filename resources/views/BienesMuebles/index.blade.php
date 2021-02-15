@@ -64,7 +64,7 @@
                             <strong>Para registrar información de bienes muebles pulse: </strong><a href="{{route('bienes_muebles.create')}}" class="btn btn-sm btn-secondary text-light">Agregar</a>
                         </div>
                         <div class="mt-2">
-                            <strong>Sí no tiene bienes muebles, seleccione<a href="{{route('inversiones.index')}}" class="btn btn-sm btn-secondary text-light">Ninguno</a></strong>
+                            <strong>Sí no tiene bienes muebles, seleccione<a href="{{route('inversiones.index')}}" class="btn btn-ninguno btn-secondary text-light">Ninguno</a></strong>
                         </div>
                     </div>
                 @endif
@@ -90,6 +90,25 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             $(that).closest('form').submit();
+                        }
+                    });
+                });
+
+                $('.btn-ninguno').on('click', function (e) {
+                    let that = this;
+                    e.preventDefault();
+                    Swal.fire({
+                        title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        cancelButtonText: 'Cancelar'
+                    }).then((result) => {
+                        if (result.isConfirmed){
+                            Swal.fire({
+                                text: 'No se registró información en este apartado. Si desea registrar Bienes Muebles del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                                icon: 'warning',
+                                cancelButtonText: 'Aceptar'
+                            });
                         }
                     });
                 });

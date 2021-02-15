@@ -53,7 +53,7 @@
                             <strong> Para registrar información  de dependientes económicos pulse:</strong><a href="{{route("datos_dependiente_declarante.create")}}" type="button" class="btn btn-sm btn-secondary">Agregar</a>
                         </div>
                         <div class="mt-2">
-                            <strong>Sí no tiene dependientes económicos, seleccione</strong><a href="{{route("ingreso_neto.index")}}" type="button" class="btn btn-sm btn-secondary">Ninguno</a>
+                            <strong>Sí no tiene dependientes económicos, seleccione</strong><a href="{{route("ingreso_neto.index")}}" type="button" class="btn btn-ninguno btn-secondary">Ninguno</a>
                         </div>
                     </div>
                 @endif
@@ -70,9 +70,9 @@
 @endsection
 @section('scripts')
 <script>
-$("#btnNinguno").on("click",function(){
+$("#btn-ninguno").on("click",function(){
     Swal.fire({
-        text: '¿Esta seguro que no desea solicitar la información solicitada en este apartado?',
+        text: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
         icon: 'warning',
         showCancelButton: true,
         cancelButtonText: 'Cancelar'

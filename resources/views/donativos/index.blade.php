@@ -48,7 +48,7 @@
                             <center>
                                 <strong>Para adicionar información de donativos pulse: <a class="btn btn-sm btn-secondary" href="{{route('donativos.create')}}">Agregar</a></strong>
                                 <br><br>
-                                <strong>Si no tiene donativos, seleccione  <a href="{{route('intereses_personales.index')}}" class="btn btn-sm btn-secondary">Ninguno</a></strong>
+                                <strong>Si no tiene donativos, seleccione  <a href="{{route('intereses_personales.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
                             </center>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
             }).then((result) => {
                 if (result.isConfirmed){
                     Swal.fire({
-                        text: 'No se registró información en este apartado. Si desea registrar Fideicomisos del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        text: 'No se registró información en este apartado. Si desea registrar Donativos del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
                         icon: 'warning',
                         cancelButtonText: 'Aceptar'
                     });
