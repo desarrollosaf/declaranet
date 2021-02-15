@@ -468,8 +468,8 @@
                 $("#tipo_persona_fideicomitente").on("change", function () {
                     var tipo_persona_fideicomitente = document.getElementById("tipo_persona_fideicomitente").value
                     if (tipo_persona_fideicomitente == '1') {
-                        $("#nombre_fideicomitente_fisica").prop("class", "form-control alert-danger");
-                        $("#rfc_fideicomitente_fisica").prop("class", "form-control alert-danger");
+                        $("#nombre_fideicomitente_fisica").prop("class", "form-control alert-danger text-uppercase");
+                        $("#rfc_fideicomitente_fisica").prop("class", "form-control alert-danger text-uppercase");
                     }else{
                         $("#nombre_fideicomitente_fisica").prop("class", "form-control");
                         $("#rfc_fideicomitente_fisica").prop("class", "form-control");
@@ -478,27 +478,27 @@
                 $("#tipo_persona_fiduciario").on("change", function () {
                     var tipo_persona_fiduciario = document.getElementById("tipo_persona_fiduciario").value
                     if (tipo_persona_fiduciario == '1') {
-                        $("#nombre_fiduciario_fisica").prop("class", "form-control alert-danger");
-                        $("#rfc_fiduciario_fisica").prop("class", "form-control alert-danger");
+                        $("#nombre_fiduciario_fisica").prop("class", "form-control alert-danger text-uppercase");
+                        $("#rfc_fiduciario_fisica").prop("class", "form-control alert-danger text-uppercase");
                     }else{
-                        $("#nombre_fiduciario_fisica").prop("class", "form-control");
-                        $("#rfc_fiduciario_fisica").prop("class", "form-control");
+                        $("#nombre_fiduciario_fisica").prop("class", "form-control text-uppercase");
+                        $("#rfc_fiduciario_fisica").prop("class", "form-control text-uppercase");
                     }
                 });
 
                 $("#tipo_persona_fideicomisario").on("change", function () {
                     var tipo_persona_fideicomisario = document.getElementById("tipo_persona_fideicomisario").value
                     if (tipo_persona_fideicomisario == '1') {
-                        $("#nombre_fideicomisario_fisica").prop("class", "form-control alert-danger");
-                        $("#rfc_fideicomisario_fisica").prop("class", "form-control alert-danger");
+                        $("#nombre_fideicomisario_fisica").prop("class", "form-control alert-danger text-uppercase");
+                        $("#rfc_fideicomisario_fisica").prop("class", "form-control alert-danger text-uppercase");
                     }else{
-                        $("#nombre_fideicomisario_fisica").prop("class", "form-control");
-                        $("#rfc_fideicomisario_fisica").prop("class", "form-control");
+                        $("#nombre_fideicomisario_fisica").prop("class", "form-control text-uppercase");
+                        $("#rfc_fideicomisario_fisica").prop("class", "form-control text-uppercase");
                     }
                 });
             }else{
-                $("#color").find("select").prop("class","form-control alert-danger");
-                $("#color").find("input").prop("class","form-control alert-danger");
+                $("#color").find("select").prop("class","form-control alert-danger text-uppercase");
+                $("#color").find("input").prop("class","form-control alert-danger text-uppercase");
                 $("#submit").prop("class","btn btn-secondary");
             }
         });
