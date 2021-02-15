@@ -48,7 +48,7 @@
                             <center>
                                 <strong>Para adicionar información de viajes pulse: <a class="btn btn-sm btn-secondary" href="{{route('viajes.create')}}">Agregar</a></strong>
                                 <br>
-                                <strong>Si no tiene viajes, seleccione  <a href="{{route('viajes.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                                <strong>Si no tiene viajes, seleccione  <a href="{{route('viajes.index')}}" class="btn btn-sm btn-ninguno btn-secondary">Ninguno</a></strong>
                             </center>
                         </div>
                     </div>

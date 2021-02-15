@@ -45,7 +45,7 @@
                             <center>
                                 <strong>Para adicionar información de intereses personales pulse: <a class="btn btn-sm btn-secondary" href="{{route('intereses_personales.create')}}">Agregar</a></strong>
                                 <br><br>
-                                <strong>Si no tiene intereses personales, seleccione  <a href="{{route('participaciones.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                                <strong>Si no tiene intereses personales, seleccione  <a href="{{route('participaciones.index')}}" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a></strong>
                             </center>
                         </div>
                     </div>

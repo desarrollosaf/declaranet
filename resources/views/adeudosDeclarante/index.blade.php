@@ -63,7 +63,7 @@
                             <strong>Para registrar información de Adeudos pulse: </strong><a href="{{route('adeudos.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
                         </div>
                         <div class="mt-2">
-                            <strong>Si no tiene Adeudos, seleccione <a href="{{route('prestamos.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                            <strong>Si no tiene Adeudos, seleccione <a href="{{route('prestamos.index')}}" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a></strong>
                         </div>
                     </div>
 
