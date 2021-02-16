@@ -2340,10 +2340,23 @@ class declaracionesController extends Controller
                     }
                     if ($title->datos_empleo_declarante != null) {
                         $ninguno_datos_empleo_declarante = false;
+                        if($title->datos_empleo_declarante->nivel_gobierno_id == null){
+                            $nivelOrdenGobierno_declarante = null;
+                        }else{
+                            $nivelOrdenGobierno_declarante = $title->datos_empleo_declarante->nivel_gobierno->valor;
+                        }
+
+                        if($title->datos_empleo_declarante->ambito_publico_id == null){
+                            $ambitoPublico_declarante = null;
+                        }else{
+                            $ambitoPublico_declarante = $title->datos_empleo_declarante->ambito_publico->valor;
+                        }
+
+
                         $datos_empleo_declarante = array(
                             'tipoOperacion' => $title->datos_empleo_declarante->tipoOperacion,
-                            'nivelOrdenGobierno' => $title->datos_empleo_declarante->nivel_gobierno->valor,
-                            'ambitoPublico' => $title->datos_empleo_declarante->ambito_publico->valor,
+                            'nivelOrdenGobierno' => $nivelOrdenGobierno_declarante,
+                            'ambitoPublico' => $ambitoPublico_declarante,
                             'nombreEntePublico' => $title->datos_empleo_declarante->nombre_ente_publico,
                             'areaAdscripcion' => $title->datos_empleo_declarante->area_adscripcion,
                             'empleoCargoComision' => $title->datos_empleo_declarante->empleo_cargo,
