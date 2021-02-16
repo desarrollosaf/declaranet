@@ -1175,6 +1175,11 @@ class declaracionesController extends Controller
                             }else{
                                 $formaPago_muebles = $mueble->FormaPago->valor;
                             }
+                            if($mueble->tipo_moneda_id == null){
+                                $moneda_muebles = null;
+                            }else{
+                               $moneda_muebles = $mueble->TipoMoneda->valor;
+                            }
 
                             $muebles = array(
                                 'tipoOperacion' => '',
