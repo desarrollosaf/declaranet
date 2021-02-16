@@ -76,7 +76,7 @@ class Handler extends ExceptionHandler
         }
         if ($exception instanceof QueryException) {
             $codigo = $exception->errorInfo[1];
-
+dd($exception);
 
             //      return $this->errorResponse('No se puede eliminar de forma permamente el recurso porque está relacionado con algún otro.', 409);
             return  response()->json([
