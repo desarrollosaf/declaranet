@@ -1740,7 +1740,9 @@ class declaracionesController extends Controller
                             $aclaraciones_apoyo = $aclaraciones_apoyo . ' ' . $apoyo->aclaraciones_observaciones;
                             if ($apoyo->monto_mensual == null) {
                                 $moneda = null;
-                            } else {
+                            } else if($apoyo->tipo_de_moneda_id == null){
+                                $moneda = null;
+                            }else{
                                 $moneda = $apoyo->tipoMoneda->valor;
                             }
                             $apoyos = array(
