@@ -1213,7 +1213,7 @@ class declaracionesController extends Controller
                                 'formaPago' => $formaPago_muebles,
                                 'valorAdquisicion' => ([
                                     'valor' => $mueble->valor_adquisicion,
-                                    'moneda' => $mueble->TipoMoneda->valor,
+                                    'moneda' => $moneda_muebles,
                                 ]),
                                 'fechaAdquisicion' => $mueble->fecha_adquisicion,
                                 'motivoBaja' => ([
