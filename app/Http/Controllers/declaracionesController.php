@@ -2283,6 +2283,14 @@ class declaracionesController extends Controller
                             $lugarResidePareja = $title->pareja->lugarReside->valor;
                         }
 
+                        if($domicilio_pareja->entidad_id == null){
+                            $entidad_dom_pareja_clave = null;
+                            $entidad_dom_pareja_valor = null;
+                        }else{
+                            $entidad_dom_pareja_clave = $domicilio_pareja->entidad_domicilio->clave;
+                            $entidad_dom_pareja_valor = $domicilio_pareja->entidad_domicilio->entidad;
+                        }
+
                         $pareja = array(
                             'nunguno' => false,
                             'tipoOperacion' => '',
@@ -2307,8 +2315,8 @@ class declaracionesController extends Controller
                                     'valor' => $domicilio_pareja->municipio_domicilio->municipio,
                                 ]),
                                 'entidadFederativa' => ([
-                            //        'clave' => $domicilio_pareja->entidad_domicilio->clave,
-                             //       'valor' => $domicilio_pareja->entidad_domicilio->entidad,
+                                    'clave' => $entidad_dom_pareja_clave,
+                                    'valor' => $entidad_dom_pareja_valor,
                                 ]),
                                 'codigoPostal' => $domicilio_pareja->codigo_postal,
                             ]),
