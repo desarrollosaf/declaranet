@@ -20,8 +20,12 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             return redirect(RouteServiceProvider::HOME);
+        }else {
+            return response()->json([
+                'code' => "401",
+                'message' => 'Error inesperado',
+            ], 401);
         }
-
         return $next($request);
     }
 }
