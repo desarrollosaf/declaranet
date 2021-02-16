@@ -1589,7 +1589,7 @@ class declaracionesController extends Controller
                             } else {
                                 $moneda = 'Peso mexicano';
                             }
-                            if($parEmpresas->tipotitularParticipaciones->titular_operacion_id == null){
+                            if($parEmpresas->titular_operacion_id == null){
                                 $tipoRelacion_empresas = null;
                             }else{
                                 $tipoRelacion_empresas = $parEmpresas->tipotitularParticipaciones->valor;
