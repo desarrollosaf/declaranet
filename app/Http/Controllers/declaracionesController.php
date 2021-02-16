@@ -155,14 +155,25 @@ class declaracionesController extends Controller
                         $experiencia = array();
                         $aclaraciones_experiencia = '';
                         foreach ($title->experiencias_laborales as $experienciaLaboral) {
+                            if($experienciaLaboral->nivel_orden_gobierno_id == null){
+                                $nivelOrdenGobierno_experiencia = null;
+                            }else{
+                                $nivelOrdenGobierno_experiencia = $experienciaLaboral->Nivelordengobiernos->valor;
+                            }
+                            if($experienciaLaboral->ambito_publico_id == null){
+                                $ambitoPublico_experiencia = null;
+                            }else{
+                                $ambitoPublico_experiencia = $experienciaLaboral->ambito_sectores->valor;
+                            }
+
                             $experiencia[] = array(
                                 'tipoOperacion' => $experienciaLaboral->tipoOperacion,
                                 'ambitoSector' => ([
                                     'clave' => $experienciaLaboral->ambito_sectores->clave,
                                     'valor' => $experienciaLaboral->ambito_sectores->valor,
                                 ]),
-                                'nivelOrdenGobierno' => $experienciaLaboral->Nivelordengobiernos->valor,
-                                'ambitoPublico' => $experienciaLaboral->ambito_sectores->valor,
+                                'nivelOrdenGobierno' => $nivelOrdenGobierno_experiencia,
+                                'ambitoPublico' => $ambitoPublico_experiencia,
                                 'nombreEntePublico' => $experienciaLaboral->ente_publico,
                                 'areaAdscripcion' => $experienciaLaboral->area_adscripcion,
                                 'empleoCargoComision' => $experienciaLaboral->cargo_comision,
