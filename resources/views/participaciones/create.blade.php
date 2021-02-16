@@ -5,6 +5,7 @@
             <div class="card-header">
                 <div class="float-left">
                     <h3>PARTICIPACIONES</h3>
+                <h6> (Hasta los últimos dos años)</h6>
                 </div>
                 <div class="float-right">
                     <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
