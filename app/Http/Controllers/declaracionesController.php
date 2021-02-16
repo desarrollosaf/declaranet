@@ -12,7 +12,7 @@ class declaracionesController extends Controller
 {
     public function index(Request $request)
     {
-        try{
+        //try{
         $limitereg = $request->input('limite_registros');
         $limitereg = intval($limitereg);
         $datereg = $request->input('fechaCaptura');
@@ -2307,8 +2307,8 @@ class declaracionesController extends Controller
                                     'valor' => $domicilio_pareja->municipio_domicilio->municipio,
                                 ]),
                                 'entidadFederativa' => ([
-                                    'clave' => $domicilio_pareja->entidad_domicilio->clave,
-                                    'valor' => $domicilio_pareja->entidad_domicilio->entidad,
+                            //        'clave' => $domicilio_pareja->entidad_domicilio->clave,
+                             //       'valor' => $domicilio_pareja->entidad_domicilio->entidad,
                                 ]),
                                 'codigoPostal' => $domicilio_pareja->codigo_postal,
                             ]),
@@ -2857,9 +2857,7 @@ class declaracionesController extends Controller
                 'results' => $temparray,
             ];
         }
-    }catch(Exception $Exception) {
-        dd($Exception);
-    }
+    //
         }
 
 
