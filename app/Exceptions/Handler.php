@@ -68,11 +68,10 @@ class Handler extends ExceptionHandler
             ], 403);
         }
 
-        if($request->ajax() || $request->wantsJson())
-        {
+        if($request->ajax() || $request->wantsJson()){
             return  response()->json([
                 'code' => "500",
-                'message' => 'Error inesperado',
+                'message' => 'Error inesperado 1',
             ], 500);
         }
         if ($exception instanceof QueryException) {
@@ -82,7 +81,7 @@ class Handler extends ExceptionHandler
             //      return $this->errorResponse('No se puede eliminar de forma permamente el recurso porque está relacionado con algún otro.', 409);
             return  response()->json([
                 'code' => "500",
-                'message' => 'Error inesperado',
+                'message' => 'Error inesperado 2',
             ], 500);
 
         }
