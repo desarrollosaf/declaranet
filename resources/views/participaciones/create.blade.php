@@ -4,7 +4,7 @@
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
                 <div class="float-left">
-                    <h3>Participaciones</h3>
+                    <h3>PARTICIPACIONES</h3>
                 </div>
                 <div class="float-right">
                     <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
@@ -28,7 +28,7 @@
                 {!! Form::open(['route'=>'participaciones.store', 'method'=>'POST', 'role' => 'form','id' => 'frmParticipaciones']) !!}
                 @include('participaciones.form')
                 <div class="text-center">
-                    <a class='btn btn-submit text-light' href="{{route("datos_declarante.create")}}">Ir a la sección anterior</a>
+                    <a class='btn btn-submit text-light' href="{{route("participaciones.index")}}">Ir a la sección anterior</a>
 
                     {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
                 </div>
