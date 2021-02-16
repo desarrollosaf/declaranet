@@ -1170,6 +1170,12 @@ class declaracionesController extends Controller
                                 $rfc_tercero = $mueble->rfc_tercero;
                             }
 
+                            if($mueble->forma_pago_id == null){
+                                $formaPago_muebles = null;
+                            }else{
+                                $formaPago_muebles = $mueble->FormaPago->valor;
+                            }
+
                             $muebles = array(
                                 'tipoOperacion' => '',
                                 'titular' => ([[
@@ -1199,7 +1205,7 @@ class declaracionesController extends Controller
                                     'clave' => $mueble->FormaAdquisicion->clave,
                                     'valor' => $mueble->FormaAdquisicion->valor,
                                 ]),
-                                'formaPago' => $mueble->FormaPago->valor,
+                                'formaPago' => $formaPago_muebles,
                                 'valorAdquisicion' => ([
                                     'valor' => $mueble->valor_adquisicion,
                                     'moneda' => $mueble->TipoMoneda->valor,
