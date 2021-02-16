@@ -1589,10 +1589,15 @@ class declaracionesController extends Controller
                             } else {
                                 $moneda = 'Peso mexicano';
                             }
+                            if($parEmpresas->tipotitularParticipaciones->titular_operacion_id == null){
+                                $tipoRelacion_empresas = null;
+                            }else{
+                                $tipoRelacion_empresas = $parEmpresas->tipotitularParticipaciones->valor;
+                            }
                             $aclaraciones_participacion_empresas = $aclaraciones_participacion_empresas . ' ' . $parEmpresas->observaciones;
                             $participacion_empresas = array(
                                 'tipoOperacion' => null,
-                                'tipoRelacion' => $parEmpresas->tipotitularParticipaciones->valor,
+                                'tipoRelacion' => $tipoRelacion_empresas,
                                 'nombreEmpresaSociedadAsociacion' => $parEmpresas->nombre_empresa,
                                 'rfc' => $parEmpresas->rfc_empresa,
                                 'porcentajeParticipacion' => $parEmpresas->porcentaje,
