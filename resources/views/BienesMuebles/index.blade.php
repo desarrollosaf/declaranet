@@ -43,7 +43,7 @@
                         </center>
                     </div>
                 @else
-                    <p style="text-align : justify; !important;"><strong>Se consideran bienes muebles lo
+                    <p style="text-align : justify !important;"><strong>Se consideran bienes muebles lo
                             siguiente:</strong>
                     <ol type=”A”>
                         <li>Menaje de casa (muebles y accesorios de casa).<br> El cual será declarado solamente si es mayor a 1200 UMAS que nos da la cantidad de $107,544.00 MxN.(Ciento siete mil quinientos cuarenta y cuatro pesos mexicanos)</li>
@@ -63,6 +63,7 @@
                         <div>
                             <strong>Para registrar información de bienes muebles pulse: </strong><a href="{{route('bienes_muebles.create')}}" class="btn btn-sm btn-secondary text-light">Agregar</a>
                         </div>
+                        <br>
                         <div class="mt-2">
                             <strong>Sí no tiene bienes muebles, seleccione<a href="{{route('inversiones.index')}}" class="btn btn-ninguno btn-sm btn-secondary text-light">Ninguno</a></strong>
                         </div>

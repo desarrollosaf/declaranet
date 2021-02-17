@@ -52,6 +52,7 @@
                         <div>
                             <strong>Para registrar información de Inversiones pulse: </strong><a href="{{route('inversiones.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
                         </div>
+                        <br>
                         <div class="mt-2">
                             <strong>Si no tiene inversiones, cuentas bancarias u otro tipo de valores, seleccione <a href="{{route('adeudos.index')}}" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a></strong>
                         </div>

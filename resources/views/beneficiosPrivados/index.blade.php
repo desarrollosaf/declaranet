@@ -3,7 +3,7 @@
 <div class="container">
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
-            <h4>BENEFICIOS PRIVADOS</h4>
+            <h3>BENEFICIOS PRIVADOS</h3>
             <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
         </div>
         <div class="card-body">
@@ -53,6 +53,8 @@
                     <div>
                         <strong>Para registrar información de beneficios privados pulse: </strong><a href="{{route('beneficios_privados.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
                     </div>
+                    <br>
+                   
                     <div class="mt-2">
                         <strong>Si no recibe beneficios privados, seleccione <a href="{{route('fideicomisos.index')}}" class="btn btn-ninguno btn-sm btn-secondary ">Ninguno</a></strong>
                     </div>

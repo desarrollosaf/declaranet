@@ -123,34 +123,26 @@
             </div>
         </div>
     </div>
-
-    <!-- Sexta fila  -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="form-group">
-                    <strong>{!! Form::label('observaciones', ' Aclaraciones/Observaciones: ') !!}</strong>
-                    {!! Form::textarea('representacion[observaciones]',isset($representacion) ? $representacion->observaciones : null,['class'=>'form-control text-uppercase titular-repre', 'id' => 'observaciones']) !!}
-                    <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
-                </div>
+            <div class="form-group col-md-12">
+                {!! Form::label('observaciones', 'Aclaraciones / Observaciones:',["style" => "font-weight: bold;"]) !!}
+                {!! Form::textarea('declarante[observaciones]', isset($dependiente) ? $dependiente->observaciones : null, ['class'=>'form-control alert-danger']) !!}
+                <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
             </div>
         </div>
     </div>
-
-    <!-- Botones  -->
     <div class="row">
         <div class="col-md-12">
             <center>
                 <br>
                 <a href="{{route('representacion.index')}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
                 <input type="submit" name="submit" class="btn btn-sm btn-submit text-light" value="Guardar e ir a la siguiente sección">
-
             </center>
         </div>
     </div>
     <br>
 </div>
-
 
 @section('scripts')
 <script>
@@ -181,7 +173,7 @@
 
     //TIPO TRANSMISOR
     $('#regimen_representante_id').change(function () {
-     //   alert("entra");
+        //   alert("entra");
         if ($(this).val() === "") {
 
             $('.nombre-representanteF').show();

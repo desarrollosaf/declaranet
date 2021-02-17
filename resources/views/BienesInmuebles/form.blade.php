@@ -315,26 +315,15 @@
         </div>
     </div>
 </div>
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <strong>{!! Form::label('observaciones', ' Aclaraciones/Observaciones: ') !!}</strong>
-                {!! Form::textarea('bienesinmuebles[observaciones]', isset($bien) ? $bien->observaciones : null, ['class'=>'form-control text-uppercase  tipo-titular', 'cols'=>'62', 'rows'=>'5', 'id' => 'observaciones']) !!}
-            </div>
-        </div>
-    </div>
-    <div class="row">
+<div class="form-group col-md-12">
+    {!! Form::label('observaciones', 'Aclaraciones / Observaciones:',["style" => "font-weight: bold;"]) !!}
+    {!! Form::textarea('declarante[observaciones]', isset($dependiente) ? $dependiente->observaciones : null, ['class'=>'form-control alert-danger']) !!}
+</div>
         <div class="col-md-12">
             <div class="form-group">
                 <strong>{!! Form::label('texto', 'Todos los campos marcados con * son obligatorios. ') !!}</strong>
             </div>
         </div>
-    </div>
-</div>
 <div class="row">
     <div class="col-md-12">
         <center>

@@ -4,8 +4,7 @@ x|@extends('layouts.app')
     <div class="card mb-5 shadow-sm border-0 shadow-hover">
         <div class="card-header">
             <h3>REPRESENTACIÓN</h3>
-            <br>
-            <h6 class="card-subtitle">(Hasta los últimos dos años)</h6>
+            <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
         </div>
 
         <div class="container">
@@ -62,6 +61,7 @@ x|@extends('layouts.app')
             <div>
                 <strong>Para registrar información de Representación pulse: <a class="btn btn-sm btn-secondary" href="{{route('representacion.create')}}">Agregar</a></strong>
             </div>
+            <br>
             <div class="mt-2">
                 <strong>Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('clientes_principales.index')}}" class="btn btn-ninguno btn-secondary">Ninguno</a><br></strong>
             </div>

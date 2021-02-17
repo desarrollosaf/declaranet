@@ -83,7 +83,7 @@
 
 <div class="text-center">
     <br>
-    <a href="{{route("bienes_muebles.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
+    <a href="{{route("inversiones.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
     {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
 </div>
 

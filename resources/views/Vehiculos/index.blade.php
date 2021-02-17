@@ -69,6 +69,7 @@
                             <div>
                                 <strong>Para registrar información de vehículos pulse: </strong><a href="{{route('vehiculos.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
                             </div>
+                            <br>
                             <div class="mt-2">
                                 <strong>Si no tiene vehículos, seleccione </strong><a href="{{route('bienes_muebles.index')}}" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a>
                             </div>

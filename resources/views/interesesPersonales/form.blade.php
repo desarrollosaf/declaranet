@@ -18,12 +18,12 @@
 <div class="form-row">
     <div class="form-group col-md-4 especifique-dependientes">
         <strong>{!! Form::label('intereses.fecha_nacimiento', 'Fecha de nacimiento: *') !!}</strong>
-        {!! Form::date('intereses[fecha_nacimiento]', (isset($intereses->fecha_nacimiento)) ? $intereses->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
+        {!! Form::date('intereses[fecha_nacimiento]', (isset($intereses->fecha_nacimiento)) ? $intereses->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'especifique-dependientes', 'required' => true,'max' => date('Y-m-d')]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 especifique-dependientes">
         <strong>{!! Form::label('intereses.rfc', 'RFC: *') !!}</strong>
-        {!! Form::text('intereses[rfc]', (isset($intereses->rfc)) ? $intereses->rfc : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. XAXA010101XAX',  'id' => 'especifique-dependientes', 'pattern' =>"([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})"]) !!}
+        {!! Form::text('intereses[rfc]', (isset($intereses->rfc)) ? $intereses->rfc : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. XAXA010101XAX',  'id' => 'especifique-dependientes', 'pattern'=>'([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 especifique-dependientes">

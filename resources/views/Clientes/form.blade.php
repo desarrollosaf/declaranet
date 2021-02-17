@@ -10,7 +10,7 @@
                   <strong>¿Realiza alguna actividad lucrativa independiente al empleo, cargo o comisión?: *</strong>
             </div>
             <div class="col-lg-4">
-                {!! Form::select('clientes[respuestas_id]', $selectRespuestas, isset($clientes) ? $clientes->respuestas_id : [],['class'=>'form-control',  'id' => 'respuestas_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
+                {!! Form::select('clientes[respuestas_id]', $selectRespuestas, isset($clientes) ? $clientes->respuestas_id : [],['class'=>'form-control text-uppercase',  'id' => 'respuestas_id','required'=>true, 'placeholder' => 'SELECCIONA UNA OPCIÓN']) !!}
             </div>
         </div>
     </div><br>
@@ -26,7 +26,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong style="line-height : 15px;">Nombre de la empresa o del servicio que proporciona: *</strong></label>
-                    {!! Form::text('clientes[nombre_empresa]', isset($clientes) ? $clientes->nombre_empresa : null,['class'=>'form-control', 'placeholder'=>'P. EJ. MAE S.A. de C.V.',   'id' => 'nombre_empresa','required'=>true]) !!}
+                    {!! Form::text('clientes[nombre_empresa]', isset($clientes) ? $clientes->nombre_empresa : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. MAE S.A. de C.V.',   'id' => 'nombre_empresa','required'=>true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -50,25 +50,25 @@
             <div class="col-lg-4" id="fisicaN" style="display: block;">
                 <div class="form-group">
                         <label class="control-label" for="ProcessNum"><strong>Nombre del cliente principal: *</strong></label>
-                        {!! Form::text('clientes[nombre_cliente]', isset($clientes) ? $clientes->nombre_cliente : null,['class'=>'form-control', 'placeholder'=>'P. EJ. JUAN PÉREZ',   'id' => 'nombre_cliente','required'=>true, 'disabled'=>true]) !!}
+                        {!! Form::text('clientes[nombre_cliente]', isset($clientes) ? $clientes->nombre_cliente : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. JUAN PÉREZ',   'id' => 'nombre_cliente','required'=>true, 'disabled'=>true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="fisicaR" style="display: block;">
                 <div class="form-group">
                         <label class="control-label" for="State"><strong>RFC: *</strong></label>
-                        {!! Form::text('clientes[rfc_cliente]', isset($clientes) ? $clientes->rfc_cliente : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_cliente', 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})", 'title' => "Ingresa RFC a 10 o 13 dígitos",'required'=>true, 'maxlength'=>'13','size'=>'13', 'disabled'=>true, 'title' => 'El formato de RFC es de 10 a 13 dígitos']) !!}
+                        {!! Form::text('clientes[rfc_cliente]', isset($clientes) ? $clientes->rfc_cliente : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. XAXA010101XAX',   'id' => 'rfc_cliente', 'pattern' => "([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})", 'title' => "Ingresa RFC a 10 o 13 dígitos",'required'=>true, 'maxlength'=>'13','size'=>'13', 'disabled'=>true, 'title' => 'El formato de RFC es de 10 a 13 dígitos']) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="moralN" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Razón social del cliente principal: *</strong></label>
-                    {!! Form::text('clientes[nombre_cliente_moral]', isset($clientes) ? $clientes->nombre_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. DESARROLLO S.A. de C.V.',   'id' => 'nombre_cliente_moral','required'=>true]) !!}
+                    {!! Form::text('clientes[nombre_cliente_moral]', isset($clientes) ? $clientes->nombre_cliente_moral : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. DESARROLLO S.A. de C.V.',   'id' => 'nombre_cliente_moral','required'=>true]) !!}
                 </div>
             </div>
             <div class="col-lg-4" id="moralR" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="State"><strong>RFC: *</strong></label>
-                    {!! Form::text('clientes[rfc_cliente_moral]', isset($clientes) ? $clientes->rfc_cliente_moral : null,['class'=>'form-control', 'placeholder'=>'P. EJ. XAX010101XAX',   'id' => 'rfc_cliente_moral', 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos",'required'=>true, 'maxlength'=>'12','size'=>'12']) !!}
+                    {!! Form::text('clientes[rfc_cliente_moral]', isset($clientes) ? $clientes->rfc_cliente_moral : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. XAX010101XAX',   'id' => 'rfc_cliente_moral', 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'title' => "Ingresa RFC a 12 dígitos",'required'=>true, 'maxlength'=>'12','size'=>'12']) !!}
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Especifique: *</strong></label>
-                    {!! Form::text('clientes[sector_especifique]', isset($clientes) ? $clientes->sector_especifique : null,['class'=>'form-control', 'placeholder'=>'P. EJ. SECTOR PETROLERO',   'id' => 'sector_especifique', 'disabled' => 'disabled' ,'required'=>true]) !!}
+                    {!! Form::text('clientes[sector_especifique]', isset($clientes) ? $clientes->sector_especifique : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. SECTOR PETROLERO',   'id' => 'sector_especifique', 'disabled' => 'disabled' ,'required'=>true]) !!}
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"><strong>Monto aproximado del beneficio o ganancia mensual que obtiene del cliente principal: *</strong></label>
-                    {!! Form::text('clientes[monto_beneficio]', isset($clientes) ? $clientes->monto_beneficio : null,['class'=>'form-control', 'placeholder'=>'P. EJ. 10,000 MxN',   'id' => 'monto_beneficio','required'=>true, 'pattern' => "([0-9]{1,8})", 'title' => "Ingresa ganancias mensuales en dígitos",'maxlength'=>'8', 'size' => '8']) !!}
+                    {!! Form::text('clientes[monto_beneficio]', isset($clientes) ? $clientes->monto_beneficio : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. 10,000 MXN',   'id' => 'monto_beneficio','required'=>true, 'pattern' => "([0-9]{1,8})", 'title' => "Ingresa ganancias mensuales en dígitos",'maxlength'=>'8', 'size' => '8']) !!}
                 </div>
             </div>
             <div class="col-lg-4">
@@ -114,7 +114,7 @@
             <div class="col-lg-4" id="ex" style="display: none;">
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"><strong>País donde se localiza: *</strong></label>
-                    {!! Form::text('clientes[pais]', isset($clientes) ? $clientes->pais :null,['class'=>'form-control',  'id' => 'pais','required'=>true, 'placeholder' => 'P. EJ. Estados Unidos']) !!}
+                    {!! Form::text('clientes[pais]', isset($clientes) ? $clientes->pais :null,['class'=>'form-control text-uppercase',  'id' => 'pais','required'=>true, 'placeholder' => 'P. EJ. Estados Unidos']) !!}
                 </div>
             </div>
         </div>
@@ -219,12 +219,12 @@
         $("#tipo_relaciones_id").on("change",function(){
             var tipo_relaciones_id = document.getElementById("tipo_relaciones_id").value
             if(tipo_relaciones_id == '2' || tipo_relaciones_id == '3'){
-                $("#si").find("select").prop("class","form-control alert-danger");
-                $("#si").find("input").prop("class","form-control alert-danger");
+                $("#si").find("select").prop("class","form-control alert-danger text-uppercase");
+                $("#si").find("input").prop("class","form-control alert-danger text-uppercase");
                 $("#submit").prop("class","btn btn-secondary");
             }else if(tipo_relaciones_id == '1') {
-                $("#si").find("select").prop("class","form-control");
-                $("#si").find("input").prop("class","form-control");
+                $("#si").find("select").prop("class","form-control text-uppercase");
+                $("#si").find("input").prop("class","form-control text-uppercase");
                 $("#submit").prop("class","btn btn-secondary");
             }
         });
@@ -239,8 +239,8 @@
                 $("#nombre_cliente").prop("disabled",false);
                 $("#rfc_cliente").prop("disabled",false);
 
-                $("#nombre_cliente").prop("class","form-control alert-danger");
-                $("#rfc_cliente").prop("class","form-control alert-danger");
+                $("#nombre_cliente").prop("class","form-control alert-danger text-uppercase");
+                $("#rfc_cliente").prop("class","form-control alert-danger text-uppercase");
 
                 $("#nombre_cliente_moral").prop("required",false);
                 $("#rfc_cliente_moral").prop("required",false);

@@ -40,7 +40,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <div class="form-group">
-                    <strong>  {!! Form::label('ingreso.fecha_conclusion', 'Fecha de conclusion') !!}</strong>
+                    <strong>  {!! Form::label('ingreso.fecha_conclusion', 'Fecha de conclusión') !!}</strong>
                     {!! Form::date('ingreso[fecha_conclusion]',(isset($ingreso->fecha_conclusion)) ? $ingreso->fecha_conclusion : null,['class'=>'form-control text-uppercase', 'id' => 'fecha_conclusion', 'max' => date("Y-m-d")]) !!}
                 </div>
             </div>
@@ -277,10 +277,18 @@
                 </tr>
             </table>
         </div>
-        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            <div class="form-group col-md-12">
+                {!! Form::label('observaciones', 'Aclaraciones / Observaciones:',["style" => "font-weight: bold;"]) !!}
+                {!! Form::textarea('declarante[observaciones]', isset($dependiente) ? $dependiente->observaciones : null, ['class'=>'form-control alert-danger']) !!}
+                <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
+            </div>
+        </div>
     </div>
-</div>
-
 <div class="col-md-12">
     <div class="text-center">
         <a href="{{route("ingreso_neto.index")}}" class="btn btn-submit btn-sm text-light">Ir a la sección anterior</a>
