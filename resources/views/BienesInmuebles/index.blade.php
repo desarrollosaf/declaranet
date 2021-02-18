@@ -50,6 +50,7 @@
                     <div>
                         <strong>Para registrar información pulse: </strong><a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary text-light">Agregar</a><br>
                     </div>
+                <br>
                     <div class="mt-2">
                         <strong>Si no tiene bienes inmuebles, seleccione <a href="{{route('vehiculos.index')}}" class="btn btn-ninguno btn-sm btn-secondary text-light">Ninguno</a></strong>
                     </div>

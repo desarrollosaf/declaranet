@@ -12,6 +12,10 @@ $factory->define(ServidorPublico::class, function (Faker $faker) {
         "segundo_apellido" => $faker->lastName,
         "rfc" => strtoupper($faker->lexify("??????????????????")),
         "curp" => strtoupper($faker->lexify("??????????")),
-        "homoclave" => strtoupper($faker->lexify("???"))
+        "homoclave" => strtoupper($faker->lexify("???")),
+        "fecha_inicio" => now(),
+        "cargo" => 'Ing. en sistemas',
+        "nivel_cargo" => '52-3',
+        "tipo_dependencia" => '1',
     ];
 });

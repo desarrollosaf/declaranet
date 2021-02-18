@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $tipo_movimientos = TipoMovimiento::all();
         $declaraciones = Declaracion::where("servidor_publico_id", auth()->user()->servidor_publico_id)->get();
-//        dd($declaraciones[0]->tipo_movimiento);
+        //dd($declaraciones[0]->tipo_movimiento);
         return view('home', compact("declaraciones","tipo_movimientos"));
     }
 }

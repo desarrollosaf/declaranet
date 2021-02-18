@@ -11,12 +11,12 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('participacion[segundo_apellido]', 'Segundo apellido:') !!}</strong>
-                {!! Form::text('participacion[segundo_apellido]',isset($participacion) ? $participacion->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'nombre','pattern'=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
+        {!! Form::text('participacion[segundo_apellido]',isset($participacion) ? $participacion->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. Pérez',  'id' => 'nombre','pattern'=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('participacion[fecha de nacimiento]', 'Fecha de nacimiento:*') !!}</strong>
-       {!! Form::date('participacion[fecha_nacimiento]',isset($dependiente) ? $dependiente->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'nacimiento','required' => true,'max' => date('Y-m-d')]) !!}
+        {!! Form::date('participacion[fecha_nacimiento]',isset($dependiente) ? $dependiente->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'nacimiento','required' => true,'max' => date('Y-m-d')]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -30,11 +30,11 @@
             <option value="" data-grado="">Selecciona una opción</option>
             @foreach($tipo_titular as $value)
             @if(isset($participacion))
-                @if($value->id == $participacion->tipo_titular_donativo_id)
-                <option value="{{$value->id}}" data-grado="{{$value->grado}}" selected="selected">{{$value->valor}}</option>
-                @else
-                <option value="{{$value->id}}" data-grado="{{$value->grado}}">{{$value->valor}}</option>
-                @endif
+            @if($value->id == $participacion->tipo_titular_donativo_id)
+            <option value="{{$value->id}}" data-grado="{{$value->grado}}" selected="selected">{{$value->valor}}</option>
+            @else
+            <option value="{{$value->id}}" data-grado="{{$value->grado}}">{{$value->valor}}</option>
+            @endif
             @else
             <option value="{{$value->id}}" data-grado="{{$value->grado}}">{{$value->valor}}</option>
             @endif
@@ -43,7 +43,7 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-       <strong>{!! Form::label('participacion[Institicion en la que participa ]', 'Institicion en la que participa:*') !!}</strong>
+        <strong>{!! Form::label('participacion[Institicion en la que participa ]', 'Institicion en la que participa:*') !!}</strong>
         {!! Form::select('participacion[institucion_participacion_id]',[],isset($participacion) ? $participacion->institucion_participacion_id : null,['class'=>'form-control text-uppercase', 'placeholder'=>'Selecciona una opción','required' => true, 'id' => 'institucion_participacion_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
@@ -70,5 +70,6 @@
     <div class="form-group col-md-12">
         <strong>{!! Form::label('inversiones.aclaraciones_observaciones', 'Aclaraciones / Observaciones:') !!}</strong>
         {!! Form::textarea('participacion[observaciones]',isset($participacion) ? $participacion->observaciones : null,['class'=>'form-control alert-danger',  'id' => 'aclaraciones_observaciones']) !!}
+        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>

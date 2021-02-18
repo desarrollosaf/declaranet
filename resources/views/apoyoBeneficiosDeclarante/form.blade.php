@@ -76,8 +76,7 @@
 </div>
 <div class="text-center">
     <br>
-        {{ Form::button('Ir a la sección anterior', ['type' => 'button', 'class' => 'btn btn-submit text-light'] )}}
-
+        <a href="{{route("apoyo_beneficio.index")}}" class="btn  btn-submit text-light">Ir a la sección anterior</a>
         {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
 </div>
 

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
-                <h4>CLIENTES PRINCIPALES</h4>
+                <h3>CLIENTES PRINCIPALES</h3>
                 <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
 
             </div>
@@ -75,8 +75,9 @@
                         <div>
                             <strong>Para registrar información  de clientes principales pulse: </strong><a href="{{route('clientes_principales.create')}}" class="btn btn-sm btn-secondary">Agregar</a><br>
                         </div>
+                        <br>
                         <div class="mt-2">
-                            <strong>Si no tiene clientes principales, seleccione<a href="{{route('beneficios_privados.index')}}" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a></strong>
+                            <strong>Si no tiene clientes principales, seleccione <a href="{{route('beneficios_privados.index')}}" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a></strong>
                         </div>
                     </div>
 

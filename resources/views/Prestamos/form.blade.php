@@ -243,7 +243,7 @@
     </div>
     <div class="form-row">
         <div class="col">
-            <a class="btn btn-submit text-light float-center float-right btn-sm" href="{{route("adeudos.index")}}">Ir a
+            <a class="btn btn-submit text-light float-center float-right btn-sm" href="{{route("prestamos.index")}}">Ir a
                 la sección anterior</a>
         </div>
         <div class="col">

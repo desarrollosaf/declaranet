@@ -10,14 +10,14 @@
                 @if(count($dependientes) > 0)
                 <table class="table table-bordered table-striped table-hover" style="border-collapse: collapse;">
                     <thead style="background-color: #682244;" class="text-light">
-                    <tr>
-                        <td>Nombre</td>
-                        <td>Primer Apellido</td>
-                        <td>Segundo Apellido</td>
-                        <td>CURP</td>
-                        <td>Parentesco</td>
-                        <td>Acciones</td>
-                    </tr>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Primer Apellido</td>
+                            <td>Segundo Apellido</td>
+                            <td>CURP</td>
+                            <td>Parentesco</td>
+                            <td>Acciones</td>
+                        </tr>
                     </thead>
                     <tbody>
                         @foreach($dependientes as $dependiente)
@@ -48,20 +48,21 @@
                 </center>
                 @else
                 <p class="text-justify">Deberá proporcionar la información de CADA UNA de las personas, familiares o no, cuya manutención dependa principalmente de los ingresos del Declarante.</p>
-                                   <div class="alert alert-danger text-center" role="alert">
-                        <div>
-                            <strong> Para registrar información  de dependientes económicos pulse:</strong><a href="{{route("datos_dependiente_declarante.create")}}" type="button" class="btn btn-sm btn-secondary">Agregar</a>
-                        </div>
-                        <div class="mt-2">
-                            <strong>Sí no tiene dependientes económicos, seleccione</strong><a href="{{route("ingreso_neto.index")}}" type="button" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a>
-                        </div>
+                <div class="alert alert-danger text-center" role="alert">
+                    <div>
+                        <strong> Para registrar información  de dependientes económicos pulse:</strong><a href="{{route("datos_dependiente_declarante.create")}}" type="button" class="btn btn-sm btn-secondary">Agregar</a>
                     </div>
+                    <br>
+                    <div class="mt-2">
+                        <strong>Sí no tiene dependientes económicos, seleccione</strong><a href="{{route("ingreso_neto.index")}}" type="button" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a>
+                    </div>
+                </div>
                 @endif
             </div>
             <br>
             <center>
-            <a href="{{route("datos_pareja_declarante.create")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
-            <a href="{{route("ingreso_neto.index")}}" class="btn btn-submit text-light">Ir a la siguiente sección</a>
+                <a href="{{route("datos_pareja_declarante.create")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
+                <a href="{{route("ingreso_neto.index")}}" class="btn btn-submit text-light">Ir a la siguiente sección</a>
             </center>
         </div>
     </div>
@@ -70,39 +71,39 @@
 @endsection
 @section('scripts')
 <script>
-$("#btn-ninguno").on("click",function(){
-    Swal.fire({
-        text: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
-        icon: 'warning',
-        showCancelButton: true,
-        cancelButtonText: 'Cancelar'
-    }).then((result) => {
-        if (result.isConfirmed){
-            Swal.fire({
-                text: 'No se registró información en este apartado. Si desea registrar Datos del Dependiente Económico pulse: Agregar, de lo contrario vaya al siguiente apartado.',
-                icon: 'warning',
-                cancelButtonText: 'Aceptar'
-            });
-        }
+    $("#btn-ninguno").on("click", function () {
+        Swal.fire({
+            text: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    text: 'No se registró información en este apartado. Si desea registrar Datos del Dependiente Económico pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                    icon: 'warning',
+                    cancelButtonText: 'Aceptar'
+                });
+            }
+        });
     });
-});
-$('.btn-borrar').on('click', function (e) {
-    let that = this;
-    console.log('boton clic');
-    e.preventDefault();
-    Swal.fire({
-        title: '¿Está seguro?',
-        text: 'Al oprimir el botón de aceptar se eliminará el registro',
-        icon: 'warning',
-        showCancelButton: true,
-        cancelButtonText: 'Cancelar'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $(that).closest('form').submit();
-        }
+    $('.btn-borrar').on('click', function (e) {
+        let that = this;
+        console.log('boton clic');
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: 'Al oprimir el botón de aceptar se eliminará el registro',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $(that).closest('form').submit();
+            }
+        });
+        return false;
     });
-    return false;
-});
 
 
 </script>

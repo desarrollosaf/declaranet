@@ -60,20 +60,21 @@
                 participan como socios, accionistas, comisarios, representantes, apoderados, colaboradores, beneficiarios u otros.</span>
             <br>
             <div class="alert alert-danger text-center" role="alert">
-                    <div>
-                        <strong>Para registrar información de Paticipación en Empresas pulse: </strong><a href="{{route('participacion_empresas.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
-                    </div>
-                    <div class="mt-2">
-                        <strong>Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('participacion_empresas.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
-                    </div>
+                <div>
+                    <strong>Para registrar información de Paticipación en Empresas pulse: </strong><a href="{{route('participacion_empresas.create')}}" class="btn btn-sm btn-secondary ">Agregar</a><br>
+                </div>
+                <br>
+                <div class="mt-2">
+                    <strong>Si no tiene participación en empresas, sociedades o asociaciones, seleccione: <a href="{{route('participacion_empresas.create')}}" class="btn btn-ninguno btn-secondary">Ninguno</a></strong>
+                </div>
             </div>
 
 
             @endif
             <div class="text-center">
                 <br>
-                <a href="{{route("servidor_publico.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
-                <a href="{{route("inversiones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
+                <a href="{{route("prestamos.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                <a href="{{route("participacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
             </div>
         </div>
 

@@ -104,7 +104,7 @@ class ParticipacionDeclaracionController extends Controller
         $part = ParticipacionDeclaracion::find($id);
         $participacion = $request->input("participacion");
         $part->update($participacion);
-     return redirect()->route("viajes.index");
+     return redirect()->route("participaciones.index");
     }
 
     /**

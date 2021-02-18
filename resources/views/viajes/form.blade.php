@@ -23,7 +23,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong>{!! Form::label('rfcPariente', 'RFC : *') !!}</strong>
-        {!! Form::text("viajes[rfc_pariente]", (isset($viajes->tipo_donativos_id)) ? $donativo->tipo_donativos_id : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfcPariente', 'pattern' => '([A-Z]{4}[0-9]{6}[A-Z0-9]{0}{3})']) !!}
+        {!! Form::text("viajes[rfc_pariente]", (isset($viajes->tipo_donativos_id)) ? $donativo->tipo_donativos_id : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XXX',  'id' => 'rfcPariente', 'pattern' => '([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})', 'required'=>true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>

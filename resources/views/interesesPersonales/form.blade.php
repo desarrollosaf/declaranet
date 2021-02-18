@@ -1,29 +1,29 @@
 <div class="form-row">
     <div class="form-group col-md-4 especifique-dependientes">
         <strong>{!! Form::label('intereses.nombre', 'Nombre: *') !!}</strong>
-        {!! Form::text('intereses[nombre]', (isset($intereses->nombre)) ? $intereses->nombre : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
+        {!! Form::text('intereses[nombre]', (isset($intereses->nombre)) ? $intereses->nombre : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. CARLOS',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 especifique-dependientes">
         <strong>{!! Form::label('intereses.primer_apellido', 'Primer Apellido: *') !!}</strong>
-        {!! Form::text('intereses[primer_apellido]', (isset($intereses->primer_apellido)) ? $intereses->primer_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
+        {!! Form::text('intereses[primer_apellido]', (isset($intereses->primer_apellido)) ? $intereses->primer_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. PÉREZ',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 especifique-dependientes">
         <strong>{!! Form::label('intereses.especifique_dependiente', 'Segundo Apellido: ') !!}</strong>
-        {!! Form::text('intereses[segundo_apellido]', (isset($intereses->segundo_apellido)) ? $intereses->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
+        {!! Form::text('intereses[segundo_apellido]', (isset($intereses->segundo_apellido)) ? $intereses->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. JÚAREZ',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-4 especifique-dependientes">
         <strong>{!! Form::label('intereses.fecha_nacimiento', 'Fecha de nacimiento: *') !!}</strong>
-        {!! Form::date('intereses[fecha_nacimiento]', (isset($intereses->fecha_nacimiento)) ? $intereses->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
+        {!! Form::date('intereses[fecha_nacimiento]', (isset($intereses->fecha_nacimiento)) ? $intereses->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'especifique-dependientes', 'required' => true,'max' => date('Y-m-d')]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 especifique-dependientes">
         <strong>{!! Form::label('intereses.rfc', 'RFC: *') !!}</strong>
-        {!! Form::text('intereses[rfc]', (isset($intereses->rfc)) ? $intereses->rfc : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'especifique-dependientes', 'pattern' =>"([A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3})"]) !!}
+        {!! Form::text('intereses[rfc]', (isset($intereses->rfc)) ? $intereses->rfc : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. XAXA010101XAX',  'id' => 'especifique-dependientes', 'pattern'=>'([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4 especifique-dependientes">
@@ -40,7 +40,7 @@
     </div>
     <div class="form-group col-md-4 especifique-dependientes">
         <strong>{!! Form::label('intereses.curp', 'CURP: *') !!}</strong>
-        {!! Form::text('intereses[curp]', (isset($intereses->curp)) ? $intereses->curp : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'',  'id' => 'curp', 'readOnly', 'pattern' =>"([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)"]) !!}
+        {!! Form::text('intereses[curp]', (isset($intereses->curp)) ? $intereses->curp : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. XAXA010101XAXAXA01',  'id' => 'curp', 'readOnly', 'pattern' =>"([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>

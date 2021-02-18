@@ -215,6 +215,7 @@ class DatosDependienteEconomicoController extends Controller
         $dependiente->dato_laboral()->delete();
         if($laboral["ambito_sector_id"] == 1){
             $laboral = $dependiente->dato_laboral()->create($publico);
+        }elseif($laboral["ambito_sector_id"] == 4){
         }else{
             $laboral = $dependiente->dato_laboral()->create($privado);
         }
