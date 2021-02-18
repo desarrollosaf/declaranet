@@ -148,7 +148,6 @@
         <div class="form-row">
             <div class="col">
                 <a href="{{route("clientes_principales.index")}}" class="btn  btn-submit text-light">Ir a la sección anterior</a>
-
                 {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
             </div>
         </div>

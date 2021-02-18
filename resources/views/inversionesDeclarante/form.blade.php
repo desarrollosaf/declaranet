@@ -47,7 +47,7 @@
     </div>
     <div class="form-group col-md-4" id="ubicacion_rfc">
         <strong> {!! Form::label('inversiones.rfc_titular', 'RFC: *') !!}</strong>
-        {!! Form::text('inversiones[rfc_titular]',isset($inversiones) ? $inversiones->rfc_titular : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. XXXX010101',  'id' => 'rfc_titular', "pattern" => '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})',  "readOnly"=> true]) !!}
+        {!! Form::text('inversiones[rfc_titular]',isset($inversiones) ? $inversiones->rfc_titular : null,['class'=>'form-control text-uppercase color-tercero', 'placeholder'=>'p.ej. XXXX010101',  'id' => 'rfc_titular', "pattern" => '([A-Z]{3}[0-9]{6}[A-Z0-9]{0,3})',  "readOnly"=> true, 'required' => true]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4" id="paises" style="display: none">
