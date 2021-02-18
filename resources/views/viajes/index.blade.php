@@ -5,7 +5,7 @@
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
                 <h3>VIAJES</h3>
-                <h6> (Hasta los últimos dos años)</h6>
+                <h6> (HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
             </div>
             <div class="card-body">
                 @if(count($viajes))
@@ -47,6 +47,7 @@
                         <div class="col-md-12">
                             <center>
                                 <strong>Para adicionar información de viajes pulse: <a class="btn btn-sm btn-secondary" href="{{route('viajes.create')}}">Agregar</a></strong>
+                                <br>
                                 <br>
                                 <strong>Si no tiene viajes, seleccione  <a href="{{route('viajes.index')}}" class="btn btn-sm btn-ninguno btn-secondary">Ninguno</a></strong>
                             </center>

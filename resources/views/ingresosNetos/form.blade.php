@@ -179,18 +179,17 @@
             </tr>
         </table>
     </div>
-    <div class="form-group col-md-12">
-        <hr>
-        <strong>{!! Form::label('Aclaraciones / Observaciones:') !!}</strong>
-        {!! Form::textarea('ingresoMensual[aclaraciones_observaciones]',(isset($ingresoMensual->aclaraciones_observaciones)) ? $ingresoMensual->aclaraciones_observaciones : null,['class'=>'form-control text-uppercase', 'placeholder'=>'',  'id' => 'aclaraciones_observaciones']) !!}
-        <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
-        <span class="text-danger" style="font-size:150%"></span>
+        <div class="form-group col-md-12">
+            {!! Form::label('observaciones', 'Aclaraciones / Observaciones:',["style" => "font-weight: bold;"]) !!}
+            {!! Form::textarea('declarante[observaciones]', isset($dependiente) ? $dependiente->observaciones : null, ['class'=>'form-control alert-danger']) !!}
+            <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
+        </div>
     </div>
     <div class="col-md-12">
         <center>
-            <a href="{{route("datos_dependiente_declarante.index")}}" class="btn btn-submit btn-sm text-light">Guardar e Ir a la sección anterior</a>
+            <a href="{{route("datos_dependiente_declarante.index")}}" class="btn btn-submit btn-sm text-light"> Ir a la sección anterior</a>
 
-            {{ Form::button('Ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
+            {{ Form::button('Guardar e rr a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit btn-sm text-light'] )}}
         </center>
     </div>
 

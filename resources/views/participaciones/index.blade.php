@@ -3,7 +3,7 @@
 <div class="container">
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header">
-                <h3>Participaciones</h3>
+                <h3>PARTICIPACIONES</h3>
                 <h6> (Hasta los últimos dos años)</h6>
             </div>
             <div class="card-body">

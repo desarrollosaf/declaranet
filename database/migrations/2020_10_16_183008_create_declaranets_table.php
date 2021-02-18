@@ -17,7 +17,7 @@ class CreateDeclaranetsTable extends Migration
             $table->bigIncrements("id");
             $table->unsignedBigInteger("servidor_publico_id");
             $table->unsignedBigInteger('tipo_movimiento_id');
-            $table->foreign('tipo_movimiento_id')->references("id")->on('tipo_movimientos');
+            $table->foreign('tipo_movimiento_id')->references("id")->on('tipo_movimientos_mcg');
             $table->date('fecha_declaracion');
             $table->string("correo_institucional")->nullable();
             $table->string("correo_personal")->nullable();
