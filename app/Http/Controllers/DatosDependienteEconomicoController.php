@@ -102,7 +102,7 @@ class DatosDependienteEconomicoController extends Controller
             $laboral = $declarante->dato_laboral()->create($publico);
         }else if($laboral["ambito_sector_id"] == 2){
             $laboral = $declarante->dato_laboral()->create($privado);
-        }else if($laboral["ambito_sector_id"] == 4){
+        }else if($laboral["ambito_sector_id"] == 3){
             $laboral = $declarante->dato_laboral()->create($privado);
         }
         return redirect()->route('datos_dependiente_declarante.index');
@@ -215,6 +215,7 @@ class DatosDependienteEconomicoController extends Controller
         $dependiente->dato_laboral()->delete();
         if($laboral["ambito_sector_id"] == 1){
             $laboral = $dependiente->dato_laboral()->create($publico);
+        }elseif($laboral["ambito_sector_id"] == 4){
         }else{
             $laboral = $dependiente->dato_laboral()->create($privado);
         }

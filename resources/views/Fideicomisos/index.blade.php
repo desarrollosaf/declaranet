@@ -51,9 +51,11 @@
                 </center>
             @else
                 <div class="alert alert-danger text-center" role="alert">
+
                     <div>
                         <strong>Para adicionar información de fideicomisos pulse <a class="btn btn-sm btn-secondary" href="{{route('fideicomisos.create')}}">Agregar</a></strong>
                     </div>
+                    <br>
                     <div class="mt-2">
                         <strong>Si no tiene fideicomisos, seleccione  <a href="{{route('donativos.index')}}" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a></strong>
                     </div>
