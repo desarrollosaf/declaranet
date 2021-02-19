@@ -647,7 +647,6 @@
                                                     <a href="{{route("viajes.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-plane mr-2"></i>Viajes</a>
-
                                                 </div>
                                             </ul>
                                         </div>
@@ -728,7 +727,7 @@
             $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
         });
         $('#bar').click();
-        $(".form-control").keyup(function () {
+        $(".text-uppercase").keyup(function () {
             let val = $(this).val();
             $(this).val(val.toString().toUpperCase());
         });
