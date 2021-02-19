@@ -558,16 +558,19 @@
                                                             class="ion ion-briefcase mr-2"></i>Experiencia laboral</a>
                                                     <a href="{{route('datos_pareja_declarante.create')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-person-stalker mr-2"></i>Datos de la pareja</a>
+                                                            class="ion ion-person-stalker mr-2"></i>Datos de la
+                                                        pareja</a>
                                                     <a href="{{route('datos_dependiente_declarante.index')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-person-add mr-2"></i>Datos de los dependientes</a>
+                                                            class="ion ion-person-add mr-2"></i>Datos de los
+                                                        dependientes</a>
                                                     <a href="{{route('ingreso_neto.index')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-cash mr-2"></i>Ingresos netos</a>
                                                     <a href="{{route('servidor_publico.create')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-cash mr-2"></i>¿Te desempeñaste como servidor público?</a>
+                                                            class="ion ion-cash mr-2"></i>¿Te desempeñaste como servidor
+                                                        público?</a>
                                                     <a href="{{route('bienes_inmuebles.index')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-cash mr-2"></i>Bienes inmuebles</a>
@@ -610,13 +613,16 @@
                                                 <div class="menu list-group-flush">
                                                     <a href="{{route("participacion_empresas.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-person mr-2"></i>Participación económica o financiera en empresas</a>
+                                                            class="ion ion-person mr-2"></i>Participación económica o
+                                                        financiera en empresas</a>
                                                     <a href="{{route("participacion.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-ribbon-a mr-2"></i>¿Participa en la toma de decisiones de alguna de estas instituciones?</a>
+                                                            class="ion ion-ribbon-a mr-2"></i>¿Participa en la toma de
+                                                        decisiones de alguna de estas instituciones?</a>
                                                     <a href="{{route("apoyo_beneficio.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
-                                                            class="ion ion-briefcase mr-2"></i>Apoyo o beneficio públicos</a>
+                                                            class="ion ion-briefcase mr-2"></i>Apoyo o beneficio
+                                                        públicos</a>
                                                     <a href="{{route("representacion.index")}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-briefcase mr-2"></i>Representación</a>
@@ -722,6 +728,10 @@
             $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
         });
         $('#bar').click();
+        $(".form-control").keyup(function () {
+            let val = $(this).val();
+            $(this).val(val.toString().toUpperCase());
+        });
     });
 
     function cerrarSesion(event) {
