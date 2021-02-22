@@ -67,6 +67,7 @@ class Kernel extends HttpKernel
         'CheckDeclaracion' => \App\Http\Middleware\CheckDeclaracion::class,
         'scopes' => \Laravel\Passport\Http\Middleware\CheckScopes::class,
         'scope' => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
+        'CheckEstadoCivil' => \App\Http\Middleware\CheckEstadoCivil::class,
     ];
 
     protected $middlewarePriority = [

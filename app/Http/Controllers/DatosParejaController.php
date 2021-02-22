@@ -30,6 +30,7 @@ class DatosParejaController extends Controller {
 
     public function __construct(Request $request) {
         $this->middleware("auth");
+        $this->middleware("CheckEstadoCivil");
         $this->request = $request;
     }
 
