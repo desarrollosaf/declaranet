@@ -48,7 +48,8 @@ class AdeudosPasivosDeclaranteController extends Controller
         $lugarUbicacion = Arr::pluck(\App\LugarUbicacion::all(), "valor","id");
         $entidades = Arr::pluck(\App\Entidad::all(), "entidad","id");
         $paises = Arr::pluck(\App\Pais::all(), "valor","id");
-        return view('adeudosDeclarante.create', compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises', 'tipoMoneda', 'entidades'));
+        $tipoOperacion = 1;
+        return view('adeudosDeclarante.create', compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises', 'tipoMoneda', 'entidades','tipoOperacion'));
     }
 
     /**
@@ -93,8 +94,8 @@ class AdeudosPasivosDeclaranteController extends Controller
         $entidades = Arr::pluck(\App\Entidad::all(), "entidad","id");
         $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
         $adeudos = AdeudosPasivos::find($id);
-
-        return view("adeudosDeclarante.edit", compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises', 'adeudos', 'entidades', 'tipoMoneda'));
+        $tipoOperacion = 1;
+        return view("adeudosDeclarante.edit", compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises', 'adeudos', 'entidades', 'tipoMoneda','tipoOperacion'));
     }
 
     /**

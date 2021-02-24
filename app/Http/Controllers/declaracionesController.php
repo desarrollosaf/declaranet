@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\LugarUbicacion;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Declaracion;
@@ -111,15 +112,16 @@ class declaracionesController extends Controller
                                 $nivelClave = $datosCurriculares->nivel->clave;
                                 $nivelValor = $datosCurriculares->nivel->valor;
                             }
+
                             $datosCurricularesDeclarante["escolaridad"][] = array(
-                                'tipoOperacion' => '',
+                                'tipoOperacion' => $datosCurriculares->tipoOperaciones->valor,
                                 'nivel' => ([
                                     'clave' => $nivelClave,
                                     'valor' => $nivelValor,
                                 ]),
                                 'institucionEducativa' => ([
                                     'nombre' => $datosCurriculares->institucion_educativa,
-                                    'ubicacion' => '',
+                                    'ubicacion' => $datosCurriculares->LugarUbicacionInstitucion->clave,
                                 ]),
                                 'carreraAreaConocimiento' => $datosCurriculares->carrera_area,
                                 'estatus' => $datosCurriculares->estatus->valor,
@@ -180,7 +182,7 @@ class declaracionesController extends Controller
                                 'funcionPrincipal' => $experienciaLaboral->funcion_pricipal,
                                 'fechaIngreso' => $experienciaLaboral->fecha_ingreso,
                                 'fechaEgreso' => $experienciaLaboral->fecha_egreso,
-                                'ubicacion' => $experienciaLaboral->LugarUbicaciones->valor,
+                                'ubicacion' => $experienciaLaboral->LugarUbicaciones->clave,
                             );
                             $aclaraciones_experiencia = $aclaraciones_experiencia . ' ' . $experienciaLaboral->observaciones;
                         }
@@ -267,6 +269,7 @@ class declaracionesController extends Controller
                                     'valor' => null,
                                     'moneda' => null,
                                 ]),
+                                'proveedorContratistaGobierno'=> null,
                             ]),
                             'actividadLaboralSectorPrivadoOtro' => ([
                                 'nombreEmpresaSociedadAsociacion' => null,
@@ -459,7 +462,7 @@ class declaracionesController extends Controller
                             }
 
                             $dependientesE[] = array(
-                                'tipoOperacion' => '',
+                                'tipoOperacion' => $DependienteEconomicos->tipoOperaciones->valor,
                                 'nombre' => $DependienteEconomicos->nombre,
                                 'primerApellido' => $DependienteEconomicos->primer_apellido,
                                 'segundoApellido' => $DependienteEconomicos->segundo_apellido,
@@ -508,8 +511,82 @@ class declaracionesController extends Controller
                             } else {
                                 $tipoTerceroInmuebles = $inmuebles->tipoTercero->valor;
                             }
+
+                            if($inmuebles->ubicacion_inmueble_id == 1){
+                                $ubicacion_inmueble_m = array(
+                                        'calle' => $domicilio_inmueble->calle,
+                                        'numeroExterior' => $domicilio_inmueble->num_ext,
+                                        'numeroInterior' => $domicilio_inmueble->num_int,
+                                        'coloniaLocalidad' => $colonia,
+                                        'municipioAlcaldia' => ([
+                                            'clave' => $domicilio_inmueble->municipio_domicilio->clave,
+                                            'valor' => $domicilio_inmueble->municipio_domicilio->municipio,
+                                        ]),
+                                        'entidadFederativa' => ([
+                                            'clave' => $domicilio_inmueble->entidad_domicilio->clave,
+                                            'valor' => $domicilio_inmueble->entidad_domicilio->entidad,
+                                        ]),
+                                        'codigoPostal' => $domicilio_inmueble->codigo_postal,
+                                );
+                                $ubicacion_inmueble_ex = array(
+                                    'calle' => null,
+                                    'numeroExterior' => null,
+                                    'numeroInterior' => null,
+                                    'ciudadLocalidad' => null,
+                                    'estadoProvincia' => null,
+                                    'pais' => null,
+                                    'codigoPostal' => null,
+                                );
+                            }else if($inmuebles->ubicacion_inmueble_id == 2){
+                                $ubicacion_inmueble_ex = array(
+                                    'calle' => $domicilio_inmueble->calle,
+                                    'numeroExterior' => $domicilio_inmueble->num_ext,
+                                    'numeroInterior' => $domicilio_inmueble->num_int,
+                                    'ciudadLocalidad' => $colonia,
+                                    'estadoProvincia' => $domicilio_inmueble->entidad,
+                                    'pais' => $domicilio_inmueble->pais,
+                                    'codigoPostal' => $domicilio_inmueble->codigo_postal,
+                                );
+                                $ubicacion_inmueble_m = array(
+                                    'calle' => null,
+                                    'numeroExterior' => null,
+                                    'numeroInterior' => null,
+                                    'coloniaLocalidad' => null,
+                                    'municipioAlcaldia' => ([
+                                        'clave' => null,
+                                        'valor' => null,
+                                    ]),
+                                    'entidadFederativa' => ([
+                                        'clave' => null,
+                                        'valor' => null,
+                                    ]),
+                                    'codigoPostal' => null,
+                                );
+                            }
+
+                            if($inmuebles->tipoOperaciones->valor == "AGREGAR"){
+                                $bajaInmuebleClave = null;
+                                $bajaInmuebleValor = null;
+                            }
+
+                            if($inmuebles->formaAdquisicion->clave == 'DNC' || $inmuebles->formaAdquisicion->clave == 'HRN' || $inmuebles->formaAdquisicion->clave == 'PRM'){
+                                $formaPagoInmueble = null;
+                                $valorAdquisicionClaveInmueble = null;
+                                $valorAdquisicionValorInmueble = null;
+                            }else{
+                                $formaPagoInmueble = $inmuebles->formaPago->valor;
+                                $valorAdquisicionClaveInmueble =  $inmuebles->valor_adquisicion;
+                                $valorAdquisicionValorInmueble = $inmuebles->tipoMoneda->clave;
+                            }
+
+                            if($inmuebles->tipoTransmisor->valor == 'PERSONA FÍSICA'){
+                                $tipoPersonaTransmisorInmuebles = 'FISICA';
+                            }else{
+                                $tipoPersonaTransmisorInmuebles = 'MORAL';
+                            }
+
                             $bienesInmueblres[] = array(
-                                'tipoOperacion' => '',
+                                'tipoOperacion' => $inmuebles->tipoOperaciones->valor,
                                 'tipoInmueble' => ([
                                     'clave' => $inmuebles->tipoInmueble->clave,
                                     'valor' => $inmuebles->tipoInmueble->valor,
@@ -521,11 +598,11 @@ class declaracionesController extends Controller
                                 'porcentajePropiedad' => $inmuebles->porcentaje_propiedad,
                                 'superficieTerreno' => ([
                                     'valor' => $inmuebles->superficie_terreno,
-                                    'unidad' => '',
+                                    'unidad' => 'm2',
                                 ]),
                                 'superficieConstruccion' => ([
                                     'valor' => $inmuebles->superficie_construccion,
-                                    'unidad' => '',
+                                    'unidad' => 'm2',
                                 ]),
                                 'tercero' => ([[
                                     'tipoPersona' => $tipoTerceroInmuebles,
@@ -533,7 +610,7 @@ class declaracionesController extends Controller
                                     'rfc' => $inmuebles->rfc_tercero,
                                 ]]),
                                 'transmisor' => ([[
-                                    'tipoPersona' => $inmuebles->tipoTransmisor->valor,
+                                    'tipoPersona' => $tipoPersonaTransmisorInmuebles,
                                     'nombreRazonSocial' => $inmuebles->nombre_razon_transmisor,
                                     'rfc' => $inmuebles->rfc_transmisor,
                                     'relacion' => ([
@@ -545,41 +622,19 @@ class declaracionesController extends Controller
                                     'clave' => $inmuebles->formaAdquisicion->clave,
                                     'valor' => $inmuebles->formaAdquisicion->valor,
                                 ]),
-                                'formaPago' => $inmuebles->formaPago->valor,
+                                'formaPago' => $formaPagoInmueble,
                                 'valorAdquisicion' => ([
-                                    'valor' => $inmuebles->valor_adquisicion,
-                                    'moneda' => $inmuebles->tipoMoneda->valor,
+                                    'valor' => $valorAdquisicionClaveInmueble,
+                                    'moneda' => $valorAdquisicionValorInmueble
                                 ]),
                                 'fechaAdquisicion' => $inmuebles->fecha_adquisicion,
                                 'datoIdentificacion' => $inmuebles->datos_registro,
                                 'valorConformeA' => $inmuebles->valorConforme->valor,
-                                'domicilioMexico' => ([
-                                    'calle' => $domicilio_inmueble->calle,
-                                    'numeroExterior' => $domicilio_inmueble->num_ext,
-                                    'numeroInterior' => $domicilio_inmueble->num_int,
-                                    'coloniaLocalidad' => $colonia,
-                                    'municipioAlcaldia' => ([
-                                        'clave' => $domicilio_inmueble->municipio_domicilio->clave,
-                                        'valor' => $domicilio_inmueble->municipio_domicilio->municipio,
-                                    ]),
-                                    'entidadFederativa' => ([
-                                        'clave' => $domicilio_inmueble->entidad_domicilio->clave,
-                                        'valor' => $domicilio_inmueble->entidad_domicilio->entidad,
-                                    ]),
-                                    'codigoPostal' => $domicilio_inmueble->codigo_postal,
-                                ]),
-                                'domicilioExtranjero' => ([
-                                    'calle' => '',
-                                    'numeroExterior' => '',
-                                    'numeroInterior' => '',
-                                    'ciudadLocalidad' => '',
-                                    'estadoProvincia' => '',
-                                    'pais' => '',
-                                    'codigoPostal' => '',
-                                ]),
-                                'motivoBaja' => ([
-                                    'clave' => '',
-                                    'valor' => '',
+                                'domicilioMexico' => $ubicacion_inmueble_m,
+                                'domicilioExtranjero' => $ubicacion_inmueble_ex,
+                                'motivoBaja' =>  ([
+                                    'clave' => $bajaInmuebleClave,
+                                    'valor' => $bajaInmuebleValor,
                                 ]),
                             );
                         }
@@ -683,11 +738,11 @@ class declaracionesController extends Controller
                                     ]),
                                     'actividades' => ([[
                                         'remuneracion' => ([
-                                            'valor' => '',
+                                            'valor' => $title->fueServidorPublico->ingreso_por_actividad_ice,
                                             'moneda' => 'MXN',
                                         ]),
-                                        'nombreRazonSocial' => '',
-                                        'tipoNegocio' => '',
+                                        'nombreRazonSocial' => $title->fueServidorPublico->nombre_razon_social,
+                                        'tipoNegocio' => $title->fueServidorPublico->tipo_de_negocio,
                                     ]]),
                                 ]),
                                 'actividadFinanciera' => ([
@@ -697,12 +752,12 @@ class declaracionesController extends Controller
                                     ]),
                                     'actividades' => ([[
                                         'remuneracion' => ([
-                                            'valor' => '',
+                                            'valor' => $title->fueServidorPublico->ingreso_por_actividad_financiera,
                                             'moneda' => 'MXN',
                                         ]),
                                         'tipoInstrumento' => ([
-                                            //             'clave' => $title->fueServidorPublico->TipoInstrumento->clave,
-                                            //            'valor' => $title->fueServidorPublico->TipoInstrumento->valor,
+                                            'clave' => $title->fueServidorPublico->TipoInstrumentosInve->clave,
+                                            'valor' => $title->fueServidorPublico->TipoInstrumentosInve->valor,
                                         ]),
                                     ]]),
                                 ]),
@@ -713,23 +768,23 @@ class declaracionesController extends Controller
                                     ]),
                                     'servicios' => ([[
                                         'remuneracion' => ([
-                                            'valor' => '',
+                                            'valor' => $title->fueServidorPublico->ingreso_por_servicios_profesionales,
                                             'moneda' => 'MXN',
                                         ]),
-                                        'tipoServicio' => '',
+                                        'tipoServicio' => $title->fueServidorPublico->tipo_de_servicio,
                                     ]]),
                                 ]),
                                 'enajenacionBienes' => ([
                                     'remuneracionTotal' => ([
                                         'valor' => $title->fueServidorPublico->ingreso_por_enajenacion_bienes,
-                                        'moneda' => '',
+                                        'moneda' => 'MXN',
                                     ]),
                                     'bienes' => ([[
                                         'remuneracion' => ([
-                                            'valor' => '',
+                                            'valor' => $title->fueServidorPublico->ingreso_por_enajenacion_bienes,
                                             'moneda' => 'MXN',
                                         ]),
-                                        'tipoBienEnajenado' => '',
+                                        'tipoBienEnajenado' => $title->fueServidorPublico->TipoBien->valor,
                                     ]]),
                                 ]),
                                 'otrosIngresos' => ([
@@ -739,10 +794,10 @@ class declaracionesController extends Controller
                                     ]),
                                     'ingresos' => ([[
                                         'remuneracion' => ([
-                                            'valor' => '',
+                                            'valor' => $title->fueServidorPublico->ingreso_otros_no_considerados,
                                             'moneda' => 'MXN',
                                         ]),
-                                        'tipoIngreso' => '',
+                                        'tipoIngreso' => $title->fueServidorPublico->tipo_de_ingreso_no_considerado,
                                     ]]),
                                 ]),
                                 'ingresoNetoAnualDeclarante' => ([
@@ -754,7 +809,7 @@ class declaracionesController extends Controller
                                     'moneda' => 'MXN',
                                 ]),
                                 'totalIngresosNetosAnuales' => ([
-                                    'valor' => '',
+                                    'valor' =>  $title->fueServidorPublico->ingreso_neto_pareja,
                                     'moneda' => 'MXN',
                                 ]),
                                 'aclaracionesObservaciones' => $title->fueServidorPublico->observaciones,
@@ -963,7 +1018,7 @@ class declaracionesController extends Controller
                     if (count($title->vehiculos) == 0) {
                         $ninguno = true;
                         $aclaraciones_vehiculos = null;
-                        $vehiculos_d = array(
+                        $vehiculos_d[] = array(
                             'tipoOperacion' => null,
                             'tipoVehiculo' => ([
                                 'clave' => null,
@@ -1031,17 +1086,40 @@ class declaracionesController extends Controller
                                 $rfc_tercero = null;
                             } else {
                                 if ($vehiculo->tipoPersonaTercero == 1) {
-                                    $tipoPersona_tercero = $vehiculo->relacion->valor;
+                                    $tipoPersona_tercero = 'FISICA';
                                     $nombreRazonSocial_tercero = $vehiculo->bieniTerceroNombreF;
                                     $rfc_tercero = $vehiculo->bieniTerceroRfcF;
                                 } else {
-                                    $tipoPersona_tercero = $vehiculo->relacion->valor;
+                                    $tipoPersona_tercero = 'MORAL';
                                     $nombreRazonSocial_tercero = $vehiculo->bieniTerceroNombreM;
                                     $rfc_tercero = $vehiculo->bieniTerceroRfcM;
                                 }
                             }
-                            $vehiculos_d = array(
-                                'tipoOperacion' => $vehiculo->tipoOperacion,
+
+                            if ($vehiculo->tipoOperaciones->valor == "AGREGAR"){
+                                $motivoBajaVehiculoClave = null;
+                                $motivoBajaVehiculoValor = null;
+                            }
+
+                            if($vehiculo->tipoAdquisicion->clave == 'DNC' || $vehiculo->tipoAdquisicion->clave == 'HRN' || $vehiculo->tipoAdquisicion->clave == 'PRM'){
+                                $formaPagoVehiculo = null;
+                                $valorAdquisicionVehiculo = null;
+                                $tipoMonedaAdquisicionVehiculo = null;
+                            }else{
+                                $formaPagoVehiculo = $vehiculo->pago->valor;
+                                $valorAdquisicionVehiculo =  $vehiculo->v_valor;
+                                $tipoMonedaAdquisicionVehiculo = $vehiculo->tipoMonedas->clave;
+                            }
+
+                            if($vehiculo->regimen->valor == 'PERSONA FÍSICA'){
+                                $tipoPersonaTransmisorVehiculos = 'FISICA';
+                            }else{
+                                $tipoPersonaTransmisorVehiculos = 'MORAL';
+                            }
+
+
+                            $vehiculos_d[] = array(
+                                'tipoOperacion' => $vehiculo->tipoOperaciones->valor,
                                 'tipoVehiculo' => ([
                                     'clave' => $vehiculo->tipo_vehiculo->clave,
                                     'valor' => $vehiculo->tipo_vehiculo->valor,
@@ -1051,7 +1129,7 @@ class declaracionesController extends Controller
                                     'valor' => $vehiculo->Titulares->valor,
                                 ]]),
                                 'transmisor' => ([[
-                                    'tipoPersona' => $vehiculo->regimen->valor,
+                                    'tipoPersona' => $tipoPersonaTransmisorVehiculos,
                                     'nombreRazonSocial' => $nombre_razon,
                                     'rfc' => $rfc_transmisor,
                                     'relacion' => ([
@@ -1069,7 +1147,7 @@ class declaracionesController extends Controller
                                     'rfc' => $rfc_tercero,
                                 ]]),
                                 'lugarRegistro' => ([
-                                    'pais' => $vehiculo->registro->valor,
+                                    'pais' => $vehiculo->registro->clave,
                                     'entidadFederativa' => ([
                                         'clave' => $vehiculo->entidades->clave,
                                         'valor' => $vehiculo->entidades->entidad,
@@ -1079,15 +1157,15 @@ class declaracionesController extends Controller
                                     'clave' => $vehiculo->tipoAdquisicion->clave,
                                     'valor' => $vehiculo->tipoAdquisicion->valor,
                                 ]),
-                                'formaPago' => $vehiculo->pago->valor,
+                                'formaPago' => $formaPagoVehiculo,
                                 'valorAdquisicion' => ([
-                                    'valor' => $vehiculo->v_valor,
-                                    'moneda' => $vehiculo->tipoMonedas->valor,
+                                    'valor' => $valorAdquisicionVehiculo,
+                                    'moneda' => $tipoMonedaAdquisicionVehiculo,
                                 ]),
                                 'fechaAdquisicion' => $vehiculo->v_fecha,
                                 'motivoBaja' => ([
-                                    'clave' => '',
-                                    'valor' => '',
+                                    'clave' => $motivoBajaVehiculoClave,
+                                    'valor' => $motivoBajaVehiculoValor,
                                 ]),
                             );
                         }
@@ -1096,7 +1174,7 @@ class declaracionesController extends Controller
                     if (count($title->BienesMuebles) == 0) {
                         $ninguno_muebles = true;
                         $aclaraciones_muebles = null;
-                        $muebles = array(
+                        $muebles[] = array(
                             'tipoOperacion' => null,
                             'titular' => ([[
                                 'clave' => null,
@@ -1147,11 +1225,11 @@ class declaracionesController extends Controller
                                 $nombreRazonSocial_transmisor = null;
                                 $rfc_transmisor = null;
                             } else if ($mueble->transmisor_propiedad_id == 1) {
-                                $tipoPersona_transmisor = $mueble->TransmisorPropiedad->valor;
+                                $tipoPersona_transmisor = 'FISICA';
                                 $nombreRazonSocial_transmisor = $mueble->nombre_transmisor;
                                 $rfc_transmisor = $mueble->rfc_transmisor;
                             } else {
-                                $tipoPersona_transmisor = $mueble->TransmisorPropiedad->valor;
+                                $tipoPersona_transmisor = 'MORAL';
                                 $nombreRazonSocial_transmisor = $mueble->denominacion_rs_transmisor;
                                 $rfc_transmisor = $mueble->rfc_transmisor;
                             }
@@ -1161,11 +1239,11 @@ class declaracionesController extends Controller
                                 $nombreRazonSocial_tercero = null;
                                 $rfc_tercero = null;
                             } else if ($mueble->transmisor_propiedad_id == 1) {
-                                $tipoPersona_tercero = $mueble->TipoTercero->valor;
+                                $tipoPersona_tercero = 'FISICA';
                                 $nombreRazonSocial_tercero = $mueble->nombre_tercero;
                                 $rfc_tercero = $mueble->rfc_tercero;
                             } else {
-                                $tipoPersona_tercero = $mueble->TipoTercero->valor;
+                                $tipoPersona_tercero = 'MORAL';
                                 $nombreRazonSocial_tercero = $mueble->denominacion_razon;
                                 $rfc_tercero = $mueble->rfc_tercero;
                             }
@@ -1178,11 +1256,16 @@ class declaracionesController extends Controller
                             if($mueble->tipo_moneda_id == null){
                                 $moneda_muebles = null;
                             }else{
-                               $moneda_muebles = $mueble->TipoMoneda->valor;
+                               $moneda_muebles = $mueble->TipoMoneda->clave;
                             }
 
-                            $muebles = array(
-                                'tipoOperacion' => '',
+                            if($mueble->tipoOperaciones->valor == "AGREGAR"){
+                                $motivoBajaMuebleClave = null;
+                                $motivoBajaMuebleValor = null;
+                            }
+
+                            $muebles[] = array(
+                                'tipoOperacion' => $mueble->tipoOperaciones->valor,
                                 'titular' => ([[
                                     'clave' => $mueble->TitularBien->clave,
                                     'valor' => $mueble->TitularBien->valor,
@@ -1217,8 +1300,8 @@ class declaracionesController extends Controller
                                 ]),
                                 'fechaAdquisicion' => $mueble->fecha_adquisicion,
                                 'motivoBaja' => ([
-                                    'clave' => '',
-                                    'valor' => '',
+                                    'clave' => $motivoBajaMuebleClave,
+                                    'valor' => $motivoBajaMuebleValor,
                                 ]),
                             );
                         }
@@ -1228,7 +1311,7 @@ class declaracionesController extends Controller
                     if (count($title->inversiones_cuentas) == 0) {
                         $ninguno_inversiones = true;
                         $aclaraciones_inversiones = null;
-                        $inversiones = array(
+                        $inversiones[] = array(
                             'tipoOperacion' => null,
                             'tipoInversion' => ([
                                 'clave' => null,
@@ -1268,14 +1351,19 @@ class declaracionesController extends Controller
                                 $nombreRazonSocial_tercero = null;
                                 $rfc_tercero = null;
                             } else {
-                                $tipoPersona_tercero = $inversion->tipoTercero->valor;
+                                if($inversion->tipoTercero->valor == 'PERSONA FISICA'){
+                                    $tipoPersonaTerceroInversiones = 'FISICA';
+                                }else{
+                                    $tipoPersonaTerceroInversiones = 'MORAL';
+                                }
+                                $tipoPersona_tercero = $tipoPersonaTerceroInversiones;
                                 $nombreRazonSocial_tercero = $inversion->nombre_del_tercero;
                                 $rfc_tercero = $inversion->rfc_tercero;
                             }
 
 
-                            $inversiones = array(
-                                'tipoOperacion' => null,
+                            $inversiones[] = array(
+                                'tipoOperacion' => $inversion->tipoOperaciones->valor,
                                 'tipoInversion' => ([
                                     'clave' => $inversion->tipoInversion->clave,
                                     'valor' => $inversion->tipoInversion->valor,
@@ -1295,13 +1383,13 @@ class declaracionesController extends Controller
                                 ]]),
                                 'numeroCuentaContrato' => $inversion->numero_cuenta_poliza,
                                 'localizacionInversion' => ([
-                                    'pais' => $inversion->ubicacionInversion->valor,
+                                    'pais' => $inversion->ubicacionInversion->clave,
                                     'institucionRazonSocial' => $inversion->institucion_razon_social,
                                     'rfc' => $inversion->rfc_titular,
                                 ]),
                                 'saldoSituacionActual' => ([
                                     'valor' => $inversion->saldo_a_la_fecha,
-                                    'moneda' => $inversion->tipoMoneda->valor,
+                                    'moneda' => $inversion->tipoMoneda->clave,
                                 ]),
                             );
                         }
@@ -1310,7 +1398,7 @@ class declaracionesController extends Controller
                     if (count($title->adeudos_pasivos) == 0) {
                         $ninguno_adeudos = true;
                         $aclaraciones_adeudos = null;
-                        $adeudos = array(
+                        $adeudos[] = array(
                             'tipoOperacion' => null,
                             'titular' => ([[
                                 'clave' => null,
@@ -1354,7 +1442,12 @@ class declaracionesController extends Controller
                                 $nombreRazonSocial_codeudor = null;
                                 $rfc_codeudor = null;
                             } else {
-                                $tipoPersona_codeudor = $adeudo->tipoPersona->valor;
+                                if($adeudo->codeudor_id == 1){
+                                    $tipoPersonaCodeudorAdeudosT= 'FISICA';
+                                }else if($adeudo->codeudor_id == 2) {
+                                    $tipoPersonaCodeudorAdeudosT = 'MORAL';
+                                }
+                                $tipoPersona_codeudor = $tipoPersonaCodeudorAdeudosT;
                                 $nombreRazonSocial_codeudor = $adeudo->nombre_codeudor;
                                 $rfc_codeudor = $adeudo->rfc_codeudor;
                             }
@@ -1364,13 +1457,19 @@ class declaracionesController extends Controller
                                 $nombreRazonSocial_otorgante = null;
                                 $rfc_otorgante = null;
                             } else {
-                                $tipoPersona_otorgante = $adeudo->tipoPersona->valor;
+                                if($adeudo->tipo_otorgante_id == 1){
+                                    $tipoPersonaCodeudorAdeudosO= 'FISICA';
+                                }else if($adeudo->tipo_otorgante_id == 2){
+                                    $tipoPersonaCodeudorAdeudosO= 'MORAL';
+                                }
+
+                                $tipoPersona_otorgante = $tipoPersonaCodeudorAdeudosO;
                                 $nombreRazonSocial_otorgante = $adeudo->nombre_otorgante;
                                 $rfc_otorgante = $adeudo->rfc_otorgante;
                             }
 
-                            $adeudos = array(
-                                'tipoOperacion' => null,
+                            $adeudos[] = array(
+                                'tipoOperacion' => $adeudo->tipoOperaciones->valor,
                                 'titular' => ([[
                                     'clave' => $adeudo->titularAdeudo->clave,
                                     'valor' => $adeudo->titularAdeudo->valor,
@@ -1383,11 +1482,11 @@ class declaracionesController extends Controller
                                 'fechaAdquisicion' => $adeudo->fecha_adquisicion,
                                 'montoOriginal' => ([
                                     'valor' => $adeudo->monto_adeudo,
-                                    'moneda' => $adeudo->tipoMoneda->valor,
+                                    'moneda' => $adeudo->tipoMoneda->clave,
                                 ]),
                                 'saldoInsolutoSituacionActual' => ([
                                     'valor' => $adeudo->saldo_insoluto,
-                                    'moneda' => $adeudo->tipoMoneda->valor,
+                                    'moneda' => $adeudo->tipoMoneda->clave,
                                 ]),
                                 'tercero' => ([[
                                     'tipoPersona' => $tipoPersona_codeudor,
@@ -1400,7 +1499,7 @@ class declaracionesController extends Controller
                                     'rfc' => $rfc_otorgante,
                                 ]),
                                 'localizacionAdeudo' => ([
-                                    'pais' => $adeudo->LugarUbicacion->valor,
+                                    'pais' => $adeudo->LugarUbicacion->clave,
                                 ]),
                             );
                         }
@@ -1409,7 +1508,8 @@ class declaracionesController extends Controller
                     if (count($title->prestamosComodato) == 0) {
                         $ninguno_prestamo = true;
                         $aclaraciones_prestamos = null;
-                        $prestamoComoDato_inmueble = array(
+                        $tipoOperacionPrestamo = null;
+                        $prestamoComoDato_inmueble[] = array(
                             'tipoInmueble' => ([
                                 'clave' => null,
                                 'valor' => null,
@@ -1440,7 +1540,7 @@ class declaracionesController extends Controller
                             ]),
                         );
 
-                        $prestamoComoDato_vehiculo = array(
+                        $prestamoComoDato_vehiculo[] = array(
                             'tipo' => ([
                                 'clave' => null,
                                 'valor' => null,
@@ -1460,6 +1560,7 @@ class declaracionesController extends Controller
                     } else {
                         $ninguno_prestamo = false;
                         $aclaraciones_prestamos = '';
+
                         foreach ($title->prestamosComodato as $prestamo) {
                             $aclaraciones_prestamos = $aclaraciones_prestamos . ' ' . $prestamo->observaciones;
                             // dd($prestamo->tipo_bien_id == 2);
@@ -1467,7 +1568,9 @@ class declaracionesController extends Controller
                                 $prestamo_inmueble = $prestamo->inmuebles;
                                 $prestamo_inm_dom = $prestamo->inmuebles->domicilio;
 
-                                $prestamoComoDato_inmueble = array(
+                                $tipoOperacionPrestamo =$prestamo->tipoOperaciones->valor;
+
+                                $prestamoComoDato_inmueble[] = array(
                                     'tipoInmueble' => ([
                                         'clave' => $prestamo_inmueble->tipoInmueble->clave,
                                         'valor' => $prestamo_inmueble->tipoInmueble->valor,
@@ -1497,42 +1600,13 @@ class declaracionesController extends Controller
                                         'codigoPostal' => null,
                                     ]),
                                 );
-                            } else {
-                                $prestamoComoDato_inmueble = array(
-                                    'tipoInmueble' => ([
-                                        'clave' => null,
-                                        'valor' => null,
-                                    ]),
-                                    'domicilioMexico' => ([
-                                        'calle' => null,
-                                        'numeroExterior' => null,
-                                        'numeroInterior' => null,
-                                        'coloniaLocalidad' => null,
-                                        'municipioAlcaldia' => ([
-                                            'clave' => null,
-                                            'valor' => null,
-                                        ]),
-                                        'entidadFederativa' => ([
-                                            'clave' => null,
-                                            'valor' => null,
-                                        ]),
-                                        'codigoPostal' => null,
-                                    ]),
-                                    'domicilioExtranjero' => ([
-                                        'calle' => null,
-                                        'numeroExterior' => null,
-                                        'numeroInterior' => null,
-                                        'ciudadLocalidad' => null,
-                                        'estadoProvincia' => null,
-                                        'pais' => null,
-                                        'codigoPostal' => null,
-                                    ]),
-                                );
                             }
                             if (($prestamo->tipo_bien_id == 3) == true) {
                                 $prestamo_vehiculo = $prestamo->vehiculos;
                                 //  dd($prestamo_vehiculo->tipoTitularD);
-                                $prestamoComoDato_vehiculo = array(
+
+                                $tipoOperacionPrestamo = $prestamo->tipoOperaciones->valor;
+                                $prestamoComoDato_vehiculo[] = array(
                                     'tipo' => ([
                                         'clave' => $prestamo_vehiculo->tipo_vehiculo->clave,
                                         'valor' => $prestamo_vehiculo->tipo_vehiculo->valor,
@@ -1542,39 +1616,72 @@ class declaracionesController extends Controller
                                     'anio' => $prestamo_vehiculo->v_ano,
                                     'numeroSerieRegistro' => $prestamo_vehiculo->v_num_serie,
                                     'lugarRegistro' => ([
-                                        'pais' => $prestamo_vehiculo->registro->valor,
+                                        'pais' => $prestamo_vehiculo->registro->clave,
                                         'entidadFederativa' => ([
                                             'clave' => $prestamo_vehiculo->entidades->clave,
                                             'valor' => $prestamo_vehiculo->entidades->entidad,
                                         ]),
                                     ]),
                                 );
-                            } else {
-                                $prestamoComoDato_vehiculo = array(
-                                    'tipo' => ([
+                            }
+                        }
+                        if (empty($prestamoComoDato_vehiculo)){
+                            $prestamoComoDato_vehiculo[] = array(
+                                'tipo' => ([
+                                    'clave' => null,
+                                    'valor' => null,
+                                ]),
+                                'marca' => null,
+                                'modelo' => null,
+                                'anio' => null,
+                                'numeroSerieRegistro' => null,
+                                'lugarRegistro' => ([
+                                    'pais' => null,
+                                    'entidadFederativa' => ([
                                         'clave' => null,
                                         'valor' => null,
                                     ]),
-                                    'marca' => null,
-                                    'modelo' => null,
-                                    'anio' => null,
-                                    'numeroSerieRegistro' => null,
-                                    'lugarRegistro' => ([
-                                        'pais' => null,
-                                        'entidadFederativa' => ([
-                                            'clave' => null,
-                                            'valor' => null,
-                                        ]),
+                                ]),
+                            );
+                        }
+                        if (empty($prestamoComoDato_inmueble)){
+                            $prestamoComoDato_inmueble[] = array(
+                                'tipoInmueble' => ([
+                                    'clave' => null,
+                                    'valor' => null,
+                                ]),
+                                'domicilioMexico' => ([
+                                    'calle' => null,
+                                    'numeroExterior' => null,
+                                    'numeroInterior' => null,
+                                    'coloniaLocalidad' => null,
+                                    'municipioAlcaldia' => ([
+                                        'clave' => null,
+                                        'valor' => null,
                                     ]),
-                                );
-                            }
+                                    'entidadFederativa' => ([
+                                        'clave' => null,
+                                        'valor' => null,
+                                    ]),
+                                    'codigoPostal' => null,
+                                ]),
+                                'domicilioExtranjero' => ([
+                                    'calle' => null,
+                                    'numeroExterior' => null,
+                                    'numeroInterior' => null,
+                                    'ciudadLocalidad' => null,
+                                    'estadoProvincia' => null,
+                                    'pais' => null,
+                                    'codigoPostal' => null,
+                                ]),
+                            );
                         }
                     }
 
                     if (count($title->participacion_empresas) == 0) {
                         $aclaraciones_participacion_empresas = null;
                         $ninguno_participacion_empresas = true;
-                        $participacion_empresas = array(
+                        $participacion_empresas[] = array(
                             'tipoOperacion' => null,
                             'tipoRelacion' => null,
                             'nombreEmpresaSociedadAsociacion' => null,
@@ -1609,7 +1716,7 @@ class declaracionesController extends Controller
                             if ($parEmpresas->monto_mensual == null) {
                                 $moneda = null;
                             } else {
-                                $moneda = 'Peso mexicano';
+                                $moneda = 'MXN';
                             }
                             if($parEmpresas->titular_operacion_id == null){
                                 $tipoRelacion_empresas = null;
@@ -1617,8 +1724,15 @@ class declaracionesController extends Controller
                                 $tipoRelacion_empresas = $parEmpresas->tipotitularParticipaciones->valor;
                             }
                             $aclaraciones_participacion_empresas = $aclaraciones_participacion_empresas . ' ' . $parEmpresas->observaciones;
-                            $participacion_empresas = array(
-                                'tipoOperacion' => null,
+
+                            if($parEmpresas->tipoRespuesta->respuesta == 'Sí'){
+                                $recibeRemuneracionEmpresas = true;
+                            }else{
+                                $recibeRemuneracionEmpresas = false;
+                            }
+
+                            $participacion_empresas[] = array(
+                                'tipoOperacion' => $parEmpresas->tipoOperaciones->valor,
                                 'tipoRelacion' => $tipoRelacion_empresas,
                                 'nombreEmpresaSociedadAsociacion' => $parEmpresas->nombre_empresa,
                                 'rfc' => $parEmpresas->rfc_empresa,
@@ -1627,13 +1741,13 @@ class declaracionesController extends Controller
                                     'clave' => $parEmpresas->tipoParticipacion->clave,
                                     'valor' => $parEmpresas->tipoParticipacion->valor,
                                 ]),
-                                'recibeRemuneracion' => $parEmpresas->tipoRespuesta->respuesta,
+                                'recibeRemuneracion' => $recibeRemuneracionEmpresas,
                                 'montoMensual' => ([
                                     'valor' => $parEmpresas->monto_mensual,
                                     'moneda' => $moneda,
                                 ]),
                                 'ubicacion' => ([
-                                    'pais' => $parEmpresas->lugarUbica->valor,
+                                    'pais' => $parEmpresas->lugarUbica->clave,
                                     'entidadFederativa' => ([
                                         'clave' => $parEmpresas->Entidad->clave,
                                         'valor' => $parEmpresas->Entidad->entidad,
@@ -1650,7 +1764,7 @@ class declaracionesController extends Controller
                     if (count($title->participacion) == 0) {
                         $aclaraciones_tomaDecisiones = null;
                         $ninguno_TomaDecisiones = true;
-                        $TomaDecisiones = array(
+                        $TomaDecisiones[] = array(
                             'tipoOperacion' => null,
                             'tipoRelacion' => null,
                             'tipoInstitucion' => ([
@@ -1681,19 +1795,19 @@ class declaracionesController extends Controller
                         foreach ($title->participacion as $decision) {
                             $aclaraciones_tomaDecisiones = $aclaraciones_tomaDecisiones . ' ' . $decision->aclaraciones;
                             if ($decision->remuneracion == null) {
-                                $recibeRemuneracion = 'No';
+                                $recibeRemuneracion = false;
                             } else if ($decision->remuneracion == 1) {
-                                $recibeRemuneracion = 'Si';
+                                $recibeRemuneracion = true;
                             } else {
-                                $recibeRemuneracion = 'No';
+                                $recibeRemuneracion = false;
                             }
 
                             if ($decision->monto_mensual == null) {
                                 $moneda = null;
                             } else {
-                                $moneda = 'Peso mexicano';
+                                $moneda = 'MXN';
                             }
-                            $TomaDecisiones = array(
+                            $TomaDecisiones[] = array(
                                 'tipoOperacion' => $decision->tipoOperacion,
                                 'tipoRelacion' => $decision->tipoRelaciones->valor,
                                 'tipoInstitucion' => ([
@@ -1710,7 +1824,7 @@ class declaracionesController extends Controller
                                     'moneda' => $moneda,
                                 ]),
                                 'ubicacion' => ([
-                                    'pais' => $decision->LugarUbicaciones->valor,
+                                    'pais' => $decision->LugarUbicaciones->clave,
                                     'entidadFederativa' => ([
                                         'clave' => $decision->Entidades->clave,
                                         'valor' => $decision->Entidades->entidad,
@@ -1723,7 +1837,7 @@ class declaracionesController extends Controller
                     if (count($title->apoyo_beneficio) == 0) {
                         $ninguno_apoyo = true;
                         $aclaraciones_apoyo = null;
-                        $apoyos = array(
+                        $apoyos[] = array(
                             'tipoOperacion' => null,
                             'tipoPersona' => null,
                             'beneficiarioPrograma' => ([
@@ -1754,10 +1868,10 @@ class declaracionesController extends Controller
                             } else if($apoyo->tipo_de_moneda_id == null){
                                 $moneda = null;
                             }else{
-                                $moneda = $apoyo->tipoMoneda->valor;
+                                $moneda = $apoyo->tipoMoneda->clave;
                             }
-                            $apoyos = array(
-                                'tipoOperacion' => null,
+                            $apoyos[] = array(
+                                'tipoOperacion' => $apoyo->tipoOperaciones->valor,
                                 'tipoPersona' => null,
                                 'beneficiarioPrograma' => ([
                                     'clave' => $apoyo->tipoBeneficiario->clave,
@@ -1783,7 +1897,7 @@ class declaracionesController extends Controller
                     if (count($title->representacion) == 0) {
                         $aclaraciones_presentacion = null;
                         $ninguno_representacion = true;
-                        $representacion = array(
+                        $representacion[] = array(
                             'tipoOperacion' => null,
                             'tipoRelacion' => null,
                             'tipoRepresentacion' => null,
@@ -1814,21 +1928,26 @@ class declaracionesController extends Controller
                         foreach ($title->representacion as $repre) {
                             $aclaraciones_presentacion = $aclaraciones_presentacion . ' ' . $repre->observaciones;
                             if ($repre->respuesta_id == 1) {
-                                $remuneracion = 'Si';
+                                $remuneracion = true;
                             } else {
-                                $remuneracion = 'No';
+                                $remuneracion = false;
                             }
                             if ($repre->monto_mensual == null) {
                                 $moneda = null;
                             } else {
-                                $moneda = 'Peso mexicano';
+                                $moneda = 'MXN';
                             }
-                            $representacion = array(
-                                'tipoOperacion' => null,
+                            if($repre->tipoRegimen->valor == 'PERSONA FÍSICA'){
+                                $tipoPersonaRepresentacion = 'FISICA';
+                            }else{
+                                $tipoPersonaRepresentacion = 'MORAL';
+                            }
+                            $representacion[] = array(
+                                'tipoOperacion' => $repre->tipoOperaciones->valor,
                                 'tipoRelacion' => $repre->tipotitularParticipaciones->valor,
                                 'tipoRepresentacion' => $repre->tipotipoParticipaciones->valor,
                                 'fechaInicioRepresentacion' => $repre->fecha_representacion,
-                                'tipoPersona' => $repre->tipoRegimen->valor,
+                                'tipoPersona' => $tipoPersonaRepresentacion,
                                 'nombreRazonSocial' => $repre->nombre_representante,
                                 'rfc' => $repre->rfc_representante,
                                 'recibeRemuneracion' => $remuneracion,
@@ -1837,7 +1956,7 @@ class declaracionesController extends Controller
                                     'moneda' => $moneda,
                                 ]),
                                 'ubicacion' => ([
-                                    'pais' => $repre->lugarUbicacion->valor,
+                                    'pais' => $repre->lugarUbicacion->clave,
                                     'entidadFederativa' => ([
                                         'clave' => $repre->entidades->clave,
                                         'valor' => $repre->entidades->entidad,
@@ -1854,7 +1973,7 @@ class declaracionesController extends Controller
                     if (count($title->clientes) == 0) {
                         $aclaraciones_clientes = null;
                         $ninguno_clientesPrincipales = true;
-                        $clientesPrincipales = array(
+                        $clientesPrincipales[] = array(
                             'tipoOperacion' => '',
                             'realizaActividadLucrativa' => null,
                             'tipoRelacion' => null,
@@ -1897,7 +2016,11 @@ class declaracionesController extends Controller
                             if ($cliente->regimen_fiscal_id == null) {
                                 $tipoPersona_cliPri = null;
                             } else {
-                                $tipoPersona_cliPri = $cliente->RegimenFiscal->valor;
+                                if($cliente->RegimenFiscal->valor == 'PERSONA FÍSICA'){
+                                    $tipoPersona_cliPri = 'FISICA';
+                                }else{
+                                    $tipoPersona_cliPri = 'MORAL';
+                                }
                             }
                             if ($cliente->sectores_id == null) {
                                 $cliente_sector_clave = null;
@@ -1909,7 +2032,7 @@ class declaracionesController extends Controller
                             if ($cliente->lugar_donde_resides_id == null) {
                                 $cliente_ubicacion = null;
                             } else {
-                                $cliente_ubicacion = $cliente->lugarDondeReside->valor;
+                                $cliente_ubicacion = $cliente->lugarDondeReside->clave;
                             }
                             if ($cliente->entidades_id == null) {
                                 $cliente_entidad_clave = null;
@@ -1918,9 +2041,16 @@ class declaracionesController extends Controller
                                 $cliente_entidad_clave = $cliente->Entidades->clave;
                                 $cliente_entidad_valor = $cliente->Entidades->entidad;
                             }
-                            $clientesPrincipales = array(
+
+                            if($cliente->Respuesta->respuesta == 'Sí'){
+                                $realizaActividadLucrativaClientes = true;
+                            }else{
+                                $realizaActividadLucrativaClientes = false;
+                            }
+
+                            $clientesPrincipales[] = array(
                                 'tipoOperacion' => $cliente->tipoOperacion,
-                                'realizaActividadLucrativa' => $cliente->Respuesta->respuesta,
+                                'realizaActividadLucrativa' => $realizaActividadLucrativaClientes,
                                 'tipoRelacion' => $tipoPersonaCliente,
                                 'empresa' => ([
                                     'nombreEmpresaServicio' => $cliente->nombre_empresa,
@@ -1937,7 +2067,7 @@ class declaracionesController extends Controller
                                 ]),
                                 'montoAproximadoGanancia' => ([
                                     'valor' => $cliente->monto_beneficio,
-                                    'moneda' => 'Pesos mexicanos',
+                                    'moneda' => 'MXN',
                                 ]),
                                 'ubicacion' => ([
                                     'pais' => $cliente_ubicacion,
@@ -1953,7 +2083,7 @@ class declaracionesController extends Controller
                     if (count($title->beneficios_privados) == 0) {
                         $ninguno_beneficiosPrivados = true;
                         $aclaraciones_beneficios = null;
-                        $beneficiosPrivados = array(
+                        $beneficiosPrivados[] = array(
                             'tipoOperacion' => null,
                             'tipoPersona' => null,
                             'tipoBeneficio' => ([
@@ -1986,11 +2116,11 @@ class declaracionesController extends Controller
                         foreach ($title->beneficios_privados as $beneficios) {
                             $aclaraciones_beneficios = $aclaraciones_beneficios . ' ' . $beneficios->aclaraciones;
                             if ($beneficios->otorgante_id == 1) {
-                                $tipoOtorgante = 'PERSONA FÍSICA';
+                                $tipoOtorgante = 'FISICA';
                                 $nombreRazonSocial = $beneficios->nombre_otorgante;
                                 $rfc_otor = $beneficios->rfc_otorgante;
                             } else {
-                                $tipoOtorgante = 'PERSONA MORAL';
+                                $tipoOtorgante = 'MORAL';
                                 $nombreRazonSocial = $beneficios->razon_social_otorgante;
                                 $rfc_otor = $beneficios->rfc_otorganteM;
                             }
@@ -1999,11 +2129,16 @@ class declaracionesController extends Controller
                                 $moneda = null;
                             } else {
                                 $valor = $beneficios->monto_mensual;
-                                $moneda = 'Pesos Mexicanos';
+                                $moneda = 'MNX';
                             }
-                            $beneficiosPrivados = array(
+                            if($beneficios->RegimenFiscal->valor == 'PERSONA MORAL'){
+                                $tipoPersonaBeneficios = 'MORAL';
+                            }else{
+                                $tipoPersonaBeneficios = 'FISICA';
+                            }
+                            $beneficiosPrivados[] = array(
                                 'tipoOperacion' => $beneficios->tipoOperacion,
-                                'tipoPersona' => $beneficios->RegimenFiscal->valor,
+                                'tipoPersona' => $tipoPersonaBeneficios,
                                 'tipoBeneficio' => ([
                                     'clave' => $beneficios->tipoBeneficio->clave,
                                     'valor' => $beneficios->tipoBeneficio->valor,
@@ -2034,7 +2169,7 @@ class declaracionesController extends Controller
                     if (count($title->fideicomisos) == 0) {
                         $ninguno_fideicomisos = true;
                         $aclaraciones_fideicomisos = null;
-                        $fideicomisos = array(
+                        $fideicomisos[] = array(
                             'tipoOperacion' => null,
                             'tipoRelacion' => null,
                             'tipoFideicomiso' => null,
@@ -2066,45 +2201,45 @@ class declaracionesController extends Controller
                         foreach ($title->fideicomisos as $fideicomiso) {
                             $aclaraciones_fideicomisos = $aclaraciones_fideicomisos . ' ' . $fideicomiso->aclaraciones;
                             if ($fideicomiso->tipo_persona_fideicomiso == 1) {
-                                $tipoPersonaFideicomiso = "PERSONA FISICA";
+                                $tipoPersonaFideicomiso = "FISICA";
                                 $nombreFideicomiso = $fideicomiso->nombre_persona_fisica;
                                 $rfcFideicomiso = $fideicomiso->rfc_persona_fisica;
                             } else {
-                                $tipoPersonaFideicomiso = "PERSONA MORAL";
+                                $tipoPersonaFideicomiso = "MORAL";
                                 $nombreFideicomiso = $fideicomiso->nombre_persona_moral;
                                 $rfcFideicomiso = $fideicomiso->rfc_persona_moral;
                             }
 
                             if ($fideicomiso->tipo_persona_fideicomitente == 1) {
-                                $tipoPersonafideicomitente = "PERSONA FISICA";
+                                $tipoPersonafideicomitente = "FISICA";
                                 $nombrefideicomitente = $fideicomiso->nombre_fideicomitente_fisica;
                                 $rfcfideicomitente = $fideicomiso->rfc_fideicomitente_fisica;
                             } else {
-                                $tipoPersonafideicomitente = "PERSONA MORAL";
+                                $tipoPersonafideicomitente = "MORAL";
                                 $nombrefideicomitente = $fideicomiso->nombre_fideicomitente_moral;
                                 $rfcfideicomitente = $fideicomiso->rfc_fideicomitente_moral;
                             }
 
                             if ($fideicomiso->tipo_persona_fiduciario == 1) {
-                                $tipoPersonafiduciario = "PERSONA FISICA";
+                                $tipoPersonafiduciario = "FISICA";
                                 $nombrefiduciario = $fideicomiso->nombre_fiduciario_fisica;
                                 $rfcfiduciario = $fideicomiso->rfc_fiduciario_fisica;
                             } else {
-                                $tipoPersonafiduciario = "PERSONA MORAL";
+                                $tipoPersonafiduciario = "MORAL";
                                 $nombrefiduciario = $fideicomiso->nombre_fiduciario_moral;
                                 $rfcfiduciario = $fideicomiso->rfc_fiduciario_moral;
                             }
 
                             if ($fideicomiso->tipo_persona_fideicomisario == 1) {
-                                $tipoPersonafideicomisario = "PERSONA FISICA";
+                                $tipoPersonafideicomisario = "FISICA";
                                 $nombrefideicomisario = $fideicomiso->nombre_fideicomisario_fisica;
                                 $rfcfideicomisario = $fideicomiso->rfc_fideicomisario_fisica;
                             } else {
-                                $tipoPersonafideicomisario = "PERSONA MORAL";
+                                $tipoPersonafideicomisario = "MORAL";
                                 $nombrefideicomisario = $fideicomiso->nombre_fideicomisario_moral;
                                 $rfcfideicomisario = $fideicomiso->rfc_fideicomisario_moral;
                             }
-                            $fideicomisos = array(
+                            $fideicomisos[] = array(
                                 'tipoOperacion' => $fideicomiso->tipoOperacion,
                                 'tipoRelacion' => $fideicomiso->tipoRelaciones->valor,
                                 'tipoFideicomiso' => $fideicomiso->tipoFideicomisos->valor,
@@ -2128,7 +2263,7 @@ class declaracionesController extends Controller
                                     'clave' => $fideicomiso->sectores->clave,
                                     'valor' => $fideicomiso->sectores->valor,
                                 ]),
-                                'extranjero' => $fideicomiso->LugarUbicaciones->valor,
+                                'extranjero' => $fideicomiso->LugarUbicaciones->clave,
                             );
                         }
                     }
@@ -2307,7 +2442,7 @@ class declaracionesController extends Controller
                             }
                         }
                         if ($title->pareja->lugar_reside_id == null) {
-                            $lugarResidePareja = null;
+                            $lugarResidePareja = 'MX';
                         } else {
                             $lugarResidePareja = $title->pareja->lugarReside->valor;
                         }
@@ -2322,7 +2457,7 @@ class declaracionesController extends Controller
 
                         $pareja = array(
                             'nunguno' => false,
-                            'tipoOperacion' => '',
+                            'tipoOperacion' => $title->pareja->tipoOperaciones->valor,
                             'nombre' => $title->pareja->nombre,
                             'primerApellido' => $title->pareja->primer_apellido,
                             'segundoApellido' => $title->pareja->segundo_apellido,
@@ -2381,18 +2516,42 @@ class declaracionesController extends Controller
                             $ambitoPublico_declarante = $title->datos_empleo_declarante->ambito_publico->valor;
                         }
 
+                        if($title->datos_empleo_declarante->honorarios == 1){
+                            $honorariosDeclarante = true;
+                        }else{
+                            $honorariosDeclarante = false;
+                        }
+
+
+                        if($title->servidor_publico->tipo_dependencia == 1){
+                            $adscripcionDeclarante = 'Secretaría de Asuntos Parlamentarios';
+                        }else if($title->servidor_publico->tipo_dependencia == 2){
+                            $adscripcionDeclarante = 'Órgano Superior de Fiscalización';
+                        }else if($title->servidor_publico->tipo_dependencia == 3){
+                            $adscripcionDeclarante = 'Secretaría de Administración y Finanzas';
+                        }else if($title->servidor_publico->tipo_dependencia == 4){
+                            $adscripcionDeclarante = 'Dirección General de Comunicación Social';
+                        }else if($title->servidor_publico->tipo_dependencia == 5){
+                            $adscripcionDeclarante = 'Contraloría';
+                        }else if($title->servidor_publico->tipo_dependencia == 6){
+                            $adscripcionDeclarante = 'Instituto de Estudios Legislativos';
+                        }else if($title->servidor_publico->tipo_dependencia == 7){
+                            $adscripcionDeclarante = 'U. de Información';
+                        }else if($title->servidor_publico->tipo_dependencia == 8){
+                            $adscripcionDeclarante = 'Legislatura';
+                        }
 
                         $datos_empleo_declarante = array(
                             'tipoOperacion' => $title->datos_empleo_declarante->tipoOperacion,
-                            'nivelOrdenGobierno' => $nivelOrdenGobierno_declarante,
-                            'ambitoPublico' => $ambitoPublico_declarante,
-                            'nombreEntePublico' => $title->datos_empleo_declarante->nombre_ente_publico,
-                            'areaAdscripcion' => $title->datos_empleo_declarante->area_adscripcion,
-                            'empleoCargoComision' => $title->datos_empleo_declarante->empleo_cargo,
-                            'contratadoPorHonorarios' => $title->datos_empleo_declarante->honorarios,
-                            'nivelEmpleoCargoComision' => $title->datos_empleo_declarante->nivel_empleo,
+                            'nivelOrdenGobierno' => 'ESTATAL',
+                            'ambitoPublico' => 'LEGISLATIVO',
+                            'nombreEntePublico' => 'PODER LEGISTATIVO',
+                            'areaAdscripcion' => $adscripcionDeclarante,
+                            'empleoCargoComision' => $title->servidor_publico->cargo,
+                            'contratadoPorHonorarios' => $honorariosDeclarante,
+                            'nivelEmpleoCargoComision' => $title->servidor_publico->nivel_cargo,
                             'funcionPrincipal' => $title->datos_empleo_declarante->funcion_principal,
-                            'fechaTomaPosesion' => $title->datos_empleo_declarante->fecha_posecion_empleo,
+                            'fechaTomaPosesion' => $title->servidor_publico->fecha_inicio,
                             'telefonoOficina' => ([
                                 'telefono' => $title->datos_empleo_declarante->telefono_oficina,
                                 'extension' => $title->datos_empleo_declarante->extension,
@@ -2553,47 +2712,47 @@ class declaracionesController extends Controller
                         if ($title->ingresos->ingreso_mensual_publico == null) {
                             $moneda_remuneracionMensualCargoPublico = 'null';
                         } else {
-                            $moneda_remuneracionMensualCargoPublico = 'Peso Mexicano';
+                            $moneda_remuneracionMensualCargoPublico = 'MXN';
                         }
                         if ($title->ingresos->ingreso_mensual_suma == null) {
                             $moneda_otrosIngresosMensualesTotal = 'null';
                         } else {
-                            $moneda_otrosIngresosMensualesTotal = 'Peso Mexicano';
+                            $moneda_otrosIngresosMensualesTotal = 'MXN';
                         }
                         if ($title->ingresos->ingreso_por_actividad_ice == null) {
                             $moneda_ingreso_por_actividad_ice = 'null';
                         } else {
-                            $moneda_ingreso_por_actividad_ice = 'Peso Mexicano';
+                            $moneda_ingreso_por_actividad_ice = 'MXN';
                         }
                         if ($title->ingresos->ingreso_por_actividad_financiera == null) {
                             $moneda_ingreso_por_actividad_financiera = 'null';
                         } else {
-                            $moneda_ingreso_por_actividad_financiera = 'Peso Mexicano';
+                            $moneda_ingreso_por_actividad_financiera = 'MXN';
                         }
                         if ($title->ingresos->ingreso_por_servicios_profesionales == null) {
                             $moneda_ingreso_por_servicios_profesionales = 'null';
                         } else {
-                            $moneda_ingreso_por_servicios_profesionales = 'Peso Mexicano';
+                            $moneda_ingreso_por_servicios_profesionales = 'MXN';
                         }
                         if ($title->ingresos->ingreso_otros == null) {
                             $moneda_ingreso_otros = 'null';
                         } else {
-                            $moneda_ingreso_otros = 'Peso Mexicano';
+                            $moneda_ingreso_otros = 'MXN';
                         }
                         if ($title->ingresos->ingreso_mensual_neto == null) {
                             $moneda_ingreso_mensual_neto = 'null';
                         } else {
-                            $moneda_ingreso_mensual_neto = 'Peso Mexicano';
+                            $moneda_ingreso_mensual_neto = 'MXN';
                         }
                         if ($title->ingresos->ingreso_mensual_neto_pareja == null) {
                             $moneda_ingreso_mensual_neto_pareja = 'null';
                         } else {
-                            $moneda_ingreso_mensual_neto_pareja = 'Peso Mexicano';
+                            $moneda_ingreso_mensual_neto_pareja = 'MXN';
                         }
                         if ($title->ingresos->total_ingresos_declarante_pareja == null) {
                             $moneda_total_ingresos_declarante_pareja = 'null';
                         } else {
-                            $moneda_total_ingresos_declarante_pareja = 'Peso Mexicano';
+                            $moneda_total_ingresos_declarante_pareja = 'MXN';
                         }
 
 
@@ -2613,8 +2772,8 @@ class declaracionesController extends Controller
                                 ]),
                                 'actividades' => ([[
                                     'remuneracion' => ([
-                                        'valor' => '',
-                                        'moneda' => '',
+                                        'valor' => $title->ingresos->ingreso_por_actividad_ice,
+                                        'moneda' => $moneda_ingreso_por_actividad_ice,
                                     ]),
                                     'nombreRazonSocial' => $title->ingresos->nombre_razon_social,
                                     'tipoNegocio' => $title->ingresos->tipo_de_negocio,
@@ -2627,12 +2786,12 @@ class declaracionesController extends Controller
                                 ]),
                                 'actividades' => ([[
                                     'remuneracion' => ([
-                                        'valor' => null,
-                                        'moneda' => null,
+                                        'valor' => $title->ingresos->ingreso_por_actividad_financiera,
+                                        'moneda' => $moneda_ingreso_por_actividad_financiera,
                                     ]),
                                     'tipoInstrumento' => ([
-                                        //   'clave' => $title->ingresos->tipoInstrumento->clave,
-                                        //   'valor' => $title->ingresos->tipoInstrumento->valor,
+                                           'clave' => $title->ingresos->tipoInstrumentos->clave,
+                                           'valor' => $title->ingresos->tipoInstrumentos->valor,
                                     ]),
                                 ]]),
                             ]),
@@ -2643,8 +2802,8 @@ class declaracionesController extends Controller
                                 ]),
                                 'servicios' => ([[
                                     'remuneracion' => ([
-                                        'valor' => null,
-                                        'moneda' => null,
+                                        'valor' => $title->ingresos->ingreso_por_servicios_profesionales,
+                                        'moneda' => $moneda_ingreso_por_servicios_profesionales,
                                     ]),
                                     'tipoServicio' => $title->ingresos->tipo_de_servicio,
                                 ]]),
@@ -2656,8 +2815,8 @@ class declaracionesController extends Controller
                                 ]),
                                 'ingresos' => ([[
                                     'remuneracion' => ([
-                                        'valor' => null,
-                                        'moneda' => null,
+                                        'valor' => $title->ingresos->ingreso_otros,
+                                        'moneda' => $moneda_ingreso_otros,
                                     ]),
                                     'tipoIngreso' => $title->ingresos->tipo_de_ingreso,
                                 ]]),
@@ -2705,13 +2864,13 @@ class declaracionesController extends Controller
                     if ($title->pais_id == null) {
                         $paisNacimiento = null;
                     } else {
-                        $paisNacimiento = $title->pais->valor;
+                        $paisNacimiento = $title->pais->clave;
                     }
 
-                    if ($title->nacionalidad == null) {
+                    if ($title->nacionalidad_id == null) {
                         $nacionalidadNacimiento = null;
                     } else {
-                        $nacionalidadNacimiento = $title->nacionalidad;
+                        $nacionalidadNacimiento = $title->nacionalidades->clave;
                     }
 
                     if ($title->domicilio == null) {
@@ -2757,7 +2916,7 @@ class declaracionesController extends Controller
                             'institucion' => 'Poder Legislativo',
                             'contacto' => 'JuanJoseDominguezOrozco@hotmail.com',
                             'personaContacto' => 'Juan Jose Dominguez Orozco',
-                            'tipo' => 'Juan Jose Dominguez Orozco',
+                            'tipo' => $title->TipoMovimientos->tipo_movimiento,
                         ]),
                         'declaracion' => ([
                             'situacionPatrimonial' => ([
@@ -2819,28 +2978,28 @@ class declaracionesController extends Controller
                                 ]),
                                 'vehiculos' => ([
                                     'ninguno' => $ninguno,
-                                    'vehiculo' => ([$vehiculos_d]),
+                                    'vehiculo' => $vehiculos_d,
                                     'aclaracionesObservaciones' => $aclaraciones_vehiculos,
                                 ]),
                                 'bienesMuebles' => ([
                                     'ninguno' => $ninguno_muebles,
-                                    'bienMueble' => ([$muebles]),
+                                    'bienMueble' => $muebles,
                                     'aclaracionesObservaciones' => $aclaraciones_muebles,
                                 ]),
                                 'inversiones' => ([
                                     'ninguno' => $ninguno_inversiones,
-                                    'inversion' => ([$inversiones]),
+                                    'inversion' => $inversiones,
                                     'aclaracionesObservaciones' => $aclaraciones_inversiones,
                                 ]),
                                 'adeudos' => ([
                                     'ninguno' => $ninguno_adeudos,
-                                    'adeudo' => ([$adeudos]),
+                                    'adeudo' => $adeudos,
                                     'aclaracionesObservaciones' => $aclaraciones_adeudos,
                                 ]),
                                 'prestamoOComodato' => ([
                                     'ninguno' => $ninguno_prestamo,
                                     'prestamo' => ([[
-                                        "tipoOperacion" => '',
+                                        "tipoOperacion" => $tipoOperacionPrestamo,
                                         'tipoBien' => ([
                                             "inmueble" => $prestamoComoDato_inmueble,
                                             "vehiculo" => $prestamoComoDato_vehiculo,
@@ -2858,37 +3017,37 @@ class declaracionesController extends Controller
                             'interes' => ([
                                 'participacion' => ([
                                     'ninguno' => $ninguno_participacion_empresas,
-                                    'participacion' => ([$participacion_empresas]),
+                                    'participacion' => $participacion_empresas,
                                     'aclaracionesObservaciones' => $aclaraciones_participacion_empresas,
                                 ]),
                                 'participacionTomaDecisiones' => ([
                                     'ninguno' => $ninguno_TomaDecisiones,
-                                    'participacion' => ([$TomaDecisiones]),
+                                    'participacion' => $TomaDecisiones,
                                     'aclaracionesObservaciones' => $aclaraciones_tomaDecisiones,
                                 ]),
                                 'apoyos' => ([
                                     'ninguno' => $ninguno_apoyo,
-                                    'apoyo' => ([$apoyos]),
+                                    'apoyo' => $apoyos,
                                     'aclaracionesObservaciones' => $aclaraciones_apoyo,
                                 ]),
                                 'representacion' => ([
                                     'ninguno' => $ninguno_representacion,
-                                    'representacion' => ([$representacion]),
+                                    'representacion' => $representacion,
                                     'aclaracionesObservaciones' => $aclaraciones_presentacion,
                                 ]),
                                 'clientesPrincipales' => ([
                                     'ninguno' => $ninguno_clientesPrincipales,
-                                    'cliente' => ([$clientesPrincipales]),
+                                    'cliente' => $clientesPrincipales,
                                     'aclaracionesObservaciones' => $aclaraciones_clientes,
                                 ]),
                                 'beneficiosPrivados' => ([
                                     'ninguno' => $ninguno_beneficiosPrivados,
-                                    'beneficio' => ([$beneficiosPrivados]),
+                                    'beneficio' => $beneficiosPrivados,
                                     'aclaracionesObservaciones' => $aclaraciones_beneficios,
                                 ]),
                                 'fideicomisos' => ([
                                     'ninguno' => $ninguno_fideicomisos,
-                                    'fideicomiso' => ([$fideicomisos]),
+                                    'fideicomiso' => $fideicomisos,
                                     'aclaracionesObservaciones' => $aclaraciones_fideicomisos,
                                 ]),
                             ]),

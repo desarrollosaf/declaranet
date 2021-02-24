@@ -108,6 +108,7 @@
         <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
+{!! Form::hidden('adeudos[tipo_operacion_id]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipo_operacion_id']) !!}
 <div class="modal fade bd-example-modal-lg" id="modalDeclaracion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

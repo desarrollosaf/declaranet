@@ -36,7 +36,7 @@ class CreateBeneficioPrivadosTable extends Migration
             $table->unsignedBigInteger('tipo_monedas_id')->nullable();
             $table->foreign('tipo_monedas_id')->references('id')->on('tipo_monedas');
             $table->string('especie')->nullable();
-            $table->string('monto_mensual')->nullable();
+            $table->integer('monto_mensual')->nullable();
             $table->string('aclaraciones')->nullable();
             $table->string("tipoOperacion")->nullable();
             $table->softDeletes();

@@ -73,8 +73,10 @@ class BienesInmueblesController extends Controller {
 
         $selectPais = Arr::pluck(\App\Pais::all(),'valor',"id");
 
+        $tipoOperacion = 1;
 
-        return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal','selectPais', 'selectEntidad', 'selectMunicipio', 'selectMoneda'));
+
+        return view("BienesInmuebles.create", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal','selectPais', 'selectEntidad', 'selectMunicipio', 'selectMoneda','tipoOperacion'));
 
 
     }
@@ -203,7 +205,8 @@ class BienesInmueblesController extends Controller {
         $bien = \App\BienInmueble::find($id);
         $domicilio = $bien->domicilio;
 //        dd($bien->domicilio);
-        return view("BienesInmuebles.edit", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMoneda', 'selectMunicipio', 'bien','selectPais', 'domicilio'));
+        $tipoOperacion = 1;
+        return view("BienesInmuebles.edit", compact('selecttipoInmueble', 'selecttitularInmueble', 'selectformaAdquisicion', 'selectformaPago', 'selectRelacionTransmisor', 'selectvalorConforme', 'selectubicacionInmueble', 'selectRegimenFiscal', 'selectEntidad', 'selectMoneda', 'selectMunicipio', 'bien','selectPais', 'domicilio','tipoOperacion'));
 
 
     }

@@ -132,6 +132,7 @@
             </div>
         </div>
     </div>
+   {!! Form::hidden('representacion[tipo_operaciones_id]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipo_operaciones_id']) !!}
     <div class="row">
         <div class="col-md-12">
             <center>

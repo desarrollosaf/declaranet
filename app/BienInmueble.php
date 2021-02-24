@@ -52,13 +52,17 @@ class BienInmueble extends Model {
     public function inmuebleable(){
         return $this->morphTo();
     }
-    
+
     public function tipoMoneda() {
         return $this->belongsTo(tipoMoneda::class);
     }
-    
+
     public function tipoEntidad() {
         return $this->belongsTo(Entidad::class);
+    }
+
+    public function tipoOperaciones() {
+        return $this->belongsTo(tipoOperacion::class, 'tipo_operacion_id');
     }
 
 

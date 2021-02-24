@@ -28,5 +28,9 @@ class DatosPareja extends Model
     public function experienciaLaboral(){
         return $this->morphOne(ExperienciaLaboral::class, "experienciable");
     }
+
+    public function tipoOperaciones(){
+        return $this->belongsTo(tipoOperacion::class, 'tipo_operacion_id');
+    }
 }
 

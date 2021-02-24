@@ -70,5 +70,9 @@ class Vehiculo extends Model
     {
         return $this->belongsTo(regimenFiscal::class, 'relacion_dueno_titular_id');
     }
+
+    public function tipoOperaciones() {
+        return $this->belongsTo(tipoOperacion::class, 'tipo_operaciones_id');
+    }
 }
 

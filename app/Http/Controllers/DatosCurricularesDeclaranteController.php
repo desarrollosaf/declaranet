@@ -44,7 +44,8 @@ class DatosCurricularesDeclaranteController extends Controller
         $estatusSelect = Arr::pluck(estatus::all(), "valor","id");
         $documentoSelect = Arr::pluck(documentoObtenido::all(), "valor","id");
         $lugaresSelect = Arr::pluck(LugarUbicacion::all(), "valor","id");
-        return view('datosCurricularesDeclarante.create', compact("nivelesSelect","estatusSelect","documentoSelect","lugaresSelect"));
+        $tipoOperacion = 1;
+        return view('datosCurricularesDeclarante.create', compact("nivelesSelect","estatusSelect","documentoSelect","lugaresSelect",'tipoOperacion'));
     }
 
     /**
@@ -89,7 +90,8 @@ class DatosCurricularesDeclaranteController extends Controller
         $lugaresSelect = Arr::pluck(LugarUbicacion::all(), "valor","id");
         array_unshift($lugaresSelect,"Selecciona una opcion");
         $curricular = DatoCurricular::find($id);
-        return view('datosCurricularesDeclarante.edit', compact("nivelesSelect","estatusSelect","documentoSelect","lugaresSelect","curricular"));
+        $tipoOperacion = 1;
+        return view('datosCurricularesDeclarante.edit', compact("nivelesSelect","estatusSelect","documentoSelect","lugaresSelect","curricular",'tipoOperacion'));
     }
 
     /**

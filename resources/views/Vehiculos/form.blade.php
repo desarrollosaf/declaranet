@@ -258,7 +258,7 @@
                     </div>
                 </div>
             </div>
-            {!! Form::hidden('vehiculos[tipoOperacion]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipoOperacion']) !!}
+            {!! Form::hidden('vehiculos[tipo_operaciones_id]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipo_operaciones_id']) !!}
             <!-- Botones  -->
             <div id="edit" style="display: none;" class="all text-center">
                 <div class="form-row">

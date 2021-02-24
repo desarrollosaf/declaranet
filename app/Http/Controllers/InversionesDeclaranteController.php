@@ -53,7 +53,8 @@ class InversionesDeclaranteController extends Controller
 
         $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
         $ubicacionInversion = Arr::pluck(\App\ubicacionInversion::all(), "valor","id");
-        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion'));
+        $tipoOperacion = 1;
+        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion','tipoOperacion'));
 
     }
 
@@ -99,9 +100,9 @@ class InversionesDeclaranteController extends Controller
         $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
         $ubicacionInversion = Arr::pluck(\App\ubicacionInversion::all(), "valor","id");
         $inversiones = InversionesDeclarante::find($id);
-
+        $tipoOperacion = 1;
         //return view("inversionesDeclarante.edit",\compact("inversiones","id"));
-        return view("inversionesDeclarante.edit", compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion','inversiones'));
+        return view("inversionesDeclarante.edit", compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion','inversiones','tipoOperacion'));
     }
 
     /**

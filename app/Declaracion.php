@@ -22,6 +22,10 @@ class Declaracion extends Model {
         return $this->belongsTo(Pais::class);
     }
 
+    public function nacionalidades() {
+        return $this->belongsTo(Nacionalidad::class,'nacionalidad_id');
+    }
+
     public function situacion_personal() {
         return $this->belongsTo(SituacionPersonal::class);
     }
@@ -142,4 +146,9 @@ class Declaracion extends Model {
     public function viajes(){
         return $this->hasMany(Viajes::Class);
     }
+
+    public function TipoMovimientos() {
+        return $this->belongsTo(TipoMovimiento::class, 'tipo_movimiento_id');
+    }
+
 }

@@ -21,8 +21,8 @@ class CreateDeclaranetsTable extends Migration
             $table->date('fecha_declaracion');
             $table->string("correo_institucional")->nullable();
             $table->string("correo_personal")->nullable();
-            $table->double("telefono_casa")->nullable();
-            $table->double("telefono_personal")->nullable();
+            $table->string("telefono_casa")->nullable();
+            $table->string("telefono_personal")->nullable();
             $table->unsignedBigInteger("situacion_personal_id")->nullable();
             $table->foreign("situacion_personal_id")->references("id")->on("situaciones_personales");
             $table->unsignedBigInteger("regimen_matrimonial_id")->nullable();

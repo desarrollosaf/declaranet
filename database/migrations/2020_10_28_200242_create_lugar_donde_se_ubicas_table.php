@@ -13,22 +13,23 @@ class CreateLugarDondeSeUbicasTable extends Migration
      * @return void
      */
     public function up()
-     {
+    {
         Schema::create('lugares_ubicacion', function (Blueprint $table) {
             $table->bigIncrements("id");
-
             $table->string("valor");
+            $table->string("clave");
             $table->timestamps();
             $table->softDeletes();
 
         });
         collect([
-            ["valor" => "MÉXICO"],
-            ["valor" => "EXTRANJERO"]
-        ])->each(function ($items){
+            ["valor" => "MÉXICO", "clave" => "MX"],
+            ["valor" => "EXTRANJERO", "clave" => "EX"]
+        ])->each(function ($items) {
             LugarUbicacion::create($items);
         });
     }
+
     /**
      * Reverse the migrations.
      *

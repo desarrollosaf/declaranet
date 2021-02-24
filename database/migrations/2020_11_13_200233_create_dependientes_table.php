@@ -40,7 +40,8 @@ class CreateDependientesTable extends Migration
             $table->string('aclaraciones')->nullable();
             $table->unsignedBigInteger('regimen_fiscal_id')->nullable();
             $table->foreign('regimen_fiscal_id')->references('id')->on('regimen_fiscal');
-
+            $table->unsignedBigInteger('tipoOperacion')->nullable();
+            $table->foreign('tipoOperacion')->references('id')->on('tipo_operaciones');
             $table->softDeletes();
             $table->timestamps();
         });

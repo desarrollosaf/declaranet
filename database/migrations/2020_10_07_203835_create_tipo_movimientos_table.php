@@ -22,9 +22,9 @@ class CreateTipoMovimientosTable extends Migration
             $table->softDeletes();
         });
         collect([
-            ["tipo_movimiento" => "inicial"],
-            ["tipo_movimiento" => "modificacion"],
-            ["tipo_movimiento" => "terminacion"]
+            ["tipo_movimiento" => "INICIAL"],
+            ["tipo_movimiento" => "MODIFICACION"],
+            ["tipo_movimiento" => "TERMINACION"]
         ])->each(function ($items){
             TipoMovimiento::create($items);
         });

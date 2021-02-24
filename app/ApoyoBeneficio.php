@@ -26,11 +26,14 @@ class ApoyoBeneficio extends Model
         return $this->hasOne(formaRecepcion::class,'id','forma_recepcion_id');
     }
 
-
     public function tipoMoneda()
     {
         return $this->belongsTo(tipoMoneda::class, 'tipo_de_moneda_id');
     }
 
+    public function tipoOperaciones()
+    {
+        return $this->belongsTo(tipoOperacion::class,'tipo_operacion_id');
+    }
 
 }

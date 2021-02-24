@@ -1,11 +1,10 @@
 [
     {
-      "clave": "MEX",
+      "clave": "MX",
       "valor": "MÉXICO"
     },
     {
-      "clave": "EXT",
+      "clave": "EX",
       "valor": "EXTRANJERO"
     }
   ]
-  

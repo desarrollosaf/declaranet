@@ -9,8 +9,8 @@ class IngresoNeto extends Model
     protected $table = "ingresos_netos";
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
 
-    public function tipoInstrumento()
+    public function tipoInstrumentos()
     {
-        return $this->belongsTo(tipoInstrumento::class);
+        return $this->belongsTo(tipoInstrumento::class,'tipo_de_instrumento');
     }
 }

@@ -61,7 +61,9 @@ class ParticipacionEnEmpresasSociedadesYAsociacionesController extends Controlle
 
         $tipoModalidad= Arr::pluck(\App\tipoModalidad::all(), "valor", "id");
 
-        return view("ParticipacionEmpresas.create", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais', 'selectEntidad','RelacionTransmisor','tipoSociedad','tipoModalidad'));
+        $tipoOperacion = 1;
+
+        return view("ParticipacionEmpresas.create", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais', 'selectEntidad','RelacionTransmisor','tipoSociedad','tipoModalidad','tipoOperacion'));
     }
 
     /**
@@ -139,7 +141,9 @@ class ParticipacionEnEmpresasSociedadesYAsociacionesController extends Controlle
 
         $empresas = \App\ParticipacionEmpresa::find($id);
 
-        return view("ParticipacionEmpresas.edit", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais', 'selectEntidad','RelacionTransmisor','tipoModalidad','tipoSociedad','empresas'));
+        $tipoOperacion = 1;
+
+        return view("ParticipacionEmpresas.edit", compact('selecttitularParticipacion', 'selecttipoParticipacion', 'selecttipoRespuesta', 'selectubicacionParticipacion', 'selectsectorProductivo', 'selectpais', 'selectEntidad','RelacionTransmisor','tipoModalidad','tipoSociedad','empresas','tipoOperacion'));
     }
 
     /**

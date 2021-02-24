@@ -284,6 +284,9 @@
         <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
+
+{!! Form::hidden('declarante[tipo_operacion_id]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipo_operacion_id']) !!}
+
 <div class="row">
     <div class="col-md-12">
         <div class="text-center">

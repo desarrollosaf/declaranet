@@ -30,6 +30,8 @@ class CreateDatoCurricularsTable extends Migration
             $table->foreign("lugar_ubicacion_id")->references("id")->on("lugares_ubicacion");
             $table->string("observaciones")->nullable();
             $table->index(['curricular_id', 'curricular_type']);
+            $table->unsignedBigInteger("tipo_operaciones_id")->nullable();
+            $table->foreign("tipo_operaciones_id")->references("id")->on("tipo_operaciones");
             $table->softDeletes();
             $table->timestamps();
         });

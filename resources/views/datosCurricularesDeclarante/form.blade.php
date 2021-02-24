@@ -50,6 +50,10 @@
         <strong><label class="requerido">&nbsp;Todos los campos marcados con * son obligatorios. </label></strong>
     </div>
 </div>
+
+{!! Form::hidden('curriculares[tipo_operacion_id]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipo_operacion_id']) !!}
+
+
 @section('scripts')
     <script type="text/javascript">
         $(document).ready(function(){

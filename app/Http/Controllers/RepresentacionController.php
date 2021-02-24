@@ -49,8 +49,9 @@ class RepresentacionController extends Controller {
         //COMBO UBICACION INMUEBLE
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
 
+        $tipoOperacion = 1;
 
-        return view("Representacion.create", compact('selecttitularRepresentacion', 'selecttipoRepresentacion', 'selectregimenRepresentante', 'selecttipoRespuesta', 'selecttipoSector', 'selectubicacionRepresentacion', 'selectpaises', 'selectEntidad'));
+        return view("Representacion.create", compact('selecttitularRepresentacion', 'selecttipoRepresentacion', 'selectregimenRepresentante', 'selecttipoRespuesta', 'selecttipoSector', 'selectubicacionRepresentacion', 'selectpaises', 'selectEntidad','tipoOperacion'));
     }
 
     /**
@@ -121,10 +122,11 @@ class RepresentacionController extends Controller {
         //COMBO UBICACION INMUEBLE
         $selectEntidad = Arr::pluck(\App\Entidad::all(), "entidad", "id");
 
-
         $representacion = \App\Representacion::find($id);
 
-        return view("Representacion.edit", compact('selecttitularRepresentacion', 'selecttipoRepresentacion', 'selectregimenRepresentante', 'selecttipoRespuesta', 'selecttipoSector', 'selectubicacionRepresentacion', 'selectpaises', 'selectEntidad', 'representacion'));
+        $tipoOperacion = 1;
+
+        return view("Representacion.edit", compact('selecttitularRepresentacion', 'selecttipoRepresentacion', 'selectregimenRepresentante', 'selecttipoRespuesta', 'selecttipoSector', 'selectubicacionRepresentacion', 'selectpaises', 'selectEntidad', 'representacion','tipoOperacion'));
     }
 
     /**

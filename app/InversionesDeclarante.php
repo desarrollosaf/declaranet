@@ -33,4 +33,8 @@ class InversionesDeclarante extends Model
         return $this->hasOne(titularInversion::class,'id','titular_inversion_id');
     }
 
+    public function tipoOperaciones(){
+        return $this->belongsTo(tipoOperacion::class, 'tipo_operacion_id');
+    }
+
 }

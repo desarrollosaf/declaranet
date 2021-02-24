@@ -70,8 +70,9 @@ class DatosDependienteEconomicoController extends Controller
         $ambito = Arr::pluck(\App\ambitoPublico::all(),'valor',"id");
         $contratista_gobierno = Arr::pluck(Respuesta::all(), "respuesta", "id");
         $regimenFiscal = Arr::pluck(regimenFiscal::all(), "valor","id");
+        $tipoOperacion = 1;
 
-        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','contratista_gobierno','regimenFiscal'));
+        return view('dependienteEconomico.create', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','contratista_gobierno','regimenFiscal','tipoOperacion'));
     }
 
     /**
@@ -171,7 +172,9 @@ class DatosDependienteEconomicoController extends Controller
         $dato_laboral = $dependiente->dato_laboral;
         $regimenFiscal = Arr::pluck(regimenFiscal::all(), "valor","id");
 
-        return view('dependienteEconomico.edit', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','dependiente','domicilio','dato_laboral','municipios','contratista_gobierno','regimenFiscal'));
+        $tipoOperacion = 1;
+
+        return view('dependienteEconomico.edit', compact('selectParentesco', 'selectExtranjero', 'selectResidencia', 'selectSector','respuestas','entidades','paises','sectores','nivel','ambito','dependiente','domicilio','dato_laboral','municipios','contratista_gobierno','regimenFiscal','tipoOperacion'));
     }
 
     /**

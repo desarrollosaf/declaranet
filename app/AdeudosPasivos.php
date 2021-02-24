@@ -33,5 +33,10 @@ class AdeudosPasivos extends Model
         return $this->belongsTo(LugarUbicacion::class,'ubicacion_adeudo_id');
     }
 
+    public function tipoOperaciones()
+    {
+        return $this->belongsTo(tipoOperacion::class,'tipo_operacion_id');
+    }
+
 
 }

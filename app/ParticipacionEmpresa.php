@@ -49,4 +49,8 @@ class ParticipacionEmpresa extends Model
     public function tipoSociedad() {
         return $this->belongsTo(tipoSociedad::class);
     }
+
+    public function tipoOperaciones() {
+        return $this->belongsTo(tipoOperacion::class);
+    }
 }

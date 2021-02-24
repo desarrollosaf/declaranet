@@ -39,6 +39,8 @@ class CreateRepresentacionsTable extends Migration
             $table->foreign('entidad_id')->references('id')->on('entidades');
             $table->unsignedBigInteger('pais_id')->nullable();
             $table->foreign('pais_id')->references('id')->on('paises');
+            $table->unsignedBigInteger('tipo_operaciones_id')->nullable();
+            $table->foreign('tipo_operaciones_id')->references('id')->on('tipo_operaciones');
             $table->string('observaciones')->nullable();
             $table->softDeletes();
             $table->timestamps();

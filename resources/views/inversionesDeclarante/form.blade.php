@@ -80,7 +80,7 @@
         <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
-
+{!! Form::hidden('inversiones[tipo_operacion_id]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'tipo_operacion_id']) !!}
 <div class="text-center">
     <br>
     <a href="{{route("inversiones.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>

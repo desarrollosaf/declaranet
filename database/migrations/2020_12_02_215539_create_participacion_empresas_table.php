@@ -45,6 +45,8 @@ class CreateParticipacionEmpresasTable extends Migration
             $table->string("especifique_sociedad")->nullable();
             $table->unsignedBigInteger('tipo_modalidad_id')->nullable();
             $table->foreign('tipo_modalidad_id')->references('id')->on('tipo_modalidad');
+            $table->unsignedBigInteger('tipo_operaciones_id')->nullable();
+            $table->foreign('tipo_operaciones_id')->references('id')->on('tipo_operaciones');
             $table->softDeletes();
             $table->timestamps();
         });

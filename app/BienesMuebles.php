@@ -42,4 +42,8 @@ class BienesMuebles extends Model
     {
         return $this->belongsTo(tipoMoneda::class);
     }
+
+    public function tipoOperaciones() {
+        return $this->belongsTo(tipoOperacion::class, 'tipo_operacion_id');
+    }
 }

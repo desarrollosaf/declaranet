@@ -100,7 +100,7 @@ class VehiculosController extends Controller
         $tipoMoneda = $tipoMonedaMexico->merge($tipoMonedaOtros);
         $moneda = Arr::pluck($tipoMoneda,"valor","id");
 
-        $tipoOperacion = "AGREGAR";
+        $tipoOperacion = 1;
 
         return view("Vehiculos.create", compact('vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda','tipoOperacion'));
     }

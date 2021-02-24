@@ -143,7 +143,7 @@
             </div>
         </div>
     </div>
-
+    {!! Form::hidden('empresas[titular_operaciones_id]',$tipoOperacion,['class'=>'form-control text-uppercase','id' => 'titular_operaciones_id']) !!}
     <center>
         <br>
         <a href="{{route('participacion_empresas.index')}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
