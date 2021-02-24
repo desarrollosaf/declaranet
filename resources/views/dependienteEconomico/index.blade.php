@@ -44,7 +44,7 @@
                     </tbody>
                 </table>
                 <center>
-                    <strong>Si desea registrar Experiencia Laboral pulse: <a href="{{route('datos_dependiente_declarante.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
+                    <strong>Si desea registrar Datos de los dependientes económicos pulse: <a href="{{route('datos_dependiente_declarante.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                 </center>
                 @else
                 <p class="text-justify">Deberá proporcionar la información de CADA UNA de las personas, familiares o no, cuya manutención dependa principalmente de los ingresos del Declarante.</p>
@@ -54,7 +54,7 @@
                     </div>
                     <br>
                     <div class="mt-2">
-                        <strong>Sí no tiene dependientes económicos, seleccione</strong><a href="{{route("ingreso_neto.index")}}" type="button" class="btn btn-ninguno btn-sm btn-secondary">Ninguno</a>
+                        <strong>Sí no tiene dependientes económicos, seleccione:</strong><a href="{{route("ingreso_neto.index")}}" type="button" class="btn btn-ninguno btn-sm btn-secondary"> Ninguno</a>
                     </div>
                 </div>
                 @endif
@@ -103,6 +103,25 @@
             }
         });
         return false;
+    });
+
+    $('.btn-ninguno').on('click', function (e) {
+        let that = this;
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    text: 'No se registró información en este apartado. Si desea registrar Datos del dependiente económico pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                    icon: 'warning',
+                    cancelButtonText: 'Aceptar'
+                });
+            }
+        });
     });
 
 

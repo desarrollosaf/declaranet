@@ -12,30 +12,36 @@
                     <table class="table table-bordered table-striped">
                         <thead class="text-light">
                         <tr>
-                            <th scope="col" width="20%">Descripción</th>
-                            <th scope="col" width="20%">Monto</th>
-                            <th scope="col" width="20%">Editar</th>
-                            <th scope="col" width="20%">Eliminar</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">RFC</th>
+                            <th scope="col">MOTIVO DEL VIAJE</th>
+                            <th scope="col">MONTO DEL VIAJE</th>
+                            <th scope="col">ACCIONES</th>
                         </thead>
                         <tbody>
-                          @foreach ($viajes as $item)
-                            <tr>
-                              <td>{{$item->especifique_donativo}}</td>
-                              <td>{{$item->monto_donativo}}</td>
+                            <tbody class="text-uppercase">
+                          @foreach($viajes as $viajes)
+                         
+                          <tr>
+                              <td>{{$viajes->nombre_pariente}} {{$viajes->primer_apellido}} {{$viajes->segundo_apellido}}</td>
+                              <td>{{$viajes->rfc_pariente}}</td>
+                              <td>{{$viajes->motivo_viaje->valor}}</td>
+                              <td>{{$viajes->monto_viaje}}</td>
                               <td>
-                                  <a href="{{route("viajes.edit",$item->id)}}" type="button"
+                                  <a href="{{route("viajes.edit",$viajes->id)}}" type="button"
                                      class="btn btn-warning btn-sm ion ion-edit"></a>
-                              </td>
-                              <td>
-                                  {!! Form::open(['action' => ['ViajesController@destroy', $item->id], 'method'=>'DELETE']) !!}
+                                  {!! Form::open(['action' => ['ViajesController@destroy', $viajes->id], 'method'=>'DELETE']) !!}
                                   <div style="display: inline-block;">
                                       <button
                                           class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
                                   </div>
                                   {!! Form::close() !!}
                               </td>
-                            </tr>
+                          </tr>
                           @endforeach
+                        </tbody>
+                    </table>
+               
                           <tr><tr>
                         </tbody>
                     </table>
@@ -58,7 +64,7 @@
                 <div class="col-md-12">
                     <div class="text-center">
                         <br>
-                        <a href="{{route("participaciones.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
+                        <a href="{{route("viajes.index")}}" class="btn btn-sm btn-submit text-light">Ir a la sección anterior</a>
                         <a href="{{route("viajes.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                     </div>
                 </div>
@@ -89,7 +95,7 @@
             let that = this;
             e.preventDefault();
             Swal.fire({
-                title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                title: '¿Está seguro que no desea registrar la información solicitada en este apartado?',
                 icon: 'warning',
                 showCancelButton: true,
                 cancelButtonText: 'Cancelar'

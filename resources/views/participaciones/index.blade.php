@@ -20,7 +20,9 @@
                             <th scope="col">ACCIONES</th>
                         </thead>
                         <tbody>
+                            <tbody class="text-uppercase">
                           @foreach($participaciones as $participacion)
+                          
                           <tr>
                               <td>{{$participacion->nombre}} {{$participacion->primer_apellido}} {{$participacion->segundo_apellido}}</td>
                               <td>{{$participacion->rfc}}</td>
@@ -29,7 +31,8 @@
                               <td>{{$participacion->institucion->nombre}}</td>
                               <td>{{$participacion->frecuencia_anual}}</td>
                               <td>
-                                  <a href="{{route("participaciones.edit",$participacion->id)}}" type="button" class="btn btn-warning btn-sm ion ion-edit"></a>
+                                  <a href="{{route("participaciones.edit",$participacion->id)}}" type="button"
+                                     class="btn btn-warning btn-sm ion ion-edit"></a>
                                   {!! Form::open(['action' => ['ParticipacionDeclaracionController@destroy', $participacion->id], 'method'=>'DELETE']) !!}
                                   <div style="display: inline-block;">
                                       <button

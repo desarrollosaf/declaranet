@@ -11,7 +11,7 @@
     </div>
     <div class="form-group col-md-4 especifique-dependientes">
         <strong>{!! Form::label('intereses.especifique_dependiente', 'Segundo Apellido: ') !!}</strong>
-        {!! Form::text('intereses[segundo_apellido]', (isset($intereses->segundo_apellido)) ? $intereses->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. JÚAREZ',  'id' => 'especifique-dependientes', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
+        {!! Form::text('intereses[segundo_apellido]', (isset($intereses->segundo_apellido)) ? $intereses->segundo_apellido : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'P. EJ. JÚAREZ',  'id' => 'segundo-apellido', 'pattern' =>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
@@ -90,14 +90,14 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('fecha_ingreso', 'Fecha de ingreso al empleo: *') !!}</strong>
-        {!! Form::date('actividadLaboral[fecha_ingreso]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control alert-danger text-uppercase fecha', 'id' => 'codigo_postalExt']) !!}
+        {!! Form::date('actividadLaboral[fecha_ingreso]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control alert-danger text-uppercase fecha', 'id' => 'codigo_postalExt','required' => true,'max' => date('Y-m-d')]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-12">
         <strong>{!! Form::label('intereses.observaciones', 'Aclaraciones / Observaciones:  ') !!}</strong>
-        {!! Form::textarea('intereses[observaciones]', isset($intereses->observaciones) ? $intereses->observaciones : null, ['class'=>'form-control alert-danger  text-uppercase']) !!}
+        {!! Form::textarea('intereses[observaciones]', isset($intereses->observaciones) ? $intereses->observaciones : null, ['class'=>'form-control alert-danger  text-uppercase','id'=>'observaciones']) !!}
         <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
@@ -105,6 +105,9 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $(".form-control").prop("required", true);
+                $("#segundo-apellido").prop("required", false);
+                $("#observaciones").prop("required", false);
+
         $("#respuesta-ciudadano").change(function () {
             let val = $(this).val();
             if (val === "2") {

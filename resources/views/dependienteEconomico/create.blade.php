@@ -218,5 +218,17 @@
             $("#rfcpriv").prop("placeholder", 'p. ej. XAX010101X0A');
         }
     });
+    $("#extranjero").change(function () {
+            let val = $(this).val();
+            if (val === "1") {
+                $("#curp").prop("readOnly", false).prop("required", true);
+            } else {
+                $("#curp").prop("readOnly", true).prop("required", false).val("");
+            }
+        });
+        $("#curp").blur(function () {
+            let curp = $(this).val();
+            $("#curp").val(curp.toString().toUpperCase());
+        });
 </script>
 @endsection

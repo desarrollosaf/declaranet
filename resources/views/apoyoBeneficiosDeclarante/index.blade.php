@@ -4,7 +4,7 @@
         <div class="card mb-5 shadow-sm border-0 shadow-hover">
             <div class="card-header bg-info  border-0 py-3 d-flex align-items-center" style="background-color:#F1F1F1 !important;">
                 <div>
-                    <h4>APOYOS O BENEFICIOS PÚBLICOS</h4>
+                    <h3>APOYOS O BENEFICIOS PÚBLICOS</h3>
                     <h6 class="card-subtitle">(HASTA LOS DOS ÚLTIMOS AÑOS)</h6>
                 </div>
             </div>

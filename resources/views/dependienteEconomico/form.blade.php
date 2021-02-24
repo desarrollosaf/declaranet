@@ -46,7 +46,7 @@
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('curp', 'CURP: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('declarante[curp]',isset($dependiente) ? $dependiente->curp : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XAXAXA01',  'id' => 'curp','required' => true,'pattern'=>"([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)"]) !!}
+            {!! Form::text('declarante[curp]',isset($dependiente) ? $dependiente->curp : null,['class'=>'form-control alert-danger text-uppercase', 'placeholder'=>'p. ej. XAXX010101XAXAXA01',  'id' => 'curp','readOnly','required' => true,'pattern'=>"([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)"]) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
     </div>

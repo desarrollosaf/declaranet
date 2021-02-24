@@ -18,7 +18,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <strong>{!! Form::label('datosPareja.fecha_nacimiento', 'Fecha de nacimiento: *') !!}</strong>
-        {!! Form::date('datosPareja[fecha_nacimiento]',(isset($pareja->fecha_nacimiento)) ? $pareja->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'fechanacimiento', 'required' => true]) !!}
+        {!! Form::date('datosPareja[fecha_nacimiento]',(isset($pareja->fecha_nacimiento)) ? $pareja->fecha_nacimiento : null,['class'=>'form-control alert-danger text-uppercase',  'id' => 'fechanacimiento', 'required' => true,'max' => date('Y-m-d')]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
@@ -397,14 +397,14 @@
                     $('.domicilio-MXBinmuebles').find("select").val("");
                     $("#lugar-reside").val("");
                     $(".lugar-reside").hide();
-                    $(".lugar-reside").prop("required", false);
+                    $("#lugar-reside").prop("required", false);
                     $('.domicilio-EXBinmuebles').find("input").prop("required", false);
                     $('.domicilio-EXBinmuebles').find("select").prop("required", false);
                     $('.domicilio-MXBinmuebles').find("input").prop("required", false);
                     $('.domicilio-MXBinmuebles').find("select").prop("required", false);
                 } else if (!isNaN(respuesta)) {
                     $(".lugar-reside").show();
-                    $(".lugar-reside").prop("required", true);
+                    $("#lugar-reside").prop("required", true);
                     $("#lugar-reside").change();
                 }
             });

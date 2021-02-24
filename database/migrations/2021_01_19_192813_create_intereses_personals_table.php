@@ -19,7 +19,7 @@ class CreateInteresesPersonalsTable extends Migration
             $table->foreign('declaracion_id')->references('id')->on('declaraciones');
             $table->string("nombre");
             $table->string("primer_apellido");
-            $table->string("segundo_apellido");
+            $table->string("segundo_apellido")->nullable();
             $table->date("fecha_nacimiento");
             $table->string("rfc");
             $table->unsignedBigInteger('parentesco_relaciones_id');
