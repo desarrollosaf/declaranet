@@ -92,7 +92,7 @@
                 let that = this;
                 e.preventDefault();
                 Swal.fire({
-                    title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                    title: '¿Está seguro que no desea registrar la información solicitada en este apartado?',
                     icon: 'warning',
                     showCancelButton: true,
                     cancelButtonText: 'Cancelar'
@@ -130,7 +130,7 @@
                 let that = this;
                 e.preventDefault();
                 Swal.fire({
-                    title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+                    title: '¿Está seguro que no desea registrar la información solicitada en este apartado?',
                     icon: 'warning',
                     showCancelButton: true,
                     cancelButtonText: 'Cancelar'

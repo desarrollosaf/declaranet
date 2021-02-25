@@ -242,7 +242,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label class="control-label" for="ProcessNum"><strong>Fecha de adquisicioón del vehículo: *</strong></label>
-                            {!! Form::date('vehiculos[v_fecha]', isset($vehiculos) ? $vehiculos->v_fecha : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. Peso mexicano',   'id' => 'v_fecha','required' => true]) !!}
+                            {!! Form::date('vehiculos[v_fecha]', isset($vehiculos) ? $vehiculos->v_fecha : null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. Peso mexicano',   'id' => 'v_fecha','required' => true,'max' => date('Y-m-d')]) !!}
                         </div>
                     </div>
 

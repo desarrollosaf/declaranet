@@ -74,7 +74,7 @@
 <script>
 $("#btn-ninguno").on("click",function(){
     Swal.fire({
-        text: '¿Esta seguro que no desea solicitar la información solicitada en este apartado?',
+        text: '¿Está seguro que no desea solicitar la información solicitada en este apartado?',
         icon: 'warning',
         showCancelButton: true,
         cancelButtonText: 'Cancelar'
@@ -88,24 +88,24 @@ $("#btn-ninguno").on("click",function(){
         }
     });
 });
-$('.btn-borrar').on('click', function (e) {
-    let that = this;
-    console.log('boton clic');
-    e.preventDefault();
-    Swal.fire({
-        title: '¿Está seguro?',
-        text: 'Al oprimir el botón de aceptar se eliminará el registro',
-        icon: 'warning',
-        showCancelButton: true,
-        cancelButtonText: 'Cancelar'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $(that).closest('form').submit();
-        }
-    });
-    return false;
-});
-
+ $('.btn-ninguno').on('click', function (e) {
+            let that = this;
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Está seguro que no desea registrar la información solicitada en este apartado?',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+                    Swal.fire({
+                        text: 'No se registró información en este apartado. Si desea registrar Participaciones del Declarante pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        icon: 'warning',
+                        cancelButtonText: 'Aceptar'
+                    });
+                }
+            });
+        });
 
 </script>
 @endsection
