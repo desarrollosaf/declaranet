@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Declaracion;
 use Closure;
+
 class CheckEstadoCivil
 {
     /**
@@ -15,9 +16,11 @@ class CheckEstadoCivil
      */
     public function handle($request, Closure $next)
     {
-        $declaracion = Declaracion::find($request->session()->get('declaracion_id'));
-        if ($declaracion->situacion_personal_id == 1 || $declaracion->situacion_personal_id == 3 || $declaracion->situacion_personal_id == 4) {
-            return redirect()->route("datos_dependiente_declarante.index");
+        if (!empty($request->session()->get('declaracion_id'))) {
+            $declaracion = Declaracion::find($request->session()->get('declaracion_id'));
+            if ($declaracion->situacion_personal_id == 1 || $declaracion->situacion_personal_id == 3 || $declaracion->situacion_personal_id == 4) {
+                return redirect()->route("datos_dependiente_declarante.index");
+            }
         }
         return $next($request);
     }

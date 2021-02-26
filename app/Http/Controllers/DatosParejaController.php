@@ -6,6 +6,7 @@ use App\ambitoSector;
 use App\DatosPareja;
 use App\Declaracion;
 use App\Entidad;
+use App\ExperienciaLaboral;
 use App\extranjero;
 use App\lugarDondeReside;
 use App\LugarUbicacion;
@@ -16,10 +17,12 @@ use App\relacionConDeclarante;
 use App\Respuesta;
 use App\sector;
 use Carbon\Carbon;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
-class DatosParejaController extends Controller {
+class DatosParejaController extends Controller
+{
 
     /**
      * Display a listing of the resource.
@@ -28,26 +31,21 @@ class DatosParejaController extends Controller {
      */
     private $request;
 
-    public function __construct(Request $request) {
+    public function __construct(Request $request)
+    {
         $this->middleware("auth");
         $this->middleware("CheckEstadoCivil");
         $this->request = $request;
     }
 
-    public function index() {
+    public function index()
+    {
         $declarante = Declaracion::find($this->request->session()->get("declaracion_id"));
-        if ($declarante->tipo_movimiento_id == 1) {
-            if ($declarante->pareja) {
-                return redirect()->route("datos_pareja_declarante.edit", $declarante->pareja->id);
-            } else {
-                return redirect()->route("datos_pareja_declarante.create");
-            }
+        if ($declarante->pareja) {
+            return redirect()->route("datos_pareja_declarante.edit", $declarante->pareja->id);
         } else {
-            if ($declarante->pareja) {
-                return redirect()->route("datos_pareja_declarante.edit", $declarante->pareja->id);
-            }
-            $ultimaDeclaracion = Declaracion::where("id","!=",$this->request->session()->get("declaracion_id"))->get();
-            dd($ultimaDeclaracion->last()->pareja);
+            $declarante->pareja()->create();
+            return redirect()->route("datos_pareja_declarante.create");
         }
     }
 
@@ -56,7 +54,8 @@ class DatosParejaController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create()
+    {
         $declarante = Declaracion::find($this->request->session()->get("declaracion_id"));
         if ($declarante->pareja) {
             return redirect()->route("datos_pareja_declarante.edit", $declarante->pareja->id);
@@ -82,7 +81,7 @@ class DatosParejaController extends Controller {
         $selectPais = Arr::pluck(Pais::where("id", '=', 152)->get(), "valor", "id");
         $respuesta = Arr::pluck(Respuesta::all(), "respuesta", "id");
         $regimenFiscal = Arr::pluck(regimenFiscal::all(), "valor", "id");
-        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector','regimenFiscal'));
+        return view('datosParejaDeclarante.create', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'regimenFiscal'));
     }
 
     /**
@@ -91,12 +90,12 @@ class DatosParejaController extends Controller {
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $datosPareja = $this->request->input("datosPareja");
         $domicilio = $request->input("domicilio");
         $domicilioExt = $request->input("domicilioExt");
-        $actividadLaboral = $request->input("actividadLaboral");
-
+//        $actividadLaboral = $request->input("actividadLaboral");
         if (isset($datosPareja["lugar_reside_id"]) && $datosPareja["lugar_reside_id"] == 2) {
             $domicilio['calle'] = $domicilioExt['calleExt'];
             $domicilio['num_ext'] = $domicilioExt['numextExt'];
@@ -106,25 +105,14 @@ class DatosParejaController extends Controller {
             $domicilio['entidad'] = $domicilioExt['estadoprovincia'];
             $domicilio['codigo_postal'] = $domicilioExt['codigopostalExt'];
         }
-        if ($actividadLaboral['ambito_sector_id'] == 1) {
-            $actividadLaboral['salario_mensual_neto'] = $actividadLaboral['salario_mensual_neto_publico'];
-            $actividadLaboral['fecha_ingreso'] = $actividadLaboral['fecha_ingreso_publico'];
-        }
-        if ($actividadLaboral['respuesta_proveedor_id'] == 0) {
-            $actividadLaboral['respuesta_proveedor_id'] = null;
-        }
+
         if (!isset($datosPareja['lugar_reside_id'])) {
             $datosPareja['lugar_reside_id'] = null;
         }
-        $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
-        $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
         $datosPareja['declaracion_id'] = $this->request->session()->get("declaracion_id");
         $pareja = DatosPareja::create($datosPareja);
         if ($datosPareja['respuesta_domicilio_id'] == 2) {
             $pareja->domicilio()->create($domicilio);
-        }
-        if ($actividadLaboral["ambito_sector_id"] != 4) {
-            $pareja->experienciaLaboral()->create($actividadLaboral);
         }
         return redirect()->route("datos_dependiente_declarante.index");
     }
@@ -135,7 +123,8 @@ class DatosParejaController extends Controller {
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($id)
+    {
         //
     }
 
@@ -145,13 +134,14 @@ class DatosParejaController extends Controller {
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         $selectRelacioDeclarante = Arr::pluck(relacionConDeclarante::all(), 'valor', 'id');
         $selectCiudadano = Arr::pluck(extranjero::all(), 'valor', 'id');
         $ambitos_sectores = Arr::pluck(\App\ambitoSector::all(), 'valor', 'id');
         $nivelOrdenGobierno = Arr::pluck(\App\Nivelordengobierno::all(), 'valor', 'id');
         $ambito = Arr::pluck(\App\ambitoPublico::all(), "valor", "id");
-        $sectores = Arr::pluck(ambitoSector::all(), "valor", "id");
+        $sectores = Arr::pluck(ambitoSector::where('id', '!=', 4)->get(), "valor", "id");
         $sector = Arr::pluck(sector::all(), "valor", "id");
         $ubicacion = Arr::pluck(LugarUbicacion::all(), "valor", "id");
         $selectLugarReside = Arr::pluck(lugarDondeReside::all(), "valor", "id");
@@ -169,10 +159,10 @@ class DatosParejaController extends Controller {
         }
 
 
-        $experienciaLaboral = $pareja->experienciaLaboral;
+        $experiencias = $pareja->experienciaLaboral;
 
 
-        return view('datosParejaDeclarante.edit', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'pareja', 'domicilio', 'experienciaLaboral', 'selectMunicipio','regimenFiscal'));
+        return view('datosParejaDeclarante.edit', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'pareja', 'domicilio', 'experiencias', 'selectMunicipio', 'regimenFiscal'));
     }
 
     /**
@@ -182,11 +172,11 @@ class DatosParejaController extends Controller {
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $datosPareja = $request->input("datosPareja");
         $domicilio = $request->input("domicilio");
         $domicilioExt = $request->input("domicilioExt");
-        $actividadLaboral = $request->input("actividadLaboral");
 
         if ($datosPareja["lugar_reside_id"] != 1) {
             $domicilio['calle'] = $domicilioExt['calleExt'];
@@ -196,19 +186,10 @@ class DatosParejaController extends Controller {
             $domicilio['entidad'] = $domicilioExt['estadoprovincia'];
             $domicilio['codigo_postal'] = $domicilioExt['codigopostalExt'];
         }
-        if ($actividadLaboral['ambito_sector_id'] == 1) {
-            $actividadLaboral['salario_mensual_neto'] = $actividadLaboral['salario_mensual_neto_publico'];
-            $actividadLaboral['fecha_ingreso'] = $actividadLaboral['fecha_ingreso_publico'];
-        }
-        if ($actividadLaboral['respuesta_proveedor_id'] == 0) {
-            $actividadLaboral['respuesta_proveedor_id'] = null;
-        }
+
         if (!isset($datosPareja['lugar_reside_id'])) {
             $datosPareja['lugar_reside_id'] = null;
         }
-
-        $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
-        $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
 
         $pareja = DatosPareja::find($id);
         $pareja->update($datosPareja);
@@ -223,19 +204,6 @@ class DatosParejaController extends Controller {
                 $pareja->domicilio->delete();
             }
         }
-        if ($actividadLaboral["ambito_sector_id"] != 4) {
-            unset($actividadLaboral["salario_mensual_neto_publico"]);
-            unset($actividadLaboral["fecha_ingreso_publico"]);
-            if ($pareja->experienciaLaboral == null) {
-                $pareja->experienciaLaboral()->create($actividadLaboral);
-            } else {
-                $pareja->experienciaLaboral()->update($actividadLaboral);
-            }
-        } else {
-            if ($pareja->experienciaLaboral != null) {
-                $pareja->experienciaLaboral()->delete();
-            }
-        }
         return redirect()->route("datos_dependiente_declarante.index");
     }
 
@@ -245,8 +213,76 @@ class DatosParejaController extends Controller {
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         //
     }
 
+    public function storeEmpleo(Request $request)
+    {
+        try {
+            $pareja = DatosPareja::find($request->session()->get("declaracion_id"));
+            $actividadLaboral = $request->actividadLaboral;
+            if ($actividadLaboral['ambito_sector_id'] == 1) {
+                $actividadLaboral['salario_mensual_neto'] = $actividadLaboral['salario_mensual_neto_publico'];
+                $actividadLaboral['fecha_ingreso'] = $actividadLaboral['fecha_ingreso_publico'];
+            }
+            if ($actividadLaboral['respuesta_proveedor_id'] == 0) {
+                $actividadLaboral['respuesta_proveedor_id'] = null;
+            }
+            $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
+            $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
+            if ($actividadLaboral["ambito_sector_id"] != 4) {
+                $pareja->experienciaLaboral()->create($actividadLaboral);
+            }
+            $data = $this->getEmpleo($request->session()->get("declaracion_id"));
+            return $data;
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function destroyEmpleo($id)
+    {
+        ExperienciaLaboral::find($id)->delete();
+        $data = $this->getEmpleo($this->request->session()->get("declaracion_id"));
+        return $data;
+    }
+
+    public function getEmpleo($id)
+    {
+        $data = [];
+        $pareja = DatosPareja::find($id);
+        foreach ($pareja->experienciaLaboral as $item) {
+            $item->ambito = $item->ambito_sectores->valor;
+            array_push($data, $item);
+        }
+        return $data;
+    }
+
+    public function editEmpleo($id)
+    {
+        $data = ExperienciaLaboral::find($id);
+        return $data;
+    }
+
+    public function updateEmpleo(Request $request, $id)
+    {
+        $data = ExperienciaLaboral::find($id);
+        $actividadLaboral = $request->actividadLaboral;
+        if ($actividadLaboral['ambito_sector_id'] == 1) {
+            $actividadLaboral['salario_mensual_neto'] = $actividadLaboral['salario_mensual_neto_publico'];
+            $actividadLaboral['fecha_ingreso'] = $actividadLaboral['fecha_ingreso_publico'];
+        }
+        if ($actividadLaboral['respuesta_proveedor_id'] == 0) {
+            $actividadLaboral['respuesta_proveedor_id'] = null;
+        }
+        $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
+        $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
+        if ($actividadLaboral["ambito_sector_id"] != 4) {
+            $data->update($actividadLaboral);
+        }
+        $data = $this->getEmpleo($request->session()->get("declaracion_id"));
+        return $data;
+    }
 }

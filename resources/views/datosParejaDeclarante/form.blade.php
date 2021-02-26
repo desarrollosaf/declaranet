@@ -154,124 +154,80 @@
 </div>
 <hr>
 <h5> ACTIVIDAD LABORAL DE LA PAREJA </h5>
-<div class="form-row">
-    <div class="form-group col-md-4">
-        <strong>{!! Form::label('actividadLaboral.ambito_sector_id', 'Ámbito / Sector :  *') !!}</strong>
-        {!! Form::select('actividadLaboral[ambito_sector_id]', $sectores,isset($experienciaLaboral->ambito_sector_id) ? $experienciaLaboral->ambito_sector_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'ambito-sector', 'placeholder' => "SELECCIONA UNA OPCIÓN", "required" => true]) !!}
-        <span class="text-danger" style="font-size:150%"></span>
-    </div>
-    <div class="form-group col-md-4 sector-privado-otro">
-            <strong>{!! Form::label('actividadLaboral.ambito_sector_id', 'Tipo de empleador :  *') !!}</strong>
-            {!! Form::select('actividadLaboral[regimen_fiscal_id]', $regimenFiscal,isset($experienciaLaboral->regimen_fiscal_id) ? $experienciaLaboral->regimen_fiscal_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'regimen_fiscal_id', 'placeholder' => "SELECCIONA UNA OPCIÓN", "required" => true]) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-    </div>
+<div class="table-responsive-lg">
+    <table class="table table-active table-striped" id="table-experiencia">
+        <thead class="badge-primary">
+        <tr>
+            <th>
+                <center>NIVEL</center>
+            </th>
+            <th>
+                <center>INFORMACIÓN ADICIONAL</center>
+            </th>
+            <th>
+                <center>ACCIONES</center>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @if(count($experiencias))
+            @foreach($experiencias as $experiencia)
+                <tr>
+                    <td>
+                        <center>{{$experiencia->ambito_sectores->valor}}</center>
+                    </td>
+                    @if($experiencia->ambito_sector_id == 1)
+                        <td>
+                            <center>
+                                <strong>NOMBRE:</strong> {{strtoupper($experiencia->ente_publico)}} <br>
+                                <strong>CARGO/PUESTO:</strong> {{strtoupper($experiencia->puesto)}} {{strtoupper($experiencia->cargo_comision)}}
+                                <br>
+                                <strong>PERIODO:</strong>{{strtoupper($experiencia->fecha_ingreso)}}
+                                {{strtoupper($experiencia->fecha_egreso)}}<br>
+                            </center>
+                        </td>
+                    @else
+                        <td>
+                            <center>
+                                <strong>NOMBRE:</strong> {{strtoupper($experiencia->nombre_empresa)}} <br>
+                                <strong>CARGO/PUESTO:</strong> {{strtoupper($experiencia->puesto)}} {{strtoupper($experiencia->cargo_comision)}}
+                                <br>
+                                <strong>PERIODO:</strong>{{strtoupper($experiencia->fecha_ingreso)}}
+                                {{strtoupper($experiencia->fecha_egreso)}}<br>
+                            </center>
+                        </td>
+                    @endif
+                    <td class="all">
+                        <div style="display: inline-block;">
+                            <button data-id="{{$experiencia->id}}" type="button"
+                                    class="btn btn-xs btn-warning btn-editar-experiencia">
+                                <i class="ion ion-edit"></i>
+                            </button>
+                            <button class="btn btn-xs btn-danger btn-borrar" data-id="{{$experiencia->id}}">
+                                <i class="ion ion-trash-a btn-borrar"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="3" class="text-center">
+                    <h6>No hay actividad laboral registrada</h6>
+                </td>
+            </tr>
+        @endif
+        </tbody>
+    </table>
+    <center>
+        <strong>Si desea registrar una actividad laboral pulse:
+            <button type="button" class="btn btn-secondary btn-sm" id="add-act-laboral" data-toggle="modal"
+                    data-target=".bd-example-modal-lg">Agregar
+            </button>
+        </strong>
+    </center>
 </div>
-<div class="sector-privado-otro">
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <div id="empleador_fisica">
-                <strong>{!! Form::label('empleador_fisica', 'Nombre del empleador: *') !!} </strong>
-            </div>
-            <div id="empleador_moral" style="display: none;">
-                <strong>{!! Form::label('empleador_moral', 'Nombre de la empresa, sociedad o asociación: *') !!} </strong>
-            </div>
-            {!! Form::text('actividadLaboral[nombre_empresa]',isset($experienciaLaboral->nombre_empresa) ? $experienciaLaboral->nombre_empresa : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Desarrollo S.A de C.V',  'id' => 'codigo_postalExt']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('actividadLaboral.puesto', 'Puesto: *') !!}</strong>
-            {!! Form::text('actividadLaboral[puesto]',isset($experienciaLaboral->puesto) ? $experienciaLaboral->puesto : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. Análista de Sistemas',  'id' => 'codigo_postalExt']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            <div id="empleador_fisica_RFC">
-                <strong>{!! Form::label('empleador_fisica', 'RFC: ') !!} </strong>
-            </div>
-            <div id="empleador_moral_RFC" style="display: none;">
-                <strong>{!! Form::label('empleador_moral', 'RFC: *') !!} </strong>
-            </div>
-            {!! Form::text('actividadLaboral[rfc]',isset($experienciaLaboral->rfc) ? $experienciaLaboral->rfc : null,['class'=>'form-control tipo-titular text-uppercase',  'id' => 'rfc']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('actividadLaboral.fecha_ingreso', 'Fecha de ingreso al empleo: *') !!}</strong>
-            {!! Form::date('actividadLaboral[fecha_ingreso]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control tipo-titular text-uppercase fecha',  'id' => 'codigo_postalExt', ]) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('actividadLaboral.sector_id','Sector al que pertenece: *') !!}</strong>
-            {!! Form::select('actividadLaboral[sector_id]', $sector, isset($experienciaLaboral->sector_id) ? $experienciaLaboral->sector_id : null,['class'=>'form-control text-uppercase', 'id' => 'sector-privado', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4 especifique-sector">
-            <strong>{!! Form::label('actividadLaboral.especifique_otro_sector', 'Especifique otro sector: *') !!}</strong>
-            {!! Form::text('actividadLaboral[especifique_otro_sector]',isset($experienciaLaboral->especifique_otro_sector) ? $experienciaLaboral->codigo_postal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Sector petrolero',  'id' => 'especifique-sector']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('actividadLaboral.salario_mensual_neto','Salario mensual neto: *') !!}</strong>
-            {!! Form::number('actividadLaboral[salario_mensual_neto]',isset($experienciaLaboral->salario_mensual_neto) ? $experienciaLaboral->salario_mensual_neto : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. $10,000 Mxn',  'id' => 'salario_mensual_neto']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('actividadLaboral.respuesta_proveedor_id','¿Es proveedor o contratista de gobierno? *') !!}</strong>
-            {!! Form::select('actividadLaboral[respuesta_proveedor_id]', $respuesta, isset($experienciaLaboral->respuesta_proveedor_id) ? $experienciaLaboral->respuesta_proveedor_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-    </div>
-</div>
-<div class="sector-publico">
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('nivel_orden_gobierno_id', 'Nivel / Orden de Gobierno: * ') !!}</strong>
-            {!! Form::select('actividadLaboral[nivel_orden_gobierno_id]', $nivelOrdenGobierno,isset($experienciaLaboral->nivel_orden_gobierno_id) ? $experienciaLaboral->nivel_orden_gobierno_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('ambito_publico_id', 'Ámbito Público: *') !!}</strong>
-            {!! Form::select('actividadLaboral[ambito_publico_id]', $ambito, isset($experienciaLaboral->ambito_publico_id) ? $experienciaLaboral->ambito_publico_id : null,['class'=>'form-control tipo-titular text-uppercase', 'id' => 'codigo_postalExt', 'placeholder' => "SELECCIONA UNA OPCIÓN"]) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('ente_publico', 'Nombre del Ente Público: *') !!}</strong>
-            {!! Form::text('actividadLaboral[ente_publico]',isset($experienciaLaboral->ente_publico) ? $experienciaLaboral->ente_publico : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Desarrollo de Sistemas S.A de C.V',  'id' => 'codigo_postalExt', 'title' => "Ingresa código postal a 5 dígitos"]) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('area_adscripcion', 'Área de adscripción: *') !!}</strong>
-            {!! Form::text('actividadLaboral[area_adscripcion]',isset($experienciaLaboral->area_adscripcion) ? $experienciaLaboral->area_adscripcion : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Desarrollo de Tecnología',  'id' => 'codigo_postalExt', 'title' => "Ingresa código postal a 5 dígitos"]) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('Empleo, cargo o comisión: *') !!}</strong>
-            {!! Form::text('actividadLaboral[cargo_comision]',isset($experienciaLaboral->cargo_comision) ? $experienciaLaboral->cargo_comision : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Analista de sistemas',  'id' => 'empleo']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('funcion_pricipal', 'Especifique función principal: *') !!}</strong>
-            {!! Form::text('actividadLaboral[funcion_pricipal]',isset($experienciaLaboral->funcion_pricipal) ? $experienciaLaboral->funcion_pricipal : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p. ej. Desarrollo de sistemas de información',  'id' => 'funcio']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('actividadLaboral.salario_mensual_neto_publico', 'Salario mensual neto: *') !!}</strong>
-            {!! Form::number('actividadLaboral[salario_mensual_neto_publico]',isset($experienciaLaboral->salario_mensual_neto) ? $experienciaLaboral->salario_mensual_neto : null,['class'=>'form-control tipo-titular text-uppercase', 'placeholder'=>'p.ej. $10,000 Mxn',  'id' => 'salario']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-        <div class="form-group col-md-4">
-            <strong>{!! Form::label('fecha_ingreso_publico', 'Fecha de ingreso al empleo: *') !!}</strong>
-            {!! Form::date('actividadLaboral[fecha_ingreso_publico]',isset($experienciaLaboral->fecha_ingreso) ? $experienciaLaboral->fecha_ingreso : null,['class'=>'form-control tipo-titular text-uppercase fecha', 'id' => 'codigo_postalExt']) !!}
-            <span class="text-danger" style="font-size:150%"></span>
-        </div>
-    </div>
-</div>
+
 <div class="form-row">
     <div class="form-group col-md-12">
         <strong>{!! Form::label('datosPareja.observaciones', 'Aclaraciones / Observaciones:  *') !!}</strong>
@@ -287,10 +243,9 @@
 
 @section('scripts')
     <script type="text/javascript">
-
         $(document).ready(function () {
             @isset($experienciaLaboral)
-            let actual = {{$experienciaLaboral->ambito_sector_id}};
+            {{--let actual = {{$experienciaLaboral->ambito_sector_id}};--}}
             @endisset
             $(".form-control").addClass("alert-danger")
             $(".domicilio-MXBinmuebles").hide();
@@ -299,6 +254,7 @@
             $(".sector-publico").hide();
             $(".lugar-reside").hide();
             $(".especifique-sector").hide();
+            $("#cancelar").hide();
             $(".num-int").prop("required", false);
             let date = new Date();
             let day = date.getDate() - 1;
@@ -433,7 +389,7 @@
 
                     $("#regimen_fiscal_id").on("change", function () {
                         var regimen_fiscal_id = document.getElementById("regimen_fiscal_id").value;
-                        if(regimen_fiscal_id == 1){
+                        if (regimen_fiscal_id == 1) {
                             document.getElementById("empleador_fisica").style.display = "block";
                             document.getElementById("empleador_moral").style.display = "none";
                             document.getElementById("empleador_fisica_RFC").style.display = "block";
@@ -443,7 +399,7 @@
                             $("#rfc").prop("pattern", '([A-Z]{4}[0-9]{6}[A-Z0-9]{0,3})');
                             $("#rfc").prop("title", 'Ingresa RFC a 10 o 13 dígitos');
                             $("#rfc").prop("placeholder", 'p. ej. XAXA010101X0A');
-                        }else{
+                        } else {
                             document.getElementById("empleador_fisica").style.display = "none";
                             document.getElementById("empleador_moral").style.display = "block";
                             document.getElementById("empleador_fisica_RFC").style.display = "none";
@@ -456,13 +412,13 @@
                         }
                     });
 
-                    @isset($experienciaLaboral)
-                    if (actual !== sector) {
-                        $(".sector-privado-otro").find("select").val("");
-                        $(".sector-privado-otro").find("input").val("");
-                        actual += 10;
-                    }
-                    @endisset
+                    {{--                    @isset($experienciaLaboral)--}}
+                    {{--                    if (actual !== sector) {--}}
+                    {{--                        $(".sector-privado-otro").find("select").val("");--}}
+                    {{--                        $(".sector-privado-otro").find("input").val("");--}}
+                    {{--                        actual += 10;--}}
+                    {{--                    }--}}
+                    {{--                    @endisset--}}
                 } else {
                     $(".sector-publico").find("select").prop("required", false);
                     $(".sector-publico").find("input").prop("required", false);
@@ -493,15 +449,188 @@
                 let curp = $(this).val();
                 $("#curp").val(curp.toString().toUpperCase());
             });
+            $("#add-act-laboral").click(function () {
+                $("#form-laboral").modal('show');
+                $(".btn-submit-add").show();
+                $(".btn-submit-edit").hide();
+                edit();
+            });
+            $("#cancelar").click(function () {
+                $("#cancelar").hide();
+                $("#add-act-laboral").show();
+                $("#act-laborarl").hide();
+                $("#ambito-sector").prop('required', true);
+            });
+            {{--$('#form-actividad').submit(function (e) {--}}
+            {{--    e.preventDefault();--}}
+            {{--    /*Ajax Request Header setup*/--}}
+            {{--    $.ajaxSetup({--}}
+            {{--        headers: {--}}
+            {{--            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+            {{--        }--}}
+            {{--    });--}}
+
+            {{--    /* Submit form data using ajax*/--}}
+            {{--    $.ajax({--}}
+            {{--        url: "{{route("storeEmpleoPareja")}}",--}}
+            {{--        method: 'post',--}}
+            {{--        data: $(this).serialize(),--}}
+            {{--        success: function (response) {--}}
+            {{--            console.log("listo");--}}
+            {{--        }--}}
+            {{--    });--}}
+            {{--});--}}
+            $(".btn-submit-add").click(function (e) {
+                e.preventDefault();
+                if (!$('#form-actividad').valid()) {
+                    return false;
+                }
+                var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
+                var data = $("#form-actividad").serialize();
+                $.ajax({
+                    type: "post",
+                    url: "{{route("storeEmpleoPareja")}}",
+                    data: data,
+                    success: function (data) {
+                        listar(data);
+                        $("#ambito-sector").change();
+                        $("#sector-privado").change();
+                    }
+                });
+            });
+
+            function listar(data) {
+                if (Object.keys(data).length !== 0) {
+                    var html = '';
+                    $.each(data, function (index, partObj) {
+                        html += '<tr class="text-uppercase">';
+                        html += '    <td>' + partObj.ambito + '</td>';
+                        html += '    <td class="text-center">';
+                        if (partObj.ambito_sector_id === 1) {
+                            html += '       <strong>NOMBRE:</strong>' + partObj.ente_publico + '<br>';
+                            html += '       <strong>CARGO/PUESTO:</strong>' + partObj.cargo_comision + '<br>';
+                            html += '       <strong>PERIODO:</strong>' + partObj.fecha_ingreso + '<br>';
+                        } else {
+                            html += '       <strong>NOMBRE:</strong>' + partObj.nombre_empresa + '<br>';
+                            html += '       <strong>CARGO/PUESTO:</strong>' + partObj.puesto + '<br>';
+                            html += '       <strong>PERIODO:</strong>' + partObj.fecha_ingreso + '<br>';
+                        }
+                        html += '    </td>';
+                        html += '<td>';
+                        html += '   <div style="display: inline-block;">';
+                        html += '    <button type="button" class="btn btn-xs btn-warning btn-editar-experiencia" data-id="' + partObj.id + '">';
+                        html += '    <i class="ion ion-edit"></i></button>';
+
+                        html += ' <button class="btn btn-xs btn-danger btn-borrar" type="button" data-id="' + partObj.id + '">';
+                        html += '<i class="ion ion-trash-a btn-borrar"></i>';
+                        html += '</button></div>';
+                        html += '</td>';
+                        html += '</tr>';
+                        // console.log(html);
+                        $("#table-experiencia tbody").html(html);
+                    });
+                } else {
+                    html += '<tr> <td colspan="3" class="text-center">';
+                    html += '<h6>No hay actividad laboral registrada</h6> </td> </tr>';
+                    $("#table-experiencia tbody").html(html);
+                }
+                $("#form-laboral").modal("hide");
+                $("#form-actividad")[0].reset();
+            }
+
+            $(document).on('click', '.btn-borrar', function (e) {
+                e.preventDefault();
+                var id = $(this).data('id');
+                console.log(id);
+                Swal.fire({
+                    title: '¿Está seguro?',
+                    text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '/datos_pareja_declarante/destroy_empleo/' + id,
+                            async: true,
+                            type: 'GET',
+                            success: function (data) {
+                                listar(data);
+                            }
+                        });
+                    }
+                });
+            });
+
+            $(document).on('click', '.btn-editar-experiencia', function () {
+                $(".btn-submit-add").hide();
+                $(".btn-submit-edit").show();
+                $("#form-actividad")[0].reset();
+                $("#form-laboral").modal('show');
+                var id = $(this).data('id');
+                $.ajax({
+                    url: '/datos_pareja_declarante/edit_empleo/' + id,
+                    async: true,
+                    type: 'GET',
+                    success: function (data) {
+                        $('.btn-submit-edit').attr('data-id', data.id);
+                        $("#ambito-sector").val(data.ambito_sector_id);
+                        $("#regimen_fiscal_id").val(data.regimen_fiscal_id);
+                        $("#nombre-exp").val(data.nombre_empresa);
+                        $("#puesto").val(data.puesto);
+                        $("#rfc").val(data.rfc);
+                        $("#fecha_ingreso_privado").val(data.fecha_ingreso);
+                        $("#sector-privado").val(data.sector_id);
+                        $("#especifique-sector").val(data.especifique_otro_sector);
+                        $("#salario_mensual_neto").val(data.salario_mensual_neto);
+                        $("#proveedor_contratista").val(data.respuesta_proveedor_id);
+                        $("#nombre_ente").val(data.ente_publico);
+                        $("#area").val(data.area_adscripcion);
+                        $("#empleo").val(data.cargo_comision);
+                        $("#funcio").val(data.funcion_pricipal);
+                        $("#salario").val(data.salario_mensual_neto);
+                        $("#fecha_publico").val(data.fecha_ingreso);
+                        edit();
+                    }
+                });
+            })
+
+            function edit() {
+                $("#ambito-sector").change();
+                $("#sector-privado").change();
+            }
+
+            $(".btn-submit-edit").click(function (e) {
+                e.preventDefault();
+                if (!$('#form-actividad').valid()) {
+                    return false;
+                }
+                var id = $(this).data('id');
+                var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
+                var data = $("#form-actividad").serialize();
+                $.ajax({
+                    type: "put",
+                    url: "/datos_pareja_declarante/update/" + id,
+                    data: data,
+                    success: function (data) {
+                        listar(data);
+                        $("#ambito-sector").change();
+                        $("#sector-privado").change();
+                    }
+                });
+            });
+            $(".cancel").click(function () {
+                $("#form-actividad")[0].reset();
+                edit();
+            });
+
             @isset($pareja)
             $("#tipo-ciudadano").change();
             $('#lugar-reside').change();
             $("#habita-domicilio").change();
-            $("#ambito-sector").change();
-            $("#sector-privado").change();
-            @if($experienciaLaboral == null)
-            $("#ambito-sector").val("4");
-            @endif
+            {{--            @if($experienciaLaboral == null)--}}
+            {{--            $("#ambito-sector").val("4");--}}
+            {{--            @endif--}}
             @endisset
         });
 
