@@ -26,7 +26,7 @@ class DatosPareja extends Model
     }
 
     public function experienciaLaboral(){
-        return $this->morphOne(ExperienciaLaboral::class, "experienciable");
+        return $this->morphMany(ExperienciaLaboral::class, "experienciable");
     }
 }
 

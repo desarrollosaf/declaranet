@@ -61,3 +61,7 @@ Route::resource("/viajes", "ViajesController")->name('*', 'viajes');
 Route::resource("participaciones", "ParticipacionDeclaracionController")->name("*",'participaciones');
 Route::resource("instituciones", "InstitucionController")->name("*",'instituciones');
 Route::get("/instituciones/obtener_grado/{grado}","InstitucionController@ObtenerGrado");
+Route::post("/datos_pareja_declarante/ajax","DatosParejaController@storeEmpleo")->name("storeEmpleoPareja");
+Route::get("/datos_pareja_declarante/destroy_empleo/{id}","DatosParejaController@destroyEmpleo");
+Route::get("/datos_pareja_declarante/edit_empleo/{id}","DatosParejaController@editEmpleo");
+Route::put("/datos_pareja_declarante/update/{id}","DatosParejaController@updateEmpleo");
