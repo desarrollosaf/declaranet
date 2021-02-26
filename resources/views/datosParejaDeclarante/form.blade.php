@@ -480,11 +480,16 @@
             {{--        }--}}
             {{--    });--}}
             {{--});--}}
-            $(".btn-submit-add").click(function (e) {
+            $("#form-actividad").submit(function (e) {
                 e.preventDefault();
-                if (!$('#form-actividad').valid()) {
-                    return false;
+                if ($("#cve").val() === "") {
+                    addEmpleo();
+                } else {
+                    updateExperiencia();
                 }
+            });
+
+            function addEmpleo() {
                 var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
                 var data = $("#form-actividad").serialize();
                 $.ajax({
@@ -497,7 +502,7 @@
                         $("#sector-privado").change();
                     }
                 });
-            });
+            }
 
             function listar(data) {
                 if (Object.keys(data).length !== 0) {
@@ -539,9 +544,6 @@
             }
 
             $(document).on('click', '.btn-borrar', function (e) {
-                e.preventDefault();
-                var id = $(this).data('id');
-                console.log(id);
                 Swal.fire({
                     title: '¿Está seguro?',
                     text: 'Al oprimir el botón de aceptar se eliminará el registro',
@@ -590,6 +592,7 @@
                         $("#funcio").val(data.funcion_pricipal);
                         $("#salario").val(data.salario_mensual_neto);
                         $("#fecha_publico").val(data.fecha_ingreso);
+                        $("#cve").val(data.id);
                         edit();
                     }
                 });
@@ -600,12 +603,8 @@
                 $("#sector-privado").change();
             }
 
-            $(".btn-submit-edit").click(function (e) {
-                e.preventDefault();
-                if (!$('#form-actividad').valid()) {
-                    return false;
-                }
-                var id = $(this).data('id');
+            function updateExperiencia() {
+                var id = $("#cve").val();
                 var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
                 var data = $("#form-actividad").serialize();
                 $.ajax({
@@ -618,7 +617,8 @@
                         $("#sector-privado").change();
                     }
                 });
-            });
+            }
+
             $(".cancel").click(function () {
                 $("#form-actividad")[0].reset();
                 edit();
@@ -632,7 +632,8 @@
             {{--            $("#ambito-sector").val("4");--}}
             {{--            @endif--}}
             @endisset
-        });
+        })
+        ;
 
 
     </script>
