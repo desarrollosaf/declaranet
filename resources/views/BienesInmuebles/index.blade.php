@@ -40,7 +40,7 @@
                     </tbody>
                 </table>
                 <center>
-                    <strong>Si desea registrar Experiencia Laboral pulse: <a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
+                    <strong>Si desea registrar Bienes inmuebles pulse: <a href="{{route('bienes_inmuebles.create')}}" class="btn btn-sm btn-secondary">Agregar</a> , de lo contrario vaya al siguiente apartado.</strong>
                 </center>
             </div>
             @else
@@ -95,7 +95,7 @@
         let that = this;
         e.preventDefault();
         Swal.fire({
-            title: '¿Esta seguro que no desea registrar la información solicitada en este apartado?',
+            title: '¿Está seguro que no desea registrar la información solicitada en este apartado?',
             icon: 'warning',
             showCancelButton: true,
             cancelButtonText: 'Cancelar'

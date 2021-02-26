@@ -69,7 +69,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('inversiones.saldo_a_la_fecha', 'Saldo a la fecha de ingreso: *') !!}</strong>
-        {!! Form::number('inversiones[saldo_a_la_fecha]',isset($inversiones) ? $inversiones->saldo_a_la_fecha : null,['class'=>'form-control color-tercero', 'placeholder'=>'p.ej.$50000 Mxn',  'id' => 'saldo_a_la_fecha', 'required' => 'true']) !!}
+        {!! Form::number('inversiones[saldo_a_la_fecha]',isset($inversiones) ? $inversiones->saldo_a_la_fecha : null,['class'=>'form-control color-tercero', 'placeholder'=>'P.EJ.$50000 MXN',  'id' => 'saldo_a_la_fecha', 'required' => 'true']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>

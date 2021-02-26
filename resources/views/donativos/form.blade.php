@@ -52,7 +52,7 @@
 <div class="form-row">
     <div class="form-group col-md-12">
         <strong>{!! Form::label('donativos.observaciones', 'Aclaraciones / Observaciones:  *') !!}</strong>
-        {!! Form::textarea('donativos[observaciones]', isset($donativo->observaciones) ? $donativo->observaciones : null, ['class'=>'form-control alert-danger  text-uppercase']) !!}
+        {!! Form::textarea('donativos[observaciones]', isset($donativo->observaciones) ? $donativo->observaciones : null, ['class'=>'form-control alert-danger  text-uppercase','id'=>'observaciones']) !!}
         <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>
@@ -61,6 +61,7 @@
     $(document).ready(function(){
       $(".especifique-fundaciones").hide();
       $(".form-control").prop("required", true);
+      $("#observaciones").prop("required", false);
       $(".especifique-dependientes").find("input").prop("readOnly", true);
       $("#especifique-otro").prop("readOnly", true);
       $("#titular-realiza").change(function(){

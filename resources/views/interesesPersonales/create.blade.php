@@ -12,24 +12,31 @@
         </div>
         <div class="collapse" id="collapseExample">
             <div class="card-body">
-                Este apartado solo lo llenaran las personas servidoras públicas que tengan participación en un fideicomiso, ya sea en el carácter de fideicomitente, fiduciario, fideicomisario o dentro del consejo técnico. Deberá reportar hasta los últimos dos años.
+                <strong>Deberá declarar intereses personales del declarante que pudieran influir en el empleo,cargo o comisión:</strong>
                 <ol>
-                    <li><strong>Titular de la participación.</strong> Elegir quien es el participante en el fideicomiso, el Declarante, Pareja o dependiente económico.</li>
-                    <li><strong>Tipo de fideicomiso.</strong> Seleccionar si es público, privado o mixto.</li>
-                    <li><strong>Tipo de participación.</strong> Seleccionar su participación como fideicomitente, fiduciario, fideicomisario o dentro del Comité Técnico.</li>
-                    <li><strong>Tipo de persona del fideicomiso.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre o razón social del fideicomiso.</strong> Proporcionar nombre completo.</li>
-                    <li><strong>RFC del fideicomiso.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomiso.</li>
-                    <li><strong>Fideicomitente.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre o razón social del fideicomitente.</strong> Proporcionar nombre completo.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomitente.</li>
-                    <li><strong>Tipo de personal del fiduciario.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fiduciario.</li>
-                    <li><strong>Fideicomisario.</strong> Seleccionar si es persona física o persona moral.</li>
-                    <li><strong>Nombre o razón social del fideicomisario.</strong> Proporcionar nombre completo.</li>
-                    <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomisario.</li>
-                    <li><strong>Sector productivo al que pertenece.</strong> Seleccionar alguno de la lista desplegable.</li>
-                    <li><strong>¿Dónde se localiza el fideicomiso?</strong> Seleccionar en México o en el extranjero.</li>
+                <br>
+                <li><strong>Datos del cónyuge, concubina o concubinario y dependientes económicos que laborenen el Gobierno Federal, Estatal o Municipal, o en órganos autónomos.</strong></li>
+                <br>
+                <li><strong>Familiares consanguíneos hasta el cuarto grado, por afinidad o civil, que laboren en el Gobierno Federal, Estatal o Municipal, o en órganos autónomos.</strong></li>
+               
+                <br><ul><strong> Entiéndase por familiares consanguíneos hasta el cuarto grado, a los siguientes:</strong> padre, madre, hijo, abuelo (a), hermano (a), nieto (a), primo (a), sobrino (a), bisabuelo (a), tíos abuelos y sobrinos nietos.</ul>
+                <ul> <strong>Entiéndase por familiares por afinidad hasta el cuarto grado, a los siguientes:</strong> padre del cónyuge, madre del cónyuge, hijo del cónyuge, abuelo (a) del cónyuge, hermano (a) del cónyuge, nieto (a) del cónyuge, primo (a) del cónyuge, sobrino (a) del cónyuge, bisabuelo(a) del cónyuge, tíos abuelos del cónyuge, sobrinos nietos del cónyuge, nuera y yerno,</ul>
+                <ul><strong>Entiéndase por familiares por parentesco civil, a los siguientes:</strong> adoptante y adoptado</ul>
+                <br>
+                <li><strong>Actividad laboral.</strong></li>
+                Indicar si el cónyuge, concubina/concubinario o familiares de los establecidos en la lista que se despliega hasta el cuarto grado, consanguíneo, por afinidad o civil, se encuentran trabajando en el sector público. De ser el caso, debe llenar los siguientes campos:
+                 <br>
+                <li><strong>Sector público.</strong></li>
+                Nivel/orden de gobierno. Seleccionar el orden de gobierno en el que se encuentra: federal, estatal o municipal/alcaldía.
+                 <br>
+                <li><strong>Ámbito público.</strong></li>
+                Señalar la naturaleza jurídica al que pertenece: ejecutivo, legislativo,judicial u órgano autónomo.
+                 <br>
+                <li><strong>Nombre del Ente Público:</strong></li> Señalar el Ente Público al cual se encuentra adscrita la plaza.
+                 <br>
+                <li><strong>Empleo, cargo o comisión:</strong></li> Señalar el nombre del empleo, cargo o comisión que se establece en su recibo de nómina, nombramiento, contrato u oficio de comisión.
+                 <br>
+                <li><strong>Especifique función principal:</strong></li> Señalar cuál es la función o actividad principal que desempeña.
                 </ol>
                 <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
             </div>

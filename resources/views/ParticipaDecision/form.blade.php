@@ -17,13 +17,13 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"> <strong>Tipo de Institución: *</strong></label>
-                {!! Form::select('participaciones[tipo_instituciones_id]', $institucion, isset($participaciones) ? $participaciones->tipo_instituciones_id : [],['class'=>'form-control',  'id' => 'tipo_instituciones_id', 'required' => true]) !!}
+                {!! Form::select('participaciones[tipo_instituciones_id]', $institucion, isset($participaciones) ? $participaciones->tipo_instituciones_id : [],['class'=>'form-control text-uppercase',  'id' => 'tipo_instituciones_id', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" style="text-align:justify"> <strong>Especifique: *</strong></label>
-                    {!! Form::text('participaciones[especifique_institucion]',isset($participaciones) ? $participaciones->especifique_institucion :null,['class'=>'form-control', 'placeholder'=>'P. ej. No gubernamental', 'disabled'=>'disabled',  'id' => 'especifique_institucion', 'required' => true]) !!}
+                    {!! Form::text('participaciones[especifique_institucion]',isset($participaciones) ? $participaciones->especifique_institucion :null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. NO GUBERNAMENTAL', 'disabled'=>'disabled',  'id' => 'especifique_institucion', 'required' => true]) !!}
                 </div>
             </div>
         </div>
@@ -35,19 +35,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"> <strong>Nombre de la Institución: *</strong></label>
-                    {!! Form::text('participaciones[nombre_institucion]',isset($participaciones) ? $participaciones->nombre_institucion :null,['class'=>'form-control', 'placeholder'=>'P. ej. Ayuda Canica A.C.',  'id' => 'nombre_institucion', 'required' => true]) !!}
+                    {!! Form::text('participaciones[nombre_institucion]',isset($participaciones) ? $participaciones->nombre_institucion :null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. AYUDA CANICA A.C.',  'id' => 'nombre_institucion', 'required' => true]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="State"> <strong>RFC: *</strong></label>
-                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. ej. XAX010101XAX',  'id' => 'rfc', 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'required' => true,  'maxlength'=>"12", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
+                    {!! Form::text('participaciones[rfc]',isset($participaciones) ? $participaciones->rfc :null,['class'=>'form-control text-uppercase', 'placeholder'=>'P. EJ. XAX010101XAX',  'id' => 'rfc', 'pattern' => "([A-Z]{3}[0-9]{6}[A-Z0-9]{3})", 'required' => true,  'maxlength'=>"12", 'title' => "Ingresa RFC a 12 dígitos"]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" for="ProcessNum"> <strong>Puesto / rol: *</strong></label>
-                    {!! Form::text('participaciones[puesto_rol]',isset($participaciones) ? $participaciones->puesto_rol :null,['class'=>'form-control', 'placeholder'=>'P. ej. Analista de sistemas',  'id' => 'puesto_rol', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}" , 'required' => true]) !!}
+                    {!! Form::text('participaciones[puesto_rol]',isset($participaciones) ? $participaciones->puesto_rol :null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.EJ.ANALISTA DE SISTEMAS',  'id' => 'puesto_rol', 'pattern' => "[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}" , 'required' => true]) !!}
                 </div>
             </div>
 
@@ -61,12 +61,12 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="control-label" style="line-height : 13px;"> <strong>Fecha de inicio de participación dentro de la institución: *</strong></label>
-                    {!! Form::date('participaciones[fecha_inicio]',isset($participaciones) ? $participaciones->fecha_inicio :null,['class'=>'form-control',   'id' => 'fecha_inicio', 'required' => true]) !!}
+                    {!! Form::date('participaciones[fecha_inicio]',isset($participaciones) ? $participaciones->fecha_inicio :null,['class'=>'form-control text-uppercase',   'id' => 'fecha_inicio', 'required' => true,'max' => date('Y-m-d')]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label class="control-label" style="line-height : 13px;"> <strong>¿Recibe remuneración por su participación? *</strong></label>
+                    <label class="control-label" style="line-height : 13px;"> <strong>¿Recibe remuneración por su participación?:*</strong></label>
                     {!! Form::select('participaciones[remuneracion]', $remuneracion, isset($participaciones) ? $participaciones->remuneracion : [],['class'=>'form-control',  'id' => 'remuneracion', 'required' => true]) !!}
                 </div>
             </div>
@@ -75,7 +75,7 @@
             <div class="col-lg-4" >
                 <div class="form-group">
                     <label class="control-label" for="NumDoc"> <strong>Monto mensual neto: *</strong></label>
-                    {!! Form::text('participaciones[monto_mensual]',isset($participaciones) ? $participaciones->monto_mensual :null,['class'=>'form-control', 'placeholder'=>'P. ej. $1,000,000.00 Mxn',  'id' => 'monto_mensual', 'disabled' => 'disabled', 'required' => true, 'pattern' => "[0-9]{1,8}",'title' => "Ingresa monto mensual en dígitos", 'size'=>"8", 'maxlength'=>"8"]) !!}
+                    {!! Form::text('participaciones[monto_mensual]',isset($participaciones) ? $participaciones->monto_mensual :null,['class'=>'form-control text-uppercase', 'placeholder'=>'P.EJ. $1,000,000.00 MXN',  'id' => 'monto_mensual', 'disabled' => 'disabled', 'required' => true, 'pattern' => "[0-9]{1,8}",'title' => "Ingresa monto mensual en dígitos", 'size'=>"8", 'maxlength'=>"8"]) !!}
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
                     </div>
                     <div id="ex" style="display: none;">
                         <label class="form-check-label" for="inlineCheckbox1"> <strong>País donde se localiza: *</strong></label>
-                        {!! Form::text('participaciones[pais]', isset($participaciones) ? $participaciones->pais : null,['class'=>'form-control',  'id' => 'pais','placeholder'=>'p. ej. Estados Unidos', 'required' => true]) !!}
+                        {!! Form::text('participaciones[pais]', isset($participaciones) ? $participaciones->pais : null,['class'=>'form-control text-uppercase',  'id' => 'pais','placeholder'=>'P.EJ. ESTADOS UNIDOS', 'required' => true]) !!}
                     </div>
                 </div>
             </div>
@@ -190,13 +190,13 @@
         $("#tipo_relaciones_id").on("change",function(){
             var tipo_relaciones_id = document.getElementById("tipo_relaciones_id").value
             if(tipo_relaciones_id != 1){
-                $("#color").find("select").prop("class","form-control alert-danger");
-                $("#color").find("input").prop("class","form-control alert-danger");
+                $("#color").find("select").prop("class","form-control text-uppercase alert-danger");
+                $("#color").find("input").prop("class","form-control text-uppercase alert-danger");
                 $("#submit").prop("class","btn btn-secondary");
 
             }else{
-                $("#color").find("select").prop("class","form-control");
-                $("#color").find("input").prop("class","form-control");
+                $("#color").find("select").prop("class","form-control text-uppercase");
+                $("#color").find("input").prop("class","form-control text-uppercase");
                 $("#submit").prop("class","btn btn-secondary");
             }
         });

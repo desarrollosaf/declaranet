@@ -104,7 +104,7 @@
 <div class="form-row">
     <div class="form-group col-md-12">
         <strong> {!! Form::label('adeudos.aclaraciones_observaciones', 'Aclaraciones / Observaciones:') !!}</strong>
-        {!! Form::textarea('adeudos[aclaraciones_observaciones]',isset($adeudos) ? $adeudos->aclaraciones_observaciones : null,['class'=>'form-control text-uppercase  alert-danger']) !!}
+        {!! Form::textarea('adeudos[aclaraciones_observaciones]',isset($adeudos) ? $adeudos->aclaraciones_observaciones : null,['class'=>'form-control  alert-danger']) !!}
         <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
     </div>
 </div>

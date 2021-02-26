@@ -1,51 +1,55 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
-        <div class="card mb-5 shadow-sm border-0 shadow-hover">
-            <div class="card-header">
-                <div class="float-left">
-                    <h3>VIAJES</h3> <h3> (Hasta los últimos dos años)</h3>
-                </div>
-                <div class="float-right">
-                    <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
-                </div>
+<div class="container">
+    <div class="card mb-5 shadow-sm border-0 shadow-hover">
+        <div class="card-header">
+            <div class="float-left">
+                <h3>VIAJES</h3> <h3> (Hasta los últimos dos años)</h3>
             </div>
-            <div class="collapse" id="collapseExample">
-                <div class="card-body">
-                    Este apartado solo lo llenaran las personas servidoras públicas que tengan participación en un fideicomiso, ya sea en el carácter de fideicomitente, fiduciario, fideicomisario o dentro del consejo técnico. Deberá reportar hasta los últimos dos años.
-                    <ol>
-                        <li><strong>Titular de la participación.</strong> Elegir quien es el participante en el fideicomiso, el Declarante, Pareja o dependiente económico.</li>
-                        <li><strong>Tipo de fideicomiso.</strong> Seleccionar si es público, privado o mixto.</li>
-                        <li><strong>Tipo de participación.</strong> Seleccionar su participación como fideicomitente, fiduciario, fideicomisario o dentro del Comité Técnico.</li>
-                        <li><strong>Tipo de persona del fideicomiso.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>Nombre o razón social del fideicomiso.</strong> Proporcionar nombre completo.</li>
-                        <li><strong>RFC del fideicomiso.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomiso.</li>
-                        <li><strong>Fideicomitente.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>Nombre o razón social del fideicomitente.</strong> Proporcionar nombre completo.</li>
-                        <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomitente.</li>
-                        <li><strong>Tipo de personal del fiduciario.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fiduciario.</li>
-                        <li><strong>Fideicomisario.</strong> Seleccionar si es persona física o persona moral.</li>
-                        <li><strong>Nombre o razón social del fideicomisario.</strong> Proporcionar nombre completo.</li>
-                        <li><strong>RFC.</strong> En caso de personas físicas proporcionar los trece dígitos. En caso de personas morales establecer los doce dígitos del fideicomisario.</li>
-                        <li><strong>Sector productivo al que pertenece.</strong> Seleccionar alguno de la lista desplegable.</li>
-                        <li><strong>¿Dónde se localiza el fideicomiso?</strong> Seleccionar en México o en el extranjero.</li>
-                    </ol>
-                    <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
-                </div>
-            </div>
-            <div class="card-body">
-
-                {!! Form::open(['route'=>'viajes.store', 'method'=>'POST', 'role' => 'form','id' => 'formViajes']) !!}
-                @include('viajes.form')
-                <div class="text-center">
-                    <a class='btn btn-submit text-light' href="{{route("viajes.index")}}">Ir a la sección anterior</a>
-                    {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
-                </div>
-                {!! Form::close() !!}
+            <div class="float-right">
+                <span class="badge badge-success ml-auto px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> AYUDA</span>
             </div>
         </div>
+        <div class="collapse" id="collapseExample">
+            <div class="card-body">
+                <strong>Proporcionar los datos del o los viajes realizados por el servidor público, su cónyuge,concubina/concubinario, familiares hasta en segundo grado y/o dependientes económicos del cónyuge, dependientes económicos o familiares hasta en segundo grado, financiados por terceros.</strong>
+                <br>
+                <br>
+                <strong> Se entiende como familiares consanguíneos hasta el segundo grado, a los siguientes:</strong> padre, madre, hijo, abuelo, hermanos y nieto.
+                <br>
+                <br>
+                <strong>En su caso, deberá llenar los siguientes datos:</strong>
+                <ol>
+                    <br>
+                    <li><strong>Lugar:</strong> México o en el extranjero</li>
+                    <li><strong>Motivo del viaje, por ejemplo:</strong> (turístico, académico, negocios o laboral y otros).</li>
+                    <li><strong>Tipo de participación.</strong> Seleccionar su participación como fideicomitente, fiduciario, fideicomisario o dentro del Comité Técnico.</li>
+                    <li><strong>Monto del viaje.</strong></li>
+                    <li><strong>Si quien pagó el viaje, es una persona física o moral.</strong></li>
+                    <li><strong>Registro Federal de Contribuyentes (RFC)</strong> Si es de la persona moral dejar los doce dígitos, si es persona física trece dígitos.</li>
+                    <li><strong>Actividad laboral. En la que deberá especificar los siguientes datos:</strong></li>
+                </ol>
+                <strong>Ámbito al que pertenece el tercero:</strong>
+                <ol>
+                    <li><strong>Público</strong></li>
+                    <li><strong>Privado</strong></li>
+                    <li><strong>Otro (desplegando cuadro donde especifique ¿cuál?)</strong></li>
+                </ol>
+                <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
+            </div>
+        </div>
+        <div class="card-body">
+
+            {!! Form::open(['route'=>'viajes.store', 'method'=>'POST', 'role' => 'form','id' => 'formViajes']) !!}
+            @include('viajes.form')
+            <div class="text-center">
+                <a class='btn btn-submit text-light' href="{{route("viajes.index")}}">Ir a la sección anterior</a>
+                {{ Form::button('Guardar e ir a la siguiente sección', ['type' => 'submit', 'class' => 'btn btn-submit text-light'] )}}
+            </div>
+            {!! Form::close() !!}
+        </div>
     </div>
-    <input type="hidden" id="accion" value="crear">
+</div>
+<input type="hidden" id="accion" value="crear">
 @endsection
 

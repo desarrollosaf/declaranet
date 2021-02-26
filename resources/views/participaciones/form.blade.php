@@ -25,7 +25,7 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('participacion[participaciones economicas]', 'Participaciones economicas:*') !!}</strong>
+        <strong>{!! Form::label('participacion[participaciones economicas]', 'Participaciones económicas:*') !!}</strong>
         <select class="form-control text-uppercase" id="tipo_titular_donativo_id" name="participacion[tipo_titular_donativo_id]">
             <option value="" data-grado="">Selecciona una opción</option>
             @foreach($tipo_titular as $value)
@@ -43,12 +43,12 @@
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('participacion[Institicion en la que participa ]', 'Institicion en la que participa:*') !!}</strong>
+        <strong>{!! Form::label('participacion[Institicion en la que participa ]', 'Institución en la que participa:*') !!}</strong>
         {!! Form::select('participacion[institucion_participacion_id]',[],isset($participacion) ? $participacion->institucion_participacion_id : null,['class'=>'form-control text-uppercase', 'placeholder'=>'Selecciona una opción','required' => true, 'id' => 'institucion_participacion_id']) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
     <div class="form-group col-md-4">
-        <strong>{!! Form::label('participacion[Naturaleza del vinculo  ]', 'Naturaleza del vinculo:*') !!}</strong>
+        <strong>{!! Form::label('participacion[Naturaleza del vinculo  ]', 'Naturaleza del vínculo:*') !!}</strong>
         {!! Form::select('participacion[tipo_participacion_id]',isset($tipo_participacion) ? $tipo_participacion : [],isset($participacion) ? $participacion->tipo_participacion_id : null,['class'=>'form-control text-uppercase', 'placeholder'=>'Selecciona una opción',  'id' => 'nombre','required' => true,'pattern'=>"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>

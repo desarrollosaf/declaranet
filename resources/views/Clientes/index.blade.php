@@ -97,7 +97,25 @@
 
 @section('scripts')
     <script>
-        $('.btn-ninguno').on('click', function (e) {
+      $('.btn-borrar').on('click', function (e) {
+        let that = this;
+        console.log('boton clic');
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: 'Al oprimir el botón de aceptar se eliminará el registro',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $(that).closest('form').submit();
+            }
+        });
+        return false;
+    });   
+    
+    $('.btn-ninguno').on('click', function (e) {
             let that = this;
             e.preventDefault();
             Swal.fire({
