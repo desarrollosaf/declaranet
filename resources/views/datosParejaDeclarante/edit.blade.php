@@ -144,6 +144,7 @@
                             <div class="modal-body">
                                 <form id="form-actividad">
                                     {!! csrf_field() !!}
+                                    {!! Form::text('cve', null,['id'=>'cve', 'hidden']) !!}
                                     <div id="act-laborarl">
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
