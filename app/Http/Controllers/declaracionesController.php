@@ -1147,7 +1147,7 @@ class declaracionesController extends Controller
                                 }
                             }
 
-                            if ($vehiculo->tipoOperaciones->valor == "AGREGAR"){
+                            if ($vehiculo->tipoOperacion == "AGREGAR"){
                                 $motivoBajaVehiculoClave = null;
                                 $motivoBajaVehiculoValor = null;
                             }
