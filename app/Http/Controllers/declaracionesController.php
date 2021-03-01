@@ -2372,7 +2372,7 @@ class declaracionesController extends Controller
                                 ]),
                             );
                         } else {
-                            dd($title->pareja->experienciaLaboral->ambito_sector_id);
+                            dd($experiencia_pareja);
                             if($experiencia_pareja->ambito_sector_id == null){
                                 $experiencia_ambito_sectores_clave = null;
                                 $experiencia_ambito_sectores_valor = null;
