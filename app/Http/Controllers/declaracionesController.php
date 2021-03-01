@@ -296,7 +296,7 @@ class declaracionesController extends Controller
                                 $domicilio_dependiente = $title->domicilio;
                                 $dependiente_habita = true;
                             } else if ($DependienteEconomicos->respuesta_id == 2) {
-                                $domicilio_dependiente = $title->DependienteEconomicos->domicilio;
+                                $domicilio_dependiente = $DependienteEconomicos->domicilio;
                                 $dependiente_habita = false;
                             } else {
                                 $dependiente_habita = null;
@@ -2431,15 +2431,8 @@ class declaracionesController extends Controller
                                 ]),
                             );
                         } else {
-                            dd($experiencia_pareja);
-
-                         if(count($experiencia_pareja)){
                              $experiencia_ambito_sectores_clave = $experiencia_pareja[0]->ambito_sectores->clave;
                              $experiencia_ambito_sectores_valor = $experiencia_pareja[0]->ambito_sectores->valor;
-                         }else {
-                             $experiencia_ambito_sectores_clave = null;
-                             $experiencia_ambito_sectores_valor = null;
-                         }
 
                             $dependienteEconomico = false;
                             if (isset($title->pareja) && $title->pareja->respuesta_dependiente_id == 1) {
