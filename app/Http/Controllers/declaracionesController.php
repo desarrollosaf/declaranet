@@ -490,7 +490,7 @@ class declaracionesController extends Controller
                                 );
                             }
 
-                            if($experiencia_DependienteEconomicos[0]->sector_id == null){
+                            if($experiencia_DependienteEconomicos[0] ==  null){
                                 $sectorDependientesClave = null;
                                 $sectorDependientesValor = null;
                             }else{
