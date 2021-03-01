@@ -1359,8 +1359,8 @@ class declaracionesController extends Controller
                                 ]),
                                 'fechaAdquisicion' => $mueble->fecha_adquisicion,
                                 'motivoBaja' => ([
-                                    'clave' => '',
-                                    'valor' => '',
+                                    'clave' => $motivoBajaMuebleClave,
+                                    'valor' => $motivoBajaMuebleValor,
                                 ]),
                             );
                         }
