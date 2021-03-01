@@ -303,7 +303,7 @@ class declaracionesController extends Controller
                                 $domicilio_dependiente = null;
                             }
 
-                            if ($DependienteEconomicos->dato_laboral == null) {
+                            if ($DependienteEconomicos[0]->dato_laboral == null) {
                                 $experiencia_DependienteEconomicos = null;
                                 $sector_clave = null;
                                 $sector_valor = null;
@@ -334,7 +334,6 @@ class declaracionesController extends Controller
 
                             } else {
                                 $experiencia_DependienteEconomicos = $DependienteEconomicos->dato_laboral;
-                                dd($experiencia_DependienteEconomicos[0]);
                                 if ($experiencia_DependienteEconomicos[0]->sector_id == null || $experiencia_DependienteEconomicos[0]->sector_id == 0) {
                                     $sector_clave = null;
                                     $sector_valor = null;
