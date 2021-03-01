@@ -2393,10 +2393,17 @@ class declaracionesController extends Controller
                                 }else{
                                     $nivelOrdenGobienrnoPareja = $experiencia_pareja[0]->Nivelordengobiernos->valor;
                                 }
+
+                                if($experiencia_pareja[0]->ambito_publico_id == null){
+                                    $ambitosPublicosPareja = null;
+                                }else{
+                                    $ambitosPublicosPareja = $experiencia_pareja[0]->ambitoPublicos->valor;
+                                }
+
                                 $actividadLaboralSectorPublico = array(
 
                                     'nivelOrdenGobierno' => $nivelOrdenGobienrnoPareja,
-                                    'ambitoPublico' => $experiencia_pareja[0]->ambitoPublicos->valor,
+                                    'ambitoPublico' => $ambitosPublicosPareja,
                                     'nombreEntePublico' => $experiencia_pareja[0]->ente_publico,
                                     'areaAdscripcion' => $experiencia_pareja[0]->area_adscripcion,
                                     'empleoCargoComision' => $experiencia_pareja[0]->cargo_comision,
