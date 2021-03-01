@@ -2431,7 +2431,7 @@ class declaracionesController extends Controller
                                 ]),
                             );
                         } else {
-
+                            dd($experiencia_pareja);
                          if(count($experiencia_pareja) >= 1){
                              $experiencia_ambito_sectores_clave = $experiencia_pareja[0]->ambito_sectores->clave;
                              $experiencia_ambito_sectores_valor = $experiencia_pareja[0]->ambito_sectores->valor;
@@ -2450,7 +2450,7 @@ class declaracionesController extends Controller
                                 $habitaDomicilioDeclarante = true;
                                 //   $lugarReside = $title->d
                             }
-       dd($experiencia_pareja[0]);
+
                             if($experiencia_pareja[0] == null){
                                 $nivelOrdenGobienrnoPareja = null;
                                     $ambitosPublicosPareja = null;
