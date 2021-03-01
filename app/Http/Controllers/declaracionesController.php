@@ -3007,6 +3007,7 @@ class declaracionesController extends Controller
                         );
                         $aclaraciones_domicilio_declarante = $title->domicilio->observaciones;
                     }
+                    $nombre = $title->servidor_publico->nombre;
 
                     $temparray [$key] = $resultados = [
                         'id' => '',
@@ -3020,7 +3021,7 @@ class declaracionesController extends Controller
                         'declaracion' => ([
                             'situacionPatrimonial' => ([
                                 'datosGenerales' => ([
-                                    'nombre' => $title->servidor_publico->nombre,
+                                    'nombre' => $nombre,
                                     'primerApellido' => $title->servidor_publico->primer_apellido,
                                     'segundoApellido' => $title->servidor_publico->segundo_apellido,
                                     'curp' => $title->servidor_publico->curp,
