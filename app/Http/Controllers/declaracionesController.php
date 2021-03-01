@@ -303,7 +303,7 @@ class declaracionesController extends Controller
                                 $domicilio_dependiente = null;
                             }
 
-                            if ($DependienteEconomicos[0]->dato_laboral == null) {
+                            if ($DependienteEconomicos->dato_laboral == null) {
                                 $experiencia_DependienteEconomicos = null;
                                 $sector_clave = null;
                                 $sector_valor = null;
@@ -334,13 +334,42 @@ class declaracionesController extends Controller
 
                             } else {
                                 $experiencia_DependienteEconomicos = $DependienteEconomicos->dato_laboral;
-                                if ($experiencia_DependienteEconomicos[0]->sector_id == null || $experiencia_DependienteEconomicos[0]->sector_id == 0) {
+                                if ($experiencia_DependienteEconomicos[0] == null) {
+                                    $experiencia_DependienteEconomicos = null;
                                     $sector_clave = null;
                                     $sector_valor = null;
+                                    $actividadLaboralSectorPublico = array(
+                                        'nivelOrdenGobierno' => null,
+                                        'ambitoPublico' => null,
+                                        'nombreEntePublico' => null,
+                                        'areaAdscripcion' => null,
+                                        'empleoCargoComision' => null,
+                                        'funcionPrincipal' => null,
+                                        'salarioMensualNeto' => ([
+                                            'valor' => null,
+                                            'moneda' => null,
+                                        ]),
+                                        'fechaIngreso' => null,
+                                    );
+                                    $actividadLaboralSectorPrivadoOtro = array(
+                                        'nombreEmpresaSociedadAsociacion' => null,
+                                        'rfc' => null,
+                                        'empleoCargoComision' => null,
+                                        'fechaIngreso' => null,
+                                        'salarioMensualNeto' => ([
+                                            'valor' => null,
+                                            'moneda' => null,
+                                        ]),
+                                    );
+                                    $proveedorContratistaGobierno = false;
                                 } else {
-                                    $sector_clave = $experiencia_DependienteEconomicos[0]->sectores->clave;
-                                    $sector_valor = $experiencia_DependienteEconomicos[0]->sectores->valor;
-                                }
+                                    if ($experiencia_DependienteEconomicos[0]->sector_id == null || $experiencia_DependienteEconomicos[0]->sector_id == 0) {
+                                        $sector_clave = null;
+                                        $sector_valor = null;
+                                    } else {
+                                        $sector_clave = $experiencia_DependienteEconomicos[0]->sectores->clave;
+                                        $sector_valor = $experiencia_DependienteEconomicos[0]->sectores->valor;
+                                    }
                                 $sector_clave = $sector_clave;
                                 $sector_valor = $sector_valor;
                                 if ($experiencia_DependienteEconomicos[0]->respuesta_id == 1) {
@@ -405,7 +434,7 @@ class declaracionesController extends Controller
                                     );
                                 }
                             }
-
+                        }
                             if ($domicilio_dependiente == null) {
                                 $ninguno_dependientes = true;
                                 $domicilio_dep_mex = array(
