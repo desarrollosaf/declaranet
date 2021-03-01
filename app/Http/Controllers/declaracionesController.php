@@ -2373,8 +2373,8 @@ class declaracionesController extends Controller
                             );
                         }
                         else {
-                            $experiencia_ambito_sectores_clave = $experiencia_pareja[0]->ambitosSectores->clave;
-                            $experiencia_ambito_sectores_valor = $experiencia_pareja[0]->ambitosSectores->valor;
+                            $experiencia_ambito_sectores_clave = $experiencia_pareja[0]->ambito_sectores->clave;
+                            $experiencia_ambito_sectores_valor = $experiencia_pareja[0]->ambito_sectores->valor;
 
                             $dependienteEconomico = false;
                             if (isset($title->pareja) && $title->pareja->respuesta_dependiente_id == 1) {
