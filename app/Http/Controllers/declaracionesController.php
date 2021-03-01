@@ -2373,7 +2373,7 @@ class declaracionesController extends Controller
                             );
                         }
                         else {
-                           dd($experiencia_pareja);
+                           dd($experiencia_pareja[0]);
                             $experiencia_ambito_sectores_clave = $experiencia_pareja->ambitosSectores->clave;
                             $experiencia_ambito_sectores_valor = $experiencia_pareja->ambitosSectores->valor;
 
