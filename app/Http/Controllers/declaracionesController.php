@@ -2450,8 +2450,9 @@ class declaracionesController extends Controller
                                 $habitaDomicilioDeclarante = true;
                                 //   $lugarReside = $title->d
                             }
-dd($experiencia_pareja[0]);
+
                             if ($experiencia_pareja[0]->ambito_sector_id == "1") {
+                                dd("entra uf exp");
                                 if($experiencia_pareja[0]->nivel_orden_gobierno_id == null){
                                     $nivelOrdenGobienrnoPareja = null;
                                 }else{
