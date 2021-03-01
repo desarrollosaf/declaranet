@@ -2388,10 +2388,14 @@ class declaracionesController extends Controller
                             }
 
                             if ($experiencia_pareja[0]->ambito_sector_id == 1) {
-                                dd($experiencia_pareja[0]->Nivelordengobiernos);
+                                if($experiencia_pareja[0]->nivel_orden_gobierno_id == null){
+                                    $nivelOrdenGobienrnoPareja = null;
+                                }else{
+                                    $nivelOrdenGobienrnoPareja = $experiencia_pareja[0]->Nivelordengobiernos->valor;
+                                }
                                 $actividadLaboralSectorPublico = array(
 
-                                    'nivelOrdenGobierno' => $experiencia_pareja[0]->Nivelordengobiernos->valor,
+                                    'nivelOrdenGobierno' => $nivelOrdenGobienrnoPareja,
                                     'ambitoPublico' => $experiencia_pareja[0]->ambitoPublicos->valor,
                                     'nombreEntePublico' => $experiencia_pareja[0]->ente_publico,
                                     'areaAdscripcion' => $experiencia_pareja[0]->area_adscripcion,
