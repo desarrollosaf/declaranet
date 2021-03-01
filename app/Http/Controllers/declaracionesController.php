@@ -2452,7 +2452,7 @@ class declaracionesController extends Controller
                             }
 
                             if ($experiencia_pareja[0]->ambito_sector_id == "1") {
-                                dd("entra uf exp");
+                               // dd("entra uf exp");
                                 if($experiencia_pareja[0]->nivel_orden_gobierno_id == null){
                                     $nivelOrdenGobienrnoPareja = null;
                                 }else{
