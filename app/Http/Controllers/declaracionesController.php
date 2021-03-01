@@ -2372,12 +2372,11 @@ class declaracionesController extends Controller
                                 ]),
                             );
                         } else {
+                            dd(count($experiencia_pareja));
 
-                          //  $experiencia_ambito_sectores_clave = $experiencia_pareja->ambitosSectores->clave;
-                           // $experiencia_ambito_sectores_valor = $experiencia_pareja->ambitosSectores->valor;
+                            $experiencia_ambito_sectores_clave = $experiencia_pareja->ambitosSectores->clave;
+                            $experiencia_ambito_sectores_valor = $experiencia_pareja->ambitosSectores->valor;
 
-                            $experiencia_ambito_sectores_clave = '';
-                            $experiencia_ambito_sectores_valor = '';
                             $dependienteEconomico = false;
                             if (isset($title->pareja) && $title->pareja->respuesta_dependiente_id == 1) {
                                 $dependienteEconomico = true;
@@ -2389,9 +2388,7 @@ class declaracionesController extends Controller
                                 //   $lugarReside = $title->d
                             }
 
-                           // if ($experiencia_pareja->ambito_sector_id == 1) {
-                            $EXP_PA = 1;
-                            if ($EXP_PA == 1) {
+                            if ($experiencia_pareja->ambito_sector_id == 1) {
                                 $actividadLaboralSectorPublico = array(
                                     'nivelOrdenGobierno' => $experiencia_pareja->Nivelordengobiernos->valor,
                                     'ambitoPublico' => $experiencia_pareja->ambitoPublicos->valor,
