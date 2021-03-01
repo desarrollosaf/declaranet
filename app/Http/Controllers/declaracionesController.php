@@ -2388,8 +2388,10 @@ class declaracionesController extends Controller
                             }
 
                             if ($experiencia_pareja[0]->ambito_sector_id == 1) {
+                                dd($experiencia_pareja[0]->Nivelordengobiernos);
                                 $actividadLaboralSectorPublico = array(
-                                    'nivelOrdenGobierno' => $experiencia_pareja->Nivelordengobiernos->valor,
+
+                                    'nivelOrdenGobierno' => $experiencia_pareja[0]->Nivelordengobiernos->valor,
                                     'ambitoPublico' => $experiencia_pareja[0]->ambitoPublicos->valor,
                                     'nombreEntePublico' => $experiencia_pareja[0]->ente_publico,
                                     'areaAdscripcion' => $experiencia_pareja[0]->area_adscripcion,
