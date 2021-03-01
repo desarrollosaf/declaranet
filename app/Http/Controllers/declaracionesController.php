@@ -2330,8 +2330,10 @@ class declaracionesController extends Controller
 
                         if ($title->pareja->experienciaLaboral == null) {
                             $experiencia_pareja = null;
+                            dd("entra if null");
                         } else {
                             $experiencia_pareja = $title->pareja->experienciaLaboral;
+                            dd("entra else no null");
                         }
                         if ($experiencia_pareja == null) {
                             $sector_clave = null;
@@ -2372,7 +2374,7 @@ class declaracionesController extends Controller
                                 ]),
                             );
                         } else {
-
+dd($experiencia_pareja->ambito_sectores);
                             $experiencia_ambito_sectores_clave = $experiencia_pareja->ambito_sectores->clave;
                             $experiencia_ambito_sectores_valor = $experiencia_pareja->ambito_sectores->valor;
 
