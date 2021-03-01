@@ -1168,6 +1168,14 @@ class declaracionesController extends Controller
                                 $tipoPersonaTransmisorVehiculos = 'MORAL';
                             }
 
+                            if($vehiculo->entidades_id == null){
+                                $entidadVehiculosClave = null;
+                                $entidadVehiculosValor = null;
+                            }else{
+                                $entidadVehiculosClave = $vehiculo->entidades->clave;
+                                $entidadVehiculosValor = $vehiculo->entidades->entidad;
+                            }
+
 
                             $vehiculos_d[] = array(
                                 'tipoOperacion' => $vehiculo->tipoOperacion,
@@ -1200,8 +1208,8 @@ class declaracionesController extends Controller
                                 'lugarRegistro' => ([
                                     'pais' => $vehiculo->registro->clave,
                                     'entidadFederativa' => ([
-                                        'clave' => $vehiculo->entidades->clave,
-                                        'valor' => $vehiculo->entidades->entidad,
+                                        'clave' => $entidadVehiculosClave,
+                                        'valor' => $entidadVehiculosValor,
                                     ]),
                                 ]),
                                 'formaAdquisicion' => ([
