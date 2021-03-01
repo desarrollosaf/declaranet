@@ -31,4 +31,8 @@ class ExperienciaLaboral extends Model
         return $this->belongsTo(LugarUbicacion::class,'lugares_ubicacion_id');
     }
 
+    public function ambitosSectores(){
+        return $this->belongsTo(ambitoSector::class,'ambito_sector_id');
+    }
+
 }
