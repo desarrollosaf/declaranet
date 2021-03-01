@@ -333,8 +333,8 @@ class declaracionesController extends Controller
                                 $proveedorContratistaGobierno = false;
 
                             } else {
-                                $experiencia_DependienteEconomicos = $DependienteEconomicos[0]->dato_laboral;
-                                if ($experiencia_DependienteEconomicos[0]->sector_id == null) {
+                                $experiencia_DependienteEconomicos = $DependienteEconomicos->dato_laboral;
+                                if ($experiencia_DependienteEconomicos[0]->sector_id == null || $experiencia_DependienteEconomicos[0]->sector_id == 0) {
                                     $sector_clave = null;
                                     $sector_valor = null;
                                 } else {
