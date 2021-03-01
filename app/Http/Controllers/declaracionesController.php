@@ -2389,17 +2389,17 @@ class declaracionesController extends Controller
 
                             if ($experiencia_pareja[0]->ambito_sector_id == 1) {
                                 $actividadLaboralSectorPublico = array(
-                                    'nivelOrdenGobierno' => $experiencia_pareja->Nivelordengobiernos->valor,
-                                    'ambitoPublico' => $experiencia_pareja->ambitoPublicos->valor,
-                                    'nombreEntePublico' => $experiencia_pareja->ente_publico,
-                                    'areaAdscripcion' => $experiencia_pareja->area_adscripcion,
-                                    'empleoCargoComision' => $experiencia_pareja->cargo_comision,
-                                    'funcionPrincipal' => $experiencia_pareja->funcion_pricipal,
+                                    'nivelOrdenGobierno' => $experiencia_pareja[0]->Nivelordengobiernos->valor,
+                                    'ambitoPublico' => $experiencia_pareja[0]->ambitoPublicos->valor,
+                                    'nombreEntePublico' => $experiencia_pareja[0]->ente_publico,
+                                    'areaAdscripcion' => $experiencia_pareja[0]->area_adscripcion,
+                                    'empleoCargoComision' => $experiencia_pareja[0]->cargo_comision,
+                                    'funcionPrincipal' => $experiencia_pareja[0]->funcion_pricipal,
                                     'salarioMensualNeto' => ([
-                                        'valor' => $experiencia_pareja->salario_mensual_neto,
+                                        'valor' => $experiencia_pareja[0]->salario_mensual_neto,
                                         'moneda' => 'MXN',
                                     ]),
-                                    'fechaIngreso' => $experiencia_pareja->fecha_ingreso,
+                                    'fechaIngreso' => $experiencia_pareja[0]->fecha_ingreso,
                                 );
                                 $actividadLaboralSectorPrivadoOtro = array(
                                     'nombreEmpresaSociedadAsociacion' => null,
@@ -2426,10 +2426,10 @@ class declaracionesController extends Controller
                                     'fechaIngreso' => null,
                                 );
                                 $actividadLaboralSectorPrivadoOtro = array(
-                                    'nombreEmpresaSociedadAsociacion' => $experiencia_pareja->nombre_empresa,
-                                    'empleoCargoComision' => $experiencia_pareja->cargo_comision,
-                                    'rfc' => $experiencia_pareja->rfc,
-                                    'fechaIngreso' => $experiencia_pareja->fecha_ingreso,
+                                    'nombreEmpresaSociedadAsociacion' => $experiencia_pareja[0]->nombre_empresa,
+                                    'empleoCargoComision' => $experiencia_pareja[0]->cargo_comision,
+                                    'rfc' => $experiencia_pareja[0]->rfc,
+                                    'fechaIngreso' => $experiencia_pareja[0]->fecha_ingreso,
                                     'sector' => ([
                                         'clave' => $sector_clave,
                                         'valor' => $sector_valor,
