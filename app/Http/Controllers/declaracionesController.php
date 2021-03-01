@@ -2392,7 +2392,7 @@ class declaracionesController extends Controller
                         } else {
                             $experiencia_pareja = $title->pareja->experienciaLaboral;
                         }
-                        if ($experiencia_pareja[0] == null) {
+                        if ($experiencia_pareja == null) {
                             $sector_clave = null;
                             $sector_valor = null;
                             $experiencia_ambito_sectores_clave = null;
