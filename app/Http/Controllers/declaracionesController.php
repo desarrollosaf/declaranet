@@ -2451,7 +2451,7 @@ class declaracionesController extends Controller
                                 //   $lugarReside = $title->d
                             }
 
-                            if($experiencia_pareja[0] == null){
+                            if(count($experiencia_pareja)){
                                 $nivelOrdenGobienrnoPareja = null;
                                     $ambitosPublicosPareja = null;
                             }
