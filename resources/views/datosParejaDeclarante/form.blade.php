@@ -203,8 +203,8 @@
                                     class="btn btn-xs btn-warning btn-editar-experiencia">
                                 <i class="ion ion-edit"></i>
                             </button>
-                            <button class="btn btn-xs btn-danger btn-borrar" data-id="{{$experiencia->id}}">
-                                <i class="ion ion-trash-a btn-borrar"></i>
+                            <button type="button" class="btn btn-xs btn-danger btn-borrar" data-id="{{$experiencia->id}}">
+                                <i class="ion ion-trash-a"></i>
                             </button>
                         </div>
                     </td>
@@ -527,7 +527,7 @@
                         html += '    <i class="ion ion-edit"></i></button>';
 
                         html += ' <button class="btn btn-xs btn-danger btn-borrar" type="button" data-id="' + partObj.id + '">';
-                        html += '<i class="ion ion-trash-a btn-borrar"></i>';
+                        html += '<i class="ion ion-trash-a"></i>';
                         html += '</button></div>';
                         html += '</td>';
                         html += '</tr>';
@@ -544,6 +544,7 @@
             }
 
             $(document).on('click', '.btn-borrar', function (e) {
+                var id = $(this).data('id');
                 Swal.fire({
                     title: '¿Está seguro?',
                     text: 'Al oprimir el botón de aceptar se eliminará el registro',
