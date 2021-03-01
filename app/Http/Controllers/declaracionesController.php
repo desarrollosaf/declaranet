@@ -338,8 +338,8 @@ class declaracionesController extends Controller
                                     $sector_clave = null;
                                     $sector_valor = null;
                                 } else {
-                                    $sector_clave = $experiencia_DependienteEconomicos->sectores->clave;
-                                    $sector_valor = $experiencia_DependienteEconomicos->sectores->valor;
+                                    $sector_clave = $experiencia_DependienteEconomicos[0]->sectores->clave;
+                                    $sector_valor = $experiencia_DependienteEconomicos[0]->sectores->valor;
                                 }
                                 $sector_clave = $sector_clave;
                                 $sector_valor = $sector_valor;
