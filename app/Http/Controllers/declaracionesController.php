@@ -2387,7 +2387,7 @@ class declaracionesController extends Controller
                             $domicilio_pareja = $title->pareja->domicilio;
                         }
 
-                        if ($title->pareja->experienciaLaboral == null) {
+                        if ($title->pareja->experienciaLaboral) {
                             $experiencia_pareja = null;
                         } else {
                             $experiencia_pareja = $title->pareja->experienciaLaboral;
