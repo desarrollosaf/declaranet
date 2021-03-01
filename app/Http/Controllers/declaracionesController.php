@@ -489,8 +489,8 @@ class declaracionesController extends Controller
                                     'codigoPostal' => null,
                                 );
                             }
-dd($experiencia_DependienteEconomicos);
-                            if($experiencia_DependienteEconomicos[0] ==  null){
+
+                            if($experiencia_DependienteEconomicos ==  null){
                                 $sectorDependientesClave = null;
                                 $sectorDependientesValor = null;
                             }else{
