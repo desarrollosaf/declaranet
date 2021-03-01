@@ -2372,15 +2372,9 @@ class declaracionesController extends Controller
                                 ]),
                             );
                         } else {
-                            dd($experiencia_pareja);
-                            if($experiencia_pareja->ambito_sector_id == null){
-                                $experiencia_ambito_sectores_clave = null;
-                                $experiencia_ambito_sectores_valor = null;
-                            }else{
-                                $experiencia_ambito_sectores_clave = $experiencia_pareja->ambito_sectores->clave;
-                                $experiencia_ambito_sectores_valor = $experiencia_pareja->ambito_sectores->valor;
-                            }
 
+                            $experiencia_ambito_sectores_clave = $experiencia_pareja->ambito_sectores->clave;
+                            $experiencia_ambito_sectores_valor = $experiencia_pareja->ambito_sectores->valor;
 
                             $dependienteEconomico = false;
                             if (isset($title->pareja) && $title->pareja->respuesta_dependiente_id == 1) {
