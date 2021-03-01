@@ -727,6 +727,12 @@ class declaracionesController extends Controller
                                 $servidorInstrumentoValor = $title->fueServidorPublico->TipoInstrumentosInve->valor;
                             }
 
+                            if($title->fueServidorPublico->tipo_de_bien_id == null){
+                                $servidorBienEnajenado = null;
+                            }else{
+                                $servidorBienEnajenado = $title->fueServidorPublico->TipoBien->valor;
+                            }
+
                             $servidor_anio_anterior = array(
                                 'servidorPublicoAnioAnterior' => $anioAnterior,
                                 'fechaIngreso' => $title->fueServidorPublico->fecha_inicio,
@@ -792,7 +798,7 @@ class declaracionesController extends Controller
                                             'valor' => $title->fueServidorPublico->ingreso_por_enajenacion_bienes,
                                             'moneda' => 'MXN',
                                         ]),
-                                        'tipoBienEnajenado' => $title->fueServidorPublico->TipoBien->valor,
+                                        'tipoBienEnajenado' => $servidorBienEnajenado,
                                     ]]),
                                 ]),
                                 'otrosIngresos' => ([
