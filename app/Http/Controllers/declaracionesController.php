@@ -2431,6 +2431,8 @@ class declaracionesController extends Controller
                                 ]),
                             );
                         } else {
+
+                            dd(count($experiencia_pareja));
                             if($experiencia_pareja[0]->ambito_sector_id == null){
                                 $experiencia_ambito_sectores_clave = null;
                                 $experiencia_ambito_sectores_valor = null;
