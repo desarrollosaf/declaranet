@@ -719,6 +719,14 @@ class declaracionesController extends Controller
                     if ($title->fueServidorPublico != null) {
                         if ($title->fueServidorPublico->fue_servidor_publico == 1) {
                             $anioAnterior = true;
+                            if($title->fueServidorPublico->tipo_de_instrumento_id == null){
+                                $servidorInstrumentoClave = null;
+                                $servidorInstrumentoValor = null;
+                            }else{
+                                $servidorInstrumentoClave = $title->fueServidorPublico->TipoInstrumentosInve->clave;
+                                $servidorInstrumentoValor = $title->fueServidorPublico->TipoInstrumentosInve->valor;
+                            }
+
                             $servidor_anio_anterior = array(
                                 'servidorPublicoAnioAnterior' => $anioAnterior,
                                 'fechaIngreso' => $title->fueServidorPublico->fecha_inicio,
@@ -756,8 +764,8 @@ class declaracionesController extends Controller
                                             'moneda' => 'MXN',
                                         ]),
                                         'tipoInstrumento' => ([
-                                            'clave' => $title->fueServidorPublico->TipoInstrumentosInve->clave,
-                                            'valor' => $title->fueServidorPublico->TipoInstrumentosInve->valor,
+                                            'clave' => $servidorInstrumentoClave,
+                                            'valor' => $servidorInstrumentoValor,
                                         ]),
                                     ]]),
                                 ]),
@@ -2448,10 +2456,10 @@ class declaracionesController extends Controller
                                         'valor' => $sector_valor,
                                     ]),
                                     'salarioMensualNeto' => ([
-                                        'valor' => $experiencia_pareja->salario_mensual_neto,
+                                        'valor' => $experiencia_pareja[0]->salario_mensual_neto,
                                         'moneda' => 'MXN',
                                     ]),
-                                    'proveedorContratistaGobierno' => $experiencia_pareja->respuesta_proveedor_id,
+                                    'proveedorContratistaGobierno' => $experiencia_pareja[0]->respuesta_proveedor_id,
                                 );
                             }
                         }
