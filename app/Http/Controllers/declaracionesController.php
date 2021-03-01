@@ -490,6 +490,14 @@ class declaracionesController extends Controller
                                 );
                             }
 
+                            if($experiencia_DependienteEconomicos->sector_id = null){
+                                $sectorDependientesClave = null;
+                                $sectorDependientesValor = null;
+                            }else{
+                                $sectorDependientesClave = $experiencia_DependienteEconomicos->sectores->clave;
+                                $sectorDependientesValor = $experiencia_DependienteEconomicos->sectores->valor;
+                            }
+
                             $dependientesE[] = array(
                                 'tipoOperacion' => $DependienteEconomicos->tipoOperaciones->valor,
                                 'nombre' => $DependienteEconomicos->nombre,
@@ -508,8 +516,8 @@ class declaracionesController extends Controller
                                 'domicilioMexico' => $domicilio_dep_mex,
                                 'domicilioExtranjero' => $domicilio_dep_ex,
                                 'actividadLaboral' => ([
-                                    'clave' => $experiencia_DependienteEconomicos->sectores->clave,
-                                    'valor' => $experiencia_DependienteEconomicos->sectores->valor,
+                                    'clave' => $sectorDependientesClave,
+                                    'valor' => $sectorDependientesValor,
                                 ]),
                                 'actividadLaboralSectorPublico' => $actividadLaboralSectorPublico,
                                 'actividadLaboralSectorPrivadoOtro' => $actividadLaboralSectorPrivadoOtro,
