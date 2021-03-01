@@ -464,18 +464,33 @@ class declaracionesController extends Controller
                                 $dependiente_habita = null;
                             } else {
                                 $ninguno_dependientes = false;
+                                if($domicilio_dependiente->municipio_id == null){
+                                    $municipioClave = null;
+                                    $municipiovalor = null;
+                                }else{
+                                    $municipioClave = $domicilio_dependiente->municipio_domicilio->clave;
+                                    $municipiovalor = $domicilio_dependiente->municipio_domicilio->municipio;
+                                }
+
+                                if($domicilio_dependiente->entidad_id == null){
+                                    $entidadClave = null;
+                                    $entidadvalor = null;
+                                }else{
+                                    $entidadClave = $domicilio_dependiente->entidad_domicilio->clave;
+                                    $entidadvalor = $domicilio_dependiente->entidad_domicilio->entidad;
+                                }
                                 $domicilio_dep_mex = array(
                                     'calle' => $domicilio_dependiente->calle,
                                     'numeroExterior' => $domicilio_dependiente->num_ext,
                                     'numeroInterior' => $domicilio_dependiente->num_int,
                                     'coloniaLocalidad' => $domicilio_dependiente->colonia,
                                     'municipioAlcaldia' => ([
-                                        'clave' => $domicilio_dependiente->municipio_domicilio->clave,
-                                        'valor' => $domicilio_dependiente->municipio_domicilio->municipio,
+                                        'clave' => $municipioClave,
+                                        'valor' => $municipiovalor,
                                     ]),
                                     'entidadFederativa' => ([
-                                        'clave' => $domicilio_dependiente->entidad_domicilio->clave,
-                                        'valor' => $domicilio_dependiente->entidad_domicilio->entidad,
+                                        'clave' => $entidadClave,
+                                        'valor' => $entidadvalor,
                                     ]),
                                     'codigoPostal' => $domicilio_dependiente->codigo_postal,
                                 );
