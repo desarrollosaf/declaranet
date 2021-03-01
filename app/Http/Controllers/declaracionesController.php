@@ -3021,7 +3021,7 @@ class declaracionesController extends Controller
                         'declaracion' => ([
                             'situacionPatrimonial' => ([
                                 'datosGenerales' => ([
-                                    'nombre' => $title->servidor_publico->nombre,
+                                    'nombre' => $title->servidor_publico[0]->nombre,
                                     'primerApellido' => $title->servidor_publico->primer_apellido,
                                     'segundoApellido' => $title->servidor_publico->segundo_apellido,
                                     'curp' => $title->servidor_publico->curp,
