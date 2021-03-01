@@ -2432,8 +2432,6 @@ class declaracionesController extends Controller
                             );
                         }
                         else {
-
-
                             if($experiencia_pareja[0]->ambito_sector_id == null || $experiencia_pareja[0]->ambito_sector_id == 0){
                                 $experiencia_ambito_sectores_clave = null;
                                 $experiencia_ambito_sectores_valor = null;
@@ -2442,7 +2440,6 @@ class declaracionesController extends Controller
                                 $experiencia_ambito_sectores_valor = $experiencia_pareja[0]->ambito_sectores->valor;
                             }
 
-                            dd($experiencia_ambito_sectores_clave);
                             $dependienteEconomico = false;
                             if (isset($title->pareja) && $title->pareja->respuesta_dependiente_id == 1) {
                                 $dependienteEconomico = true;
