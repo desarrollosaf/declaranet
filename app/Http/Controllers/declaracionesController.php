@@ -2387,7 +2387,7 @@ class declaracionesController extends Controller
                                 //   $lugarReside = $title->d
                             }
 
-                            if ($experiencia_pareja->ambito_sector_id == 1) {
+                            if ($experiencia_pareja[0]->ambito_sector_id == 1) {
                                 $actividadLaboralSectorPublico = array(
                                     'nivelOrdenGobierno' => $experiencia_pareja->Nivelordengobiernos->valor,
                                     'ambitoPublico' => $experiencia_pareja->ambitoPublicos->valor,
