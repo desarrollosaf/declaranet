@@ -2392,7 +2392,7 @@ class declaracionesController extends Controller
                         } else {
                             $experiencia_pareja = $title->pareja->experienciaLaboral;
                         }
-                        if ($experiencia_pareja == null) {
+                        if ($experiencia_pareja[0] == null) {
                             $sector_clave = null;
                             $sector_valor = null;
                             $experiencia_ambito_sectores_clave = null;
@@ -2430,8 +2430,7 @@ class declaracionesController extends Controller
                                     'moneda' => null,
                                 ]),
                             );
-                        }
-                        else {
+                        } else {
                             if($experiencia_pareja[0]->ambito_sector_id == null){
                                 $experiencia_ambito_sectores_clave = null;
                                 $experiencia_ambito_sectores_valor = null;
