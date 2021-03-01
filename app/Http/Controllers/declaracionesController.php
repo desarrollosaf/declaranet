@@ -3008,7 +3008,7 @@ class declaracionesController extends Controller
                         $aclaraciones_domicilio_declarante = $title->domicilio->observaciones;
                     }
 
-dd($title->servidor_publico);
+
                     $temparray [$key] = $resultados = [
                         'id' => '',
                         'metadata' => ([
