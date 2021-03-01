@@ -165,7 +165,7 @@ class declaracionesController extends Controller
                             if($experienciaLaboral->ambito_publico_id == null){
                                 $ambitoPublico_experiencia = null;
                             }else{
-                                $ambitoPublico_experiencia = $experienciaLaboral->ambito_sectores->valor;
+                    //            $ambitoPublico_experiencia = $experienciaLaboral->ambito_sectores->valor;
                             }
 
                             $experiencia[] = array(
@@ -479,8 +479,8 @@ class declaracionesController extends Controller
                                 'domicilioMexico' => $domicilio_dep_mex,
                                 'domicilioExtranjero' => $domicilio_dep_ex,
                                 'actividadLaboral' => ([
-                                    'clave' => '',
-                                    'valor' => '',
+                                    'clave' => $experiencia_DependienteEconomicos->sectores->clave,
+                                    'valor' => $experiencia_DependienteEconomicos->sectores->valor,
                                 ]),
                                 'actividadLaboralSectorPublico' => $actividadLaboralSectorPublico,
                                 'actividadLaboralSectorPrivadoOtro' => $actividadLaboralSectorPrivadoOtro,
