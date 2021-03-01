@@ -2371,9 +2371,9 @@ class declaracionesController extends Controller
                                     'moneda' => null,
                                 ]),
                             );
-                        } else {
-                            dd(count($experiencia_pareja));
-
+                        }
+                        else {
+                           dd($experiencia_pareja);
                             $experiencia_ambito_sectores_clave = $experiencia_pareja->ambitosSectores->clave;
                             $experiencia_ambito_sectores_valor = $experiencia_pareja->ambitosSectores->valor;
 
