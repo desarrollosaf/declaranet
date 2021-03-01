@@ -1317,7 +1317,7 @@ class declaracionesController extends Controller
                             }else{
                                $moneda_muebles = $mueble->TipoMoneda->clave;
                             }
-
+dd($mueble->tipo_operacion_id);
                             if($mueble->tipo_operacion_id == 1){
                                 $motivoBajaMuebleClave = null;
                                 $motivoBajaMuebleValor = null;
