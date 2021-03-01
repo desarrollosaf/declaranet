@@ -2783,6 +2783,14 @@ class declaracionesController extends Controller
                             $moneda_total_ingresos_declarante_pareja = 'MXN';
                         }
 
+                        if($title->ingresos->tipo_de_instrumento == null){
+                            $ingresosInstrumentoClave = null;
+                            $ingresosInstrumentoValor = null;
+                        }else{
+                            $ingresosInstrumentoClave = $title->ingresos->tipoInstrumentos->clave;
+                            $ingresosInstrumentoValor = $title->ingresos->tipoInstrumentos->valor;
+                        }
+
 
                         $ingresos = array(
                             'remuneracionMensualCargoPublico' => ([
@@ -2818,8 +2826,8 @@ class declaracionesController extends Controller
                                         'moneda' => $moneda_ingreso_por_actividad_financiera,
                                     ]),
                                     'tipoInstrumento' => ([
-                                           'clave' => $title->ingresos->tipoInstrumentos->clave,
-                                           'valor' => $title->ingresos->tipoInstrumentos->valor,
+                                           'clave' => $ingresosInstrumentoClave,
+                                           'valor' => $ingresosInstrumentoValor,
                                     ]),
                                 ]]),
                             ]),
