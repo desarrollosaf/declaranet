@@ -2431,7 +2431,7 @@ class declaracionesController extends Controller
                                 ]),
                             );
                         } else {
-                            var_dump($experiencia_pareja);
+                            dd($experiencia_pareja);
 
                          if(count($experiencia_pareja)){
                              $experiencia_ambito_sectores_clave = $experiencia_pareja[0]->ambito_sectores->clave;
