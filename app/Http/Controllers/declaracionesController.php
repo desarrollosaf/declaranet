@@ -26,7 +26,7 @@ class declaracionesController extends Controller
             $limitereg = 10;
         }
 
-        $titles = Declaracion::where("fecha_declaracion", '>=', $datereg)->with(['regimenMatrimonial', 'domicilio', 'datos_curriculares', 'experiencias_laborales', 'pareja', 'datos_empleo_declarante'])->get();
+        $titles = Declaracion::where("fecha_declaracion", '>=', $datereg)->with(['regimenMatrimonial', 'domicilio', 'datos_curriculares', 'experiencias_laborales', 'pareja', 'datos_empleo_declarante','BienesMuebles','vehiculos','beneficios_privados','inversiones_cuentas','apoyo_beneficio','DependienteEconomicos','participacion_empresas','clientes','participacion','prestamosComodato','adeudos_pasivos','fueServidorPublico','fideicomisos','representacion','bienes_inmuebles','donativos','intereses','ingresos','participaciones',''])->get();
 
         if ($datereg > $now) {
             return $temparrayp = [
