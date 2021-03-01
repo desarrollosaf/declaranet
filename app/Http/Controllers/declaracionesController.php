@@ -490,12 +490,12 @@ class declaracionesController extends Controller
                                 );
                             }
 
-                            if($experiencia_DependienteEconomicos->sector_id == null || $experiencia_DependienteEconomicos->sector_id == 0){
+                            if($experiencia_DependienteEconomicos[0]->sector_id == null || $experiencia_DependienteEconomicos[0]->sector_id == 0){
                                 $sectorDependientesClave = null;
                                 $sectorDependientesValor = null;
                             }else{
-                                $sectorDependientesClave = $experiencia_DependienteEconomicos->sectores->clave;
-                                $sectorDependientesValor = $experiencia_DependienteEconomicos->sectores->valor;
+                                $sectorDependientesClave = $experiencia_DependienteEconomicos[0]->sectores->clave;
+                                $sectorDependientesValor = $experiencia_DependienteEconomicos[0]->sectores->valor;
                             }
 
                             $dependientesE[] = array(
