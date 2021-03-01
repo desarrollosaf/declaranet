@@ -1319,7 +1319,6 @@ class declaracionesController extends Controller
                             }
 
                             if($mueble->tipo_operacion_id == "1"){
-                                dd("entra uf");
                                 $motivoBajaMuebleClave = null;
                                 $motivoBajaMuebleValor = null;
                             }
