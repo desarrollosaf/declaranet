@@ -3020,7 +3020,7 @@ class declaracionesController extends Controller
                         ]),
                         'declaracion' => ([
                             'situacionPatrimonial' => ([
-                        /*        'datosGenerales' => ([
+                                'datosGenerales' => ([
                                     'nombre' => $title->servidor_publico->nombre,
                                     'primerApellido' => $title->servidor_publico->primer_apellido,
                                     'segundoApellido' => $title->servidor_publico->segundo_apellido,
@@ -3043,7 +3043,6 @@ class declaracionesController extends Controller
                                     'nacionalidad' => $nacionalidadNacimiento,
                                     'aclaracionesObservaciones' => $title->observaciones,
                                 ]),
-                        */
                                 'domicilioDeclarante' => ([
                                     'domicilioMexico' => $domicilio_declaranete,
                                     'domicilioExtranjero' => ([
