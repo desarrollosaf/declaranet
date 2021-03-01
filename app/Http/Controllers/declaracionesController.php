@@ -1170,7 +1170,7 @@ class declaracionesController extends Controller
 
 
                             $vehiculos_d[] = array(
-                                'tipoOperacion' => $vehiculo->tipoOperaciones->valor,
+                                'tipoOperacion' => $vehiculo->tipoOperacion,
                                 'tipoVehiculo' => ([
                                     'clave' => $vehiculo->tipo_vehiculo->clave,
                                     'valor' => $vehiculo->tipo_vehiculo->valor,
