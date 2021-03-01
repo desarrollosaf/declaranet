@@ -24,4 +24,8 @@ class DependienteEconomico extends Model
     public function tipoOperaciones(){
         return $this->belongsTo(tipoOperacion::class,'tipo_operacion_id');
     }
+
+    public function sectores(){
+        return $this->belongsTo(sector::class,'tipo_operacion_id');
+    }
 }

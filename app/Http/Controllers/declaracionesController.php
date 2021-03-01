@@ -334,7 +334,7 @@ class declaracionesController extends Controller
 
                             } else {
                                 $experiencia_DependienteEconomicos = $DependienteEconomicos->dato_laboral;
-                                if ($experiencia_DependienteEconomicos->sector_id == null) {
+                                if ($experiencia_DependienteEconomicos[0]->sector_id == null) {
                                     $sector_clave = null;
                                     $sector_valor = null;
                                 } else {
@@ -343,25 +343,25 @@ class declaracionesController extends Controller
                                 }
                                 $sector_clave = $sector_clave;
                                 $sector_valor = $sector_valor;
-                                if ($experiencia_DependienteEconomicos->respuesta_id == 1) {
+                                if ($experiencia_DependienteEconomicos[0]->respuesta_id == 1) {
                                     $proveedorContratistaGobierno = true;
                                 } else {
                                     $proveedorContratistaGobierno = false;
                                 }
 
-                                if ($experiencia_DependienteEconomicos->ambito_sector_id == 1) {
+                                if ($experiencia_DependienteEconomicos[0]->ambito_sector_id == 1) {
                                     $actividadLaboralSectorPublico = array(
-                                        'nivelOrdenGobierno' => $experiencia_DependienteEconomicos->Nivelordengobiernos->valor,
-                                        'ambitoPublico' => $experiencia_DependienteEconomicos->ambitoPublicos->valor,
-                                        'nombreEntePublico' => $experiencia_DependienteEconomicos->ente_publico,
-                                        'areaAdscripcion' => $experiencia_DependienteEconomicos->area_adscripcion,
-                                        'empleoCargoComision' => $experiencia_DependienteEconomicos->cargo_comision,
-                                        'funcionPrincipal' => $experiencia_DependienteEconomicos->funcion_pricipal,
+                                        'nivelOrdenGobierno' => $experiencia_DependienteEconomicos[0]->Nivelordengobiernos->valor,
+                                        'ambitoPublico' => $experiencia_DependienteEconomicos[0]->ambitoPublicos->valor,
+                                        'nombreEntePublico' => $experiencia_DependienteEconomicos[0]->ente_publico,
+                                        'areaAdscripcion' => $experiencia_DependienteEconomicos[0]->area_adscripcion,
+                                        'empleoCargoComision' => $experiencia_DependienteEconomicos[0]->cargo_comision,
+                                        'funcionPrincipal' => $experiencia_DependienteEconomicos[0]->funcion_pricipal,
                                         'salarioMensualNeto' => ([
-                                            'valor' => $experiencia_DependienteEconomicos->salario_mensual_neto,
+                                            'valor' => $experiencia_DependienteEconomicos[0]->salario_mensual_neto,
                                             'moneda' => 'MXN',
                                         ]),
-                                        'fechaIngreso' => $experiencia_DependienteEconomicos->fecha_ingreso,
+                                        'fechaIngreso' => $experiencia_DependienteEconomicos[0]->fecha_ingreso,
                                     );
                                     $actividadLaboralSectorPrivadoOtro = array(
                                         'nombreEmpresaSociedadAsociacion' => null,
@@ -375,7 +375,7 @@ class declaracionesController extends Controller
                                     );
 
                                 } else {
-                                    if ($experiencia_DependienteEconomicos->respuesta_proveedor_id == 1) {
+                                    if ($experiencia_DependienteEconomicos[0]->respuesta_proveedor_id == 1) {
                                         $proveedorContratistaGobierno = false;
                                     } else {
                                         $proveedorContratistaGobierno = true;
@@ -394,12 +394,12 @@ class declaracionesController extends Controller
                                         'fechaIngreso' => null,
                                     );
                                     $actividadLaboralSectorPrivadoOtro = array(
-                                        'nombreEmpresaSociedadAsociacion' => $experiencia_DependienteEconomicos->nombre_empresa,
-                                        'rfc' => $experiencia_DependienteEconomicos->rfc,
-                                        'empleoCargoComision' => $experiencia_DependienteEconomicos->cargo_comision,
-                                        'fechaIngreso' => $experiencia_DependienteEconomicos->fecha_ingreso,
+                                        'nombreEmpresaSociedadAsociacion' => $experiencia_DependienteEconomicos[0]->nombre_empresa,
+                                        'rfc' => $experiencia_DependienteEconomicos[0]->rfc,
+                                        'empleoCargoComision' => $experiencia_DependienteEconomicos[0]->cargo_comision,
+                                        'fechaIngreso' => $experiencia_DependienteEconomicos[0]->fecha_ingreso,
                                         'salarioMensualNeto' => ([
-                                            'valor' => $experiencia_DependienteEconomicos->salario_mensual_neto,
+                                            'valor' => $experiencia_DependienteEconomicos[0]->salario_mensual_neto,
                                             'moneda' => 'MXN',
                                         ]),
                                     );
