@@ -334,6 +334,7 @@ class declaracionesController extends Controller
 
                             } else {
                                 $experiencia_DependienteEconomicos = $DependienteEconomicos->dato_laboral;
+                                dd($experiencia_DependienteEconomicos);
                                 if ($experiencia_DependienteEconomicos[0]->sector_id == null || $experiencia_DependienteEconomicos[0]->sector_id == 0) {
                                     $sector_clave = null;
                                     $sector_valor = null;
