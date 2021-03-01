@@ -2373,9 +2373,11 @@ class declaracionesController extends Controller
                             );
                         } else {
 
-                            $experiencia_ambito_sectores_clave = $experiencia_pareja->ambitosSectores->clave;
-                            $experiencia_ambito_sectores_valor = $experiencia_pareja->ambitosSectores->valor;
+                          //  $experiencia_ambito_sectores_clave = $experiencia_pareja->ambitosSectores->clave;
+                           // $experiencia_ambito_sectores_valor = $experiencia_pareja->ambitosSectores->valor;
 
+                            $experiencia_ambito_sectores_clave = '';
+                            $experiencia_ambito_sectores_valor = '';
                             $dependienteEconomico = false;
                             if (isset($title->pareja) && $title->pareja->respuesta_dependiente_id == 1) {
                                 $dependienteEconomico = true;
