@@ -2393,13 +2393,18 @@ class declaracionesController extends Controller
                     } else {
                         if ($title->pareja->ciudadanoExtranjero->id == 2) {
                             $pareja_extranjero = true;
-                        } else {
+                        } else if ($title->pareja->ciudadanoExtranjero->id == 1) {
                             $pareja_extranjero = false;
+                        }else{
+                            $pareja_extranjero = null;
                         }
+
                         if ($title->pareja->respuesta_domicilio_id == 1) {
                             $domicilio_pareja = $title->domicilio;
-                        } else {
+                        } else if ($title->pareja->respuesta_domicilio_id == 2) {
                             $domicilio_pareja = $title->pareja->domicilio;
+                        }else{
+                            $domicilio_pareja = null;
                         }
 
                         if ($title->pareja->experienciaLaboral == null) {
@@ -2457,12 +2462,11 @@ class declaracionesController extends Controller
                             $habitaDomicilioDeclarante = false;
                             if (isset($title->pareja->respuesta_domicilio_id) && $title->pareja->respuesta_domicilio_id == 1) {
                                 $habitaDomicilioDeclarante = true;
-                                //   $lugarReside = $title->d
                             }
 
                             if(count($experiencia_pareja)){
                                 $nivelOrdenGobienrnoPareja = null;
-                                    $ambitosPublicosPareja = null;
+                                $ambitosPublicosPareja = null;
                             }
                             if ($experiencia_pareja[0]->ambito_sector_id == "1") {
                                 if($experiencia_pareja[0]->nivel_orden_gobierno_id == null){
@@ -2478,7 +2482,6 @@ class declaracionesController extends Controller
                                 }
 
                                 $actividadLaboralSectorPublico = array(
-
                                     'nivelOrdenGobierno' => $nivelOrdenGobienrnoPareja,
                                     'ambitoPublico' => $ambitosPublicosPareja,
                                     'nombreEntePublico' => $experiencia_pareja[0]->ente_publico,
@@ -3021,7 +3024,7 @@ class declaracionesController extends Controller
                         'declaracion' => ([
                             'situacionPatrimonial' => ([
                                 'datosGenerales' => ([
-                                    'nombre' => $title->servidor_publico,
+                                    'nombre' => $title->servidor_publico->nombre,
                                     'primerApellido' => $title->servidor_publico->primer_apellido,
                                     'segundoApellido' => $title->servidor_publico->segundo_apellido,
                                     'curp' => $title->servidor_publico->curp,
