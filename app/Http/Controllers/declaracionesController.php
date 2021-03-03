@@ -2574,6 +2574,7 @@ class declaracionesController extends Controller
                                 'codigoPostal' => null,
                             );
                         }else{
+                            dd($domicilio_pareja);
                             $domicilioParejaNull = array(
                                 'calle' => $domicilio_pareja->calle,
                                 'numeroExterior' => $domicilio_pareja->num_ext,
