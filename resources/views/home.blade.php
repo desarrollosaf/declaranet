@@ -20,7 +20,7 @@
                     <tbody style="text-transform: uppercase;">
                         @foreach($declaraciones as $declaracion)
                         <tr>
-                            <td align="center">{{$declaracion->tipo_movimiento->tipo_movimiento}}</td>
+                            <td align="center">{{$declaracion->tipo_movimiento->valor}}</td>
                             <td align="center">{{$declaracion->fecha_declaracion}}</td>
                             <td align="center">{{$declaracion->estatus_declaracion->estatus}}</td>
                             <td align="center"><button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal" onclick="ContinuarDeclaracion({{$declaracion->id}})">IR</button></td>
