@@ -512,7 +512,7 @@
                         html += '    <td>' + partObj.ambito + '</td>';
                         html += '    <td class="text-center">';
                         console.log(partObj.ambito_sector_id);
-                        if (partObj.ambito_sector_id === 1) {
+                        if (parseInt(partObj.ambito_sector_id) === 1) {
                             html += '       <strong>NOMBRE:</strong>' + partObj.ente_publico + '<br>';
                             html += '       <strong>CARGO/PUESTO:</strong>' + partObj.cargo_comision + '<br>';
                             html += '       <strong>PERIODO:</strong>' + partObj.fecha_ingreso + '<br>';
