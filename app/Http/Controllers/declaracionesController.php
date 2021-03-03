@@ -2551,6 +2551,11 @@ class declaracionesController extends Controller
                             $entidad_dom_pareja_clave = $domicilio_pareja->entidad_domicilio->clave;
                             $entidad_dom_pareja_valor = $domicilio_pareja->entidad_domicilio->entidad;
                         }
+                        if($title->pareja->relacion_id == null){
+                            $relacionPareja = null;
+                        }else{
+                            $relacionPareja = $title->pareja->relacionDeclarante->valor;
+                        }
 
                         $pareja = array(
                             'nunguno' => false,
@@ -2560,7 +2565,7 @@ class declaracionesController extends Controller
                             'segundoApellido' => $title->pareja->segundo_apellido,
                             'fechaNacimiento' => $title->pareja->fecha_nacimiento,
                             'rfc' => $title->pareja->rfc_pareja,
-                            'relacionConDeclarante' => $title->pareja->relacionDeclarante->valor,
+                            'relacionConDeclarante' => $relacionPareja,
                             'ciudadanoExtranjero' => $pareja_extranjero,
                             'curp' => $title->pareja->curp,
                             'esDependienteEconomico' => $dependienteEconomico,
