@@ -785,27 +785,73 @@ class declaracionesController extends Controller
                                 $servidorBienEnajenado = $title->fueServidorPublico->TipoBien->valor;
                             }
 
+                            if($title->fueServidorPublico->remuneracion_neta = null){
+                                $monedaCargoPublico = null;
+                            }else{
+                                $monedaCargoPublico = 'MXN';
+                            }
+                            if($title->fueServidorPublico->otros_ingresos_total = null){
+                                $monedaOtrosTotal = null;
+                            }else{
+                                $monedaOtrosTotal = 'MXN';
+                            }
+                            if($title->fueServidorPublico->ingreso_por_actividad_ice = null){
+                                $monedaICE = null;
+                            }else{
+                                $monedaICE = 'MXN';
+                            }
+                            if($title->fueServidorPublico->ingreso_por_actividad_financiera = null){
+                                $monedaAFinanciera = null;
+                            }else{
+                                $monedaAFinanciera = 'MXN';
+                            }
+                            if($title->fueServidorPublico->ingreso_por_servicios_profesionales = null){
+                                $monedaSeProf = null;
+                            }else{
+                                $monedaSeProf = 'MXN';
+                            }
+                            if($title->fueServidorPublico->ingreso_por_enajenacion_bienes = null){
+                                $monedaEnaBienes = null;
+                            }else{
+                                $monedaEnaBienes = 'MXN';
+                            }
+                            if($title->fueServidorPublico->ingreso_otros_no_considerados = null){
+                                $monedaOtros = null;
+                            }else{
+                                $monedaOtros = 'MXN';
+                            }
+                            if($title->fueServidorPublico->ingreso_neto = null){
+                                $monedaIgNetos = null;
+                            }else{
+                                $monedaIgNetos = 'MXN';
+                            }
+                            if($title->fueServidorPublico->ingreso_neto_pareja = null){
+                                $monedaInPareja = null;
+                            }else{
+                                $monedaInPareja = 'MXN';
+                            }
+
                             $servidor_anio_anterior = array(
                                 'servidorPublicoAnioAnterior' => $anioAnterior,
                                 'fechaIngreso' => $title->fueServidorPublico->fecha_inicio,
                                 'fechaConclusion' => $title->fueServidorPublico->fecha_conclusion,
                                 'remuneracionNetaCargoPublico' => ([
                                     'valor' => $title->fueServidorPublico->remuneracion_neta,
-                                    'moneda' => 'MXN',
+                                    'moneda' => $monedaCargoPublico,
                                 ]),
                                 'otrosIngresosTotal' => ([
                                     'valor' => $title->fueServidorPublico->otros_ingresos_total,
-                                    'moneda' => 'MXN',
+                                    'moneda' => $monedaOtrosTotal,
                                 ]),
                                 'actividadIndustialComercialEmpresarial' => ([
                                     'remuneracionTotal' => ([
                                         'valor' => $title->fueServidorPublico->ingreso_por_actividad_ice,
-                                        'moneda' => 'MXN',
+                                        'moneda' => $monedaICE,
                                     ]),
                                     'actividades' => ([[
                                         'remuneracion' => ([
                                             'valor' => $title->fueServidorPublico->ingreso_por_actividad_ice,
-                                            'moneda' => 'MXN',
+                                            'moneda' => $monedaICE,
                                         ]),
                                         'nombreRazonSocial' => $title->fueServidorPublico->nombre_razon_social,
                                         'tipoNegocio' => $title->fueServidorPublico->tipo_de_negocio,
@@ -814,12 +860,12 @@ class declaracionesController extends Controller
                                 'actividadFinanciera' => ([
                                     'remuneracionTotal' => ([
                                         'valor' => $title->fueServidorPublico->ingreso_por_actividad_financiera,
-                                        'moneda' => 'MXN',
+                                        'moneda' => $monedaAFinanciera,
                                     ]),
                                     'actividades' => ([[
                                         'remuneracion' => ([
                                             'valor' => $title->fueServidorPublico->ingreso_por_actividad_financiera,
-                                            'moneda' => 'MXN',
+                                            'moneda' => $monedaAFinanciera,
                                         ]),
                                         'tipoInstrumento' => ([
                                             'clave' => $servidorInstrumentoClave,
@@ -830,12 +876,12 @@ class declaracionesController extends Controller
                                 'serviciosProfesionales' => ([
                                     'remuneracionTotal' => ([
                                         'valor' => $title->fueServidorPublico->ingreso_por_servicios_profesionales,
-                                        'moneda' => 'MXN',
+                                        'moneda' => $monedaSeProf,
                                     ]),
                                     'servicios' => ([[
                                         'remuneracion' => ([
                                             'valor' => $title->fueServidorPublico->ingreso_por_servicios_profesionales,
-                                            'moneda' => 'MXN',
+                                            'moneda' => $monedaSeProf,
                                         ]),
                                         'tipoServicio' => $title->fueServidorPublico->tipo_de_servicio,
                                     ]]),
@@ -843,12 +889,12 @@ class declaracionesController extends Controller
                                 'enajenacionBienes' => ([
                                     'remuneracionTotal' => ([
                                         'valor' => $title->fueServidorPublico->ingreso_por_enajenacion_bienes,
-                                        'moneda' => 'MXN',
+                                        'moneda' => $monedaEnaBienes,
                                     ]),
                                     'bienes' => ([[
                                         'remuneracion' => ([
                                             'valor' => $title->fueServidorPublico->ingreso_por_enajenacion_bienes,
-                                            'moneda' => 'MXN',
+                                            'moneda' => $monedaEnaBienes,
                                         ]),
                                         'tipoBienEnajenado' => $servidorBienEnajenado,
                                     ]]),
@@ -856,27 +902,27 @@ class declaracionesController extends Controller
                                 'otrosIngresos' => ([
                                     'remuneracionTotal' => ([
                                         'valor' => $title->fueServidorPublico->ingreso_otros_no_considerados,
-                                        'moneda' => 'MXN',
+                                        'moneda' => $monedaOtros,
                                     ]),
                                     'ingresos' => ([[
                                         'remuneracion' => ([
                                             'valor' => $title->fueServidorPublico->ingreso_otros_no_considerados,
-                                            'moneda' => 'MXN',
+                                            'moneda' => $monedaOtros,
                                         ]),
                                         'tipoIngreso' => $title->fueServidorPublico->tipo_de_ingreso_no_considerado,
                                     ]]),
                                 ]),
                                 'ingresoNetoAnualDeclarante' => ([
                                     'valor' => $title->fueServidorPublico->ingreso_neto,
-                                    'moneda' => 'MXN',
+                                    'moneda' => $monedaIgNetos,
                                 ]),
                                 'ingresoNetoAnualParejaDependiente' => ([
                                     'valor' => $title->fueServidorPublico->ingreso_neto_pareja,
-                                    'moneda' => 'MXN',
+                                    'moneda' => $monedaInPareja,
                                 ]),
                                 'totalIngresosNetosAnuales' => ([
                                     'valor' =>  $title->fueServidorPublico->ingreso_neto_pareja,
-                                    'moneda' => 'MXN',
+                                    'moneda' => $monedaInPareja,
                                 ]),
                                 'aclaracionesObservaciones' => $title->fueServidorPublico->observaciones,
                             );
@@ -2850,47 +2896,47 @@ class declaracionesController extends Controller
                     } else {
 
                         if ($title->ingresos->ingreso_mensual_publico == null) {
-                            $moneda_remuneracionMensualCargoPublico = 'null';
+                            $moneda_remuneracionMensualCargoPublico = null;
                         } else {
                             $moneda_remuneracionMensualCargoPublico = 'MXN';
                         }
                         if ($title->ingresos->ingreso_mensual_suma == null) {
-                            $moneda_otrosIngresosMensualesTotal = 'null';
+                            $moneda_otrosIngresosMensualesTotal = null;
                         } else {
                             $moneda_otrosIngresosMensualesTotal = 'MXN';
                         }
                         if ($title->ingresos->ingreso_por_actividad_ice == null) {
-                            $moneda_ingreso_por_actividad_ice = 'null';
+                            $moneda_ingreso_por_actividad_ice = null;
                         } else {
                             $moneda_ingreso_por_actividad_ice = 'MXN';
                         }
                         if ($title->ingresos->ingreso_por_actividad_financiera == null) {
-                            $moneda_ingreso_por_actividad_financiera = 'null';
+                            $moneda_ingreso_por_actividad_financiera = null;
                         } else {
                             $moneda_ingreso_por_actividad_financiera = 'MXN';
                         }
                         if ($title->ingresos->ingreso_por_servicios_profesionales == null) {
-                            $moneda_ingreso_por_servicios_profesionales = 'null';
+                            $moneda_ingreso_por_servicios_profesionales = null;
                         } else {
                             $moneda_ingreso_por_servicios_profesionales = 'MXN';
                         }
                         if ($title->ingresos->ingreso_otros == null) {
-                            $moneda_ingreso_otros = 'null';
+                            $moneda_ingreso_otros = null;
                         } else {
                             $moneda_ingreso_otros = 'MXN';
                         }
                         if ($title->ingresos->ingreso_mensual_neto == null) {
-                            $moneda_ingreso_mensual_neto = 'null';
+                            $moneda_ingreso_mensual_neto = null;
                         } else {
                             $moneda_ingreso_mensual_neto = 'MXN';
                         }
                         if ($title->ingresos->ingreso_mensual_neto_pareja == null) {
-                            $moneda_ingreso_mensual_neto_pareja = 'null';
+                            $moneda_ingreso_mensual_neto_pareja = null;
                         } else {
                             $moneda_ingreso_mensual_neto_pareja = 'MXN';
                         }
                         if ($title->ingresos->total_ingresos_declarante_pareja == null) {
-                            $moneda_total_ingresos_declarante_pareja = 'null';
+                            $moneda_total_ingresos_declarante_pareja = null;
                         } else {
                             $moneda_total_ingresos_declarante_pareja = 'MXN';
                         }
