@@ -221,7 +221,8 @@ class DatosParejaController extends Controller
     public function storeEmpleo(Request $request)
     {
         try {
-            $pareja = DatosPareja::find($request->session()->get("declaracion_id"));
+            $declarante = Declaracion::find($this->request->session()->get("declaracion_id"));
+            $pareja = $declarante->pareja;
             $actividadLaboral = $request->actividadLaboral;
             unset($actividadLaboral["cve"]);
             if ($actividadLaboral['ambito_sector_id'] == 1) {
@@ -234,7 +235,6 @@ class DatosParejaController extends Controller
             $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
             $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
             if ($actividadLaboral["ambito_sector_id"] != 4) {
-                return json_encode(DatosPareja::find($request->session()->get("declaracion_id")));
                 $pareja->experienciaLaboral()->create($request->session()->get("declaracion_id"));
             }
             $data = $this->getEmpleo($request->session()->get("declaracion_id"));
