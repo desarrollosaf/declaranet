@@ -259,7 +259,7 @@ class DatosParejaController extends Controller
             $item->ambito = $item->ambito_sectores->valor;
             array_push($data, $item);
         }
-        return $data;
+        return "aqi";
     }
 
     public function editEmpleo($id)
