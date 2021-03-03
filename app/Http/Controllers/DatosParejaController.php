@@ -223,7 +223,6 @@ class DatosParejaController extends Controller
         try {
             $declarante = Declaracion::find($this->request->session()->get("declaracion_id"));
             $pareja = $declarante->pareja;
-            return $pareja;
             $actividadLaboral = $request->actividadLaboral;
             unset($actividadLaboral["cve"]);
             if ($actividadLaboral['ambito_sector_id'] == 1) {
