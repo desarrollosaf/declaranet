@@ -1162,7 +1162,7 @@ class declaracionesController extends Controller
                                 }
                             }
 
-                            if ($vehiculo->tipoOperacion == "AGREGAR"){
+                            if ($vehiculo->tipo_operaciones_id == 1){
                                 $motivoBajaVehiculoClave = null;
                                 $motivoBajaVehiculoValor = null;
                             }
@@ -2574,6 +2574,7 @@ class declaracionesController extends Controller
                                 'codigoPostal' => null,
                             );
                         }else{
+                            dd($domicilio_pareja);
                             $domicilioParejaNull = array(
                                 'calle' => $domicilio_pareja->calle,
                                 'numeroExterior' => $domicilio_pareja->num_ext,
