@@ -15,14 +15,15 @@ use Illuminate\Support\Arr;
 
 class DonativosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    private $request;
+    public function __construct(Request $request) {
+        $this->middleware("auth");
+        $this->request=$request;
+    }
     public function index()
     {
-        $donativos = Donativo::all();
+        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $donativos = $declaracion->donativos;
         return view("donativos.index", compact("donativos"));
     }
 
