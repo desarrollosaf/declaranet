@@ -223,6 +223,7 @@ class DatosParejaController extends Controller
         try {
             $pareja = DatosPareja::find($request->session()->get("declaracion_id"));
             $actividadLaboral = $request->actividadLaboral;
+            unset($actividadLaboral["cve"]);
             if ($actividadLaboral['ambito_sector_id'] == 1) {
                 $actividadLaboral['salario_mensual_neto'] = $actividadLaboral['salario_mensual_neto_publico'];
                 $actividadLaboral['fecha_ingreso'] = $actividadLaboral['fecha_ingreso_publico'];
