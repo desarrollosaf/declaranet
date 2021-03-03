@@ -2557,6 +2557,40 @@ class declaracionesController extends Controller
                             $relacionPareja = $title->pareja->relacionDeclarante->valor;
                         }
 
+                        if($title->situacion_personal_id == 1 || $title->situacion_personal_id == 3 ||  $title->situacion_personal_id == 4){
+                            $domicilioParejaNull = array(
+                                'calle' => null,
+                                'numeroExterior' => null,
+                                'numeroInterior' => null,
+                                'coloniaLocalidad' => null,
+                                'municipioAlcaldia' => ([
+                                    'clave' => null,
+                                    'valor' => null,
+                                ]),
+                                'entidadFederativa' => ([
+                                    'clave' => null,
+                                    'valor' => null,
+                                ]),
+                                'codigoPostal' => $domicilio_pareja->codigo_postal,
+                            );
+                        }else{
+                            $domicilioParejaNull = array(
+                                'calle' => $domicilio_pareja->calle,
+                                'numeroExterior' => $domicilio_pareja->num_ext,
+                                'numeroInterior' => $domicilio_pareja->num_int,
+                                'coloniaLocalidad' => $domicilio_pareja->colonia,
+                                'municipioAlcaldia' => ([
+                                    'clave' => $domicilio_pareja->municipio_domicilio->clave,
+                                    'valor' => $domicilio_pareja->municipio_domicilio->municipio,
+                                ]),
+                                'entidadFederativa' => ([
+                                    'clave' => $entidad_dom_pareja_clave,
+                                    'valor' => $entidad_dom_pareja_valor,
+                                ]),
+                                'codigoPostal' => $domicilio_pareja->codigo_postal,
+                            );
+                        }
+
                         $pareja = array(
                             'nunguno' => false,
                             'tipoOperacion' => $title->pareja->tipoOperaciones->valor,
@@ -2571,21 +2605,7 @@ class declaracionesController extends Controller
                             'esDependienteEconomico' => $dependienteEconomico,
                             'habitaDomicilioDeclarante' => $habitaDomicilioDeclarante,
                             'lugarDondeReside' => $lugarResidePareja,
-                            'domicilioMexico' => ([
-                                'calle' => $domicilio_pareja->calle,
-                                'numeroExterior' => $domicilio_pareja->num_ext,
-                                'numeroInterior' => $domicilio_pareja->num_int,
-                                'coloniaLocalidad' => $domicilio_pareja->colonia,
-                                'municipioAlcaldia' => ([
-                                    'clave' => $domicilio_pareja->municipio_domicilio->clave,
-                                    'valor' => $domicilio_pareja->municipio_domicilio->municipio,
-                                ]),
-                                'entidadFederativa' => ([
-                                    'clave' => $entidad_dom_pareja_clave,
-                                    'valor' => $entidad_dom_pareja_valor,
-                                ]),
-                                'codigoPostal' => $domicilio_pareja->codigo_postal,
-                            ]),
+                            'domicilioMexico' => $domicilioParejaNull,
                             'domicilioExtranjero' => ([
                                 'calle' => null,
                                 'numeroExterior' => null,
