@@ -556,7 +556,7 @@
                                                     <a href="{{route('experiencia_laboral.index')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-briefcase mr-2"></i>Experiencia laboral</a>
-                                                    <a href="{{route('datos_pareja_declarante.create')}}"
+                                                    <a href="{{route('datos_pareja_declarante.index')}}"
                                                        class="nav-tabs nav-link text-light ml-4 mr-3"><i
                                                             class="ion ion-person-stalker mr-2"></i>Datos de la
                                                         pareja</a>

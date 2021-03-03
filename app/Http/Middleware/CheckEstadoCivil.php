@@ -18,7 +18,7 @@ class CheckEstadoCivil
     {
         if (!empty($request->session()->get('declaracion_id'))) {
             $declaracion = Declaracion::find($request->session()->get('declaracion_id'));
-            if ($declaracion->situacion_personal_id == 1 || $declaracion->situacion_personal_id == 3 || $declaracion->situacion_personal_id == 4) {
+            if ($declaracion->situacion_personal_id == 1 || $declaracion->situacion_personal_id == 3 || $declaracion->situacion_personal_id == 4 || $declaracion->situacion_personal_id == null) {
                 return redirect()->route("datos_dependiente_declarante.index");
             }
         }
