@@ -11,7 +11,7 @@ class Declaracion extends Model {
     protected $guarded = ["id", "created_at", "updated_at", "deleted_at"];
 
     public function tipo_movimiento() {
-        return $this->belongsTo(TipoMovimiento::class);
+        return $this->belongsTo(TipoMovimientoMCG::class);
     }
 
     public function servidor_publico() {
