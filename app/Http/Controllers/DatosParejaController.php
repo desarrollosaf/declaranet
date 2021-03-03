@@ -254,8 +254,8 @@ class DatosParejaController extends Controller
     public function getEmpleo($id)
     {
         $data = [];
-        $pareja = DatosPareja::find($id);
-        return $id;
+        $declarante = Declaracion::find($this->request->session()->get("declaracion_id"));
+        $pareja = $declarante->pareja;
         foreach ($pareja->experienciaLaboral as $item) {
             $item->ambito = $item->ambito_sectores->valor;
             array_push($data, $item);
