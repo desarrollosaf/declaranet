@@ -785,47 +785,47 @@ class declaracionesController extends Controller
                                 $servidorBienEnajenado = $title->fueServidorPublico->TipoBien->valor;
                             }
 
-                            if($title->fueServidorPublico->remuneracion_neta = null){
+                            if($title->fueServidorPublico->remuneracion_neta == null){
                                 $monedaCargoPublico = null;
                             }else{
                                 $monedaCargoPublico = 'MXN';
                             }
-                            if($title->fueServidorPublico->otros_ingresos_total = null){
+                            if($title->fueServidorPublico->otros_ingresos_total == null){
                                 $monedaOtrosTotal = null;
                             }else{
                                 $monedaOtrosTotal = 'MXN';
                             }
-                            if($title->fueServidorPublico->ingreso_por_actividad_ice = null){
+                            if($title->fueServidorPublico->ingreso_por_actividad_ice == null){
                                 $monedaICE = null;
                             }else{
                                 $monedaICE = 'MXN';
                             }
-                            if($title->fueServidorPublico->ingreso_por_actividad_financiera = null){
+                            if($title->fueServidorPublico->ingreso_por_actividad_financiera == null){
                                 $monedaAFinanciera = null;
                             }else{
                                 $monedaAFinanciera = 'MXN';
                             }
-                            if($title->fueServidorPublico->ingreso_por_servicios_profesionales = null){
+                            if($title->fueServidorPublico->ingreso_por_servicios_profesionales == null){
                                 $monedaSeProf = null;
                             }else{
                                 $monedaSeProf = 'MXN';
                             }
-                            if($title->fueServidorPublico->ingreso_por_enajenacion_bienes = null){
+                            if($title->fueServidorPublico->ingreso_por_enajenacion_bienes == null){
                                 $monedaEnaBienes = null;
                             }else{
                                 $monedaEnaBienes = 'MXN';
                             }
-                            if($title->fueServidorPublico->ingreso_otros_no_considerados = null){
+                            if($title->fueServidorPublico->ingreso_otros_no_considerados == null){
                                 $monedaOtros = null;
                             }else{
                                 $monedaOtros = 'MXN';
                             }
-                            if($title->fueServidorPublico->ingreso_neto = null){
+                            if($title->fueServidorPublico->ingreso_neto == null){
                                 $monedaIgNetos = null;
                             }else{
                                 $monedaIgNetos = 'MXN';
                             }
-                            if($title->fueServidorPublico->ingreso_neto_pareja = null){
+                            if($title->fueServidorPublico->ingreso_neto_pareja == null){
                                 $monedaInPareja = null;
                             }else{
                                 $monedaInPareja = 'MXN';
