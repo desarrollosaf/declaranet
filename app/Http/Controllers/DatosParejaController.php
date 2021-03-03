@@ -224,7 +224,6 @@ class DatosParejaController extends Controller
             $pareja = DatosPareja::find($request->session()->get("declaracion_id"));
             $actividadLaboral = $request->actividadLaboral;
             unset($actividadLaboral["cve"]);
-            return json_encode($actividadLaboral);
             if ($actividadLaboral['ambito_sector_id'] == 1) {
                 $actividadLaboral['salario_mensual_neto'] = $actividadLaboral['salario_mensual_neto_publico'];
                 $actividadLaboral['fecha_ingreso'] = $actividadLaboral['fecha_ingreso_publico'];
@@ -259,6 +258,8 @@ class DatosParejaController extends Controller
             $item->ambito = $item->ambito_sectores->valor;
             array_push($data, $item);
         }
+        return json_encode("no");
+
         return $data;
     }
 
