@@ -2391,15 +2391,12 @@ class declaracionesController extends Controller
                             'aclaracionesObservaciones' => null,
                         );
                     } else {
-                        if($title->pareja->nombre == null || $title->pareja->primer_apellido == null){
+                        if($title->pareja->ciudadano_id == null){
                             $pareja_extranjero = null;
-                        }
-                        if ($title->pareja->ciudadanoExtranjero->id == 2) {
+                        }else if ($title->pareja->ciudadanoExtranjero->id == 2) {
                             $pareja_extranjero = true;
                         } else if ($title->pareja->ciudadanoExtranjero->id == 1) {
                             $pareja_extranjero = false;
-                        }else{
-                            $pareja_extranjero = null;
                         }
 
                         if ($title->pareja->respuesta_domicilio_id == 1) {
