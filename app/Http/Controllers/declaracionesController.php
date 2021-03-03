@@ -2541,7 +2541,10 @@ class declaracionesController extends Controller
                             $lugarResidePareja = $title->pareja->lugarReside->valor;
                         }
 
-                        if($domicilio_pareja->entidad_id == null){
+                        if($title->pareja->respuesta_domicilio_id == null){
+                            $entidad_dom_pareja_clave = null;
+                            $entidad_dom_pareja_valor = null;
+                        }else if($domicilio_pareja->entidad_id == null){
                             $entidad_dom_pareja_clave = null;
                             $entidad_dom_pareja_valor = null;
                         }else{
