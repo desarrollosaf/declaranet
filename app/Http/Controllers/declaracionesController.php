@@ -2346,7 +2346,7 @@ class declaracionesController extends Controller
                     if ($title->pareja == null) {
                         $pareja = array(
                             'nunguno' => true,
-                            'tipoOperacion' => '',
+                            'tipoOperacion' => null,
                             'nombre' => null,
                             'primerApellido' => null,
                             'segundoApellido' => null,
@@ -2391,6 +2391,9 @@ class declaracionesController extends Controller
                             'aclaracionesObservaciones' => null,
                         );
                     } else {
+                        if (!count($title->pareja)){
+                            $pareja_extranjero = null;
+                        }
                         if ($title->pareja->ciudadanoExtranjero->id == 2) {
                             $pareja_extranjero = true;
                         } else if ($title->pareja->ciudadanoExtranjero->id == 1) {
