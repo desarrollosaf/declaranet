@@ -255,6 +255,7 @@ class DatosParejaController extends Controller
     {
         $data = [];
         $pareja = DatosPareja::find($id);
+        return $pareja;
         foreach ($pareja->experienciaLaboral as $item) {
             $item->ambito = $item->ambito_sectores->valor;
             array_push($data, $item);
