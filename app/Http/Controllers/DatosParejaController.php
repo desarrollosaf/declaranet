@@ -234,6 +234,7 @@ class DatosParejaController extends Controller
             $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
             $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
             if ($actividadLaboral["ambito_sector_id"] != 4) {
+                return json_encode("no");
                 $pareja->experienciaLaboral()->create($actividadLaboral);
             }
             $data = $this->getEmpleo($request->session()->get("declaracion_id"));
@@ -258,8 +259,6 @@ class DatosParejaController extends Controller
             $item->ambito = $item->ambito_sectores->valor;
             array_push($data, $item);
         }
-        return json_encode("no");
-
         return $data;
     }
 
