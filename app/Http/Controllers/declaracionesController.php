@@ -2391,9 +2391,7 @@ class declaracionesController extends Controller
                             'aclaracionesObservaciones' => null,
                         );
                     } else {
-                        if (!count($title->pareja)){
-                            $pareja_extranjero = null;
-                        }
+                        dd($title->pareja);
                         if ($title->pareja->ciudadanoExtranjero->id == 2) {
                             $pareja_extranjero = true;
                         } else if ($title->pareja->ciudadanoExtranjero->id == 1) {
