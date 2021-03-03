@@ -2574,23 +2574,39 @@ class declaracionesController extends Controller
                                 'codigoPostal' => null,
                             );
                         }else{
-                            dd($domicilio_pareja);
-
-                            $domicilioParejaNull = array(
-                                'calle' => $domicilio_pareja->calle,
-                                'numeroExterior' => $domicilio_pareja->num_ext,
-                                'numeroInterior' => $domicilio_pareja->num_int,
-                                'coloniaLocalidad' => $domicilio_pareja->colonia,
-                                'municipioAlcaldia' => ([
-                                    'clave' => $domicilio_pareja->municipio_domicilio->clave,
-                                    'valor' => $domicilio_pareja->municipio_domicilio->municipio,
-                                ]),
-                                'entidadFederativa' => ([
-                                    'clave' => $entidad_dom_pareja_clave,
-                                    'valor' => $entidad_dom_pareja_valor,
-                                ]),
-                                'codigoPostal' => $domicilio_pareja->codigo_postal,
-                            );
+                            if($domicilio_pareja == null){
+                                $domicilioParejaNull = array(
+                                    'calle' => null,
+                                    'numeroExterior' => null,
+                                    'numeroInterior' => null,
+                                    'coloniaLocalidad' => null,
+                                    'municipioAlcaldia' => ([
+                                        'clave' => null,
+                                        'valor' => null,
+                                    ]),
+                                    'entidadFederativa' => ([
+                                        'clave' => null,
+                                        'valor' => null,
+                                    ]),
+                                    'codigoPostal' => null,
+                                );
+                            }else{
+                                $domicilioParejaNull = array(
+                                    'calle' => $domicilio_pareja->calle,
+                                    'numeroExterior' => $domicilio_pareja->num_ext,
+                                    'numeroInterior' => $domicilio_pareja->num_int,
+                                    'coloniaLocalidad' => $domicilio_pareja->colonia,
+                                    'municipioAlcaldia' => ([
+                                        'clave' => $domicilio_pareja->municipio_domicilio->clave,
+                                        'valor' => $domicilio_pareja->municipio_domicilio->municipio,
+                                    ]),
+                                    'entidadFederativa' => ([
+                                        'clave' => $entidad_dom_pareja_clave,
+                                        'valor' => $entidad_dom_pareja_valor,
+                                    ]),
+                                    'codigoPostal' => $domicilio_pareja->codigo_postal,
+                                );
+                            }
                         }
 
                         $pareja = array(
