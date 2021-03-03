@@ -2571,7 +2571,7 @@ class declaracionesController extends Controller
                                     'clave' => null,
                                     'valor' => null,
                                 ]),
-                                'codigoPostal' => $domicilio_pareja->codigo_postal,
+                                'codigoPostal' => null,
                             );
                         }else{
                             $domicilioParejaNull = array(
