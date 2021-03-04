@@ -11,16 +11,16 @@
                     {!! Form::select('empresas[relacion_transmisores_id]', isset($RelacionTransmisor) ? $RelacionTransmisor : [], isset($empresas) ? $empresas->relacion_transmisores_id : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder' => 'Selecciona una opción', 'id' => 'relacion_transmisores_id', 'required' => 'true']) !!}
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4" id="otro_Disabled">
                 <div class="form-group">
-                    <strong style="line-height : 15px;">{!! Form::label('nombre_empresa', ' Nombre de la empresa, sociedad, asociación civil, organizaciones, consejos y consultorías: * ') !!}</strong>
-                    {!! Form::text('empresas[nombre_empresa]',isset($empresas) ? $empresas->nombre_empresa : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'p. ej. Consultora S.A. de C.V.',  'id' => 'nombre_empresa', 'required' => 'true']) !!}
+                    <strong>{!! Form::label('participacion_otro', ' Especifique: ') !!}</strong>
+                    {!! Form::text('empresas[participacion_otro]',isset($empresas) ? $empresas->participacion_otro : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'p. ej. 10%',  'id' => 'participacion_otro', 'readOnly' => 'true' ]) !!}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
-                    <strong>{!! Form::label('rfc_empresa', ' RFC: * ') !!}</strong>
-                    {!! Form::text('empresas[rfc_empresa]',isset($empresas) ? $empresas->rfc_empresa : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'P. EJ. XAX010101010',  'id' => 'rfc_empresa', 'maxlength'=>'12', 'pattern'=>'([A-Z]{3}[0-9]{6}[A-Z0-9]{3})', 'required' => 'true', 'title' => 'El formato de RFC es a 12 dígitos']) !!}
+                    <strong style="line-height : 15px;">{!! Form::label('nombre_empresa', ' Nombre de la empresa, sociedad, asociación civil, organizaciones, consejos y consultorías: * ') !!}</strong>
+                    {!! Form::text('empresas[nombre_empresa]',isset($empresas) ? $empresas->nombre_empresa : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'p. ej. Consultora S.A. de C.V.',  'id' => 'nombre_empresa', 'required' => 'true']) !!}
                 </div>
             </div>
         </div>
@@ -28,6 +28,12 @@
     <!-- Segunda fila  -->
     <div class="container">
         <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <strong>{!! Form::label('rfc_empresa', ' RFC: * ') !!}</strong>
+                    {!! Form::text('empresas[rfc_empresa]',isset($empresas) ? $empresas->rfc_empresa : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'P. EJ. XAX010101010',  'id' => 'rfc_empresa', 'maxlength'=>'12', 'pattern'=>'([A-Z]{3}[0-9]{6}[A-Z0-9]{3})', 'required' => 'true', 'title' => 'El formato de RFC es a 12 dígitos']) !!}
+                </div>
+            </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <strong style="line-height : 15px;">{!! Form::label('porcentaje', ' Porcentaje de participación de acuerdo a escrituras, en el capital, partes sociales, servicios profesionales o de bienes muebles o inmuebles: * ') !!}</strong>
@@ -38,12 +44,6 @@
                 <div class="form-group">
                     <strong>{!! Form::label('tipo_participacion_id', ' Tipo de participación: * ') !!}</strong>
                     {!! Form::select('empresas[tipo_participacion_id]', isset($selecttipoParticipacion) ? $selecttipoParticipacion : [], isset($empresas) ? $empresas->tipo_participacion_id : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'Selecciona una opción', 'required' => 'true', 'id' => 'tipo_participacion_id']) !!}
-                </div>
-            </div>
-            <div class="col-lg-4" id="otro_Disabled">
-                <div class="form-group">
-                    <strong>{!! Form::label('participacion_otro', ' Especifique: ') !!}</strong>
-                    {!! Form::text('empresas[participacion_otro]',isset($empresas) ? $empresas->participacion_otro : null,['class'=>'form-control text-uppercase tipo-titular', 'placeholder'=>'p. ej. 10%',  'id' => 'participacion_otro', 'disabled' => 'true' ]) !!}
                 </div>
             </div>
         </div>
@@ -220,6 +220,14 @@
         }
     });
 
+    $("#relacion_transmisores_id").change(function () {
+        if($(this).val() === "20" || $(this).val() === ""){
+            $("#participacion_otro").prop("readOnly", false).prop("required", true);
+        } else  {
+            $("#participacion_otro").prop("readOnly", true).prop("required", false).val("");
+        }
+    });
+
     //HABILITAR CAJA DE TEXTO OTROS RECIBE REMUNERACIÓN
     $('#part_ubicacion_id').change(function () {
         if (parseInt($(this).val()) === 1) {
@@ -237,7 +245,7 @@
     $('#tipo_respuesta_id').change();
     $('#sector_productivo_id').change();
     $('#part_ubicacion_id').change();
-
+    $("#relacion_transmisores_id").change();
     @endisset
 
 
