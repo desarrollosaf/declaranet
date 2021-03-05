@@ -21,6 +21,9 @@
                                     <center>INSTITUCIÓN</center>
                                 </th>
                                 <th>
+                                    <center>TIPO DE OPERACIÓN</center>
+                                </th>
+                                <th>
                                     <center>ACCIONES</center>
                                 </th>
                             </tr>
@@ -43,19 +46,19 @@
 
                                         </center>
                                     </td>
+                                    <td><center>{{$curricular->tipoOperaciones->valor}}</center></td>
 
                                     <td class="all text-center">
-                                        {!! Form::open(['action' => ['DatosCurricularesDeclaranteController@destroy', $curricular->id], 'method'=>'DELETE']) !!}
+                                        <input type="hidden" name="motivo_baja" id="motivo_baja">
                                         <div style="display: inline-block;">
                                             <a href="{{route('datos_curriculares_declarante.edit',[$curricular])}}"
                                                class="btn btn-xs btn-warning">
                                                 <i class="ion ion-edit"></i>
                                             </a>
-                                            <button class="btn btn-xs btn-danger btn-borrar">
+                                            <button class="btn btn-xs btn-danger" onclick="eliminar({{$curricular->id}},{{$curricular->enviado}})">
                                                 <i class="ion ion-trash-a"></i>
                                             </button>
                                         </div>
-                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach
@@ -95,6 +98,33 @@
 
 
     </div>
+<div class="modal" tabindex="-1" role="dialog" id="modal_baja">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Baja</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {!! Form::open(['action' => ['DatosCurricularesDeclaranteController@destroy', 1], 'method'=>'DELETE']) !!}
+        <div class="modal-body">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <strong>Motivo de baja</strong>
+                    {!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!}
+                    <span class="text-danger" style="font-size:150%"></span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-submit text-light">Eliminar</button>
+            <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+        </div>
+        {!! Form::close() !!}
+    </div>
+  </div>
+</div>
 @endsection
 @section('scripts')
     <script type="text/javascript">
@@ -108,18 +138,42 @@
                 }
             });
         });
+        function eliminar(id,enviada){
+            if(enviada){
+                $("#modal_baja").modal("show");
+            }else{
+                Swal.fire({
+                    title: '¿Está seguro?',
+                    text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+//                        $(that).closest('form').submit();
+                    }
+                });
+            }
+        }
         $('.btn-borrar').on('click', function (e) {
             let that = this;
             console.log('boton clic');
             e.preventDefault();
             Swal.fire({
                 title: '¿Está seguro?',
-                text: 'Al oprimir el botón de aceptar se eliminará el registro',
-                icon: 'warning',
+                text: 'describe el motivo de la baja',
+                input: 'text',
+                inputAttributes: {
+                    autocapitalize: 'off'
+                },
                 showCancelButton: true,
-                cancelButtonText: 'Cancelar'
+                confirmButtonText: 'Aceptar',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar',
             }).then((result) => {
                 if (result.isConfirmed) {
+                    console.log(result.value);
+                    $("#motivo_baja").val(result.value);
                     $(that).closest('form').submit();
                 }
             });

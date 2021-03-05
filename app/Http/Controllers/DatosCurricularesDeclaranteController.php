@@ -10,6 +10,7 @@ use App\documentoObtenido;
 use App\LugarUbicacion;
 use App\Declaracion;
 use App\DatoCurricular;
+use App\motivoBaja;
 
 class DatosCurricularesDeclaranteController extends Controller
 {
@@ -30,7 +31,8 @@ class DatosCurricularesDeclaranteController extends Controller
         foreach($curriculares as $curricular){
             $curricular->nivel = $curricular->nivel;
         }
-        return view('datosCurricularesDeclarante.index',compact('curriculares'));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor","id");
+        return view('datosCurricularesDeclarante.index',compact('curriculares','motivos'));
     }
 
     /**
@@ -57,6 +59,7 @@ class DatosCurricularesDeclaranteController extends Controller
     public function store(Request $request)
     {
         $curriculares = $request->input("curriculares");
+        $curriculares["tipo_operacion_id"] = 1;
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
         $declarante->datos_curriculares()->create($curriculares);
         return redirect()->route("datos_curriculares_declarante.index");
@@ -104,7 +107,11 @@ class DatosCurricularesDeclaranteController extends Controller
     public function update(Request $request, $id)
     {
         $curricular = DatoCurricular::find($id);
-        $curricular->update($request->input('curriculares'));
+        $cu = $request->input('curriculares');
+        if($curricular->enviado){
+            $cu["tipo_operacion_id"] = 2;
+        }
+        $curricular->update($cu);
         return redirect()->route('datos_curriculares_declarante.index');
     }
 
@@ -117,7 +124,12 @@ class DatosCurricularesDeclaranteController extends Controller
     public function destroy($id)
     {
         $curricular = DatoCurricular::find($id);
-        $curricular->delete();
+        if(!$curricular->enviado){
+            $curricular->delete();
+        }else{
+            $curricular->update(["tipo_operacion_id" => 4,"motivo_baja" => $this->request->motivo_baja]);
+            
+        }
         return redirect()->back();
     }
 }

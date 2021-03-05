@@ -82,17 +82,11 @@ class DatosGeneralesDeclaranteController extends Controller
 //            "pais_id" => "required",
 //            "nacionalidad" => "required",
 //        ]);
-
-        $declaracionResponse = $declaracion->update($request->declaracion);
+        $declaracionResponse = $request->declaracion;
+        $declaracionResponse["tipo_operacion_id"] = 1;
+        $declaracion->update($declaracionResponse);
         return redirect()->route("domicilio_declarante.index");
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -117,8 +111,14 @@ class DatosGeneralesDeclaranteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+   {
+        $declaracion = Declaracion::find($id);
+        $dec = $request->declaracion;
+        if($declaracion->enviado){
+            $dec["tipo_operacion_id"] = 2;
+        }
+        $declaracion->update($dec);
+        return redirect()->route('datos_declarante.create');
     }
 
     /**
@@ -127,8 +127,7 @@ class DatosGeneralesDeclaranteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id){
+        
     }
 }
