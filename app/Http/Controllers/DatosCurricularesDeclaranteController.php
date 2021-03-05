@@ -123,11 +123,11 @@ class DatosCurricularesDeclaranteController extends Controller
      */
     public function destroy($id)
     {
-        $curricular = DatoCurricular::find($id);
+        $curricular = DatoCurricular::find($this->request->id);
         if(!$curricular->enviado){
             $curricular->delete();
         }else{
-            $curricular->update(["tipo_operacion_id" => 4,"motivo_baja" => $this->request->motivo_baja]);
+            $curricular->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
             
         }
         return redirect()->back();

@@ -14,7 +14,8 @@ class AddMotivoBajaToDatosCurriculares extends Migration
     public function up()
     {
         Schema::table('datos_curriculares', function (Blueprint $table) {
-            $table->string("motivo_baja")->nullable();
+            $table->unsignedBigInteger('motivo_baja_id')->nullable();
+            $table->foreign('motivo_baja_id')->references('id')->on('motivo_bajas');
         });
     }
 
@@ -26,7 +27,7 @@ class AddMotivoBajaToDatosCurriculares extends Migration
     public function down()
     {
         Schema::table('datos_curriculares', function (Blueprint $table) {
-            $table->dropColumn("motivo_baja");
+            $table->dropColumn("motivo_baja_id");
         });
     }
 }

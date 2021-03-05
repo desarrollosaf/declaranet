@@ -107,7 +107,8 @@
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        {!! Form::open(['action' => ['DatosCurricularesDeclaranteController@destroy', 1], 'method'=>'DELETE']) !!}
+        {!! Form::open(['action' => ['DatosCurricularesDeclaranteController@destroy', 1], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+        <input name="id" type="hidden" id='id'>
         <div class="modal-body">
             <div class="form-row">
                 <div class="form-group col-md-12">
@@ -118,7 +119,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-sm btn-submit text-light">Eliminar</button>
+            <button type="submit" class="btn btn-sm btn-submit text-light">Eliminar</button>
             <a class="btn btn-secondary" data-dismiss="modal">Close</a>
         </div>
         {!! Form::close() !!}
@@ -140,6 +141,7 @@
         });
         function eliminar(id,enviada){
             if(enviada){
+                $("#id").val(id);
                 $("#modal_baja").modal("show");
             }else{
                 Swal.fire({
