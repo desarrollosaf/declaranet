@@ -27,4 +27,8 @@ class Participacion extends Model
     public function Entidades(){
         return $this->belongsTo(Entidad::class);
     }
+    
+   public function tipo_operacion(){
+        return $this->belongsTo(tipoOperacion::class);
+   } 
 }

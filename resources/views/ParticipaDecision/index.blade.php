@@ -22,8 +22,9 @@
                                     <tr class="text-center">
                                         <th scope="col" width="20%">TITULAR</th>
                                         <th scope="col" width="20%">TIPO DE INSTITUCIÓN </th>
-                                        <th scope="col" width="40%">INFORMACIÓN ADICIONAL</th>
-                                        <th scope="col" width="20%">ACCIONES</th></tr>
+                                        <th scope="col" width="20%">INFORMACIÓN ADICIONAL</th>
+                                        <th scope="col" width="20%">TIPO OPERACIÓN</th>
+                                        <th scope="col" width="20%">ACCIONES</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,17 +43,22 @@
                                     <strong>MONTO MENSUAL NETO:</strong>{{strtoupper($participaciones->monto_mensual)}}
                                 </center>
                                 </td>
+                                <td>
+                                <center>
+                                    {{strtoupper($participaciones->tipo_operacion->valor)}}
+                                </center>
+                                </td>
                                 <td class="all">
-                                    {!! Form::open(['action' => ['ParticipaDecisionController@destroy', $participaciones->id], 'method'=>'DELETE']) !!}
+                                    @if($participaciones->tipo_operacion_id != 4)
                                     <div style="display: inline-block;">
                                         <a href="{{route('participacion.edit',[$participaciones])}}" class="btn btn-xs btn-warning">
                                             <i class="ion ion-edit"></i>
                                         </a>
-                                        <button class="btn btn-xs btn-danger btn-borrar">
-                                            <i class="ion ion-trash-a btn-borrar"></i>
+                                        <button class="btn btn-xs btn-danger" onclick="eliminar({{$participaciones->id}},{{$participaciones->enviado}})">
+                                            <i class="ion ion-trash-a"></i>
                                         </button>
                                     </div>
-                                    {!! Form::close() !!}
+                                    @endif
                                 </td>
                                 </tr>
                                 @endforeach
@@ -87,46 +93,94 @@
                     </div>
                 </div>
             </div>
+
+            <div class="modal" tabindex="-1" role="dialog" id="modal_baja">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Baja</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {!! Form::open(['action' => ['ParticipaDecisionController@destroy', 1], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+                        <input name="id" type="hidden" id='id'>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <strong>Motivo de baja</strong>
+                                    {!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!}
+                                    <span class="text-danger" style="font-size:150%"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-sm btn-submit text-light">Eliminar</button>
+                            <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+
             @endsection
 
 
             @section('scripts')
             <script>
-               
-      $('.btn-borrar').on('click', function (e) {
-        let that = this;
-        console.log('boton clic');
-        e.preventDefault();
-        Swal.fire({
-            title: '¿Está seguro?',
-            text: 'Al oprimir el botón de aceptar se eliminará el registro',
-            icon: 'warning',
-            showCancelButton: true,
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $(that).closest('form').submit();
-            }
-        });
-        return false;
-        
-    });$('.btn-ninguno').on('click', function (e) {
-                    let that = this;
-                    e.preventDefault();
-                    Swal.fire({
-                        title: '¿Está seguro que no desea registrar la información solicitada en este apartado?',
+                function eliminar(id, enviada){
+                $("#id").val(id);
+                if (enviada){
+                    $("#modal_baja").modal("show");
+                } else{
+                Swal.fire({
+                title: '¿Está seguro?',
+                        text: 'Al oprimir el botón de aceptar se eliminará el registro',
                         icon: 'warning',
                         showCancelButton: true,
                         cancelButtonText: 'Cancelar'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            Swal.fire({
-                                text: 'No se registró información en este apartado. Si desea registrar Participación en la toma de decisiones de alguna institución pulse: Agregar, de lo contrario vaya al siguiente apartado.',
-                                icon: 'warning',
-                                cancelButtonText: 'Aceptar'
-                            });
-                        }
-                    });
+                }).then((result) => {
+                if (result.isConfirmed) {
+                $("#frmBorrar").submit();
+                }
+                });
+                }
+                }
+
+                $('.btn-borrar').on('click', function (e) {
+                let that = this;
+                console.log('boton clic');
+                e.preventDefault();
+                Swal.fire({
+                title: '¿Está seguro?',
+                        text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                $(that).closest('form').submit();
+                }
+                });
+                return false;
+                });
+                $('.btn-ninguno').on('click', function (e) {
+                let that = this;
+                e.preventDefault();
+                Swal.fire({
+                title: '¿Está seguro que no desea registrar la información solicitada en este apartado?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                Swal.fire({
+                text: 'No se registró información en este apartado. Si desea registrar Participación en la toma de decisiones de alguna institución pulse: Agregar, de lo contrario vaya al siguiente apartado.',
+                        icon: 'warning',
+                        cancelButtonText: 'Aceptar'
+                });
+                }
+                });
                 });
             </script>
             @endsection

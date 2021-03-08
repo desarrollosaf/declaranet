@@ -11,19 +11,23 @@ use App\LugarUbicacion;
 use Illuminate\Support\Arr;
 use App\Declaracion;
 use App\Entidad;
+use App\motivoBaja;
 
-class ParticipaDecisionController extends Controller
-{
+class ParticipaDecisionController extends Controller {
+
     private $request;
-    function __construct(Request $request)
-    {
+
+    function __construct(Request $request) {
+        $this->middleware('auth');
+        $this->middleware('CheckDeclaracion');
         $this->request = $request;
     }
-    public function index()
-    {
-        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+
+    public function index() {
+        $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $participaciones = $declaracion->participacion;
-        return view("ParticipaDecision.index", compact('participaciones'));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor","id");
+        return view("ParticipaDecision.index", compact('participaciones', 'motivos'));
     }
 
     /**
@@ -31,19 +35,18 @@ class ParticipaDecisionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         $tipoParticipacion = tipoRelacion::all();
         $participacion = [];
         $participacion[""] = "SELECCIONA UNA OPCIÓN";
-        foreach ($tipoParticipacion as $item){
+        foreach ($tipoParticipacion as $item) {
             $participacion[$item->id] = $item->valor;
         }
 
         $tipoInstitucion = tipoInstitucion::all();
         $institucion = [];
         $institucion[""] = "SELECCIONA UNA OPCIÓN";
-        foreach ($tipoInstitucion as $item){
+        foreach ($tipoInstitucion as $item) {
             $institucion[$item->id] = $item->valor;
         }
 
@@ -55,26 +58,27 @@ class ParticipaDecisionController extends Controller
         $LugarUbicacion = LugarUbicacion::all();
         $lugar = [];
         $lugar[""] = "SELECCIONA UNA OPCIÓN";
-        foreach ($LugarUbicacion as $item){
+        foreach ($LugarUbicacion as $item) {
             $lugar[$item->id] = $item->valor;
         }
 
         $Paises = Pais::all();
         $pais = [];
         $pais[""] = "SELECCIONA UNA OPCIÓN";
-        foreach ($Paises as $item){
+        foreach ($Paises as $item) {
             $pais[$item->id] = $item->valor;
         }
 
         $Entidad = Entidad::all();
         $entidad = [];
-        foreach ($Entidad as $item){
+        foreach ($Entidad as $item) {
             $entidad[$item->id] = $item->entidad;
         }
 
-        $tipoOperacion = "AGREGAR";
+//        $tipoOperacion = "AGREGAR";
+        $tipoOperacion = 1;
 
-        return view("ParticipaDecision.create", compact('participacion','institucion','remuneracion','lugar','pais','entidad','tipoOperacion'));
+        return view("ParticipaDecision.create", compact('participacion', 'institucion', 'remuneracion', 'lugar', 'pais', 'entidad', 'tipoOperacion'));
     }
 
     /**
@@ -83,10 +87,10 @@ class ParticipaDecisionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $participaciones = $this->request->input("participaciones");
-        $participaciones['declaracion_id']=$this->request->session()->get('declaracion_id');
+        $participaciones["tipo_operacion_id"] = 1;
+        $participaciones['declaracion_id'] = $this->request->session()->get('declaracion_id');
         Participacion::create($participaciones);
         return redirect("participacion");
     }
@@ -97,8 +101,7 @@ class ParticipaDecisionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -108,20 +111,19 @@ class ParticipaDecisionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         $participaciones = Participacion::find($id);
-        $participacion = Arr::pluck(tipoRelacion::all(), 'valor','id');
-        $institucion = Arr::pluck(tipoInstitucion::all(), 'valor','id');
-        $lugar = Arr::pluck(LugarUbicacion::all(), 'valor','id');
-        $pais = Arr::pluck(Pais::all(), 'valor','id');
+        $participacion = Arr::pluck(tipoRelacion::all(), 'valor', 'id');
+        $institucion = Arr::pluck(tipoInstitucion::all(), 'valor', 'id');
+        $lugar = Arr::pluck(LugarUbicacion::all(), 'valor', 'id');
+        $pais = Arr::pluck(Pais::all(), 'valor', 'id');
         $remuneracion = [];
         $remuneracion[""] = "SELECCIONA UNA OPCIÓN";
         $remuneracion["1"] = "SÍ";
         $remuneracion["2"] = "NO";
-        $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
+        $entidad = Arr::pluck(Entidad::all(), 'entidad', 'id');
         $tipoOperacion = "AGREGAR";
-        return view("ParticipaDecision.edit", compact( 'participaciones','participacion','institucion','lugar','pais','remuneracion','entidad','tipoOperacion'));
+        return view("ParticipaDecision.edit", compact('participaciones', 'participacion', 'institucion', 'lugar', 'pais', 'remuneracion', 'entidad', 'tipoOperacion'));
     }
 
     /**
@@ -131,10 +133,12 @@ class ParticipaDecisionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $participaciones = $request->input("participaciones");
-        $participacion= Participacion::find($id);
+        $participacion = Participacion::find($id);
+        if ($participacion->enviado) {
+            $cu["tipo_operacion_id"] = 2;
+        }
         $participacion->update($participaciones);
         return redirect("participacion");
     }
@@ -145,10 +149,17 @@ class ParticipaDecisionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         $participacion = Participacion::find($id);
-        $participacion->delete();
+
+        if (!$participacion->enviado) {
+            $participacion->delete();
+        } else {
+            $participacion->update(["tipo_operacion_id" => 4, "motivo_baja_id" => $this->request->motivo_baja_id]);
+        }
+
+
         return redirect()->route("participacion.index");
     }
+
 }
