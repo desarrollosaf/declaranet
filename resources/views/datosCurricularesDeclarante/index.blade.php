@@ -49,7 +49,7 @@
                                     <td><center>{{$curricular->tipoOperaciones->valor}}</center></td>
 
                                     <td class="all text-center">
-                                        <input type="hidden" name="motivo_baja" id="motivo_baja">
+                                        @if(!$curricular->enviado)
                                         <div style="display: inline-block;">
                                             <a href="{{route('datos_curriculares_declarante.edit',[$curricular])}}"
                                                class="btn btn-xs btn-warning">
@@ -59,6 +59,7 @@
                                                 <i class="ion ion-trash-a"></i>
                                             </button>
                                         </div>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -140,8 +141,8 @@
             });
         });
         function eliminar(id,enviada){
+            $("#id").val(id);
             if(enviada){
-                $("#id").val(id);
                 $("#modal_baja").modal("show");
             }else{
                 Swal.fire({
@@ -152,7 +153,7 @@
                     cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.isConfirmed) {
-//                        $(that).closest('form').submit();
+                        $("#frmBorrar").submit();
                     }
                 });
             }

@@ -53,6 +53,7 @@ class DomicilioDeclaranteController extends Controller
     public function store(Request $request)
     {
         $domicilio = $request->input("domicilio");
+        $domicilio["tipo_operacion_id"] = 1;
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
         $declarante->domicilio()->create($domicilio);
         return redirect()->route("datos_curriculares_declarante.index");
@@ -93,9 +94,12 @@ class DomicilioDeclaranteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $domicilioRequest = $request->input("domicilio");
-        $domicilio = Domicilio::find($id);
-        $domicilio->update($domicilioRequest);
+        $domicilio = Domicilio::find($id);;
+        $dom = $request->domicilio;
+        if($domicilio->enviado){
+            $dom["tipo_operacion_id"] = 2;
+        }
+        $domicilio->update($dom);
         return redirect()->route("datos_curriculares_declarante.index");
     }
 
