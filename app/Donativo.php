@@ -10,4 +10,8 @@ class Donativo extends Model
   use SoftDeletes;
   protected $table="donativos";
   protected $guarded = ["id","created_at","updated_at","deleted_at"];
+  
+  public function tipo_operacion(){
+      return $this->belongsTo(tipoOperacion::class);
+  }
 }

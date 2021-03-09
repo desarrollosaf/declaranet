@@ -12,6 +12,7 @@ use App\TipoTitularDonativo;
 use App\FormaRecepcionDonativo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+USE App\motivoBaja;
 
 class DonativosController extends Controller
 {
@@ -24,7 +25,8 @@ class DonativosController extends Controller
     {
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $donativos = $declaracion->donativos;
-        return view("donativos.index", compact("donativos"));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor","id");
+        return view("donativos.index", compact("donativos","motivos"));
     }
 
     /**
@@ -52,7 +54,7 @@ class DonativosController extends Controller
     {
         $donativo = $request->input("donativos");
         $declaracion = Declaracion::find($request->session()->get("declaracion_id"));
-        //dd($donativo);
+        $donativo["tipo_operacion_id"] = 1;
         $declaracion->donativos()->create($donativo);
         return redirect()->route("donativos.index");
     }
@@ -92,11 +94,14 @@ class DonativosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $data = $request->input("donativos");
+   {
         $donativo = Donativo::find($id);
-        $donativo->update($data);
-        return redirect()->route("donativos.index");
+        $do = $request->input('donativos');
+        if($donativo->enviado){
+            $do["tipo_operacion_id"] = 2;
+        }
+        $donativo->update($do);
+        return redirect()->route('donativos.index');
     }
 
     /**
@@ -107,7 +112,14 @@ class DonativosController extends Controller
      */
     public function destroy($id)
     {
-      $donativo = Donativo::find($id)->delete();
+      $donativo = Donativo::find($this->request->id);
+      if(!$donativo->enviado){
+            $donativo->delete();
+        }else{
+            $donativo->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+            
+        }
       return redirect()->route("donativos.index");
     }
 }
+

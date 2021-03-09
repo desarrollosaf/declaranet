@@ -26,10 +26,8 @@
                 </ol>
                 <strong>Aclaraciones/observaciones.</strong> En este espacio podrá realizar las aclaraciones u observaciones que considere pertinentes respecto de alguno o algunos de los incisos de este apartado.
             </div>
-            </div>
         </div>
         <div class="card-body">
-
             {!! Form::open(['route'=>['donativos.update',$donativo->id], 'method'=>'PUT', 'role' => 'form','id' => 'frmDonativos']) !!}
             @include('donativos.form')
             <div class="text-center">
