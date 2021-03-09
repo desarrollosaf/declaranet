@@ -49,7 +49,7 @@
                                     <td><center>{{$curricular->tipoOperaciones->valor}}</center></td>
 
                                     <td class="all text-center">
-                                        @if(!$curricular->tipo_operacion_id == 4)
+                                        @if($curricular->tipo_operacion_id != 4)
                                         <div style="display: inline-block;">
                                             <a href="{{route('datos_curriculares_declarante.edit',[$curricular])}}"
                                                class="btn btn-xs btn-warning">
