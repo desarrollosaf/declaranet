@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BienesMuebles;
 use App\Declaracion;
+use App\motivoBaja;
 use App\tipoMoneda;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -35,7 +36,8 @@ class BienesMueblesController extends Controller
     {
         $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $bienesMuebles = $declaracion->BienesMuebles;
-        return view("BienesMuebles.index", compact("bienesMuebles"));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("BienesMuebles.index", compact("bienesMuebles","baja"));
     }
 
     /**
@@ -53,7 +55,9 @@ class BienesMueblesController extends Controller
         $selectFormaPago = Arr::pluck(FormasPagos::all(), "valor", "id");
         $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
         $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor", "id");
-        return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien', 'selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda'));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        $tipoOperacion = 1;
+        return view("BienesMuebles.create", compact('selectTitular', 'selectTipoBien', 'selectTransmisores', 'selectRelacionTransmisor', 'selectFormaAdquisicion', 'selectFormaPago', 'selectTipoTercero', 'selectTipoMoneda','tipoOperacion','baja'));
 
     }
 
@@ -66,6 +70,7 @@ class BienesMueblesController extends Controller
     public function store(Request $request)
     {
         $bienesMuebles = $request->input("bienesMuebles");
+        $bienesMuebles["tipo_operacion_id"] = 1;
         $fecha_adquisicion = new Carbon($bienesMuebles["fecha_adquisicion"]);
         $bienesMuebles["fecha_adquisicion"] = $fecha_adquisicion->format("Y-m-d");
         $declarante = Declaracion::find($request->session()->get("declaracion_id"));
@@ -101,7 +106,13 @@ class BienesMueblesController extends Controller
         $selectTipoTercero = Arr::pluck(RegimenFiscal::all(), "valor", "id");
         $selectTipoMoneda = Arr::pluck(tipoMoneda::orderBy("valor", "ASC")->get(), "valor", "id");
         $bienMueble = BienesMuebles::find($id);
-        return view("BienesMuebles.edit", compact("selectTitular", "selectTipoBien", "selectTransmisores", "selectRelacionTransmisor", "selectFormaAdquisicion", "selectFormaPago", "selectTipoTercero", "selectTipoMoneda", "bienMueble"));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        if($bienMueble->enviado){
+            $tipoOperacion = 2;
+        }else{
+            $tipoOperacion = 1;
+        }
+        return view("BienesMuebles.edit", compact("selectTitular", "selectTipoBien", "selectTransmisores", "selectRelacionTransmisor", "selectFormaAdquisicion", "selectFormaPago", "selectTipoTercero", "selectTipoMoneda", "bienMueble",'tipoOperacion','baja'));
     }
 
     /**
@@ -117,6 +128,9 @@ class BienesMueblesController extends Controller
         $bienMueble = BienesMuebles::find($id);
         $fecha_adquisicion = new Carbon($data["fecha_adquisicion"]);
         $data["fecha_adquisicion"] = $fecha_adquisicion->format("Y-m-d");
+        if($bienMueble->enviado){
+            $data["tipo_operacion_id"] = 2;
+        }
         $bienMueble->update($data);
         return redirect()->route("bienes_muebles.index");
     }
@@ -129,7 +143,13 @@ class BienesMueblesController extends Controller
      */
     public function destroy($id)
     {
-        BienesMuebles::destroy($id);
+
+        $BienesMuebles = BienesMuebles::find($id);
+        if($BienesMuebles->enviado){
+            $BienesMuebles->update(["tipo_operacion_id" => 4,"motivo_bajas_id" => $this->request->motivo_bajas_id, "motivo_baja" => $this->request->motivo_baja]);
+        }else{
+            $BienesMuebles->delete();
+        }
         return redirect()->route("bienes_muebles.index");
     }
 }

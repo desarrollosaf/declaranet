@@ -253,7 +253,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         {!! Form::label('observaciones', 'Aclaraciones / Observaciones:',["style" => "font-weight: bold;"]) !!}
-                        {!! Form::textarea('declarante[observaciones]', isset($dependiente) ? $dependiente->observaciones : null, ['class'=>'form-control alert-danger']) !!}
+                        {!! Form::textarea('vehiculos[v_aclaraciones]', isset($vehiculos) ? $vehiculos->v_aclaraciones : null, ['class'=>'form-control alert-danger']) !!}
                         <strong>{!! Form::label('aclaraciones', 'Todos los campos marcados con * son obligatorios.') !!}</strong>
                     </div>
                 </div>
@@ -276,7 +276,8 @@
             </div>
             <br>
         </div>
-    </div>
+
+
 
     @section('scripts')
     <script type="text/javascript">
@@ -289,6 +290,9 @@
             $("#relacion_id").change();
             $("#tipo_adquisicion_id").change();
         });
+
+
+
         $("#tipoVehiculo_id").on("change", function () {
             var tipoVehiculo_id = document.getElementById("tipoVehiculo_id").value
             if (tipoVehiculo_id == 4) {
@@ -513,6 +517,8 @@
                 var fechaB = document.getElementById("v_fecha").value = '00/00/0000';
             }
         });
+
+        $
 
 
     </script>

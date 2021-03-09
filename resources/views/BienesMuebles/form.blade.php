@@ -154,8 +154,7 @@
             <div class="text-center">
                 <br>
                 <a href="{{route("bienes_muebles.index")}}" class="btn btn-submit text-light">Ir a la sección anterior</a>
-                <input type="submit" name="submit" class="btn btn-submit text-light"
-                       value="Guardar e ir a la siguiente sección">
+                <input type="submit" name="submit" class="btn btn-submit text-light" value="Guardar e ir a la siguiente sección">
             </div>
         </div>
     </div>

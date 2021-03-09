@@ -16,6 +16,7 @@ use App\Titular;
 use App\Declaracion;
 use Illuminate\Support\Arr;
 use App\tipoMoneda;
+use App\motivoBaja;
 
 class VehiculosController extends Controller
 {
@@ -30,8 +31,8 @@ class VehiculosController extends Controller
     {
         $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $vehiculos = $declaracion->vehiculos;
-
-        return view("Vehiculos.index", compact('vehiculos'));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("Vehiculos.index", compact('vehiculos','baja'));
     }
 
     /**
@@ -99,10 +100,10 @@ class VehiculosController extends Controller
         $tipoMonedaMexico = tipoMoneda::whereClave("MXN")->get();
         $tipoMoneda = $tipoMonedaMexico->merge($tipoMonedaOtros);
         $moneda = Arr::pluck($tipoMoneda,"valor","id");
-
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
         $tipoOperacion = 1;
 
-        return view("Vehiculos.create", compact('vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda','tipoOperacion'));
+        return view("Vehiculos.create", compact('vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda','tipoOperacion','baja'));
     }
 
     /**
@@ -114,6 +115,7 @@ class VehiculosController extends Controller
     public function store(Request $request)
     {
         $vehiculos = $this->request->input("vehiculos");
+        $vehiculos["tipo_operaciones_id"] = 1;
         $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $declaracion->vehiculos()->create($vehiculos);
         return redirect("vehiculos");
@@ -149,8 +151,13 @@ class VehiculosController extends Controller
         $titular = Arr::pluck(Titular::all(), "valor", "id");
         $entidad = Arr::pluck(Entidad::all(), "entidad", "id");
         $moneda = Arr::pluck(tipoMoneda::all(), "valor", "id");
-        $tipoOperacion = "AGREGAR";
-        return view("Vehiculos.edit", compact('vehiculos', 'vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda','tipoOperacion'));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        if($vehiculos->enviado){
+            $tipoOperacion = 2;
+        }else{
+            $tipoOperacion = 1;
+        }
+        return view("Vehiculos.edit", compact('vehiculos', 'vehiculo', 'relacion', 'registro', 'tipoAdquisicion', 'pago', 'pais', 'regimen', 'titular', 'entidad', 'moneda','baja','tipoOperacion'));
     }
 
     /**
@@ -162,8 +169,11 @@ class VehiculosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $vehiculos = $request->input("vehiculos");
         $vehiculo = Vehiculo::find($id);
+        $vehiculos = $request->input("vehiculos");
+        if($vehiculo->enviado){
+            $vehiculos["tipo_operaciones_id"] = 2;
+        }
         $vehiculo->update($vehiculos);
         return redirect()->route("vehiculos.index");
     }
@@ -177,7 +187,11 @@ class VehiculosController extends Controller
     public function destroy($id)
     {
         $vehiculo = Vehiculo::find($id);
-        $vehiculo->delete();
+        if($vehiculo->enviado){
+            $vehiculo->update(["tipo_operaciones_id" => 4,"motivo_bajas_id" => $this->request->motivo_bajas_id, "motivo_baja" => $this->request->motivo_baja]);
+        }else{
+            $vehiculo->delete();
+        }
         return redirect()->route("vehiculos.index");
     }
 }

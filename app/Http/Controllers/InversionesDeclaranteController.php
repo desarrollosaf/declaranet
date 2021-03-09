@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\motivoBaja;
 use Illuminate\Http\Request;
 use App\InversionesDeclarante;
 use App\Declaracion;
@@ -31,7 +32,8 @@ class InversionesDeclaranteController extends Controller
         $inversiones = $declaracion->inversiones_cuentas;
         //dd($inversiones[0]->tipoInversion);
         //$inversiones= InversionesDeclarante::find($this->request->session()->get('declaracion_id'));
-        return view("inversionesDeclarante.index", compact('inversiones'));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("inversionesDeclarante.index", compact('inversiones','baja'));
     }
 
     /**
@@ -53,8 +55,9 @@ class InversionesDeclaranteController extends Controller
 
         $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
         $ubicacionInversion = Arr::pluck(\App\ubicacionInversion::all(), "valor","id");
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
         $tipoOperacion = 1;
-        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion','tipoOperacion'));
+        return  view('inversionesDeclarante.create', compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion','tipoOperacion','baja'));
 
     }
 
@@ -68,7 +71,7 @@ class InversionesDeclaranteController extends Controller
     {
         $inversionesDeclarante = $this->request->input("inversiones");
         $inversionesDeclarante['declaracion_id']=$this->request->session()->get('declaracion_id');
-        //dd($inversionesDeclarante);
+        $inversionesDeclarante["tipo_operacion_id"] = 1;
         InversionesDeclarante::create($inversionesDeclarante);
         return redirect()->route("inversiones.index");
     }
@@ -100,9 +103,13 @@ class InversionesDeclaranteController extends Controller
         $tipoPersona = Arr::pluck(\App\tipoPersona::all(), "valor","id");
         $ubicacionInversion = Arr::pluck(\App\ubicacionInversion::all(), "valor","id");
         $inversiones = InversionesDeclarante::find($id);
-        $tipoOperacion = 1;
-        //return view("inversionesDeclarante.edit",\compact("inversiones","id"));
-        return view("inversionesDeclarante.edit", compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion','inversiones','tipoOperacion'));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        if($inversiones->enviado){
+            $tipoOperacion = 2;
+        }else{
+            $tipoOperacion = 1;
+        }
+        return view("inversionesDeclarante.edit", compact('tipoDeclarante','tipoInversion','subTipoInversion','paises','tipoMoneda','tipoPersona','ubicacionInversion','inversiones','tipoOperacion','baja'));
     }
 
     /**
@@ -116,6 +123,9 @@ class InversionesDeclaranteController extends Controller
     {
         $data = $request->input("inversiones");
         $inversionesDeclarante = InversionesDeclarante::find($id);
+        if($inversionesDeclarante->enviado){
+            $data["tipo_operacion_id"] = 2;
+        }
         $inversionesDeclarante->update($data);
         return redirect()->route("inversiones.index");
     }
@@ -128,9 +138,13 @@ class InversionesDeclaranteController extends Controller
      */
     public function destroy($id)
     {
-
+       // dd("llega controller");
         $inversionesDeclarante = InversionesDeclarante::find($id);
-        $inversionesDeclarante->delete();
+        if($inversionesDeclarante->enviado){
+            $inversionesDeclarante->update(["tipo_operacion_id" => 4,"motivo_bajas_id" => $this->request->motivo_bajas_id, "motivo_baja" => $this->request->motivo_baja]);
+        }else{
+            $inversionesDeclarante->delete();
+        }
         return redirect()->route("inversiones.index");
     }
 

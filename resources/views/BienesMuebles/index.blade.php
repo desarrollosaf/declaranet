@@ -14,25 +14,32 @@
                             <tr>
                                 <th scope="col" align="center">TITULAR BIEN</th>
                                 <th scope="col" align="center">DESCRIPCIÓN</th>
+                                <th scope="col" align="center">TIPO OPERACIÓN</th>
                                 <th scope="col" align="center">ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($bienesMuebles as $item)
                                 <tr>
-                                    <td >{{$item->TitularBien->valor}}</td>
+                                    <td align="center">{{$item->TitularBien->valor}}</td>
                                     @if($item->descripcion_bien)
-                                        <td >{{$item->descripcion_bien}}</td>
+                                        <td align="center">{{$item->descripcion_bien}}</td>
                                     @else
-                                        <td >{{$item->especifique}}</td>
+                                        <td align="center">{{$item->especifique}}</td>
                                     @endif
-                                    <td class="all">
-                                        {!! Form::open(['action' => ['BienesMueblesController@destroy', $item->id], 'method'=>'DELETE']) !!}
-                                        <div style="display: inline-block;">
-                                            <a href="{{route("bienes_muebles.edit",$item->id)}}" type="button" class="btn btn-warning btn-sm ion ion-edit"></a>
-                                            <button class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
-                                        </div>
-                                        {!! Form::close() !!}
+                                    <td align="center">{{$item->tipoOperaciones->valor}}</td>
+                                    <td class="all" align="center">
+                                        @if( $item->tipo_operacion_id != 4)
+                                            <input type="hidden" name="motivo_baja" id="motivo_baja">
+                                            <div style="display: inline-block;">
+                                                <a href="{{route('bienes_muebles.edit',[$item->id])}}" class="btn btn-xs btn-warning">
+                                                    <i class="ion ion-edit"></i>
+                                                </a>
+                                                <button class="btn btn-xs btn-danger" onclick="eliminar({{$item->id}},{{$item->enviado}})">
+                                                    <i class="ion ion-trash-a"></i>
+                                                </button>
+                                            </div>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -76,9 +83,64 @@
             </div>
         </div>
 
+        <div class="modal" tabindex="-1" role="dialog" id="modal_baja">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Baja</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {!! Form::open(['action' => ['BienesMueblesController@destroy', $item->id], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+                    <input name="id" type="hidden" id='id'>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <strong>Motivo de baja: *</strong>
+                                {!! Form::select('motivo_bajas_id',$baja, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_bajas_id','required' => true]) !!}
+                                <span class="text-danger" style="font-size:150%"></span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <strong>Especifique: </strong>
+                                {!! Form::text('motivo_baja',null,['class'=>'form-control text-uppercase','placeholder' => 'P. EJ. ROBO' ,'id' => 'motivo_baja_esp', 'disabled' => true]) !!}
+                                <span class="text-danger" style="font-size:150%"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-sm btn-submit text-light">Dar de baja</button>
+                        <a class="btn btn-secondary  btn-sm text-light" data-dismiss="modal">Cerrar</a>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+
         @endsection
         @section('scripts')
             <script type="text/javascript">
+                function eliminar(id,enviada){
+                    let that = this;
+                    console.log('boton clic');
+                    if(enviada){
+                        $("#id").val(id);
+                        $("#modal_baja").modal("show");
+                    }else{
+                        Swal.fire({
+                            title: '¿Está seguro?',
+                            text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            cancelButtonText: 'Cancelar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $("#frmBorrar").submit();
+                            }
+                        });
+                    }
+                }
+
                 $('.btn-borrar').on('click', function (e) {
                     let that = this;
                     e.preventDefault();
@@ -112,6 +174,17 @@
                             });
                         }
                     });
+                });
+                $("#motivo_bajas_id").on("change", function () {
+                    var motivo_bajas_id = document.getElementById("motivo_bajas_id").value
+                    if (motivo_bajas_id == 4){
+                        $("#motivo_baja_esp").prop("disabled", false);
+                        $("#motivo_baja_esp").prop("required", true);
+                    } else {
+                        $("#motivo_baja_esp").prop("disabled", true);
+                        $("#motivo_baja_esp").val("");
+                        $("#motivo_baja_esp").prop("required", false);
+                    }
                 });
             </script>
 @endsection
