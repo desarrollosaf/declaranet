@@ -165,6 +165,9 @@
                 <center>INFORMACIÓN ADICIONAL</center>
             </th>
             <th>
+                <center>TIPO OPERACIÓN</center>
+            </th>
+            <th>
                 <center>ACCIONES</center>
             </th>
         </tr>
@@ -197,16 +200,21 @@
                             </center>
                         </td>
                     @endif
-                    <td class="all">
-                        <div style="display: inline-block;">
-                            <button data-id="{{$experiencia->id}}" type="button"
+                    <td>
+                        <center>{{$experiencia->tipoOperaciones->valor}}</center>
+                    </td>
+                   <td class="all">
+                        @if($experiencia->tipo_operacion_id != 4)
+                            <div style="display: inline-block;">
+                                <button data-id="{{$experiencia->id}}" type="button"
                                     class="btn btn-xs btn-warning btn-editar-experiencia">
                                 <i class="ion ion-edit"></i>
-                            </button>
-                            <button type="button" class="btn btn-xs btn-danger btn-borrar" data-id="{{$experiencia->id}}">
+                                </button>
+                                <button type="button" class="btn btn-xs btn-danger btn-borrar" data-id="{{$experiencia->id}}" data-enviado="{{$experiencia->enviado}}">
                                 <i class="ion ion-trash-a"></i>
                             </button>
-                        </div>
+                            </div>
+                        @endif
                     </td>
                 </tr>
             @endforeach
@@ -522,14 +530,16 @@
                             html += '       <strong>PERIODO:</strong>' + partObj.fecha_ingreso + '<br>';
                         }
                         html += '    </td>';
+                        html += '<td>' +  partObj.operacion + '</td>';
                         html += '<td>';
-                        html += '   <div style="display: inline-block;">';
-                        html += '    <button type="button" class="btn btn-xs btn-warning btn-editar-experiencia" data-id="' + partObj.id + '">';
-                        html += '    <i class="ion ion-edit"></i></button>';
-
-                        html += ' <button class="btn btn-xs btn-danger btn-borrar" type="button" data-id="' + partObj.id + '">';
-                        html += '<i class="ion ion-trash-a"></i>';
-                        html += '</button></div>';
+                        if(parseInt(partObj.tipo_operacion_id) !== 4){
+                            html += '   <div style="display: inline-block;">';
+                            html += '    <button type="button" class="btn btn-xs btn-warning btn-editar-experiencia" data-id="' + partObj.id + '">';
+                            html += '    <i class="ion ion-edit"></i></button>';
+                            html += ' <button class="btn btn-xs btn-danger btn-borrar" type="button" data-id="' + partObj.id + '" data-enviado="' + partObj.enviado + '">';
+                            html += '<i class="ion ion-trash-a"></i>';
+                            html += '</button></div>';
+                        }
                         html += '</td>';
                         html += '</tr>';
                         // console.log(html);
@@ -546,7 +556,12 @@
 
             $(document).on('click', '.btn-borrar', function (e) {
                 var id = $(this).data('id');
-                Swal.fire({
+                var enviado = $(this).data('enviado');
+                if(enviado){
+                    $("#id_registro").val(id);
+                    $("#modal_baja").modal("show");
+                } else {
+                  Swal.fire({
                     title: '¿Está seguro?',
                     text: 'Al oprimir el botón de aceptar se eliminará el registro',
                     icon: 'warning',
@@ -554,16 +569,35 @@
                     cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.isConfirmed) {
+                        let data = $("#frmBorrar").serialize();
                         $.ajax({
                             url: '/datos_pareja_declarante/destroy_empleo/' + id,
                             async: true,
-                            type: 'GET',
+                            type: 'PUT',
+                            data: data,
                             success: function (data) {
                                 listar(data);
                             }
                         });
                     }
-                });
+                });  
+                }
+            });
+
+            $("#frmBorrar").submit(function(e){
+                e.preventDefault();
+                let data = $("#frmBorrar").serialize();
+                $.ajax({
+                            url: '/datos_pareja_declarante/destroy_empleo/1',
+                            async: true,
+                            type: 'PUT',
+                            data: data,
+                            success: function (data) {
+                                listar(data);
+                                 $("#frmBorrar")[0].reset();
+                                $("#modal_baja").modal("hide");
+                            }
+                        });
             });
 
             $(document).on('click', '.btn-editar-experiencia', function () {
@@ -634,9 +668,25 @@
             {{--            $("#ambito-sector").val("4");--}}
             {{--            @endif--}}
             @endisset
-        })
-        ;
-
+        });
+function eliminar(id,enviada){
+            $("#id").val(id);
+            if(enviada){
+                $("#modal_baja").modal("show");
+            }else{
+                Swal.fire({
+                    title: '¿Está seguro?',
+                    text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $("#frmBorrar").submit();
+                    }
+                });
+            }
+        }
 
     </script>
 @endsection

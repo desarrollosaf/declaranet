@@ -10,6 +10,7 @@ use App\Respuesta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\regimenFiscal;
+use App\motivoBaja;
 
 class DatosDependienteEconomicoController extends Controller
 {
@@ -25,9 +26,10 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function index()
     {
+        $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
         $dependientes = \App\DependienteEconomico::where('declaracion_id',$this->request->session()->get('declaracion_id'))->get();
 //        dd($dependientes[0]);
-        return view('dependienteEconomico.index', compact('dependientes'));
+        return view('dependienteEconomico.index', compact('dependientes', 'motivos'));
     }
 
     /**
@@ -91,19 +93,25 @@ class DatosDependienteEconomicoController extends Controller
         $privado = $request->input('privado');
         $dependiente["declaracion_id"] = $this->request->session()->get('declaracion_id');
 //        dd($dependiente);
+        $dependiente["tipo_operacion_id"] = 1;
         $declarante = \App\DependienteEconomico::create($dependiente);
         $privado["ambito_sector_id"] = $laboral["ambito_sector_id"];
         $publico["ambito_sector_id"] = $laboral["ambito_sector_id"];
         if($dependiente["lugar_residencia_id"] == 1){
+            $nacional["tipo_operacion_id"] = 1;
             $domiclilio = $declarante->domicilio()->create($nacional);
         }else if($dependiente["lugar_residencia_id"] == 2){
+            $extranjero["tipo_operacion_id"] = 1;
             $domiclilio = $declarante->domicilio()->create($extranjero);
         }
         if($laboral["ambito_sector_id"] == 1){
+            $publico["tipo_operacion_id"] = 1;
             $laboral = $declarante->dato_laboral()->create($publico);
         }else if($laboral["ambito_sector_id"] == 2){
+            $privado["tipo_operacion_id"] = 1;
             $laboral = $declarante->dato_laboral()->create($privado);
         }else if($laboral["ambito_sector_id"] == 3){
+            $privado["tipo_operacion_id"] = 1;
             $laboral = $declarante->dato_laboral()->create($privado);
         }
         return redirect()->route('datos_dependiente_declarante.index');
@@ -204,22 +212,29 @@ class DatosDependienteEconomicoController extends Controller
 
         }
         $dependiente  = \App\DependienteEconomico::find($id);
+        if($dependiente->enviado){
+            $dependienteRequest["tipo_operacion_id"] = 2;
+        } 
         $dependiente->update($dependienteRequest);
         $privado["ambito_sector_id"] = $laboral["ambito_sector_id"];
         $publico["ambito_sector_id"] = $laboral["ambito_sector_id"];
         $dependiente->domicilio()->delete();
         if($dependienteRequest["respuesta_id"] != 1){
             if($dependiente["lugar_residencia_id"] == 1){
+                $nacional["tipo_operacion_id"] = 1;
                 $dependiente->domicilio()->create($nacional);
             }else{
+                $extranjero["tipo_operacion_id"] = 1;
                 $dependiente->domicilio()->create($extranjero);
             }
         }
         $dependiente->dato_laboral()->delete();
         if($laboral["ambito_sector_id"] == 1){
+            $publico["tipo_operacion_id"] = 1;
             $laboral = $dependiente->dato_laboral()->create($publico);
         }elseif($laboral["ambito_sector_id"] == 4){
         }else{
+            $privado["tipo_operacion_id"] = 1;
             $laboral = $dependiente->dato_laboral()->create($privado);
         }
         return redirect()->route('datos_dependiente_declarante.index');
@@ -233,8 +248,15 @@ class DatosDependienteEconomicoController extends Controller
      */
     public function destroy($id)
     {
+        if(isset($this->request->id)){
+            $id = $this->request->id;
+        }
         $dependiente = \App\DependienteEconomico::find($id);
-        $dependiente->delete();
+        if($dependiente->enviado){
+            $dependiente->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+        } else{
+            $dependiente->delete();
+        }
         return redirect()->route('datos_dependiente_declarante.index');
     }
 }

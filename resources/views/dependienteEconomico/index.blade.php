@@ -16,6 +16,7 @@
                             <td>Segundo Apellido</td>
                             <td>CURP</td>
                             <td>Parentesco</td>
+                            <td>Tipo operación</td>
                             <td>Acciones</td>
                         </tr>
                     </thead>
@@ -27,17 +28,21 @@
                             <td>{{$dependiente->segundo_apellido}}</td>
                             <td>{{$dependiente->curp}}</td>
                             <td>{{$dependiente->relacion->valor}}</td>
+                            <td>{{$dependiente->tipoOperaciones->valor}}</td>
                             <td>
+                                @if($dependiente->tipo_operacion_id != 4)
                                 {!! Form::open(['action' => ['DatosDependienteEconomicoController@destroy', $dependiente->id], 'method'=>'DELETE']) !!}
                                 <div style="display: inline-block;">
                                     <a href="{{route('datos_dependiente_declarante.edit',[$dependiente])}}" class="btn btn-xs btn-warning">
                                         <i class="ion ion-edit"></i>
                                     </a>
-                                    <button class="btn btn-xs btn-danger btn-borrar">
+                                    <button type="button" class="btn btn-xs btn-danger btn-borrar" data-enviado="{{$dependiente->enviado}}">
                                         <i class="ion ion-trash-a btn-borrar"></i>
                                     </button>
                                 </div>
                                 {!! Form::close() !!}
+                                @endif
+    
                             </td>
                         </tr>
                         @endforeach
@@ -67,7 +72,34 @@
         </div>
     </div>
 </div>
-
+<div class="modal" tabindex="-1" role="dialog" id="modal_baja">
+        <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Baja</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {!! Form::open(['action' => ['DatosDependienteEconomicoController@destroy', 1], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+                    <input name="id" type="hidden" id='id_registro'>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <strong>Motivo de baja</strong>
+                                {!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!}
+                                <span class="text-danger" style="font-size:150%"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-sm btn-submit text-light">Eliminar</button>
+                        <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                    </div>
+                    {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
 @endsection
 @section('scripts')
 <script>
@@ -87,23 +119,26 @@
             }
         });
     });
-    $('.btn-borrar').on('click', function (e) {
-        let that = this;
-        console.log('boton clic');
-        e.preventDefault();
-        Swal.fire({
-            title: '¿Está seguro?',
-            text: 'Al oprimir el botón de aceptar se eliminará el registro',
-            icon: 'warning',
-            showCancelButton: true,
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $(that).closest('form').submit();
-            }
-        });
-        return false;
-    });
+    $(document).on('click', '.btn-borrar', function (e) {
+                var id = $(this).data('id');
+                var enviado = $(this).data('enviado');
+                if(enviado){
+                    $("#id_registro").val(id);
+                    $("#modal_baja").modal("show");
+                } else {
+                  Swal.fire({
+                    title: '¿Está seguro?',
+                    text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $(this).closest('form').submit();
+                    }
+                });  
+                }
+            });
 
     $('.btn-ninguno').on('click', function (e) {
         let that = this;

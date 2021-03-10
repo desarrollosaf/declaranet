@@ -186,7 +186,7 @@
     });
 
     if ($("#accion").val() == "editar") {
-        document.getElementById("edit").style.display = "block";
+        //document.getElementById("edit").style.display = "block";
         $("#ambito_sector_id").change();
         $("#fecha_ingreso").change();
         $("#fecha_egreso").change();

@@ -13,6 +13,7 @@ use App\Declaracion;
 use Illuminate\Support\Arr;
 use Carbon\Carbon;
 use App\ambitoSector;
+use App\motivoBaja;
 
 class ExperienciaLaboralController extends Controller
 {
@@ -20,6 +21,7 @@ class ExperienciaLaboralController extends Controller
     public function __construct(Request $request) {
         $this->middleware("auth");
         $this->request=$request;
+        $this->middleware('CheckDeclaracion');
     }
     /**
      * Display a listing of the resource.
@@ -30,8 +32,8 @@ class ExperienciaLaboralController extends Controller
     {
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $experiencias = $declaracion->experiencias_laborales;
-
-        return view("experienciaLaboral.index", compact('experiencias'));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor","id");
+        return view("experienciaLaboral.index", compact('experiencias', 'motivos'));
     }
 
     /**
@@ -72,6 +74,7 @@ class ExperienciaLaboralController extends Controller
         $fecha_egreso = new Carbon($experiencia["fecha_egreso"]);
         $experiencia["fecha_egreso"] = $fecha_egreso->format("Y-m-d");
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+        $experiencia["tipo_operacion_id"] = 1;
         $declaracion->experiencias_laborales()->create($experiencia);
         return redirect()->route("experiencia_laboral.index");
     }
@@ -121,6 +124,9 @@ class ExperienciaLaboralController extends Controller
         $fecha_egreso = new Carbon($experienciaData["fecha_egreso"]);
         $experienciaData["fecha_egreso"] = $fecha_egreso->format("Y-m-d");
         $experiencia= ExperienciaLaboral::find($id);
+        if($experiencia->enviado){
+            $experienciaData["tipo_operacion_id"] = 2;
+        }
         $experiencia->update($experienciaData);
         return redirect()->route("experiencia_laboral.index");
     }
@@ -134,7 +140,11 @@ class ExperienciaLaboralController extends Controller
     public function destroy($id)
     {
         $experiencia = ExperienciaLaboral::find($id);
-        $experiencia->delete();
+         if(!$experiencia->enviado){
+            $experiencia->delete();
+        }else{
+            $experiencia->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+        }
         return redirect()->route("experiencia_laboral.index");
     }
 }

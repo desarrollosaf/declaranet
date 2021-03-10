@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ExperienciaLaboral extends Model
 {
+    use SoftDeletes;
     protected $table = "experiencias_laborales";
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
 
@@ -29,5 +31,8 @@ class ExperienciaLaboral extends Model
 
     public function LugarUbicaciones(){
         return $this->belongsTo(LugarUbicacion::class,'lugares_ubicacion_id');
+    }
+    public function tipoOperaciones(){
+        return $this->belongsTo(tipoOperacion::class, 'tipo_operacion_id');
     }
 }

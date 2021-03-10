@@ -277,4 +277,32 @@
             </div>
         </div>
     </div>
+    <div class="modal" tabindex="-1" role="dialog" id="modal_baja">
+        <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Baja</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {!! Form::open(['action' => ['DatosParejaController@destroyEmpleo', 1], 'method'=>'PUT','id' => 'frmBorrar']) !!}
+                    <input name="id" type="hidden" id='id_registro'>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <strong>Motivo de baja</strong>
+                                {!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!}
+                                <span class="text-danger" style="font-size:150%"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-sm btn-submit text-light">Eliminar</button>
+                        <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                    </div>
+                    {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
 @endsection

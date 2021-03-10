@@ -20,6 +20,7 @@ use Carbon\Carbon;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use App\motivoBaja;
 
 class DatosParejaController extends Controller
 {
@@ -161,8 +162,8 @@ class DatosParejaController extends Controller
 
         $experiencias = $pareja->experienciaLaboral;
 
-
-        return view('datosParejaDeclarante.edit', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'pareja', 'domicilio', 'experiencias', 'selectMunicipio', 'regimenFiscal'));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view('datosParejaDeclarante.edit', compact('selectRelacioDeclarante', 'selectCiudadano', 'nivelOrdenGobierno', 'ambito', 'sectores', 'ubicacion', 'ambitos_sectores', 'selectEntidad', 'selectLugarReside', 'selectRespuesta', 'selectEntidad', 'selectPais', 'respuesta', 'sector', 'pareja', 'domicilio', 'experiencias', 'selectMunicipio', 'regimenFiscal', 'motivos'));
     }
 
     /**
@@ -190,11 +191,16 @@ class DatosParejaController extends Controller
         if (!isset($datosPareja['lugar_reside_id'])) {
             $datosPareja['lugar_reside_id'] = null;
         }
-
         $pareja = DatosPareja::find($id);
+        if($pareja->enviado){
+            $datosPareja["tipo_operacion_id"] = 2;
+        }
         $pareja->update($datosPareja);
         if ($datosPareja["respuesta_domicilio_id"] == 2) {
             if ($pareja->domicilio != null) {
+                if($pareja->domicilio->enviado){
+                    $domicilio["tipo_operacion_id"] = 2;
+                }
                 $pareja->domicilio()->update($domicilio);
             } else {
                 $pareja->domicilio()->create($domicilio);
@@ -234,6 +240,7 @@ class DatosParejaController extends Controller
             }
             $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
             $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
+            $actividadLaboral["tipo_operacion_id"] = 1;
             if ($actividadLaboral["ambito_sector_id"] != 4) {
                 $pareja->experienciaLaboral()->create($actividadLaboral);
             }
@@ -246,7 +253,15 @@ class DatosParejaController extends Controller
 
     public function destroyEmpleo($id)
     {
-        ExperienciaLaboral::find($id)->delete();
+        if(isset($this->request)){
+            $id = $this->request->id;
+        }
+        $experiencia = ExperienciaLaboral::find($id);
+         if(!$experiencia->enviado){
+            $experiencia->delete();
+        }else{
+            $experiencia->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+        }
         $data = $this->getEmpleo($this->request->session()->get("declaracion_id"));
         return $data;
     }
@@ -258,6 +273,7 @@ class DatosParejaController extends Controller
         $pareja = $declarante->pareja;
         foreach ($pareja->experienciaLaboral as $item) {
             $item->ambito = $item->ambito_sectores->valor;
+            $item->operacion = $item->tipoOperaciones->valor;
             array_push($data, $item);
         }
         return $data;
@@ -283,6 +299,9 @@ class DatosParejaController extends Controller
         $fecha_ingreso = new Carbon($actividadLaboral["fecha_ingreso"]);
         $actividadLaboral["fecha_ingreso"] = $fecha_ingreso->format("Y-m-d");
         if ($actividadLaboral["ambito_sector_id"] != 4) {
+            if($data->enviado){
+                $actividadLaboral["tipo_operacion_id"] = 2;
+            }
             $data->update($actividadLaboral);
         }
         $data = $this->getEmpleo($request->session()->get("declaracion_id"));
