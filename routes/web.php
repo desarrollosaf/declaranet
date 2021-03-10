@@ -65,3 +65,4 @@ Route::post("/datos_pareja_declarante/ajax","DatosParejaController@storeEmpleo")
 Route::put("/datos_pareja_declarante/destroy_empleo/{id}","DatosParejaController@destroyEmpleo");
 Route::get("/datos_pareja_declarante/edit_empleo/{id}","DatosParejaController@editEmpleo");
 Route::put("/datos_pareja_declarante/update/{id}","DatosParejaController@updateEmpleo");
+Route::get("/declaracion/enviar","DeclaranetController@EnviarDeclaracion");

@@ -657,10 +657,16 @@
                     </div>
                 </li>
                 <li>
-                    <a href="" class="nav-link">
+                    <a href="{{route('home')}}" class="nav-link">
                         <i class="ion-android-exit text-light text-lg-left"></i>
                         <strong>Salir de la declaración</strong>
                     </a>
+                </li>
+                <li>
+                    <a style="cursor: pointer;" class="nav-link" onclick="enviarDeclaracion();">
+                        <i class="ion-send-outline text-light text-lg-left"></i>
+                        <strong>Enviar de la declaración</strong>
+                    </a>>
                 </li>
             </ul>
         </div>
@@ -736,6 +742,38 @@
     function cerrarSesion(event) {
         event.preventDefault();
         $("#logout-formm").submit();
+    }
+    function enviarDeclaracion(){
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: 'Al oprimir el ok se enviará la declaración y ya no podrás realizar cambios',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed){
+                $.ajax({
+                    url:"declaracion/enviar",
+                    async:true,
+                    type:"GET",
+                    dataType:"json",
+                    data:{
+                        _token:"{{ csrf_token() }}"
+                    },
+                    success:function(data){
+                        if(data == null){
+                            Swal.fire({
+                                text: 'Ocurrio un error al enviar la declaración',
+                                icon: 'error',
+                                cancelButtonText: 'Aceptar'
+                            });
+                        }else{
+                            window.location.href = "{{route('home')}}";
+                        }
+                    }
+                });
+            }
+        });
     }
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.js"></script>
