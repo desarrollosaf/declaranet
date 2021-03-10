@@ -74,6 +74,9 @@ class ServidorPublicoController extends Controller
             $data["tipo_de_instrumento_id"] = null;
         }
         FueServidorPublico::create($data);
+        
+        $data["tipo_declaracion_id"] =1;
+        $data = Declaracion::find($request->session()->get("declaracion_id"));
         return redirect()->route("bienes_inmuebles.index");
     }
 

@@ -8,27 +8,26 @@ use App\tipoInstrumento;
 use App\tipoOperacion;
 use Illuminate\Support\Arr;
 
-class IngresoNetoDeclaranteController extends Controller
-{
+class IngresoNetoDeclaranteController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     private $request;
+
     public function __construct(Request $request) {
         $this->middleware("auth");
         $this->request = $request;
     }
 
-    public function index()
-    {
+    public function index() {
         $ingresoMensual = IngresoNeto::find($this->request->session()->get('declaracion_id'));
-        if($ingresoMensual == NULL){
+        if ($ingresoMensual == NULL) {
             return \redirect()->route("ingreso_neto.create");
         } else {
-            return \redirect()->route("ingreso_neto.edit",$ingresoMensual->id);
+            return \redirect()->route("ingreso_neto.edit", $ingresoMensual->id);
         }
     }
 
@@ -37,10 +36,9 @@ class IngresoNetoDeclaranteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-       $tipoInstrumento = Arr::pluck(\App\tipoInstrumento::all(), "valor","id");
-       return view("ingresosNetos.create", compact('tipoInstrumento'));
+    public function create() {
+        $tipoInstrumento = Arr::pluck(\App\tipoInstrumento::all(), "valor", "id");
+        return view("ingresosNetos.create", compact('tipoInstrumento'));
     }
 
     /**
@@ -49,10 +47,10 @@ class IngresoNetoDeclaranteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $ingresoMensual = $this->request->input("ingresoMensual");
-        $ingresoMensual['declaracion_id']=$this->request->session()->get('declaracion_id');
+        $ingresoMensual["tipo_operacion_id"] = 1;
+        $ingresoMensual['declaracion_id'] = $this->request->session()->get('declaracion_id');
         //dd($ingresoMensual);
         IngresoNeto::create($ingresoMensual);
         return redirect()->route("servidor_publico.index");
@@ -65,8 +63,7 @@ class IngresoNetoDeclaranteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -76,12 +73,11 @@ class IngresoNetoDeclaranteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
 
-        $tipoInstrumento = Arr::pluck(\App\tipoInstrumento::all(), "valor","id");
+        $tipoInstrumento = Arr::pluck(\App\tipoInstrumento::all(), "valor", "id");
         $ingresoMensual = IngresoNeto::find($id);
-        return view("ingresosNetos.edit",\compact("ingresoMensual","id", 'tipoInstrumento'));
+        return view("ingresosNetos.edit", \compact("ingresoMensual", "id", 'tipoInstrumento'));
     }
 
     /**
@@ -91,13 +87,14 @@ class IngresoNetoDeclaranteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $ingresoMensualRequest = $request->input("ingresoMensual");
         $ingresoMensual = Ingresoneto::find($id);
+        if ($ingresoMensual->enviado) {
+            $ingresoMensualRequest["tipo_operacion_id"] = 2;
+        }
         $ingresoMensual->update($ingresoMensualRequest);
         return redirect()->route("servidor_publico.index");
-        return redirect()->back();
     }
 
     /**
@@ -106,8 +103,8 @@ class IngresoNetoDeclaranteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

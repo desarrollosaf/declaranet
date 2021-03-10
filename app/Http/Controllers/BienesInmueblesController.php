@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\tipoMoneda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use App\motivoBaja;
 
 class BienesInmueblesController extends Controller {
 
@@ -20,7 +21,8 @@ class BienesInmueblesController extends Controller {
      */
     public function index() {
         $bienes = \App\Declaracion::find($this->request->session()->get('declaracion_id'))->bienes_inmuebles;
-        return view("BienesInmuebles.index", compact('bienes'));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("BienesInmuebles.index", compact('bienes','motivos'));
     }
 
     /**
@@ -142,6 +144,7 @@ class BienesInmueblesController extends Controller {
 
         //dd($bien);
         $bien['declaracion_id'] = $request -> session() -> get('declaracion_id');
+        $curriculares["tipo_operacion_id"] = 1;
 //        dd($bien);
         $declaracion = \App\Declaracion::find($request -> session() -> get('declaracion_id'));
         $inmueble = $declaracion->bienes_inmuebles()->create($bien);
@@ -275,9 +278,14 @@ class BienesInmueblesController extends Controller {
 
 
         //dd($bien);
+        if($bienrow->enviado){
+            $bien["tipo_operacion_id"] = 2;
+        }
         $bienrow->update($bien);
+        if($bienrow->domicilio->enviado){
+            $domicilioB["tipo_operacion_id"] = 2;
+        }
         $bienrow->domicilio()->update($domicilioB);
-
         return redirect()->route('bienes_inmuebles.index');
 
 
@@ -291,8 +299,15 @@ class BienesInmueblesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
+        if(isset($this->request->id)){
+            $id = $this->request->id;
+        }
         $bien = \App\BienInmueble::find($id);
-        $bien->delete();
+        if(!$bien->enviado){
+            $bien->delete();
+        }else{
+            $bien->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+        }
         return redirect()->back();
     }
 
