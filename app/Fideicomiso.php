@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Fideicomiso extends Model
 {
+    use SoftDeletes;
     protected $table = "fideicomisos";
     protected $guarded = ["id","created_at","updated_at","deleted_at"];
 
@@ -43,5 +45,9 @@ class Fideicomiso extends Model
 
     public function Entidades(){
         return $this->belongsTo(Entidad::class);
+    }
+
+    public function tipoOperaciones(){
+        return $this->belongsTo(tipoOperacion::class, 'tipo_operacion_id');
     }
 }

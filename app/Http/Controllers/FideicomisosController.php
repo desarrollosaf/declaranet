@@ -14,6 +14,7 @@ use App\tipoFideicomiso;
 use App\tipoPersonaFideicomiso;
 use App\Declaracion;
 use App\Entidad;
+use App\motivoBaja;
 
 class FideicomisosController extends Controller
 {
@@ -26,7 +27,8 @@ class FideicomisosController extends Controller
     {
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $fideicomisos = $declaracion->fideicomisos;
-        return view("Fideicomisos.index", compact('fideicomisos'));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("Fideicomisos.index", compact('fideicomisos', "motivos"));
     }
 
     /**
@@ -159,6 +161,9 @@ class FideicomisosController extends Controller
     {
         $fideicomisosD = $request->input("fideicomisos");
         $fideicomiso= Fideicomiso::find($id);
+        if($fideicomiso->enviado){
+            $fideicomisosD["tipo_operacion_id"] = 2;
+        }
         $fideicomiso->update($fideicomisosD);
         return redirect()->route("fideicomisos.index");
     }
@@ -171,8 +176,15 @@ class FideicomisosController extends Controller
      */
     public function destroy($id)
     {
+        if(isset($this->request->id)){
+            $id = $this->request->id;
+        }
         $fideicomiso = Fideicomiso::find($id);
-        $fideicomiso->delete();
+        if($fideicomiso->enviado){
+            $fideicomiso->update(["tipo_operacion_id" => 1, "motivo_baja_id" => $this->request->motivo_baja_id]);
+        } else {
+            $fideicomiso->delete();
+        }
         return redirect()->route("fideicomisos.index");
     }
 }
