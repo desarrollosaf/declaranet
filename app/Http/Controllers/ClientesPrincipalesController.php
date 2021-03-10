@@ -155,7 +155,7 @@ class ClientesPrincipalesController extends Controller
      */
     public function destroy($id)
     {
-        $clientes = Clientes::find($id);
+        $clientes = Clientes::find($this->request->id);
         
         if (!$clientes->enviado) {
             $clientes->delete();
