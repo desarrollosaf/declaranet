@@ -108,6 +108,7 @@ class DatosEmpleoDeclaranteController extends Controller
     public function store(Request $request)
     {
         $datos_empleo_declarante = $this->request->input("datos_empleo_declarante");
+        $datos_empleo_declarante["tipo_operacion_id"] = 1;
         $datos_empleo_declarante['declaracion_id']=$this->request->session()->get('declaracion_id');
         DatoEmpleoDeclarante::create($datos_empleo_declarante);
         return redirect("experiencia_laboral");
@@ -184,6 +185,9 @@ class DatosEmpleoDeclaranteController extends Controller
     {
         $datos_empleo_declarante = $request->input("datos_empleo_declarante");
         $datosEmpleo= DatoEmpleoDeclarante::find($id);
+        if($datosEmpleo->enviado){
+            $datos_empleo_declarante["tipo_operacion_id"] = 2;
+        }
         $datosEmpleo->update($datos_empleo_declarante);
         return redirect("experiencia_laboral");
     }

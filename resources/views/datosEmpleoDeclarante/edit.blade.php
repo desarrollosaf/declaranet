@@ -49,3 +49,28 @@
     </div>
     <input type="hidden" id="accion" value="editar">
 @endsection
+@section('scripts')
+    <script type="text/javascript">
+        $("#entidad_federativa_id").on('change', function () {
+            console.log("hola");
+            //alert("entr FUNCION");
+            var idEntidad = $(this).val();
+            if (parseInt(idEntidad) === 15) {
+                $(".foraneo").hide();
+            }
+            $.ajax({
+                url: "{{asset('getMunicipiosDomicilio')}}/" + idEntidad,
+                type: 'get',
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    $("#municipio_id").find('option').remove();
+                    $("#municipio_id").append('<option value="">Selecciona un municipio</option>');
+                    $(response).each(function (i, v) { // indice, valor
+                        $("#municipio_id").append('<option value="' + v.id + '">' + v.municipio + '</option>');
+                    });
+                }
+            });
+        });
+    </script>
+@endsection

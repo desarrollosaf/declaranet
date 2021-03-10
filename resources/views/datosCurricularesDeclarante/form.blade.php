@@ -30,7 +30,7 @@
     </div>
     <div class="form-group col-md-4">
         <strong> {!! Form::label('curriculares[fecha_documento]', 'Fecha de obtención de documento: *',['class' => 'validar']) !!}</strong>
-        {!! Form::date('curriculares[fecha_documento]',isset($curricular) ? $curricular->fecha_documento : null,['class'=>'form-control', 'placeholder'=>'', 'id' => 'fecha_documento','required' => true,'max' => date('Y-m-d')]) !!}
+        {!! Form::date('curriculares[fecha_documento]',isset($curricular) ? $curricular->fecha_documento : null,['class'=>'form-control text-uppercase', 'placeholder'=>'', 'id' => 'fecha_documento','required' => true,'max' => date('Y-m-d')]) !!}
         <span class="text-danger" style="font-size:150%"></span>
     </div>
 </div>

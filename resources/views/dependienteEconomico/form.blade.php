@@ -97,7 +97,7 @@
         </div>
         <div class="form-group col-md-4">
             {!! Form::label('interior-nacional', 'Colonia / Localidad: *',["style" => "font-weight: bold;"]) !!}
-            {!! Form::text('nacional[colonia]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control alert-danger nacional', 'placeholder'=>'P.EJ.CENTRO',  'id' => 'interior-nacional']) !!}
+            {!! Form::text('nacional[colonia]',isset($domicilio) ? $domicilio->colonia : null,['class'=>'form-control alert-danger nacional text-uppercase', 'placeholder'=>'P.EJ.CENTRO',  'id' => 'interior-nacional']) !!}
             <span class="text-danger" style="font-size:150%"></span>
         </div>
         <div class="form-group col-md-4">
