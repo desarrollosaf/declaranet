@@ -18,7 +18,8 @@
                             <thead class="badge-primary">
                             <tr class="text-center">
                                 <th scope="col" width="20%">TIPO DE BIEN</th>
-                                <th scope="col" width="60%">INFORMACIÓN ADICIONAL</th>
+                                <th scope="col" width="50%">INFORMACIÓN ADICIONAL</th>
+                                <th scope="col" width="20%">TIPO OPERACIÓN</th>
                                 <th scope="col" width="10%">ACCIONES</th>
                             </tr>
                             </thead>
@@ -62,13 +63,19 @@
                                         </td>
 
                                     @endif
+                                    <td> {{$item->tipoOperaciones->valor}} </td>
                                     <td class="py-2">
-                                        {!! Form::open(['action' => ['PrestamoOComodatoPorTercerosController@destroy', $item->id], 'method'=>'DELETE']) !!}
-                                        <div style="display: inline-block;">
-                                            <a href="{{route("prestamos.edit",$item->id)}}" class="btn btn-warning btn-sm ion ion-edit"></a></a>
-                                            <button class="btn btn-xs btn-danger btn-borrar"><i class="ion ion-trash-a btn-borrar"></i></button>
-                                        </div>
-                                        {!! Form::close() !!}
+                                        @if( $item->tipo_operacion_id != 4)
+                                            <input type="hidden" name="motivo_baja" id="motivo_baja">
+                                            <div style="display: inline-block;">
+                                                <a href="{{route('prestamos.edit',[$item->id])}}" class="btn btn-xs btn-warning">
+                                                    <i class="ion ion-edit"></i>
+                                                </a>
+                                                <button class="btn btn-xs btn-danger" onclick="eliminar({{$item->id}},{{$item->enviado}})">
+                                                    <i class="ion ion-trash-a"></i>
+                                                </button>
+                                            </div>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -103,13 +110,66 @@ Deberá proporcionar la información de CADA UNO de los bienes en préstamo o co
                     <a href="{{route("participacion_empresas.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
                 </div>
             </div>
-
+            <div class="modal" tabindex="-1" role="dialog" id="modal_baja">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Baja</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {!! Form::open(['action' => ['PrestamoOComodatoPorTercerosController@destroy', 1], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+                        <input name="id" type="hidden" id='id'>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <strong>Motivo de baja: *</strong>
+                                    {!! Form::select('motivo_bajas_id',$baja, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_bajas_id','required' => true]) !!}
+                                    <span class="text-danger" style="font-size:150%"></span>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <strong>Especifique: </strong>
+                                    {!! Form::text('motivo_baja',null,['class'=>'form-control text-uppercase','placeholder' => 'P. EJ. ROBO' ,'id' => 'motivo_baja_esp', 'disabled' => true]) !!}
+                                    <span class="text-danger" style="font-size:150%"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-sm btn-submit text-light">Dar de baja</button>
+                            <a class="btn btn-secondary  btn-sm text-light" data-dismiss="modal">Cerrar</a>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
 
         </div>
 
         @endsection
         @section('scripts')
             <script>
+                function eliminar(id,enviada){
+                    let that = this;
+                    console.log('boton clic');
+                    if(enviada){
+                        $("#id").val(id);
+                        $("#modal_baja").modal("show");
+                    }else{
+                        Swal.fire({
+                            title: '¿Está seguro?',
+                            text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            cancelButtonText: 'Cancelar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $("#frmBorrar").submit();
+                            }
+                        });
+                    }
+                }
+
                 $('.btn-borrar').on('click', function (e) {
                     let that = this;
                     e.preventDefault();
@@ -143,5 +203,18 @@ Deberá proporcionar la información de CADA UNO de los bienes en préstamo o co
                         }
                     });
                 });
+
+                $("#motivo_bajas_id").on("change", function () {
+                    var motivo_bajas_id = document.getElementById("motivo_bajas_id").value
+                    if (motivo_bajas_id == 4){
+                        $("#motivo_baja_esp").prop("disabled", false);
+                        $("#motivo_baja_esp").prop("required", true);
+                    } else {
+                        $("#motivo_baja_esp").prop("disabled", true);
+                        $("#motivo_baja_esp").val("");
+                        $("#motivo_baja_esp").prop("required", false);
+                    }
+                });
+            </script>
             </script>
 @endsection

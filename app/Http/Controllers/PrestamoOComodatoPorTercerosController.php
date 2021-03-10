@@ -6,6 +6,7 @@ use App\Declaracion;
 use App\Entidad;
 use App\lugarDondeReside;
 use App\LugarUbicacion;
+use App\motivoBaja;
 use App\Municipio;
 use App\Pais;
 use App\PrestamoComodato;
@@ -24,17 +25,18 @@ class PrestamoOComodatoPorTercerosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(Request $request)
-    {
+    public function __construct(Request $request) {
         $this->middleware("auth");
-        $this->request = $request;
+        $this->request=$request;
+        $this->middleware('CheckDeclaracion');
     }
 
     public function index()
     {
         $declaracion = Declaracion::find($this->request->session()->get("declaracion_id"));
         $prestamos = $declaracion->prestamosComodato;
-        return view("Prestamos.index", compact("prestamos"));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("Prestamos.index", compact("prestamos","baja"));
     }
 
     /**
@@ -59,7 +61,9 @@ class PrestamoOComodatoPorTercerosController extends Controller
         $selecttipoInmueble = Arr::pluck(TipoInmueble::all(), "valor", "id");
         $selectubicacionInmueble = Arr::pluck(LugarUbicacion::all(), "valor", "id");
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
-        return view("Prestamos.create", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad'));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        $tipoOperacion = 1;
+        return view("Prestamos.create", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad','tipoOperacion','baja'));
     }
 
     /**
@@ -71,6 +75,7 @@ class PrestamoOComodatoPorTercerosController extends Controller
     public function store(Request $request)
     {
         $prestamComodatoData = $request->input("prestamo");
+        $prestamComodatoData["tipo_operacion_id"] = 1;
         $prestamComodatoData["declaracion_id"] = $this->request->session()->get("declaracion_id");
         $prestamoComodato = PrestamoComodato::create($prestamComodatoData);
         if ($prestamComodatoData["tipo_bien_id"] == 2) {
@@ -137,14 +142,22 @@ class PrestamoOComodatoPorTercerosController extends Controller
         $selectubicacionInmueble = Arr::pluck(LugarUbicacion::all(), "valor", "id");
         $selectEntidad = Arr::pluck(Entidad::all(), "entidad", "id");
         $prestamo = PrestamoComodato::find($id);
+
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        if($prestamo->enviado){
+            $tipoOperacion = 2;
+        }else{
+            $tipoOperacion = 1;
+        }
+
         $vehiculos = $prestamo->vehiculos;
         $bienesinmuebles = $prestamo->inmuebles;
         if ($vehiculos != null) {
-            return view("Prestamos.edit", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad', 'prestamo', 'vehiculos'));
+            return view("Prestamos.edit", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad', 'prestamo', 'vehiculos','baja'));
         } else {
             $domicilio = $prestamo->inmuebles->domicilio;
             $selectMunicipio = Arr::pluck(Municipio::where("entidad_id", "=", $domicilio->entidad_id)->get(), "municipio", "id");
-            return view("Prestamos.edit", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad', 'prestamo', 'bienesinmuebles', 'domicilio', 'selectMunicipio'));
+            return view("Prestamos.edit", compact('selectTipoBien', 'vehiculo', 'registro', 'relacion', 'pais', 'regimen', 'selecttipoInmueble', 'selectubicacionInmueble', 'selectEntidad', 'prestamo', 'bienesinmuebles', 'domicilio', 'selectMunicipio','baja'));
         }
 
     }
@@ -160,6 +173,10 @@ class PrestamoOComodatoPorTercerosController extends Controller
     {
         $prestamComodatoData = $request->input("prestamo");
         $prestamoComodato = PrestamoComodato::find($id);
+        if($prestamoComodato->enviado){
+            $prestamComodatoData["tipo_operacion_id"] = 2;
+        }
+
         $prestamoComodato->update($prestamComodatoData);
         if ($prestamComodatoData["tipo_bien_id"] == 2) {
             if ($prestamoComodato->vehiculos != null) {
@@ -223,7 +240,13 @@ class PrestamoOComodatoPorTercerosController extends Controller
      */
     public function destroy($id)
     {
-        PrestamoComodato::destroy($id);
+      //  PrestamoComodato::destroy($id);
+        $prestamoComodato = PrestamoComodato::find($this->request->id);
+        if($prestamoComodato->enviado){
+            $prestamoComodato->update(["tipo_operacion_id" => 4,"motivo_bajas_id" => $this->request->motivo_bajas_id, "motivo_baja" => $this->request->motivo_baja]);
+        }else{
+            $prestamoComodato->delete();
+        }
         return redirect()->back();
     }
 }
