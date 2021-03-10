@@ -12,6 +12,7 @@ use App\Declaracion;
 use App\RegimenFiscal;
 use Illuminate\Support\Arr;
 use App\tipoMoneda;
+use App\motivoBaja;
 
 class BeneficiosPrivadosController extends Controller
 {
@@ -19,6 +20,7 @@ class BeneficiosPrivadosController extends Controller
     function __construct(Request $request)
     {
         $this->request = $request;
+        $this->middleware('CheckDeclaracion');
     }
 
     /**
@@ -28,8 +30,9 @@ class BeneficiosPrivadosController extends Controller
      */
     public function index()
     {
-        $beneficios = BeneficioPrivado::where("declaracion_id",$this->request->session()->get('declaracion_id'))->get();
-        return view("beneficiosPrivados.index",compact("beneficios"));
+        $beneficios = \App\Declaracion::find($this->request->session()->get("declaracion_id"))->beneficios_privados;
+        $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("beneficiosPrivados.index",compact("beneficios", "motivos"));
     }
 
     /**
@@ -87,6 +90,7 @@ class BeneficiosPrivadosController extends Controller
     public function store()
     {
         $beneficios = $this->request->input("beneficio_privado");
+        $beneficios['tipo_operacion_id'] = 1;
         $beneficios['declaracion_id']=$this->request->session()->get('declaracion_id');
         BeneficioPrivado::create($beneficios);
         return redirect("beneficios_privados");
@@ -134,6 +138,9 @@ class BeneficiosPrivadosController extends Controller
     {
         $beneficios = $request->input("beneficio_privado");
         $beneficio= BeneficioPrivado::find($id);
+        if($beneficio->enviado){
+            $beneficios["tipo_operacion_id"] = 2;
+        }
         $beneficio->update($beneficios);
         return redirect()->route("beneficios_privados.index");
     }
@@ -146,8 +153,15 @@ class BeneficiosPrivadosController extends Controller
      */
     public function destroy($id)
     {
+        if(isset($this->request->id)){
+            $id = $this->request->id;
+        }
         $beneficios = BeneficioPrivado::find($id);
-        $beneficios->delete();
-        return redirect()->route("beneficios_privados.index");
+        if(!$beneficios->enviado){
+            $beneficios->delete();
+        }else{
+            $beneficios->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+        }
+        return redirect()->back();
     }
 }
