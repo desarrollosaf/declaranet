@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\AdeudosPasivos;
 use App\Declaracion;
+use App\motivoBaja;
 use App\tipoMoneda;
 use App\Entidad;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class AdeudosPasivosDeclaranteController extends Controller
     public function __construct(Request $request) {
         $this->middleware("auth");
         $this->request=$request;
+        $this->middleware('CheckDeclaracion');
     }
     /**
      * Display a listing of the resource.
@@ -26,7 +28,8 @@ class AdeudosPasivosDeclaranteController extends Controller
     {
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $adeudos = $declaracion->adeudos_pasivos;
-        return view("adeudosDeclarante.index", compact('adeudos'));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("adeudosDeclarante.index", compact('adeudos','baja'));
     }
 
     /**
@@ -48,8 +51,9 @@ class AdeudosPasivosDeclaranteController extends Controller
         $lugarUbicacion = Arr::pluck(\App\LugarUbicacion::all(), "valor","id");
         $entidades = Arr::pluck(\App\Entidad::all(), "entidad","id");
         $paises = Arr::pluck(\App\Pais::all(), "valor","id");
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
         $tipoOperacion = 1;
-        return view('adeudosDeclarante.create', compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises', 'tipoMoneda', 'entidades','tipoOperacion'));
+        return view('adeudosDeclarante.create', compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises', 'tipoMoneda', 'entidades','tipoOperacion','baja'));
     }
 
     /**
@@ -61,6 +65,7 @@ class AdeudosPasivosDeclaranteController extends Controller
     public function store(Request $request)
     {
         $adeudoDeclarante = $this->request->input("adeudos");
+        $adeudoDeclarante["tipo_operacion_id"] = 1;
         $adeudoDeclarante['declaracion_id']=$this->request->session()->get('declaracion_id');
         //dd($inversionesDeclarante);
         AdeudosPasivos::create($adeudoDeclarante);
@@ -94,8 +99,13 @@ class AdeudosPasivosDeclaranteController extends Controller
         $entidades = Arr::pluck(\App\Entidad::all(), "entidad","id");
         $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
         $adeudos = AdeudosPasivos::find($id);
-        $tipoOperacion = 1;
-        return view("adeudosDeclarante.edit", compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises', 'adeudos', 'entidades', 'tipoMoneda','tipoOperacion'));
+        $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+        if($adeudos->enviado){
+            $tipoOperacion = 2;
+        }else{
+            $tipoOperacion = 1;
+        }
+        return view("adeudosDeclarante.edit", compact('tipoDeclarante', 'tipoAdeudos', 'tipoPersona', 'lugarUbicacion', 'paises', 'adeudos', 'entidades', 'tipoMoneda','tipoOperacion','baja'));
     }
 
     /**
@@ -109,6 +119,9 @@ class AdeudosPasivosDeclaranteController extends Controller
     {
         $data = $request->input("adeudos");
         $adeudoDeclarante = AdeudosPasivos::find($id);
+        if($adeudoDeclarante->enviado){
+            $data["tipo_operacion_id"] = 2;
+        }
         $adeudoDeclarante->update($data);
         return redirect()->route("adeudos.index");
     }
@@ -121,8 +134,12 @@ class AdeudosPasivosDeclaranteController extends Controller
      */
     public function destroy($id)
     {
-        $adeudoDeclarante = AdeudosPasivos::find($id);
-        $adeudoDeclarante->delete();
+        $adeudoDeclarante = AdeudosPasivos::find($this->request->id);
+        if($adeudoDeclarante->enviado){
+            $adeudoDeclarante->update(["tipo_operacion_id" => 4,"motivo_bajas_id" => $this->request->motivo_bajas_id, "motivo_baja" => $this->request->motivo_baja]);
+        }else{
+            $adeudoDeclarante->delete();
+        }
         return redirect()->route("adeudos.index");
     }
 }
