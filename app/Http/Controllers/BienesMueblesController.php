@@ -26,10 +26,10 @@ class BienesMueblesController extends Controller
      */
     private $request;
 
-    public function __construct(Request $request)
-    {
+    public function __construct(Request $request) {
         $this->middleware("auth");
-        $this->request = $request;
+        $this->request=$request;
+        $this->middleware('CheckDeclaracion');
     }
 
     public function index()
@@ -143,8 +143,7 @@ class BienesMueblesController extends Controller
      */
     public function destroy($id)
     {
-
-        $BienesMuebles = BienesMuebles::find($id);
+        $BienesMuebles = BienesMuebles::find($this->request->id);
         if($BienesMuebles->enviado){
             $BienesMuebles->update(["tipo_operacion_id" => 4,"motivo_bajas_id" => $this->request->motivo_bajas_id, "motivo_baja" => $this->request->motivo_baja]);
         }else{

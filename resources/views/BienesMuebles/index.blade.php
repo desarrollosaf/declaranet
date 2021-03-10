@@ -92,7 +92,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    {!! Form::open(['action' => ['BienesMueblesController@destroy', $item->id], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+
+                    {!! Form::open(['action' => ['BienesMueblesController@destroy', 1], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
                     <input name="id" type="hidden" id='id'>
                     <div class="modal-body">
                         <div class="form-row">

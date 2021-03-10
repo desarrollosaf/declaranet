@@ -20,6 +20,7 @@ class InversionesDeclaranteController extends Controller
     public function __construct(Request $request) {
         $this->middleware("auth");
         $this->request=$request;
+        $this->middleware('CheckDeclaracion');
     }
     /**
      * Display a listing of the resource.
@@ -139,7 +140,7 @@ class InversionesDeclaranteController extends Controller
     public function destroy($id)
     {
        // dd("llega controller");
-        $inversionesDeclarante = InversionesDeclarante::find($id);
+        $inversionesDeclarante = InversionesDeclarante::find($this->request->id);
         if($inversionesDeclarante->enviado){
             $inversionesDeclarante->update(["tipo_operacion_id" => 4,"motivo_bajas_id" => $this->request->motivo_bajas_id, "motivo_baja" => $this->request->motivo_baja]);
         }else{

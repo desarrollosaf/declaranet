@@ -22,9 +22,10 @@ class VehiculosController extends Controller
 {
     private $request;
 
-    function __construct(Request $request)
-    {
-        $this->request = $request;
+    public function __construct(Request $request) {
+        $this->middleware("auth");
+        $this->request=$request;
+        $this->middleware('CheckDeclaracion');
     }
 
     public function index()
@@ -32,6 +33,7 @@ class VehiculosController extends Controller
         $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $vehiculos = $declaracion->vehiculos;
         $baja = Arr::pluck(motivoBaja::all(), "valor", "id");
+       // dd(count($vehiculos));
         return view("Vehiculos.index", compact('vehiculos','baja'));
     }
 
@@ -186,7 +188,7 @@ class VehiculosController extends Controller
      */
     public function destroy($id)
     {
-        $vehiculo = Vehiculo::find($id);
+        $vehiculo = Vehiculo::find($this->request->id);
         if($vehiculo->enviado){
             $vehiculo->update(["tipo_operaciones_id" => 4,"motivo_bajas_id" => $this->request->motivo_bajas_id, "motivo_baja" => $this->request->motivo_baja]);
         }else{

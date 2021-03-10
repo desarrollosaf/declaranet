@@ -57,9 +57,6 @@
                                             @endif
                                         </td>
                                     </tr>
-
-
-
                                 @endforeach
                                 </tbody>
                             </table>
@@ -102,7 +99,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                {!! Form::open(['action' => ['VehiculosController@destroy', $vehiculo->id], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+                {!! Form::open(['action' => ['VehiculosController@destroy', 1], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
                 <input name="id" type="hidden" id='id'>
                 <div class="modal-body">
                     <div class="form-row">

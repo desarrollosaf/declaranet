@@ -75,7 +75,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                {!! Form::open(['action' => ['InversionesDeclaranteController@destroy', $inversion->id], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+                {!! Form::open(['action' => ['InversionesDeclaranteController@destroy', 1, 'method'=>'DELETE','id' => 'frmBorrar']) !!}
                 <input name="id" type="hidden" id='id'>
                 <div class="modal-body">
                     <div class="form-row">
