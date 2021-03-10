@@ -32,6 +32,7 @@ use App\sectorProductivo;
 use App\especifiquesector;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use App\motivoBaja;
 
 class ViajesController extends Controller
 {
@@ -48,7 +49,8 @@ class ViajesController extends Controller
     public function index()
     {
        $viajes = \App\Declaracion::find($this->request->session()->get("declaracion_id"))->viajes;
-       return view("viajes.index", compact("viajes"));
+       $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
+       return view("viajes.index", compact("viajes", "motivos"));
     }
 
     /**
@@ -154,7 +156,9 @@ class ViajesController extends Controller
     {
         $viaje = $request->input("viajes");
         $v = Viajes::find($id);
-       
+        if($v->enviado){
+            $viaje["tipo_operacion_id"] = 2;           
+        }
         $v->update($viaje);
         return redirect()->route("viajes.index");
     }
@@ -167,7 +171,15 @@ class ViajesController extends Controller
      */
     public function destroy($id)
     {
-        Viajes::find($id)->delete();
+        if(isset($this->request->id)){
+            $id = $this->request->id;
+        }
+        $v = Viajes::find($id);
+        if($v->enviado){
+            $v->update(["tipo_operacion_id" => 4, "motivo_baja_id" => $this->request->motivo_baja_id]);           
+        } else {
+            $v->delete();
+        }
         return redirect()->back();
     }
 }

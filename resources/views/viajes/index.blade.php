@@ -16,6 +16,7 @@
                             <th scope="col">RFC</th>
                             <th scope="col">MOTIVO DEL VIAJE</th>
                             <th scope="col">MONTO DEL VIAJE</th>
+                            <th scope="col">TIPO OPERACIÓN</th>
                             <th scope="col">ACCIONES</th>
                         </thead>
                         <tbody>
@@ -26,16 +27,19 @@
                               <td>{{$viajes->nombre_pariente}} {{$viajes->primer_apellido}} {{$viajes->segundo_apellido}}</td>
                               <td>{{$viajes->rfc_pariente}}</td>
                               <td>{{$viajes->motivo_viaje->valor}}</td>
-                              <td>{{$viajes->monto_viaje}}</td>
+                              <td>$ {{number_format($viajes->monto_viaje, 2)}} {{$viajes->tipoMonedas->clave}}</td>
+                              <td>{{$viajes->tipoOperaciones->valor}}</td>                              
                               <td>
-                                  <a href="{{route("viajes.edit",$viajes->id)}}" type="button"
-                                     class="btn btn-warning btn-sm ion ion-edit"></a>
+                                @if($viajes->tipo_operacion_id != 4)
                                   {!! Form::open(['action' => ['ViajesController@destroy', $viajes->id], 'method'=>'DELETE']) !!}
                                   <div style="display: inline-block;">
-                                      <button
+                                    <a href="{{route("viajes.edit",$viajes->id)}}" type="button"
+                                     class="btn btn-warning btn-sm ion ion-edit"></a>
+                                      <button type="button" data-enviado = "{{$viajes->enviado}}"
                                           class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
                                   </div>
                                   {!! Form::close() !!}
+                                  @endif
                               </td>
                           </tr>
                           @endforeach
@@ -72,24 +76,57 @@
         </div>
     </div>
     </div>
+    <div class="modal" tabindex="-1" role="dialog" id="modal_baja">
+        <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Baja</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {!! Form::open(['action' => ['ViajesController@destroy', 1], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+                    <input name="id" type="hidden" id='id_registro'>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <strong>Motivo de baja</strong>
+                                {!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!}
+                                <span class="text-danger" style="font-size:150%"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-sm btn-submit text-light">Eliminar</button>
+                        <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                    </div>
+                    {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
 @endsection
 @section('scripts')
     <script>
-        $('.btn-borrar').on('click', function (e) {
-            let that = this;
-            e.preventDefault();
-            Swal.fire({
-                title: '¿Está seguro?',
-                text: 'Al oprimir el botón de aceptar se eliminará el registro',
-                icon: 'warning',
-                showCancelButton: true,
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed){
-                    $(that).closest('form').submit();
+        $(document).on('click', '.btn-borrar', function (e) {
+                var id = $(this).data('id');
+                var enviado = $(this).data('enviado');
+                if(enviado){
+                    $("#id_registro").val(id);
+                    $("#modal_baja").modal("show");
+                } else {
+                  Swal.fire({
+                    title: '¿Está seguro?',
+                    text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $(this).closest('form').submit();
+                    }
+                });  
                 }
             });
-        });
 
         $('.btn-ninguno').on('click', function (e) {
             let that = this;
