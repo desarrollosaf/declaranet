@@ -13,19 +13,23 @@ use App\lugarDondeReside;
 use App\Pais;
 use App\Declaracion;
 use App\Entidad;
+use App\motivoBaja;
 
 class ClientesPrincipalesController extends Controller
 {
     private $request;
     function __construct(Request $request)
     {
+        $this->middleware("auth");
+        $this->middleware('CheckDeclaracion');
         $this->request = $request;
     }
     public function index()
     {
         $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
         $clientes = $declaracion->clientes;
-        return view("Clientes.index", compact('clientes'));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("Clientes.index", compact('clientes', 'motivos'));
     }
 
     /**
@@ -72,7 +76,7 @@ class ClientesPrincipalesController extends Controller
         foreach ($Entidad as $item){
             $entidad[$item->id] = $item->entidad;
         }
-        $tipoOperacion = "AGREGAR";
+        $tipoOperacion = 1;
         return view("Clientes.create",compact("selectRespuestas",'titular','regimen','sector','lugar','Pais','entidad','tipoOperacion'));
     }
 
@@ -86,6 +90,7 @@ class ClientesPrincipalesController extends Controller
     {
         $clientes = $this->request->input("clientes");
         $clientes['declaracion_id']=$this->request->session()->get('declaracion_id');
+        $clientes["tipo_operacion_id"] = 1;
         Clientes::create($clientes);
         return redirect("clientes_principales");
     }
@@ -117,7 +122,7 @@ class ClientesPrincipalesController extends Controller
         $lugar = Arr::pluck(lugarDondeReside::all(), 'valor','id');
         $Pais = Arr::pluck(Pais::all(), 'valor','id');
         $entidad = Arr::pluck(Entidad::all(), 'entidad','id');
-        $tipoOperacion = "AGREGAR";
+        $tipoOperacion = 1;
         return view("Clientes.edit", compact('clientes','selectRespuestas','titular','regimen','sector','lugar','Pais','entidad','tipoOperacion'));
 
     }
@@ -133,6 +138,11 @@ class ClientesPrincipalesController extends Controller
     {
         $clientes = $request->input("clientes");
         $cliente= Clientes::find($id);
+        
+        if ($cliente->enviado) {
+            $clientes["tipo_operacion_id"] = 2;
+        }
+        
         $cliente->update($clientes);
         return redirect("clientes_principales");
     }
@@ -146,7 +156,13 @@ class ClientesPrincipalesController extends Controller
     public function destroy($id)
     {
         $clientes = Clientes::find($id);
-        $clientes->delete();
+        
+        if (!$clientes->enviado) {
+            $clientes->delete();
+        } else {
+            $clientes->update(["tipo_operacion_id" => 4, "motivo_baja_id" => $this->request->motivo_baja_id]);
+        }
+        
         return redirect()->route("clientes_principales.index");
     }
 }

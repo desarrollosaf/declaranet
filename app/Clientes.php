@@ -36,4 +36,8 @@ class Clientes extends Model
     public function Entidades(){
         return $this->belongsTo(Entidad::class);
     }
+    
+    public function tipoOperacion() {
+        return $this->belongsTo(tipoOperacion::class,'tipo_operacion_id');
+    }
 }
