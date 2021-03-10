@@ -120,7 +120,7 @@ class ApoyoBeneficioController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $apoyoDeclarante = ApoyoBeneficio::find($id);
+        $apoyoDeclarante = ApoyoBeneficio::find($this->request->id);
         
         if (!$apoyoDeclarante->enviado) {
             $apoyoDeclarante->delete();

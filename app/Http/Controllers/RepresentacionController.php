@@ -174,8 +174,9 @@ class RepresentacionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $bien = \App\Representacion::find($id);
-        //dd($id);
+        $bien = \App\Representacion::find($this->request->id);
+        //dd($bien);
+        
         if (!$bien->enviado) {
             $bien->delete();
         } else {
