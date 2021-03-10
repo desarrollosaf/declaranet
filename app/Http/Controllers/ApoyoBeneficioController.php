@@ -11,13 +11,16 @@ use App\tipoApoyo;
 use App\formaRecepcion;
 use App\tipoMoneda;
 use Illuminate\Support\Arr;
+use App\motivoBaja;
 
-class ApoyoBeneficioController extends Controller
-{
+class ApoyoBeneficioController extends Controller {
+
     private $request;
+
     public function __construct(Request $request) {
         $this->middleware("auth");
-        $this->request=$request;
+        $this->middleware('CheckDeclaracion');
+        $this->request = $request;
     }
 
     /**
@@ -25,11 +28,11 @@ class ApoyoBeneficioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $declaracion=Declaracion::find($this->request->session()->get('declaracion_id'));
+    public function index() {
+        $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $apoyos = $declaracion->apoyo_beneficio;
-        return view("apoyoBeneficiosDeclarante.index", compact('apoyos'));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("apoyoBeneficiosDeclarante.index", compact('apoyos', 'motivos'));
     }
 
     /**
@@ -37,19 +40,18 @@ class ApoyoBeneficioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $parentesco = Arr::pluck(\App\parentescoRelacion::all(), "valor","id");
-        $nivelGobierno = Arr::pluck(\App\Nivelordengobierno::all(), "valor","id");
-        $tipoApoyo = Arr::pluck(\App\tipoApoyo::all(), "valor","id");
-        $formaRecepcion = Arr::pluck(\App\formaRecepcion::all(), "valor","id");
+    public function create() {
+        $parentesco = Arr::pluck(\App\parentescoRelacion::all(), "valor", "id");
+        $nivelGobierno = Arr::pluck(\App\Nivelordengobierno::all(), "valor", "id");
+        $tipoApoyo = Arr::pluck(\App\tipoApoyo::all(), "valor", "id");
+        $formaRecepcion = Arr::pluck(\App\formaRecepcion::all(), "valor", "id");
 
-        $tipoMonedaOtros = tipoMoneda::where("clave","!=","MXN")->orderBy("valor","asc")->get();
+        $tipoMonedaOtros = tipoMoneda::where("clave", "!=", "MXN")->orderBy("valor", "asc")->get();
         $tipoMonedaMexico = tipoMoneda::whereClave("MXN")->get();
         $tipoMonedas = $tipoMonedaMexico->merge($tipoMonedaOtros);
-        $tipoMoneda = Arr::pluck($tipoMonedas,"valor","id");
+        $tipoMoneda = Arr::pluck($tipoMonedas, "valor", "id");
         $tipoOperacion = 1;
-        return view("apoyoBeneficiosDeclarante.create", compact('parentesco', 'nivelGobierno', 'tipoApoyo', 'formaRecepcion', 'tipoMoneda','tipoOperacion'));
+        return view("apoyoBeneficiosDeclarante.create", compact('parentesco', 'nivelGobierno', 'tipoApoyo', 'formaRecepcion', 'tipoMoneda', 'tipoOperacion'));
     }
 
     /**
@@ -58,10 +60,10 @@ class ApoyoBeneficioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $apoyoDeclarante = $this->request->input("apoyo");
-        $apoyoDeclarante['declaracion_id']=$this->request->session()->get('declaracion_id');
+        $apoyoDeclarante["tipo_operacion_id"] = 1;
+        $apoyoDeclarante['declaracion_id'] = $this->request->session()->get('declaracion_id');
         //dd($inversionesDeclarante);
         ApoyoBeneficio::create($apoyoDeclarante);
         return redirect()->route("apoyo_beneficio.index");
@@ -73,8 +75,7 @@ class ApoyoBeneficioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -84,16 +85,15 @@ class ApoyoBeneficioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $parentesco = Arr::pluck(\App\parentescoRelacion::all(), "valor","id");
-        $nivelGobierno = Arr::pluck(\App\Nivelordengobierno::all(), "valor","id");
-        $tipoApoyo = Arr::pluck(\App\tipoApoyo::all(), "valor","id");
-        $formaRecepcion = Arr::pluck(\App\formaRecepcion::all(), "valor","id");
-        $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor","id");
+    public function edit($id) {
+        $parentesco = Arr::pluck(\App\parentescoRelacion::all(), "valor", "id");
+        $nivelGobierno = Arr::pluck(\App\Nivelordengobierno::all(), "valor", "id");
+        $tipoApoyo = Arr::pluck(\App\tipoApoyo::all(), "valor", "id");
+        $formaRecepcion = Arr::pluck(\App\formaRecepcion::all(), "valor", "id");
+        $tipoMoneda = Arr::pluck(\App\tipoMoneda::all(), "valor", "id");
         $apoyo = ApoyoBeneficio::find($id);
         $tipoOperacion = 1;
-        return view("apoyoBeneficiosDeclarante.edit", compact('parentesco', 'nivelGobierno', 'tipoApoyo', 'formaRecepcion', 'tipoMoneda', 'apoyo','tipoOperacion'));
+        return view("apoyoBeneficiosDeclarante.edit", compact('parentesco', 'nivelGobierno', 'tipoApoyo', 'formaRecepcion', 'tipoMoneda', 'apoyo', 'tipoOperacion'));
     }
 
     /**
@@ -103,10 +103,12 @@ class ApoyoBeneficioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $data = $request->input("apoyo");
         $apoyoDeclarante = ApoyoBeneficio::find($id);
+        if ($apoyoDeclarante->enviado) {
+            $data["tipo_operacion_id"] = 2;
+        }
         $apoyoDeclarante->update($data);
         return redirect()->route("apoyo_beneficio.index");
     }
@@ -117,10 +119,16 @@ class ApoyoBeneficioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         $apoyoDeclarante = ApoyoBeneficio::find($id);
-        $apoyoDeclarante->delete();
+        
+        if (!$apoyoDeclarante->enviado) {
+            $apoyoDeclarante->delete();
+        } else {
+            $apoyoDeclarante->update(["tipo_operacion_id" => 4, "motivo_baja_id" => $this->request->motivo_baja_id]);
+        }
+
         return redirect()->route("apoyo_beneficio.index");
     }
+
 }

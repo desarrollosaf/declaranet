@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\Declaracion;
+use App\motivoBaja;
 
 class RepresentacionController extends Controller {
 
@@ -12,15 +13,16 @@ class RepresentacionController extends Controller {
 
     public function __construct(Request $request) {
         $this->middleware("auth");
-        $this->request = $request;
         $this->middleware('CheckDeclaracion');
+        $this->request = $request;
     }
 
     public function index() {
         $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $representacion = $declaracion->Representacion;
         //dd($representacion);
-        return view("Representacion.index", compact("representacion"));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("Representacion.index", compact("representacion", "motivos"));
     }
 
     public function create() {
@@ -77,6 +79,8 @@ class RepresentacionController extends Controller {
         }
 
         //dd($repre);
+        $repre["tipo_operaciones_id"] = 1;
+        
         $part_emp = \App\Representacion::create($repre);
         return redirect()->route('representacion.index');
     }
@@ -153,8 +157,12 @@ class RepresentacionController extends Controller {
             $repre["nombre_representante"] = $repre["nombre_representanteMoral"];
             $repre["rfc_representante"] = $repre["rfc_representanteMoral"];
         }
-        //dd($repre);
-
+//        dd($repre);
+        if ($reprerow->enviado) {
+            $repre["tipo_operaciones_id"] = 2;
+        }
+        
+        
         $reprerow->update($repre);
         return redirect()->route('representacion.index');
     }
@@ -167,7 +175,13 @@ class RepresentacionController extends Controller {
      */
     public function destroy($id) {
         $bien = \App\Representacion::find($id);
-        $bien->delete();
+        //dd($id);
+        if (!$bien->enviado) {
+            $bien->delete();
+        } else {
+            $bien->update(["tipo_operaciones_id" => 4, "motivo_baja_id" => $this->request->motivo_baja_id]);
+        }
+
         return redirect()->back();
     }
 

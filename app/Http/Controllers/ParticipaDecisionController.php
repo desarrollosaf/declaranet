@@ -122,7 +122,6 @@ class ParticipaDecisionController extends Controller {
         $remuneracion["1"] = "SÍ";
         $remuneracion["2"] = "NO";
         $entidad = Arr::pluck(Entidad::all(), 'entidad', 'id');
-        $tipoOperacion = "AGREGAR";
         return view("ParticipaDecision.edit", compact('participaciones', 'participacion', 'institucion', 'lugar', 'pais', 'remuneracion', 'entidad', 'tipoOperacion'));
     }
 
@@ -137,7 +136,7 @@ class ParticipaDecisionController extends Controller {
         $participaciones = $request->input("participaciones");
         $participacion = Participacion::find($id);
         if ($participacion->enviado) {
-            $cu["tipo_operacion_id"] = 2;
+            $participaciones["tipo_operacion_id"] = 2;
         }
         $participacion->update($participaciones);
         return redirect("participacion");
@@ -150,7 +149,7 @@ class ParticipaDecisionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $participacion = Participacion::find($id);
+        $participacion = Participacion::find($this->request->id);
 
         if (!$participacion->enviado) {
             $participacion->delete();
