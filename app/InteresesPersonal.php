@@ -14,4 +14,8 @@ class InteresesPersonal extends Model {
         return $this->morphOne(ExperienciaLaboral::class, "experienciable");
     }
 
+    public function tipoOperaciones(){
+        return $this->belongsTo(tipoOperacion::class, 'tipo_operacion_id');
+    }
+
 }

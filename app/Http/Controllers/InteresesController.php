@@ -11,6 +11,7 @@ use App\ambitoPublico;
 use App\InteresesPersonal;
 use Illuminate\Support\Arr;
 use App\Declaracion;
+use App\motivoBaja;
 
 class InteresesController extends Controller {
 
@@ -29,7 +30,8 @@ class InteresesController extends Controller {
     public function index() {
         $declaracion = Declaracion::find($this->request->session()->get('declaracion_id'));
         $intereses = $declaracion->intereses;
-        return view("interesesPersonales.index", compact("intereses"));
+        $motivos = Arr::pluck(motivoBaja::all(), "valor", "id");
+        return view("interesesPersonales.index", compact("intereses", "motivos"));
     }
 
     /**
@@ -57,6 +59,7 @@ class InteresesController extends Controller {
         $dataIntereses["declaracion_id"] = $request->session()->get("declaracion_id");
         $dataActividadLaboral = $request->input("actividadLaboral");
         $intereses = InteresesPersonal::create($dataIntereses);
+        $dataActividadLaboral["tipo_operacion_id"] = 1;
         $intereses->experienciaLaboral()->create($dataActividadLaboral);
         return redirect()->route("intereses_personales.index");
     }
@@ -99,7 +102,13 @@ class InteresesController extends Controller {
         $dataIntereses = $request->input("intereses");
         $dataActividadLaboral = $request->input("actividadLaboral");
         $intereses = InteresesPersonal::find($id);
+        if($intereses->enviado){
+            $dataIntereses["tipo_operacion_id"] = 2;
+        }
         $intereses->update($dataIntereses);
+        if($intereses->experienciaLaboral->enviado){
+            $dataActividadLaboral["tipo_operacion_id"] = 2;
+        }
         $intereses->experienciaLaboral()->update($dataActividadLaboral);
         return redirect()->route("intereses_personales.index");
     }
@@ -111,8 +120,15 @@ class InteresesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        InteresesPersonal::find($id)->delete();
+        if(isset($this->request->id)){
+            $id = $this->request->id;
+        }
+        $interes = InteresesPersonal::find($id);
+        if($interes->enviado){
+            $interes->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+        } else {
+           $interes->delete();
+        }
         return redirect()->route("intereses_personales.index");
     }
-
 }
