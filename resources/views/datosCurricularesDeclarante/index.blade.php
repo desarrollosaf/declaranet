@@ -51,8 +51,7 @@
                                     <td class="all text-center">
                                         @if($curricular->tipo_operacion_id != 4)
                                         <div style="display: inline-block;">
-                                            <a href="{{route('datos_curriculares_declarante.edit',[$curricular])}}"
-                                               class="btn btn-xs btn-warning">
+                                            <a href="{{route('datos_curriculares_declarante.edit',[$curricular])}}" class="btn btn-xs btn-warning">
                                                 <i class="ion ion-edit"></i>
                                             </a>
                                             <button class="btn btn-xs btn-danger" onclick="eliminar({{$curricular->id}},{{$curricular->enviado}})">

@@ -23,4 +23,7 @@ class ParticipacionDeclaracion extends Model
     public function tipo_colaboracion(){
         return $this->belongsTo(TipoColaboracion::class,'tipo_colaboracion_id');
     }
+    public function tipoOperacion() {
+        return $this->belongsTo(tipoOperacion::class,'tipo_operacion_id');
+    }
 }
