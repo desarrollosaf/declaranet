@@ -3111,7 +3111,7 @@ class declaracionesController extends Controller
                             'institucion' => 'Poder Legislativo',
                             'contacto' => 'JuanJoseDominguezOrozco@hotmail.com',
                             'personaContacto' => 'Juan Jose Dominguez Orozco',
-                            'tipo' => $title->TipoMovimientos->tipo_movimiento,
+                            'tipo' => $title->TipoMovimientos->valor,
                         ]),
                         'declaracion' => ([
                             'situacionPatrimonial' => ([
