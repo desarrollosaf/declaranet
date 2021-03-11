@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Donativo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Declaracion extends Model {
+    use SoftDeletes;
 
     protected $table = "declaraciones";
     protected $guarded = ["id", "created_at", "updated_at", "deleted_at"];
