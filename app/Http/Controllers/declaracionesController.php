@@ -3102,7 +3102,7 @@ class declaracionesController extends Controller
                         );
                         $aclaraciones_domicilio_declarante = $title->domicilio->observaciones;
                     }
-
+dd($title->tipoMovimientos);
 
                     $temparray [$key] = $resultados = [
                         'id' => '',
