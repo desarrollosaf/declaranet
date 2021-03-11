@@ -555,7 +555,7 @@ class declaracionesController extends Controller
                             if ($domicilio_inmueble->entidad_id == null) {
                                 $colonia = $domicilio_inmueble->colonia;
                             } else {
-                                $colonia = $domicilio_inmueble->asentamiento->valor;
+                                $colonia = $domicilio_inmueble->entidad_domicilio->valor;
                             }
 
                             if ($inmuebles->tipo_tercero_id == null) {
