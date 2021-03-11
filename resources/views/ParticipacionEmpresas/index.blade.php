@@ -19,7 +19,8 @@
                         <tr class="text-center">
                             <th scope="col" width="20%">NOMBRE DE LA EMPRESA</th>
                             <th scope="col" width="20%">TITULAR</th>
-                            <th scope="col" width="40%">INFORMACIÓN ADICIONAL</th>
+                            <th scope="col" width="20%">INFORMACIÓN ADICIONAL</th>
+                            <th scope="col" width="20%">TIPO OPERACIÓN</th>
                             <th scope="col" width="20%">ACCIONES</th>
                         </tr>
                     </thead>
@@ -28,27 +29,33 @@
                         <tr class="text-center">
                             <td scope="col" width="20%">{{$empresa->nombre_empresa}}</td>
                             <td scope="col" width="20%">{{$empresa->RelacionTransmisor->valor}}</td>
-                            <td scope="col" width="40%">
-                    <center>
-                        <strong>Tipo de participación: </strong> {{$empresa->tipoParticipacion->valor}} <br>
-                        <strong>Sector: </strong> {{$empresa->tipoSector->valor}} <br>
-                        <strong>Lugar donde se ubica: </strong> {{$empresa->lugarUbica->valor}}
-                    </center>
-                    </td>
-                    <td class="all">
-                        {!! Form::open(['action' => ['ParticipacionEnEmpresasSociedadesYAsociacionesController@destroy', $empresa->id], 'method'=>'DELETE']) !!}
-                        <div style="display: inline-block;">
-                            <a href="{{route('participacion_empresas.edit',[$empresa])}}" class="btn btn-xs btn-warning">
-                                <i class="ion ion-edit"></i>
-                            </a>
-                            <button class="btn btn-xs btn-danger btn-borrar">
-                                <i class="ion ion-trash-a"></i>
-                            </button>
-                        </div>
-                        {!! Form::close() !!}
-                    </td>
-                    </tr>
-                    @endforeach
+                            <td scope="col" width="20%">
+                                <center>
+                                    <strong>Tipo de participación: </strong> {{$empresa->tipoParticipacion->valor}} <br>
+                                    <strong>Sector: </strong> {{$empresa->tipoSector->valor}} <br>
+                                    <strong>Lugar donde se ubica: </strong> {{$empresa->lugarUbica->valor}}
+                                </center>
+                            </td>
+                            <td scope="col" width="20%">
+                                <center>
+                                    {{strtoupper($empresa->tipoOperaciones->valor)}}
+                                </center>
+                            </td>
+                            <td class="all">
+                                <!--{!! Form::open(['action' => ['ParticipacionEnEmpresasSociedadesYAsociacionesController@destroy', $empresa->id], 'method'=>'DELETE']) !!}-->
+                                @if($repre->tipo_operaciones_id != 4)
+                                <div style="display: inline-block;">
+                                    <a href="{{route('participacion_empresas.edit',[$empresa])}}" class="btn btn-xs btn-warning">
+                                        <i class="ion ion-edit"></i>
+                                    </a>
+                                    <button class="btn btn-xs btn-danger" onclick="eliminar({{$empresa->id}},{{$empresa->enviado}})">
+                                        <i class="ion ion-trash-a"></i>
+                                    </button>
+                                </div>
+                                @endif
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <center>
@@ -77,10 +84,61 @@
                 <a href="{{route("participacion.index")}}" class="btn btn-sm btn-submit text-light">Ir a la siguiente sección</a>
             </div>
         </div>
+        
+        
+        <div class="modal" tabindex="-1" role="dialog" id="modal_baja">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Baja</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {!! Form::open(['action' => ['ParticipacionEnEmpresasSociedadesYAsociacionesController@destroy', 1], 'method'=>'DELETE','id' => 'frmBorrar']) !!}
+                        <input name="id" type="hidden" id='id'>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <strong>Motivo de baja</strong>
+                                    {!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!}
+                                    <span class="text-danger" style="font-size:150%"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-sm btn-submit text-light">Eliminar</button>
+                            <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+        @endsection
 
 
         @section('scripts')
         <script>
+            
+            function eliminar(id, enviada){
+                        $("#id").val(id);
+                        if (enviada){
+                            $("#modal_baja").modal("show");
+                        } else{
+                        Swal.fire({
+                        title: '¿Está seguro?',
+                                text: 'Al oprimir el botón de aceptar se eliminará el registro',
+                                icon: 'warning',
+                                showCancelButton: true,
+                                cancelButtonText: 'Cancelar'
+                        }).then((result) => {
+                        if (result.isConfirmed) {
+                            $("#frmBorrar").submit();
+                        }
+                        });
+                        }
+                    }
+            
             $('.btn-borrar').on('click', function (e) {
                 let that = this;
                 console.log('boton clic');
@@ -124,63 +182,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        @endsection
-
-
-        @section('scripts')
-        <script>
-            $('.btn-borrar').on('click', function (e) {
-                let that = this;
-                console.log('boton clic');
-                e.preventDefault();
-                Swal.fire({
-                    title: '¿Está seguro?',
-                    text: 'Al oprimir el botón de aceptar se eliminará el registro',
-                    icon: 'warning',
-                    showCancelButton: true,
-                    cancelButtonText: 'Cancelar'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $(that).closest('form').submit();
-                    }
-                });
-                return false;
-            });
-        </script>
-        @endsection
