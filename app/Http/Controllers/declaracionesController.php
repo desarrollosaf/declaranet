@@ -3102,7 +3102,13 @@ class declaracionesController extends Controller
                         );
                         $aclaraciones_domicilio_declarante = $title->domicilio->observaciones;
                     }
-dd($title->tipoMovimientos);
+                    if($title->tipo_movimiento_id == 1 || $title->tipo_movimiento_id == 2){
+                        $tipoDeclaracion = "INICIAL";
+                    }else if($title->tipo_movimiento_id == 3){
+                        $tipoDeclaracion = "MODIFICACION";
+                    }else{
+                        $tipoDeclaracion = "TERMINACION";
+                    }
 
                     $temparray [$key] = $resultados = [
                         'id' => '',
@@ -3111,7 +3117,7 @@ dd($title->tipoMovimientos);
                             'institucion' => 'Poder Legislativo',
                             'contacto' => 'JuanJoseDominguezOrozco@hotmail.com',
                             'personaContacto' => 'Juan Jose Dominguez Orozco',
-                            'tipo' => $title->TipoMovimientos->tipo_movimiento,
+                            'tipo' => $tipoDeclaracion,
                         ]),
                         'declaracion' => ([
                             'situacionPatrimonial' => ([
