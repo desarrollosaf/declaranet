@@ -552,6 +552,7 @@ class declaracionesController extends Controller
                         foreach ($title->bienes_inmuebles as $inmuebles) {
                             $aclaraciones_bienesImuebles = $aclaraciones_bienesImuebles . ' ' . $inmuebles->observaciones;
                             $domicilio_inmueble = $inmuebles->domicilio;
+                            dd($domicilio_inmueble->asentamiento_id);
                             if ($domicilio_inmueble->asentamiento_id == null) {
                                 $colonia = $domicilio_inmueble->colonia;
                             } else {
