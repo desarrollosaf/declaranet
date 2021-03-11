@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Route::post('declaraciones_inicial', 'declaracionesController@index');
-Route::post('declaraciones_inicial', 'declaracionesController@index')->middleware('auth:api', 'scope:read');
+Route::post('declaraciones', 'declaracionesController@index')->middleware('auth:api', 'scope:read');
