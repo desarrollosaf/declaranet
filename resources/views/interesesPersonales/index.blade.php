@@ -26,7 +26,7 @@
                                   <div style="display: inline-block;">
                                     <a href="{{route("intereses_personales.edit",$item->id)}}" type="button"
                                      class="btn btn-warning btn-sm ion ion-edit"></a>
-                                      <button type="button" data-enviado="{{$item->enviado}}"
+                                      <button type="button" data-enviado="{{$item->enviado}}" data-id="{{$item->id}}"
                                           class="btn btn-danger btn-sm ion ion-android-delete btn-borrar"></button>
                                   </div>
                                   {!! Form::close() !!}
@@ -78,7 +78,9 @@
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <strong>Motivo de baja</strong>
-                                {!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!}
+                                 {{--{!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!} --}}
+
+                                {!! Form::text('motivo_baja',null,['class'=>'form-control text-uppercase','placeholder' => 'Ej. CAMBIO DE EMPLEO' ,'id' => 'motivo_baja','required' => true]) !!}
                                 <span class="text-danger" style="font-size:150%"></span>
                             </div>
                         </div>

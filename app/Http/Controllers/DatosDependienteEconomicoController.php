@@ -253,7 +253,7 @@ class DatosDependienteEconomicoController extends Controller
         }
         $dependiente = \App\DependienteEconomico::find($id);
         if($dependiente->enviado){
-            $dependiente->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+            $dependiente->update(["tipo_operacion_id" => 4,"motivo_baja" => $this->request->motivo_baja]);
         } else{
             $dependiente->delete();
         }
