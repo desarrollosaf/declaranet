@@ -36,8 +36,8 @@
                                     <a href="{{route('datos_dependiente_declarante.edit',[$dependiente])}}" class="btn btn-xs btn-warning">
                                         <i class="ion ion-edit"></i>
                                     </a>
-                                    <button type="button" class="btn btn-xs btn-danger btn-borrar" data-enviado="{{$dependiente->enviado}}">
-                                        <i class="ion ion-trash-a btn-borrar"></i>
+                                    <button type="button" class="btn btn-xs btn-danger btn-borrar" data-enviado="{{$dependiente->enviado}}" data-id="{{$dependiente->id}}">
+                                        <i class="ion ion-trash-a"></i>
                                     </button>
                                 </div>
                                 {!! Form::close() !!}
@@ -86,8 +86,10 @@
                     <div class="modal-body">
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <strong>Motivo de baja</strong>
-                                {!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!}
+                               <strong>Motivo de baja:</strong>
+                                {{--{!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!} --}}
+
+                                {!! Form::text('motivo_baja',null,['class'=>'form-control text-uppercase','placeholder' => 'Ej. CAMBIO DE EMPLEO' ,'id' => 'motivo_baja','required' => true]) !!} 
                                 <span class="text-danger" style="font-size:150%"></span>
                             </div>
                         </div>
@@ -120,8 +122,9 @@
         });
     });
     $(document).on('click', '.btn-borrar', function (e) {
-                var id = $(this).data('id');
-                var enviado = $(this).data('enviado');
+                e.preventDefault();
+                let id = $(this).data('id');
+                let enviado = $(this).data('enviado');
                 if(enviado){
                     $("#id_registro").val(id);
                     $("#modal_baja").modal("show");

@@ -52,9 +52,11 @@
                                                        class="btn btn-xs btn-warning">
                                                         <i class="ion ion-edit"></i>
                                                     </a>
-                                                    <button class="btn btn-xs btn-danger" onclick="eliminar({{$experiencia->id}},{{$experiencia->enviado}})">
-                                                        <i class="ion ion-trash-a"></i>
-                                                    </button>
+                                                    @if(!$experiencia->enviado)
+                                                        <button class="btn btn-xs btn-danger" onclick="eliminar({{$experiencia->id}},{{$experiencia->enviado}})">
+                                                            <i class="ion ion-trash-a"></i>
+                                                        </button>
+                                                    @endif
                                                 </div>
                                             @endif
                                         </td>

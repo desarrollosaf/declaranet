@@ -260,7 +260,7 @@ class DatosParejaController extends Controller
          if(!$experiencia->enviado){
             $experiencia->delete();
         }else{
-            $experiencia->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+            $experiencia->update(["tipo_operacion_id" => 4,"motivo_baja" => $this->request->motivo_baja]);
         }
         $data = $this->getEmpleo($this->request->session()->get("declaracion_id"));
         return $data;

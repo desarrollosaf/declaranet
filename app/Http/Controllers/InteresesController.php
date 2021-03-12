@@ -125,7 +125,7 @@ class InteresesController extends Controller {
         }
         $interes = InteresesPersonal::find($id);
         if($interes->enviado){
-            $interes->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+            $interes->update(["tipo_operacion_id" => 4,"motivo_baja" => $this->request->motivo_baja]);
         } else {
            $interes->delete();
         }

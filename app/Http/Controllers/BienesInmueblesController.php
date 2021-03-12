@@ -306,7 +306,8 @@ class BienesInmueblesController extends Controller {
         if(!$bien->enviado){
             $bien->delete();
         }else{
-            $bien->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id]);
+            $bien->update(["tipo_operacion_id" => 4,"motivo_baja_id" => $this->request->motivo_baja_id, "motivo_baja" => $this->request->motivo_baja]);
+            //registros aquí
         }
         return redirect()->back();
     }
