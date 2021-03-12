@@ -32,7 +32,7 @@
                                     <a href="{{route('bienes_inmuebles.edit',[$bien])}}" class="btn btn-xs btn-warning">
                                         <i class="ion ion-edit"></i>
                                     </a>
-                                    <button type="button" class="btn btn-xs btn-danger btn-borrar" data-enviado="{{$bien->enviado}}">
+                                    <button type="button" class="btn btn-xs btn-danger btn-borrar" data-id="{{$bien->id}}" data-enviado="{{$bien->enviado}}">
                                         <i class="ion ion-trash-a"></i>
                                     </button>
                                 </div>
@@ -92,6 +92,11 @@
                         {!! Form::select('motivo_baja_id',$motivos, [] ,['class'=>'form-control text-uppercase','placeholder' => 'SELECCIONA UNA OPCIÓN' ,'id' => 'motivo_baja_id','required' => true]) !!}
                         <span class="text-danger" style="font-size:150%"></span>
                     </div>
+                    <div class="form-group col-md-12">
+                        <strong>Especifique motivo de baja</strong>
+                        {!! Form::text('motivo_baja', null,['class'=>'form-control text-uppercase','placeholder' => 'Especifique' ,'id' => 'motivo_baja','readOnly' => true]) !!}
+                        <span class="text-danger" style="font-size:150%"></span>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -148,6 +153,15 @@
                 });
             }
         });
+    });
+    $("#motivo_baja_id").change(function(){
+        let val = $(this).val();
+        if(parseInt(val) === 4){
+            $("#motivo_baja").prop("readOnly", false).prop("required", true);
+        } else {
+            $("#motivo_baja").prop("readOnly", true).prop("required", false).val("");
+        }
+        
     });
 </script>
 @endsection
