@@ -43,7 +43,7 @@
                             </td>
                             <td class="all">
                                 <!--{!! Form::open(['action' => ['ParticipacionEnEmpresasSociedadesYAsociacionesController@destroy', $empresa->id], 'method'=>'DELETE']) !!}-->
-                                @if($repre->tipo_operaciones_id != 4)
+                                @if($empresa->tipo_operaciones_id != 4)
                                 <div style="display: inline-block;">
                                     <a href="{{route('participacion_empresas.edit',[$empresa])}}" class="btn btn-xs btn-warning">
                                         <i class="ion ion-edit"></i>

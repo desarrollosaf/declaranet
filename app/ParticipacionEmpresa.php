@@ -51,6 +51,6 @@ class ParticipacionEmpresa extends Model
     }
 
     public function tipoOperaciones() {
-        return $this->belongsTo(tipoOperacion::class);
+        return $this->belongsTo(tipoOperacion::class)->withDefault(['valor'=>'N/A']);
     }
 }
